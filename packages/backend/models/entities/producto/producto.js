@@ -3,10 +3,6 @@ import { Categoria } from "../categoria"
 import { Moneda } from "../../enums/moneda"
 import { Builder } from "./productoBuilder"
 
-// Funciones
-
-import { validar } from "../../../validadores/validadoresProducto";
-
 class Producto {
     id;
     vendedor;
@@ -37,6 +33,21 @@ class Producto {
     // Builder estático
     static builder(id, vendedor, titulo) { // Es un método estático que devuelve la clase Builder
         return new Builder(Producto, id, vendedor, titulo);
+    }
+
+    estaDisponible(cantidad) {
+        return this.activo && this.stock >= cantidad;
+    }
+
+    reducirStock(cantidad) {
+        if (this.stock - cantidad < 0) {
+            throw new Error("No hay stock suficiente");
+        }
+        this.stock -= cantidad;
+    }
+
+    aumentarStock(cantidad) {
+        this.stock += cantidad;
     }
 }
 
