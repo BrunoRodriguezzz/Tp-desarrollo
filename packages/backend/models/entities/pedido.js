@@ -1,5 +1,7 @@
 import EstadoPedido from '../enums/estadoPedido.js';
 import Moneda from '../enums/moneda.js';
+import {CambioEstadoPedido} from "./cambioEstadoPedido.js";
+import {ItemPedido} from "./itemPedido.js";
 
 class Pedido {
     id
@@ -33,7 +35,7 @@ class Pedido {
 
     calcularTotal() {
         this.total = this.items.reduce((sum, item) =>
-            sum + item.precioUnitario * item.cantidad, 0);
+            sum + item.subTotal(), 0);
     }
 
     actualizarEstado(nuevoEstado, quien, motivo) {
