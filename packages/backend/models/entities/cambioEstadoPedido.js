@@ -1,4 +1,10 @@
 class CambioEstadoPedido {
+    estado;
+    pedido;
+    usuario;
+    motivo;
+    fecha;
+
     constructor(estado, pedido, usuario, motivo) {
         this.fecha = new Date();
         this.estado = estado;

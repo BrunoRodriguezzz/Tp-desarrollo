@@ -1,4 +1,8 @@
 class ItemPedido {
+    producto;
+    cantidad;
+    precioUnitario;
+
     constructor(producto, cantidad, precioUnitario) {
         this.producto = producto;
         this.cantidad = cantidad;

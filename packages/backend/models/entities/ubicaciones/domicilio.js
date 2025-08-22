@@ -1,4 +1,10 @@
 class Domicilio {
+    calle;
+    altura;
+    piso;
+    departamento;
+    codigoPostal;
+
     constructor(calle, altura) {
         this.calle = calle;
         this.altura = altura;
