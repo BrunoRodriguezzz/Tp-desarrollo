@@ -9,8 +9,7 @@ class ItemPedido {
         return this.precioUnitario * this.cantidad;
     }
 
-    tieneStock() {
-        //TODO - Producto
+    validarStock() {
         return this.producto.estaDisponible(this.cantidad);
     }
 }
