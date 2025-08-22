@@ -3,3 +3,5 @@ const Moneda = Object.freeze({
     DOLAR_USA: 'DOLAR_USA',
     REAL: 'REAL'
 });
+
+export default Moneda;

@@ -6,3 +6,5 @@ const EstadoPedido = Object.freeze({
     ENTREGADO: 'ENTREGADO',
     CANCELADO: 'CANCELADO'
 });
+
+export default EstadoPedido;

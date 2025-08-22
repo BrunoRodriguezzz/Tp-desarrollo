@@ -3,3 +3,5 @@ const TipoUsuario = Object.freeze({
     VENDEDOR: 'VENDEDOR',
     ADMIN: 'ADMIN'
 });
+
+export default TipoUsuario;
