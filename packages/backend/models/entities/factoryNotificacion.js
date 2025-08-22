@@ -1,10 +1,10 @@
 import EstadoPedido from "../enums/estadoPedido";
-import Pedido from "./pedidos";
 import Notificacion from "./notificacion";
-
+import {isPedido} from "../../validadores/validadorDeClases";
+import {isEstadoPedido} from "../../validadores/validadorDeEnums";
 export default class FactoryNotificacion{
     crearSegunEstadoPedido(estado){
-        if(!(Object.values(EstadoPedido).includes(estado))){
+        if(!(isEstadoPedido(estado))){
             throw new Error('El estado del pedido no corresponde con un objeto de su clase');
         }
 
@@ -14,7 +14,7 @@ export default class FactoryNotificacion{
     }
 
     crearSegunPedido(pedido){
-        if(!(pedido instanceof Pedido)){
+        if(!(isPedido(pedido))){
             throw new Error('El pedido no corresponde con un objeto de su clase');
         }
 
