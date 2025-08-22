@@ -1,7 +1,7 @@
-import { Usuario } from "../usuario"
-import { Categoria } from "../categoria"
-import { Moneda } from "../../enums/moneda"
-import { Builder } from "./productoBuilder"
+import Usuario from "../usuario";
+import categoria from "../categoria";
+import Moneda from "../../enums/moneda";
+import Builder from "./productoBuilder";
 
 class Producto {
     id;
@@ -15,23 +15,22 @@ class Producto {
     fotos;
     activo;
 
-    constructor(builder) { // recibe el builder que tiene los datos que definamos.
+    constructor(builder) {
         this.id = builder.id;
         this.vendedor = builder.vendedor;
         this.titulo = builder.titulo;
-
         // Opcionales
-        this.descripcion = builder.descripcion || null; // Si el builder no tiene valor le asigna ese por defecto.
+        this.descripcion = builder.descripcion || null;
         this.categorias = builder.categorias || [];
         this.precio = builder.precio || 0;
         this.moneda = builder.moneda || null;
         this.stock = builder.stock || 0;
         this.fotos = builder.fotos || [];
-        this.activo = builder.activo ?? true; // Si el builder no tiene valor le asigna ese por defecto.
+        this.activo = builder.activo ?? true;
     }
 
     // Builder estático
-    static builder(id, vendedor, titulo) { // Es un método estático que devuelve la clase Builder
+    static builder(id, vendedor, titulo) {
         return new Builder(Producto, id, vendedor, titulo);
     }
 
@@ -51,4 +50,4 @@ class Producto {
     }
 }
 
-export { Producto };
+export default Producto;

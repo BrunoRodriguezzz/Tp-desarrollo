@@ -1,5 +1,5 @@
-import Pedido from "../models/entities/pedido"
+import Pedido from "../models/entities/pedido";
 
-export const isPedido = (pedido) =>{
-    return (pedido instanceof Pedido)
-}
+export const isPedido = (pedido) => {
+    return pedido instanceof Pedido;
+};

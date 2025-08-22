@@ -1,4 +1,5 @@
 import { esNoNuloNiUndefined } from "../../validadores/validador";
+
 class Usuario {
     id;
     nombre;
@@ -8,8 +9,8 @@ class Usuario {
     fechaAlta;
 
     constructor(id, nombre, tipo, email, telefono) {
-        esNoNuloNiUndefined(this.constructor.name, id, nombre, tipo, email, telefono); // This.constructor.name permite que se pueda saber el nombre de la clase antes de que rompa por un valor nulo
-
+        esNoNuloNiUndefined(
+            this.constructor.name, id, nombre, tipo, email, telefono);
         this.id = id;
         this.nombre = nombre;
         this.tipo = tipo;
@@ -19,4 +20,4 @@ class Usuario {
     }
 }
 
-export { Usuario };
+export default Usuario;

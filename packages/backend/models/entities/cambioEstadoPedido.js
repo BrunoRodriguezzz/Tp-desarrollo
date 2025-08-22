@@ -8,4 +8,4 @@ class CambioEstadoPedido {
     }
 }
 
-module.exports = { CambioEstadoPedido }
+export default CambioEstadoPedido;

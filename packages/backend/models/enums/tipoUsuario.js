@@ -1,7 +1,7 @@
 const TipoUsuario = Object.freeze({
     COMPRADOR: 'COMPRADOR',
     VENDEDOR: 'VENDEDOR',
-    ADMIN: 'ADMIN'
+    ADMIN: 'ADMIN',
 });
 
 export default TipoUsuario;

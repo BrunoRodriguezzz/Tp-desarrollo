@@ -49,4 +49,4 @@ class Builder {
     }
 }
 
-export { Builder };
+export default Builder;
