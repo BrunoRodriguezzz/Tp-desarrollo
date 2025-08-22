@@ -1,17 +1,17 @@
 class CambioEstadoPedido {
-    estado;
-    pedido;
-    usuario;
-    motivo;
-    fecha;
+  estado;
+  pedido;
+  usuario;
+  motivo;
+  fecha;
 
-    constructor(estado, pedido, usuario, motivo) {
-        this.fecha = new Date();
-        this.estado = estado;
-        this.pedido = pedido;
-        this.usuario = usuario;
-        this.motivo = motivo;
-    }
+  constructor(estado, pedido, usuario, motivo) {
+    this.fecha = new Date();
+    this.estado = estado;
+    this.pedido = pedido;
+    this.usuario = usuario;
+    this.motivo = motivo;
+  }
 }
 
 export default CambioEstadoPedido;

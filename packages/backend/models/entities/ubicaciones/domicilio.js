@@ -1,26 +1,26 @@
 class Domicilio {
-    calle;
-    altura;
-    piso;
-    departamento;
-    codigoPostal;
+  calle;
+  altura;
+  piso;
+  departamento;
+  codigoPostal;
 
-    constructor(calle, altura) {
-        this.calle = calle;
-        this.altura = altura;
-    }
+  constructor(calle, altura) {
+    this.calle = calle;
+    this.altura = altura;
+  }
 
-    setPiso(piso) {
-        this.piso = piso;
-    }
+  setPiso(piso) {
+    this.piso = piso;
+  }
 
-    setDepartamento(departamento) {
-        this.departamento = departamento;
-    }
+  setDepartamento(departamento) {
+    this.departamento = departamento;
+  }
 
-    setCodigoPostal(codigoPostal) {
-        this.codigoPostal = codigoPostal;
-    }
+  setCodigoPostal(codigoPostal) {
+    this.codigoPostal = codigoPostal;
+  }
 }
 
-module.exports = { Domicilio }
+export default Domicilio;

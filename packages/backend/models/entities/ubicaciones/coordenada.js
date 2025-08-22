@@ -1,11 +1,11 @@
 class Coordenada {
-    latitud;
-    longitud;
+  latitud;
+  longitud;
 
-    constructor(latitud, longitud) {
-        this.latitud = latitud;
-        this.longitud = longitud;
-    }
+  constructor(latitud, longitud) {
+    this.latitud = latitud;
+    this.longitud = longitud;
+  }
 }
 
-module.exports = { Coordenada }
+export default Coordenada;

@@ -1,9 +1,9 @@
 class Pais {
-    nombre;
+  nombre;
 
-    constructor(nombre) {
-        this.nombre = nombre;
-    }
+  constructor(nombre) {
+    this.nombre = nombre;
+  }
 }
 
-module.exports = { Pais }
+export default Pais;

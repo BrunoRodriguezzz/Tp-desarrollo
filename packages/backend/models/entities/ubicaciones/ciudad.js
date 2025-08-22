@@ -1,11 +1,11 @@
 class Ciudad {
-    nombre;
-    provincia;
+  nombre;
+  provincia;
 
-    constructor(nombre, provincia) {
-        this.nombre = nombre;
-        this.provincia = provincia;
-    }
+  constructor(nombre, provincia) {
+    this.nombre = nombre;
+    this.provincia = provincia;
+  }
 }
 
-module.exports = { Ciudad }
+export default Ciudad;

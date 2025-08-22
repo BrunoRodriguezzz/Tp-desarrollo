@@ -1,11 +1,11 @@
 class Provincia {
-    nombre;
-    pais;
+  nombre;
+  pais;
 
-    constructor(nombre, pais) {
-        this.nombre = nombre;
-        this.pais = pais;
-    }
+  constructor(nombre, pais) {
+    this.nombre = nombre;
+    this.pais = pais;
+  }
 }
 
-module.exports = { Provincia }
+export default Provincia;
