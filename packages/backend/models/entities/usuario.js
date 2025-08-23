@@ -1,4 +1,4 @@
-import { esNoNuloNiUndefined } from "../../validadores/validador";
+import { esNoNuloNiUndefined } from "../../validadores/validador.js";
 
 class Usuario {
   id;

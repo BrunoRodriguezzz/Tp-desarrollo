@@ -3,6 +3,8 @@ import Moneda from "../enums/moneda.js";
 import CambioEstadoPedido from "./cambioEstadoPedido.js";
 import ItemPedido from "./itemPedido.js";
 
+let contadorPedidos = 0;
+
 class Pedido {
   id;
   comprador;
@@ -22,6 +24,7 @@ class Pedido {
     this.calcularTotal();
     this.estado = EstadoPedido.PENDIENTE;
     this.fechaCreacion = new Date();
+    this.id = String(contadorPedidos++);
   }
 
   agregarItem(item) {

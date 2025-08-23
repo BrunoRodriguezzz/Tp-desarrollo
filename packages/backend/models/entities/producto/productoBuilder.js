@@ -1,4 +1,4 @@
-import { validar } from "../../../validadores/validadoresProducto";
+import { validar } from "../../../validadores/validadoresProducto.js";
 
 class Builder {
   constructor(ProductoClass, id, vendedor, titulo) {

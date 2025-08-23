@@ -1,7 +1,4 @@
-import Usuario from "../usuario";
-import categoria from "../categoria";
-import Moneda from "../../enums/moneda";
-import Builder from "./productoBuilder";
+import Builder from "./productoBuilder.js";
 
 class Producto {
   id;
