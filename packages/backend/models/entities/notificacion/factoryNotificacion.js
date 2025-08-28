@@ -1,6 +1,6 @@
 import Notificacion from "./notificacion.js";
-import { isPedido } from "../../validadores/validadorDeClases.js";
-import { isEstadoPedido } from "../../validadores/validadorDeEnums.js";
+import { isPedido } from "../../../validadores/validadorDeClases.js";
+import { isEstadoPedido } from "../../../validadores/validadorDeEnums.js";
 
 export default class FactoryNotificacion {
   
