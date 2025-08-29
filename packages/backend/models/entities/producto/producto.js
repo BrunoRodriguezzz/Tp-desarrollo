@@ -37,8 +37,7 @@ class Producto {
   estaDisponible(cantidad) {
     if (!isNumber(cantidad)) {
       throw new ValidationError("La cantidad debe ser un número");
-    }
-    else if (cantidad <= 0) {
+    } else if (cantidad <= 0) {
       throw new ValidationError("La cantidad debe ser mayor a 0");
     }
     return this.activo && this.stock >= cantidad;

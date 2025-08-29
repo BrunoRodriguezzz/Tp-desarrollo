@@ -1,6 +1,13 @@
 import { validar } from "../../../validadores/validadoresProducto.js";
-import { isString, isNumber, isArray, isArrayOf } from "../../../validadores/validadorTiposNativos.js";
-//import { Categoria } from "../../entities/categoria.js";
+import {
+  isString,
+  isNumber,
+  isArrayOf,
+} from "../../../validadores/validadorTiposNativos.js";
+import {
+  isMoneda
+} from "../../../validadores/validadorDeEnums.js";
+import Categoria from "../categoria.js";
 
 class Builder {
   constructor(ProductoClass, vendedor, titulo) {
@@ -11,7 +18,7 @@ class Builder {
   }
 
   descripcion(descripcion) {
-    if(!isString(descripcion)) {
+    if (!isString(descripcion)) {
       throw new ValidationError("La descripción debe ser una cadena");
     }
     this.descripcion = descripcion;
@@ -19,24 +26,35 @@ class Builder {
   }
 
   categorias(categorias) {
-    // if(!isArrayOf(categorias, Categoria)) {
-    //   throw new ValidationError("Las categorías deben ser un arreglo de instancias de Categoria");
-    // }
+    if (!isArrayOf(categorias, Categoria)) {
+      throw new ValidationError(
+        "Las categorías deben ser un arreglo de instancias de Categoria"
+      );
+    }
     this.categorias = categorias;
     return this;
   }
 
   precio(precio) {
+    if (!isNumber(precio) || precio < 0) {
+      throw new ValidationError("El precio debe ser un número positivo");
+    }
     this.precio = precio;
     return this;
   }
 
   moneda(moneda) {
+    if (!isMoneda(moneda)) {
+      throw new ValidationError("La moneda debe ser un valor válido");
+    }
     this.moneda = moneda;
     return this;
   }
 
   stock(stock) {
+    if (!isNumber(stock) || stock < 0) {
+      throw new ValidationError("El stock debe ser un número positivo");
+    }
     this.stock = stock;
     return this;
   }

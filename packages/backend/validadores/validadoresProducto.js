@@ -1,5 +1,5 @@
 import Usuario from "../models/entities/usuario.js";
-import { isString } from "./validadorTiposNativos.js"; 
+import { isString } from "./validadorTiposNativos.js";
 
 export function validar(vendedor, titulo, id) {
   if (vendedor == null || !(vendedor instanceof Usuario)) {
