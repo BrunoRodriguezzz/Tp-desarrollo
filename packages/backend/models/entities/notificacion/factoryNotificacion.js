@@ -1,19 +1,29 @@
+import fs from "fs";
+import path from "path";
 import Notificacion from "./notificacion.js";
+import { fileURLToPath } from "url";
 import { isPedido } from "../../../validadores/validadorDeClases.js";
 import { isEstadoPedido } from "../../../validadores/validadorDeEnums.js";
 
 export default class FactoryNotificacion {
   
-  mensajeSegunEstado = {
-    "PENDIENTE": 
-      `Nuevo pedido {id} realizado por {nombreComprador}.
-      Items:
-      {items}
-      Total: $ {total}
-      Dirección de entrega: {calle} {altura}, {piso} {departamento}. CP {codigoPostal}. {ciudad}, {provincia}, {pais}.
-      `,
-    "ENVIADO": "Tu pedido {id} fue enviado.",
-    "CANCELADO": "El pedido {id} fue cancelado por {nombreComprador}."
+  constructor(lang = "es") {
+    this.lang = lang;
+    this.mensajeSegunEstado = this.cargarMensajes();
+  }
+
+  cargarMensajes() {
+    const filename = fileURLToPath(import.meta.url); 
+    const dirname = path.dirname(filename);        
+    const pathMensajes = path.join(dirname, "mensajes.json"); 
+    const contenido = fs.readFileSync(pathMensajes, "utf-8");
+    const listaMensajes = JSON.parse(contenido);
+
+    const encontrado = listaMensajes.find(m => m.lang === this.lang);
+    if (!encontrado) {
+      throw new Error(`No se encontraron mensajes para el idioma ${this.lang}`);
+    }
+    return encontrado.mensajes;
   }
 
   crearSegunEstadoPedido(estado) {
