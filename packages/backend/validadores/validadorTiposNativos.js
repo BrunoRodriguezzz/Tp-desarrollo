@@ -17,3 +17,12 @@ export const isUndefined = (valor) => {
 export const isNull = (valor) => {
   return valor === null;
 };
+
+export const isArray = (valor) => {
+  return Array.isArray(valor);
+};
+
+export const isArrayOf = (valor, tipo) => {
+  if (!isArray(valor)) return false;
+  return valor.every((item) => typeof item === tipo);
+};
