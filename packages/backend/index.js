@@ -35,8 +35,8 @@ const healthController = new HealthController();
 const productoController = new ProductoController(productoService);
 
 // Registro de controlladores en el servidor
-server.setController(HealthController, () => healthController);
-server.setController(ProductoController, () => productoController);
+server.setController(HealthController, healthController);
+server.setController(ProductoController, productoController);
 
 // Configuracion de rutas y lanzamiento
 routes.forEach((route) => server.addRoute(route));

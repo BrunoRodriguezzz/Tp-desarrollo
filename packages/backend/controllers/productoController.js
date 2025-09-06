@@ -1,7 +1,9 @@
 import { z } from "zod";
 
 export default class ProductoController {
-  cosntructor(productoService) {
+  productoService;
+
+  constructor(productoService) {
     this.productoService = productoService;
   }
 
@@ -9,7 +11,7 @@ export default class ProductoController {
   findAll(req, res) {
     const productos = this.productoService.findAll();
 
-    if (producto === null) {
+    if (productos === null) {
       res.status(204).send("Productos no encontrados");
     }
 
