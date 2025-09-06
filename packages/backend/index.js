@@ -1,24 +1,44 @@
-
-import "dotenv/config";
+// import dotenv from "dotenv";
 import express from "express";
-import cors from "cors";
-import healthCheckRoutes from "./routes/healthCheckRoutes";
+import Server from "./server/server.js";
 
+// Importamos los controllers
+import HealthController from "./controllers/healthController.js";
+import ProductoController from "./controllers/productoController.js";
+
+// Importamos los Repositorios
+import ProductoRepository from "./repositories/productoRepository.js";
+
+// Importamos los servicios
+import ProductoService from "./services/productoService.js";
+
+// Importamos las rutas
+import routes from "./routes/routes.js";
+
+// dotenv.config();
+
+// Inicializacion
 const app = express();
-const port = process.env.SERVER_PORT;
 
-app.use(express.json());
+// const port = process.env.PORT || 3000;
+const port = 3000;
+const server = new Server(app, port);
 
-app.use(
-  cors({
-    origin: process.env.ALLOWED_ORIGINS
-      ? process.env.ALLOWED_ORIGINS.split(",").map((o) => o.trim())
-      : true,
-  }),
-);
+// Capas de Repositorio
+const productoRepository = new ProductoRepository();
 
-app.use('/health', healthCheckRoutes);
+// Capas de Servicio
+const productoService = new ProductoService(productoRepository);
 
-app.listen(port, () => {
-  console.log(`Backend escuchando en puerto ${process.env.SERVER_PORT}`);
-});
+// Capas de Controlador
+const healthController = new HealthController();
+const productoController = new ProductoController(productoService);
+
+// Registro de controlladores en el servidor
+server.setController(HealthController, () => healthController);
+server.setController(ProductoController, () => productoController);
+
+// Configuracion de rutas y lanzamiento
+routes.forEach((route) => server.addRoute(route));
+server.configureRoutes();
+server.launch();
