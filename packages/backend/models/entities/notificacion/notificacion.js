@@ -3,6 +3,7 @@ export default class Notificacion {
   usuarioDestino;
   mensaje;
   fechaAlta;
+  leida;
 
   constructor(usuarioDestino, mensaje, fechaAlta) {
     this.usuarioDestino = usuarioDestino;

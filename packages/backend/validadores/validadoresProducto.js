@@ -1,5 +1,6 @@
 import Usuario from "../models/entities/usuario.js";
 import { isString } from "./validadorTiposNativos.js";
+import Categoria from "../models/entities/categoria.js";
 
 export function validar(vendedor, titulo) {
   if (vendedor == null || !(vendedor instanceof Usuario)) {
@@ -9,3 +10,5 @@ export function validar(vendedor, titulo) {
     throw new Error("Título inválido");
   }
 }
+
+

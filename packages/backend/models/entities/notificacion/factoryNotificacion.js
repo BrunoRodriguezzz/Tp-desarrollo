@@ -5,7 +5,6 @@ import { isPedido } from "../../../validadores/validadorDeClases.js";
 import { isEstadoPedido } from "../../../validadores/validadorDeEnums.js";
 import EstadoPedido from "../../enums/estadoPedido.js";
 
-
 export default class FactoryNotificacion {
   
   constructor(lang = "es") {
