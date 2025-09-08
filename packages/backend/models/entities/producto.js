@@ -26,7 +26,7 @@ class Producto {
     this.descripcion = "";
     this.categorias = [];
     this.precio = 0;
-    this.moneda = Moneda.ARS; // Cambiar a ENUM
+    this.moneda = Moneda.ARS;
     this.stock = 0;
     this.fotos = [];
     this.activo = true;

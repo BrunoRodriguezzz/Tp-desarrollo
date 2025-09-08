@@ -20,7 +20,6 @@ class Pedido {
     this.moneda = moneda;
     this.direccion = direccion;
     this.items = [];
-    this.calcularTotal();
     this.estado = EstadoPedido.PENDIENTE;
     this.fechaCreacion = new Date();
   }
@@ -31,10 +30,13 @@ class Pedido {
     if (!this.vendedor) {
       this.vendedor = item.producto.vendedor;
     }
+    
+    this.calcularTotal();
   }
 
   quitarItem(item) {
     this.items = this.items.filter((i) => i !== item);
+    this.calcularTotal();
   }
 
   calcularTotal() {
