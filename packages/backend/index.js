@@ -1,4 +1,4 @@
-// import dotenv from "dotenv";
+import dotenv from "dotenv";
 import express from "express";
 import Server from "./server/server.js";
 
@@ -12,16 +12,17 @@ import ProductoRepository from "./repositories/productoRepository.js";
 // Importamos los servicios
 import ProductoService from "./services/productoService.js";
 
+import { errorHandler } from "./middlewares/errorHandler.js";
 // Importamos las rutas
 import routes from "./routes/routes.js";
 
-// dotenv.config();
 
 // Inicializacion
 const app = express();
+dotenv.config({ path: './packages/backend/.env' });
 
-// const port = process.env.PORT || 3000;
-const port = 3000;
+const port = process.env.SERVER_PORT || 3000;
+//const port = 3000;
 const server = new Server(app, port);
 
 // Capas de Repositorio
@@ -41,4 +42,5 @@ server.setController(ProductoController, productoController);
 // Configuracion de rutas y lanzamiento
 routes.forEach((route) => server.addRoute(route));
 server.configureRoutes();
+app.use(errorHandler);
 server.launch();
