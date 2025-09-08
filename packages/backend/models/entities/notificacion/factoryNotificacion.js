@@ -70,7 +70,7 @@ export default class FactoryNotificacion {
   }
 
   cargarMensajes() {
-    const encontrado = parseJSON("mensajes.json").find(m => m.lang === this.lang);
+    const encontrado = parseJSON("../lang/mensajes.json").find(m => m.lang === this.lang);
 
     if (!encontrado) {
       throw new Error(`No se encontraron mensajes para el idioma ${this.lang}`);
