@@ -14,11 +14,11 @@ class Pedido {
   fechaCreacion;
   historialEstados = [];
 
-  constructor(comprador, moneda, direccion, items) {
+  constructor(comprador, moneda, direccion) {
     this.comprador = comprador;
     this.moneda = moneda;
     this.direccion = direccion;
-    this.items = items;
+    this.items = [];
     this.calcularTotal();
     this.estado = EstadoPedido.PENDIENTE;
     this.fechaCreacion = new Date();
