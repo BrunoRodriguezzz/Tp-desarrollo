@@ -13,6 +13,7 @@ class Pedido {
   estado;
   fechaCreacion;
   historialEstados = [];
+  vendedor;
 
   constructor(comprador, moneda, direccion) {
     this.comprador = comprador;
@@ -26,6 +27,10 @@ class Pedido {
 
   agregarItem(item) {
     this.items.push(item);
+
+    if (!this.vendedor) {
+      this.vendedor = item.producto.vendedor;
+    }
   }
 
   quitarItem(item) {
@@ -45,6 +50,10 @@ class Pedido {
 
   validarStock() {
     return this.items.every((item) => item.validarStock());
+  }
+
+  getVendedor() {
+    return this.vendedor;
   }
 }
 

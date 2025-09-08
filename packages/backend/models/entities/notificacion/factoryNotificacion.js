@@ -1,6 +1,6 @@
 import Notificacion from "./notificacion.js";
-import parseJSON from "../../../utils/jsonReader.js"
-import interpolarMensaje from "../../../utils/stringInterpolator.js";
+import { parseJSON } from "../../../utils/jsonReader.js"
+import { interpolarMensaje } from "../../../utils/stringInterpolator.js";
 import { isPedido } from "../../../validadores/validadorDeClases.js";
 import { isEstadoPedido } from "../../../validadores/validadorDeEnums.js";
 import EstadoPedido from "../../enums/estadoPedido.js";

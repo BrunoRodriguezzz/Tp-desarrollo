@@ -1,3 +1,5 @@
+import { isNumber } from "../../validadores/validadorTiposNativos.js";
+
 class ItemPedido {
   producto;
   cantidad;

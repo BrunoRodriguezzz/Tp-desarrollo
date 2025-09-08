@@ -1,4 +1,4 @@
-import { ValidationError } from "../models/excepcion/validationError";
+import { ValidationError } from "../models/excepcion/validationError.js";
 
 export const isString = (valor) => {
   return typeof valor === "string";
