@@ -8,16 +8,14 @@ class Usuario {
   tipo;
   fechaAlta;
 
-  constructor(id, nombre, tipo, email, telefono) {
+  constructor(nombre, tipo, email, telefono) {
     esNoNuloNiUndefined(
       this.constructor.name,
-      id,
       nombre,
       tipo,
       email,
       telefono
     );
-    this.id = id;
     this.nombre = nombre;
     this.tipo = tipo;
     this.email = email;
