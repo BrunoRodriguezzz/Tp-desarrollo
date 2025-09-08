@@ -5,7 +5,7 @@ import { isMoneda } from "../../validadores/validadorDeEnums.js";
 import { validar } from "../../validadores/validadoresProducto.js";
 import Categoria from "./categoria.js";
 
-class Producto {
+export default class Producto {
   id;
   vendedor;
   titulo;
@@ -93,8 +93,10 @@ class Producto {
   }
 
   setFotos(fotos) {
-    if(!isArrayOf(fotos, String)) {
-      throw new ValidationError("Las fotos deben ser un arreglo de cadenas (URLs)");
+    if (!isArrayOf(fotos, String)) {
+      throw new ValidationError(
+        "Las fotos deben ser un arreglo de cadenas (URLs)"
+      );
     }
     this.fotos = fotos;
   }
@@ -113,5 +115,3 @@ class Producto {
     this.id = id;
   }
 }
-
-export default Producto;
