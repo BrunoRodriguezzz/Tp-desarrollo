@@ -12,7 +12,7 @@ export default class FactoryNotificacion {
     this.mensajeSegunEstado = this.cargarMensajes();
   }
 
-  cargarMensajes() {
+  cargarMensajes() { // Pasar a un UTILS
     const filename = fileURLToPath(import.meta.url); 
     const dirname = path.dirname(filename);        
     const pathMensajes = path.join(dirname, "mensajes.json"); 
@@ -53,7 +53,7 @@ export default class FactoryNotificacion {
     };
   }
 
-  interpolarEnMensaje(plantillaMensaje, variables) {
+  interpolarEnMensaje(plantillaMensaje, variables) { // Pasar a un UTILS
     return plantillaMensaje.replace(/\{(\w+)\}/g, (_, key) => variables[key] ?? "");
   }
 
@@ -63,18 +63,21 @@ export default class FactoryNotificacion {
     }
 
     const { estado, comprador, items, id } = pedido;
-    const vendedor = items[0].producto.vendedor;
+    const vendedor = items[0].producto.vendedor; // El pedido ya sabe quien es el vendedor
 
     let usuarioDestino;
     if (estado === "PENDIENTE" || estado === "CANCELADO") {
       usuarioDestino = vendedor;
     } 
-    else if (estado === "ENVIADO") {
+    else if (estado === "ENVIADO") { // Usar valores del enum
       usuarioDestino = comprador;
     }
     else {
       return;
     }
+
+    // Agregar validaciones del estado del pedido
+    // Mover notificacion a una carpeta lang
 
     const mensajeBase = this.crearSegunEstadoPedido(estado);
     const variables = this.crearVariablesMensaje(pedido);

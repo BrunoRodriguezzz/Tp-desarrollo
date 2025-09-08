@@ -9,6 +9,7 @@ export default class Notificacion {
     this.usuarioDestino = usuarioDestino;
     this.mensaje = mensaje;
     this.fechaAlta = fechaAlta;
+    this.leida = false;
   }
 
   marcarComoLeida() {

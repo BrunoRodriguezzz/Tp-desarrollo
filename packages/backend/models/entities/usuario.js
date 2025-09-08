@@ -8,7 +8,7 @@ class Usuario {
   tipo;
   fechaAlta;
 
-  constructor(nombre, tipo, email, telefono) {
+  constructor(nombre, tipo, email, telefono) { // Sacar email y telefono del constructor
     esNoNuloNiUndefined(
       this.constructor.name,
       nombre,
@@ -17,9 +17,9 @@ class Usuario {
       telefono
     );
     this.nombre = nombre;
-    this.tipo = tipo;
-    this.email = email;
-    this.telefono = telefono;
+    this.tipo = tipo; // Validar que sea ENUM
+    this.email = email; // Validar formato email
+    this.telefono = telefono; // Validar formato telefono
     this.fechaAlta = new Date();
   }
 }

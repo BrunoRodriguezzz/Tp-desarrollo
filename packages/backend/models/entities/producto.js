@@ -24,7 +24,7 @@ class Producto {
     this.descripcion = "";
     this.categorias = [];
     this.precio = 0;
-    this.moneda = "ARS";
+    this.moneda = "ARS"; // Cambiar a ENUM
     this.stock = 0;
     this.fotos = [];
     this.activo = true;
@@ -42,7 +42,7 @@ class Producto {
       throw new ValidationError("La cantidad debe ser un número");
     }
     if (this.stock - cantidad < 0) {
-      throw new StockError("No hay suficiente stock para reducir");
+      throw new StockError("No hay suficiente stock para reducir"); 
     }
     this.stock -= cantidad;
   }
@@ -53,6 +53,8 @@ class Producto {
     }
     this.stock += cantidad;
   }
+
+  // Agregar Categoria - fotos
 
   // Seters
   setDescripcion(descripcion) {
