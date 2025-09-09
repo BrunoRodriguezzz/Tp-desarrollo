@@ -1,14 +1,20 @@
+import { isString } from "../../../validadores/validadorTiposNativos";
+
 class Ciudad {
   nombre;
   provincia;
 
   constructor(nombre, provincia) {
-    if (!isString(nombre)) {
-      throw new ValidationError("El nombre debe ser una cadena");
-    }
+    this.validar(nombre);
 
     this.nombre = nombre;
     this.provincia = provincia;
+  }
+
+  validar(nombre) {
+    if (!isString(nombre)) {
+      throw new ValidationError("El nombre de la ciudad debe ser una cadena");
+    }
   }
 }
 

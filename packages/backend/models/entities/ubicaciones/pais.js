@@ -1,12 +1,18 @@
+import { isString } from "../../../validadores/validadorTiposNativos";
+
 class Pais {
   nombre;
 
   constructor(nombre) {
-    if (!isString(nombre)) {
-      throw new ValidationError("El nombre debe ser una cadena");
-    }
+    this.validar(nombre);
 
     this.nombre = nombre;
+  }
+
+  validar(nombre) {
+    if (!isString(nombre)) {
+      throw new ValidationError("El nombre del pais debe ser una cadena");
+    }
   }
 }
 

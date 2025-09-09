@@ -1,3 +1,5 @@
+import { isString } from "../../../validadores/validadorTiposNativos";
+
 class Domicilio {
   calle;
   altura;
@@ -6,12 +8,7 @@ class Domicilio {
   codigoPostal;
 
   constructor(calle, altura) {
-    if (!isString(calle)) {
-      throw new ValidationError("La calle debe ser una cadena");
-    }
-    if (!isString(altura)) {
-      throw new ValidationError("La altura debe ser una cadena");
-    }
+    this.validarCalleYAltura(calle, altura);
 
     this.calle = calle;
     this.altura = altura;
@@ -36,6 +33,15 @@ class Domicilio {
       throw new ValidationError("El codigo postal debe ser una cadena");
     }
     this.codigoPostal = codigoPostal;
+  }
+
+  validarCalleYAltura(calle, altura) {
+    if (!isString(calle)) {
+      throw new ValidationError("La calle debe ser una cadena");
+    }
+    if (!isString(altura)) {
+      throw new ValidationError("La altura debe ser una cadena");
+    }
   }
 }
 
