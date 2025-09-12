@@ -10,5 +10,9 @@ export default function healtCheckRoute(getController) {
     getController(ProductoController).findAll(req, res)
   );
 
+  router.get(pathProductos + "/vendedor/:id", (req, res) =>
+    getController(ProductoController).findBySeller(req, res)
+  );
+
   return router;
 }

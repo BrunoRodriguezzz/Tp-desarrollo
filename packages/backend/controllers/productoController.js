@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { paginationGetValues } from "../utils/pagination.js";
 
 export default class ProductoController {
   productoService;
@@ -8,13 +9,34 @@ export default class ProductoController {
   }
 
   findAll(req, res) {
-    const { page = 1, limit = 10 } = req.query;
-    const filtros = req.query;
+    const productosPaginados = paginationGetValues(
+      req,
+      (page, limit, filtros) =>
+        this.productoService.findAll(page, limit, filtros)
+    );
 
-    const productosPaginados = this.productoService.findAll(
-      page,
-      limit,
-      filtros
+    if (productosPaginados === null) {
+      res.status(204).send("No se encontraron productos");
+      return;
+    }
+
+    res.status(200).json(productosPaginados);
+  }
+
+  findBySeller(req, res) {
+    const resultId = idTransform.safeParse(req.params.id);
+
+    if (resultId.error) {
+      res.status(400).json(resultId.error.issues);
+      return;
+    }
+
+    const id = resultId.data;
+
+    const productosPaginados = paginationGetValues(
+      req,
+      (page, limit, filtros) =>
+        this.productoService.findBySeller(id, page, limit, filtros)
     );
 
     if (productosPaginados === null) {
@@ -33,4 +55,16 @@ const productoSchema = z.object({
   categorias: z.array(z.number().min(1)).optional(),
   precio: z.number().min(0).optional(),
   moneda: z.string().length(3).optional(),
+});
+
+const idTransform = z.string().transform((val, ctx) => {
+  const num = Number(val);
+  if (isNaN(num)) {
+    ctx.addIssue({
+      code: "INVALID_ID",
+      message: "id must be a number",
+    });
+    return z.NEVER;
+  }
+  return num;
 });

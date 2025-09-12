@@ -1,14 +1,8 @@
-<<<<<<< HEAD
 import { ValidationError } from "../../errors/tiendaSolError.js";
-import { isNumber } from "../../validadores/validadorTiposNativos.js";
-=======
-import { ValidationError } from "../excepcion/validationError.js";
-import { StockError } from "../excepcion/stockError.js";
-import { isNumber, validarString, validarNumeroPositivo } from "../../validadores/validadorTiposNativos.js";
->>>>>>> E1
 import { isMoneda } from "../../validadores/validadorDeEnums.js";
 import { validar } from "../../validadores/validadoresProducto.js";
 import { validarCategoria } from "../../validadores/validadorDeClases.js";
+import { validarNumeroPositivo } from "../../validadores/validadorTiposNativos.js";
 import Moneda from "../enums/moneda.js";
 import Categoria from "./categoria.js";
 
@@ -45,11 +39,7 @@ export default class Producto {
   reducirStock(cantidad) {
     validarNumeroPositivo(cantidad, "Cantidad");
     if (this.stock - cantidad < 0) {
-<<<<<<< HEAD
       throw new ValidationError("No hay suficiente stock para reducir");
-=======
-      throw new StockError("No hay suficiente stock para reducir"); 
->>>>>>> E1
     }
     this.stock -= cantidad;
   }
