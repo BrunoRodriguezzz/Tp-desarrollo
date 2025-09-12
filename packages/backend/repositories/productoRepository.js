@@ -2,7 +2,9 @@ import Producto from "../models/entities/producto.js";
 import {
   filtrarPorPrecio,
   filtrarPorVendedor,
+  filtrarPorBusqueda,
 } from "../models/filters/productFilters.js";
+import Categoria from "../models/entities/categoria.js";
 
 //! ESTO ES UNICAMENTE PARA PROBAR LA API
 import Usuario from "../models/entities/usuario.js";
@@ -20,6 +22,18 @@ const producto9 = new Producto(usuario2, "Producto 9");
 const producto10 = new Producto(usuario2, "Producto 10");
 usuario1.id = 1;
 usuario2.id = 2;
+const categoria1 = new Categoria("Categoria 1");
+const categoria2 = new Categoria("Categoria 2");
+producto1.agregarCategoria(categoria1);
+producto2.agregarCategoria(categoria1);
+producto3.agregarCategoria(categoria1);
+producto4.agregarCategoria(categoria1);
+producto5.agregarCategoria(categoria1);
+producto6.agregarCategoria(categoria2);
+producto7.agregarCategoria(categoria2);
+producto8.agregarCategoria(categoria2);
+producto9.agregarCategoria(categoria2);
+producto10.agregarCategoria(categoria2);
 producto1.setPrecio(100);
 producto2.setPrecio(100);
 producto3.setPrecio(100);
@@ -80,7 +94,7 @@ export default class ProductoRepository {
   }
 
   applyFilters(productos, filtros) {
-    const { maxPrice, minPrice } = filtros;
+    const { maxPrice, minPrice, search } = filtros;
     let productosFiltrados = productos;
 
     if (maxPrice || minPrice) {
@@ -89,6 +103,10 @@ export default class ProductoRepository {
         maxPrice,
         minPrice
       );
+    }
+
+    if (search) {
+      productosFiltrados = filtrarPorBusqueda(productosFiltrados, search);
     }
 
     return productosFiltrados;

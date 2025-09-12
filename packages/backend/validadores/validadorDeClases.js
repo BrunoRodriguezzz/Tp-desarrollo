@@ -1,4 +1,5 @@
 import Pedido from "../models/entities/pedido.js";
+import Categoria from "../models/entities/categoria.js";
 
 export const isPedido = (pedido) => {
   return pedido instanceof Pedido;
