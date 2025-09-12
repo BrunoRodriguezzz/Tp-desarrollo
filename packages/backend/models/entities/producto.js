@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 import { ValidationError } from "../../errors/tiendaSolError.js";
 import { isNumber } from "../../validadores/validadorTiposNativos.js";
+=======
+import { ValidationError } from "../excepcion/validationError.js";
+import { StockError } from "../excepcion/stockError.js";
+import { isNumber, validarString, validarNumeroPositivo } from "../../validadores/validadorTiposNativos.js";
+>>>>>>> E1
 import { isMoneda } from "../../validadores/validadorDeEnums.js";
 import { validar } from "../../validadores/validadoresProducto.js";
+import { validarCategoria } from "../../validadores/validadorDeClases.js";
+import Moneda from "../enums/moneda.js";
 import Categoria from "./categoria.js";
 
 export default class Producto {
@@ -23,41 +31,49 @@ export default class Producto {
     this.descripcion = "";
     this.categorias = [];
     this.precio = 0;
-    this.moneda = "ARS";
+    this.moneda = Moneda.ARS;
     this.stock = 0;
     this.fotos = [];
     this.activo = true;
   }
 
   estaDisponible(cantidad) {
-    if (!isNumber(cantidad) && cantidad <= 0) {
-      throw new ValidationError("La cantidad debe ser un número mayor a 0");
-    }
+    validarNumeroPositivo(cantidad, "Cantidad");
     return this.stock >= cantidad;
   }
 
   reducirStock(cantidad) {
-    if (!isNumber(cantidad)) {
-      throw new ValidationError("La cantidad debe ser un número");
-    }
+    validarNumeroPositivo(cantidad, "Cantidad");
     if (this.stock - cantidad < 0) {
+<<<<<<< HEAD
       throw new ValidationError("No hay suficiente stock para reducir");
+=======
+      throw new StockError("No hay suficiente stock para reducir"); 
+>>>>>>> E1
     }
     this.stock -= cantidad;
   }
 
   aumentarStock(cantidad) {
-    if (!isNumber(cantidad)) {
-      throw new ValidationError("La cantidad debe ser un número");
-    }
+    validarNumeroPositivo(cantidad, "Cantidad");
     this.stock += cantidad;
+  }
+
+  // Agregar Categoria - fotos
+
+  agregarCategoria(categoria) {
+    validarCategoria(categoria);
+    this.categorias.push(categoria);
+  }
+
+  agregarFoto(url) {
+    validarString(url, "URL de la foto");
+    this.fotos.push(url);
   }
 
   // Seters
   setDescripcion(descripcion) {
-    if (!isString(descripcion)) {
-      throw new ValidationError("La descripción debe ser una cadena");
-    }
+    validarString(descripcion, "Descripción");
     this.descripcion = descripcion;
   }
 
@@ -71,9 +87,7 @@ export default class Producto {
   }
 
   setPrecio(precio) {
-    if (!isNumber(precio) || precio < 0) {
-      throw new ValidationError("El precio debe ser un número positivo");
-    }
+    validarNumeroPositivo(precio, "Precio");
     this.precio = precio;
   }
 
@@ -85,9 +99,7 @@ export default class Producto {
   }
 
   setStock(stock) {
-    if (!isNumber(stock) || stock < 0) {
-      throw new ValidationError("El stock debe ser un número positivo");
-    }
+    validarNumeroPositivo(stock, "Stock");
     this.stock = stock;
   }
 
@@ -108,9 +120,7 @@ export default class Producto {
   }
 
   setId(id) {
-    if (!isNumber(id) || id < 0) {
-      throw new ValidationError("El ID debe ser un número positivo");
-    }
+    validarNumeroPositivo(id, "ID");
     this.id = id;
   }
 }

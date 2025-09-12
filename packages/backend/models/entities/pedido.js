@@ -3,8 +3,6 @@ import Moneda from "../enums/moneda.js";
 import CambioEstadoPedido from "./cambioEstadoPedido.js";
 import ItemPedido from "./itemPedido.js";
 
-let contadorPedidos = 0;
-
 class Pedido {
   id;
   comprador;
@@ -15,24 +13,30 @@ class Pedido {
   estado;
   fechaCreacion;
   historialEstados = [];
+  vendedor;
 
-  constructor(comprador, moneda, direccion, items) {
+  constructor(comprador, moneda, direccion) {
     this.comprador = comprador;
     this.moneda = moneda;
     this.direccion = direccion;
-    this.items = items;
-    this.calcularTotal();
+    this.items = [];
     this.estado = EstadoPedido.PENDIENTE;
     this.fechaCreacion = new Date();
-    this.id = String(contadorPedidos++);
   }
 
   agregarItem(item) {
     this.items.push(item);
+
+    if (!this.vendedor) {
+      this.vendedor = item.producto.vendedor;
+    }
+    
+    this.calcularTotal();
   }
 
   quitarItem(item) {
     this.items = this.items.filter((i) => i !== item);
+    this.calcularTotal();
   }
 
   calcularTotal() {
@@ -48,6 +52,10 @@ class Pedido {
 
   validarStock() {
     return this.items.every((item) => item.validarStock());
+  }
+
+  getVendedor() {
+    return this.vendedor;
   }
 }
 

@@ -1,5 +1,6 @@
 import { esNoNuloNiUndefined } from "../../validadores/validador.js";
-
+import { validarEmail, validarTelefono } from "../../validadores/validadorTiposNativos.js" 
+import { isTipoUsuario } from "../../validadores/validadorDeEnums.js";
 class Usuario {
   id;
   nombre;
@@ -8,21 +9,26 @@ class Usuario {
   tipo;
   fechaAlta;
 
-  constructor(id, nombre, tipo, email, telefono) {
+  constructor(nombre, tipo) {
     esNoNuloNiUndefined(
       this.constructor.name,
-      id,
       nombre,
-      tipo,
-      email,
-      telefono
+      tipo
     );
-    this.id = id;
+    isTipoUsuario(tipo);
     this.nombre = nombre;
     this.tipo = tipo;
-    this.email = email;
-    this.telefono = telefono;
     this.fechaAlta = new Date();
+  }
+
+  setEmail(email) {
+    validarEmail(email);
+    this.email = email;
+  }
+
+  setTelefono(telefono) {
+    validarTelefono(telefono);
+    this.telefono = telefono;
   }
 }
 

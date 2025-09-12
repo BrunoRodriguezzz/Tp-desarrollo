@@ -1,9 +1,9 @@
-import fs from "fs";
-import path from "path";
 import Notificacion from "./notificacion.js";
-import { fileURLToPath } from "url";
+import { parseJSON } from "../../../utils/jsonReader.js"
+import { interpolarMensaje } from "../../../utils/stringInterpolator.js";
 import { isPedido } from "../../../validadores/validadorDeClases.js";
 import { isEstadoPedido } from "../../../validadores/validadorDeEnums.js";
+import EstadoPedido from "../../enums/estadoPedido.js";
 
 export default class FactoryNotificacion {
   
@@ -12,18 +12,34 @@ export default class FactoryNotificacion {
     this.mensajeSegunEstado = this.cargarMensajes();
   }
 
-  cargarMensajes() {
-    const filename = fileURLToPath(import.meta.url); 
-    const dirname = path.dirname(filename);        
-    const pathMensajes = path.join(dirname, "mensajes.json"); 
-    const contenido = fs.readFileSync(pathMensajes, "utf-8");
-    const listaMensajes = JSON.parse(contenido);
-
-    const encontrado = listaMensajes.find(m => m.lang === this.lang);
-    if (!encontrado) {
-      throw new Error(`No se encontraron mensajes para el idioma ${this.lang}`);
+  crearSegunPedido(pedido) {
+    if (!isPedido(pedido)) {
+        throw new Error("El pedido no corresponde con un objeto de su clase");
     }
-    return encontrado.mensajes;
+
+    const { estado, comprador } = pedido;
+    const vendedor = pedido.getVendedor();
+
+    let usuarioDestino;
+    if (estado === EstadoPedido.PENDIENTE || estado === EstadoPedido.CANCELADO) {
+      usuarioDestino = vendedor;
+    } 
+    else if (estado === EstadoPedido.ENVIADO) {
+      usuarioDestino = comprador;
+    }
+    else {
+      return;
+    }
+
+    const mensajeBase = this.crearSegunEstadoPedido(estado);
+    const variables = this.crearVariablesMensaje(pedido);
+    const mensajeFinal = interpolarMensaje(mensajeBase, variables);
+
+    return new Notificacion(
+        usuarioDestino,
+        mensajeFinal,
+        new Date()
+    );
   }
 
   crearSegunEstadoPedido(estado) {
@@ -53,38 +69,13 @@ export default class FactoryNotificacion {
     };
   }
 
-  interpolarEnMensaje(plantillaMensaje, variables) {
-    return plantillaMensaje.replace(/\{(\w+)\}/g, (_, key) => variables[key] ?? "");
-  }
+  cargarMensajes() {
+    const encontrado = parseJSON("../lang/mensajes.json").find(m => m.lang === this.lang);
 
-  crearSegunPedido(pedido) {
-    if (!isPedido(pedido)) {
-        throw new Error("El pedido no corresponde con un objeto de su clase");
+    if (!encontrado) {
+      throw new Error(`No se encontraron mensajes para el idioma ${this.lang}`);
     }
 
-    const { estado, comprador, items, id } = pedido;
-    const vendedor = items[0].producto.vendedor;
-
-    let usuarioDestino;
-    if (estado === "PENDIENTE" || estado === "CANCELADO") {
-      usuarioDestino = vendedor;
-    } 
-    else if (estado === "ENVIADO") {
-      usuarioDestino = comprador;
-    }
-    else {
-      return;
-    }
-
-    const mensajeBase = this.crearSegunEstadoPedido(estado);
-    const variables = this.crearVariablesMensaje(pedido);
-    const mensajeFinal = this.interpolarEnMensaje(mensajeBase, variables);
-
-    return new Notificacion(
-        id,
-        usuarioDestino,
-        mensajeFinal,
-        new Date()
-    );
+    return encontrado.mensajes;
   }
 }

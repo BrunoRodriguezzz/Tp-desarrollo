@@ -16,10 +16,9 @@ import { errorHandler } from "./middlewares/errorHandler.js";
 // Importamos las rutas
 import routes from "./routes/routes.js";
 
-
 // Inicializacion
 const app = express();
-dotenv.config({ path: './packages/backend/.env' });
+dotenv.config({ path: "./packages/backend/.env" });
 
 const port = process.env.SERVER_PORT || 3000;
 //const port = 3000;
