@@ -5,12 +5,15 @@ import Server from "./server/server.js";
 // Importamos los controllers
 import HealthController from "./controllers/healthController.js";
 import ProductoController from "./controllers/productoController.js";
+import NotificacionController from "./controllers/notificacionController.js";
 
 // Importamos los Repositorios
 import ProductoRepository from "./repositories/productoRepository.js";
+import NotificacionRepository from "./repositories/notificacionRepository.js";
 
 // Importamos los servicios
 import ProductoService from "./services/productoService.js";
+import NotificacionService from "./services/notificacionService.js";
 
 import { errorHandler } from "./middlewares/errorHandler.js";
 // Importamos las rutas
@@ -26,17 +29,21 @@ const server = new Server(app, port);
 
 // Capas de Repositorio
 const productoRepository = new ProductoRepository();
+const notificacionRepository = new NotificacionRepository();
 
 // Capas de Servicio
 const productoService = new ProductoService(productoRepository);
+const notificacionService = new NotificacionService(notificacionRepository);
 
 // Capas de Controlador
 const healthController = new HealthController();
 const productoController = new ProductoController(productoService);
+const notificacionController = new NotificacionController(notificacionService);
 
 // Registro de controlladores en el servidor
 server.setController(HealthController, healthController);
 server.setController(ProductoController, productoController);
+server.setController(NotificacionController, notificacionController);
 
 // Configuracion de rutas y lanzamiento
 routes.forEach((route) => server.addRoute(route));
