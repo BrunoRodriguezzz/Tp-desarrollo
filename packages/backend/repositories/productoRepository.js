@@ -62,6 +62,12 @@ export default class ProductoRepository {
     this.nextId = 1;
   }
 
+  create(producto) {
+    producto.id = this.nextId++;
+    this.productos.push(producto);
+    return producto;
+  }
+
   findAll(filtros = {}) {
     return this.applyFilters(this.productos, filtros);
   }

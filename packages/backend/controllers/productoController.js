@@ -8,6 +8,19 @@ export default class ProductoController {
     this.productoService = productoService;
   }
 
+  create(req, res) {
+    const body = req.body;
+    const resultBody = productoSchema.safeParse(body);
+
+    if (resultBody.error) {
+      res.status(400).json(resultBody.error.issues);
+      return;
+    }
+
+    const nuevoProducto = this.productoService.create(resultBody.data);
+    res.status(201).json(nuevoProducto);
+  }
+
   findAll(req, res) {
     const productosPaginados = paginationGetValues(
       req,
@@ -49,10 +62,10 @@ export default class ProductoController {
 }
 
 const productoSchema = z.object({
-  vendendor: z.number().min(1),
+  vendedor: z.number().min(1),
   titulo: z.string().min(3).max(50),
   descripcion: z.string().max(500).optional(),
-  categorias: z.array(z.number().min(1)).optional(),
+  categorias: z.array(z.string()).optional(),
   precio: z.number().min(0).optional(),
   moneda: z.string().length(3).optional(),
 });

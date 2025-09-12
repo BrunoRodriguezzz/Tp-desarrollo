@@ -3,6 +3,7 @@ import { isMoneda } from "../../validadores/validadorDeEnums.js";
 import { validar } from "../../validadores/validadoresProducto.js";
 import { validarCategoria } from "../../validadores/validadorDeClases.js";
 import { validarNumeroPositivo } from "../../validadores/validadorTiposNativos.js";
+import { validarString } from "../../validadores/validadorTiposNativos.js";
 import Moneda from "../enums/moneda.js";
 import Categoria from "./categoria.js";
 
