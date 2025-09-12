@@ -1,0 +1,18 @@
+[
+  {
+    "lang": "es",
+    "mensajes": {
+      "PENDIENTE": "Nuevo pedido {id} realizado por {nombreComprador}.\nItems:\n{items}\nTotal: $ {total}\nDirección de entrega: {calle} {altura}, {piso} {departamento}. CP {codigoPostal}. {ciudad}, {provincia}, {pais}.",
+      "ENVIADO": "Tu pedido {id} fue enviado.",
+      "CANCELADO": "El pedido {id} fue cancelado por {nombreComprador}."
+    }
+  },
+  {
+    "lang": "en",
+    "mensajes": {
+      "PENDIENTE": "New order {id} placed by {nombreComprador}.\nItems:\n{items}\nTotal: $ {total}\nDelivery address: {calle} {altura}, {piso} {departamento}. Zip {codigoPostal}. {ciudad}, {provincia}, {pais}.",
+      "ENVIADO": "Your order {id} has been shipped.",
+      "CANCELADO": "The order {id} was canceled by {nombreComprador}."
+    }
+  }
+]
