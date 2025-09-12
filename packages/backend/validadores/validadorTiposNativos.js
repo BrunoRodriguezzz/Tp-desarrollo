@@ -1,4 +1,4 @@
-import { ValidationError } from "../models/excepcion/validationError.js";
+import { ValidationError } from "../errors/tiendaSolError.js";
 
 export const isString = (valor) => {
   return typeof valor === "string";
@@ -44,19 +44,25 @@ export const isArrayOf = (valor, tipo) => {
 
 export function validarString(valor, nombreCampo) {
   if (!isString(valor) || valor.trim() === "") {
-    throw new ValidationError(`El campo '${nombreCampo}' debe ser una cadena no vacía`);
+    throw new ValidationError(
+      `El campo '${nombreCampo}' debe ser una cadena no vacía`
+    );
   }
 }
 
 export function validarNumeroPositivo(valor, nombreCampo) {
   if (!isNumber(valor) || valor <= 0) {
-    throw new ValidationError(`El campo '${nombreCampo}' debe ser un número positivo`);
+    throw new ValidationError(
+      `El campo '${nombreCampo}' debe ser un número positivo`
+    );
   }
 }
 
 export function validarNumeroPositivoMayorCero(valor, nombreCampo) {
   if (!isNumber(valor) || valor < 0) {
-    throw new ValidationError(`El campo '${nombreCampo}' debe ser un número positivo mayor que cero`);
+    throw new ValidationError(
+      `El campo '${nombreCampo}' debe ser un número positivo mayor que cero`
+    );
   }
 }
 
@@ -70,6 +76,8 @@ export function validarEmail(email) {
 export function validarTelefono(telefono) {
   const telefonoRegex = /^\d{10}$/;
   if (!isString(telefono) || !telefonoRegex.test(telefono)) {
-    throw new ValidationError("El campo 'telefono' debe ser un teléfono válido");
+    throw new ValidationError(
+      "El campo 'telefono' debe ser un teléfono válido"
+    );
   }
 }

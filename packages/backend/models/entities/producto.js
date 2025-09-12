@@ -1,13 +1,13 @@
-import { ValidationError } from "../excepcion/validationError.js";
-import { StockError } from "../excepcion/stockError.js";
-import { isNumber, validarString, validarNumeroPositivo } from "../../validadores/validadorTiposNativos.js";
+import { ValidationError } from "../../errors/tiendaSolError.js";
 import { isMoneda } from "../../validadores/validadorDeEnums.js";
 import { validar } from "../../validadores/validadoresProducto.js";
 import { validarCategoria } from "../../validadores/validadorDeClases.js";
+import { validarNumeroPositivo } from "../../validadores/validadorTiposNativos.js";
+import { validarString } from "../../validadores/validadorTiposNativos.js";
 import Moneda from "../enums/moneda.js";
 import Categoria from "./categoria.js";
 
-class Producto {
+export default class Producto {
   id;
   vendedor;
   titulo;
@@ -40,7 +40,7 @@ class Producto {
   reducirStock(cantidad) {
     validarNumeroPositivo(cantidad, "Cantidad");
     if (this.stock - cantidad < 0) {
-      throw new StockError("No hay suficiente stock para reducir"); 
+      throw new ValidationError("No hay suficiente stock para reducir");
     }
     this.stock -= cantidad;
   }
@@ -95,8 +95,10 @@ class Producto {
   }
 
   setFotos(fotos) {
-    if(!isArrayOf(fotos, String)) {
-      throw new ValidationError("Las fotos deben ser un arreglo de cadenas (URLs)");
+    if (!isArrayOf(fotos, String)) {
+      throw new ValidationError(
+        "Las fotos deben ser un arreglo de cadenas (URLs)"
+      );
     }
     this.fotos = fotos;
   }
@@ -113,5 +115,3 @@ class Producto {
     this.id = id;
   }
 }
-
-export default Producto;
