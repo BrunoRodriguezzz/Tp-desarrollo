@@ -1,0 +1,234 @@
+
+openapi: 3.0.0
+info:
+  title: Tienda Sol API
+  description: |
+    Documentación de la API para la aplicación de tienda en línea.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /productos:
+    get:
+      summary: Obtener todos los productos
+      description: Devuelve una lista de todos los productos disponibles en el sistema. Permite filtrar y paginar resultados.
+      tags: [Productos]
+      parameters:
+        - in: query
+          name: maxPrice
+          schema:
+            type: number
+          description: Precio máximo
+        - in: query
+          name: minPrice
+          schema:
+            type: number
+          description: Precio mínimo
+        - in: query
+          name: search
+          schema:
+            type: string
+          description: Texto de búsqueda en el título o descripción
+        - in: query
+          name: page
+          schema:
+            type: integer
+            minimum: 1
+          description: Número de página para paginación
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            minimum: 1
+          description: Cantidad máxima de resultados por página
+      responses:
+        '200':
+          description: Lista de productos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Producto'
+              examples:
+                ejemplo:
+                  value:
+                    - id: 0
+                      vendedor:
+                        id: 0
+                        nombre: "string"
+                        tipo: "string"
+                      titulo: "string"
+                      descripcion: "string"
+                      categorias:
+                        - nombre: "string"
+                      precio: 0
+                      moneda: "string"
+                      stock: 0
+                      fotos:
+                        - "string"
+  /productos/vendedor/{id}:
+    get:
+      summary: Obtener productos de un vendedor
+      description: Devuelve todos los productos publicados por un vendedor específico. Permite filtrar y paginar resultados.
+      tags: [Productos]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: ID del vendedor
+        - in: query
+          name: maxPrice
+          schema:
+                                # activo: true
+          description: Precio máximo
+        - in: query
+          name: minPrice
+          schema:
+            type: number
+          description: Precio mínimo
+        - in: query
+          name: search
+          schema:
+            type: string
+          description: Texto de búsqueda en el título o descripción
+        - in: query
+          name: page
+          schema:
+            type: integer
+            minimum: 1
+          description: Número de página para paginación
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            minimum: 1
+          description: Cantidad máxima de resultados por página
+      responses:
+        '200':
+          description: Lista de productos del vendedor
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Producto'
+              examples:
+                ejemplo:
+                  value:
+                    - id: 0
+                      vendedor:
+                        id: 0
+                        nombre: "string"
+                        tipo: "string"
+                      titulo: "string"
+                      descripcion: "string"
+                      categorias:
+                        - nombre: "string"
+                      precio: 0
+                      moneda: "string"
+                      stock: 0
+                      fotos:
+                        - "string"
+  /notificaciones:
+    get:
+      summary: Obtener todas las notificaciones
+      description: Devuelve todas las notificaciones del sistema.
+      tags: [Notificaciones]
+      responses:
+        '200':
+          description: Lista de notificaciones
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Notificacion'
+  /notificaciones:{id}:
+    get:
+      summary: Obtener notificación por ID
+      description: Devuelve una notificación específica por su ID.
+      tags: [Notificaciones]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: ID de la notificación
+      responses:
+        '200':
+          description: Notificación encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Notificacion'
+        '404':
+          description: Notificación no encontrada
+  /health:
+    get:
+      summary: Health check
+      description: Endpoint para verificar que el sistema está funcionando.
+      tags: [Sistema]
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    Producto:
+      type: object
+      properties:
+        id:
+          type: integer
+        vendedor:
+          $ref: '#/components/schemas/UsuarioSimple'
+        titulo:
+          type: string
+        descripcion:
+          type: string
+        categorias:
+          type: array
+          items:
+            $ref: '#/components/schemas/Categoria'
+        precio:
+          type: number
+        moneda:
+          type: string
+        stock:
+          type: integer
+        fotos:
+          type: array
+          items:
+            type: string
+        activo:
+          type: boolean
+    Notificacion:
+      type: object
+      properties:
+        id:
+          type: integer
+        usuarioDestino:
+          $ref: '#/components/schemas/UsuarioSimple'
+        mensaje:
+          type: string
+        fechaAlta:
+          type: string
+          format: date-time
+        leida:
+          type: boolean
+    UsuarioSimple:
+      type: object
+      properties:
+        id:
+          type: integer
+        nombre:
+          type: string
+        tipo:
+          type: string
+    Categoria:
+      type: object
+      properties:
+        nombre:
+          type: string

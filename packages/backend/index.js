@@ -16,6 +16,8 @@ import ProductoService from "./services/productoService.js";
 import NotificacionService from "./services/notificacionService.js";
 
 import { errorHandler } from "./middlewares/errorHandler.js";
+// Swagger docs
+import swaggerDocs from "./swagger.js";
 // Importamos las rutas
 import routes from "./routes/routes.js";
 
@@ -47,6 +49,12 @@ server.setController(NotificacionController, notificacionController);
 
 // Configuracion de rutas y lanzamiento
 routes.forEach((route) => server.addRoute(route));
+
+// Swagger docs
+(async () => {
+  await swaggerDocs(app);
+})();
+
 server.configureRoutes();
 app.use(errorHandler);
 server.launch();
