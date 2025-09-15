@@ -62,9 +62,17 @@ export default class ProductoRepository {
     this.nextId = 1;
   }
 
-  create(producto) {
-    producto.id = this.nextId++;
-    this.productos.push(producto);
+  save(producto) {
+    if (!producto.id) {
+      producto.id = this.nextId++;
+      this.productos.push(producto);
+    } else {
+      const index = this.productos.findIndex((p) => p.id === producto.id);
+      if (index === -1) {
+        throw new Error(`producto con id ${producto.id} no encontrado`);
+      }
+      this.productos[index] = producto;
+    }
     return producto;
   }
 

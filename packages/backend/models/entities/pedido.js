@@ -2,6 +2,7 @@ import EstadoPedido from "../enums/estadoPedido.js";
 import Moneda from "../enums/moneda.js";
 import CambioEstadoPedido from "./cambioEstadoPedido.js";
 import ItemPedido from "./itemPedido.js";
+import validar from "../../validadores/validadoresProducto.js"
 
 class Pedido {
   id;
@@ -16,6 +17,7 @@ class Pedido {
   vendedor;
 
   constructor(comprador, moneda, direccion) {
+    validar(comprador, moneda, direccion);
     this.comprador = comprador;
     this.moneda = moneda;
     this.direccion = direccion;
