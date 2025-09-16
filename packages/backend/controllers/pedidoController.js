@@ -47,6 +47,30 @@ export default class PedidoController {
       return res.status(500).json({ error: "Error interno del servidor" });
     }
   }
+
+  getHistoryUser(req, res) {
+    const resultId = idTransform.safeParse(req.params.id);
+
+    if (resultId.error) {
+      res.status(400).json(resultId.error.issues);
+      return;
+    }
+    
+    const id = resultId.data.id;
+
+    try {
+      const pedidos = this.pedidoService.historialUsuario(id);
+
+      if (pedidos === null) {
+        res.status(204).send("No se encontraron pedidos para ese usuario");
+      }
+
+      res.status(200).json(pedidos);
+    }
+    catch (error) {
+      return res.status(error.statusCode).json({ error: error.message})
+    }
+  }
 }
 
 const idTransform = z.string().transform((val, ctx) => {

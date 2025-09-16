@@ -3,8 +3,8 @@ class UsuarioRepository {
     this.usuarios = [];
   }
 
-  findById(id) {
-    return this.usuarios.find(u => u.id === id) || null;
+  async findById(id) {
+    return this.usuarios.find((u) => u.id === id) || null;
   }
 }
 

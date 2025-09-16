@@ -14,5 +14,9 @@ export default function healtCheckRoute(getController) {
     getController(PedidoController).cancel(req, res)
   );
 
+  router.get(pathPedidos + "/usuarios/:id", (req, res) =>
+    getController(PedidoController).getHistoryUser(req, res)
+  );
+
   return router;
 }

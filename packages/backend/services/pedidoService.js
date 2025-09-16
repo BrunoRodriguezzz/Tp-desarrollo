@@ -100,4 +100,16 @@ export default class PedidoService {
 
     return pedido;
   }
+
+  async historialUsuario(usuarioId) {
+    const usuario = await this.usuarioRepository.findById(usuarioId);
+    validarComprador(usuario);
+
+    const pedidos = await this.pedidoRepository.findAllByUsuarioId(usuarioId);
+
+    return {
+      usuario: usuario,
+      pedidos: pedidos,
+    };
+  }
 }

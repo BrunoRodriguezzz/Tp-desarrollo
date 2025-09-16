@@ -1,6 +1,6 @@
 class PedidoRepository {
   constructor() {
-    this.pedidos = []; 
+    this.pedidos = [];
     this.nextId = 1;
   }
 
@@ -9,7 +9,7 @@ class PedidoRepository {
       pedido.id = this.nextId++;
       this.pedidos.push(pedido);
     } else {
-      const index = this.pedidos.findIndex(p => p.id === pedido.id);
+      const index = this.pedidos.findIndex((p) => p.id === pedido.id);
       if (index === -1) {
         throw new Error(`Pedido con id ${pedido.id} no encontrado`);
       }
@@ -19,7 +19,11 @@ class PedidoRepository {
   }
 
   findById(id) {
-    return this.pedidos.find(p => p.id === id) || null;
+    return this.pedidos.find((p) => p.id === id) || null;
+  }
+
+  async findAllByUsuarioId(usuarioId) {
+    return this.pedidos.filter((p) => (p.comprador = usuarioId));
   }
 }
 
