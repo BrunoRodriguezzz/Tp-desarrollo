@@ -55,7 +55,7 @@ export default class PedidoController {
       res.status(400).json(resultId.error.issues);
       return;
     }
-    
+
     const id = resultId.data.id;
 
     try {
@@ -66,9 +66,31 @@ export default class PedidoController {
       }
 
       res.status(200).json(pedidos);
+    } catch (error) {
+      return res.status(error.statusCode).json({ error: error.message });
     }
-    catch (error) {
-      return res.status(error.statusCode).json({ error: error.message})
+  }
+
+  async marcarEnvio(req, res) {
+    const resultId = idTransform.safeParse(req.params.id);
+
+    if (resultId.error) {
+      res.status(400).json(resultId.error.issues);
+      return;
+    }
+
+    const id = resultId.data.id;
+    const body = req.body;
+    const resultBody = enviadoSchema.safeParse(body);
+
+    try {
+      const pedidoEnviado = await this.pedidoService.marcarPedidoEnviado(
+        id,
+        resultBody.data
+      );
+      res.status(201).json(pedidoEnviado);
+    } catch (error) {
+      return res.status(error.statusCode).json({ error: error.message });
     }
   }
 }
@@ -83,4 +105,9 @@ const idTransform = z.string().transform((val, ctx) => {
     return z.NEVER;
   }
   return num;
+});
+
+const enviadoSchema = z.object({
+  idVendedor: z.number(),
+  motivo: z.string(),
 });

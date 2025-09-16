@@ -4,6 +4,8 @@ import {
   validarComprador,
   validarItemProducto,
   validarEstadoParaCancelar,
+  validarPedido,
+  validarEstadoParaEnviar,
 } from "../validadores/validadoresPedido.js";
 import { validarString } from "../validadores/validadorTiposNativos.js";
 
@@ -110,6 +112,32 @@ export default class PedidoService {
     return {
       usuario: usuario,
       pedidos: pedidos,
+    };
+  }
+
+  async marcarPedidoEnviado(idPedido, marcarEnvioJSON) {
+    //TODO - Vendedor hay que verificar si es efectivamente el vendedor de ese producto (producto service que lo estan haciendo)
+    const pedido = await this.pedidoRepository.findById(idPedido);
+    validarPedido(pedido);
+    validarEstadoParaEnviar(pedido);
+    validarString(marcarEnvioJSON.motivo);
+
+    const vendedor = await this.usuarioRepository.findById(
+      marcarEnvioJSON.vendedor
+    );
+    validarVendedor(vendedor);
+
+    pedido.actualizarEstado(
+      EstadoPedido.ENVIADO,
+      marcarEnvioJSON.vendedor,
+      marcarEnvioJSON.motivo
+    );
+    //TODO - En mongo es distinto (el domingo lo vemos?)
+    await this.pedidoRepository.save(pedido);
+
+    return {
+      pedido: pedido,
+      vendedor: vendedor,
     };
   }
 }

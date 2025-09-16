@@ -10,12 +10,16 @@ export default function healtCheckRoute(getController) {
     getController(PedidoController).create(req, res)
   );
 
-  router.patch(pathPedidos + "/:id/cancelar", (req, res) =>
+  router.post(pathPedidos + "/:id/cancelacion", (req, res) =>
     getController(PedidoController).cancel(req, res)
   );
 
   router.get(pathPedidos + "/usuarios/:id", (req, res) =>
     getController(PedidoController).getHistoryUser(req, res)
+  );
+
+  router.post(pathPedidos + "/:id/envio", (req, res) =>
+    getController(PedidoController).marcarEnvio(req, res)
   );
 
   return router;
