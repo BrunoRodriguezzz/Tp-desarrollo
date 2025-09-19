@@ -11,6 +11,7 @@ import NotificacionController from "./controllers/notificacionController.js";
 import ProductoRepository from "./repositories/productoRepository.js";
 import NotificacionRepository from "./repositories/notificacionRepository.js";
 import UsuarioRepository from "./repositories/usuarioRepository.js";
+import PedidoRepository from "./repositories/pedidoRepository.js";
 
 // Importamos los servicios
 import ProductoService from "./services/productoService.js";

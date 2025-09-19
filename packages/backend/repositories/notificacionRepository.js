@@ -44,7 +44,7 @@ export default class NotificacionRepository {
     return null;
   }
 
-  async save(notificacion) {
+  save(notificacion) {
     notificacion.id = this.nextId++;
     this.notificaciones.push(notificacion);
     return notificacion;
