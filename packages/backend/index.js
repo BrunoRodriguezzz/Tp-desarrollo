@@ -10,6 +10,7 @@ import NotificacionController from "./controllers/notificacionController.js";
 // Importamos los Repositorios
 import ProductoRepository from "./repositories/productoRepository.js";
 import NotificacionRepository from "./repositories/notificacionRepository.js";
+import UsuarioRepository from "./repositories/usuarioRepository.js";
 
 // Importamos los servicios
 import ProductoService from "./services/productoService.js";
@@ -32,6 +33,8 @@ const server = new Server(app, port);
 // Capas de Repositorio
 const productoRepository = new ProductoRepository();
 const notificacionRepository = new NotificacionRepository();
+const usuarioRepository = new UsuarioRepository();
+const pedidoRepository = new PedidoRepository();
 
 // Capas de Servicio
 const productoService = new ProductoService(productoRepository);
