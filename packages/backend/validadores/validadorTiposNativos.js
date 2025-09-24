@@ -1,4 +1,5 @@
 import { ValidationError } from "../errors/tiendaSolError.js";
+import { z } from "zod";
 
 export const isString = (valor) => {
   return typeof valor === "string";
@@ -51,7 +52,7 @@ export function validarString(valor, nombreCampo) {
 }
 
 export function validarNumeroPositivo(valor, nombreCampo) {
-  if (!isNumber(valor) || valor <= 0) {
+  if (!isNumber(valor) || valor < 0) {
     throw new ValidationError(
       `El campo '${nombreCampo}' debe ser un número positivo`
     );
@@ -59,7 +60,7 @@ export function validarNumeroPositivo(valor, nombreCampo) {
 }
 
 export function validarNumeroPositivoMayorCero(valor, nombreCampo) {
-  if (!isNumber(valor) || valor < 0) {
+  if (!isNumber(valor) || valor <= 0) {
     throw new ValidationError(
       `El campo '${nombreCampo}' debe ser un número positivo mayor que cero`
     );
@@ -81,3 +82,31 @@ export function validarTelefono(telefono) {
     );
   }
 }
+
+export function esEmailValido(cadena) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(cadena);
+}
+
+
+export function validarParsearID(req) {
+  const resultId = idTransform.safeParse(req.params.id);
+
+  if (resultId.error) {
+    throw new ValidationError("ID inválido");
+  }
+
+  return resultId.data;
+}
+
+const idTransform = z.string().transform((val, ctx) => {
+  const num = Number(val);
+  if (isNaN(num) || num < 0) {
+    ctx.addIssue({
+      code: "INVALID_ID",
+      message: "id must be a non-negative number",
+    });
+    return z.NEVER;
+  }
+  return num;
+});

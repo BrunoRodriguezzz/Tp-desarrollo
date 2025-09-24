@@ -8,6 +8,7 @@ import Categoria from "../models/entities/categoria.js";
 
 //! ESTO ES UNICAMENTE PARA PROBAR LA API
 import Usuario from "../models/entities/usuario.js";
+import { NotFoundError } from "../errors/tiendaSolError.js";
 const usuario1 = new Usuario("nombre", "tipo");
 const usuario2 = new Usuario("nombre", "tipo");
 const producto1 = new Producto(usuario1, "Producto 1");
@@ -116,5 +117,19 @@ export default class ProductoRepository {
     }
 
     return productosFiltrados;
+  }
+
+  update(id, productoModificado) {
+    const indice = this.productos.findIndex(p => p.id === id);
+    if (indice === -1) {
+      throw new NotFoundError("Producto no encontrado");
+    }
+    const productoActualizado = {
+      ...this.productos[indice],
+      ...productoModificado,
+      id: this.productos[indice].id
+    }
+    this.productos[indice] = productoActualizado;
+    return productoActualizado;
   }
 }

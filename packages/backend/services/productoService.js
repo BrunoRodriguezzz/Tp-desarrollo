@@ -1,7 +1,9 @@
 import { paginationBuildResponse } from "../utils/pagination.js";
+import { parsearMoneda } from "../validadores/validadorDeEnums.js";
 import Producto from "../models/entities/producto.js";
 import Usuario from "../models/entities/usuario.js";
 import Categoria from "../models/entities/categoria.js";
+import Moneda from "../models/enums/moneda.js";
 
 const usuario = new Usuario("HARDCODE BRO", "tipo");
 usuario.id = 1;
@@ -14,41 +16,19 @@ export default class ProductoService {
   create(nuevoProductoJSON) {
     //! El vendedor full hardcodeado obviamente se tiene que ir
     const nuevoProducto = new Producto(usuario, nuevoProductoJSON.titulo);
+    const tipoMoneda = parsearMoneda(nuevoProductoJSON.moneda);
 
     const categorias = (nuevoProductoJSON.categorias || []).map(
       (nombre) => new Categoria(nombre)
     );
 
-    if (Array.isArray(nuevoProductoJSON.categorias)) {
-      for (const categoria of categorias) {
-        nuevoProducto.agregarCategoria(categoria);
-      }
-    }
-
-    if (Array.isArray(nuevoProductoJSON.fotos)) {
-      nuevoProductoJSON.fotos.forEach((foto) =>
-        nuevoProducto.agregarFoto(foto)
-      );
-    }
-
-    if (typeof nuevoProductoJSON.descripcion === "string") {
-      nuevoProducto.setDescripcion(nuevoProductoJSON.descripcion);
-    }
-
-    if (typeof nuevoProductoJSON.precio === "number") {
-      nuevoProducto.setPrecio(nuevoProductoJSON.precio);
-    }
-    if (typeof nuevoProductoJSON.moneda === "string") {
-      nuevoProducto.setMoneda(nuevoProductoJSON.moneda);
-    }
-    if (typeof nuevoProductoJSON.stock === "number") {
-      nuevoProducto.aumentarStock(nuevoProductoJSON.stock);
-    }
-
-    // Estado activo opcional
-    if (typeof nuevoProductoJSON.activo === "boolean") {
-      nuevoProducto.setActivo(nuevoProductoJSON.activo);
-    }
+    nuevoProducto.setCategorias(categorias);
+    nuevoProducto.setFotos(nuevoProductoJSON.fotos || []);
+    nuevoProducto.setDescripcion(nuevoProductoJSON.descripcion || "");
+    nuevoProducto.setPrecio(nuevoProductoJSON.precio || 0);
+    nuevoProducto.setMoneda(tipoMoneda || Moneda.PESO_ARG); // Hay q convertir a enum
+    nuevoProducto.aumentarStock(nuevoProductoJSON.stock || 0);
+    nuevoProducto.setActivo(true);
 
     const productoGuardado = this.productoRepository.create(nuevoProducto);
     return productoGuardado;
@@ -95,6 +75,11 @@ export default class ProductoService {
     paginado.data = this.order(paginado.data, filtros);
 
     return paginado;
+  }
+
+  update(id, productoJSON) {
+    const productoActualizado = this.productoRepository.update(id, productoJSON);
+    return productoActualizado;
   }
 
   order(data, filtros) {

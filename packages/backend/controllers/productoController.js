@@ -1,5 +1,9 @@
-import { z } from "zod";
 import { paginationGetValues } from "../utils/pagination.js";
+import { validarParsearID } from "../validadores/validadorTiposNativos.js";
+import {
+  validarParsearProducto,
+  validarParsearUpdateProducto,
+} from "../validadores/validadoresProducto.js";
 
 export default class ProductoController {
   productoService;
@@ -9,15 +13,9 @@ export default class ProductoController {
   }
 
   create(req, res) {
-    const body = req.body;
-    const resultBody = productoSchema.safeParse(body);
+    const resultBody = validarParsearProducto(req);
 
-    if (resultBody.error) {
-      res.status(400).json(resultBody.error.issues);
-      return;
-    }
-
-    const nuevoProducto = this.productoService.create(resultBody.data);
+    const nuevoProducto = this.productoService.create(resultBody);
     res.status(201).json(nuevoProducto);
   }
 
@@ -37,14 +35,7 @@ export default class ProductoController {
   }
 
   findBySeller(req, res) {
-    const resultId = idTransform.safeParse(req.params.id);
-
-    if (resultId.error) {
-      res.status(400).json(resultId.error.issues);
-      return;
-    }
-
-    const id = resultId.data;
+    const id = validarParsearID(req);
 
     const productosPaginados = paginationGetValues(
       req,
@@ -59,25 +50,13 @@ export default class ProductoController {
 
     res.status(200).json(productosPaginados);
   }
-}
 
-const productoSchema = z.object({
-  vendedor: z.number().min(1),
-  titulo: z.string().min(3).max(50),
-  descripcion: z.string().max(500).optional(),
-  categorias: z.array(z.string()).optional(),
-  precio: z.number().min(0).optional(),
-  moneda: z.string().length(3).optional(),
-});
+  update(req, res) {
+    const id = validarParsearID(req);
+    const resultBody = validarParsearUpdateProducto(req);
 
-const idTransform = z.string().transform((val, ctx) => {
-  const num = Number(val);
-  if (isNaN(num)) {
-    ctx.addIssue({
-      code: "INVALID_ID",
-      message: "id must be a number",
-    });
-    return z.NEVER;
+    const productoActualizado = this.productoService.update(id, resultBody);
+
+    res.status(200).json(productoActualizado);
   }
-  return num;
-});
+}

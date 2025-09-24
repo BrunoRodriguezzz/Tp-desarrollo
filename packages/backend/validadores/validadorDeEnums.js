@@ -1,3 +1,4 @@
+import { ValidationError } from "../errors/tiendaSolError.js";
 import EstadoPedido from "../models/enums/estadoPedido.js";
 import Moneda from "../models/enums/moneda.js";
 import TipoUsuario from "../models/enums/tipoUsuario.js";
@@ -12,4 +13,20 @@ export const isMoneda = (moneda) => {
 
 export const isTipoUsuario = (tipo) => {
   return Object.values(TipoUsuario).includes(tipo);
+}
+
+export function parsearMoneda(moneda) {
+  if (moneda == null) {
+    return Moneda.ARS; // Valor por defecto
+  }
+  switch (moneda.toUpperCase()) {
+    case "ARS":
+      return Moneda.PESO_ARG;
+    case "USD":
+      return Moneda.DOLAR_USA;
+    case "EUR":
+      return Moneda.REAL;
+    default:
+      throw new ValidationError(`Moneda inválida: ${moneda}`);
+  }
 }

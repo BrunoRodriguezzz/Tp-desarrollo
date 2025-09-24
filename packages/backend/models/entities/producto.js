@@ -2,7 +2,7 @@ import { ValidationError } from "../../errors/tiendaSolError.js";
 import { isMoneda } from "../../validadores/validadorDeEnums.js";
 import { validar } from "../../validadores/validadoresProducto.js";
 import { validarCategoria } from "../../validadores/validadorDeClases.js";
-import { validarNumeroPositivo } from "../../validadores/validadorTiposNativos.js";
+import { validarNumeroPositivo, isArrayOf } from "../../validadores/validadorTiposNativos.js";
 import { validarString } from "../../validadores/validadorTiposNativos.js";
 import Moneda from "../enums/moneda.js";
 import Categoria from "./categoria.js";
@@ -49,8 +49,6 @@ export default class Producto {
     validarNumeroPositivo(cantidad, "Cantidad");
     this.stock += cantidad;
   }
-
-  // Agregar Categoria - fotos
 
   agregarCategoria(categoria) {
     validarCategoria(categoria);
