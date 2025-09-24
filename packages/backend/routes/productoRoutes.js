@@ -18,8 +18,16 @@ export default function healtCheckRoute(getController) {
     getController(ProductoController).findBySeller(req, res)
   );
 
-  router.put(pathProductos + "/:id", (req, res) =>
+  router.get(pathProductos + "/:id", (req, res) =>
+    getController(ProductoController).findById(req, res)
+  );
+
+  router.patch(pathProductos + "/:id", (req, res) =>
     getController(ProductoController).update(req, res)
+  );
+
+  router.delete(pathProductos + "/:id", (req, res) =>
+    getController(ProductoController).delete(req, res)
   );
 
   return router;

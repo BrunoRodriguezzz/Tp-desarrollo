@@ -19,6 +19,12 @@ export default class ProductoController {
     res.status(201).json(nuevoProducto);
   }
 
+  findById(req, res) {
+    const id = validarParsearID(req);
+    const producto = this.productoService.findById(id);
+    res.status(200).json(producto);
+  }
+
   findAll(req, res) {
     const productosPaginados = paginationGetValues(
       req,
@@ -58,5 +64,11 @@ export default class ProductoController {
     const productoActualizado = this.productoService.update(id, resultBody);
 
     res.status(200).json(productoActualizado);
+  }
+
+  delete(req, res) {
+    const id = validarParsearID(req);
+    this.productoService.delete(id);
+    res.status(204).send();
   }
 }

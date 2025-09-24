@@ -116,7 +116,7 @@ export default class ProductoRepository {
       productosFiltrados = filtrarPorBusqueda(productosFiltrados, search);
     }
 
-    return productosFiltrados;
+    return productosFiltrados.filter(p => p.activo);
   }
 
   update(id, productoModificado) {
@@ -131,5 +131,21 @@ export default class ProductoRepository {
     }
     this.productos[indice] = productoActualizado;
     return productoActualizado;
+  }
+
+  findById(id) {
+    const producto = this.productos.find(p => p.id === id && p.activo);
+    if (!producto) {
+      throw new NotFoundError("Producto no encontrado");
+    }
+    return producto;
+  }
+
+  delete(id) {
+    const producto = this.productos.find(p => p.id === id);
+    if (!producto) {
+      throw new NotFoundError("Producto no encontrado");
+    }
+    producto.setActivo(false);
   }
 }

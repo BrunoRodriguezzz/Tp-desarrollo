@@ -34,6 +34,10 @@ export default class ProductoService {
     return productoGuardado;
   }
 
+  findById(id) { 
+    return this.productoRepository.findById(id);
+  }
+
   findAll(page = 1, limit = 10, filtros = {}) {
     const paginado = paginationBuildResponse(
       page,
@@ -80,6 +84,10 @@ export default class ProductoService {
   update(id, productoJSON) {
     const productoActualizado = this.productoRepository.update(id, productoJSON);
     return productoActualizado;
+  }
+
+  delete(id) {
+    this.productoRepository.delete(id);
   }
 
   order(data, filtros) {

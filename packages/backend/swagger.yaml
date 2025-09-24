@@ -166,6 +166,71 @@ paths:
                   $ref: '#/components/schemas/Producto'
         '204':
           description: No se encontraron productos.
+  /productos/{id}:
+    get:
+      tags:
+        - Productos
+      summary: Obtener producto por ID
+      description: Devuelve la información de un producto específico según su ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: ID del producto a buscar.
+      responses:
+        '200':
+          description: Producto encontrado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Producto'
+        '404':
+          description: Producto no encontrado.
+    delete:
+      tags:
+        - Productos
+      summary: Eliminar producto por ID
+      description: Elimina un producto específico según su ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: ID del producto a eliminar.
+      responses:
+        '204':
+          description: Producto eliminado exitosamente.
+        '404':
+          description: Producto no encontrado.
+    patch:
+        tags:
+          - Productos
+        summary: Actualiza parcialmente un producto existente
+        description: Permite modificar uno o más campos de un producto por su ID.
+        parameters:
+          - in: path
+            name: id
+            required: true
+            schema:
+              type: integer
+            description: ID del producto a actualizar
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Campos a modificar del producto
+        responses:
+          '200':
+            description: Producto actualizado correctamente
+          '400':
+            description: Datos inválidos
+          '404':
+            description: Producto no encontrado
   /productos/vendedor/{id}:
     get:
       tags:
