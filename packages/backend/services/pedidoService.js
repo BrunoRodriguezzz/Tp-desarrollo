@@ -16,80 +16,76 @@ export default class PedidoService {
     this.productoRepository = ProductoRepository;
   }
 
-  create(nuevoPedidoJSON) {
-    const comprador = this.usuarioRepository.findById(
-      nuevoPedidoJSON.compradorId
-    );
+  async create(nuevoPedidoJSON) {
+    const { compradorId, moneda, direccion, items } = nuevoPedidoJSON;
+
+    const comprador = await this.usuarioRepository.findById(compradorId);
     validarComprador(comprador);
 
-    const pais = new Pais(
-      nuevoPedidoJSON.direccion.ciudad.provincia.pais.nombre
-    );
-    const provincia = new Provincia(
-      nuevoPedidoJSON.direccion.ciudad.provincia.nombre,
-      pais
-    );
-    const ciudad = new Ciudad(
-      nuevoPedidoJSON.direccion.ciudad.nombre,
-      provincia
-    );
-    const domicilio = new Domicilio(
-      nuevoPedidoJSON.direccion.domicilio.calle,
-      nuevoPedidoJSON.direccion.domicilio.altura
+    const direccionEntrega = this.buildDireccionEntrega(direccion);
+
+    const pedido = new Pedido(comprador, moneda, direccionEntrega);
+
+    const itemsValidados = await Promise.all(
+      items.map(async (item) => {
+        const producto = await this.productoRepository.findById(
+          item.productoId
+        );
+        validarItemProducto(producto, item);
+
+        const itemPedido = new ItemPedido(producto, item.cantidad);
+        return {
+          itemPedido,
+          producto,
+          nuevaCantidad: producto.stock - item.cantidad,
+        };
+      })
     );
 
-    if (nuevoPedidoJSON.direccion.domicilio.piso)
-      domicilio.setPiso(nuevoPedidoJSON.direccion.domicilio.piso);
-    if (nuevoPedidoJSON.direccion.domicilio.departamento)
-      domicilio.setDepartamento(
-        nuevoPedidoJSON.direccion.domicilio.departamento
-      );
-    if (nuevoPedidoJSON.direccion.domicilio.codigoPostal)
-      domicilio.setCodigoPostal(
-        nuevoPedidoJSON.direccion.domicilio.codigoPostal
-      );
-
-    const coordenada = new Coordenada(
-      nuevoPedidoJSON.direccion.coordenada.latitud,
-      nuevoPedidoJSON.direccion.coordenada.longitud
-    );
-    const direccionEntrega = new DireccionEntrega(
-      domicilio,
-      ciudad,
-      coordenada
-    );
-
-    const pedido = new Pedido(
-      comprador,
-      nuevoPedidoJSON.moneda,
-      direccionEntrega
-    );
-
-    for (const item of nuevoPedidoJSON.items) {
-      const producto = this.productoRepository.findById(item.productoId);
-      validarItemProducto(producto, item);
-      const itemPedido = new ItemPedido(producto, item.cantidad);
+    for (const { itemPedido, producto, nuevaCantidad } of itemsValidados) {
       pedido.agregarItem(itemPedido);
+      producto.stock = nuevaCantidad;
+      await this.productoRepository.save(producto);
     }
 
-    items.forEach((item) => {
-      const producto = this.productoRepository.findById(item.productoId);
-      producto.stock -= item.cantidad;
-      this.productoRepository.save(producto);
-    });
-
-    this.pedidoRepository.save(pedido);
+    await this.pedidoRepository.save(pedido);
 
     return pedido;
   }
 
-  cancel(pedidoCanceladoJSON) {
-    const comprador = this.usuarioRepository.findById(
+  buildDireccionEntrega(direccion) {
+    const {
+      ciudad: ciudadData,
+      domicilio: domicilioData,
+      coordenada: coordenadaData,
+    } = direccion;
+    const pais = new Pais(ciudadData.provincia.pais.nombre);
+    const provincia = new Provincia(ciudadData.provincia.nombre, pais);
+    const ciudad = new Ciudad(ciudadData.nombre, provincia);
+
+    const domicilio = new Domicilio(domicilioData.calle, domicilioData.altura);
+    if (domicilioData.piso) domicilio.setPiso(domicilioData.piso);
+    if (domicilioData.departamento)
+      domicilio.setDepartamento(domicilioData.departamento);
+    if (domicilioData.codigoPostal)
+      domicilio.setCodigoPostal(domicilioData.codigoPostal);
+
+    const coordenada = new Coordenada(
+      coordenadaData.latitud,
+      coordenadaData.longitud
+    );
+    return new DireccionEntrega(domicilio, ciudad, coordenada);
+  }
+
+  async cancel(pedidoCanceladoJSON) {
+    const comprador = await this.usuarioRepository.findById(
       pedidoCanceladoJSON.compradorId
     );
     validarComprador(comprador);
 
-    const pedido = this.pedidoRepository.findById(pedidoCanceladoJSON.pedidoId);
+    const pedido = await this.pedidoRepository.findById(
+      pedidoCanceladoJSON.pedidoId
+    );
     validarPedido(pedido);
 
     validarString(pedidoCanceladoJSON.motivo);
@@ -98,7 +94,7 @@ export default class PedidoService {
 
     pedido.actualizarEstado(EstadoPedido.CANCELADO, comprador, motivo);
 
-    this.pedidoRepository.save(pedido);
+    await this.pedidoRepository.save(pedido);
 
     return pedido;
   }

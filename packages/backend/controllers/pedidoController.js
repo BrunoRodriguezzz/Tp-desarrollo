@@ -7,44 +7,35 @@ export default class PedidoController {
     this.pedidoService = pedidoService;
   }
 
-  create(req, res) {
+  async create(req, res) {
     const body = req.body;
-    // const resultBody = pedidoSchema.safeParse(body); ver de hacer lo de schema
+    const resultBody = pedidoSchema.safeParse(body);
 
-    if (body.error) {
-      res.status(400).json(body.error.issues);
+    if (resultBody.error) {
+      res.status(400).json(resultBody.error.issues);
       return;
     }
 
     try {
-      const nuevoPedido = this.pedidoService.create(body.data);
+      const nuevoPedido = await this.pedidoService.create(resultBody.data);
       return res.status(201).json(nuevoPedido);
     } catch (error) {
-      if (error.isOperational) {
-        return res.status(error.statusCode).json({ error: error.message });
-      }
-      return res.status(500).json({ error: "Error interno del servidor" });
+      return res.status(error.statusCode).json({ error: error.message });
     }
   }
 
-  cancel(req, res) {
+  async cancel(req, res) {
     const resultId = idTransform.safeParse(req.params.id);
 
     if (resultId.error) {
       res.status(400).json(resultId.error.issues);
       return;
     }
-
-    const id = resultId.data;
-
     try {
-      const pedidoCancelado = this.pedidoService.cancel(id);
-      res.status(201).json(pedidoCancelado);
+      const pedidoCancelado = await this.pedidoService.cancel(resultId.data);
+      res.status(200).json(pedidoCancelado);
     } catch (error) {
-      if (error.isOperational) {
-        return res.status(error.statusCode).json({ error: error.message });
-      }
-      return res.status(500).json({ error: "Error interno del servidor" });
+      return res.status(error.statusCode).json({ error: error.message });
     }
   }
 
@@ -88,7 +79,7 @@ export default class PedidoController {
         id,
         resultBody.data
       );
-      res.status(201).json(pedidoEnviado);
+      res.status(200).json(pedidoEnviado);
     } catch (error) {
       return res.status(error.statusCode).json({ error: error.message });
     }
@@ -110,4 +101,37 @@ const idTransform = z.string().transform((val, ctx) => {
 const enviadoSchema = z.object({
   idVendedor: z.number(),
   motivo: z.string(),
+});
+
+export const pedidoSchema = z.object({
+  compradorId: z.number(),
+  moneda: z.nativeEnum(Moneda),
+  direccion: z.object({
+    ciudad: z.object({
+      nombre: z.string(),
+      provincia: z.object({
+        nombre: z.string(),
+        pais: z.object({
+          nombre: z.string(),
+        }),
+      }),
+    }),
+    domicilio: z.object({
+      calle: z.string(),
+      altura: z.number(),
+      piso: z.number().optional(),
+      departamento: z.string().optional(),
+      codigoPostal: z.string().optional(),
+    }),
+    coordenada: z.object({
+      latitud: z.number(),
+      longitud: z.number(),
+    }),
+  }),
+  items: z.array(
+    z.object({
+      productoId: z.number(),
+      cantidad: z.number().min(1),
+    })
+  ),
 });
