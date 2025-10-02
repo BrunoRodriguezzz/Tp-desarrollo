@@ -21,6 +21,8 @@ import swaggerDocs from "./swagger.js";
 // Importamos las rutas
 import routes from "./routes/routes.js";
 
+import MongoDBClient from "./config/database.js";
+
 // Inicializacion
 const app = express();
 dotenv.config({ path: "./packages/backend/.env" });
@@ -58,3 +60,6 @@ routes.forEach((route) => server.addRoute(route));
 server.configureRoutes();
 app.use(errorHandler);
 server.launch();
+
+//Conexion a la DB
+MongoDBClient.connect();
