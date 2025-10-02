@@ -1,10 +1,12 @@
+import { UsuarioModel } from "../schemas/usuarioSchema";
+
 class UsuarioRepository {
   constructor() {
-    this.usuarios = [];
+    this.model = UsuarioModel;
   }
 
   async findById(id) {
-    return this.usuarios.find((u) => u.id === id) || null;
+    return this.model.findById(id);
   }
 }
 

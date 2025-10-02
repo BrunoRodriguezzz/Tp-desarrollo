@@ -1,29 +1,33 @@
+import { PedidoModel } from "../schemas/pedidoSchema";
+
 class PedidoRepository {
   constructor() {
-    this.pedidos = [];
-    this.nextId = 1;
+    this.model = PedidoModel;
   }
 
-  save(pedido) {
-    if (!pedido.id) {
-      pedido.id = this.nextId++;
-      this.pedidos.push(pedido);
-    } else {
-      const index = this.pedidos.findIndex((p) => p.id === pedido.id);
-      if (index === -1) {
-        throw new Error(`Pedido con id ${pedido.id} no encontrado`);
-      }
-      this.pedidos[index] = pedido;
-    }
-    return pedido;
+  async save(pedido) {
+    const nuevoPedido = new this.model(pedido);
+    return await nuevoPedido.save();
   }
 
-  findById(id) {
-    return this.pedidos.find((p) => p.id === id) || null;
+  async findById(id) {
+    return await this.model
+      .findById(id)
+      .populate("comprador")
+      .populate("vendedor")
+      .populate("items.producto");
   }
 
   async findAllByUsuarioId(usuarioId) {
-    return this.pedidos.filter((p) => (p.comprador = usuarioId));
+    return await this.model
+      .find({ comprador: usuarioId })
+      .populate("comprador")
+      .populate("vendedor")
+      .populate("items.producto");
+  }
+
+  async update(id, pedidoModificado) {
+    return this.model.findByIdAndUpdate(id, pedidoModificado, { new: true });
   }
 }
 

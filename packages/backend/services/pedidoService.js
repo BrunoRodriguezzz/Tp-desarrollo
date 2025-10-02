@@ -48,9 +48,7 @@ export default class PedidoService {
       await this.productoRepository.save(producto);
     }
 
-    await this.pedidoRepository.save(pedido);
-
-    return pedido;
+    return await this.pedidoRepository.save(pedido);
   }
 
   buildDireccionEntrega(direccion) {
@@ -94,9 +92,10 @@ export default class PedidoService {
 
     pedido.actualizarEstado(EstadoPedido.CANCELADO, comprador, motivo);
 
-    await this.pedidoRepository.save(pedido);
-
-    return pedido;
+    return await this.pedidoRepository.update(
+      pedidoCanceladoJSON.pedidoId,
+      pedido
+    );
   }
 
   async historialUsuario(usuarioId) {
@@ -128,11 +127,14 @@ export default class PedidoService {
       marcarEnvioJSON.vendedor,
       marcarEnvioJSON.motivo
     );
-    //TODO - En mongo es distinto (el domingo lo vemos?)
-    await this.pedidoRepository.save(pedido);
+
+    const PedidoActualizado = await this.pedidoRepository.update(
+      idPedido,
+      pedido
+    );
 
     return {
-      pedido: pedido,
+      pedido: PedidoActualizado,
       vendedor: vendedor,
     };
   }
