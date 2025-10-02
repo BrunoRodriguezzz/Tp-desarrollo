@@ -20,6 +20,7 @@ import { errorHandler } from "./middlewares/errorHandler.js";
 import swaggerDocs from "./swagger.js";
 // Importamos las rutas
 import routes from "./routes/routes.js";
+import { MongoDBClient } from "./config/database.js";
 
 // Inicializacion
 const app = express();
@@ -58,3 +59,5 @@ routes.forEach((route) => server.addRoute(route));
 server.configureRoutes();
 app.use(errorHandler);
 server.launch();
+
+MongoDBClient.connect();

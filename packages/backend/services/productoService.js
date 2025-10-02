@@ -1,21 +1,24 @@
-import { paginationBuildResponse } from "../utils/pagination.js";
 import { parsearMoneda } from "../validadores/validadorDeEnums.js";
 import Producto from "../models/entities/producto.js";
-import Usuario from "../models/entities/usuario.js";
 import Categoria from "../models/entities/categoria.js";
 import Moneda from "../models/enums/moneda.js";
+import { ValidationError } from "../errors/tiendaSolError.js";
+import Usuario from "../models/entities/usuario.js";
+import TipoUsuario from "../models/enums/tipoUsuario.js";
+import mongoose from "mongoose";
 
-const usuario = new Usuario("HARDCODE BRO", "tipo");
-usuario.id = 1;
+const usuario = new Usuario("Juan", TipoUsuario.VENDEDOR);
 
 export default class ProductoService {
   constructor(ProductoRepository) {
     this.productoRepository = ProductoRepository;
   }
 
-  create(nuevoProductoJSON) {
-    //! El vendedor full hardcodeado obviamente se tiene que ir
+  async create(nuevoProductoJSON) {
+    usuario.id = nuevoProductoJSON.vendedor;
+
     const nuevoProducto = new Producto(usuario, nuevoProductoJSON.titulo);
+
     const tipoMoneda = parsearMoneda(nuevoProductoJSON.moneda);
 
     const categorias = (nuevoProductoJSON.categorias || []).map(
@@ -26,89 +29,127 @@ export default class ProductoService {
     nuevoProducto.setFotos(nuevoProductoJSON.fotos || []);
     nuevoProducto.setDescripcion(nuevoProductoJSON.descripcion || "");
     nuevoProducto.setPrecio(nuevoProductoJSON.precio || 0);
-    nuevoProducto.setMoneda(tipoMoneda || Moneda.PESO_ARG); // Hay q convertir a enum
+    nuevoProducto.setMoneda(tipoMoneda || Moneda.PESO_ARG);
     nuevoProducto.aumentarStock(nuevoProductoJSON.stock || 0);
     nuevoProducto.setActivo(true);
 
-    const productoGuardado = this.productoRepository.create(nuevoProducto);
+    const productoParaGuardar = {
+      vendedor: usuario.id,
+      titulo: nuevoProducto.titulo,
+      descripcion: nuevoProducto.descripcion,
+      categorias: nuevoProducto.categorias.map((categoria) => categoria.nombre),
+      precio: nuevoProducto.precio,
+      moneda: nuevoProducto.moneda,
+      stock: nuevoProducto.stock,
+      fotos: nuevoProducto.fotos,
+      activo: nuevoProducto.activo,
+    };
+
+    const productoGuardado =
+      await this.productoRepository.save(productoParaGuardar);
     return productoGuardado;
   }
 
-  findById(id) { 
-    return this.productoRepository.findById(id);
+  async findAll() {
+    return await this.productoRepository.findAll();
   }
 
-  findAll(page = 1, limit = 10, filtros = {}) {
-    const paginado = paginationBuildResponse(
-      page,
-      limit,
-      filtros,
-      (numeroPagina, elementosPorPagina, filtros) =>
-        this.productoRepository.findByPage(
-          numeroPagina,
-          elementosPorPagina,
-          filtros
-        )
-    );
+  // create(nuevoProductoJSON) {
+  //   //! El vendedor full hardcodeado obviamente se tiene que ir
+  //   const nuevoProducto = new Producto(usuario, nuevoProductoJSON.titulo);
+  //   const tipoMoneda = parsearMoneda(nuevoProductoJSON.moneda);
 
-    paginado.total = this.productoRepository.countAll(filtros);
-    paginado.calculateTotalPages();
+  //   const categorias = (nuevoProductoJSON.categorias || []).map(
+  //     (nombre) => new Categoria(nombre)
+  //   );
 
-    paginado.data = this.order(paginado.data, filtros);
+  //   nuevoProducto.setCategorias(categorias);
+  //   nuevoProducto.setFotos(nuevoProductoJSON.fotos || []);
+  //   nuevoProducto.setDescripcion(nuevoProductoJSON.descripcion || "");
+  //   nuevoProducto.setPrecio(nuevoProductoJSON.precio || 0);
+  //   nuevoProducto.setMoneda(tipoMoneda || Moneda.PESO_ARG); // Hay q convertir a enum
+  //   nuevoProducto.aumentarStock(nuevoProductoJSON.stock || 0);
+  //   nuevoProducto.setActivo(true);
 
-    return paginado;
-  }
+  //   const productoGuardado = this.productoRepository.create(nuevoProducto);
+  //   return productoGuardado;
+  // }
 
-  findBySeller(vendedorId, page = 1, limit = 10, filtros = {}) {
-    const paginado = paginationBuildResponse(
-      page,
-      limit,
-      filtros,
-      (numeroPagina, elementosPorPagina, filtros) =>
-        this.productoRepository.findBySeller(
-          numeroPagina,
-          elementosPorPagina,
-          filtros,
-          vendedorId
-        )
-    );
+  // findById(id) {
+  //   return this.productoRepository.findById(id);
+  // }
 
-    paginado.total = this.productoRepository.countBySeller(filtros, vendedorId);
-    paginado.calculateTotalPages();
+  // findAll(page = 1, limit = 10, filtros = {}) {
+  //   const paginado = paginationBuildResponse(
+  //     page,
+  //     limit,
+  //     filtros,
+  //     (numeroPagina, elementosPorPagina, filtros) =>
+  //       this.productoRepository.findByPage(
+  //         numeroPagina,
+  //         elementosPorPagina,
+  //         filtros
+  //       )
+  //   );
 
-    paginado.data = this.order(paginado.data, filtros);
+  //   paginado.total = this.productoRepository.countAll(filtros);
+  //   paginado.calculateTotalPages();
 
-    return paginado;
-  }
+  //   paginado.data = this.order(paginado.data, filtros);
 
-  update(id, productoJSON) {
-    const productoActualizado = this.productoRepository.update(id, productoJSON);
-    return productoActualizado;
-  }
+  //   return paginado;
+  // }
 
-  delete(id) {
-    this.productoRepository.delete(id);
-  }
+  // findBySeller(vendedorId, page = 1, limit = 10, filtros = {}) {
+  //   const paginado = paginationBuildResponse(
+  //     page,
+  //     limit,
+  //     filtros,
+  //     (numeroPagina, elementosPorPagina, filtros) =>
+  //       this.productoRepository.findBySeller(
+  //         numeroPagina,
+  //         elementosPorPagina,
+  //         filtros,
+  //         vendedorId
+  //       )
+  //   );
 
-  order(data, filtros) {
-    const { orderBy } = filtros;
+  //   paginado.total = this.productoRepository.countBySeller(filtros, vendedorId);
+  //   paginado.calculateTotalPages();
 
-    if (orderBy) {
-      switch (orderBy) {
-        case "price_asc":
-          data.sort((a, b) => a.precio - b.precio);
-          break;
-        case "price_desc":
-          data.sort((a, b) => b.precio - a.precio);
-          break;
-        case "best_seller":
-          // TODO: Esperar implementacion de persistencia de pedidos
-          break;
-        default:
-          break;
-      }
-    }
+  //   paginado.data = this.order(paginado.data, filtros);
 
-    return data;
-  }
+  //   return paginado;
+  // }
+
+  // update(id, productoJSON) {
+  //   const productoActualizado = this.productoRepository.update(id, productoJSON);
+  //   return productoActualizado;
+  // }
+
+  // delete(id) {
+  //   this.productoRepository.delete(id);
+  // }
+
+  // order(data, filtros) {
+  //   const { orderBy } = filtros;
+
+  //   if (orderBy) {
+  //     switch (orderBy) {
+  //       case "price_asc":
+  //         data.sort((a, b) => a.precio - b.precio);
+  //         break;
+  //       case "price_desc":
+  //         data.sort((a, b) => b.precio - a.precio);
+  //         break;
+  //       case "best_seller":
+  //         // TODO: Esperar implementacion de persistencia de pedidos
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //   }
+
+  //   return data;
+  // }
 }

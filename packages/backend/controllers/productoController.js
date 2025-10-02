@@ -12,63 +12,66 @@ export default class ProductoController {
     this.productoService = productoService;
   }
 
-  create(req, res) {
-    const resultBody = validarParsearProducto(req);
-
-    const nuevoProducto = this.productoService.create(resultBody);
-    res.status(201).json(nuevoProducto);
+  async create(req, res) {
+    const producto = await this.productoService.create(req.body);
+    res.status(201).json(producto);
   }
 
-  findById(req, res) {
-    const id = validarParsearID(req);
-    const producto = this.productoService.findById(id);
-    res.status(200).json(producto);
+  async findAll(req, res) {
+    const productos = await this.productoService.findAll();
+    res.status(200).json(productos);
   }
 
-  findAll(req, res) {
-    const productosPaginados = paginationGetValues(
-      req,
-      (page, limit, filtros) =>
-        this.productoService.findAll(page, limit, filtros)
-    );
+  // async findAll(req, res) {
+  //   const productosPaginados = paginationGetValues(
+  //     req,
+  //     (page, limit, filtros) =>
+  //       this.productoService.findAll(page, limit, filtros)
+  //   );
 
-    if (productosPaginados === null) {
-      res.status(204).send("No se encontraron productos");
-      return;
-    }
+  // findById(req, res) {
+  //   const id = validarParsearID(req);
+  //   const producto = this.productoService.findById(id);
+  //   res.status(200).json(producto);
+  // }
 
-    res.status(200).json(productosPaginados);
-  }
+  //   if (productosPaginados === null) {
+  //     res.status(204).send("No se encontraron productos");
+  //     return;
+  //   }
 
-  findBySeller(req, res) {
-    const id = validarParsearID(req);
+  //   res.status(200).json(productosPaginados);
+  // }
 
-    const productosPaginados = paginationGetValues(
-      req,
-      (page, limit, filtros) =>
-        this.productoService.findBySeller(id, page, limit, filtros)
-    );
+  // findBySeller(req, res) {
+  //   const id = validarParsearID(req);
 
-    if (productosPaginados === null) {
-      res.status(204).send("No se encontraron productos");
-      return;
-    }
+  //   const productosPaginados = paginationGetValues(
+  //     req,
+  //     (page, limit, filtros) =>
+  //       this.productoService.findBySeller(id, page, limit, filtros)
+  //   );
 
-    res.status(200).json(productosPaginados);
-  }
+  //   if (productosPaginados === null) {
+  //     res.status(204).send("No se encontraron productos");
+  //     return;
+  //   }
 
-  update(req, res) {
-    const id = validarParsearID(req);
-    const resultBody = validarParsearUpdateProducto(req);
+  //   res.status(200).json(productosPaginados);
+  // }
 
-    const productoActualizado = this.productoService.update(id, resultBody);
+  // update(req, res) {
+  //   const id = validarParsearID(req);
+  //   const resultBody = validarParsearUpdateProducto(req);
 
-    res.status(200).json(productoActualizado);
-  }
+  //   const productoActualizado = this.productoService.update(id, resultBody);
 
-  delete(req, res) {
-    const id = validarParsearID(req);
-    this.productoService.delete(id);
-    res.status(204).send();
-  }
+  //   res.status(200).json(productoActualizado);
+  // }
+
+  // delete(req, res) {
+  //   const id = validarParsearID(req);
+  //   this.productoService.delete(id);
+  //   res.status(204).send();
+  // }
 }
