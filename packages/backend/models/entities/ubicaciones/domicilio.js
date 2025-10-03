@@ -1,5 +1,5 @@
 import { isString } from "../../../validadores/validadorTiposNativos";
-
+import { ValidationError } from "../../../errors/tiendaSolError";
 class Domicilio {
   calle;
   altura;

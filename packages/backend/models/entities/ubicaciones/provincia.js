@@ -1,3 +1,5 @@
+import { isString } from "../../../validadores/validadorTiposNativos";
+
 class Provincia {
   nombre;
   pais;
