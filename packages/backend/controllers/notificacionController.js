@@ -7,7 +7,7 @@ export default class NotificacionController {
     this.notificacionService = notificacionService;
   }
 
-  findAll(req, res) {
+  async findAll(req, res) {
     try {
       const querySchema = z.object({
         userId: idTransform,
@@ -24,15 +24,15 @@ export default class NotificacionController {
       let notificaciones;
 
       if (!userId && leida === undefined) {
-        notificaciones = this.notificacionService.findAll();
+        notificaciones = await this.notificacionService.findAll();
       } else if (leida !== undefined) {
         if (leida) {
-          notificaciones = this.notificacionService.findAllLeidas(userId);
+          notificaciones = await this.notificacionService.findAllLeidas(userId);
         } else {
-          notificaciones = this.notificacionService.findAllNoLeidas(userId);
+          notificaciones = await this.notificacionService.findAllNoLeidas(userId);
         }
       } else {
-        notificaciones = this.notificacionService.findAllUser(userId);
+        notificaciones = await this.notificacionService.findAllUser(userId);
       }
 
       return res.status(200).json({ notificaciones: notificaciones });
@@ -42,7 +42,7 @@ export default class NotificacionController {
     }
   }
 
-  marcarComoLeida(req, res) {
+  async marcarComoLeida(req, res) {
     try {
       const parsed = idTransform.safeParse(req.params.id);
 
@@ -54,7 +54,7 @@ export default class NotificacionController {
 
       const id = parsed.data;
 
-      const notificacion = this.notificacionService.marcarComoLeida(id);
+      const notificacion = await this.notificacionService.marcarComoLeida(id);
 
       if (!notificacion) {
         return res.status(404).json({ error: "Notificación no encontrada" });
@@ -72,13 +72,13 @@ export default class NotificacionController {
     }
   }
 
-  crear(req, res) {
+  async crear(req, res) {
     const { pedidoId } = req.body;
     if (!pedido)
       return res.status(400).json({ error: "Debe enviarse un pedido" });
 
     try {
-      const notificacion = this.service.crearSegunPedido(pedido);
+      const notificacion = await this.service.crearSegunPedido(pedido);
       if (!notificacion)
         return res
           .status(400)

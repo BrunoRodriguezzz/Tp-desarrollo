@@ -9,31 +9,31 @@ export default class NotificacionRepository {
     this.notificaciones = notificaciones;
   }
 
-  findById(id) {
+  async findById(id) {
     return this.notificaciones.find((n) => n.id === id);
   }
 
-  findAll() {
+  async findAll() {
     return this.notificaciones;
   }
 
-  findAllByUserId(userId) {
+  async findAllByUserId(userId) {
     return this.notificaciones.filter((n) => n.usuarioDestino.id === userId);
   }
 
-  findAllLeidas(userId) {
+  async findAllLeidas(userId) {
     return this.notificaciones.filter(
       (n) => n.usuarioDestino.id === userId && n.leida
     );
   }
 
-  findAllNoLeidas(userId) {
+  async findAllNoLeidas(userId) {
     return this.notificaciones.filter(
       (n) => n.usuarioDestino.id === userId && !n.leida
     );
   }
 
-  update(notificacion) {
+  async update(notificacion) {
     const index = this.notificaciones.findIndex(
       (n) => n.id === notificacion.id
     );
@@ -44,7 +44,7 @@ export default class NotificacionRepository {
     return null;
   }
 
-  save(notificacion) {
+  async save(notificacion) {
     notificacion.id = this.nextId++;
     this.notificaciones.push(notificacion);
     return notificacion;

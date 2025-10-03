@@ -8,41 +8,41 @@ export default class NotificacionService {
     this.factory = new FactoryNotificacion();
   }
 
-  verificarExistenciaUsuario(userId) {
-    if (!this.usuarioRepository.findById(userId)) return null;
+  async verificarExistenciaUsuario(userId) {
+    if (! (await this.usuarioRepository.findById(userId))) return null;
   }
 
-  findAll() {
-    return this.notificacionRepository.findAll();
+  async findAll() {
+    return await this.notificacionRepository.findAll();
   }
 
-  findAllUser(userId) {
-    this.verificarExistenciaUsuario(userId);
-    return this.notificacionRepository.findAllByUserId(userId);
+  async findAllUser(userId) {
+    await this.verificarExistenciaUsuario(userId);
+    return await this.notificacionRepository.findAllByUserId(userId);
   }
 
-  findAllLeidas(userId) {
-    this.verificarExistenciaUsuario(userId);
-    return this.notificacionRepository.findAllLeidas(userId);
+  async findAllLeidas(userId) {
+    await this.verificarExistenciaUsuario(userId);
+    return await this.notificacionRepository.findAllLeidas(userId);
   }
 
-  findAllNoLeidas(userId) {
-    this.verificarExistenciaUsuario(userId);
-    return this.notificacionRepository.findAllNoLeidas(userId);
+  async findAllNoLeidas(userId) {
+    await this.verificarExistenciaUsuario(userId);
+    return await this.notificacionRepository.findAllNoLeidas(userId);
   }
 
-  marcarComoLeida(id) {
-    const notificacion = this.notificacionRepository.findById(id);
+  async marcarComoLeida(id) {
+    const notificacion = await this.notificacionRepository.findById(id);
     if (!notificacion) return null;
 
     notificacion.leida = true;
 
-    this.notificacionRepository.update(notificacion);
+    await this.notificacionRepository.update(notificacion);
     return notificacion;
   }
 
-  crearSegunPedido(pedidoId) {
-    const pedido = this.pedidoRepository.findById(pedidoId);
+  async crearSegunPedido(pedidoId) {
+    const pedido = await this.pedidoRepository.findById(pedidoId);
 
     if (!pedido) {
       throw new Error(`No se encontró el pedido con id ${pedidoId}`);
@@ -56,6 +56,6 @@ export default class NotificacionService {
       );
     }
 
-    return this.repo.save(notificacion);
+    return await this.repo.save(notificacion);
   }
 }
