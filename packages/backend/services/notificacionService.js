@@ -37,7 +37,7 @@ export default class NotificacionService {
 
     notificacion.leida = true;
 
-    await this.notificacionRepository.update(notificacion);
+    await this.notificacionRepository.marcarComoLeida(notificacion);
     return notificacion;
   }
 

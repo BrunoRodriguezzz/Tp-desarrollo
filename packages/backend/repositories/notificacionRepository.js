@@ -1,52 +1,58 @@
-// import Notificacion from "../models/entities/notificacion/notificacion";
+import { NotificacionModel } from "../schemas/notificacionSchema";
 
 export default class NotificacionRepository {
-  notificaciones;
 
-  constructor(notificaciones) {
-    this.nextId = 1;
-
-    this.notificaciones = notificaciones;
+  constructor() {
+    this.model = NotificacionModel
   }
 
   async findById(id) {
-    return this.notificaciones.find((n) => n.id === id);
+    return await this.model.findById(id);
   }
 
   async findAll() {
-    return this.notificaciones;
+    return await this.model.find();
   }
 
   async findAllByUserId(userId) {
-    return this.notificaciones.filter((n) => n.usuarioDestino.id === userId);
+    return await this.model.find({usuarioDestino: userId});
   }
 
   async findAllLeidas(userId) {
-    return this.notificaciones.filter(
-      (n) => n.usuarioDestino.id === userId && n.leida
-    );
+    return await this.model.find({ 
+    usuarioDestino: usuarioId, 
+    leida: true 
+  });
   }
 
   async findAllNoLeidas(userId) {
-    return this.notificaciones.filter(
-      (n) => n.usuarioDestino.id === userId && !n.leida
-    );
+    return await this.model.find({ 
+    usuarioDestino: usuarioId, 
+    leida: false 
+  });
   }
 
-  async update(notificacion) {
-    const index = this.notificaciones.findIndex(
-      (n) => n.id === notificacion.id
-    );
-    if (index !== -1) {
-      this.notificaciones[index] = notificacion;
-      return notificacion;
-    }
-    return null;
+  async marcarComoLeida(notificacion) {
+    const notificacionId = notificacion.id;
+    await this.model.findByIdAndUpdate(
+    notificacionId,
+    { leida: true },
+    { new: true } 
+  )
   }
 
   async save(notificacion) {
-    notificacion.id = this.nextId++;
-    this.notificaciones.push(notificacion);
-    return notificacion;
+    const usuarioDestino = notificacion.usuarioDestino.id;
+    const mensaje = notificacion.mensaje;
+    const fechaAlta = notificacion.fechaAlta;
+    const leida = notificacion.leida
+    const nuevaNotificacion = new NotificacionModel({
+    usuarioDestino,
+    mensaje,
+    fechaAlta,
+    leida
+    });
+
+  return await nuevaNotificacion.save();
   }
 }
