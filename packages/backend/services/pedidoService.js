@@ -61,10 +61,11 @@ export default class PedidoService {
 
     // actualizo el stock del producto
     for (const item of itemsValidados) {
-      // VER COMO ACTUALIZARLO
+      item.producto.reducirStock(item.cantidad);
+      await this.productoRepository.save(item.producto);
     }
 
-    return toDTO(pedidoPersistido); // armar funcion
+    return toDTO(pedidoPersistido);
   }
 
   async cancel(pedidoCancelado) {
