@@ -1,4 +1,4 @@
-import { NotificacionModel } from "../schemas/notificacionSchema";
+import NotificacionModel from "../schemas/notificacionSchema.js";
 
 export default class NotificacionRepository {
 

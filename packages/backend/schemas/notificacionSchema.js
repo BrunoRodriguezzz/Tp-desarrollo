@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
-import Notificacion from "../models/entities/notificacion/notificacion";
+import Notificacion from "../models/entities/notificacion/notificacion.js";
 
 const notificacionSchema = new mongoose.Schema({
   usuarioDestino: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "UsuarioModel",
+    ref: "Usuario",
     required: true
   },
   mensaje: {
@@ -22,9 +22,9 @@ const notificacionSchema = new mongoose.Schema({
     default: false
   }
 }, {
-  collection: 'notificaciones',  // <-- corregido
-  toJSON: { virtuals: true },    // permite que los virtuals aparezcan al convertir a JSON
-  toObject: { virtuals: true }   // permite que los virtuals aparezcan al convertir a objeto
+  collection: 'notificaciones',  
+  toJSON: { virtuals: true },    
+  toObject: { virtuals: true }  
 });
 
 notificacionSchema.virtual('id').get(function() {
@@ -33,4 +33,6 @@ notificacionSchema.virtual('id').get(function() {
 
 notificacionSchema.loadClass(Notificacion);
 
-export const NotificacionModel = mongoose.model('Notificacion', notificacionSchema);
+const NotificacionModel = mongoose.model('Notificacion', notificacionSchema);
+
+export default NotificacionModel;
