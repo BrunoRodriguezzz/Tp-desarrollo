@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export class MongoDBClient {
+class MongoDBClient {
   static async connect() {
     try {
       const conn = await mongoose.connect(
@@ -14,3 +14,5 @@ export class MongoDBClient {
     }
   }
 }
+
+export default MongoDBClient;

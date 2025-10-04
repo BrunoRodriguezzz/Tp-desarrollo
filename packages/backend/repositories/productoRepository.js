@@ -5,7 +5,6 @@ import {
 } from "../models/filters/productFilters.js";
 import { NotFoundError } from "../errors/tiendaSolError.js";
 import ProductoModel from "../schemas/productoSchema.js";
-import AlojamientoModel from "../schemas/productoSchema.js";
 
 export default class ProductoRepository {
   constructor() {
