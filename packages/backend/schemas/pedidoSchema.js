@@ -149,11 +149,6 @@ const PedidoSchema = new mongoose.Schema(
 );
 
 PedidoSchema.pre("save", function (next) {
-  this.total = this.items.reduce(
-    (sum, item) => sum + item.cantidad * item.precioUnitario,
-    0
-  );
-
   if (this.isNew) {
     this.historialEstados.push({
       estado: this.estado,

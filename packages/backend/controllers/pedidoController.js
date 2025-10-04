@@ -25,14 +25,19 @@ export default class PedidoController {
   }
 
   async cancel(req, res) {
-    const resultId = idTransform.safeParse(req.params.id);
+    const data = {
+      ...req.body,
+      pedidoId: req.params.id,
+    };
 
-    if (resultId.error) {
-      res.status(400).json(resultId.error.issues);
+    const result = cancelSchema.safeParse(data);
+
+    if (result.error) {
+      res.status(400).json(result.error.issues);
       return;
     }
     try {
-      const pedidoCancelado = await this.pedidoService.cancel(resultId.data);
+      const pedidoCancelado = await this.pedidoService.cancel(result.data);
       res.status(200).json(pedidoCancelado);
     } catch (error) {
       return res.status(error.statusCode).json({ error: error.message });
@@ -104,7 +109,7 @@ const enviadoSchema = z.object({
 });
 
 export const pedidoSchema = z.object({
-  compradorId: z.number(),
+  compradorId: z.string(),
   moneda: z.nativeEnum(Moneda),
   direccion: z.object({
     ciudad: z.object({
@@ -118,8 +123,8 @@ export const pedidoSchema = z.object({
     }),
     domicilio: z.object({
       calle: z.string(),
-      altura: z.number(),
-      piso: z.number().optional(),
+      altura: z.string(),
+      piso: z.string().optional(),
       departamento: z.string().optional(),
       codigoPostal: z.string().optional(),
     }),
@@ -130,8 +135,14 @@ export const pedidoSchema = z.object({
   }),
   items: z.array(
     z.object({
-      productoId: z.number(),
+      productoId: z.string(),
       cantidad: z.number().min(1),
     })
   ),
+});
+
+export const cancelSchema = z.object({
+  compradorId: z.string(),
+  pedidoId: z.string(),
+  motivo: z.string().min(1),
 });

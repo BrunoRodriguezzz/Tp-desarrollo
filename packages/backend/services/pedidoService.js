@@ -1,12 +1,18 @@
+import ItemPedido from "../models/entities/itemPedido.js";
 import DireccionEntrega from "../models/entities/ubicaciones/direccionEntrega.js";
 import EstadoPedido from "../models/enums/estadoPedido.js";
+import { isMoneda } from "../validadores/validadorDeEnums.js";
 import {
   validarComprador,
   validarItemProducto,
   validarEstadoParaCancelar,
   validarPedido,
   validarEstadoParaEnviar,
+  validarDireccion,
+  validarCreacionPedido,
+  validarCancelacionPedido,
 } from "../validadores/validadoresPedido.js";
+import { toDTO } from "../utils/mappers.js";
 import { validarString } from "../validadores/validadorTiposNativos.js";
 
 export default class PedidoService {
@@ -16,86 +22,72 @@ export default class PedidoService {
     this.productoRepository = ProductoRepository;
   }
 
-  async create(nuevoPedidoJSON) {
-    const { compradorId, moneda, direccion, items } = nuevoPedidoJSON;
+  async create(nuevoPedido) {
+    const { compradorId, moneda, direccion, items } = nuevoPedido;
+    validarCreacionPedido(compradorId, moneda, direccion, items);
+
+    const comprador = await this.usuarioRepository.findById(compradorId);
+
+    validarComprador(comprador);
+    isMoneda(moneda);
+    validarDireccion(direccion);
+
+    // creo direccion de entrega
+    const direccionEntrega = this.crearDireccionEntrega(direccion);
+
+    // instancio y valido los items del pedido
+    const itemsValidados = [];
+    for (const item of items) {
+      const producto = await this.productoRepository.findById(item.productoId);
+      const nuevoItem = new ItemPedido(
+        producto,
+        item.cantidad,
+        producto.precio
+      );
+      validarItemProducto(producto, nuevoItem);
+      itemsValidados.push(nuevoItem);
+    }
+
+    // todos los items validados => instancio nuevo pedido
+    const pedido = instanciarNuevoPedido(
+      comprador,
+      moneda,
+      direccionEntrega,
+      itemsValidados
+    );
+
+    // persisto nuevo pedido
+    const pedidoPersistido = await this.pedidoRepository.save(pedido);
+
+    // actualizo el stock del producto
+    for (const item of itemsValidados) {
+      // VER COMO ACTUALIZARLO
+    }
+
+    return toDTO(pedidoPersistido); // armar funcion
+  }
+
+  async cancel(pedidoCancelado) {
+    const { compradorId, pedidoId, motivo } = pedidoCancelado;
+    validarCancelacionPedido(compradorId, pedidoId, motivo);
 
     const comprador = await this.usuarioRepository.findById(compradorId);
     validarComprador(comprador);
 
-    const direccionEntrega = this.buildDireccionEntrega(direccion);
-
-    const pedido = new Pedido(comprador, moneda, direccionEntrega);
-
-    const itemsValidados = await Promise.all(
-      items.map(async (item) => {
-        const producto = await this.productoRepository.findById(
-          item.productoId
-        );
-        validarItemProducto(producto, item);
-
-        const itemPedido = new ItemPedido(producto, item.cantidad);
-        return {
-          itemPedido,
-          producto,
-          nuevaCantidad: producto.stock - item.cantidad,
-        };
-      })
-    );
-
-    for (const { itemPedido, producto, nuevaCantidad } of itemsValidados) {
-      pedido.agregarItem(itemPedido);
-      producto.stock = nuevaCantidad;
-      await this.productoRepository.save(producto);
-    }
-
-    return await this.pedidoRepository.save(pedido);
-  }
-
-  buildDireccionEntrega(direccion) {
-    const {
-      ciudad: ciudadData,
-      domicilio: domicilioData,
-      coordenada: coordenadaData,
-    } = direccion;
-    const pais = new Pais(ciudadData.provincia.pais.nombre);
-    const provincia = new Provincia(ciudadData.provincia.nombre, pais);
-    const ciudad = new Ciudad(ciudadData.nombre, provincia);
-
-    const domicilio = new Domicilio(domicilioData.calle, domicilioData.altura);
-    if (domicilioData.piso) domicilio.setPiso(domicilioData.piso);
-    if (domicilioData.departamento)
-      domicilio.setDepartamento(domicilioData.departamento);
-    if (domicilioData.codigoPostal)
-      domicilio.setCodigoPostal(domicilioData.codigoPostal);
-
-    const coordenada = new Coordenada(
-      coordenadaData.latitud,
-      coordenadaData.longitud
-    );
-    return new DireccionEntrega(domicilio, ciudad, coordenada);
-  }
-
-  async cancel(pedidoCanceladoJSON) {
-    const comprador = await this.usuarioRepository.findById(
-      pedidoCanceladoJSON.compradorId
-    );
-    validarComprador(comprador);
-
-    const pedido = await this.pedidoRepository.findById(
-      pedidoCanceladoJSON.pedidoId
-    );
+    const pedido = await this.pedidoRepository.findById(pedidoId);
     validarPedido(pedido);
 
-    validarString(pedidoCanceladoJSON.motivo);
-
+    validarString(motivo);
     validarEstadoParaCancelar(pedido);
 
     pedido.actualizarEstado(EstadoPedido.CANCELADO, comprador, motivo);
 
-    return await this.pedidoRepository.update(
-      pedidoCanceladoJSON.pedidoId,
+    const pedidoPersistido = await this.pedidoRepository.update(
+      pedido.id,
       pedido
     );
+
+    return toDTO(pedidoPersistido);
   }
 
   async historialUsuario(usuarioId) {
@@ -137,5 +129,36 @@ export default class PedidoService {
       pedido: PedidoActualizado,
       vendedor: vendedor,
     };
+  }
+
+  crearDireccionEntrega(direccion) {
+    const {
+      ciudad: ciudadData,
+      domicilio: domicilioData,
+      coordenada: coordenadaData,
+    } = direccion;
+    const pais = new Pais(ciudadData.provincia.pais.nombre);
+    const provincia = new Provincia(ciudadData.provincia.nombre, pais);
+    const ciudad = new Ciudad(ciudadData.nombre, provincia);
+
+    const domicilio = new Domicilio(domicilioData.calle, domicilioData.altura);
+    if (domicilioData.piso) domicilio.setPiso(domicilioData.piso);
+    if (domicilioData.departamento)
+      domicilio.setDepartamento(domicilioData.departamento);
+    if (domicilioData.codigoPostal)
+      domicilio.setCodigoPostal(domicilioData.codigoPostal);
+
+    const coordenada = new Coordenada(
+      coordenadaData.latitud,
+      coordenadaData.longitud
+    );
+    return new DireccionEntrega(domicilio, ciudad, coordenada);
+  }
+
+  instanciarNuevoPedido(comprador, moneda, direccionEntrega, itemsValidados) {
+    const pedido = new Pedido(comprador, moneda, direccionEntrega);
+    itemsValidados.forEach((item) => {
+      pedido.agregarItem(item);
+    });
   }
 }

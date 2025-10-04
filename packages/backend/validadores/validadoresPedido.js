@@ -1,5 +1,6 @@
 import EstadoPedido from "../models/enums/estadoPedido";
 import { isMoneda } from "./validadorDeEnums";
+import { isNumber } from "./validadorTiposNativos";
 
 export function validar(comprador, moneda, direccion) {
   if (comprador == null || !(comprador instanceof Usuario)) {
@@ -17,9 +18,7 @@ export function validar(comprador, moneda, direccion) {
 
 export function validarComprador(comprador) {
   if (!comprador) {
-    throw new NotFoundError(
-      `Comprador ${nuevoPedidoJSON.compradorId} no encontrado`
-    );
+    throw new NotFoundError(`Comprador ${comprador.compradorId} no encontrado`);
   }
   if (comprador.tipo !== TipoUsuario.COMPRADOR) {
     throw new ConflictError(
@@ -45,7 +44,7 @@ export function validarItemProducto(producto, item) {
   if (!producto) {
     throw new NotFoundError(`Producto ${item.productoId} no encontrado`);
   }
-  if (producto.stock < item.cantidad) {
+  if (item.validarStock()) {
     throw new ConflictError(`Stock insuficiente para ${producto.nombre}`);
   }
 }
@@ -75,5 +74,31 @@ export function validarParaEnviar(pedido) {
     throw new ConflictError(
       `El pedido con id ${pedido.id} no puede cancelarse porque está en estado ${pedido.estado}`
     );
+  }
+}
+
+export function validarDireccion(direccion) {
+  const { coordenada } = direccion;
+  if (
+    isNumber(coordenada.latitud) ||
+    isNumber(coordenada.longitud) ||
+    coordenada.latitud < -90 ||
+    coordenada.latitud > 90 ||
+    coordenada.longitud < -180 ||
+    coordenada.longitud > 180
+  ) {
+    throw new ValidationError("Coordenadas inválidas");
+  }
+}
+
+export function validarCreacionPedido(compradorId, moneda, direccion, items) {
+  if (!compradorId || !moneda || !direccion || !items) {
+    throw new ValidationError("Todos los campos son requeridos");
+  }
+}
+
+export function validarCancelacionPedido(compradorId, pedidoId, motivo) {
+  if (!compradorId || !pedidoId || !motivo) {
+    throw new ValidationError("Todos los campos son requeridos");
   }
 }
