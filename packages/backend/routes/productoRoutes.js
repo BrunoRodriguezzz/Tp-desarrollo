@@ -9,6 +9,7 @@ export default function healtCheckRoute(getController) {
 
   router.use(loggerMiddleware);
 
+  // POST /productos
   router.post(pathProductos, async (req, res, next) => {
     try {
       await getController(ProductoController).create(req, res);
@@ -17,6 +18,7 @@ export default function healtCheckRoute(getController) {
     }
   });
 
+  // GET /productos
   router.get(pathProductos, async (req, res, next) => {
     try {
       await getController(ProductoController).findAll(req, res, next);
@@ -25,6 +27,7 @@ export default function healtCheckRoute(getController) {
     }
   });
 
+  // GET /productos/vendedor/:id
   router.get(pathProductos + "/vendedor/:id", async (req, res, next) => {
     try {
       await getController(ProductoController).findBySeller(req, res);
@@ -33,6 +36,7 @@ export default function healtCheckRoute(getController) {
     }
   });
 
+  // GET /productos/:id
   router.get(pathProductos + "/:id", async (req, res, next) => {
     try {
       await getController(ProductoController).findById(req, res);
@@ -41,16 +45,23 @@ export default function healtCheckRoute(getController) {
     }
   });
 
-  router.patch(pathProductos + "/:id", (req, res) => {
-    getController(ProductoController).update(req, res);
+  // PATCH /productos/:id
+  router.patch(pathProductos + "/:id", async (req, res, next) => {
+    try {
+      await getController(ProductoController).update(req, res);
+    } catch (err) {
+      next(err);
+    }
   });
 
-  router.delete(pathProductos + "/:id", (req, res) => {
-    getController(ProductoController).delete(req, res);
+  // DELETE /productos/:id
+  router.delete(pathProductos + "/:id", async (req, res, next) => {
+    try {
+      await getController(ProductoController).delete(req, res);
+    } catch (err) {
+      next(err);
+    }
   });
-
-  // Ya lo tenemos a nivel servidor
-  // router.use(errorHandler);
 
   return router;
 }

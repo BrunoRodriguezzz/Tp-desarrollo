@@ -12,10 +12,6 @@ export default class ProductoRepository {
     this.model = ProductoModel;
   }
 
-  async findAll() {
-    return await this.model.find({ activo: true }).exec();
-  }
-
   async save(producto) {
     const nuevoProducto = new this.model(producto);
     let aux;
@@ -25,10 +21,6 @@ export default class ProductoRepository {
       console.error("Error al guardar el producto:", error);
     }
     return aux;
-  }
-
-  async findAll() {
-    return await this.model.find();
   }
 
   async count(filtros) {
@@ -45,6 +37,33 @@ export default class ProductoRepository {
       .exec();
 
     return productos;
+  }
+
+  async findById(id) {
+    const producto = await this.model.findOne({ _id: id, activo: true }).exec();
+
+    return producto;
+  }
+
+  async update(id, productoModificado) {
+    const producto = await this.model
+      .findByIdAndUpdate(id, productoModificado, {
+        new: true,
+      })
+      .exec();
+
+    if (!producto) {
+      throw new NotFoundError("Producto no encontrado");
+    }
+
+    return producto;
+  }
+
+  async delete(id) {
+    const result = await this.model.deleteOne({ _id: id });
+    if (result.deletedCount === 0) {
+      throw new NotFoundError("Producto no encontrado");
+    }
   }
 
   applyFilters(filtros) {
@@ -67,7 +86,11 @@ export default class ProductoRepository {
     }
 
     if (categoria) {
-      query.categorias = categoria;
+      if (Array.isArray(categoria)) {
+        query.categorias = { $all: categoria };
+      } else {
+        query.categorias = categoria;
+      }
     }
 
     if (vendedor) {
@@ -76,65 +99,4 @@ export default class ProductoRepository {
 
     return query;
   }
-
-  // findAll(filtros = {}) {
-  //   return this.applyFilters(this.productos, filtros);
-  // }
-
-  // findByPage(numeroPagina, elementosPorPagina, filtros) {
-  //   return this.getPage(numeroPagina, elementosPorPagina, filtros, (filtros) =>
-  //     this.findAll(filtros)
-  //   );
-  // }
-
-  // findBySeller(numeroPagina, elementosPorPagina, filtros, vendedorId) {
-  //   return this.getPage(numeroPagina, elementosPorPagina, filtros, (filtros) =>
-  //     filtrarPorVendedor(this.findAll(filtros), vendedorId)
-  //   );
-  // }
-
-  // getPage(numeroPagina, elementosPorPagina, filtros, func) {
-  //   const offset = (numeroPagina - 1) * elementosPorPagina;
-  //   const productos = func(filtros);
-
-  //   return productos.slice(offset, offset + elementosPorPagina);
-  // }
-
-  // countAll(filtros = {}) {
-  //   return this.findAll(filtros).length;
-  // }
-
-  // countBySeller(filtros = {}, vendedorId) {
-  //   return filtrarPorVendedor(this.findAll(filtros), vendedorId).length;
-  // }
-
-  // update(id, productoModificado) {
-  //   const indice = this.productos.findIndex((p) => p.id === id);
-  //   if (indice === -1) {
-  //     throw new NotFoundError("Producto no encontrado");
-  //   }
-  //   const productoActualizado = {
-  //     ...this.productos[indice],
-  //     ...productoModificado,
-  //     id: this.productos[indice].id,
-  //   };
-  //   this.productos[indice] = productoActualizado;
-  //   return productoActualizado;
-  // }
-
-  // findById(id) {
-  //   const producto = this.productos.find((p) => p.id === id && p.activo);
-  //   if (!producto) {
-  //     throw new NotFoundError("Producto no encontrado");
-  //   }
-  //   return producto;
-  // }
-
-  // delete(id) {
-  //   const producto = this.productos.find((p) => p.id === id);
-  //   if (!producto) {
-  //     throw new NotFoundError("Producto no encontrado");
-  //   }
-  //   producto.setActivo(false);
-  // }
 }

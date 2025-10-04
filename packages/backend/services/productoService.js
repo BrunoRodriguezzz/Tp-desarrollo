@@ -56,12 +56,8 @@ export default class ProductoService {
       page,
       limit,
       filtros,
-      (numeroPagina, elementosPorPagina, filtros) =>
-        this.productoRepository.findByPage(
-          numeroPagina,
-          elementosPorPagina,
-          filtros
-        )
+      (page, elementosPorPagina, filtros) =>
+        this.productoRepository.findByPage(page, elementosPorPagina, filtros)
     );
 
     paginado.total = await this.productoRepository.count(filtros);
@@ -70,6 +66,41 @@ export default class ProductoService {
     paginado.data = this.order(paginado.data, filtros);
 
     return paginado;
+  }
+
+  async findById(id) {
+    return await this.productoRepository.findById(id);
+  }
+
+  async findBySeller(vendedorId, page = 1, limit = 10, filtros = {}) {
+    filtros.vendedor = vendedorId;
+
+    const paginado = await paginationBuildResponse(
+      page,
+      limit,
+      filtros,
+      (page, limit, filtros) =>
+        this.productoRepository.findByPage(page, limit, filtros)
+    );
+
+    paginado.total = await this.productoRepository.count(filtros);
+    paginado.calculateTotalPages();
+
+    paginado.data = this.order(paginado.data, filtros);
+
+    return paginado;
+  }
+
+  async update(id, productoJSON) {
+    const productoActualizado = await this.productoRepository.update(
+      id,
+      productoJSON
+    );
+    return productoActualizado;
+  }
+
+  async delete(id) {
+    await this.productoRepository.delete(id);
   }
 
   order(data, filtros) {
@@ -93,60 +124,4 @@ export default class ProductoService {
 
     return data;
   }
-
-  // findById(id) {
-  //   return this.productoRepository.findById(id);
-  // }
-
-  // findAll(page = 1, limit = 10, filtros = {}) {
-  //   const paginado = paginationBuildResponse(
-  //     page,
-  //     limit,
-  //     filtros,
-  //     (numeroPagina, elementosPorPagina, filtros) =>
-  //       this.productoRepository.findByPage(
-  //         numeroPagina,
-  //         elementosPorPagina,
-  //         filtros
-  //       )
-  //   );
-
-  //   paginado.total = this.productoRepository.countAll(filtros);
-  //   paginado.calculateTotalPages();
-
-  //   paginado.data = this.order(paginado.data, filtros);
-
-  //   return paginado;
-  // }
-
-  // findBySeller(vendedorId, page = 1, limit = 10, filtros = {}) {
-  //   const paginado = paginationBuildResponse(
-  //     page,
-  //     limit,
-  //     filtros,
-  //     (numeroPagina, elementosPorPagina, filtros) =>
-  //       this.productoRepository.findBySeller(
-  //         numeroPagina,
-  //         elementosPorPagina,
-  //         filtros,
-  //         vendedorId
-  //       )
-  //   );
-
-  //   paginado.total = this.productoRepository.countBySeller(filtros, vendedorId);
-  //   paginado.calculateTotalPages();
-
-  //   paginado.data = this.order(paginado.data, filtros);
-
-  //   return paginado;
-  // }
-
-  // update(id, productoJSON) {
-  //   const productoActualizado = this.productoRepository.update(id, productoJSON);
-  //   return productoActualizado;
-  // }
-
-  // delete(id) {
-  //   this.productoRepository.delete(id);
-  // }
 }

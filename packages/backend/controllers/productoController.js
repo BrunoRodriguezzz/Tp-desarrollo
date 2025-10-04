@@ -38,7 +38,7 @@ export default class ProductoController {
   }
 
   async findBySeller(req, res) {
-    const id = validarParsearID(req);
+    const id = req.params.id;
 
     const productosPaginados = await paginationGetValues(
       req,
@@ -54,18 +54,21 @@ export default class ProductoController {
     res.status(200).json(productosPaginados);
   }
 
-  update(req, res) {
-    const id = validarParsearID(req);
+  async update(req, res) {
+    const id = req.params.id;
     const resultBody = validarParsearUpdateProducto(req);
 
-    const productoActualizado = this.productoService.update(id, resultBody);
+    const productoActualizado = await this.productoService.update(
+      id,
+      resultBody
+    );
 
     res.status(200).json(productoActualizado);
   }
 
-  delete(req, res) {
-    const id = validarParsearID(req);
-    this.productoService.delete(id);
+  async delete(req, res) {
+    const id = req.params.id;
+    await this.productoService.delete(id);
     res.status(204).send();
   }
 }
