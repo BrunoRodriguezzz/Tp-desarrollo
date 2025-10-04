@@ -44,15 +44,19 @@ export default class PedidoController {
     }
   }
 
-  getHistoryUser(req, res) {
-    const resultId = idTransform.safeParse(req.params.id);
+  async getHistoryUser(req, res) {
+    const data = {
+      usuarioId: req.params.id,
+    };
 
-    if (resultId.error) {
-      res.status(400).json(resultId.error.issues);
+    const result = userHistorySchema.safeParse(data);
+
+    if (result.error) {
+      res.status(400).json(result.error.issues);
       return;
     }
 
-    const id = resultId.data.id;
+    const id = result.data.usuarioId;
 
     try {
       const pedidos = this.pedidoService.historialUsuario(id);
@@ -68,21 +72,28 @@ export default class PedidoController {
   }
 
   async marcarEnvio(req, res) {
-    const resultId = idTransform.safeParse(req.params.id);
+    const data = {
+      ...req.body,
+      pedidoId: req.params.id,
+    };
 
-    if (resultId.error) {
-      res.status(400).json(resultId.error.issues);
+    const result = enviadoSchema.safeParse(data);
+
+    if (result.error) {
+      res.status(400).json(result.error.issues);
       return;
     }
 
-    const id = resultId.data.id;
-    const body = req.body;
-    const resultBody = enviadoSchema.safeParse(body);
+    const id = result.data.pedidoId;
+    const body = {
+      vendedorId: result.data.vendedorId,
+      motivo: result.data.motivo,
+    };
 
     try {
       const pedidoEnviado = await this.pedidoService.marcarPedidoEnviado(
         id,
-        resultBody.data
+        body
       );
       res.status(200).json(pedidoEnviado);
     } catch (error) {
@@ -91,21 +102,14 @@ export default class PedidoController {
   }
 }
 
-const idTransform = z.string().transform((val, ctx) => {
-  const num = Number(val);
-  if (isNaN(num)) {
-    ctx.addIssue({
-      code: "INVALID_ID",
-      message: "id must be a number",
-    });
-    return z.NEVER;
-  }
-  return num;
+const enviadoSchema = z.object({
+  vendedorId: z.string(),
+  pedidoId: z.string(),
+  motivo: z.string().min(1),
 });
 
-const enviadoSchema = z.object({
-  idVendedor: z.number(),
-  motivo: z.string(),
+const userHistorySchema = z.object({
+  usuarioId: z.string(),
 });
 
 export const pedidoSchema = z.object({

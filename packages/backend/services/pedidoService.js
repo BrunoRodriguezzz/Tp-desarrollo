@@ -4,6 +4,7 @@ import EstadoPedido from "../models/enums/estadoPedido.js";
 import { isMoneda } from "../validadores/validadorDeEnums.js";
 import {
   validarComprador,
+  validarVendedor,
   validarItemProducto,
   validarEstadoParaCancelar,
   validarPedido,
@@ -12,23 +13,23 @@ import {
   validarCreacionPedido,
   validarCancelacionPedido,
 } from "../validadores/validadoresPedido.js";
-import { toDTO } from "../utils/mappers.js";
+import { pedidoToDTO, usuarioToDTO } from "../utils/mappers.js";
 import { validarString } from "../validadores/validadorTiposNativos.js";
 
 export default class PedidoService {
-  constructor(PedidoRepository, UsuarioRepository, ProductoRepository) {
+  constructor(PedidoRepository, UsuarioService, ProductoService) {
     this.pedidoRepository = PedidoRepository;
-    this.usuarioRepository = UsuarioRepository;
-    this.productoRepository = ProductoRepository;
+    this.usuarioService = UsuarioService;
+    this.productoService = ProductoService;
   }
 
   async create(nuevoPedido) {
     const { compradorId, moneda, direccion, items } = nuevoPedido;
     validarCreacionPedido(compradorId, moneda, direccion, items);
 
-    const comprador = await this.usuarioRepository.findById(compradorId);
+    const comprador = await this.usuarioService.findById(compradorId);
 
-    validarComprador(comprador);
+    validarComprador(comprador, compradorId);
     isMoneda(moneda);
     validarDireccion(direccion);
 
@@ -38,7 +39,7 @@ export default class PedidoService {
     // instancio y valido los items del pedido
     const itemsValidados = [];
     for (const item of items) {
-      const producto = await this.productoRepository.findById(item.productoId);
+      const producto = await this.ProductoService.findById(item.productoId);
       const nuevoItem = new ItemPedido(
         producto,
         item.cantidad,
@@ -62,21 +63,21 @@ export default class PedidoService {
     // actualizo el stock del producto
     for (const item of itemsValidados) {
       item.producto.reducirStock(item.cantidad);
-      await this.productoRepository.save(item.producto);
+      await this.ProductoService.update(item.producto.id, item.producto);
     }
 
-    return toDTO(pedidoPersistido);
+    return pedidoToDTO(pedidoPersistido);
   }
 
   async cancel(pedidoCancelado) {
     const { compradorId, pedidoId, motivo } = pedidoCancelado;
     validarCancelacionPedido(compradorId, pedidoId, motivo);
 
-    const comprador = await this.usuarioRepository.findById(compradorId);
-    validarComprador(comprador);
+    const comprador = await this.usuarioService.findById(compradorId);
+    validarComprador(comprador, compradorId);
 
     const pedido = await this.pedidoRepository.findById(pedidoId);
-    validarPedido(pedido);
+    validarPedido(pedido, pedidoId);
 
     validarString(motivo);
     validarEstadoParaCancelar(pedido);
@@ -88,47 +89,53 @@ export default class PedidoService {
       pedido
     );
 
-    return toDTO(pedidoPersistido);
+    return pedidoToDTO(pedidoPersistido);
   }
 
   async historialUsuario(usuarioId) {
-    const usuario = await this.usuarioRepository.findById(usuarioId);
-    validarComprador(usuario);
+    const usuario = await this.usuarioService.findById(usuarioId);
+    validarComprador(usuario, usuarioId);
 
     const pedidos = await this.pedidoRepository.findAllByUsuarioId(usuarioId);
 
+    const pedidosDTO = pedidos.map((p) => pedidoToDTO(p));
+    const usuarioDTO = usuarioToDTO(usuario);
+
     return {
-      usuario: usuario,
-      pedidos: pedidos,
+      usuario: usuarioDTO,
+      pedidos: pedidosDTO,
     };
   }
 
   async marcarPedidoEnviado(idPedido, marcarEnvioJSON) {
     //TODO - Vendedor hay que verificar si es efectivamente el vendedor de ese producto (producto service que lo estan haciendo)
     const pedido = await this.pedidoRepository.findById(idPedido);
-    validarPedido(pedido);
+    validarPedido(pedido, idPedido);
     validarEstadoParaEnviar(pedido);
     validarString(marcarEnvioJSON.motivo);
 
-    const vendedor = await this.usuarioRepository.findById(
-      marcarEnvioJSON.vendedor
+    const vendedor = await this.usuarioService.findById(
+      marcarEnvioJSON.vendedorId
     );
-    validarVendedor(vendedor);
+    validarVendedor(vendedor, marcarEnvioJSON.vendedorId);
 
     pedido.actualizarEstado(
       EstadoPedido.ENVIADO,
-      marcarEnvioJSON.vendedor,
+      vendedor,
       marcarEnvioJSON.motivo
     );
 
-    const PedidoActualizado = await this.pedidoRepository.update(
+    const pedidoActualizado = await this.pedidoRepository.update(
       idPedido,
       pedido
     );
 
+    const pedidoDTO = pedidoToDTO(pedidoActualizado);
+    const vendedorDTO = usuarioToDTO(vendedor);
+
     return {
-      pedido: PedidoActualizado,
-      vendedor: vendedor,
+      pedido: pedidoDTO,
+      vendedor: vendedorDTO,
     };
   }
 
@@ -161,5 +168,7 @@ export default class PedidoService {
     itemsValidados.forEach((item) => {
       pedido.agregarItem(item);
     });
+
+    return pedido;
   }
 }

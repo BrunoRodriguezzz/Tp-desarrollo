@@ -16,9 +16,9 @@ export function validar(comprador, moneda, direccion) {
   }
 }
 
-export function validarComprador(comprador) {
+export function validarComprador(comprador, compradorId) {
   if (!comprador) {
-    throw new NotFoundError(`Comprador ${comprador.compradorId} no encontrado`);
+    throw new NotFoundError(`Comprador ${compradorId} no encontrado`);
   }
   if (comprador.tipo !== TipoUsuario.COMPRADOR) {
     throw new ConflictError(
@@ -27,15 +27,13 @@ export function validarComprador(comprador) {
   }
 }
 
-export function validarVendedor(vendedor) {
+export function validarVendedor(vendedor, vendedorId) {
   if (!vendedor) {
-    throw new NotFoundError(
-      `Vendedor ${nuevoPedidoJSON.compradorId} no encontrado`
-    );
+    throw new NotFoundError(`Vendedor ${vendedorId} no encontrado`);
   }
   if (vendedor.tipo !== TipoUsuario.VENDEDOR) {
     throw new ConflictError(
-      `El usuario ${comprador.id} no es un comprador válido`
+      `El usuario ${vendedor.id} no es un vendedor válido`
     );
   }
 }
@@ -49,9 +47,9 @@ export function validarItemProducto(producto, item) {
   }
 }
 
-export function validarPedido(pedido) {
+export function validarPedido(pedido, pedidoId) {
   if (!pedido) {
-    throw new NotFoundError(`Pedido ${pedido.id} no encontrado`);
+    throw new NotFoundError(`Pedido ${pedidoId} no encontrado`);
   }
 }
 
@@ -66,7 +64,7 @@ export function validarEstadoParaCancelar(pedido) {
   }
 }
 
-export function validarParaEnviar(pedido) {
+export function validarEstadoParaEnviar(pedido) {
   if (
     pedido.estado == EstadoPedido.ENTREGADO ||
     pedido.estado == EstadoPedido.CANCELADO
@@ -80,8 +78,8 @@ export function validarParaEnviar(pedido) {
 export function validarDireccion(direccion) {
   const { coordenada } = direccion;
   if (
-    isNumber(coordenada.latitud) ||
-    isNumber(coordenada.longitud) ||
+    !isNumber(coordenada.latitud) ||
+    !isNumber(coordenada.longitud) ||
     coordenada.latitud < -90 ||
     coordenada.latitud > 90 ||
     coordenada.longitud < -180 ||

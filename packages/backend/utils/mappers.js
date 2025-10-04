@@ -1,4 +1,4 @@
-export function toDTO(pedido) {
+export function pedidoToDTO(pedido) {
   return {
     id: pedido.id || pedido._id,
     comprador: {
@@ -31,5 +31,16 @@ export function toDTO(pedido) {
       usuario: h.usuario.id || h.usuario._id,
       motivo: h.motivo,
     })),
+  };
+}
+
+export function usuarioToDTO(usuario) {
+  return {
+    id: usuario.id,
+    tipoUsuario: usuario.tipo,
+    nombre: usuario.nombre,
+    email: usuario.email,
+    telefono: usuario.telefono,
+    fechaAlta: usuario.fechaAlta.toISOString(),
   };
 }
