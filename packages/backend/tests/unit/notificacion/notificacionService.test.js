@@ -1,6 +1,7 @@
 import Usuario from "../../../models/entities/usuario";
 import TipoUsuario from "../../../models/enums/tipoUsuario";
 import NotificacionService from "../../../services/notificacionService";
+import { jest, describe, test, expect, beforeEach } from '@jest/globals';
 
 describe("tests sobre el servicio de notificaciones", ()=>{
     const usuario1 = {
@@ -61,17 +62,14 @@ describe("tests sobre el servicio de notificaciones", ()=>{
     const mockRepoPedidos = {
         
     }
-    const mockRepoUsuarios = {
-        findById: jest.fn()
-    }
 
-    const notificacionService = new NotificacionService(mockRepoNotificaciones, mockRepoPedidos, mockRepoUsuarios);
+    const notificacionService = new NotificacionService(mockRepoNotificaciones, mockRepoPedidos);
 
-    test("service de obtener todas las notificaciones de un userId", ()=>{
+    test("service de obtener todas las notificaciones de un userId",async ()=>{
         mockRepoNotificaciones.findAll.mockResolvedValueOnce([
             notificacion1, notificacion2
         ])
-        notificacionService.findAll(1)
-        expect().toHaveBeenCalledWith
+        const notificaciones = await notificacionService.findAll(1)
+        expect(notificaciones).toEqual([notificacion1,notificacion2])
     })
 })

@@ -1,10 +1,9 @@
 import FactoryNotificacion from "../models/entities/notificacion/factoryNotificacion.js";
 
 export default class NotificacionService {
-  constructor(notificacionRepository, pedidoRepository, usuarioRepository) {
+  constructor(notificacionRepository, pedidoRepository) {
     this.notificacionRepository = notificacionRepository;
     this.pedidoRepository = pedidoRepository;
-    this.usuarioRepository = usuarioRepository;
     this.factory = new FactoryNotificacion();
   }
 
