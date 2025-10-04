@@ -6,6 +6,7 @@ import { ValidationError } from "../errors/tiendaSolError.js";
 import Usuario from "../models/entities/usuario.js";
 import TipoUsuario from "../models/enums/tipoUsuario.js";
 import mongoose from "mongoose";
+import { paginationBuildResponse } from "../utils/pagination.js";
 
 const usuario = new Usuario("Juan", TipoUsuario.VENDEDOR);
 
@@ -50,30 +51,48 @@ export default class ProductoService {
     return productoGuardado;
   }
 
-  async findAll() {
-    return await this.productoRepository.findAll();
+  async findAll(page = 1, limit = 10, filtros = {}) {
+    const paginado = await paginationBuildResponse(
+      page,
+      limit,
+      filtros,
+      (numeroPagina, elementosPorPagina, filtros) =>
+        this.productoRepository.findByPage(
+          numeroPagina,
+          elementosPorPagina,
+          filtros
+        )
+    );
+
+    paginado.total = await this.productoRepository.count(filtros);
+    paginado.calculateTotalPages();
+
+    paginado.data = this.order(paginado.data, filtros);
+
+    return paginado;
   }
 
-  // create(nuevoProductoJSON) {
-  //   //! El vendedor full hardcodeado obviamente se tiene que ir
-  //   const nuevoProducto = new Producto(usuario, nuevoProductoJSON.titulo);
-  //   const tipoMoneda = parsearMoneda(nuevoProductoJSON.moneda);
+  order(data, filtros) {
+    const { orderBy } = filtros;
 
-  //   const categorias = (nuevoProductoJSON.categorias || []).map(
-  //     (nombre) => new Categoria(nombre)
-  //   );
+    if (orderBy) {
+      switch (orderBy) {
+        case "price_asc":
+          data.sort((a, b) => a.precio - b.precio);
+          break;
+        case "price_desc":
+          data.sort((a, b) => b.precio - a.precio);
+          break;
+        case "best_seller":
+          // TODO: Esperar implementacion de persistencia de pedidos
+          break;
+        default:
+          break;
+      }
+    }
 
-  //   nuevoProducto.setCategorias(categorias);
-  //   nuevoProducto.setFotos(nuevoProductoJSON.fotos || []);
-  //   nuevoProducto.setDescripcion(nuevoProductoJSON.descripcion || "");
-  //   nuevoProducto.setPrecio(nuevoProductoJSON.precio || 0);
-  //   nuevoProducto.setMoneda(tipoMoneda || Moneda.PESO_ARG); // Hay q convertir a enum
-  //   nuevoProducto.aumentarStock(nuevoProductoJSON.stock || 0);
-  //   nuevoProducto.setActivo(true);
-
-  //   const productoGuardado = this.productoRepository.create(nuevoProducto);
-  //   return productoGuardado;
-  // }
+    return data;
+  }
 
   // findById(id) {
   //   return this.productoRepository.findById(id);
@@ -129,27 +148,5 @@ export default class ProductoService {
 
   // delete(id) {
   //   this.productoRepository.delete(id);
-  // }
-
-  // order(data, filtros) {
-  //   const { orderBy } = filtros;
-
-  //   if (orderBy) {
-  //     switch (orderBy) {
-  //       case "price_asc":
-  //         data.sort((a, b) => a.precio - b.precio);
-  //         break;
-  //       case "price_desc":
-  //         data.sort((a, b) => b.precio - a.precio);
-  //         break;
-  //       case "best_seller":
-  //         // TODO: Esperar implementacion de persistencia de pedidos
-  //         break;
-  //       default:
-  //         break;
-  //     }
-  //   }
-
-  //   return data;
   // }
 }

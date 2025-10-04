@@ -1,17 +1,17 @@
-export const paginationGetValues = (req, func) => {
+export async function paginationGetValues(req, func) {
   const { page = 1, limit = 10 } = req.query;
   const filtros = req.query;
 
   return func(page, limit, filtros);
-};
+}
 
-export const paginationBuildResponse = (page, limit, filtros, func) => {
+export async function paginationBuildResponse(page, limit, filtros, func) {
   const numeroPagina = Math.max(Number(page), 1);
   const elementosPorPagina = Math.min(Math.max(Number(limit), 1), 100);
-  const data = func(numeroPagina, elementosPorPagina, filtros);
+  const data = await func(numeroPagina, elementosPorPagina, filtros);
 
   return new PaginationDto(numeroPagina, elementosPorPagina, data);
-};
+}
 
 export class PaginationDto {
   numeroPagina;

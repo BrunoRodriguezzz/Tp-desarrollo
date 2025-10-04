@@ -31,11 +31,51 @@ export default class ProductoRepository {
     return await this.model.find();
   }
 
-  // create(producto) {
-  //   producto.id = this.nextId++;
-  //   this.productos.push(producto);
-  //   return producto;
-  // }
+  async count(filtros) {
+    return await this.model.countDocuments(this.applyFilters(filtros));
+  }
+
+  async findByPage(page = 1, limit = 10, filtros) {
+    const skip = (page - 1) * limit;
+
+    const productos = await this.model
+      .find(this.applyFilters(filtros))
+      .skip(skip)
+      .limit(limit)
+      .exec();
+
+    return productos;
+  }
+
+  applyFilters(filtros) {
+    const { maxPrice, minPrice, search, categoria, vendedor } = filtros;
+
+    let query = { activo: true };
+
+    if (minPrice || maxPrice) {
+      query.precio = {};
+      if (minPrice) query.precio.$gte = Number(minPrice);
+      if (maxPrice) query.precio.$lte = Number(maxPrice);
+    }
+
+    if (search) {
+      query.$or = [
+        { titulo: { $regex: search, $options: "i" } },
+        { descripcion: { $regex: search, $options: "i" } },
+        { categorias: { $elemMatch: { $regex: search, $options: "i" } } },
+      ];
+    }
+
+    if (categoria) {
+      query.categorias = categoria;
+    }
+
+    if (vendedor) {
+      query.vendedor = vendedor;
+    }
+
+    return query;
+  }
 
   // findAll(filtros = {}) {
   //   return this.applyFilters(this.productos, filtros);
@@ -66,25 +106,6 @@ export default class ProductoRepository {
 
   // countBySeller(filtros = {}, vendedorId) {
   //   return filtrarPorVendedor(this.findAll(filtros), vendedorId).length;
-  // }
-
-  // applyFilters(productos, filtros) {
-  //   const { maxPrice, minPrice, search } = filtros;
-  //   let productosFiltrados = productos;
-
-  //   if (maxPrice || minPrice) {
-  //     productosFiltrados = filtrarPorPrecio(
-  //       productosFiltrados,
-  //       maxPrice,
-  //       minPrice
-  //     );
-  //   }
-
-  //   if (search) {
-  //     productosFiltrados = filtrarPorBusqueda(productosFiltrados, search);
-  //   }
-
-  //   return productosFiltrados.filter((p) => p.activo);
   // }
 
   // update(id, productoModificado) {
