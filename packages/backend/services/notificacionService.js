@@ -8,26 +8,19 @@ export default class NotificacionService {
     this.factory = new FactoryNotificacion();
   }
 
-  async verificarExistenciaUsuario(userId) {
-    if (! (await this.usuarioRepository.findById(userId))) return null;
-  }
-
   async findAll() {
     return await this.notificacionRepository.findAll();
   }
 
   async findAllUser(userId) {
-    await this.verificarExistenciaUsuario(userId);
     return await this.notificacionRepository.findAllByUserId(userId);
   }
 
   async findAllLeidas(userId) {
-    await this.verificarExistenciaUsuario(userId);
     return await this.notificacionRepository.findAllLeidas(userId);
   }
 
   async findAllNoLeidas(userId) {
-    await this.verificarExistenciaUsuario(userId);
     return await this.notificacionRepository.findAllNoLeidas(userId);
   }
 

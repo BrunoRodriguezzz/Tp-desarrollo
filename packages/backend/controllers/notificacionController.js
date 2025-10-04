@@ -13,14 +13,13 @@ export default class NotificacionController {
         userId: idTransform,
         leida: booleanTransform,
       });
-
       const parsed = querySchema.safeParse(req.query);
-
       if (!parsed.success) {
         return res.status(400).json({ errors: parsed.error.issues });
       }
 
       const { userId, leida } = parsed.data;
+
       let notificaciones;
 
       if (!userId && leida === undefined) {
@@ -74,7 +73,7 @@ export default class NotificacionController {
 
   async crear(req, res) {
     const { pedidoId } = req.body;
-    if (!pedido)
+    if (!pedidoId)
       return res.status(400).json({ error: "Debe enviarse un pedido" });
 
     try {
@@ -93,17 +92,7 @@ export default class NotificacionController {
 
 const idTransform = z
   .string()
-  .transform((val, ctx) => {
-    const num = Number(val);
-    if (isNaN(num)) {
-      ctx.addIssue({
-        code: "custom",
-        message: "userId must be a number",
-      });
-      return z.NEVER;
-    }
-    return num;
-  })
+  .regex(/^[0-9a-fA-F]{24}$/, "ID debe ser un ObjectId válido")
   .optional();
 
 const booleanTransform = z

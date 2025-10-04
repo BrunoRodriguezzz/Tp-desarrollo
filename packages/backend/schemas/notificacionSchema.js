@@ -23,13 +23,8 @@ const notificacionSchema = new mongoose.Schema({
   }
 }, {
   collection: 'notificaciones',  
-  toJSON: { virtuals: true },    
-  toObject: { virtuals: true }  
 });
 
-notificacionSchema.virtual('id').get(function() {
-  return this._id.toString();
-});
 
 notificacionSchema.loadClass(Notificacion);
 
