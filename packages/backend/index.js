@@ -43,11 +43,16 @@ const usuarioRepository = new UsuarioRepository();
 
 // Capas de Servicio
 const usuarioService = new UsuarioService(usuarioRepository);
-const productoService = new ProductoService(productoRepository);
+const productoService = new ProductoService(
+  productoRepository,
+  usuarioRepository
+);
+
 const notificacionService = new NotificacionService(
   notificacionRepository,
   pedidoRepository
 );
+
 const pedidoService = new PedidoService(
   pedidoRepository,
   usuarioService,
