@@ -29,9 +29,13 @@ export default class ProductoRepository {
       query = query.sort({ precio: 1 });
     } else if (filtros.orderBy === "price_desc") {
       query = query.sort({ precio: -1 });
+    } else if (filtros.orderBy === "newest") {
+      query = query.sort({ createdAt: -1 });
+    } else if (filtros.orderBy === "oldest") {
+      query = query.sort({ createdAt: 1 });
+    } else if (filtros.orderBy === "best_seller") {
+      // TODO: Implementar best_seller cuando haya persistencia de pedidos
     }
-
-    // TODO: Implementar best_seller cuando haya persistencia de pedidos
 
     const productos = await query.skip(skip).limit(limit).exec();
     return productos;

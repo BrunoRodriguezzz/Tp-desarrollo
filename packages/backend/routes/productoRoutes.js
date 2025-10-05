@@ -27,15 +27,6 @@ export default function healtCheckRoute(getController) {
     }
   });
 
-  // GET /productos/vendedor/:id
-  router.get(pathProductos + "/vendedor/:id", async (req, res, next) => {
-    try {
-      await getController(ProductoController).findBySeller(req, res);
-    } catch (err) {
-      next(err);
-    }
-  });
-
   // GET /productos/:id
   router.get(pathProductos + "/:id", async (req, res, next) => {
     try {

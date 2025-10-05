@@ -54,31 +54,6 @@ export default class ProductoController {
     res.status(200).json(producto);
   }
 
-  async findBySeller(req, res) {
-    const id = req.params.id;
-
-    if (!validarParsearID(id)) {
-      throw new ValidationError("ID de vendedor inválido");
-    }
-
-    const productosPaginados = await paginationGetValues(
-      req,
-      (page, limit, filtros) =>
-        this.productoService.findBySeller(id, page, limit, filtros)
-    );
-
-    if (
-      !productosPaginados ||
-      productosPaginados.total === 0 ||
-      (Array.isArray(productosPaginados.data) &&
-        productosPaginados.data.length === 0)
-    ) {
-      return res.status(204).send();
-    }
-
-    res.status(200).json(productosPaginados);
-  }
-
   async update(req, res) {
     const id = req.params.id;
 
