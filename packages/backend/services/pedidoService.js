@@ -82,7 +82,7 @@ export default class PedidoService {
       await this.productoService.update(item.producto.id, item.producto);
     }
 
-    this.notificacionService.crearSegunPedido(pedidoPersistido.id);
+    this.notificacionService.crearSegunPedido(pedidoPersistido);
 
     return pedidoToDTO(pedidoPersistido);
   }
@@ -107,7 +107,7 @@ export default class PedidoService {
       pedido
     );
 
-    this.notificacionService.crearSegunPedido(pedidoPersistido.id);
+    this.notificacionService.crearSegunPedido(pedidoPersistido);
 
     return pedidoToDTO(pedidoPersistido);
   }
@@ -168,7 +168,7 @@ export default class PedidoService {
     const pedidoDTO = pedidoToDTO(pedidoActualizado);
     const vendedorDTO = usuarioToDTO(vendedor);
 
-    this.notificacionService.crearSegunPedido(pedidoActualizado.id);
+    this.notificacionService.crearSegunPedido(pedidoActualizado);
 
     return {
       pedido: pedidoDTO,
