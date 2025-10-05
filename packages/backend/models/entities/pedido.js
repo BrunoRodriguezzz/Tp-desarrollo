@@ -1,3 +1,4 @@
+import { validar } from "../../validadores/validadoresProducto.js";
 import EstadoPedido from "../enums/estadoPedido.js";
 import Moneda from "../enums/moneda.js";
 import CambioEstadoPedido from "./cambioEstadoPedido.js";
@@ -16,6 +17,7 @@ class Pedido {
   vendedor;
 
   constructor(comprador, moneda, direccion) {
+    validar(comprador, moneda, direccion);
     this.comprador = comprador;
     this.moneda = moneda;
     this.direccion = direccion;
@@ -30,7 +32,7 @@ class Pedido {
     if (!this.vendedor) {
       this.vendedor = item.producto.vendedor;
     }
-    
+
     this.calcularTotal();
   }
 

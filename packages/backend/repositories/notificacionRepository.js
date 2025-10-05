@@ -11,7 +11,10 @@ export default class NotificacionRepository {
   }
 
   async findAll() {
-    return await this.model.find();
+    const notificaciones = await this.model.find({}).lean();
+
+    const respuesta = await this.model.find() 
+    return respuesta;
   }
 
   async findAllByUserId(userId) {
@@ -20,14 +23,14 @@ export default class NotificacionRepository {
 
   async findAllLeidas(userId) {
     return await this.model.find({ 
-    usuarioDestino: usuarioId, 
+    usuarioDestino: userId, 
     leida: true 
   });
   }
 
   async findAllNoLeidas(userId) {
     return await this.model.find({ 
-    usuarioDestino: usuarioId, 
+    usuarioDestino: userId, 
     leida: false 
   });
   }

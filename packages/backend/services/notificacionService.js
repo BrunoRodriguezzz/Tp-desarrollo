@@ -2,10 +2,9 @@ import FactoryNotificacion from "../models/entities/notificacion/factoryNotifica
 import { NotFoundError, ValidationError } from "../errors/tiendaSolError.js";
 
 export default class NotificacionService {
-  constructor(notificacionRepository, pedidoRepository, usuarioRepository) {
+  constructor(notificacionRepository, pedidoRepository) {
     this.notificacionRepository = notificacionRepository;
     this.pedidoRepository = pedidoRepository;
-    this.usuarioRepository = usuarioRepository;
     this.factory = new FactoryNotificacion();
   }
 
@@ -18,17 +17,14 @@ export default class NotificacionService {
   }
 
   async findAllUser(userId) {
-    await this.verificarExistenciaUsuario(userId);
     return await this.notificacionRepository.findAllByUserId(userId);
   }
 
   async findAllLeidas(userId) {
-    await this.verificarExistenciaUsuario(userId);
     return await this.notificacionRepository.findAllLeidas(userId);
   }
 
   async findAllNoLeidas(userId) {
-    await this.verificarExistenciaUsuario(userId);
     return await this.notificacionRepository.findAllNoLeidas(userId);
   }
 
