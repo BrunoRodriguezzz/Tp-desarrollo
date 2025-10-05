@@ -1,3 +1,8 @@
+import {
+  ConflictError,
+  NotFoundError,
+  ValidationError,
+} from "../errors/tiendaSolError.js";
 import EstadoPedido from "../models/enums/estadoPedido.js";
 import { isMoneda } from "./validadorDeEnums.js";
 import { isNumber } from "./validadorTiposNativos.js";
@@ -34,6 +39,23 @@ export function validarVendedor(vendedor, vendedorId) {
   if (vendedor.tipo !== TipoUsuario.VENDEDOR) {
     throw new ConflictError(
       `El usuario ${vendedor.id} no es un vendedor válido`
+    );
+  }
+}
+
+export function validarVendedorAutorizado(pedido, vendedorId) {
+  if (!pedido.items || pedido.items.length === 0) {
+    throw new ValidationError("El pedido no tiene items");
+  }
+
+  const item = pedido.items[0];
+  if (!item.producto || !item.producto.vendedor) {
+    throw new ValidationError("Los productos no tienen vendedor asignado");
+  }
+
+  if (item.producto.vendedor.id !== vendedorId) {
+    throw new ValidationError(
+      `El vendedor del pedido no coincide con el vendedor del producto`
     );
   }
 }

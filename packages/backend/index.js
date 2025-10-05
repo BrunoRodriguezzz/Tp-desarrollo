@@ -51,7 +51,8 @@ const notificacionService = new NotificacionService(
 const pedidoService = new PedidoService(
   pedidoRepository,
   usuarioService,
-  productoService
+  productoService,
+  notificacionService
 );
 
 // Capas de Controlador

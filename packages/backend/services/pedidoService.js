@@ -17,10 +17,16 @@ import { pedidoToDTO, usuarioToDTO } from "../utils/mappers.js";
 import { validarString } from "../validadores/validadorTiposNativos.js";
 
 export default class PedidoService {
-  constructor(PedidoRepository, UsuarioService, ProductoService) {
+  constructor(
+    PedidoRepository,
+    UsuarioService,
+    ProductoService,
+    NotificacionService
+  ) {
     this.pedidoRepository = PedidoRepository;
     this.usuarioService = UsuarioService;
     this.productoService = ProductoService;
+    this.notificacionService = NotificacionService;
   }
 
   async create(nuevoPedido) {
@@ -66,6 +72,8 @@ export default class PedidoService {
       await this.ProductoService.update(item.producto.id, item.producto);
     }
 
+    this.notificacionService.crearSegunPedido(pedidoPersistido.id);
+
     return pedidoToDTO(pedidoPersistido);
   }
 
@@ -89,6 +97,8 @@ export default class PedidoService {
       pedido
     );
 
+    this.notificacionService.crearSegunPedido(pedidoPersistido.id);
+
     return pedidoToDTO(pedidoPersistido);
   }
 
@@ -107,10 +117,9 @@ export default class PedidoService {
     };
   }
 
-  async marcarPedidoEnviado(idPedido, marcarEnvioJSON) {
-    //TODO - Vendedor hay que verificar si es efectivamente el vendedor de ese producto (producto service que lo estan haciendo)
-    const pedido = await this.pedidoRepository.findById(idPedido);
-    validarPedido(pedido, idPedido);
+  async marcarPedidoEnviado(pedidoId, marcarEnvioJSON) {
+    const pedido = await this.pedidoRepository.findById(pedidoId);
+    validarPedido(pedido, pedidoId);
     validarEstadoParaEnviar(pedido);
     validarString(marcarEnvioJSON.motivo);
 
@@ -118,6 +127,7 @@ export default class PedidoService {
       marcarEnvioJSON.vendedorId
     );
     validarVendedor(vendedor, marcarEnvioJSON.vendedorId);
+    validarVendedorAutorizado(pedido, marcarEnvioJSON.validarVendedor);
 
     pedido.actualizarEstado(
       EstadoPedido.ENVIADO,
@@ -126,12 +136,14 @@ export default class PedidoService {
     );
 
     const pedidoActualizado = await this.pedidoRepository.update(
-      idPedido,
+      pedidoId,
       pedido
     );
 
     const pedidoDTO = pedidoToDTO(pedidoActualizado);
     const vendedorDTO = usuarioToDTO(vendedor);
+
+    this.notificacionService.crearSegunPedido(pedidoActualizado.id);
 
     return {
       pedido: pedidoDTO,
