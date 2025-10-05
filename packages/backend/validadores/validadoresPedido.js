@@ -56,10 +56,16 @@ export function validarVendedorAutorizado(pedido, vendedorId) {
     throw new ValidationError("Los productos no tienen vendedor asignado");
   }
 
-  if (item.producto.vendedor.id !== vendedorId) {
+  if (item.producto.vendedor._id !== vendedorId) {
     throw new ValidationError(
-      `El vendedor del pedido no coincide con el vendedor del producto`
+      `El vendedor del pedido ${item.producto.vendedor.id} no coincide con el vendedor del producto ${vendedorId}`
     );
+  }
+}
+
+export function validarProducto(producto, productoId) {
+  if (!producto) {
+    throw new NotFoundError(`Producto ${productoId} no encontrado`);
   }
 }
 
@@ -67,7 +73,7 @@ export function validarItemProducto(producto, item) {
   if (!producto) {
     throw new NotFoundError(`Producto ${item.productoId} no encontrado`);
   }
-  if (item.validarStock()) {
+  if (!item.validarStock()) {
     throw new ConflictError(`Stock insuficiente para ${producto.nombre}`);
   }
 }

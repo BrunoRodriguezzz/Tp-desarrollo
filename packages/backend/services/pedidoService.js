@@ -1,17 +1,25 @@
+import Pedido from "../models/entities/pedido.js";
 import ItemPedido from "../models/entities/itemPedido.js";
 import DireccionEntrega from "../models/entities/ubicaciones/direccionEntrega.js";
+import Pais from "../models/entities/ubicaciones/pais.js";
+import Provincia from "../models/entities/ubicaciones/provincia.js";
+import Ciudad from "../models/entities/ubicaciones/ciudad.js";
+import Domicilio from "../models/entities/ubicaciones/domicilio.js";
+import Coordenada from "../models/entities/ubicaciones/coordenada.js";
 import EstadoPedido from "../models/enums/estadoPedido.js";
 import { isMoneda } from "../validadores/validadorDeEnums.js";
 import {
   validarComprador,
   validarVendedor,
   validarItemProducto,
+  validarVendedorAutorizado,
   validarEstadoParaCancelar,
   validarPedido,
   validarEstadoParaEnviar,
   validarDireccion,
   validarCreacionPedido,
   validarCancelacionPedido,
+  validarProducto,
 } from "../validadores/validadoresPedido.js";
 import { pedidoToDTO, usuarioToDTO } from "../utils/mappers.js";
 import { validarString } from "../validadores/validadorTiposNativos.js";
@@ -45,7 +53,8 @@ export default class PedidoService {
     // instancio y valido los items del pedido
     const itemsValidados = [];
     for (const item of items) {
-      const producto = await this.ProductoService.findById(item.productoId);
+      const producto = await this.productoService.findById(item.productoId);
+      validarProducto(producto, item.productoId);
       const nuevoItem = new ItemPedido(
         producto,
         item.cantidad,
@@ -56,7 +65,7 @@ export default class PedidoService {
     }
 
     // todos los items validados => instancio nuevo pedido
-    const pedido = instanciarNuevoPedido(
+    const pedido = this.instanciarNuevoPedido(
       comprador,
       moneda,
       direccionEntrega,
@@ -69,7 +78,7 @@ export default class PedidoService {
     // actualizo el stock del producto
     for (const item of itemsValidados) {
       item.producto.reducirStock(item.cantidad);
-      await this.ProductoService.update(item.producto.id, item.producto);
+      await this.productoService.update(item.producto.id, item.producto);
     }
 
     this.notificacionService.crearSegunPedido(pedidoPersistido.id);
@@ -127,7 +136,7 @@ export default class PedidoService {
       marcarEnvioJSON.vendedorId
     );
     validarVendedor(vendedor, marcarEnvioJSON.vendedorId);
-    validarVendedorAutorizado(pedido, marcarEnvioJSON.validarVendedor);
+    validarVendedorAutorizado(pedido, marcarEnvioJSON.vendedorId);
 
     pedido.actualizarEstado(
       EstadoPedido.ENVIADO,
