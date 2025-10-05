@@ -1,4 +1,4 @@
-import { validarNumeroPositivoMayorCero } from "../validadores/validadorTiposNativos";
+import { validarNumeroPositivoMayorCero } from "../validadores/validadorTiposNativos.js";
 
 export async function paginationGetValues(req, func) {
   let { page = 1, limit = 10 } = req.query;
