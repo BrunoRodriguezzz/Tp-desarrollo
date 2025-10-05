@@ -37,7 +37,8 @@ export default class ProductoRepository {
     }
     if (filtros.orderBy === "best_seller") {
       const match = this.applyFilters(filtros);
-      const productos = await this.model
+
+      return await this.model
         .aggregate([
           { $match: match },
           {
@@ -74,8 +75,6 @@ export default class ProductoRepository {
           { $project: { ventas: 0 } },
         ])
         .exec();
-
-      return productos;
     }
 
     const productos = await query.skip(skip).limit(limit).exec();
