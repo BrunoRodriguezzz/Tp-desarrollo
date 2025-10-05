@@ -349,7 +349,6 @@ paths:
         '204':
           description: No se encontraron productos para el vendedor.
 
-  # --- Pedidos ---
   /pedidos:
     post:
       tags:
@@ -363,6 +362,78 @@ paths:
             schema:
               type: object
               description: Datos necesarios para crear un pedido
+              properties:
+                compradorId:
+                  type: string
+                  description: ID del usuario que realiza la compra.
+                  example: "68e1d2ad1e349c4f60f53ca4"
+                moneda:
+                  type: string
+                  description: Moneda del pedido.
+                  example: "PESO_ARG"
+                direccion:
+                  type: object
+                  description: Dirección de envío del pedido.
+                  properties:
+                    ciudad:
+                      type: object
+                      properties:
+                        nombre:
+                          type: string
+                          example: "Buenos Aires"
+                        provincia:
+                          type: object
+                          properties:
+                            nombre:
+                              type: string
+                              example: "Buenos Aires"
+                            pais:
+                              type: object
+                              properties:
+                                nombre:
+                                  type: string
+                                  example: "Argentina"
+                    domicilio:
+                      type: object
+                      properties:
+                        calle:
+                          type: string
+                          example: "Una calle"
+                        altura:
+                          type: integer
+                          example: 123
+                        piso:
+                          type: integer
+                          example: 4
+                        departamento:
+                          type: string
+                          example: "B"
+                        codigoPostal:
+                          type: string
+                          example: "1000"
+                    coordenada:
+                      type: object
+                      properties:
+                        latitud:
+                          type: number
+                          example: -34
+                        longitud:
+                          type: number
+                          example: -58
+                items:
+                  type: array
+                  description: Lista de productos comprados en el pedido.
+                  items:
+                    type: object
+                    properties:
+                      productoId:
+                        type: string
+                        description: ID del producto.
+                        example: "68e1d2ad1e349c4f60f53d08"
+                      cantidad:
+                        type: integer
+                        description: Cantidad de unidades del producto.
+                        example: 2
       responses:
         '201':
           description: Pedido creado exitosamente.
@@ -407,6 +478,19 @@ paths:
           schema:
             type: integer
           description: ID del usuario.
+        - in: query
+          name: page
+          schema:
+            type: integer
+            minimum: 1
+          description: Número de página para la paginación.
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+          description: Cantidad máxima de productos por página.
       responses:
         '200':
           description: Historial de pedidos del usuario.
@@ -437,93 +521,6 @@ paths:
           description: Pedido no encontrado.
         '500':
           description: Error interno del servidor.
-    /pedidos:
-      post:
-        tags:
-          - Pedidos
-        summary: Crear un pedido
-        description: Crea un nuevo pedido con los datos enviados en el cuerpo de la solicitud.
-        requestBody:
-          required: true
-          content:
-            application/json:
-              schema:
-                type: object
-                description: Datos necesarios para crear un pedido
-        responses:
-          '201':
-            description: Pedido creado exitosamente.
-          '400':
-            description: Error en los datos enviados.
-          '500':
-            description: Error interno del servidor.
-
-    /pedidos/{id}/cancelacion:
-      post:
-        tags:
-          - Pedidos
-        summary: Cancelar un pedido
-        description: Cancela el pedido identificado por el ID.
-        parameters:
-          - in: path
-            name: id
-            required: true
-            schema:
-              type: integer
-            description: ID del pedido a cancelar.
-        responses:
-          '200':
-            description: Pedido cancelado exitosamente.
-          '400':
-            description: ID inválido o no se puede cancelar el pedido.
-          '404':
-            description: Pedido no encontrado.
-          '500':
-            description: Error interno del servidor.
-
-    /pedidos/usuarios/{id}:
-      get:
-        tags:
-          - Pedidos
-        summary: Obtener historial de pedidos de un usuario
-        description: Devuelve el historial de pedidos de un usuario específico.
-        parameters:
-          - in: path
-            name: id
-            required: true
-            schema:
-              type: integer
-            description: ID del usuario.
-        responses:
-          '200':
-            description: Historial de pedidos del usuario.
-          '404':
-            description: Usuario no encontrado o sin pedidos.
-          '500':
-            description: Error interno del servidor.
-
-    /pedidos/{id}/envio:
-      post:
-        tags:
-          - Pedidos
-        summary: Marcar pedido como enviado
-        description: Marca el pedido identificado por el ID como enviado.
-        parameters:
-          - in: path
-            name: id
-            required: true
-            schema:
-              type: integer
-            description: ID del pedido a marcar como enviado.
-        responses:
-          '200':
-            description: Pedido marcado como enviado correctamente.
-          '400':
-            description: ID inválido o no se puede marcar como enviado.
-          '404':
-            description: Pedido no encontrado.
-          '500':
-            description: Error interno del servidor.
 components:
   schemas:
     Notificacion:
@@ -607,3 +604,99 @@ components:
           type: boolean
           description: Indica si el producto está activo o no.
           example: true
+    Pedido:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID único del pedido.
+        comprador:
+          type: string
+          description: ID del usuario que realiza la compra.
+        items:
+          type: array
+          description: Lista de productos comprados en el pedido.
+          items:
+            type: object
+            properties:
+              producto:
+                type: string
+                description: ID del producto.
+              cantidad:
+                type: integer
+                description: Cantidad de unidades del producto.
+              precioUnitario:
+                type: number
+                description: Precio unitario del producto.
+                example: 15000
+        total:
+          type: number
+          description: Total del pedido calculado.
+        moneda:
+          type: string
+          description: Moneda del pedido.
+        direccion:
+          type: object
+          description: Dirección de envío del pedido.
+          properties:
+            ciudad:
+              type: object
+              properties:
+                nombre:
+                  type: string
+            provincia:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                pais:
+                  type: object
+                  properties:
+                    nombre:
+                      type: string
+            domicilio:
+              type: object
+              properties:
+                calle:
+                  type: string
+                altura:
+                  type: integer
+                piso:
+                  type: integer
+                departamento:
+                  type: string
+                codigoPostal:
+                  type: string
+            coordenada:
+              type: object
+              properties:
+                latitud:
+                  type: number
+                longitud:
+                  type: number
+        estado:
+          type: string
+          description: Estado actual del pedido.
+        fechaCreacion:
+          type: string
+          format: date-time
+          description: Fecha de creación del pedido.
+        historialEstados:
+          type: array
+          description: Historial de cambios de estado del pedido.
+          items:
+            type: object
+            properties:
+              estado:
+                type: string
+              fecha:
+                type: string
+                format: date-time
+              usuario:
+                type: string
+                description: ID del usuario que cambió el estado.
+              motivo:
+                type: string
+        vendedor:
+          type: string
+          description: ID del vendedor del pedido.
