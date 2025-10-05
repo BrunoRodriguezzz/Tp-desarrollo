@@ -192,4 +192,8 @@ export default class PedidoService {
 
     return pedido;
   }
+
+  async findByProduct(producto) {
+    return await this.pedidoRepository.findByProduct(producto);
+  }
 }

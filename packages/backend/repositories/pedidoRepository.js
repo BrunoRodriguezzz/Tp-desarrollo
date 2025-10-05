@@ -29,6 +29,10 @@ class PedidoRepository {
   async update(id, pedidoModificado) {
     return this.model.findByIdAndUpdate(id, pedidoModificado, { new: true });
   }
+
+  async findByProduct(producto) {
+    return await this.model.find({ "items.producto": producto });
+  }
 }
 
 export default PedidoRepository;

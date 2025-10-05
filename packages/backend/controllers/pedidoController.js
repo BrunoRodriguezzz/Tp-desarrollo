@@ -102,6 +102,22 @@ export default class PedidoController {
       return res.status(error.statusCode).json({ error: error.message });
     }
   }
+
+  async findByProduct(req, res) {
+    const productoId = req.params.id;
+    try {
+      const pedidos = await this.pedidoService.findByProduct(productoId);
+      if (pedidos.length === 0) {
+        return res
+          .status(204)
+          .send("No se encontraron pedidos para ese producto");
+      }
+      return res.status(200).json(pedidos);
+    } catch (error) {
+      const status = error.statusCode || 500;
+      return res.status(status).json({ error: error.message });
+    }
+  }
 }
 
 const enviadoSchema = z.object({

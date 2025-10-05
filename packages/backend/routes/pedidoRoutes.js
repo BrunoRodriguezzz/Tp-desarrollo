@@ -22,5 +22,9 @@ export default function pedidoRoutes(getController) {
     getController(PedidoController).marcarEnvio(req, res)
   );
 
+  router.get(pathPedidos + "/productos/:id", (req, res) =>
+    getController(PedidoController).findByProduct(req, res)
+  );
+
   return router;
 }
