@@ -2,8 +2,11 @@ import { ValidationError } from "../../errors/tiendaSolError.js";
 import { isMoneda } from "../../validadores/validadorDeEnums.js";
 import { validar } from "../../validadores/validadoresProducto.js";
 import { validarCategoria } from "../../validadores/validadorDeClases.js";
-import { validarNumeroPositivo, isArrayOf } from "../../validadores/validadorTiposNativos.js";
-import { validarString } from "../../validadores/validadorTiposNativos.js";
+import {
+  validarNumeroPositivo,
+  isArrayOf,
+  validarString,
+} from "../../validadores/validadorTiposNativos.js";
 import Moneda from "../enums/moneda.js";
 import Categoria from "./categoria.js";
 
@@ -26,7 +29,7 @@ export default class Producto {
     this.descripcion = "";
     this.categorias = [];
     this.precio = 0;
-    this.moneda = Moneda.ARS;
+    this.moneda = Moneda.PESO_ARG;
     this.stock = 0;
     this.fotos = [];
     this.activo = true;
@@ -36,6 +39,8 @@ export default class Producto {
     validarNumeroPositivo(cantidad, "Cantidad");
     return this.stock >= cantidad;
   }
+
+  // --- Manejo de listas ---
 
   reducirStock(cantidad) {
     validarNumeroPositivo(cantidad, "Cantidad");
@@ -60,7 +65,8 @@ export default class Producto {
     this.fotos.push(url);
   }
 
-  // Seters
+  // --- Setters ---
+
   setDescripcion(descripcion) {
     validarString(descripcion, "Descripción");
     this.descripcion = descripcion;

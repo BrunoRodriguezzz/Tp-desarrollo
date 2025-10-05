@@ -2,10 +2,8 @@ import { parsearMoneda } from "../validadores/validadorDeEnums.js";
 import Producto from "../models/entities/producto.js";
 import Categoria from "../models/entities/categoria.js";
 import Moneda from "../models/enums/moneda.js";
-import { ValidationError } from "../errors/tiendaSolError.js";
 import Usuario from "../models/entities/usuario.js";
 import TipoUsuario from "../models/enums/tipoUsuario.js";
-import mongoose from "mongoose";
 import { paginationBuildResponse } from "../utils/pagination.js";
 
 const usuario = new Usuario("Juan", TipoUsuario.VENDEDOR);
@@ -63,8 +61,6 @@ export default class ProductoService {
     paginado.total = await this.productoRepository.count(filtros);
     paginado.calculateTotalPages();
 
-    paginado.data = this.order(paginado.data, filtros);
-
     return paginado;
   }
 
@@ -86,8 +82,6 @@ export default class ProductoService {
     paginado.total = await this.productoRepository.count(filtros);
     paginado.calculateTotalPages();
 
-    paginado.data = this.order(paginado.data, filtros);
-
     return paginado;
   }
 
@@ -96,32 +90,12 @@ export default class ProductoService {
       id,
       productoJSON
     );
+
     return productoActualizado;
   }
 
   async delete(id) {
-    await this.productoRepository.delete(id);
-  }
-
-  order(data, filtros) {
-    const { orderBy } = filtros;
-
-    if (orderBy) {
-      switch (orderBy) {
-        case "price_asc":
-          data.sort((a, b) => a.precio - b.precio);
-          break;
-        case "price_desc":
-          data.sort((a, b) => b.precio - a.precio);
-          break;
-        case "best_seller":
-          // TODO: Esperar implementacion de persistencia de pedidos
-          break;
-        default:
-          break;
-      }
-    }
-
-    return data;
+    const result = await this.productoRepository.delete(id);
+    return result;
   }
 }

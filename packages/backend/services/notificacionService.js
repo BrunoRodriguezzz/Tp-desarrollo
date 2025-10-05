@@ -1,4 +1,5 @@
 import FactoryNotificacion from "../models/entities/notificacion/factoryNotificacion.js";
+import { NotFoundError, ValidationError } from "../errors/tiendaSolError.js";
 
 export default class NotificacionService {
   constructor(notificacionRepository, pedidoRepository, usuarioRepository) {
@@ -9,7 +10,7 @@ export default class NotificacionService {
   }
 
   async verificarExistenciaUsuario(userId) {
-    if (! (await this.usuarioRepository.findById(userId))) return null;
+    if (!(await this.usuarioRepository.findById(userId))) return null;
   }
 
   async findAll() {
@@ -45,13 +46,13 @@ export default class NotificacionService {
     const pedido = await this.pedidoRepository.findById(pedidoId);
 
     if (!pedido) {
-      throw new Error(`No se encontró el pedido con id ${pedidoId}`);
+      throw new NotFoundError(`No se encontró el pedido con id ${pedidoId}`);
     }
 
     const notificacion = this.factory.crearSegunPedido(pedido);
 
     if (!notificacion) {
-      throw new Error(
+      throw new ValidationError(
         `No se pudo generar la notificación para el pedido con id ${pedidoId}`
       );
     }

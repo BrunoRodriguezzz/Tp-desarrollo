@@ -13,11 +13,11 @@ export const isMoneda = (moneda) => {
 
 export const isTipoUsuario = (tipo) => {
   return Object.values(TipoUsuario).includes(tipo);
-}
+};
 
 export function parsearMoneda(moneda) {
   if (moneda == null) {
-    return Moneda.ARS; // Valor por defecto
+    return Moneda.PESO_ARG;
   }
   switch (moneda.toUpperCase()) {
     case "ARS":

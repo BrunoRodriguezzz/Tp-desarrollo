@@ -4,6 +4,7 @@ import {
   validarParsearProducto,
   validarParsearUpdateProducto,
 } from "../validadores/validadoresProducto.js";
+import { NotFoundError, ValidationError } from "../errors/tiendaSolError.js";
 
 export default class ProductoController {
   productoService;
@@ -13,7 +14,8 @@ export default class ProductoController {
   }
 
   async create(req, res) {
-    const producto = await this.productoService.create(req.body);
+    const resultBody = validarParsearProducto(req);
+    const producto = await this.productoService.create(resultBody);
     res.status(201).json(producto);
   }
 
@@ -24,21 +26,40 @@ export default class ProductoController {
         this.productoService.findAll(page, limit, filtros)
     );
 
-    if (productosPaginados === null) {
-      res.status(204).send("No se encontraron productos");
-      return;
+    if (
+      !productosPaginados ||
+      productosPaginados.total === 0 ||
+      (Array.isArray(productosPaginados.data) &&
+        productosPaginados.data.length === 0)
+    ) {
+      return res.status(204).send();
     }
 
     res.status(200).json(productosPaginados);
   }
 
   async findById(req, res) {
-    const producto = await this.productoService.findById(req.params.id);
+    const id = req.params.id;
+
+    if (!validarParsearID(id)) {
+      throw new ValidationError("ID de producto inválido");
+    }
+
+    const producto = await this.productoService.findById(id);
+
+    if (!producto) {
+      throw new NotFoundError("Producto no encontrado");
+    }
+
     res.status(200).json(producto);
   }
 
   async findBySeller(req, res) {
     const id = req.params.id;
+
+    if (!validarParsearID(id)) {
+      throw new ValidationError("ID de vendedor inválido");
+    }
 
     const productosPaginados = await paginationGetValues(
       req,
@@ -46,9 +67,13 @@ export default class ProductoController {
         this.productoService.findBySeller(id, page, limit, filtros)
     );
 
-    if (productosPaginados === null) {
-      res.status(204).send("No se encontraron productos");
-      return;
+    if (
+      !productosPaginados ||
+      productosPaginados.total === 0 ||
+      (Array.isArray(productosPaginados.data) &&
+        productosPaginados.data.length === 0)
+    ) {
+      return res.status(204).send();
     }
 
     res.status(200).json(productosPaginados);
@@ -56,19 +81,37 @@ export default class ProductoController {
 
   async update(req, res) {
     const id = req.params.id;
-    const resultBody = validarParsearUpdateProducto(req);
 
+    if (!validarParsearID(id)) {
+      throw new ValidationError("ID de producto inválido");
+    }
+
+    const resultBody = validarParsearUpdateProducto(req);
     const productoActualizado = await this.productoService.update(
       id,
       resultBody
     );
+
+    if (!productoActualizado) {
+      throw new NotFoundError("Producto no encontrado");
+    }
 
     res.status(200).json(productoActualizado);
   }
 
   async delete(req, res) {
     const id = req.params.id;
-    await this.productoService.delete(id);
+
+    if (!validarParsearID(id)) {
+      throw new ValidationError("ID de producto inválido");
+    }
+
+    const deleted = await this.productoService.delete(id);
+
+    if (!deleted) {
+      throw new NotFoundError("Producto no encontrado");
+    }
+
     res.status(204).send();
   }
 }

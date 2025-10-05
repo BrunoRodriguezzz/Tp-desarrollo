@@ -6,7 +6,7 @@ export const isString = (valor) => {
 };
 
 export const isNumber = (valor) => {
-  return typeof valor === "number";
+  return !isNaN(valor) && typeof valor === "number";
 };
 
 export const isBoolean = (valor) => {
@@ -44,7 +44,7 @@ export const isArrayOf = (valor, tipo) => {
 };
 
 export function validarString(valor, nombreCampo) {
-  if (!isString(valor) || valor.trim() === "") {
+  if (!isString(valor)) {
     throw new ValidationError(
       `El campo '${nombreCampo}' debe ser una cadena no vacía`
     );
@@ -88,25 +88,33 @@ export function esEmailValido(cadena) {
   return regex.test(cadena);
 }
 
-
-export function validarParsearID(req) {
-  const resultId = idTransform.safeParse(req.params.id);
-
+// Permite validar y parsear un ID que puede ser número positivo o un ObjectId de MongoDB
+export function validarParsearID(id) {
+  // Si viene un request, extraer el id de params
+  const valor = typeof id === "object" && id?.params?.id ? id.params.id : id;
+  const resultId = idFlexibleTransform.safeParse(valor);
   if (resultId.error) {
     throw new ValidationError("ID inválido");
   }
-
   return resultId.data;
 }
 
-const idTransform = z.string().transform((val, ctx) => {
+// Acepta número positivo o string de 24 hex (ObjectId)
+const objectIdRegex = /^[a-f\d]{24}$/i;
+const idFlexibleTransform = z.string().transform((val, ctx) => {
+  // Si es un número positivo
   const num = Number(val);
-  if (isNaN(num) || num < 0) {
-    ctx.addIssue({
-      code: "INVALID_ID",
-      message: "id must be a non-negative number",
-    });
-    return z.NEVER;
+  if (!isNaN(num) && num >= 0 && String(num) === val) {
+    return num;
   }
-  return num;
+  // Si es un ObjectId válido
+  if (objectIdRegex.test(val)) {
+    return val;
+  }
+  ctx.addIssue({
+    code: "INVALID_ID",
+    message:
+      "El id debe ser un número positivo o un ObjectId válido de MongoDB",
+  });
+  return z.NEVER;
 });

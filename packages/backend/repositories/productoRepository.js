@@ -1,11 +1,5 @@
-import {
-  filtrarPorPrecio,
-  filtrarPorVendedor,
-  filtrarPorBusqueda,
-} from "../models/filters/productFilters.js";
-import { NotFoundError } from "../errors/tiendaSolError.js";
 import ProductoModel from "../schemas/productoSchema.js";
-import AlojamientoModel from "../schemas/productoSchema.js";
+import { NotFoundError } from "../errors/tiendaSolError.js";
 
 export default class ProductoRepository {
   constructor() {
@@ -29,13 +23,17 @@ export default class ProductoRepository {
 
   async findByPage(page = 1, limit = 10, filtros) {
     const skip = (page - 1) * limit;
+    let query = this.model.find(this.applyFilters(filtros));
 
-    const productos = await this.model
-      .find(this.applyFilters(filtros))
-      .skip(skip)
-      .limit(limit)
-      .exec();
+    if (filtros.orderBy === "price_asc") {
+      query = query.sort({ precio: 1 });
+    } else if (filtros.orderBy === "price_desc") {
+      query = query.sort({ precio: -1 });
+    }
 
+    // TODO: Implementar best_seller cuando haya persistencia de pedidos
+
+    const productos = await query.skip(skip).limit(limit).exec();
     return productos;
   }
 
@@ -61,9 +59,7 @@ export default class ProductoRepository {
 
   async delete(id) {
     const result = await this.model.deleteOne({ _id: id });
-    if (result.deletedCount === 0) {
-      throw new NotFoundError("Producto no encontrado");
-    }
+    return result.deletedCount > 0;
   }
 
   applyFilters(filtros) {

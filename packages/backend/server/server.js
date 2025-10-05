@@ -1,4 +1,5 @@
 import express from "express";
+import { NotFoundError } from "../errors/tiendaSolError.js";
 
 export default class Server {
   controllers = {};
@@ -24,7 +25,9 @@ export default class Server {
     const controller = this.controllers[controllerClass.name];
 
     if (!controller) {
-      throw new Error(`El controlador ${controllerClass.name} no se encontro`);
+      throw new NotFoundError(
+        `El controlador ${controllerClass.name} no se encontro`
+      );
     }
 
     return controller;

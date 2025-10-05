@@ -1,6 +1,6 @@
 import express from "express";
 import ProductoController from "../controllers/productoController.js";
-import loggerMiddleware from "../middlewares/loggerModdleware.js";
+import loggerMiddleware from "../middlewares/loggerMiddleware.js";
 
 const pathProductos = "/productos";
 
