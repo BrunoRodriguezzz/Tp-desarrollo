@@ -4,7 +4,12 @@ import { ValidationError } from "../errors/tiendaSolError.js";
 import { z } from "zod";
 
 export function validar(vendedor, titulo) {
-  if (vendedor == null || !(vendedor instanceof Usuario)) {
+  // Permite instancia de Usuario o documento Mongoose con campos requeridos
+  if (
+    vendedor == null ||
+    (!(vendedor instanceof Usuario) &&
+      !(typeof vendedor === "object" && vendedor.nombre && vendedor.tipo))
+  ) {
     throw new ValidationError("Vendedor inválido");
   }
 

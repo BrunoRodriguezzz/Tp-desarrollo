@@ -2,19 +2,21 @@ import { parsearMoneda } from "../validadores/validadorDeEnums.js";
 import Producto from "../models/entities/producto.js";
 import Categoria from "../models/entities/categoria.js";
 import Moneda from "../models/enums/moneda.js";
-import Usuario from "../models/entities/usuario.js";
-import TipoUsuario from "../models/enums/tipoUsuario.js";
 import { paginationBuildResponse } from "../utils/pagination.js";
-
-const usuario = new Usuario("Juan", TipoUsuario.VENDEDOR);
+import { NotFoundError } from "../errors/tiendaSolError.js";
 
 export default class ProductoService {
-  constructor(ProductoRepository) {
+  constructor(ProductoRepository, usuarioRepository) {
     this.productoRepository = ProductoRepository;
+    this.usuarioRepository = usuarioRepository;
   }
 
   async create(nuevoProductoJSON) {
-    usuario.id = nuevoProductoJSON.vendedor;
+    const usuario = await this.usuarioRepository.findById(
+      nuevoProductoJSON.vendedor
+    );
+
+    if (!usuario) throw new NotFoundError("Usuario no encontrado");
 
     const nuevoProducto = new Producto(usuario, nuevoProductoJSON.titulo);
 

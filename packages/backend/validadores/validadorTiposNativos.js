@@ -92,7 +92,7 @@ export function esEmailValido(cadena) {
 export function validarParsearID(id) {
   // Si viene un request, extraer el id de params
   const valor = typeof id === "object" && id?.params?.id ? id.params.id : id;
-  const resultId = idFlexibleTransform.safeParse(valor);
+  const resultId = objectIdOnlyTransform.safeParse(valor);
   if (resultId.error) {
     throw new ValidationError("ID inválido");
   }
@@ -101,20 +101,8 @@ export function validarParsearID(id) {
 
 // Acepta número positivo o string de 24 hex (ObjectId)
 const objectIdRegex = /^[a-f\d]{24}$/i;
-const idFlexibleTransform = z.string().transform((val, ctx) => {
-  // Si es un número positivo
-  const num = Number(val);
-  if (!isNaN(num) && num >= 0 && String(num) === val) {
-    return num;
-  }
-  // Si es un ObjectId válido
-  if (objectIdRegex.test(val)) {
-    return val;
-  }
-  ctx.addIssue({
-    code: "INVALID_ID",
-    message:
-      "El id debe ser un número positivo o un ObjectId válido de MongoDB",
+const objectIdOnlyTransform = z
+  .string()
+  .refine((val) => objectIdRegex.test(val), {
+    message: "El id debe ser un ObjectId válido de MongoDB",
   });
-  return z.NEVER;
-});
