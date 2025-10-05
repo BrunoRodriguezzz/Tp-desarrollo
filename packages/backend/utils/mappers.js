@@ -10,8 +10,8 @@ export function pedidoToDTO(pedido) {
     },
     items: pedido.items.map((item) => ({
       producto: item.producto.id || item.producto._id,
-      cantidad: item.producto.cantidad,
-      precioUnitario: item.producto.precioUnitario,
+      cantidad: item.cantidad,
+      precioUnitario: item.precioUnitario,
     })),
     total: pedido.total,
     moneda: pedido.moneda,
@@ -24,11 +24,12 @@ export function pedidoToDTO(pedido) {
       tipo: pedido.vendedor.tipo,
       fechaAlta: pedido.vendedor.fechaAlta.toISOString(),
     },
+    //TODO - Usuario y motivo no salen
     direccion: pedido.direccion,
     historialEstados: pedido.historialEstados.map((h) => ({
       estado: h.estado,
       fecha: h.fecha.toISOString(),
-      usuario: h.usuario.id || h.usuario._id,
+      usuario: h.usuario?.id || h.usuario?._id,
       motivo: h.motivo,
     })),
   };

@@ -60,7 +60,7 @@ export default class PedidoController {
     const id = result.data.usuarioId;
 
     try {
-      const pedidos = this.pedidoService.historialUsuario(id);
+      const pedidos = await this.pedidoService.historialUsuario(id);
 
       if (pedidos === null) {
         res.status(204).send("No se encontraron pedidos para ese usuario");
@@ -68,7 +68,8 @@ export default class PedidoController {
 
       res.status(200).json(pedidos);
     } catch (error) {
-      return res.status(error.statusCode).json({ error: error.message });
+      const status = error.statusCode || 500;
+      return res.status(status).json({ error: error.message });
     }
   }
 

@@ -6,6 +6,9 @@ import {
 import EstadoPedido from "../models/enums/estadoPedido.js";
 import { isMoneda } from "./validadorDeEnums.js";
 import { isNumber } from "./validadorTiposNativos.js";
+import TipoUsuario from "../models/enums/tipoUsuario.js";
+import Usuario from "../models/entities/usuario.js";
+import DireccionEntrega from "../models/entities/ubicaciones/direccionEntrega.js";
 
 export function validar(comprador, moneda, direccion) {
   if (comprador == null || !(comprador instanceof Usuario)) {
@@ -27,7 +30,7 @@ export function validarComprador(comprador, compradorId) {
   }
   if (comprador.tipo !== TipoUsuario.COMPRADOR) {
     throw new ConflictError(
-      `El usuario ${comprador.id} no es un comprador válido`
+      `El usuario ${comprador.id} no es un comprador válido, es ${comprador.tipo}`
     );
   }
 }

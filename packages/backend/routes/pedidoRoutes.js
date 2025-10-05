@@ -3,7 +3,7 @@ import PedidoController from "../controllers/pedidoController.js";
 
 const pathPedidos = "/pedidos";
 
-export default function healtCheckRoute(getController) {
+export default function pedidoRoute(getController) {
   const router = express.Router();
 
   router.post(pathPedidos, (req, res) =>

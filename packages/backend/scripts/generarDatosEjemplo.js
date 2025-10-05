@@ -57,7 +57,7 @@ const nombres = [
   "Malena Cabrera",
 ];
 
-const tiposUsuario = ["cliente", "vendedor", "admin"];
+const tiposUsuario = ["COMPRADOR", "VENDEDOR", "ADMIN"];
 const monedas = ["PESO_ARG", "DOLAR_USA", "EURO"];
 const categorias = [
   "Consolas",
@@ -128,7 +128,7 @@ function generarUsuarios() {
 
 function generarProductos(usuarios) {
   const productos = [];
-  const vendedores = usuarios.filter((u) => u.tipo === "vendedor");
+  const vendedores = usuarios.filter((u) => u.tipo === "VENDEDOR");
   for (let i = 0; i < N; i++) {
     const vendedor = randomChoice(vendedores)._id;
     const titulo = randomChoice(titulosProductos) + " " + (i + 1);
@@ -169,7 +169,7 @@ function generarPedidos(usuarios, productos) {
   const pedidos = [];
   for (let i = 0; i < N; i++) {
     const comprador = randomChoice(
-      usuarios.filter((u) => u.tipo === "cliente")
+      usuarios.filter((u) => u.tipo === "COMPRADOR")
     )._id;
     const itemsCount = randomInt(1, 3);
     const items = [];

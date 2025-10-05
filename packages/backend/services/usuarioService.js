@@ -1,3 +1,5 @@
+import { validarUsuario } from "../validadores/validadorUsuario.js";
+
 export default class UsuarioService {
   constructor(UsuarioRepository) {
     this.usuarioRepository = UsuarioRepository;

@@ -1,3512 +1,3554 @@
 [
   {
-    "_id": "68e1c3130f11baf4dadb8915",
-    "comprador": "68e1c3130f11baf4dadb888c",
+    "_id": "68e1d2ad1e349c4f60f53d6c",
+    "comprador": "68e1d2ad1e349c4f60f53ce3",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb8914",
-        "cantidad": 35,
-        "precioUnitario": 87726.47,
-        "subTotal": 3070426.45
+        "producto": "68e1d2ad1e349c4f60f53d28",
+        "cantidad": 2,
+        "precioUnitario": 26506.15,
+        "subTotal": 53012.3
       }
     ],
-    "total": 3070426.45,
+    "total": 53012.3,
     "moneda": "PESO_ARG",
     "direccion": {
-      "calle": "Calle 159",
-      "numero": 5959,
-      "ciudad": "Ciudad 9",
+      "calle": "Calle 968",
+      "numero": 9183,
+      "ciudad": "Ciudad 11",
+      "provincia": "Provincia 6",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-06-10T01:30:43.969Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-08-14T03:16:32.565Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53ca7"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d6d",
+    "comprador": "68e1d2ad1e349c4f60f53cd5",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d51",
+        "cantidad": 36,
+        "precioUnitario": 52402.35,
+        "subTotal": 1886484.5999999999
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d1f",
+        "cantidad": 37,
+        "precioUnitario": 2969.38,
+        "subTotal": 109867.06
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d49",
+        "cantidad": 38,
+        "precioUnitario": 32113.62,
+        "subTotal": 1220317.56
+      }
+    ],
+    "total": 3216669.22,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 466",
+      "numero": 5668,
+      "ciudad": "Ciudad 13",
+      "provincia": "Provincia 4",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-03-04T23:57:45.002Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-04-30T06:30:31.037Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd0"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d6e",
+    "comprador": "68e1d2ad1e349c4f60f53cc7",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d69",
+        "cantidad": 19,
+        "precioUnitario": 21095.84,
+        "subTotal": 400820.96
+      }
+    ],
+    "total": 400820.96,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 258",
+      "numero": 2262,
+      "ciudad": "Ciudad 15",
       "provincia": "Provincia 9",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2023-06-09T08:37:35.780Z",
+    "fechaCreacion": "2025-01-24T08:02:19.772Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2025-08-13T08:47:14.965Z"
+        "fecha": "2023-09-29T09:51:13.121Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8880"
+    "vendedor": "68e1d2ad1e349c4f60f53cb5"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8916",
-    "comprador": "68e1c3130f11baf4dadb887e",
+    "_id": "68e1d2ad1e349c4f60f53d6f",
+    "comprador": "68e1d2ad1e349c4f60f53ca4",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88d1",
-        "cantidad": 4,
-        "precioUnitario": 9983,
-        "subTotal": 39932
+        "producto": "68e1d2ad1e349c4f60f53d34",
+        "cantidad": 8,
+        "precioUnitario": 23700.27,
+        "subTotal": 189602.16
       }
     ],
-    "total": 39932,
-    "moneda": "EURO",
+    "total": 189602.16,
+    "moneda": "PESO_ARG",
     "direccion": {
-      "calle": "Calle 7",
-      "numero": 2319,
+      "calle": "Calle 755",
+      "numero": 280,
       "ciudad": "Ciudad 7",
-      "provincia": "Provincia 7",
+      "provincia": "Provincia 5",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2024-04-27T21:14:49.996Z",
+    "fechaCreacion": "2024-05-26T15:16:25.095Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2025-03-19T00:47:46.383Z"
+        "fecha": "2024-08-17T10:36:45.729Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8878"
+    "vendedor": "68e1d2ad1e349c4f60f53cd0"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8917",
-    "comprador": "68e1c3130f11baf4dadb88af",
+    "_id": "68e1d2ad1e349c4f60f53d70",
+    "comprador": "68e1d2ad1e349c4f60f53ce0",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88f7",
-        "cantidad": 26,
-        "precioUnitario": 30403.96,
-        "subTotal": 790502.96
+        "producto": "68e1d2ad1e349c4f60f53d42",
+        "cantidad": 34,
+        "precioUnitario": 76546.87,
+        "subTotal": 2602593.58
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d3c",
+        "cantidad": 5,
+        "precioUnitario": 4260.44,
+        "subTotal": 21302.199999999997
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d41",
+        "cantidad": 4,
+        "precioUnitario": 53023.74,
+        "subTotal": 212094.96
       }
     ],
-    "total": 790502.96,
+    "total": 2835990.74,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 552",
+      "numero": 5269,
+      "ciudad": "Ciudad 8",
+      "provincia": "Provincia 3",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-12-17T13:27:11.788Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-01-19T18:17:16.498Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb7"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d71",
+    "comprador": "68e1d2ad1e349c4f60f53cef",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d36",
+        "cantidad": 7,
+        "precioUnitario": 95515.96,
+        "subTotal": 668611.7200000001
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d11",
+        "cantidad": 4,
+        "precioUnitario": 90136.21,
+        "subTotal": 360544.84
+      }
+    ],
+    "total": 1029156.56,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 824",
+      "numero": 587,
+      "ciudad": "Ciudad 17",
+      "provincia": "Provincia 3",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-11-26T09:33:43.010Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-12-23T17:18:17.390Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cbc"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d72",
+    "comprador": "68e1d2ad1e349c4f60f53cc7",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d6a",
+        "cantidad": 17,
+        "precioUnitario": 91425.05,
+        "subTotal": 1554225.85
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d4b",
+        "cantidad": 1,
+        "precioUnitario": 7936.86,
+        "subTotal": 7936.86
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d67",
+        "cantidad": 7,
+        "precioUnitario": 25319.69,
+        "subTotal": 177237.83
+      }
+    ],
+    "total": 1739400.54,
     "moneda": "DOLAR_USA",
     "direccion": {
-      "calle": "Calle 410",
-      "numero": 5505,
-      "ciudad": "Ciudad 15",
+      "calle": "Calle 207",
+      "numero": 5785,
+      "ciudad": "Ciudad 3",
+      "provincia": "Provincia 9",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-05-18T11:34:13.879Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2025-02-07T05:38:46.477Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cbf"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d73",
+    "comprador": "68e1d2ad1e349c4f60f53cd5",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d35",
+        "cantidad": 21,
+        "precioUnitario": 32564.19,
+        "subTotal": 683847.99
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d3b",
+        "cantidad": 5,
+        "precioUnitario": 88443.99,
+        "subTotal": 442219.95
+      }
+    ],
+    "total": 1126067.94,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 861",
+      "numero": 4821,
+      "ciudad": "Ciudad 11",
       "provincia": "Provincia 10",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2025-03-09T05:38:23.309Z",
+    "fechaCreacion": "2023-04-13T18:38:30.167Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2023-07-18T22:32:49.936Z"
+        "fecha": "2024-05-26T22:47:48.765Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8866"
+    "vendedor": "68e1d2ad1e349c4f60f53d04"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8918",
-    "comprador": "68e1c3130f11baf4dadb888d",
+    "_id": "68e1d2ad1e349c4f60f53d74",
+    "comprador": "68e1d2ad1e349c4f60f53cc3",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88bd",
-        "cantidad": 21,
-        "precioUnitario": 83193.69,
-        "subTotal": 1747067.49
+        "producto": "68e1d2ad1e349c4f60f53d45",
+        "cantidad": 7,
+        "precioUnitario": 78579.75,
+        "subTotal": 550058.25
       }
     ],
-    "total": 1747067.49,
+    "total": 550058.25,
     "moneda": "PESO_ARG",
     "direccion": {
-      "calle": "Calle 740",
-      "numero": 2281,
-      "ciudad": "Ciudad 1",
-      "provincia": "Provincia 2",
+      "calle": "Calle 241",
+      "numero": 8286,
+      "ciudad": "Ciudad 14",
+      "provincia": "Provincia 7",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2024-07-18T18:38:17.257Z",
+    "fechaCreacion": "2023-03-09T00:02:23.465Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2024-10-01T09:03:03.892Z"
+        "fecha": "2024-01-24T17:38:16.182Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8883"
+    "vendedor": "68e1d2ad1e349c4f60f53cb7"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8919",
-    "comprador": "68e1c3130f11baf4dadb88ac",
+    "_id": "68e1d2ad1e349c4f60f53d75",
+    "comprador": "68e1d2ad1e349c4f60f53cb0",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88d8",
-        "cantidad": 10,
-        "precioUnitario": 39719.57,
-        "subTotal": 397195.7
+        "producto": "68e1d2ad1e349c4f60f53d25",
+        "cantidad": 9,
+        "precioUnitario": 89239.09,
+        "subTotal": 803151.8099999999
       },
       {
-        "producto": "68e1c3130f11baf4dadb88c4",
-        "cantidad": 17,
-        "precioUnitario": 82579.54,
-        "subTotal": 1403852.18
+        "producto": "68e1d2ad1e349c4f60f53d51",
+        "cantidad": 2,
+        "precioUnitario": 52402.35,
+        "subTotal": 104804.7
       }
     ],
-    "total": 1801047.88,
-    "moneda": "DOLAR_USA",
+    "total": 907956.51,
+    "moneda": "PESO_ARG",
     "direccion": {
-      "calle": "Calle 750",
-      "numero": 7667,
-      "ciudad": "Ciudad 11",
+      "calle": "Calle 275",
+      "numero": 9590,
+      "ciudad": "Ciudad 2",
+      "provincia": "Provincia 5",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-09-14T06:51:37.910Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-06-07T10:28:09.167Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53ca7"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d76",
+    "comprador": "68e1d2ad1e349c4f60f53cd6",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d52",
+        "cantidad": 1,
+        "precioUnitario": 26558.43,
+        "subTotal": 26558.43
+      }
+    ],
+    "total": 26558.43,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 636",
+      "numero": 1954,
+      "ciudad": "Ciudad 1",
       "provincia": "Provincia 9",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2024-11-24T02:47:25.976Z",
+    "fechaCreacion": "2023-05-29T18:32:16.208Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2025-05-29T10:34:45.399Z"
+        "fecha": "2024-04-25T16:24:49.932Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8861"
+    "vendedor": "68e1d2ad1e349c4f60f53cd9"
   },
   {
-    "_id": "68e1c3130f11baf4dadb891a",
-    "comprador": "68e1c3130f11baf4dadb88a3",
+    "_id": "68e1d2ad1e349c4f60f53d77",
+    "comprador": "68e1d2ad1e349c4f60f53ce1",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88e5",
-        "cantidad": 9,
-        "precioUnitario": 14033.9,
-        "subTotal": 126305.09999999999
+        "producto": "68e1d2ad1e349c4f60f53d21",
+        "cantidad": 2,
+        "precioUnitario": 42856.6,
+        "subTotal": 85713.2
       },
       {
-        "producto": "68e1c3130f11baf4dadb8906",
-        "cantidad": 12,
-        "precioUnitario": 19597.6,
-        "subTotal": 235171.19999999998
+        "producto": "68e1d2ad1e349c4f60f53d58",
+        "cantidad": 45,
+        "precioUnitario": 25972.84,
+        "subTotal": 1168777.8
       },
       {
-        "producto": "68e1c3130f11baf4dadb88fe",
-        "cantidad": 36,
-        "precioUnitario": 85978.59,
-        "subTotal": 3095229.2399999998
+        "producto": "68e1d2ad1e349c4f60f53d67",
+        "cantidad": 4,
+        "precioUnitario": 25319.69,
+        "subTotal": 101278.76
       }
     ],
-    "total": 3456705.54,
+    "total": 1355769.76,
     "moneda": "DOLAR_USA",
     "direccion": {
-      "calle": "Calle 671",
-      "numero": 3519,
+      "calle": "Calle 538",
+      "numero": 783,
+      "ciudad": "Ciudad 9",
+      "provincia": "Provincia 4",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-01-07T09:26:49.926Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-04-18T17:35:29.907Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cbf"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d78",
+    "comprador": "68e1d2ad1e349c4f60f53ce9",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d35",
+        "cantidad": 26,
+        "precioUnitario": 32564.19,
+        "subTotal": 846668.94
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d53",
+        "cantidad": 2,
+        "precioUnitario": 46964.31,
+        "subTotal": 93928.62
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d40",
+        "cantidad": 12,
+        "precioUnitario": 44219.27,
+        "subTotal": 530631.24
+      }
+    ],
+    "total": 1471228.8,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 389",
+      "numero": 9203,
+      "ciudad": "Ciudad 14",
+      "provincia": "Provincia 10",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-05-30T05:02:42.197Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-04-09T04:34:15.206Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb5"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d79",
+    "comprador": "68e1d2ad1e349c4f60f53cc3",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d25",
+        "cantidad": 6,
+        "precioUnitario": 89239.09,
+        "subTotal": 535434.54
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d4c",
+        "cantidad": 1,
+        "precioUnitario": 37836,
+        "subTotal": 37836
+      }
+    ],
+    "total": 573270.54,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 284",
+      "numero": 6424,
+      "ciudad": "Ciudad 9",
+      "provincia": "Provincia 4",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-03-13T11:45:09.298Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-01-07T14:05:54.805Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb7"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d7a",
+    "comprador": "68e1d2ad1e349c4f60f53ce8",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d10",
+        "cantidad": 10,
+        "precioUnitario": 30446.49,
+        "subTotal": 304464.9
+      }
+    ],
+    "total": 304464.9,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 664",
+      "numero": 5952,
+      "ciudad": "Ciudad 8",
+      "provincia": "Provincia 4",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-06-07T08:56:48.107Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-07-30T19:10:20.607Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb5"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d7b",
+    "comprador": "68e1d2ad1e349c4f60f53cf9",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d10",
+        "cantidad": 22,
+        "precioUnitario": 30446.49,
+        "subTotal": 669822.78
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d2e",
+        "cantidad": 7,
+        "precioUnitario": 23262.36,
+        "subTotal": 162836.52000000002
+      }
+    ],
+    "total": 832659.3,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 465",
+      "numero": 6606,
+      "ciudad": "Ciudad 9",
+      "provincia": "Provincia 2",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-07-24T09:33:10.567Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-01-14T02:55:21.795Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd0"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d7c",
+    "comprador": "68e1d2ad1e349c4f60f53d06",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d2e",
+        "cantidad": 1,
+        "precioUnitario": 23262.36,
+        "subTotal": 23262.36
+      }
+    ],
+    "total": 23262.36,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 880",
+      "numero": 948,
+      "ciudad": "Ciudad 6",
+      "provincia": "Provincia 1",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-05-15T01:00:38.684Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-02-20T06:44:59.718Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd0"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d7d",
+    "comprador": "68e1d2ad1e349c4f60f53cc3",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d1d",
+        "cantidad": 32,
+        "precioUnitario": 51016.17,
+        "subTotal": 1632517.44
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d5a",
+        "cantidad": 14,
+        "precioUnitario": 9120.88,
+        "subTotal": 127692.31999999999
+      }
+    ],
+    "total": 1760209.76,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 15",
+      "numero": 2760,
+      "ciudad": "Ciudad 2",
+      "provincia": "Provincia 5",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-02-12T02:22:43.719Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-06-28T16:44:37.806Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cda"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d7e",
+    "comprador": "68e1d2ad1e349c4f60f53cd6",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d33",
+        "cantidad": 4,
+        "precioUnitario": 59065.03,
+        "subTotal": 236260.12
+      }
+    ],
+    "total": 236260.12,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 918",
+      "numero": 8915,
+      "ciudad": "Ciudad 13",
+      "provincia": "Provincia 6",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-05-14T01:42:21.827Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2025-05-02T08:25:04.389Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb2"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d7f",
+    "comprador": "68e1d2ad1e349c4f60f53cc4",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d3e",
+        "cantidad": 1,
+        "precioUnitario": 34597.3,
+        "subTotal": 34597.3
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d0c",
+        "cantidad": 5,
+        "precioUnitario": 47470.77,
+        "subTotal": 237353.84999999998
+      }
+    ],
+    "total": 271951.15,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 916",
+      "numero": 572,
+      "ciudad": "Ciudad 15",
+      "provincia": "Provincia 9",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-01-22T00:29:26.510Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-06-19T21:49:27.482Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb7"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d80",
+    "comprador": "68e1d2ad1e349c4f60f53cf9",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d4e",
+        "cantidad": 2,
+        "precioUnitario": 67806.09,
+        "subTotal": 135612.18
+      }
+    ],
+    "total": 135612.18,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 96",
+      "numero": 6950,
+      "ciudad": "Ciudad 13",
+      "provincia": "Provincia 5",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-02-27T19:58:27.471Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-08-05T07:55:13.844Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd3"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d81",
+    "comprador": "68e1d2ad1e349c4f60f53ca5",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d45",
+        "cantidad": 15,
+        "precioUnitario": 78579.75,
+        "subTotal": 1178696.25
+      }
+    ],
+    "total": 1178696.25,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 143",
+      "numero": 8959,
+      "ciudad": "Ciudad 6",
+      "provincia": "Provincia 7",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-04-10T14:59:22.055Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2025-03-08T00:44:24.158Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb7"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d82",
+    "comprador": "68e1d2ad1e349c4f60f53ca6",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d11",
+        "cantidad": 3,
+        "precioUnitario": 90136.21,
+        "subTotal": 270408.63
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d54",
+        "cantidad": 15,
+        "precioUnitario": 39441.25,
+        "subTotal": 591618.75
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d24",
+        "cantidad": 4,
+        "precioUnitario": 29681.1,
+        "subTotal": 118724.4
+      }
+    ],
+    "total": 980751.78,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 531",
+      "numero": 9384,
+      "ciudad": "Ciudad 13",
+      "provincia": "Provincia 7",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-09-28T08:39:05.273Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2025-08-27T14:14:52.535Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cbe"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d83",
+    "comprador": "68e1d2ad1e349c4f60f53ca4",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d64",
+        "cantidad": 16,
+        "precioUnitario": 76217.35,
+        "subTotal": 1219477.6
+      }
+    ],
+    "total": 1219477.6,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 935",
+      "numero": 2207,
+      "ciudad": "Ciudad 18",
+      "provincia": "Provincia 10",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-11-27T16:17:35.019Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-10-22T14:12:51.880Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd3"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d84",
+    "comprador": "68e1d2ad1e349c4f60f53cb0",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d18",
+        "cantidad": 1,
+        "precioUnitario": 75204.01,
+        "subTotal": 75204.01
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d45",
+        "cantidad": 5,
+        "precioUnitario": 78579.75,
+        "subTotal": 392898.75
+      }
+    ],
+    "total": 468102.76,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 908",
+      "numero": 3017,
+      "ciudad": "Ciudad 10",
+      "provincia": "Provincia 4",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-07-11T15:48:20.901Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-10-12T11:29:26.239Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb7"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d85",
+    "comprador": "68e1d2ad1e349c4f60f53ca4",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d16",
+        "cantidad": 1,
+        "precioUnitario": 1200.11,
+        "subTotal": 1200.11
+      }
+    ],
+    "total": 1200.11,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 125",
+      "numero": 8495,
+      "ciudad": "Ciudad 19",
+      "provincia": "Provincia 7",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-10-26T18:39:36.719Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2025-02-20T14:00:10.183Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cfc"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d86",
+    "comprador": "68e1d2ad1e349c4f60f53ce8",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d19",
+        "cantidad": 7,
+        "precioUnitario": 9056.56,
+        "subTotal": 63395.92
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d3f",
+        "cantidad": 10,
+        "precioUnitario": 63411.82,
+        "subTotal": 634118.2
+      }
+    ],
+    "total": 697514.12,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 810",
+      "numero": 5129,
+      "ciudad": "Ciudad 7",
+      "provincia": "Provincia 4",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-10-23T10:07:58.248Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-02-09T17:15:47.013Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd0"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d87",
+    "comprador": "68e1d2ad1e349c4f60f53ce8",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d4d",
+        "cantidad": 3,
+        "precioUnitario": 56350.11,
+        "subTotal": 169050.33000000002
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d45",
+        "cantidad": 18,
+        "precioUnitario": 78579.75,
+        "subTotal": 1414435.5
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d41",
+        "cantidad": 8,
+        "precioUnitario": 53023.74,
+        "subTotal": 424189.92
+      }
+    ],
+    "total": 2007675.75,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 882",
+      "numero": 8568,
+      "ciudad": "Ciudad 8",
+      "provincia": "Provincia 9",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-01-14T13:53:44.203Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-01-07T05:55:32.180Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb7"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d88",
+    "comprador": "68e1d2ad1e349c4f60f53cc7",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d50",
+        "cantidad": 6,
+        "precioUnitario": 38238.85,
+        "subTotal": 229433.09999999998
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d20",
+        "cantidad": 18,
+        "precioUnitario": 58432.89,
+        "subTotal": 1051792.02
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d0c",
+        "cantidad": 4,
+        "precioUnitario": 47470.77,
+        "subTotal": 189883.08
+      }
+    ],
+    "total": 1471108.2,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 575",
+      "numero": 552,
+      "ciudad": "Ciudad 17",
+      "provincia": "Provincia 1",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-01-03T12:58:47.614Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-06-04T20:52:27.552Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb7"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d89",
+    "comprador": "68e1d2ad1e349c4f60f53ce3",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d12",
+        "cantidad": 17,
+        "precioUnitario": 72042.53,
+        "subTotal": 1224723.01
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d09",
+        "cantidad": 40,
+        "precioUnitario": 24931.7,
+        "subTotal": 997268
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d34",
+        "cantidad": 4,
+        "precioUnitario": 23700.27,
+        "subTotal": 94801.08
+      }
+    ],
+    "total": 2316792.09,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 558",
+      "numero": 8383,
+      "ciudad": "Ciudad 11",
+      "provincia": "Provincia 10",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-04-01T11:48:15.692Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-08-29T13:17:51.241Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd0"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d8a",
+    "comprador": "68e1d2ad1e349c4f60f53d06",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d51",
+        "cantidad": 9,
+        "precioUnitario": 52402.35,
+        "subTotal": 471621.14999999997
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d55",
+        "cantidad": 11,
+        "precioUnitario": 96384.01,
+        "subTotal": 1060224.1099999999
+      }
+    ],
+    "total": 1531845.26,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 103",
+      "numero": 9600,
+      "ciudad": "Ciudad 12",
+      "provincia": "Provincia 1",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-01-13T09:26:16.696Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-07-02T19:01:18.453Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cbe"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d8b",
+    "comprador": "68e1d2ad1e349c4f60f53cb8",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d5b",
+        "cantidad": 14,
+        "precioUnitario": 75803.57,
+        "subTotal": 1061249.98
+      }
+    ],
+    "total": 1061249.98,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 22",
+      "numero": 7466,
+      "ciudad": "Ciudad 11",
+      "provincia": "Provincia 3",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-01-17T19:43:47.661Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-04-08T01:29:12.897Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb7"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d8c",
+    "comprador": "68e1d2ad1e349c4f60f53cf8",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d3d",
+        "cantidad": 20,
+        "precioUnitario": 25523.02,
+        "subTotal": 510460.4
+      }
+    ],
+    "total": 510460.4,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 583",
+      "numero": 1964,
+      "ciudad": "Ciudad 7",
+      "provincia": "Provincia 2",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-10-06T01:28:10.588Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-04-15T12:44:12.374Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cbe"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d8d",
+    "comprador": "68e1d2ad1e349c4f60f53ca4",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d47",
+        "cantidad": 19,
+        "precioUnitario": 25197.69,
+        "subTotal": 478756.11
+      }
+    ],
+    "total": 478756.11,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 195",
+      "numero": 9576,
+      "ciudad": "Ciudad 2",
+      "provincia": "Provincia 4",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-10-12T19:20:57.138Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-03-09T17:18:46.527Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53caa"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d8e",
+    "comprador": "68e1d2ad1e349c4f60f53cc7",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d4d",
+        "cantidad": 4,
+        "precioUnitario": 56350.11,
+        "subTotal": 225400.44
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d30",
+        "cantidad": 1,
+        "precioUnitario": 98563.92,
+        "subTotal": 98563.92
+      }
+    ],
+    "total": 323964.36,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 525",
+      "numero": 2405,
+      "ciudad": "Ciudad 17",
+      "provincia": "Provincia 9",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-02-16T12:48:21.583Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-07-15T19:26:16.845Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb7"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d8f",
+    "comprador": "68e1d2ad1e349c4f60f53ce1",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d61",
+        "cantidad": 1,
+        "precioUnitario": 89533.34,
+        "subTotal": 89533.34
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d30",
+        "cantidad": 9,
+        "precioUnitario": 98563.92,
+        "subTotal": 887075.28
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d4e",
+        "cantidad": 6,
+        "precioUnitario": 67806.09,
+        "subTotal": 406836.54
+      }
+    ],
+    "total": 1383445.16,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 690",
+      "numero": 474,
+      "ciudad": "Ciudad 15",
+      "provincia": "Provincia 7",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-06-10T19:28:40.988Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2025-02-16T02:47:53.765Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd3"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d90",
+    "comprador": "68e1d2ad1e349c4f60f53cab",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d59",
+        "cantidad": 33,
+        "precioUnitario": 62577.49,
+        "subTotal": 2065057.17
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d2e",
+        "cantidad": 1,
+        "precioUnitario": 23262.36,
+        "subTotal": 23262.36
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d0a",
+        "cantidad": 1,
+        "precioUnitario": 8032.32,
+        "subTotal": 8032.32
+      }
+    ],
+    "total": 2096351.85,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 176",
+      "numero": 4527,
+      "ciudad": "Ciudad 1",
+      "provincia": "Provincia 4",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-05-06T15:54:53.721Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-05-13T20:44:39.305Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb2"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d91",
+    "comprador": "68e1d2ad1e349c4f60f53cbb",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d3e",
+        "cantidad": 1,
+        "precioUnitario": 34597.3,
+        "subTotal": 34597.3
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d28",
+        "cantidad": 5,
+        "precioUnitario": 26506.15,
+        "subTotal": 132530.75
+      }
+    ],
+    "total": 167128.05,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 506",
+      "numero": 1756,
+      "ciudad": "Ciudad 7",
+      "provincia": "Provincia 10",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-01-20T09:34:52.068Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-07-18T03:08:24.600Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53ca7"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d92",
+    "comprador": "68e1d2ad1e349c4f60f53cad",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d2d",
+        "cantidad": 4,
+        "precioUnitario": 94774.41,
+        "subTotal": 379097.64
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d3a",
+        "cantidad": 13,
+        "precioUnitario": 17819.33,
+        "subTotal": 231651.29000000004
+      }
+    ],
+    "total": 610748.93,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 735",
+      "numero": 4775,
+      "ciudad": "Ciudad 2",
+      "provincia": "Provincia 8",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-09-26T06:40:37.406Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-01-31T12:14:58.360Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cf6"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d93",
+    "comprador": "68e1d2ad1e349c4f60f53cbb",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d1e",
+        "cantidad": 3,
+        "precioUnitario": 94514.92,
+        "subTotal": 283544.76
+      }
+    ],
+    "total": 283544.76,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 453",
+      "numero": 681,
+      "ciudad": "Ciudad 3",
+      "provincia": "Provincia 6",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-10-11T11:19:24.826Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-05-14T07:37:52.636Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53d00"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d94",
+    "comprador": "68e1d2ad1e349c4f60f53cab",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d54",
+        "cantidad": 33,
+        "precioUnitario": 39441.25,
+        "subTotal": 1301561.25
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d67",
+        "cantidad": 4,
+        "precioUnitario": 25319.69,
+        "subTotal": 101278.76
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d44",
+        "cantidad": 5,
+        "precioUnitario": 6743.07,
+        "subTotal": 33715.35
+      }
+    ],
+    "total": 1436555.36,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 806",
+      "numero": 2479,
+      "ciudad": "Ciudad 6",
+      "provincia": "Provincia 4",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-09-27T22:50:07.707Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-09-04T00:20:14.450Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cdd"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d95",
+    "comprador": "68e1d2ad1e349c4f60f53cb8",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d26",
+        "cantidad": 27,
+        "precioUnitario": 99999.18,
+        "subTotal": 2699977.86
+      }
+    ],
+    "total": 2699977.86,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 637",
+      "numero": 9294,
+      "ciudad": "Ciudad 6",
+      "provincia": "Provincia 6",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-09-21T01:16:40.987Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-05-17T23:12:23.258Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd0"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d96",
+    "comprador": "68e1d2ad1e349c4f60f53cad",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d20",
+        "cantidad": 18,
+        "precioUnitario": 58432.89,
+        "subTotal": 1051792.02
+      }
+    ],
+    "total": 1051792.02,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 94",
+      "numero": 3683,
+      "ciudad": "Ciudad 17",
+      "provincia": "Provincia 8",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-12-22T02:47:46.525Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-12-27T22:54:05.815Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cbe"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d97",
+    "comprador": "68e1d2ad1e349c4f60f53cdf",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d30",
+        "cantidad": 35,
+        "precioUnitario": 98563.92,
+        "subTotal": 3449737.1999999997
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d2a",
+        "cantidad": 1,
+        "precioUnitario": 78418.8,
+        "subTotal": 78418.8
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d35",
+        "cantidad": 13,
+        "precioUnitario": 32564.19,
+        "subTotal": 423334.47
+      }
+    ],
+    "total": 3951490.47,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 230",
+      "numero": 9156,
+      "ciudad": "Ciudad 7",
+      "provincia": "Provincia 2",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-06-18T06:37:56.915Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-07-07T00:35:18.278Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd0"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d98",
+    "comprador": "68e1d2ad1e349c4f60f53ce1",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d1f",
+        "cantidad": 33,
+        "precioUnitario": 2969.38,
+        "subTotal": 97989.54000000001
+      }
+    ],
+    "total": 97989.54,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 656",
+      "numero": 8307,
+      "ciudad": "Ciudad 13",
+      "provincia": "Provincia 7",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-08-24T12:07:24.234Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-05-25T07:32:13.386Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb1"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d99",
+    "comprador": "68e1d2ad1e349c4f60f53cb8",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d5f",
+        "cantidad": 8,
+        "precioUnitario": 41485.36,
+        "subTotal": 331882.88
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d21",
+        "cantidad": 7,
+        "precioUnitario": 42856.6,
+        "subTotal": 299996.2
+      }
+    ],
+    "total": 631879.08,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 925",
+      "numero": 4118,
+      "ciudad": "Ciudad 2",
+      "provincia": "Provincia 4",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-11-28T19:59:33.542Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2025-06-10T01:12:21.718Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb2"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d9a",
+    "comprador": "68e1d2ad1e349c4f60f53ca4",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d35",
+        "cantidad": 17,
+        "precioUnitario": 32564.19,
+        "subTotal": 553591.23
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d26",
+        "cantidad": 2,
+        "precioUnitario": 99999.18,
+        "subTotal": 199998.36
+      }
+    ],
+    "total": 753589.59,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 131",
+      "numero": 6576,
+      "ciudad": "Ciudad 7",
+      "provincia": "Provincia 8",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-04-04T21:15:22.097Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-03-08T10:48:07.124Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd0"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d9b",
+    "comprador": "68e1d2ad1e349c4f60f53cbb",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d1a",
+        "cantidad": 6,
+        "precioUnitario": 77590.54,
+        "subTotal": 465543.24
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d4b",
+        "cantidad": 22,
+        "precioUnitario": 7936.86,
+        "subTotal": 174610.91999999998
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d12",
+        "cantidad": 24,
+        "precioUnitario": 72042.53,
+        "subTotal": 1729020.72
+      }
+    ],
+    "total": 2369174.88,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 167",
+      "numero": 9639,
+      "ciudad": "Ciudad 2",
+      "provincia": "Provincia 5",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-10-11T15:43:09.984Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-06-21T14:56:22.223Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb7"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d9c",
+    "comprador": "68e1d2ad1e349c4f60f53cad",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d29",
+        "cantidad": 4,
+        "precioUnitario": 2844.42,
+        "subTotal": 11377.68
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d14",
+        "cantidad": 1,
+        "precioUnitario": 60836.63,
+        "subTotal": 60836.63
+      }
+    ],
+    "total": 72214.31,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 628",
+      "numero": 2136,
+      "ciudad": "Ciudad 7",
+      "provincia": "Provincia 10",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-07-19T02:00:32.090Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-10-09T08:41:33.196Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53ce2"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d9d",
+    "comprador": "68e1d2ad1e349c4f60f53cca",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d47",
+        "cantidad": 18,
+        "precioUnitario": 25197.69,
+        "subTotal": 453558.42
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d5f",
+        "cantidad": 3,
+        "precioUnitario": 41485.36,
+        "subTotal": 124456.08
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d2e",
+        "cantidad": 4,
+        "precioUnitario": 23262.36,
+        "subTotal": 93049.44
+      }
+    ],
+    "total": 671063.94,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 842",
+      "numero": 4114,
+      "ciudad": "Ciudad 6",
+      "provincia": "Provincia 2",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-04-09T06:10:22.821Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-03-23T01:25:40.754Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd0"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d9e",
+    "comprador": "68e1d2ad1e349c4f60f53ce1",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d43",
+        "cantidad": 1,
+        "precioUnitario": 87377.75,
+        "subTotal": 87377.75
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d3d",
+        "cantidad": 14,
+        "precioUnitario": 25523.02,
+        "subTotal": 357322.28
+      }
+    ],
+    "total": 444700.03,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 699",
+      "numero": 4606,
+      "ciudad": "Ciudad 19",
+      "provincia": "Provincia 5",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-02-09T23:25:58.436Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2025-02-17T05:09:04.671Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cbe"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53d9f",
+    "comprador": "68e1d2ad1e349c4f60f53cf2",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d3d",
+        "cantidad": 12,
+        "precioUnitario": 25523.02,
+        "subTotal": 306276.24
+      }
+    ],
+    "total": 306276.24,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 687",
+      "numero": 7018,
+      "ciudad": "Ciudad 10",
+      "provincia": "Provincia 1",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-04-04T02:57:07.901Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-09-30T06:29:31.260Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cbe"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53da0",
+    "comprador": "68e1d2ad1e349c4f60f53cad",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d39",
+        "cantidad": 17,
+        "precioUnitario": 99430.97,
+        "subTotal": 1690326.49
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d3b",
+        "cantidad": 39,
+        "precioUnitario": 88443.99,
+        "subTotal": 3449315.6100000003
+      }
+    ],
+    "total": 5139642.1,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 894",
+      "numero": 8648,
+      "ciudad": "Ciudad 1",
+      "provincia": "Provincia 5",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-10-22T00:30:50.331Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-10-08T17:42:04.904Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53d04"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53da1",
+    "comprador": "68e1d2ad1e349c4f60f53cba",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d5b",
+        "cantidad": 4,
+        "precioUnitario": 75803.57,
+        "subTotal": 303214.28
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d6a",
+        "cantidad": 15,
+        "precioUnitario": 91425.05,
+        "subTotal": 1371375.75
+      }
+    ],
+    "total": 1674590.03,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 568",
+      "numero": 5435,
+      "ciudad": "Ciudad 14",
+      "provincia": "Provincia 4",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-05-31T17:38:50.217Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-01-13T19:12:50.448Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53caa"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53da2",
+    "comprador": "68e1d2ad1e349c4f60f53ce3",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d30",
+        "cantidad": 31,
+        "precioUnitario": 98563.92,
+        "subTotal": 3055481.52
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d18",
+        "cantidad": 1,
+        "precioUnitario": 75204.01,
+        "subTotal": 75204.01
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d33",
+        "cantidad": 20,
+        "precioUnitario": 59065.03,
+        "subTotal": 1181300.6
+      }
+    ],
+    "total": 4311986.13,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 643",
+      "numero": 9555,
+      "ciudad": "Ciudad 15",
+      "provincia": "Provincia 9",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-05-22T07:21:02.267Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-03-14T16:13:58.483Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb2"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53da3",
+    "comprador": "68e1d2ad1e349c4f60f53cef",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d46",
+        "cantidad": 18,
+        "precioUnitario": 50341.93,
+        "subTotal": 906154.74
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d5f",
+        "cantidad": 5,
+        "precioUnitario": 41485.36,
+        "subTotal": 207426.8
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d47",
+        "cantidad": 18,
+        "precioUnitario": 25197.69,
+        "subTotal": 453558.42
+      }
+    ],
+    "total": 1567139.96,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 801",
+      "numero": 38,
+      "ciudad": "Ciudad 17",
+      "provincia": "Provincia 3",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-10-14T12:57:39.221Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-10-26T03:10:49.788Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53caa"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53da4",
+    "comprador": "68e1d2ad1e349c4f60f53cd5",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d31",
+        "cantidad": 4,
+        "precioUnitario": 1805.1,
+        "subTotal": 7220.4
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d4f",
+        "cantidad": 1,
+        "precioUnitario": 60943.51,
+        "subTotal": 60943.51
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d0b",
+        "cantidad": 16,
+        "precioUnitario": 70860.66,
+        "subTotal": 1133770.56
+      }
+    ],
+    "total": 1201934.47,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 418",
+      "numero": 7922,
+      "ciudad": "Ciudad 6",
+      "provincia": "Provincia 10",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-10-01T21:29:30.383Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2025-01-01T22:20:48.239Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53d04"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53da5",
+    "comprador": "68e1d2ad1e349c4f60f53cf4",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d4c",
+        "cantidad": 1,
+        "precioUnitario": 37836,
+        "subTotal": 37836
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d16",
+        "cantidad": 1,
+        "precioUnitario": 1200.11,
+        "subTotal": 1200.11
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d1d",
+        "cantidad": 27,
+        "precioUnitario": 51016.17,
+        "subTotal": 1377436.5899999999
+      }
+    ],
+    "total": 1416472.7,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 828",
+      "numero": 3466,
+      "ciudad": "Ciudad 12",
+      "provincia": "Provincia 7",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-06-15T17:08:13.862Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-10-15T06:47:35.587Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd9"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53da6",
+    "comprador": "68e1d2ad1e349c4f60f53cf4",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d1b",
+        "cantidad": 8,
+        "precioUnitario": 41358.81,
+        "subTotal": 330870.48
+      }
+    ],
+    "total": 330870.48,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 662",
+      "numero": 9583,
+      "ciudad": "Ciudad 16",
+      "provincia": "Provincia 7",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-09-05T17:03:23.903Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2025-06-02T17:14:59.214Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cc5"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53da7",
+    "comprador": "68e1d2ad1e349c4f60f53cdf",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d60",
+        "cantidad": 19,
+        "precioUnitario": 42318.79,
+        "subTotal": 804057.01
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d69",
+        "cantidad": 22,
+        "precioUnitario": 21095.84,
+        "subTotal": 464108.48
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d5b",
+        "cantidad": 9,
+        "precioUnitario": 75803.57,
+        "subTotal": 682232.1300000001
+      }
+    ],
+    "total": 1950397.62,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 260",
+      "numero": 2474,
       "ciudad": "Ciudad 6",
       "provincia": "Provincia 3",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2023-12-10T11:21:49.913Z",
+    "fechaCreacion": "2024-09-18T21:55:19.216Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2024-12-26T09:53:23.204Z"
+        "fecha": "2023-12-16T01:47:51.604Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb88a2"
+    "vendedor": "68e1d2ad1e349c4f60f53cb7"
   },
   {
-    "_id": "68e1c3130f11baf4dadb891b",
-    "comprador": "68e1c3130f11baf4dadb888c",
+    "_id": "68e1d2ad1e349c4f60f53da8",
+    "comprador": "68e1d2ad1e349c4f60f53cab",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb890a",
-        "cantidad": 14,
-        "precioUnitario": 69848.72,
-        "subTotal": 977882.0800000001
+        "producto": "68e1d2ad1e349c4f60f53d40",
+        "cantidad": 13,
+        "precioUnitario": 44219.27,
+        "subTotal": 574850.51
       },
       {
-        "producto": "68e1c3130f11baf4dadb88e0",
-        "cantidad": 26,
-        "precioUnitario": 73068.59,
-        "subTotal": 1899783.3399999999
+        "producto": "68e1d2ad1e349c4f60f53d0b",
+        "cantidad": 28,
+        "precioUnitario": 70860.66,
+        "subTotal": 1984098.48
       }
     ],
-    "total": 2877665.42,
-    "moneda": "PESO_ARG",
+    "total": 2558948.99,
+    "moneda": "DOLAR_USA",
     "direccion": {
-      "calle": "Calle 531",
-      "numero": 4084,
-      "ciudad": "Ciudad 11",
-      "provincia": "Provincia 9",
+      "calle": "Calle 587",
+      "numero": 7914,
+      "ciudad": "Ciudad 8",
+      "provincia": "Provincia 6",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2023-10-15T16:07:00.464Z",
+    "fechaCreacion": "2025-09-01T09:49:04.274Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2024-09-21T06:00:11.952Z"
+        "fecha": "2024-07-07T09:32:58.861Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8856"
+    "vendedor": "68e1d2ad1e349c4f60f53d04"
   },
   {
-    "_id": "68e1c3130f11baf4dadb891c",
-    "comprador": "68e1c3130f11baf4dadb8885",
+    "_id": "68e1d2ad1e349c4f60f53da9",
+    "comprador": "68e1d2ad1e349c4f60f53cb8",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88e9",
-        "cantidad": 34,
-        "precioUnitario": 47275.93,
-        "subTotal": 1607381.62
+        "producto": "68e1d2ad1e349c4f60f53d25",
+        "cantidad": 1,
+        "precioUnitario": 89239.09,
+        "subTotal": 89239.09
       },
       {
-        "producto": "68e1c3130f11baf4dadb88ba",
-        "cantidad": 4,
-        "precioUnitario": 9784.67,
-        "subTotal": 39138.68
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88db",
-        "cantidad": 14,
-        "precioUnitario": 93987.34,
-        "subTotal": 1315822.76
+        "producto": "68e1d2ad1e349c4f60f53d50",
+        "cantidad": 42,
+        "precioUnitario": 38238.85,
+        "subTotal": 1606031.7
       }
     ],
-    "total": 2962343.06,
+    "total": 1695270.79,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 497",
+      "numero": 4054,
+      "ciudad": "Ciudad 5",
+      "provincia": "Provincia 2",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-11-24T15:22:47.320Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-12-31T23:58:07.869Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53ca8"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53daa",
+    "comprador": "68e1d2ad1e349c4f60f53ce3",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d2e",
+        "cantidad": 2,
+        "precioUnitario": 23262.36,
+        "subTotal": 46524.72
+      }
+    ],
+    "total": 46524.72,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 803",
+      "numero": 2232,
+      "ciudad": "Ciudad 1",
+      "provincia": "Provincia 4",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-04-26T02:15:00.486Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-02-24T07:31:53.362Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd0"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53dab",
+    "comprador": "68e1d2ad1e349c4f60f53ce8",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d0d",
+        "cantidad": 8,
+        "precioUnitario": 97636.82,
+        "subTotal": 781094.56
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d4e",
+        "cantidad": 9,
+        "precioUnitario": 67806.09,
+        "subTotal": 610254.8099999999
+      }
+    ],
+    "total": 1391349.37,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 154",
+      "numero": 127,
+      "ciudad": "Ciudad 9",
+      "provincia": "Provincia 7",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-08-16T14:40:58.464Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-11-19T18:21:25.430Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd3"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53dac",
+    "comprador": "68e1d2ad1e349c4f60f53cc3",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d56",
+        "cantidad": 4,
+        "precioUnitario": 60369.52,
+        "subTotal": 241478.08
+      }
+    ],
+    "total": 241478.08,
     "moneda": "EURO",
     "direccion": {
-      "calle": "Calle 484",
-      "numero": 3181,
+      "calle": "Calle 878",
+      "numero": 3922,
+      "ciudad": "Ciudad 19",
+      "provincia": "Provincia 5",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-05-26T17:28:40.490Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-12-17T06:17:27.557Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cae"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53dad",
+    "comprador": "68e1d2ad1e349c4f60f53cba",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d09",
+        "cantidad": 19,
+        "precioUnitario": 24931.7,
+        "subTotal": 473702.3
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d63",
+        "cantidad": 1,
+        "precioUnitario": 64996.1,
+        "subTotal": 64996.1
+      }
+    ],
+    "total": 538698.4,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 837",
+      "numero": 295,
+      "ciudad": "Ciudad 14",
+      "provincia": "Provincia 8",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-03-13T07:20:29.863Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-05-12T22:48:49.649Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cd3"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53dae",
+    "comprador": "68e1d2ad1e349c4f60f53cf3",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d3e",
+        "cantidad": 1,
+        "precioUnitario": 34597.3,
+        "subTotal": 34597.3
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d3f",
+        "cantidad": 11,
+        "precioUnitario": 63411.82,
+        "subTotal": 697530.02
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d36",
+        "cantidad": 21,
+        "precioUnitario": 95515.96,
+        "subTotal": 2005835.1600000001
+      }
+    ],
+    "total": 2737962.48,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 567",
+      "numero": 4992,
+      "ciudad": "Ciudad 5",
+      "provincia": "Provincia 8",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-03-24T07:16:53.391Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-09-26T11:18:01.476Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cda"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53daf",
+    "comprador": "68e1d2ad1e349c4f60f53ca5",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d61",
+        "cantidad": 19,
+        "precioUnitario": 89533.34,
+        "subTotal": 1701133.46
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d28",
+        "cantidad": 5,
+        "precioUnitario": 26506.15,
+        "subTotal": 132530.75
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d56",
+        "cantidad": 13,
+        "precioUnitario": 60369.52,
+        "subTotal": 784803.76
+      }
+    ],
+    "total": 2618467.97,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 835",
+      "numero": 9980,
       "ciudad": "Ciudad 12",
       "provincia": "Provincia 2",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2025-03-05T05:52:53.611Z",
+    "fechaCreacion": "2023-03-30T15:58:26.654Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2024-09-22T20:03:15.225Z"
+        "fecha": "2023-03-11T20:51:43.286Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb886f"
+    "vendedor": "68e1d2ad1e349c4f60f53cae"
   },
   {
-    "_id": "68e1c3130f11baf4dadb891d",
-    "comprador": "68e1c3130f11baf4dadb88af",
+    "_id": "68e1d2ad1e349c4f60f53db0",
+    "comprador": "68e1d2ad1e349c4f60f53cbb",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb8904",
-        "cantidad": 1,
-        "precioUnitario": 43745.1,
-        "subTotal": 43745.1
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88b6",
-        "cantidad": 16,
-        "precioUnitario": 40556.1,
-        "subTotal": 648897.6
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88e6",
-        "cantidad": 18,
-        "precioUnitario": 90694.8,
-        "subTotal": 1632506.4000000001
+        "producto": "68e1d2ad1e349c4f60f53d1c",
+        "cantidad": 19,
+        "precioUnitario": 54737.24,
+        "subTotal": 1040007.5599999999
       }
     ],
-    "total": 2325149.1,
-    "moneda": "DOLAR_USA",
+    "total": 1040007.56,
+    "moneda": "PESO_ARG",
     "direccion": {
-      "calle": "Calle 621",
-      "numero": 1728,
-      "ciudad": "Ciudad 4",
-      "provincia": "Provincia 9",
+      "calle": "Calle 217",
+      "numero": 9660,
+      "ciudad": "Ciudad 11",
+      "provincia": "Provincia 10",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2025-07-07T02:07:31.761Z",
+    "fechaCreacion": "2025-03-08T02:03:10.022Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2023-04-15T05:30:13.455Z"
+        "fecha": "2025-02-28T22:58:16.100Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8883"
+    "vendedor": "68e1d2ad1e349c4f60f53cb5"
   },
   {
-    "_id": "68e1c3130f11baf4dadb891e",
-    "comprador": "68e1c3130f11baf4dadb884d",
+    "_id": "68e1d2ad1e349c4f60f53db1",
+    "comprador": "68e1d2ad1e349c4f60f53cef",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb8908",
-        "cantidad": 19,
-        "precioUnitario": 57363.08,
-        "subTotal": 1089898.52
+        "producto": "68e1d2ad1e349c4f60f53d0f",
+        "cantidad": 10,
+        "precioUnitario": 31911.53,
+        "subTotal": 319115.3
       },
       {
-        "producto": "68e1c3130f11baf4dadb88f6",
-        "cantidad": 11,
-        "precioUnitario": 87792.46,
-        "subTotal": 965717.06
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb8912",
-        "cantidad": 4,
-        "precioUnitario": 47644.65,
-        "subTotal": 190578.6
+        "producto": "68e1d2ad1e349c4f60f53d20",
+        "cantidad": 18,
+        "precioUnitario": 58432.89,
+        "subTotal": 1051792.02
       }
     ],
-    "total": 2246194.18,
+    "total": 1370907.32,
+    "moneda": "DOLAR_USA",
+    "direccion": {
+      "calle": "Calle 29",
+      "numero": 9145,
+      "ciudad": "Ciudad 18",
+      "provincia": "Provincia 3",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2023-11-10T12:29:48.894Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-06-13T20:46:44.509Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cbe"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53db2",
+    "comprador": "68e1d2ad1e349c4f60f53cce",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d0b",
+        "cantidad": 24,
+        "precioUnitario": 70860.66,
+        "subTotal": 1700655.84
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d5a",
+        "cantidad": 9,
+        "precioUnitario": 9120.88,
+        "subTotal": 82087.92
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d5f",
+        "cantidad": 10,
+        "precioUnitario": 41485.36,
+        "subTotal": 414853.6
+      }
+    ],
+    "total": 2197597.36,
     "moneda": "EURO",
     "direccion": {
-      "calle": "Calle 404",
-      "numero": 4205,
-      "ciudad": "Ciudad 3",
+      "calle": "Calle 466",
+      "numero": 570,
+      "ciudad": "Ciudad 13",
       "provincia": "Provincia 2",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2023-07-18T22:32:31.416Z",
+    "fechaCreacion": "2025-07-20T12:16:28.174Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2025-04-11T23:55:56.878Z"
+        "fecha": "2025-05-04T12:51:51.601Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb888a"
+    "vendedor": "68e1d2ad1e349c4f60f53cae"
   },
   {
-    "_id": "68e1c3130f11baf4dadb891f",
-    "comprador": "68e1c3130f11baf4dadb8895",
+    "_id": "68e1d2ad1e349c4f60f53db3",
+    "comprador": "68e1d2ad1e349c4f60f53ce8",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88ed",
-        "cantidad": 5,
-        "precioUnitario": 24946.6,
-        "subTotal": 124733
+        "producto": "68e1d2ad1e349c4f60f53d2d",
+        "cantidad": 2,
+        "precioUnitario": 94774.41,
+        "subTotal": 189548.82
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d3b",
+        "cantidad": 37,
+        "precioUnitario": 88443.99,
+        "subTotal": 3272427.6300000004
       }
     ],
-    "total": 124733,
-    "moneda": "DOLAR_USA",
+    "total": 3461976.45,
+    "moneda": "EURO",
     "direccion": {
-      "calle": "Calle 171",
-      "numero": 6932,
-      "ciudad": "Ciudad 9",
+      "calle": "Calle 676",
+      "numero": 5882,
+      "ciudad": "Ciudad 12",
+      "provincia": "Provincia 1",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-09-30T02:26:01.747Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-11-06T20:49:53.668Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53d04"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53db4",
+    "comprador": "68e1d2ad1e349c4f60f53ce8",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d22",
+        "cantidad": 13,
+        "precioUnitario": 63154.1,
+        "subTotal": 821003.2999999999
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d41",
+        "cantidad": 8,
+        "precioUnitario": 53023.74,
+        "subTotal": 424189.92
+      }
+    ],
+    "total": 1245193.22,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 99",
+      "numero": 7607,
+      "ciudad": "Ciudad 18",
       "provincia": "Provincia 8",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2023-11-02T06:31:41.413Z",
+    "fechaCreacion": "2024-12-17T07:54:58.255Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2024-12-09T04:30:27.830Z"
+        "fecha": "2023-04-26T09:55:01.229Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8879"
+    "vendedor": "68e1d2ad1e349c4f60f53cb7"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8920",
-    "comprador": "68e1c3130f11baf4dadb884f",
+    "_id": "68e1d2ad1e349c4f60f53db5",
+    "comprador": "68e1d2ad1e349c4f60f53ce0",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88f0",
-        "cantidad": 5,
-        "precioUnitario": 81152.74,
-        "subTotal": 405763.7
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88e6",
-        "cantidad": 4,
-        "precioUnitario": 90694.8,
-        "subTotal": 362779.2
+        "producto": "68e1d2ad1e349c4f60f53d2e",
+        "cantidad": 2,
+        "precioUnitario": 23262.36,
+        "subTotal": 46524.72
       }
     ],
-    "total": 768542.9,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 448",
-      "numero": 8654,
-      "ciudad": "Ciudad 11",
-      "provincia": "Provincia 5",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-04-27T10:40:08.543Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-07-21T06:17:15.212Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8883"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8921",
-    "comprador": "68e1c3130f11baf4dadb88a3",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88fc",
-        "cantidad": 34,
-        "precioUnitario": 96062.33,
-        "subTotal": 3266119.22
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88ff",
-        "cantidad": 11,
-        "precioUnitario": 52199.94,
-        "subTotal": 574199.3400000001
-      }
-    ],
-    "total": 3840318.56,
+    "total": 46524.72,
     "moneda": "PESO_ARG",
     "direccion": {
-      "calle": "Calle 700",
-      "numero": 4263,
+      "calle": "Calle 898",
+      "numero": 753,
       "ciudad": "Ciudad 1",
       "provincia": "Provincia 10",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2023-07-15T12:11:09.065Z",
+    "fechaCreacion": "2025-01-28T08:00:55.506Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2024-01-07T23:02:05.515Z"
+        "fecha": "2023-09-17T07:22:17.998Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8897"
+    "vendedor": "68e1d2ad1e349c4f60f53cd0"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8922",
-    "comprador": "68e1c3130f11baf4dadb884f",
+    "_id": "68e1d2ad1e349c4f60f53db6",
+    "comprador": "68e1d2ad1e349c4f60f53cc7",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb890b",
-        "cantidad": 6,
-        "precioUnitario": 14809.77,
-        "subTotal": 88858.62
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb8908",
+        "producto": "68e1d2ad1e349c4f60f53d38",
         "cantidad": 14,
-        "precioUnitario": 57363.08,
-        "subTotal": 803083.12
-      }
-    ],
-    "total": 891941.74,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 232",
-      "numero": 2921,
-      "ciudad": "Ciudad 14",
-      "provincia": "Provincia 5",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-10-22T01:38:05.145Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-11-13T17:37:36.433Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8866"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8923",
-    "comprador": "68e1c3130f11baf4dadb88ae",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88f1",
-        "cantidad": 9,
-        "precioUnitario": 91458.68,
-        "subTotal": 823128.1199999999
+        "precioUnitario": 3863.34,
+        "subTotal": 54086.76
       },
       {
-        "producto": "68e1c3130f11baf4dadb88bb",
-        "cantidad": 3,
-        "precioUnitario": 14757.06,
-        "subTotal": 44271.18
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88f5",
-        "cantidad": 4,
-        "precioUnitario": 91853.65,
-        "subTotal": 367414.6
+        "producto": "68e1d2ad1e349c4f60f53d54",
+        "cantidad": 26,
+        "precioUnitario": 39441.25,
+        "subTotal": 1025472.5
       }
     ],
-    "total": 1234813.9,
+    "total": 1079559.26,
     "moneda": "EURO",
     "direccion": {
-      "calle": "Calle 705",
-      "numero": 8820,
-      "ciudad": "Ciudad 19",
-      "provincia": "Provincia 9",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-08-14T15:26:59.634Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-09-09T20:51:03.714Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8880"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8924",
-    "comprador": "68e1c3130f11baf4dadb8874",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88f5",
-        "cantidad": 1,
-        "precioUnitario": 91853.65,
-        "subTotal": 91853.65
-      }
-    ],
-    "total": 91853.65,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 247",
-      "numero": 5885,
-      "ciudad": "Ciudad 17",
-      "provincia": "Provincia 4",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-06-27T22:09:37.951Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-10-25T22:34:16.943Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8880"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8925",
-    "comprador": "68e1c3130f11baf4dadb8862",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb890f",
-        "cantidad": 10,
-        "precioUnitario": 69514.31,
-        "subTotal": 695143.1
-      }
-    ],
-    "total": 695143.1,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 225",
-      "numero": 3186,
-      "ciudad": "Ciudad 2",
-      "provincia": "Provincia 10",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-09-16T10:57:37.908Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-12-02T07:51:58.573Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb885a"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8926",
-    "comprador": "68e1c3130f11baf4dadb8857",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88fb",
-        "cantidad": 3,
-        "precioUnitario": 42944.45,
-        "subTotal": 128833.34999999999
-      }
-    ],
-    "total": 128833.35,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 871",
-      "numero": 8006,
-      "ciudad": "Ciudad 19",
-      "provincia": "Provincia 6",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-03-25T16:37:00.963Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-04-17T10:19:17.955Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8883"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8927",
-    "comprador": "68e1c3130f11baf4dadb8876",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88c5",
-        "cantidad": 2,
-        "precioUnitario": 58887.91,
-        "subTotal": 117775.82
-      }
-    ],
-    "total": 117775.82,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 760",
-      "numero": 2540,
-      "ciudad": "Ciudad 17",
-      "provincia": "Provincia 9",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-11-06T17:02:15.664Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-01-16T20:50:02.026Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8881"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8928",
-    "comprador": "68e1c3130f11baf4dadb8854",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88c6",
-        "cantidad": 23,
-        "precioUnitario": 61239.74,
-        "subTotal": 1408514.02
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88cb",
-        "cantidad": 2,
-        "precioUnitario": 33453.55,
-        "subTotal": 66907.1
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88c1",
-        "cantidad": 1,
-        "precioUnitario": 23340.71,
-        "subTotal": 23340.71
-      }
-    ],
-    "total": 1498761.83,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 813",
-      "numero": 7946,
-      "ciudad": "Ciudad 18",
-      "provincia": "Provincia 7",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-03-31T18:35:58.798Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-12-04T02:14:40.269Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb886b"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8929",
-    "comprador": "68e1c3130f11baf4dadb88af",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88c5",
-        "cantidad": 17,
-        "precioUnitario": 58887.91,
-        "subTotal": 1001094.4700000001
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88e8",
-        "cantidad": 14,
-        "precioUnitario": 13636.55,
-        "subTotal": 190911.69999999998
-      }
-    ],
-    "total": 1192006.17,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 214",
-      "numero": 2655,
-      "ciudad": "Ciudad 6",
-      "provincia": "Provincia 6",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-07-22T10:55:37.982Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-09-19T06:42:14.349Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb889e"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb892a",
-    "comprador": "68e1c3130f11baf4dadb8875",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88e5",
-        "cantidad": 19,
-        "precioUnitario": 14033.9,
-        "subTotal": 266644.1
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88cb",
-        "cantidad": 14,
-        "precioUnitario": 33453.55,
-        "subTotal": 468349.70000000007
-      }
-    ],
-    "total": 734993.8,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 147",
-      "numero": 6813,
-      "ciudad": "Ciudad 6",
-      "provincia": "Provincia 9",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-04-17T19:33:53.432Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-06-24T09:06:04.477Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8890"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb892b",
-    "comprador": "68e1c3130f11baf4dadb8862",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88d1",
-        "cantidad": 6,
-        "precioUnitario": 9983,
-        "subTotal": 59898
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88d9",
-        "cantidad": 8,
-        "precioUnitario": 70073.19,
-        "subTotal": 560585.52
-      }
-    ],
-    "total": 620483.52,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 769",
-      "numero": 7842,
-      "ciudad": "Ciudad 10",
-      "provincia": "Provincia 1",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-11-10T14:26:46.428Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-12-13T18:14:02.689Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb887d"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb892c",
-    "comprador": "68e1c3130f11baf4dadb885e",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb8900",
-        "cantidad": 10,
-        "precioUnitario": 65176.65,
-        "subTotal": 651766.5
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88d5",
-        "cantidad": 12,
-        "precioUnitario": 52870.81,
-        "subTotal": 634449.72
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88d4",
-        "cantidad": 8,
-        "precioUnitario": 89498.46,
-        "subTotal": 715987.68
-      }
-    ],
-    "total": 2002203.9,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 478",
-      "numero": 7185,
-      "ciudad": "Ciudad 17",
-      "provincia": "Provincia 10",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-03-11T12:19:46.873Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-07-26T21:56:01.381Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8878"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb892d",
-    "comprador": "68e1c3130f11baf4dadb888d",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88e0",
-        "cantidad": 23,
-        "precioUnitario": 73068.59,
-        "subTotal": 1680577.5699999998
-      }
-    ],
-    "total": 1680577.57,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 85",
-      "numero": 8656,
-      "ciudad": "Ciudad 4",
-      "provincia": "Provincia 9",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-04-18T01:28:11.976Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-05-16T21:42:46.391Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8856"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb892e",
-    "comprador": "68e1c3130f11baf4dadb884e",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88d0",
-        "cantidad": 7,
-        "precioUnitario": 51428.11,
-        "subTotal": 359996.77
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88ba",
-        "cantidad": 1,
-        "precioUnitario": 9784.67,
-        "subTotal": 9784.67
-      }
-    ],
-    "total": 369781.44,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 120",
-      "numero": 2301,
-      "ciudad": "Ciudad 12",
-      "provincia": "Provincia 1",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-05-20T03:43:53.850Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-03-30T23:07:59.100Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb885b"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb892f",
-    "comprador": "68e1c3130f11baf4dadb8857",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb8905",
-        "cantidad": 36,
-        "precioUnitario": 44235.28,
-        "subTotal": 1592470.08
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb890f",
-        "cantidad": 25,
-        "precioUnitario": 69514.31,
-        "subTotal": 1737857.75
-      }
-    ],
-    "total": 3330327.83,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 530",
-      "numero": 1283,
-      "ciudad": "Ciudad 4",
-      "provincia": "Provincia 10",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-01-02T19:36:16.152Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-06-09T20:23:33.787Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb885a"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8930",
-    "comprador": "68e1c3130f11baf4dadb8854",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88b8",
-        "cantidad": 9,
-        "precioUnitario": 55409.65,
-        "subTotal": 498686.85000000003
-      }
-    ],
-    "total": 498686.85,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 447",
-      "numero": 5328,
-      "ciudad": "Ciudad 2",
+      "calle": "Calle 845",
+      "numero": 3223,
+      "ciudad": "Ciudad 8",
       "provincia": "Provincia 8",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2025-03-12T12:25:54.962Z",
+    "fechaCreacion": "2025-06-20T17:44:54.045Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2025-04-28T18:15:34.913Z"
+        "fecha": "2023-02-07T16:01:09.945Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb88b0"
+    "vendedor": "68e1d2ad1e349c4f60f53cbe"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8931",
-    "comprador": "68e1c3130f11baf4dadb88ae",
+    "_id": "68e1d2ad1e349c4f60f53db7",
+    "comprador": "68e1d2ad1e349c4f60f53cd5",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88e0",
-        "cantidad": 19,
-        "precioUnitario": 73068.59,
-        "subTotal": 1388303.21
-      }
-    ],
-    "total": 1388303.21,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 11",
-      "numero": 2748,
-      "ciudad": "Ciudad 17",
-      "provincia": "Provincia 9",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-08-15T21:26:11.766Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-01-15T19:09:57.813Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8856"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8932",
-    "comprador": "68e1c3130f11baf4dadb8892",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88e3",
-        "cantidad": 7,
-        "precioUnitario": 58896.41,
-        "subTotal": 412274.87
-      }
-    ],
-    "total": 412274.87,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 650",
-      "numero": 4274,
-      "ciudad": "Ciudad 6",
-      "provincia": "Provincia 7",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-07-17T18:12:22.329Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-05-10T07:33:09.309Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb885a"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8933",
-    "comprador": "68e1c3130f11baf4dadb887e",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88f6",
-        "cantidad": 6,
-        "precioUnitario": 87792.46,
-        "subTotal": 526754.76
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88fe",
+        "producto": "68e1d2ad1e349c4f60f53d22",
         "cantidad": 4,
-        "precioUnitario": 85978.59,
-        "subTotal": 343914.36
+        "precioUnitario": 63154.1,
+        "subTotal": 252616.4
       }
     ],
-    "total": 870669.12,
-    "moneda": "DOLAR_USA",
+    "total": 252616.4,
+    "moneda": "EURO",
     "direccion": {
-      "calle": "Calle 608",
-      "numero": 449,
+      "calle": "Calle 999",
+      "numero": 6722,
       "ciudad": "Ciudad 5",
-      "provincia": "Provincia 2",
+      "provincia": "Provincia 6",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2025-09-05T20:56:35.362Z",
+    "fechaCreacion": "2023-04-27T11:44:21.371Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2025-07-16T07:38:57.808Z"
+        "fecha": "2023-08-29T09:47:14.178Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb88a2"
+    "vendedor": "68e1d2ad1e349c4f60f53cd3"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8934",
-    "comprador": "68e1c3130f11baf4dadb8857",
+    "_id": "68e1d2ad1e349c4f60f53db8",
+    "comprador": "68e1d2ad1e349c4f60f53d01",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88e7",
-        "cantidad": 2,
-        "precioUnitario": 36866.24,
-        "subTotal": 73732.48
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88e2",
-        "cantidad": 18,
-        "precioUnitario": 25627.83,
-        "subTotal": 461300.94000000006
-      }
-    ],
-    "total": 535033.42,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 212",
-      "numero": 8130,
-      "ciudad": "Ciudad 5",
-      "provincia": "Provincia 10",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-10-12T23:12:02.820Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-03-18T09:07:38.704Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb888e"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8935",
-    "comprador": "68e1c3130f11baf4dadb8874",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88c0",
-        "cantidad": 43,
-        "precioUnitario": 30382.23,
-        "subTotal": 1306435.89
-      }
-    ],
-    "total": 1306435.89,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 326",
-      "numero": 6261,
-      "ciudad": "Ciudad 12",
-      "provincia": "Provincia 9",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-06-18T00:02:24.553Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-12-07T20:47:01.943Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb886b"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8936",
-    "comprador": "68e1c3130f11baf4dadb885e",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88d4",
+        "producto": "68e1d2ad1e349c4f60f53d0b",
         "cantidad": 5,
-        "precioUnitario": 89498.46,
-        "subTotal": 447492.30000000005
+        "precioUnitario": 70860.66,
+        "subTotal": 354303.30000000005
       },
       {
-        "producto": "68e1c3130f11baf4dadb890b",
-        "cantidad": 2,
-        "precioUnitario": 14809.77,
-        "subTotal": 29619.54
-      }
-    ],
-    "total": 477111.84,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 724",
-      "numero": 1021,
-      "ciudad": "Ciudad 15",
-      "provincia": "Provincia 6",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-01-09T20:08:25.045Z",
-    "historialEstados": [
+        "producto": "68e1d2ad1e349c4f60f53d0a",
+        "cantidad": 38,
+        "precioUnitario": 8032.32,
+        "subTotal": 305228.16
+      },
       {
-        "estado": "pendiente",
-        "fecha": "2025-09-19T07:24:55.267Z"
+        "producto": "68e1d2ad1e349c4f60f53d53",
+        "cantidad": 30,
+        "precioUnitario": 46964.31,
+        "subTotal": 1408929.2999999998
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb889e"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8937",
-    "comprador": "68e1c3130f11baf4dadb8894",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88f9",
-        "cantidad": 29,
-        "precioUnitario": 76383.97,
-        "subTotal": 2215135.13
-      }
-    ],
-    "total": 2215135.13,
+    "total": 2068460.76,
     "moneda": "PESO_ARG",
     "direccion": {
-      "calle": "Calle 151",
-      "numero": 486,
-      "ciudad": "Ciudad 9",
-      "provincia": "Provincia 5",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-01-13T11:18:22.896Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-04-15T22:27:01.037Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb885b"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8938",
-    "comprador": "68e1c3130f11baf4dadb884e",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88e1",
-        "cantidad": 37,
-        "precioUnitario": 64644.32,
-        "subTotal": 2391839.84
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb890f",
-        "cantidad": 28,
-        "precioUnitario": 69514.31,
-        "subTotal": 1946400.68
-      }
-    ],
-    "total": 4338240.52,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 279",
-      "numero": 1243,
-      "ciudad": "Ciudad 6",
-      "provincia": "Provincia 1",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-06-18T09:10:11.168Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-06-15T03:06:25.988Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb885a"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8939",
-    "comprador": "68e1c3130f11baf4dadb887e",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88cf",
-        "cantidad": 16,
-        "precioUnitario": 74493.39,
-        "subTotal": 1191894.24
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb890e",
-        "cantidad": 6,
-        "precioUnitario": 12811.49,
-        "subTotal": 76868.94
-      }
-    ],
-    "total": 1268763.18,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 388",
-      "numero": 901,
-      "ciudad": "Ciudad 12",
-      "provincia": "Provincia 5",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-11-26T19:17:44.252Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-11-10T02:50:21.205Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb886c"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb893a",
-    "comprador": "68e1c3130f11baf4dadb8875",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88ba",
-        "cantidad": 4,
-        "precioUnitario": 9784.67,
-        "subTotal": 39138.68
-      }
-    ],
-    "total": 39138.68,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 378",
-      "numero": 9483,
+      "calle": "Calle 879",
+      "numero": 9135,
       "ciudad": "Ciudad 17",
-      "provincia": "Provincia 8",
+      "provincia": "Provincia 2",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2024-03-07T11:29:01.103Z",
+    "fechaCreacion": "2024-06-19T23:36:04.228Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2023-06-23T14:41:41.266Z"
+        "fecha": "2023-03-21T14:27:36.876Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb885b"
+    "vendedor": "68e1d2ad1e349c4f60f53cda"
   },
   {
-    "_id": "68e1c3130f11baf4dadb893b",
-    "comprador": "68e1c3130f11baf4dadb885e",
+    "_id": "68e1d2ad1e349c4f60f53db9",
+    "comprador": "68e1d2ad1e349c4f60f53cb8",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88f0",
-        "cantidad": 24,
-        "precioUnitario": 81152.74,
-        "subTotal": 1947665.7600000002
+        "producto": "68e1d2ad1e349c4f60f53d45",
+        "cantidad": 3,
+        "precioUnitario": 78579.75,
+        "subTotal": 235739.25
       },
       {
-        "producto": "68e1c3130f11baf4dadb88ca",
+        "producto": "68e1d2ad1e349c4f60f53d2a",
         "cantidad": 1,
-        "precioUnitario": 75710.33,
-        "subTotal": 75710.33
-      }
-    ],
-    "total": 2023376.09,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 891",
-      "numero": 6798,
-      "ciudad": "Ciudad 7",
-      "provincia": "Provincia 5",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-09-01T07:13:10.602Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-08-28T14:01:54.148Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb88a0"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb893c",
-    "comprador": "68e1c3130f11baf4dadb88ac",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88b9",
-        "cantidad": 14,
-        "precioUnitario": 38901.18,
-        "subTotal": 544616.52
+        "precioUnitario": 78418.8,
+        "subTotal": 78418.8
       },
       {
-        "producto": "68e1c3130f11baf4dadb88d5",
-        "cantidad": 2,
-        "precioUnitario": 52870.81,
-        "subTotal": 105741.62
+        "producto": "68e1d2ad1e349c4f60f53d46",
+        "cantidad": 22,
+        "precioUnitario": 50341.93,
+        "subTotal": 1107522.46
       }
     ],
-    "total": 650358.14,
+    "total": 1421680.51,
     "moneda": "DOLAR_USA",
     "direccion": {
-      "calle": "Calle 20",
-      "numero": 3270,
-      "ciudad": "Ciudad 15",
-      "provincia": "Provincia 1",
+      "calle": "Calle 494",
+      "numero": 5500,
+      "ciudad": "Ciudad 5",
+      "provincia": "Provincia 5",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2024-01-23T17:56:39.967Z",
+    "fechaCreacion": "2024-06-25T02:45:49.831Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2023-05-04T15:17:14.336Z"
+        "fecha": "2025-09-02T13:14:23.178Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8880"
+    "vendedor": "68e1d2ad1e349c4f60f53cdd"
   },
   {
-    "_id": "68e1c3130f11baf4dadb893d",
-    "comprador": "68e1c3130f11baf4dadb884d",
+    "_id": "68e1d2ad1e349c4f60f53dba",
+    "comprador": "68e1d2ad1e349c4f60f53cef",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88e1",
-        "cantidad": 10,
-        "precioUnitario": 64644.32,
-        "subTotal": 646443.2
+        "producto": "68e1d2ad1e349c4f60f53d53",
+        "cantidad": 26,
+        "precioUnitario": 46964.31,
+        "subTotal": 1221072.06
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d35",
+        "cantidad": 15,
+        "precioUnitario": 32564.19,
+        "subTotal": 488462.85
       }
     ],
-    "total": 646443.2,
+    "total": 1709534.91,
     "moneda": "EURO",
     "direccion": {
-      "calle": "Calle 6",
-      "numero": 6512,
-      "ciudad": "Ciudad 5",
+      "calle": "Calle 609",
+      "numero": 991,
+      "ciudad": "Ciudad 7",
       "provincia": "Provincia 10",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2025-10-03T02:40:21.070Z",
+    "fechaCreacion": "2023-10-10T04:25:56.404Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2024-09-17T16:44:35.813Z"
+        "fecha": "2023-05-24T03:39:51.076Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8851"
+    "vendedor": "68e1d2ad1e349c4f60f53cd0"
   },
   {
-    "_id": "68e1c3130f11baf4dadb893e",
-    "comprador": "68e1c3130f11baf4dadb884f",
+    "_id": "68e1d2ad1e349c4f60f53dbb",
+    "comprador": "68e1d2ad1e349c4f60f53d06",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb8908",
-        "cantidad": 15,
-        "precioUnitario": 57363.08,
-        "subTotal": 860446.2000000001
+        "producto": "68e1d2ad1e349c4f60f53d4e",
+        "cantidad": 6,
+        "precioUnitario": 67806.09,
+        "subTotal": 406836.54
       },
       {
-        "producto": "68e1c3130f11baf4dadb88e0",
-        "cantidad": 16,
-        "precioUnitario": 73068.59,
-        "subTotal": 1169097.44
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb8904",
-        "cantidad": 1,
-        "precioUnitario": 43745.1,
-        "subTotal": 43745.1
+        "producto": "68e1d2ad1e349c4f60f53d10",
+        "cantidad": 22,
+        "precioUnitario": 30446.49,
+        "subTotal": 669822.78
       }
     ],
-    "total": 2073288.74,
-    "moneda": "EURO",
+    "total": 1076659.32,
+    "moneda": "DOLAR_USA",
     "direccion": {
-      "calle": "Calle 594",
-      "numero": 9459,
-      "ciudad": "Ciudad 7",
-      "provincia": "Provincia 2",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-07-12T12:53:23.687Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-01-13T23:27:17.307Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8866"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb893f",
-    "comprador": "68e1c3130f11baf4dadb887a",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88ee",
-        "cantidad": 12,
-        "precioUnitario": 40575.49,
-        "subTotal": 486905.88
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88fd",
-        "cantidad": 18,
-        "precioUnitario": 97366.94,
-        "subTotal": 1752604.92
-      }
-    ],
-    "total": 2239510.8,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 637",
-      "numero": 8681,
+      "calle": "Calle 390",
+      "numero": 7936,
       "ciudad": "Ciudad 10",
-      "provincia": "Provincia 7",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-03-30T00:33:47.498Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-07-22T09:28:33.969Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb889e"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8940",
-    "comprador": "68e1c3130f11baf4dadb8895",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88ef",
-        "cantidad": 3,
-        "precioUnitario": 48678.77,
-        "subTotal": 146036.31
-      }
-    ],
-    "total": 146036.31,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 751",
-      "numero": 4269,
-      "ciudad": "Ciudad 20",
-      "provincia": "Provincia 8",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-08-23T06:07:55.210Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-06-30T01:23:18.293Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb886c"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8941",
-    "comprador": "68e1c3130f11baf4dadb8892",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb890c",
-        "cantidad": 25,
-        "precioUnitario": 11240.79,
-        "subTotal": 281019.75
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88c6",
-        "cantidad": 20,
-        "precioUnitario": 61239.74,
-        "subTotal": 1224794.8
-      }
-    ],
-    "total": 1505814.55,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 190",
-      "numero": 1396,
-      "ciudad": "Ciudad 2",
-      "provincia": "Provincia 4",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-02-21T02:27:17.565Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-12-13T19:06:28.791Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8866"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8942",
-    "comprador": "68e1c3130f11baf4dadb88ac",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88ed",
-        "cantidad": 11,
-        "precioUnitario": 24946.6,
-        "subTotal": 274412.6
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88bc",
-        "cantidad": 25,
-        "precioUnitario": 84364.41,
-        "subTotal": 2109110.25
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb8910",
-        "cantidad": 24,
-        "precioUnitario": 94678.15,
-        "subTotal": 2272275.5999999996
-      }
-    ],
-    "total": 4655798.45,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 598",
-      "numero": 1760,
-      "ciudad": "Ciudad 3",
-      "provincia": "Provincia 5",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-06-23T06:40:27.898Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-07-28T17:38:26.540Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8860"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8943",
-    "comprador": "68e1c3130f11baf4dadb8892",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88be",
-        "cantidad": 1,
-        "precioUnitario": 39618.23,
-        "subTotal": 39618.23
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88e5",
-        "cantidad": 4,
-        "precioUnitario": 14033.9,
-        "subTotal": 56135.6
-      }
-    ],
-    "total": 95753.83,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 812",
-      "numero": 3036,
-      "ciudad": "Ciudad 15",
       "provincia": "Provincia 2",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2024-02-04T16:29:11.803Z",
+    "fechaCreacion": "2023-07-13T09:11:41.341Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2024-07-04T20:49:06.739Z"
+        "fecha": "2023-12-07T21:32:30.827Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb88a4"
+    "vendedor": "68e1d2ad1e349c4f60f53cb5"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8944",
-    "comprador": "68e1c3130f11baf4dadb88ac",
+    "_id": "68e1d2ad1e349c4f60f53dbc",
+    "comprador": "68e1d2ad1e349c4f60f53cef",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88cf",
-        "cantidad": 10,
-        "precioUnitario": 74493.39,
-        "subTotal": 744933.9
+        "producto": "68e1d2ad1e349c4f60f53d1e",
+        "cantidad": 21,
+        "precioUnitario": 94514.92,
+        "subTotal": 1984813.32
       },
       {
-        "producto": "68e1c3130f11baf4dadb8914",
-        "cantidad": 14,
-        "precioUnitario": 87726.47,
-        "subTotal": 1228170.58
+        "producto": "68e1d2ad1e349c4f60f53d64",
+        "cantidad": 28,
+        "precioUnitario": 76217.35,
+        "subTotal": 2134085.8000000003
       }
     ],
-    "total": 1973104.48,
+    "total": 4118899.12,
     "moneda": "PESO_ARG",
     "direccion": {
-      "calle": "Calle 909",
-      "numero": 7431,
-      "ciudad": "Ciudad 20",
-      "provincia": "Provincia 8",
+      "calle": "Calle 739",
+      "numero": 7854,
+      "ciudad": "Ciudad 14",
+      "provincia": "Provincia 10",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2024-10-02T08:01:18.410Z",
+    "fechaCreacion": "2024-08-30T06:44:33.227Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2024-07-24T21:11:50.407Z"
+        "fecha": "2025-07-05T20:06:05.412Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8880"
+    "vendedor": "68e1d2ad1e349c4f60f53cd3"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8945",
-    "comprador": "68e1c3130f11baf4dadb8898",
+    "_id": "68e1d2ad1e349c4f60f53dbd",
+    "comprador": "68e1d2ad1e349c4f60f53ce9",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88f7",
-        "cantidad": 8,
-        "precioUnitario": 30403.96,
-        "subTotal": 243231.68
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88f2",
-        "cantidad": 13,
-        "precioUnitario": 92213.35,
-        "subTotal": 1198773.55
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88b5",
-        "cantidad": 9,
-        "precioUnitario": 82765.31,
-        "subTotal": 744887.79
+        "producto": "68e1d2ad1e349c4f60f53d2d",
+        "cantidad": 3,
+        "precioUnitario": 94774.41,
+        "subTotal": 284323.23
       }
     ],
-    "total": 2186893.02,
-    "moneda": "PESO_ARG",
+    "total": 284323.23,
+    "moneda": "DOLAR_USA",
     "direccion": {
-      "calle": "Calle 325",
-      "numero": 1453,
-      "ciudad": "Ciudad 20",
+      "calle": "Calle 254",
+      "numero": 4417,
+      "ciudad": "Ciudad 4",
       "provincia": "Provincia 4",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2025-06-02T19:31:14.594Z",
+    "fechaCreacion": "2025-06-25T22:33:14.420Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2025-02-03T13:42:44.574Z"
+        "fecha": "2024-09-27T08:23:08.615Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb88a4"
+    "vendedor": "68e1d2ad1e349c4f60f53cae"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8946",
-    "comprador": "68e1c3130f11baf4dadb885e",
+    "_id": "68e1d2ad1e349c4f60f53dbe",
+    "comprador": "68e1d2ad1e349c4f60f53cd6",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88bd",
-        "cantidad": 14,
-        "precioUnitario": 83193.69,
-        "subTotal": 1164711.6600000001
+        "producto": "68e1d2ad1e349c4f60f53d66",
+        "cantidad": 8,
+        "precioUnitario": 74219.58,
+        "subTotal": 593756.64
       }
     ],
-    "total": 1164711.66,
+    "total": 593756.64,
     "moneda": "PESO_ARG",
     "direccion": {
       "calle": "Calle 635",
-      "numero": 7000,
-      "ciudad": "Ciudad 2",
+      "numero": 6894,
+      "ciudad": "Ciudad 6",
+      "provincia": "Provincia 4",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-11-21T12:19:21.056Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-08-17T18:20:07.471Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cae"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53dbf",
+    "comprador": "68e1d2ad1e349c4f60f53cdf",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d2c",
+        "cantidad": 25,
+        "precioUnitario": 82468.27,
+        "subTotal": 2061706.75
+      }
+    ],
+    "total": 2061706.75,
+    "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 652",
+      "numero": 3353,
+      "ciudad": "Ciudad 5",
       "provincia": "Provincia 8",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2024-02-26T16:01:09.836Z",
+    "fechaCreacion": "2025-01-26T17:27:02.346Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2023-04-04T03:36:17.799Z"
+        "fecha": "2023-02-19T23:22:26.019Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8883"
+    "vendedor": "68e1d2ad1e349c4f60f53cda"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8947",
-    "comprador": "68e1c3130f11baf4dadb8894",
+    "_id": "68e1d2ad1e349c4f60f53dc0",
+    "comprador": "68e1d2ad1e349c4f60f53cc4",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88eb",
-        "cantidad": 22,
-        "precioUnitario": 23787.32,
-        "subTotal": 523321.04
+        "producto": "68e1d2ad1e349c4f60f53d5e",
+        "cantidad": 21,
+        "precioUnitario": 60935.83,
+        "subTotal": 1279652.43
       },
       {
-        "producto": "68e1c3130f11baf4dadb88c6",
-        "cantidad": 46,
-        "precioUnitario": 61239.74,
-        "subTotal": 2817028.04
+        "producto": "68e1d2ad1e349c4f60f53d51",
+        "cantidad": 38,
+        "precioUnitario": 52402.35,
+        "subTotal": 1991289.3
       }
     ],
-    "total": 3340349.08,
-    "moneda": "EURO",
+    "total": 3270941.73,
+    "moneda": "PESO_ARG",
     "direccion": {
-      "calle": "Calle 396",
-      "numero": 4280,
-      "ciudad": "Ciudad 16",
-      "provincia": "Provincia 10",
+      "calle": "Calle 653",
+      "numero": 651,
+      "ciudad": "Ciudad 14",
+      "provincia": "Provincia 4",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2025-06-03T05:18:54.768Z",
+    "fechaCreacion": "2023-05-30T06:29:16.654Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2025-04-13T07:09:03.789Z"
+        "fecha": "2025-02-17T02:44:45.765Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8866"
+    "vendedor": "68e1d2ad1e349c4f60f53ca7"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8948",
-    "comprador": "68e1c3130f11baf4dadb8895",
+    "_id": "68e1d2ad1e349c4f60f53dc1",
+    "comprador": "68e1d2ad1e349c4f60f53cad",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88e4",
-        "cantidad": 33,
-        "precioUnitario": 25900.43,
-        "subTotal": 854714.1900000001
+        "producto": "68e1d2ad1e349c4f60f53d5e",
+        "cantidad": 23,
+        "precioUnitario": 60935.83,
+        "subTotal": 1401524.09
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d5f",
+        "cantidad": 11,
+        "precioUnitario": 41485.36,
+        "subTotal": 456338.96
       }
     ],
-    "total": 854714.19,
-    "moneda": "PESO_ARG",
+    "total": 1857863.05,
+    "moneda": "EURO",
     "direccion": {
-      "calle": "Calle 395",
-      "numero": 5757,
-      "ciudad": "Ciudad 13",
+      "calle": "Calle 260",
+      "numero": 3189,
+      "ciudad": "Ciudad 11",
       "provincia": "Provincia 7",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2024-10-05T07:31:18.750Z",
+    "fechaCreacion": "2025-05-28T21:22:44.943Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2025-08-21T00:46:05.849Z"
+        "fecha": "2025-05-30T23:25:16.993Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb885a"
+    "vendedor": "68e1d2ad1e349c4f60f53cae"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8949",
-    "comprador": "68e1c3130f11baf4dadb8872",
+    "_id": "68e1d2ad1e349c4f60f53dc2",
+    "comprador": "68e1d2ad1e349c4f60f53cca",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88fd",
-        "cantidad": 8,
-        "precioUnitario": 97366.94,
-        "subTotal": 778935.52
+        "producto": "68e1d2ad1e349c4f60f53d1d",
+        "cantidad": 20,
+        "precioUnitario": 51016.17,
+        "subTotal": 1020323.3999999999
       }
     ],
-    "total": 778935.52,
+    "total": 1020323.4,
     "moneda": "PESO_ARG",
     "direccion": {
-      "calle": "Calle 786",
-      "numero": 2515,
-      "ciudad": "Ciudad 13",
-      "provincia": "Provincia 10",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-08-13T08:14:58.720Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-03-20T06:34:10.085Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb889e"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb894a",
-    "comprador": "68e1c3130f11baf4dadb888c",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88fa",
-        "cantidad": 2,
-        "precioUnitario": 1180.86,
-        "subTotal": 2361.72
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88e7",
-        "cantidad": 1,
-        "precioUnitario": 36866.24,
-        "subTotal": 36866.24
-      }
-    ],
-    "total": 39227.96,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 482",
-      "numero": 6551,
-      "ciudad": "Ciudad 3",
+      "calle": "Calle 926",
+      "numero": 7243,
+      "ciudad": "Ciudad 11",
       "provincia": "Provincia 1",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2025-03-09T23:50:23.798Z",
+    "fechaCreacion": "2024-11-01T23:29:42.400Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2024-10-09T10:47:30.354Z"
+        "fecha": "2025-07-05T06:37:08.683Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8866"
+    "vendedor": "68e1d2ad1e349c4f60f53cd9"
   },
   {
-    "_id": "68e1c3130f11baf4dadb894b",
-    "comprador": "68e1c3130f11baf4dadb884d",
+    "_id": "68e1d2ad1e349c4f60f53dc3",
+    "comprador": "68e1d2ad1e349c4f60f53ce3",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb8906",
-        "cantidad": 4,
-        "precioUnitario": 19597.6,
-        "subTotal": 78390.4
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88b1",
-        "cantidad": 8,
-        "precioUnitario": 77123.1,
-        "subTotal": 616984.8
+        "producto": "68e1d2ad1e349c4f60f53d12",
+        "cantidad": 9,
+        "precioUnitario": 72042.53,
+        "subTotal": 648382.77
       }
     ],
-    "total": 695375.2,
+    "total": 648382.77,
     "moneda": "EURO",
     "direccion": {
-      "calle": "Calle 97",
-      "numero": 872,
-      "ciudad": "Ciudad 12",
-      "provincia": "Provincia 10",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-05-26T02:50:43.203Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-05-02T06:47:59.972Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb887b"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb894c",
-    "comprador": "68e1c3130f11baf4dadb8857",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb8901",
-        "cantidad": 1,
-        "precioUnitario": 50181.78,
-        "subTotal": 50181.78
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88b3",
-        "cantidad": 21,
-        "precioUnitario": 13246.12,
-        "subTotal": 278168.52
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88b8",
-        "cantidad": 21,
-        "precioUnitario": 55409.65,
-        "subTotal": 1163602.6500000001
-      }
-    ],
-    "total": 1491952.95,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 289",
-      "numero": 879,
+      "calle": "Calle 985",
+      "numero": 3403,
       "ciudad": "Ciudad 1",
-      "provincia": "Provincia 6",
+      "provincia": "Provincia 4",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2025-07-21T00:40:00.463Z",
+    "fechaCreacion": "2023-04-22T01:41:03.492Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2025-05-08T10:25:15.847Z"
+        "fecha": "2024-05-05T00:42:23.672Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb88b0"
+    "vendedor": "68e1d2ad1e349c4f60f53cb7"
   },
   {
-    "_id": "68e1c3130f11baf4dadb894d",
-    "comprador": "68e1c3130f11baf4dadb888d",
+    "_id": "68e1d2ad1e349c4f60f53dc4",
+    "comprador": "68e1d2ad1e349c4f60f53cef",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88e5",
-        "cantidad": 8,
-        "precioUnitario": 14033.9,
-        "subTotal": 112271.2
+        "producto": "68e1d2ad1e349c4f60f53d2b",
+        "cantidad": 21,
+        "precioUnitario": 25281.09,
+        "subTotal": 530902.89
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d52",
+        "cantidad": 11,
+        "precioUnitario": 26558.43,
+        "subTotal": 292142.73
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d1b",
+        "cantidad": 39,
+        "precioUnitario": 41358.81,
+        "subTotal": 1612993.5899999999
       }
     ],
-    "total": 112271.2,
+    "total": 2436039.21,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 541",
+      "numero": 8667,
+      "ciudad": "Ciudad 14",
+      "provincia": "Provincia 9",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-03-21T04:51:58.546Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-06-11T22:01:44.829Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cc5"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53dc5",
+    "comprador": "68e1d2ad1e349c4f60f53cfa",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d1a",
+        "cantidad": 18,
+        "precioUnitario": 77590.54,
+        "subTotal": 1396629.72
+      }
+    ],
+    "total": 1396629.72,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 579",
+      "numero": 3122,
+      "ciudad": "Ciudad 11",
+      "provincia": "Provincia 4",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-07-13T23:41:09.144Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-12-07T02:23:15.456Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53ce2"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53dc6",
+    "comprador": "68e1d2ad1e349c4f60f53cf9",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d4f",
+        "cantidad": 36,
+        "precioUnitario": 60943.51,
+        "subTotal": 2193966.36
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d54",
+        "cantidad": 4,
+        "precioUnitario": 39441.25,
+        "subTotal": 157765
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d54",
+        "cantidad": 22,
+        "precioUnitario": 39441.25,
+        "subTotal": 867707.5
+      }
+    ],
+    "total": 3219438.86,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 506",
+      "numero": 3910,
+      "ciudad": "Ciudad 20",
+      "provincia": "Provincia 3",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2025-07-06T15:25:30.554Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-07-05T17:24:32.244Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cbe"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53dc7",
+    "comprador": "68e1d2ad1e349c4f60f53cf3",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d36",
+        "cantidad": 21,
+        "precioUnitario": 95515.96,
+        "subTotal": 2005835.1600000001
+      }
+    ],
+    "total": 2005835.16,
     "moneda": "DOLAR_USA",
     "direccion": {
-      "calle": "Calle 425",
-      "numero": 1925,
-      "ciudad": "Ciudad 13",
-      "provincia": "Provincia 8",
+      "calle": "Calle 13",
+      "numero": 7517,
+      "ciudad": "Ciudad 2",
+      "provincia": "Provincia 2",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2023-04-10T18:12:20.811Z",
+    "fechaCreacion": "2025-05-18T15:19:18.572Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2023-03-19T14:27:28.285Z"
+        "fecha": "2024-12-01T13:06:57.944Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb88a4"
+    "vendedor": "68e1d2ad1e349c4f60f53cda"
   },
   {
-    "_id": "68e1c3130f11baf4dadb894e",
-    "comprador": "68e1c3130f11baf4dadb88ac",
+    "_id": "68e1d2ad1e349c4f60f53dc8",
+    "comprador": "68e1d2ad1e349c4f60f53cf3",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88f0",
-        "cantidad": 9,
-        "precioUnitario": 81152.74,
-        "subTotal": 730374.66
+        "producto": "68e1d2ad1e349c4f60f53d08",
+        "cantidad": 42,
+        "precioUnitario": 98387.53,
+        "subTotal": 4132276.26
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d27",
+        "cantidad": 31,
+        "precioUnitario": 14776.96,
+        "subTotal": 458085.75999999995
       }
     ],
-    "total": 730374.66,
+    "total": 4590362.02,
     "moneda": "EURO",
     "direccion": {
-      "calle": "Calle 997",
-      "numero": 1778,
-      "ciudad": "Ciudad 7",
-      "provincia": "Provincia 5",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-03-06T17:02:46.921Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-11-14T05:41:59.755Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8860"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb894f",
-    "comprador": "68e1c3130f11baf4dadb888c",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88ff",
-        "cantidad": 14,
-        "precioUnitario": 52199.94,
-        "subTotal": 730799.16
-      }
-    ],
-    "total": 730799.16,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 853",
-      "numero": 669,
-      "ciudad": "Ciudad 12",
+      "calle": "Calle 198",
+      "numero": 369,
+      "ciudad": "Ciudad 15",
       "provincia": "Provincia 7",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2023-08-06T02:44:46.353Z",
+    "fechaCreacion": "2023-04-23T16:31:32.866Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2024-04-29T01:45:22.789Z"
+        "fecha": "2025-07-19T07:55:02.592Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8897"
+    "vendedor": "68e1d2ad1e349c4f60f53cd7"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8950",
-    "comprador": "68e1c3130f11baf4dadb8857",
+    "_id": "68e1d2ad1e349c4f60f53dc9",
+    "comprador": "68e1d2ad1e349c4f60f53ce0",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb8909",
-        "cantidad": 13,
-        "precioUnitario": 21091.49,
-        "subTotal": 274189.37
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb8914",
-        "cantidad": 30,
-        "precioUnitario": 87726.47,
-        "subTotal": 2631794.1
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88d8",
-        "cantidad": 13,
-        "precioUnitario": 39719.57,
-        "subTotal": 516354.41
+        "producto": "68e1d2ad1e349c4f60f53d58",
+        "cantidad": 29,
+        "precioUnitario": 25972.84,
+        "subTotal": 753212.36
       }
     ],
-    "total": 3422337.88,
+    "total": 753212.36,
     "moneda": "PESO_ARG",
+    "direccion": {
+      "calle": "Calle 948",
+      "numero": 7880,
+      "ciudad": "Ciudad 1",
+      "provincia": "Provincia 3",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-06-10T20:58:19.953Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2024-03-22T17:05:56.774Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cfc"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53dca",
+    "comprador": "68e1d2ad1e349c4f60f53ce7",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d12",
+        "cantidad": 21,
+        "precioUnitario": 72042.53,
+        "subTotal": 1512893.13
+      }
+    ],
+    "total": 1512893.13,
+    "moneda": "EURO",
+    "direccion": {
+      "calle": "Calle 71",
+      "numero": 7376,
+      "ciudad": "Ciudad 3",
+      "provincia": "Provincia 6",
+      "pais": "Argentina"
+    },
+    "estado": "pendiente",
+    "fechaCreacion": "2024-08-29T01:52:05.524Z",
+    "historialEstados": [
+      {
+        "estado": "pendiente",
+        "fecha": "2023-06-13T21:51:17.374Z"
+      }
+    ],
+    "vendedor": "68e1d2ad1e349c4f60f53cb7"
+  },
+  {
+    "_id": "68e1d2ad1e349c4f60f53dcb",
+    "comprador": "68e1d2ad1e349c4f60f53cc7",
+    "items": [
+      {
+        "producto": "68e1d2ad1e349c4f60f53d45",
+        "cantidad": 9,
+        "precioUnitario": 78579.75,
+        "subTotal": 707217.75
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d3c",
+        "cantidad": 1,
+        "precioUnitario": 4260.44,
+        "subTotal": 4260.44
+      },
+      {
+        "producto": "68e1d2ad1e349c4f60f53d24",
+        "cantidad": 1,
+        "precioUnitario": 29681.1,
+        "subTotal": 29681.1
+      }
+    ],
+    "total": 741159.29,
+    "moneda": "DOLAR_USA",
     "direccion": {
       "calle": "Calle 462",
-      "numero": 503,
-      "ciudad": "Ciudad 2",
+      "numero": 3596,
+      "ciudad": "Ciudad 3",
       "provincia": "Provincia 8",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2023-08-27T13:31:07.822Z",
+    "fechaCreacion": "2025-04-22T07:51:31.589Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2023-02-18T19:00:16.821Z"
+        "fecha": "2025-03-15T00:42:50.560Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8855"
+    "vendedor": "68e1d2ad1e349c4f60f53cbe"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8951",
-    "comprador": "68e1c3130f11baf4dadb8874",
+    "_id": "68e1d2ad1e349c4f60f53dcc",
+    "comprador": "68e1d2ad1e349c4f60f53cb0",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88ec",
-        "cantidad": 10,
-        "precioUnitario": 40096.16,
-        "subTotal": 400961.60000000003
-      }
-    ],
-    "total": 400961.6,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 454",
-      "numero": 6960,
-      "ciudad": "Ciudad 19",
-      "provincia": "Provincia 3",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-06-01T08:03:06.993Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-07-14T12:25:46.638Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb88a8"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8952",
-    "comprador": "68e1c3130f11baf4dadb8875",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88ee",
-        "cantidad": 17,
-        "precioUnitario": 40575.49,
-        "subTotal": 689783.33
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88f3",
-        "cantidad": 11,
-        "precioUnitario": 13015.64,
-        "subTotal": 143172.03999999998
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88ee",
-        "cantidad": 23,
-        "precioUnitario": 40575.49,
-        "subTotal": 933236.2699999999
-      }
-    ],
-    "total": 1766191.64,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 415",
-      "numero": 4834,
-      "ciudad": "Ciudad 2",
-      "provincia": "Provincia 9",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-12-04T22:28:35.712Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-01-31T01:52:50.705Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8866"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8953",
-    "comprador": "68e1c3130f11baf4dadb8892",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88c5",
-        "cantidad": 12,
-        "precioUnitario": 58887.91,
-        "subTotal": 706654.92
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb890c",
-        "cantidad": 2,
-        "precioUnitario": 11240.79,
-        "subTotal": 22481.58
-      }
-    ],
-    "total": 729136.5,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 556",
-      "numero": 7303,
-      "ciudad": "Ciudad 14",
-      "provincia": "Provincia 7",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-03-27T12:34:56.174Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-03-31T08:11:12.142Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8884"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8954",
-    "comprador": "68e1c3130f11baf4dadb8898",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88cd",
-        "cantidad": 18,
-        "precioUnitario": 4613.97,
-        "subTotal": 83051.46
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88ed",
-        "cantidad": 10,
-        "precioUnitario": 24946.6,
-        "subTotal": 249466
-      }
-    ],
-    "total": 332517.46,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 90",
-      "numero": 7408,
-      "ciudad": "Ciudad 6",
-      "provincia": "Provincia 8",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-06-02T23:20:22.808Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-05-23T06:55:52.766Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8879"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8955",
-    "comprador": "68e1c3130f11baf4dadb887a",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88ff",
-        "cantidad": 30,
-        "precioUnitario": 52199.94,
-        "subTotal": 1565998.2000000002
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88b2",
-        "cantidad": 10,
-        "precioUnitario": 77267.79,
-        "subTotal": 772677.8999999999
-      }
-    ],
-    "total": 2338676.1,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 509",
-      "numero": 9537,
-      "ciudad": "Ciudad 19",
-      "provincia": "Provincia 3",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-10-28T04:46:12.861Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-02-01T07:25:21.209Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb886b"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8956",
-    "comprador": "68e1c3130f11baf4dadb88af",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88e5",
+        "producto": "68e1d2ad1e349c4f60f53d46",
         "cantidad": 15,
-        "precioUnitario": 14033.9,
-        "subTotal": 210508.5
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88bb",
-        "cantidad": 3,
-        "precioUnitario": 14757.06,
-        "subTotal": 44271.18
+        "precioUnitario": 50341.93,
+        "subTotal": 755128.95
       }
     ],
-    "total": 254779.68,
-    "moneda": "PESO_ARG",
+    "total": 755128.95,
+    "moneda": "DOLAR_USA",
     "direccion": {
-      "calle": "Calle 582",
-      "numero": 2929,
-      "ciudad": "Ciudad 9",
+      "calle": "Calle 506",
+      "numero": 9950,
+      "ciudad": "Ciudad 8",
       "provincia": "Provincia 9",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2025-09-01T09:16:14.930Z",
+    "fechaCreacion": "2023-07-12T10:27:36.286Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2024-06-30T20:17:03.826Z"
+        "fecha": "2025-01-04T17:01:10.282Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8861"
+    "vendedor": "68e1d2ad1e349c4f60f53cdd"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8957",
-    "comprador": "68e1c3130f11baf4dadb88ae",
+    "_id": "68e1d2ad1e349c4f60f53dcd",
+    "comprador": "68e1d2ad1e349c4f60f53cf8",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88fd",
-        "cantidad": 3,
-        "precioUnitario": 97366.94,
-        "subTotal": 292100.82
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88be",
-        "cantidad": 1,
-        "precioUnitario": 39618.23,
-        "subTotal": 39618.23
-      }
-    ],
-    "total": 331719.05,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 244",
-      "numero": 362,
-      "ciudad": "Ciudad 16",
-      "provincia": "Provincia 1",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-07-14T08:32:19.324Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-07-03T18:38:12.004Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb889e"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8958",
-    "comprador": "68e1c3130f11baf4dadb884f",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88e9",
-        "cantidad": 35,
-        "precioUnitario": 47275.93,
-        "subTotal": 1654657.55
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88ca",
+        "producto": "68e1d2ad1e349c4f60f53d5c",
         "cantidad": 6,
-        "precioUnitario": 75710.33,
-        "subTotal": 454261.98
-      }
-    ],
-    "total": 2108919.53,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 368",
-      "numero": 3907,
-      "ciudad": "Ciudad 2",
-      "provincia": "Provincia 10",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-10-28T01:15:41.872Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-01-04T17:26:06.716Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb88a0"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8959",
-    "comprador": "68e1c3130f11baf4dadb88af",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88b1",
-        "cantidad": 18,
-        "precioUnitario": 77123.1,
-        "subTotal": 1388215.8
+        "precioUnitario": 36873.3,
+        "subTotal": 221239.80000000002
       },
       {
-        "producto": "68e1c3130f11baf4dadb88d6",
-        "cantidad": 22,
-        "precioUnitario": 78758.99,
-        "subTotal": 1732697.78
-      }
-    ],
-    "total": 3120913.58,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 969",
-      "numero": 2473,
-      "ciudad": "Ciudad 16",
-      "provincia": "Provincia 1",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-05-01T23:06:28.347Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-08-11T12:07:46.437Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8881"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb895a",
-    "comprador": "68e1c3130f11baf4dadb884f",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88d7",
-        "cantidad": 1,
-        "precioUnitario": 37799.27,
-        "subTotal": 37799.27
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88c4",
-        "cantidad": 12,
-        "precioUnitario": 82579.54,
-        "subTotal": 990954.48
-      }
-    ],
-    "total": 1028753.75,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 737",
-      "numero": 7224,
-      "ciudad": "Ciudad 15",
-      "provincia": "Provincia 8",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-10-03T20:36:01.682Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-10-29T03:09:50.195Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8861"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb895b",
-    "comprador": "68e1c3130f11baf4dadb88ac",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88d4",
-        "cantidad": 7,
-        "precioUnitario": 89498.46,
-        "subTotal": 626489.2200000001
-      }
-    ],
-    "total": 626489.22,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 61",
-      "numero": 8586,
-      "ciudad": "Ciudad 10",
-      "provincia": "Provincia 5",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-03-03T00:38:23.790Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-07-24T21:34:15.620Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8878"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb895c",
-    "comprador": "68e1c3130f11baf4dadb8876",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88d9",
-        "cantidad": 4,
-        "precioUnitario": 70073.19,
-        "subTotal": 280292.76
-      }
-    ],
-    "total": 280292.76,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 974",
-      "numero": 7817,
-      "ciudad": "Ciudad 9",
-      "provincia": "Provincia 9",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-09-19T00:42:13.425Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-07-12T15:52:50.211Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb887d"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb895d",
-    "comprador": "68e1c3130f11baf4dadb8894",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88e6",
-        "cantidad": 18,
-        "precioUnitario": 90694.8,
-        "subTotal": 1632506.4000000001
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88e2",
-        "cantidad": 2,
-        "precioUnitario": 25627.83,
-        "subTotal": 51255.66
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88c3",
+        "producto": "68e1d2ad1e349c4f60f53d60",
         "cantidad": 3,
-        "precioUnitario": 45963.08,
-        "subTotal": 137889.24
+        "precioUnitario": 42318.79,
+        "subTotal": 126956.37
       }
     ],
-    "total": 1821651.3,
+    "total": 348196.17,
     "moneda": "DOLAR_USA",
     "direccion": {
-      "calle": "Calle 391",
-      "numero": 5015,
-      "ciudad": "Ciudad 11",
-      "provincia": "Provincia 2",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-11-27T04:49:14.325Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-08-20T18:02:13.028Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb889f"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb895e",
-    "comprador": "68e1c3130f11baf4dadb8862",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb8908",
-        "cantidad": 6,
-        "precioUnitario": 57363.08,
-        "subTotal": 344178.48
-      }
-    ],
-    "total": 344178.48,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 894",
-      "numero": 3867,
-      "ciudad": "Ciudad 13",
-      "provincia": "Provincia 5",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-01-21T01:51:08.540Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-11-16T21:25:52.415Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8866"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb895f",
-    "comprador": "68e1c3130f11baf4dadb8885",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88c1",
-        "cantidad": 1,
-        "precioUnitario": 23340.71,
-        "subTotal": 23340.71
-      }
-    ],
-    "total": 23340.71,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 405",
-      "numero": 8133,
-      "ciudad": "Ciudad 20",
-      "provincia": "Provincia 1",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-06-08T02:50:13.016Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-07-10T23:17:01.675Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb886b"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8960",
-    "comprador": "68e1c3130f11baf4dadb8892",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88ee",
-        "cantidad": 11,
-        "precioUnitario": 40575.49,
-        "subTotal": 446330.38999999996
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88c3",
-        "cantidad": 21,
-        "precioUnitario": 45963.08,
-        "subTotal": 965224.68
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88cf",
-        "cantidad": 15,
-        "precioUnitario": 74493.39,
-        "subTotal": 1117400.85
-      }
-    ],
-    "total": 2528955.92,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 126",
-      "numero": 7924,
-      "ciudad": "Ciudad 20",
-      "provincia": "Provincia 8",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-10-31T10:59:50.087Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-10-10T02:11:56.893Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8856"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8961",
-    "comprador": "68e1c3130f11baf4dadb8894",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88ea",
-        "cantidad": 13,
-        "precioUnitario": 96545.1,
-        "subTotal": 1255086.3
-      }
-    ],
-    "total": 1255086.3,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 227",
-      "numero": 3630,
-      "ciudad": "Ciudad 1",
-      "provincia": "Provincia 5",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-09-06T19:56:32.077Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-09-10T16:50:01.200Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8884"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8962",
-    "comprador": "68e1c3130f11baf4dadb8894",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88f4",
-        "cantidad": 1,
-        "precioUnitario": 42013.28,
-        "subTotal": 42013.28
-      }
-    ],
-    "total": 42013.28,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 533",
-      "numero": 8081,
-      "ciudad": "Ciudad 6",
-      "provincia": "Provincia 3",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-05-06T08:45:10.838Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-04-22T15:35:29.503Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8866"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8963",
-    "comprador": "68e1c3130f11baf4dadb884e",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88fd",
-        "cantidad": 10,
-        "precioUnitario": 97366.94,
-        "subTotal": 973669.4
-      }
-    ],
-    "total": 973669.4,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 177",
-      "numero": 1112,
-      "ciudad": "Ciudad 13",
-      "provincia": "Provincia 2",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-12-09T22:14:41.521Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-07-03T12:21:23.211Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb889e"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8964",
-    "comprador": "68e1c3130f11baf4dadb889a",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88fc",
-        "cantidad": 3,
-        "precioUnitario": 96062.33,
-        "subTotal": 288186.99
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb8908",
-        "cantidad": 12,
-        "precioUnitario": 57363.08,
-        "subTotal": 688356.96
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88e4",
-        "cantidad": 30,
-        "precioUnitario": 25900.43,
-        "subTotal": 777012.9
-      }
-    ],
-    "total": 1753556.85,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 240",
-      "numero": 4669,
-      "ciudad": "Ciudad 12",
-      "provincia": "Provincia 5",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-05-29T17:13:48.891Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-07-25T04:51:40.405Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb885a"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8965",
-    "comprador": "68e1c3130f11baf4dadb8893",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88de",
-        "cantidad": 3,
-        "precioUnitario": 44561.31,
-        "subTotal": 133683.93
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88ba",
-        "cantidad": 3,
-        "precioUnitario": 9784.67,
-        "subTotal": 29354.010000000002
-      }
-    ],
-    "total": 163037.94,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 668",
-      "numero": 2790,
+      "calle": "Calle 327",
+      "numero": 6888,
       "ciudad": "Ciudad 18",
-      "provincia": "Provincia 7",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-09-28T01:44:27.781Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-07-04T18:02:11.568Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb885b"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8966",
-    "comprador": "68e1c3130f11baf4dadb887a",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88f4",
-        "cantidad": 3,
-        "precioUnitario": 42013.28,
-        "subTotal": 126039.84
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb890f",
-        "cantidad": 14,
-        "precioUnitario": 69514.31,
-        "subTotal": 973200.34
-      }
-    ],
-    "total": 1099240.18,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 415",
-      "numero": 398,
-      "ciudad": "Ciudad 1",
-      "provincia": "Provincia 5",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-07-26T21:09:34.817Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-03-15T00:41:44.083Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb885a"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8967",
-    "comprador": "68e1c3130f11baf4dadb8899",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88b7",
-        "cantidad": 3,
-        "precioUnitario": 4044.6,
-        "subTotal": 12133.8
-      }
-    ],
-    "total": 12133.8,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 331",
-      "numero": 6080,
-      "ciudad": "Ciudad 1",
-      "provincia": "Provincia 4",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-07-14T03:37:50.966Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-02-16T05:18:06.888Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8856"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8968",
-    "comprador": "68e1c3130f11baf4dadb8895",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb8900",
-        "cantidad": 11,
-        "precioUnitario": 65176.65,
-        "subTotal": 716943.15
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88cf",
-        "cantidad": 16,
-        "precioUnitario": 74493.39,
-        "subTotal": 1191894.24
-      }
-    ],
-    "total": 1908837.39,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 416",
-      "numero": 1034,
-      "ciudad": "Ciudad 2",
-      "provincia": "Provincia 10",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-12-27T20:47:19.125Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-01-08T21:31:11.429Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8856"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8969",
-    "comprador": "68e1c3130f11baf4dadb884f",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88d4",
-        "cantidad": 3,
-        "precioUnitario": 89498.46,
-        "subTotal": 268495.38
-      }
-    ],
-    "total": 268495.38,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 786",
-      "numero": 1727,
-      "ciudad": "Ciudad 16",
       "provincia": "Provincia 1",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2024-04-14T01:44:25.790Z",
+    "fechaCreacion": "2024-11-13T20:24:56.644Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2025-01-08T12:19:52.521Z"
+        "fecha": "2023-11-23T13:15:15.843Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8878"
+    "vendedor": "68e1d2ad1e349c4f60f53cfc"
   },
   {
-    "_id": "68e1c3130f11baf4dadb896a",
-    "comprador": "68e1c3130f11baf4dadb8899",
+    "_id": "68e1d2ad1e349c4f60f53dce",
+    "comprador": "68e1d2ad1e349c4f60f53ce8",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88b3",
-        "cantidad": 25,
-        "precioUnitario": 13246.12,
-        "subTotal": 331153
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88f4",
-        "cantidad": 1,
-        "precioUnitario": 42013.28,
-        "subTotal": 42013.28
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88b9",
-        "cantidad": 6,
-        "precioUnitario": 38901.18,
-        "subTotal": 233407.08000000002
-      }
-    ],
-    "total": 606573.36,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 607",
-      "numero": 5523,
-      "ciudad": "Ciudad 11",
-      "provincia": "Provincia 7",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-02-12T14:44:50.664Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-10-18T09:53:05.575Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8881"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb896b",
-    "comprador": "68e1c3130f11baf4dadb8872",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88f8",
-        "cantidad": 1,
-        "precioUnitario": 68480.9,
-        "subTotal": 68480.9
-      }
-    ],
-    "total": 68480.9,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 182",
-      "numero": 6349,
-      "ciudad": "Ciudad 8",
-      "provincia": "Provincia 7",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-05-26T18:22:27.968Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2025-08-24T08:58:24.455Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8864"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb896c",
-    "comprador": "68e1c3130f11baf4dadb8872",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb8905",
-        "cantidad": 39,
-        "precioUnitario": 44235.28,
-        "subTotal": 1725175.92
-      }
-    ],
-    "total": 1725175.92,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 65",
-      "numero": 9420,
-      "ciudad": "Ciudad 5",
-      "provincia": "Provincia 3",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-02-04T04:36:59.652Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-09-07T13:46:57.983Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8856"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb896d",
-    "comprador": "68e1c3130f11baf4dadb8893",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88cd",
-        "cantidad": 33,
-        "precioUnitario": 4613.97,
-        "subTotal": 152261.01
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb8908",
-        "cantidad": 5,
-        "precioUnitario": 57363.08,
-        "subTotal": 286815.4
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb890b",
+        "producto": "68e1d2ad1e349c4f60f53d1e",
         "cantidad": 3,
-        "precioUnitario": 14809.77,
-        "subTotal": 44429.31
+        "precioUnitario": 94514.92,
+        "subTotal": 283544.76
       }
     ],
-    "total": 483505.72,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 119",
-      "numero": 4496,
-      "ciudad": "Ciudad 19",
-      "provincia": "Provincia 9",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-08-22T18:26:16.720Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-06-16T07:48:10.090Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb889e"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb896e",
-    "comprador": "68e1c3130f11baf4dadb8876",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88c7",
-        "cantidad": 10,
-        "precioUnitario": 28675.16,
-        "subTotal": 286751.6
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88bc",
-        "cantidad": 34,
-        "precioUnitario": 84364.41,
-        "subTotal": 2868389.94
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88f2",
-        "cantidad": 19,
-        "precioUnitario": 92213.35,
-        "subTotal": 1752053.6500000001
-      }
-    ],
-    "total": 4907195.19,
+    "total": 283544.76,
     "moneda": "PESO_ARG",
     "direccion": {
-      "calle": "Calle 649",
-      "numero": 6306,
-      "ciudad": "Ciudad 7",
-      "provincia": "Provincia 10",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-03-03T21:50:17.963Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-03-18T17:13:36.017Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb88a4"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb896f",
-    "comprador": "68e1c3130f11baf4dadb8875",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88f3",
-        "cantidad": 23,
-        "precioUnitario": 13015.64,
-        "subTotal": 299359.72
-      }
-    ],
-    "total": 299359.72,
-    "moneda": "DOLAR_USA",
-    "direccion": {
-      "calle": "Calle 332",
-      "numero": 8027,
-      "ciudad": "Ciudad 1",
+      "calle": "Calle 419",
+      "numero": 4508,
+      "ciudad": "Ciudad 14",
       "provincia": "Provincia 5",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2024-06-21T23:45:10.146Z",
+    "fechaCreacion": "2025-01-12T05:24:26.887Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2024-07-28T03:44:22.138Z"
+        "fecha": "2023-07-31T19:10:58.955Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb888f"
+    "vendedor": "68e1d2ad1e349c4f60f53d00"
   },
   {
-    "_id": "68e1c3130f11baf4dadb8970",
-    "comprador": "68e1c3130f11baf4dadb889a",
+    "_id": "68e1d2ad1e349c4f60f53dcf",
+    "comprador": "68e1d2ad1e349c4f60f53ccf",
     "items": [
       {
-        "producto": "68e1c3130f11baf4dadb88fe",
-        "cantidad": 10,
-        "precioUnitario": 85978.59,
-        "subTotal": 859785.8999999999
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb8904",
-        "cantidad": 1,
-        "precioUnitario": 43745.1,
-        "subTotal": 43745.1
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88f5",
-        "cantidad": 7,
-        "precioUnitario": 91853.65,
-        "subTotal": 642975.5499999999
-      }
-    ],
-    "total": 1546506.55,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 200",
-      "numero": 9837,
-      "ciudad": "Ciudad 8",
-      "provincia": "Provincia 3",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-04-25T22:52:19.476Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-10-26T18:31:32.976Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8880"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8971",
-    "comprador": "68e1c3130f11baf4dadb8893",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88ba",
-        "cantidad": 12,
-        "precioUnitario": 9784.67,
-        "subTotal": 117416.04000000001
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb890f",
+        "producto": "68e1d2ad1e349c4f60f53d20",
         "cantidad": 16,
-        "precioUnitario": 69514.31,
-        "subTotal": 1112228.96
+        "precioUnitario": 58432.89,
+        "subTotal": 934926.24
       },
       {
-        "producto": "68e1c3130f11baf4dadb88bd",
-        "cantidad": 17,
-        "precioUnitario": 83193.69,
-        "subTotal": 1414292.73
-      }
-    ],
-    "total": 2643937.73,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 869",
-      "numero": 6373,
-      "ciudad": "Ciudad 1",
-      "provincia": "Provincia 8",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-04-18T17:06:42.425Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-10-06T16:05:38.016Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8883"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8972",
-    "comprador": "68e1c3130f11baf4dadb889c",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88e0",
-        "cantidad": 25,
-        "precioUnitario": 73068.59,
-        "subTotal": 1826714.75
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88de",
-        "cantidad": 41,
-        "precioUnitario": 44561.31,
-        "subTotal": 1827013.71
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88df",
-        "cantidad": 27,
-        "precioUnitario": 8214.49,
-        "subTotal": 221791.22999999998
-      }
-    ],
-    "total": 3875519.69,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 146",
-      "numero": 2920,
-      "ciudad": "Ciudad 11",
-      "provincia": "Provincia 6",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-09-25T07:08:09.330Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-08-02T01:00:17.712Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8864"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8973",
-    "comprador": "68e1c3130f11baf4dadb8854",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88d1",
+        "producto": "68e1d2ad1e349c4f60f53d13",
         "cantidad": 1,
-        "precioUnitario": 9983,
-        "subTotal": 9983
+        "precioUnitario": 31906.97,
+        "subTotal": 31906.97
       },
       {
-        "producto": "68e1c3130f11baf4dadb88c9",
-        "cantidad": 20,
-        "precioUnitario": 46677.11,
-        "subTotal": 933542.2
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88d6",
-        "cantidad": 17,
-        "precioUnitario": 78758.99,
-        "subTotal": 1338902.83
+        "producto": "68e1d2ad1e349c4f60f53d09",
+        "cantidad": 43,
+        "precioUnitario": 24931.7,
+        "subTotal": 1072063.1
       }
     ],
-    "total": 2282428.03,
+    "total": 2038896.31,
     "moneda": "PESO_ARG",
     "direccion": {
-      "calle": "Calle 811",
-      "numero": 3421,
-      "ciudad": "Ciudad 9",
+      "calle": "Calle 520",
+      "numero": 7985,
+      "ciudad": "Ciudad 6",
       "provincia": "Provincia 8",
       "pais": "Argentina"
     },
     "estado": "pendiente",
-    "fechaCreacion": "2024-12-08T09:24:31.806Z",
+    "fechaCreacion": "2025-05-04T19:42:51.274Z",
     "historialEstados": [
       {
         "estado": "pendiente",
-        "fecha": "2023-06-13T11:33:21.663Z"
+        "fecha": "2024-05-04T04:03:22.278Z"
       }
     ],
-    "vendedor": "68e1c3130f11baf4dadb8881"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8974",
-    "comprador": "68e1c3130f11baf4dadb8892",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb8911",
-        "cantidad": 2,
-        "precioUnitario": 10315.01,
-        "subTotal": 20630.02
-      }
-    ],
-    "total": 20630.02,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 737",
-      "numero": 2956,
-      "ciudad": "Ciudad 9",
-      "provincia": "Provincia 10",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-04-25T02:23:23.307Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-10-07T02:50:47.358Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb887b"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8975",
-    "comprador": "68e1c3130f11baf4dadb8874",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88d2",
-        "cantidad": 23,
-        "precioUnitario": 52859.88,
-        "subTotal": 1215777.24
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88dd",
-        "cantidad": 37,
-        "precioUnitario": 17659.52,
-        "subTotal": 653402.24
-      }
-    ],
-    "total": 1869179.48,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 667",
-      "numero": 8270,
-      "ciudad": "Ciudad 5",
-      "provincia": "Provincia 4",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-05-24T13:07:48.571Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-08-06T22:37:20.812Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb888e"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8976",
-    "comprador": "68e1c3130f11baf4dadb889c",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88d8",
-        "cantidad": 34,
-        "precioUnitario": 39719.57,
-        "subTotal": 1350465.38
-      }
-    ],
-    "total": 1350465.38,
-    "moneda": "PESO_ARG",
-    "direccion": {
-      "calle": "Calle 977",
-      "numero": 2314,
-      "ciudad": "Ciudad 7",
-      "provincia": "Provincia 1",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2025-09-09T13:05:36.062Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-01-30T14:42:42.816Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb8855"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8977",
-    "comprador": "68e1c3130f11baf4dadb887e",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb8901",
-        "cantidad": 1,
-        "precioUnitario": 50181.78,
-        "subTotal": 50181.78
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88f6",
-        "cantidad": 9,
-        "precioUnitario": 87792.46,
-        "subTotal": 790132.14
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb88b2",
-        "cantidad": 22,
-        "precioUnitario": 77267.79,
-        "subTotal": 1699891.38
-      }
-    ],
-    "total": 2540205.3,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 930",
-      "numero": 3782,
-      "ciudad": "Ciudad 16",
-      "provincia": "Provincia 8",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2023-12-17T00:01:01.383Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2024-01-29T00:52:21.170Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb886b"
-  },
-  {
-    "_id": "68e1c3130f11baf4dadb8978",
-    "comprador": "68e1c3130f11baf4dadb8854",
-    "items": [
-      {
-        "producto": "68e1c3130f11baf4dadb88b6",
-        "cantidad": 39,
-        "precioUnitario": 40556.1,
-        "subTotal": 1581687.9
-      },
-      {
-        "producto": "68e1c3130f11baf4dadb890e",
-        "cantidad": 12,
-        "precioUnitario": 12811.49,
-        "subTotal": 153737.88
-      }
-    ],
-    "total": 1735425.78,
-    "moneda": "EURO",
-    "direccion": {
-      "calle": "Calle 689",
-      "numero": 5153,
-      "ciudad": "Ciudad 2",
-      "provincia": "Provincia 7",
-      "pais": "Argentina"
-    },
-    "estado": "pendiente",
-    "fechaCreacion": "2024-10-28T04:28:14.089Z",
-    "historialEstados": [
-      {
-        "estado": "pendiente",
-        "fecha": "2023-11-26T16:09:46.979Z"
-      }
-    ],
-    "vendedor": "68e1c3130f11baf4dadb886c"
+    "vendedor": "68e1d2ad1e349c4f60f53d04"
   }
 ]
