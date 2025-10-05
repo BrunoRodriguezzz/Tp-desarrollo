@@ -60,34 +60,6 @@ paths:
         '500':
           description: Error interno del servidor.
 
-    post:
-      tags:
-        - Notificaciones
-      summary: Crear una notificación
-      description: |
-        Crea una nueva notificación basada en un pedido existente. 
-        Se debe enviar el ID del pedido.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                pedidoId:
-                  type: integer
-                  description: ID del pedido para generar la notificación.
-                  example: 123
-              required:
-                - pedidoId
-      responses:
-        '201':
-          description: Notificación creada exitosamente.
-        '400':
-          description: Error en los datos enviados (pedido no existe o inválido).
-        '500':
-          description: Error interno del servidor.
-
   /notificaciones/{id}/leida:
    patch:
      tags:

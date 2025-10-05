@@ -70,24 +70,6 @@ export default class NotificacionController {
         .json({ error: "Error al marcar la notificación como leída" });
     }
   }
-
-  async crear(req, res) {
-    const { pedidoId } = req.body;
-    if (!pedidoId)
-      return res.status(400).json({ error: "Debe enviarse un pedido" });
-
-    try {
-      const notificacion = await this.service.crearSegunPedido(pedido);
-      if (!notificacion)
-        return res
-          .status(400)
-          .json({ error: "No se pudo generar notificación" });
-      return res.status(201).json({ data: notificacion });
-    } catch (err) {
-      console.error(err);
-      return res.status(500).json({ error: "Error al crear la notificación" });
-    }
-  }
 }
 
 const idTransform = z

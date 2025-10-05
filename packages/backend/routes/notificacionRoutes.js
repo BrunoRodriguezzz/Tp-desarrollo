@@ -11,10 +11,6 @@ export default function notificacionRoute(getController) {
     getController(NotificacionController).findAll(req, res)
   );
 
-  router.post(pathNotificaciones, (req, res) =>
-    getController(NotificacionController).crear(req, res)
-  );
-
   // /notificaciones/12/leida
   router.patch(pathNotificaciones + "/:id/leida", (req, res) =>
     getController(NotificacionController).marcarComoLeida(req, res)
