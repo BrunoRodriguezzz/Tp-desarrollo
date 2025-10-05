@@ -12,15 +12,15 @@ import DireccionEntrega from "../models/entities/ubicaciones/direccionEntrega.js
 
 export function validar(comprador, moneda, direccion) {
   if (comprador == null || !(comprador instanceof Usuario)) {
-    throw new Error("Comprador inválido");
+    throw new ValidationError("Comprador inválido");
   }
 
   if (!isMoneda(moneda)) {
-    throw new Error("Moneda inválido");
+    throw new ValidationError("Moneda inválido");
   }
 
   if (direccion == null || !(direccion instanceof DireccionEntrega)) {
-    throw new Error("Comprador inválido");
+    throw new ValidationError("Direccion inválida");
   }
 }
 
@@ -78,13 +78,27 @@ export function validarPedido(pedido, pedidoId) {
   }
 }
 
+export function validarCambioEstado(pedido, proximoEstado) {
+  if (pedido.estado == EstadoPedido.ENTREGADO) {
+    throw new ConflictError(
+      `El pedido con id ${pedido?.id} no puede cambiar de estado porque está en estado ${pedido.estado}`
+    );
+  }
+  if (proximoEstado == EstadoPedido.CANCELADO) {
+    validarEstadoParaCancelar(pedido);
+  }
+  if (proximoEstado == EstadoPedido.ENVIADO) {
+    validarEstadoParaEnviar(pedido);
+  }
+}
+
 export function validarEstadoParaCancelar(pedido) {
   if (
     pedido.estado == EstadoPedido.ENVIADO ||
     pedido.estado == EstadoPedido.ENTREGADO
   ) {
     throw new ConflictError(
-      `El pedido con id ${pedido.id} no puede cancelarse porque está en estado ${pedido.estado}`
+      `El pedido con id ${pedido?.id} no puede cancelarse porque está en estado ${pedido.estado}`
     );
   }
 }
@@ -95,7 +109,7 @@ export function validarEstadoParaEnviar(pedido) {
     pedido.estado == EstadoPedido.CANCELADO
   ) {
     throw new ConflictError(
-      `El pedido con id ${pedido.id} no puede cancelarse porque está en estado ${pedido.estado}`
+      `El pedido con id ${pedido?.id} no puede enviarse porque está en estado ${pedido.estado}`
     );
   }
 }
