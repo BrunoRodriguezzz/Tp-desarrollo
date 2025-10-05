@@ -23,6 +23,7 @@ import {
 } from "../validadores/validadoresPedido.js";
 import { pedidoToDTO, usuarioToDTO } from "../utils/mappers.js";
 import { validarString } from "../validadores/validadorTiposNativos.js";
+import { paginationBuildResponse } from "../utils/pagination.js";
 
 export default class PedidoService {
   constructor(
@@ -111,18 +112,33 @@ export default class PedidoService {
     return pedidoToDTO(pedidoPersistido);
   }
 
-  async historialUsuario(usuarioId) {
+  async historialUsuario(usuarioId, page = 1, limit = 10) {
     const usuario = await this.usuarioService.findById(usuarioId);
     validarComprador(usuario, usuarioId);
 
-    const pedidos = await this.pedidoRepository.findAllByUsuarioId(usuarioId);
+    const paginado = await paginationBuildResponse(
+      page,
+      limit,
+      null,
+      async (page, elementosPorPagina, _filtros) => {
+        const skip = (page - 1) * elementosPorPagina;
+        const pedidos = await this.pedidoRepository.findAllByUsuarioId(
+          usuarioId,
+          skip,
+          elementosPorPagina
+        );
+        return pedidos.map((p) => pedidoToDTO(p));
+      }
+    );
 
-    const pedidosDTO = pedidos.map((p) => pedidoToDTO(p));
+    paginado.total = await this.pedidoRepository.count();
+    paginado.calculateTotalPages();
+
     const usuarioDTO = usuarioToDTO(usuario);
 
     return {
       usuario: usuarioDTO,
-      pedidos: pedidosDTO,
+      ...paginado,
     };
   }
 

@@ -55,6 +55,7 @@ const mockRepo = {
   update: jest.fn(),
   findById: jest.fn(),
   findAllByUsuarioId: jest.fn(),
+  count: jest.fn(),
 };
 
 const mockUsuarioService = {
@@ -180,11 +181,12 @@ describe("PedidoController - Integración", () => {
     test("Historial usuarios - caso exitoso", async () => {
       mockUsuarioService.findById.mockResolvedValue(compradorValido);
       mockRepo.findAllByUsuarioId.mockResolvedValue([pedidoValido]);
+      mockRepo.count.mockResolvedValue(1);
 
       const res = await request(server.app).get("/pedidos/usuarios/c1");
 
       expect(res.status).toBe(200);
-      expect(res.body.pedidos).toHaveLength(1);
+      expect(res.body.data).toHaveLength(1);
     });
 
     test("Historial usuarios - usuario no existe", async () => {

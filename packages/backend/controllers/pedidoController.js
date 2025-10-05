@@ -1,5 +1,6 @@
 import { z } from "zod";
 import Moneda from "../models/enums/moneda.js";
+import { paginationGetValues } from "../utils/pagination.js";
 
 export default class PedidoController {
   pedidoService;
@@ -60,9 +61,14 @@ export default class PedidoController {
     const id = result.data.usuarioId;
 
     try {
-      const pedidos = await this.pedidoService.historialUsuario(id);
+      const pedidos = await paginationGetValues(
+        req,
+        async (page, limit, _filtros) => {
+          return this.pedidoService.historialUsuario(id, page, limit);
+        }
+      );
 
-      if (pedidos === null) {
+      if (!pedidos || pedidos.data.length === 0) {
         res.status(204).send("No se encontraron pedidos para ese usuario");
       }
 
