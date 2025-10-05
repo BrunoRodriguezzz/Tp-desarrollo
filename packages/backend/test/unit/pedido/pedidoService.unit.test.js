@@ -19,6 +19,7 @@ const mockRepo = {
   update: jest.fn(),
   findById: jest.fn(),
   findAllByUsuarioId: jest.fn(),
+  count: jest.fn(),
 };
 
 const mockUsuarioService = { findById: jest.fn() };
@@ -162,9 +163,10 @@ describe("PedidoService", () => {
     ];
     mockUsuarioService.findById.mockResolvedValue(usuarioValido);
     mockRepo.findAllByUsuarioId.mockResolvedValue(pedidos);
+    mockRepo.count.mockResolvedValue(1);
 
     const result = await pedidoService.historialUsuario("c1");
-    expect(result.pedidos).toHaveLength(1);
+    expect(result.data).toHaveLength(1);
   });
 
   test("Historial usuarios - usuario no existe", async () => {

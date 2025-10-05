@@ -18,9 +18,11 @@ class PedidoRepository {
       .populate("items.producto");
   }
 
-  async findAllByUsuarioId(usuarioId) {
+  async findAllByUsuarioId(usuarioId, skip, elementosPorPagina) {
     return await this.model
       .find({ comprador: usuarioId })
+      .skip(skip)
+      .limit(elementosPorPagina)
       .populate("comprador")
       .populate("vendedor")
       .populate("items.producto");
@@ -32,6 +34,10 @@ class PedidoRepository {
 
   async findByProduct(producto) {
     return await this.model.find({ "items.producto": producto });
+  }
+
+  async count() {
+    return await this.model.countDocuments();
   }
 }
 
