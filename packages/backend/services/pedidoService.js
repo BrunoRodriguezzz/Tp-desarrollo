@@ -88,7 +88,7 @@ export default class PedidoService {
     }
 
     console.log(pedidoPersistido);
-    //this.notificacionService.crearSegunPedido(pedidoPersistido);
+    await this.notificacionService.crearSegunPedido(pedidoPersistido);
 
     return pedidoToDTO(pedidoPersistido);
   }
@@ -126,8 +126,7 @@ export default class PedidoService {
       await this.productoService.update(producto.id, productoPlano);
     }
 
-    //this.notificacionService.crearSegunPedido(pedidoPersistido);
-    console.log(pedidoPersistido);
+    await this.notificacionService.crearSegunPedido(pedidoPersistido);
 
     return pedidoToDTO(pedidoPersistido);
   }
@@ -189,7 +188,7 @@ export default class PedidoService {
     const pedidoDTO = pedidoToDTO(pedidoActualizado);
     const vendedorDTO = usuarioToDTO(vendedor);
 
-    //this.notificacionService.crearSegunPedido(pedidoActualizado);
+    await this.notificacionService.crearSegunPedido(pedidoActualizado);
 
     return {
       pedido: pedidoDTO,
