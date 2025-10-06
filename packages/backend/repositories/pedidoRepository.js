@@ -31,7 +31,8 @@ class PedidoRepository {
     return this.model
       .findByIdAndUpdate(id, pedidoModificado, { new: true })
       .populate("comprador")
-      .populate("items.producto");
+      .populate("items.producto")
+      .populate("historialEstados.usuario");
   }
 
   async findByProduct(producto) {

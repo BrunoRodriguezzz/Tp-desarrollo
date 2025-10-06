@@ -26,19 +26,21 @@ const coordenada = new Coordenada(-34, -58);
 const direccionValida = new DireccionEntrega(domicilio, ciudad, coordenada);
 
 const compradorValido = new Usuario("Comprador Test", TipoUsuario.COMPRADOR);
-compradorValido._id = "c1";
+compradorValido._id = "68e33be4b82c028126ef811e";
 compradorValido.email = "c@test.com";
 compradorValido.telefono = "123456";
 
 const vendedorValido = new Usuario("Vendedor Test", TipoUsuario.VENDEDOR);
-vendedorValido._id = "v1";
+vendedorValido._id = "68e33be4b82c028126ef811f";
 vendedorValido.email = "v@test.com";
 vendedorValido.telefono = "123456";
 
 const productoValido = new Producto(vendedorValido, "Un producto");
-productoValido._id = "p1";
+productoValido._id = "68e33be4b82c028126ef8120";
 productoValido.setStock(10);
 productoValido.setPrecio(100);
+productoValido.aumentarStock = jest.fn();
+productoValido.restarVentas = jest.fn();
 
 const itemValido = new ItemPedido(productoValido, 2, 100);
 
@@ -47,7 +49,7 @@ const pedidoValido = new Pedido(
   Moneda.PESO_ARG,
   direccionValida
 );
-pedidoValido._id = "p1";
+pedidoValido._id = "68e33be4b82c028126ef8121";
 pedidoValido.agregarItem(itemValido);
 
 const mockRepo = {
@@ -99,15 +101,15 @@ describe("PedidoController - Integración", () => {
       const res = await request(server.app)
         .post("/pedidos")
         .send({
-          compradorId: "c1",
+          compradorId: compradorValido._id,
           moneda: Moneda.PESO_ARG,
           direccion: direccionValida,
-          items: [{ productoId: "p1", cantidad: 2 }],
+          items: [{ productoId: productoValido._id, cantidad: 2 }],
         })
         .set("Content-Type", "application/json");
 
       expect(res.status).toBe(201);
-      expect(res.body.comprador.id).toBe("c1");
+      expect(res.body.comprador.id).toBe(compradorValido._id);
       expect(res.body.items).toHaveLength(1);
     });
 
@@ -117,10 +119,10 @@ describe("PedidoController - Integración", () => {
       const res = await request(server.app)
         .post("/pedidos")
         .send({
-          compradorId: "noExiste",
+          compradorId: compradorValido._id,
           moneda: Moneda.PESO_ARG,
           direccion: direccionValida,
-          items: [{ productoId: "p1", cantidad: 2 }],
+          items: [{ productoId: productoValido._id, cantidad: 2 }],
         })
         .set("Content-Type", "application/json");
 
@@ -134,10 +136,10 @@ describe("PedidoController - Integración", () => {
       const res = await request(server.app)
         .post("/pedidos")
         .send({
-          compradorId: "c1",
+          compradorId: compradorValido._id,
           moneda: Moneda.PESO_ARG,
           direccion: direccionValida,
-          items: [{ productoId: "noExiste", cantidad: 2 }],
+          items: [{ productoId: productoValido._id, cantidad: 2 }],
         })
         .set("Content-Type", "application/json");
 
@@ -147,17 +149,27 @@ describe("PedidoController - Integración", () => {
 
   describe("POST /pedidos/:id/cancelacion", () => {
     test("Marcar como cancelado - caso exitoso", async () => {
-      const pedidoMock = { ...pedidoValido, actualizarEstado: jest.fn() };
+      const nuevoPedido = new Pedido(
+        compradorValido,
+        Moneda.PESO_ARG,
+        direccionValida
+      );
+      nuevoPedido._id = "68e33be4b82c028126ef8122";
+      nuevoPedido.agregarItem(itemValido);
+
       mockUsuarioService.findById.mockResolvedValue(compradorValido);
-      mockRepo.findById.mockResolvedValue(pedidoMock);
+      mockRepo.findById.mockResolvedValue(nuevoPedido);
       mockRepo.update.mockResolvedValue({
-        ...pedidoMock,
+        ...nuevoPedido,
         estado: EstadoPedido.CANCELADO,
       });
 
+      mockProductoService.findById.mockResolvedValue(productoValido);
+      mockProductoService.update.mockResolvedValue(productoValido);
+
       const res = await request(server.app)
-        .post("/pedidos/p1/cancelacion")
-        .send({ compradorId: "c1", motivo: "Un motivo" })
+        .post(`/pedidos/${nuevoPedido._id}/cancelacion`)
+        .send({ compradorId: compradorValido._id, motivo: "Un motivo" })
         .set("Content-Type", "application/json");
 
       expect(res.status).toBe(200);
@@ -169,8 +181,8 @@ describe("PedidoController - Integración", () => {
       mockRepo.findById.mockResolvedValue(null);
 
       const res = await request(server.app)
-        .post("/pedidos/noExiste/cancelacion")
-        .send({ compradorId: "c1", motivo: "Un motivo" })
+        .post(`/pedidos/${pedidoValido._id}/cancelacion`)
+        .send({ compradorId: compradorValido._id, motivo: "Un motivo" })
         .set("Content-Type", "application/json");
 
       expect(res.status).toBe(404);
@@ -183,7 +195,9 @@ describe("PedidoController - Integración", () => {
       mockRepo.findAllByUsuarioId.mockResolvedValue([pedidoValido]);
       mockRepo.count.mockResolvedValue(1);
 
-      const res = await request(server.app).get("/pedidos/usuarios/c1");
+      const res = await request(server.app).get(
+        `/pedidos/usuarios/${compradorValido._id}`
+      );
 
       expect(res.status).toBe(200);
       expect(res.body.data).toHaveLength(1);
@@ -192,7 +206,9 @@ describe("PedidoController - Integración", () => {
     test("Historial usuarios - usuario no existe", async () => {
       mockUsuarioService.findById.mockResolvedValue(null);
 
-      const res = await request(server.app).get("/pedidos/usuarios/noExiste");
+      const res = await request(server.app).get(
+        `/pedidos/usuarios/${compradorValido._id}`
+      );
 
       expect(res.status).toBe(404);
     });
@@ -208,8 +224,8 @@ describe("PedidoController - Integración", () => {
       });
 
       const res = await request(server.app)
-        .post("/pedidos/p1/envio")
-        .send({ vendedorId: "v1", motivo: "Un motivo" })
+        .post(`/pedidos/${pedidoValido._id}/envio`)
+        .send({ vendedorId: vendedorValido._id, motivo: "Un motivo" })
         .set("Content-Type", "application/json");
 
       expect(res.status).toBe(200);
@@ -220,8 +236,8 @@ describe("PedidoController - Integración", () => {
       mockRepo.findById.mockResolvedValue(null);
 
       const res = await request(server.app)
-        .post("/pedidos/noExiste/envio")
-        .send({ vendedorId: "v1", motivo: "Un motivo" })
+        .post(`/pedidos/${pedidoValido._id}/envio`)
+        .send({ vendedorId: vendedorValido._id, motivo: "Un motivo" })
         .set("Content-Type", "application/json");
 
       expect(res.status).toBe(404);

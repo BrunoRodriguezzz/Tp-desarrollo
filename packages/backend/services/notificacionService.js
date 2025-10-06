@@ -41,20 +41,20 @@ export default class NotificacionService {
 
   async crearSegunPedido(pedido) {
     if (!pedido) {
-      throw new NotFoundError(`No se ingresó ningún pedido para crear la notificación`);
+      throw new NotFoundError(
+        `No se ingresó ningún pedido para crear la notificación`
+      );
     }
-    if(!isPedido(pedido)){
-      throw new ValidationError(`El dato ingresado no corresponde con un pedido`);
-    }
+    isPedido(pedido);
 
     const notificacion = this.factory.crearSegunPedido(pedido);
 
     if (!notificacion) {
       throw new ValidationError(
-        `No se pudo generar la notificación para el pedido con id ${pedido.id}`
+        `No se pudo generar la notificación para el pedido con id ${pedido?._id}`
       );
     }
 
-    return await this.repo.save(notificacion);
+    return await this.notificacionRepository.save(notificacion);
   }
 }

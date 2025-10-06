@@ -60,9 +60,13 @@ export function validarVendedorAutorizado(pedido, vendedorId) {
     throw new ValidationError("Los productos no tienen vendedor asignado");
   }
 
-  if (item.producto.vendedor.toString() !== vendedorId.toString()) {
+  const vendedorProducto = item.producto.vendedor;
+  const vendedorIdProducto =
+    vendedorProducto?._id?.toString() || vendedorProducto?.toString();
+
+  if (vendedorIdProducto !== vendedorId.toString()) {
     throw new ValidationError(
-      `El vendedor del pedido ${item.producto.vendedor} no coincide con el vendedor del producto ${vendedorId}`
+      `El vendedor del pedido ${vendedorIdProducto} no coincide con el vendedor del producto ${vendedorId}`
     );
   }
 }

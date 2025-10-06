@@ -87,7 +87,6 @@ export default class PedidoService {
       await this.productoService.update(item.producto.id, productoPlano);
     }
 
-    console.log(pedidoPersistido);
     await this.notificacionService.crearSegunPedido(pedidoPersistido);
 
     return pedidoToDTO(pedidoPersistido);
@@ -112,7 +111,6 @@ export default class PedidoService {
       pedido.id,
       pedido
     );
-    await pedidoPersistido.populate("historialEstados.usuario");
 
     const items = pedidoPersistido.items;
 
@@ -183,7 +181,6 @@ export default class PedidoService {
       pedidoId,
       pedido
     );
-    await pedidoActualizado.populate("historialEstados.usuario");
 
     const pedidoDTO = pedidoToDTO(pedidoActualizado);
     const vendedorDTO = usuarioToDTO(vendedor);

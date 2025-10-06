@@ -13,11 +13,7 @@ export default class FactoryNotificacion {
   }
 
   crearSegunPedido(pedido) {
-    if (!isPedido(pedido)) {
-      throw new ValidationError(
-        "El pedido no corresponde con un objeto de su clase"
-      );
-    }
+    isPedido(pedido);
 
     const { estado, comprador } = pedido;
     const vendedor = pedido.getVendedor();

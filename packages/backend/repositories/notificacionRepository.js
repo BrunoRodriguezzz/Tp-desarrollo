@@ -1,9 +1,8 @@
 import NotificacionModel from "../schemas/notificacionSchema.js";
 
 export default class NotificacionRepository {
-
   constructor() {
-    this.model = NotificacionModel
+    this.model = NotificacionModel;
   }
 
   async findById(id) {
@@ -13,49 +12,40 @@ export default class NotificacionRepository {
   async findAll() {
     const notificaciones = await this.model.find({}).lean();
 
-    const respuesta = await this.model.find() 
+    const respuesta = await this.model.find();
     return respuesta;
   }
 
   async findAllByUserId(userId) {
-    return await this.model.find({usuarioDestino: userId});
+    return await this.model.find({ usuarioDestino: userId });
   }
 
   async findAllLeidas(userId) {
-    return await this.model.find({ 
-    usuarioDestino: userId, 
-    leida: true 
-  });
+    return await this.model.find({
+      usuarioDestino: userId,
+      leida: true,
+    });
   }
 
   async findAllNoLeidas(userId) {
-    return await this.model.find({ 
-    usuarioDestino: userId, 
-    leida: false 
-  });
+    return await this.model.find({
+      usuarioDestino: userId,
+      leida: false,
+    });
   }
 
   async marcarComoLeida(notificacion) {
     const notificacionId = notificacion.id;
     await this.model.findByIdAndUpdate(
-    notificacionId,
-    { leida: true },
-    { new: true } 
-  )
+      notificacionId,
+      { leida: true },
+      { new: true }
+    );
   }
 
   async save(notificacion) {
-    const usuarioDestino = notificacion.usuarioDestino.id;
-    const mensaje = notificacion.mensaje;
-    const fechaAlta = notificacion.fechaAlta;
-    const leida = notificacion.leida
-    const nuevaNotificacion = new NotificacionModel({
-    usuarioDestino,
-    mensaje,
-    fechaAlta,
-    leida
-    });
+    const nuevaNotificacion = new this.model(notificacion);
 
-  return await nuevaNotificacion.save();
+    return await nuevaNotificacion.save();
   }
 }
