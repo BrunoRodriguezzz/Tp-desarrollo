@@ -14,7 +14,6 @@ class PedidoRepository {
     return await this.model
       .findById(id)
       .populate("comprador")
-      .populate("vendedor")
       .populate("items.producto");
   }
 
@@ -24,12 +23,15 @@ class PedidoRepository {
       .skip(skip)
       .limit(elementosPorPagina)
       .populate("comprador")
-      .populate("vendedor")
-      .populate("items.producto");
+      .populate("items.producto")
+      .populate("historialEstados.usuario");
   }
 
   async update(id, pedidoModificado) {
-    return this.model.findByIdAndUpdate(id, pedidoModificado, { new: true });
+    return this.model
+      .findByIdAndUpdate(id, pedidoModificado, { new: true })
+      .populate("comprador")
+      .populate("items.producto");
   }
 
   async findByProduct(producto) {

@@ -18,15 +18,6 @@ export function pedidoToDTO(pedido) {
     moneda: pedido.moneda,
     estado: pedido.estado,
     fechaCreacion: pedido.fechaCreacion?.toISOString(),
-    vendedor: {
-      vendedor: pedido.vendedor.id || pedido.vendedor._id,
-      nombre: pedido.vendedor.nombre,
-      email: pedido.vendedor.email,
-      telefono: pedido.vendedor.telefono,
-      tipo: pedido.vendedor.tipo,
-      fechaAlta: pedido.vendedor.fechaAlta?.toISOString(),
-    },
-    //TODO - Usuario y motivo no salen
     direccion: pedido.direccion,
     historialEstados: pedido.historialEstados.map((h) => ({
       estado: h.estado,
