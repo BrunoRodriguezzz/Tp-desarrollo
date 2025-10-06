@@ -148,19 +148,6 @@ const PedidoSchema = new mongoose.Schema(
   }
 );
 
-PedidoSchema.pre("save", function (next) {
-  if (this.isNew) {
-    this.historialEstados.push({
-      estado: this.estado,
-      fecha: new Date(),
-      usuario: this.comprador,
-      motivo: "Pedido creado",
-    });
-  }
-
-  next();
-});
-
 PedidoSchema.loadClass(Pedido);
 
 export const PedidoModel = mongoose.model("Pedido", PedidoSchema);

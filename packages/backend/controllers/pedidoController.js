@@ -22,7 +22,6 @@ export default class PedidoController {
       const nuevoPedido = await this.pedidoService.create(resultBody.data);
       return res.status(201).json(nuevoPedido);
     } catch (error) {
-      console.error(error);
       return res.status(error.statusCode).json({ error: error.message });
     }
   }
@@ -127,18 +126,26 @@ export default class PedidoController {
   }
 }
 
+const objectIdRegex = /^[a-f\d]{24}$/i;
+
 const enviadoSchema = z.object({
-  vendedorId: z.string(),
+  vendedorId: z.string().regex(objectIdRegex, {
+    message: "Debe ser un ObjectId válido de MongoDB",
+  }),
   pedidoId: z.string(),
   motivo: z.string().min(1),
 });
 
 const userHistorySchema = z.object({
-  usuarioId: z.string(),
+  usuarioId: z.string().regex(objectIdRegex, {
+    message: "Debe ser un ObjectId válido de MongoDB",
+  }),
 });
 
 export const pedidoSchema = z.object({
-  compradorId: z.string(),
+  compradorId: z.string().regex(objectIdRegex, {
+    message: "Debe ser un ObjectId válido de MongoDB",
+  }),
   moneda: z.nativeEnum(Moneda),
   direccion: z.object({
     ciudad: z.object({
@@ -164,14 +171,20 @@ export const pedidoSchema = z.object({
   }),
   items: z.array(
     z.object({
-      productoId: z.string(),
+      productoId: z.string().regex(objectIdRegex, {
+        message: "Debe ser un ObjectId válido de MongoDB",
+      }),
       cantidad: z.number().min(1),
     })
   ),
 });
 
 export const cancelSchema = z.object({
-  compradorId: z.string(),
-  pedidoId: z.string(),
+  compradorId: z.string().regex(objectIdRegex, {
+    message: "Debe ser un ObjectId válido de MongoDB",
+  }),
+  pedidoId: z.string().regex(objectIdRegex, {
+    message: "Debe ser un ObjectId válido de MongoDB",
+  }),
   motivo: z.string().min(1),
 });
