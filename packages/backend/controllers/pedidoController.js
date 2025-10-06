@@ -22,6 +22,7 @@ export default class PedidoController {
       const nuevoPedido = await this.pedidoService.create(resultBody.data);
       return res.status(201).json(nuevoPedido);
     } catch (error) {
+      console.error(error);
       return res.status(error.statusCode).json({ error: error.message });
     }
   }
