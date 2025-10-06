@@ -7,7 +7,7 @@ export function pedidoToDTO(pedido) {
       email: pedido.comprador.email,
       telefono: pedido.comprador.telefono,
       tipo: pedido.comprador.tipo,
-      fechaAlta: pedido.comprador.fechaAlta.toISOString(),
+      fechaAlta: pedido.comprador.fechaAlta?.toISOString(),
     },
     items: pedido.items.map((item) => ({
       producto: item.producto.id || item.producto._id,
@@ -17,20 +17,20 @@ export function pedidoToDTO(pedido) {
     total: pedido.total,
     moneda: pedido.moneda,
     estado: pedido.estado,
-    fechaCreacion: pedido.fechaCreacion.toISOString(),
+    fechaCreacion: pedido.fechaCreacion?.toISOString(),
     vendedor: {
       vendedor: pedido.vendedor.id || pedido.vendedor._id,
       nombre: pedido.vendedor.nombre,
       email: pedido.vendedor.email,
       telefono: pedido.vendedor.telefono,
       tipo: pedido.vendedor.tipo,
-      fechaAlta: pedido.vendedor.fechaAlta.toISOString(),
+      fechaAlta: pedido.vendedor.fechaAlta?.toISOString(),
     },
     //TODO - Usuario y motivo no salen
     direccion: pedido.direccion,
     historialEstados: pedido.historialEstados.map((h) => ({
       estado: h.estado,
-      fecha: h.fecha.toISOString(),
+      fecha: h.fecha?.toISOString(),
       usuario: h.usuario?.id || h.usuario?._id,
       motivo: h.motivo,
     })),
@@ -44,6 +44,6 @@ export function usuarioToDTO(usuario) {
     nombre: usuario.nombre,
     email: usuario.email,
     telefono: usuario.telefono,
-    fechaAlta: usuario.fechaAlta.toISOString(),
+    fechaAlta: usuario.fechaAlta?.toISOString(),
   };
 }

@@ -11,7 +11,11 @@ import Usuario from "../models/entities/usuario.js";
 import DireccionEntrega from "../models/entities/ubicaciones/direccionEntrega.js";
 
 export function validar(comprador, moneda, direccion) {
-  if (comprador == null || !(comprador instanceof Usuario)) {
+  if (
+    comprador == null ||
+    (!(comprador instanceof Usuario) &&
+      !(typeof comprador === "object" && comprador.nombre && comprador.tipo))
+  ) {
     throw new ValidationError("Comprador inválido");
   }
 

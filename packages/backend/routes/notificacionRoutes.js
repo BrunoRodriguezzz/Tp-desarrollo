@@ -6,15 +6,23 @@ const pathNotificaciones = "/notificaciones";
 export default function notificacionRoute(getController) {
   const router = express.Router();
 
-  // /notificaciones?leida=false?userId=123
-  router.get(pathNotificaciones, (req, res) =>
-    getController(NotificacionController).findAll(req, res)
-  );
+  // GET /notificaciones?leida=false?userId=123
+  router.get(pathNotificaciones, async (req, res, next) => {
+    try {
+      await getController(NotificacionController).findAll(req, res);
+    } catch (err) {
+      next(err);
+    }
+  });
 
-  // /notificaciones/12/leida
-  router.patch(pathNotificaciones + "/:id/leida", (req, res) =>
-    getController(NotificacionController).marcarComoLeida(req, res)
-  );
+  // PATCH /notificaciones/12/leida
+  router.patch(pathNotificaciones + "/:id/leida", async (req, res, next) => {
+    try {
+      await getController(NotificacionController).marcarComoLeida(req, res);
+    } catch (err) {
+      next(err);
+    }
+  });
 
   return router;
 }
