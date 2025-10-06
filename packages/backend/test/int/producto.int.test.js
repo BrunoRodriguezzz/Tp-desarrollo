@@ -4,6 +4,8 @@ import ProductoService from "../../services/productoService.js";
 import ProductoController from "../../controllers/productoController.js";
 import buildTestServer from "./utils/buildTestServer.js";
 import productoRoutes from "../../routes/productoRoutes.js";
+import TipoUsuario from "../../models/enums/tipoUsuario.js";
+import Usuario from "../../models/entities/usuario.js";
 
 const mockRepo = {
   findByPage: jest.fn(),
@@ -14,7 +16,15 @@ const mockRepo = {
   delete: jest.fn(),
 };
 
-const productoService = new ProductoService(mockRepo);
+const mockUsuarioService = {
+  findById: jest.fn(),
+};
+
+const mockUsuario = new Usuario("Juan", TipoUsuario.VENDEDOR);
+mockUsuario.id = "68e1d2ad1e349c4f60f53ca4";
+mockUsuarioService.findById.mockResolvedValue(mockUsuario);
+
+const productoService = new ProductoService(mockRepo, mockUsuarioService);
 const productoController = new ProductoController(productoService);
 
 const server = buildTestServer();
@@ -27,7 +37,7 @@ describe("GET /productos", () => {
     const sampleData = [
       {
         id: 1,
-        vendedor: 1,
+        vendedor: mockUsuario.id,
         titulo: "Prod1",
         precio: 100,
         stock: 10,
@@ -35,7 +45,7 @@ describe("GET /productos", () => {
       },
       {
         id: 2,
-        vendedor: 1,
+        vendedor: mockUsuario.id,
         titulo: "Prod2",
         precio: 200,
         stock: 5,
@@ -64,7 +74,7 @@ describe("GET /productos", () => {
     const filtered = [
       {
         id: 3,
-        vendedor: 2,
+        vendedor: mockUsuario.id,
         titulo: "Prod3",
         precio: 50,
         stock: 2,
@@ -76,7 +86,7 @@ describe("GET /productos", () => {
     const res = await request(server.app).get("/productos?vendedor=2");
     expect(res.status).toBe(200);
     expect(res.body.data).toHaveLength(1);
-    expect(res.body.data[0].vendedor).toBe(2);
+    expect(res.body.data[0].vendedor).toBe(mockUsuario.id);
   });
 
   test("falla con parámetros inválidos (400)", async () => {
@@ -88,7 +98,7 @@ describe("GET /productos", () => {
     const page1 = [
       {
         id: 1,
-        vendedor: 1,
+        vendedor: mockUsuario.id,
         titulo: "Prod1",
         precio: 100,
         stock: 10,
@@ -107,7 +117,7 @@ describe("GET /productos", () => {
 describe("POST /productos", () => {
   test("caso exitoso", async () => {
     const producto = {
-      vendedor: 1,
+      vendedor: mockUsuario.id,
       titulo: "Prod1",
       precio: 100,
       stock: 10,
@@ -118,7 +128,7 @@ describe("POST /productos", () => {
     const res = await request(server.app)
       .post("/productos")
       .send({
-        vendedor: 1,
+        vendedor: mockUsuario.id,
         titulo: "Prod1",
         precio: 100,
         stock: 10,
@@ -139,7 +149,13 @@ describe("POST /productos", () => {
     });
     const res = await request(server.app)
       .post("/productos")
-      .send({ vendedor: 1, titulo: "", precio: 100, stock: 10, activo: true })
+      .send({
+        vendedor: mockUsuario.id,
+        titulo: "",
+        precio: 100,
+        stock: 10,
+        activo: true,
+      })
       .set("Content-Type", "application/json");
     expect(res.status).toBe(400);
   });
@@ -151,7 +167,7 @@ describe("POST /productos", () => {
     const res = await request(server.app)
       .post("/productos")
       .send({
-        vendedor: 1,
+        vendedor: mockUsuario.id,
         titulo: "ProdX",
         precio: 100,
         stock: 10,
@@ -166,14 +182,16 @@ describe("GET /productos/:id", () => {
   test("caso exitoso", async () => {
     const producto = {
       id: 1,
-      vendedor: 1,
+      vendedor: mockUsuario.id,
       titulo: "Prod1",
       precio: 100,
       stock: 10,
       activo: true,
     };
     mockRepo.findById.mockResolvedValue(producto);
-    const res = await request(server.app).get("/productos/1");
+
+    const res = await request(server.app).get("/productos/" + mockUsuario.id);
+
     expect(res.status).toBe(200);
     expect(res.body.titulo).toBe("Prod1");
   });
@@ -194,7 +212,7 @@ describe("PATCH /productos/:id", () => {
   test("caso exitoso", async () => {
     const productoActualizado = {
       id: 1,
-      vendedor: 1,
+      vendedor: mockUsuario.id,
       titulo: "Prod1",
       precio: 200,
       stock: 10,

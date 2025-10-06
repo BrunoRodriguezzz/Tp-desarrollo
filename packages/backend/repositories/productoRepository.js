@@ -2,8 +2,7 @@ import ProductoModel from "../schemas/productoSchema.js";
 import { NotFoundError } from "../errors/tiendaSolError.js";
 
 export default class ProductoRepository {
-  constructor(pedidoRepository) {
-    this.pedidoRepository = pedidoRepository;
+  constructor() {
     this.model = ProductoModel;
   }
 

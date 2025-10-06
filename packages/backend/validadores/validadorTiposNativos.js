@@ -88,10 +88,17 @@ export function esEmailValido(cadena) {
   return regex.test(cadena);
 }
 
-// Permite validar y parsear un ID que puede ser número positivo o un ObjectId de MongoDB
 export function validarParsearID(id) {
-  // Si viene un request, extraer el id de params
   const valor = typeof id === "object" && id?.params?.id ? id.params.id : id;
+
+  // Si es un string numérico positivo, lo aceptamos como número
+  if (typeof valor === "string" && /^\d+$/.test(valor)) {
+    const num = Number(valor);
+    if (!isNaN(num) && num >= 0) {
+      return num;
+    }
+  }
+  // Si es string, validamos como ObjectId
   const resultId = objectIdOnlyTransform.safeParse(valor);
   if (resultId.error) {
     throw new ValidationError("ID inválido");
