@@ -3,7 +3,10 @@ import Categoria from "../models/entities/categoria.js";
 import { ValidationError } from "../errors/tiendaSolError.js";
 
 export function isPedido(pedido) {
-  if (pedido?.constructor?.modelName !== "Pedido") {
+  if (
+    !(pedido instanceof Pedido) &&
+    pedido?.constructor?.modelName !== "Pedido"
+  ) {
     throw new ValidationError("No es un documento Pedido");
   }
 }

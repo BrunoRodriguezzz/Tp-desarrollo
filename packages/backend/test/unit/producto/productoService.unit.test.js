@@ -34,7 +34,7 @@ describe("ProductoService", () => {
   test("findAll devuelve productos paginados y total", async () => {
     mockRepo.findByPage.mockResolvedValue([{ id: 1 }]);
     mockRepo.count.mockResolvedValue(1);
-    const result = await productoSgervice.findAll(1, 10, {});
+    const result = await productoService.findAll(1, 10, {});
     expect(result.data).toHaveLength(1);
     expect(result.total).toBe(1);
     expect(result.totalPages).toBeDefined();
