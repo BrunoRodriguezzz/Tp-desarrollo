@@ -21,6 +21,7 @@ export default class Producto {
   stock;
   fotos;
   activo;
+  ventasTotales;
 
   constructor(vendedor, titulo) {
     validar(vendedor, titulo);
@@ -33,6 +34,7 @@ export default class Producto {
     this.stock = 0;
     this.fotos = [];
     this.activo = true;
+    this.ventasTotales = 0;
   }
 
   estaDisponible(cantidad) {
@@ -48,6 +50,11 @@ export default class Producto {
       throw new ValidationError("No hay suficiente stock para reducir");
     }
     this.stock -= cantidad;
+  }
+
+  sumarVentas(cantidad) {
+    validarNumeroPositivo(cantidad, "Cantidad");
+    this.ventasTotales += cantidad;
   }
 
   aumentarStock(cantidad) {

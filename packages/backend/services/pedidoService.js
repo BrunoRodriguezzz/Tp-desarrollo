@@ -79,6 +79,7 @@ export default class PedidoService {
     // actualizo el stock del producto
     for (const item of itemsValidados) {
       item.producto.reducirStock(item.cantidad);
+      item.producto.sumarVentas(item.cantidad);
       await this.productoService.update(item.producto.id, item.producto);
     }
 

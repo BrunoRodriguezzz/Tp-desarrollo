@@ -33,47 +33,8 @@ export default class ProductoRepository {
       query = query.sort({ createdAt: -1 });
     } else if (filtros.orderBy === "oldest") {
       query = query.sort({ createdAt: 1 });
-    }
-    if (filtros.orderBy === "best_seller") {
-      const match = this.applyFilters(filtros);
-
-      return await this.model
-        .aggregate([
-          { $match: match },
-          {
-            $lookup: {
-              from: "pedidos",
-              let: { productoId: "$_id" },
-              pipeline: [
-                { $unwind: "$items" },
-                {
-                  $match: {
-                    $expr: { $eq: ["$items.producto", "$$productoId"] },
-                  },
-                },
-                {
-                  $group: {
-                    _id: null,
-                    cantidadVendida: { $sum: "$items.cantidad" },
-                  },
-                },
-              ],
-              as: "ventas",
-            },
-          },
-          {
-            $addFields: {
-              cantidadVendida: {
-                $ifNull: [{ $arrayElemAt: ["$ventas.cantidadVendida", 0] }, 0],
-              },
-            },
-          },
-          { $sort: { cantidadVendida: -1, _id: 1 } },
-          { $skip: skip },
-          { $limit: limit },
-          { $project: { ventas: 0 } },
-        ])
-        .exec();
+    } else if (filtros.orderBy === "best_seller") {
+      query = query.sort({ ventasTotales: -1 });
     }
 
     const productos = await query.skip(skip).limit(limit).exec();

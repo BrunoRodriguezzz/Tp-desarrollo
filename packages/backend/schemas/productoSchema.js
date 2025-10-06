@@ -26,6 +26,7 @@ const ProductoSchema = new mongoose.Schema(
     stock: { type: Number, required: false },
     fotos: [{ type: String, required: false }],
     activo: { type: Boolean, required: false, default: true },
+    ventasTotales: { type: Number, required: false, default: 0 },
   },
   {
     timestamps: true,
