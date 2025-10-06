@@ -1,2061 +1,2157 @@
 [
   {
-    "_id": "68e1d2ad1e349c4f60f53d08",
-    "vendedor": "68e1d2ad1e349c4f60f53cfc",
-    "titulo": "Libro El Principito 1",
-    "descripcion": "Luz blanca regulable, bajo consumo.",
+    "_id": "68e33be4b82c028126ef80b9",
+    "vendedor": "68e33be4b82c028126ef806a",
+    "titulo": "Notebook Lenovo IdeaPad 1",
+    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
     "categorias": [
-      "Consolas",
-      "Electrónica",
-      "Juguetes"
+      "Deportes",
+      "Libros",
+      "Consolas"
     ],
-    "precio": 98387.53,
-    "moneda": "EURO",
-    "stock": 42,
+    "precio": 7586.82,
+    "moneda": "DOLAR_USA",
+    "stock": 40,
     "fotos": [
       "https://picsum.photos/seed/0/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-09-07T23:41:20.890Z",
-    "updatedAt": "2023-01-12T06:52:45.400Z",
+    "ventasTotales": 95,
+    "createdAt": "2023-02-25T19:15:54.022Z",
+    "updatedAt": "2024-11-24T09:32:36.007Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d09",
-    "vendedor": "68e1d2ad1e349c4f60f53d04",
-    "titulo": "Notebook Lenovo IdeaPad 2",
-    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
+    "_id": "68e33be4b82c028126ef80ba",
+    "vendedor": "68e33be4b82c028126ef8093",
+    "titulo": "Zapatillas Nike Air 2",
+    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
     "categorias": [
-      "Juguetes",
-      "Deportes"
+      "Deportes",
+      "Hogar",
+      "Consolas"
     ],
-    "precio": 24931.7,
+    "precio": 10772.94,
     "moneda": "PESO_ARG",
-    "stock": 44,
+    "stock": 29,
     "fotos": [
       "https://picsum.photos/seed/1/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-08-07T21:53:43.630Z",
-    "updatedAt": "2024-05-15T04:47:44.941Z",
+    "ventasTotales": 0,
+    "createdAt": "2025-04-05T03:07:59.680Z",
+    "updatedAt": "2025-06-21T05:12:28.450Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d0a",
-    "vendedor": "68e1d2ad1e349c4f60f53cb2",
+    "_id": "68e33be4b82c028126ef80bb",
+    "vendedor": "68e33be4b82c028126ef80ab",
     "titulo": "Smart TV Samsung 50\" 3",
     "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
     "categorias": [
-      "Hogar",
-      "Deportes",
-      "Consolas"
+      "Consolas",
+      "Libros"
     ],
-    "precio": 8032.32,
+    "precio": 15672.05,
     "moneda": "PESO_ARG",
-    "stock": 43,
+    "stock": 34,
     "fotos": [
       "https://picsum.photos/seed/2/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-03-09T22:57:36.901Z",
-    "updatedAt": "2025-01-27T07:26:08.881Z",
+    "ventasTotales": 78,
+    "createdAt": "2024-04-25T22:21:55.061Z",
+    "updatedAt": "2024-06-14T19:10:16.828Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d0b",
-    "vendedor": "68e1d2ad1e349c4f60f53d04",
-    "titulo": "Libro El Principito 4",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "_id": "68e33be4b82c028126ef80bc",
+    "vendedor": "68e33be4b82c028126ef8070",
+    "titulo": "Cafetera Express Philips 4",
+    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
     "categorias": [
-      "Electrónica",
-      "Ropa",
-      "Hogar"
+      "Consolas",
+      "Juguetes"
     ],
-    "precio": 70860.66,
-    "moneda": "DOLAR_USA",
-    "stock": 32,
+    "precio": 76287.66,
+    "moneda": "EURO",
+    "stock": 17,
     "fotos": [
       "https://picsum.photos/seed/3/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-06-15T06:09:02.073Z",
-    "updatedAt": "2024-02-05T20:36:41.671Z",
+    "ventasTotales": 4,
+    "createdAt": "2023-06-27T07:56:44.273Z",
+    "updatedAt": "2024-01-08T07:08:39.693Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d0c",
-    "vendedor": "68e1d2ad1e349c4f60f53cb7",
-    "titulo": "Bicicleta Mountain Bike 5",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "_id": "68e33be4b82c028126ef80bd",
+    "vendedor": "68e33be4b82c028126ef80ae",
+    "titulo": "Zapatillas Nike Air 5",
+    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
     "categorias": [
-      "Juguetes",
-      "Consolas",
-      "Libros"
+      "Deportes"
     ],
-    "precio": 47470.77,
+    "precio": 60498.74,
     "moneda": "DOLAR_USA",
-    "stock": 9,
+    "stock": 13,
     "fotos": [
       "https://picsum.photos/seed/4/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-10-08T13:06:13.871Z",
-    "updatedAt": "2023-12-22T19:36:48.176Z",
+    "ventasTotales": 15,
+    "createdAt": "2023-04-01T20:28:22.371Z",
+    "updatedAt": "2023-11-12T05:10:11.738Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d0d",
-    "vendedor": "68e1d2ad1e349c4f60f53cbe",
-    "titulo": "Zapatillas Nike Air 6",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "_id": "68e33be4b82c028126ef80be",
+    "vendedor": "68e33be4b82c028126ef805a",
+    "titulo": "Notebook Lenovo IdeaPad 6",
+    "descripcion": "Luz blanca regulable, bajo consumo.",
     "categorias": [
       "Hogar",
-      "Deportes"
+      "Electrónica"
     ],
-    "precio": 97636.82,
-    "moneda": "EURO",
-    "stock": 33,
+    "precio": 2340.3,
+    "moneda": "DOLAR_USA",
+    "stock": 11,
     "fotos": [
       "https://picsum.photos/seed/5/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-09-19T21:28:35.710Z",
-    "updatedAt": "2024-04-27T02:10:39.009Z",
+    "ventasTotales": 41,
+    "createdAt": "2023-08-31T01:22:17.311Z",
+    "updatedAt": "2023-11-04T02:14:30.828Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d0e",
-    "vendedor": "68e1d2ad1e349c4f60f53cb5",
-    "titulo": "Bicicleta Mountain Bike 7",
+    "_id": "68e33be4b82c028126ef80bf",
+    "vendedor": "68e33be4b82c028126ef8093",
+    "titulo": "Smart TV Samsung 50\" 7",
     "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
     "categorias": [
-      "Libros",
-      "Electrónica",
-      "Deportes"
+      "Hogar",
+      "Juguetes",
+      "Ropa"
     ],
-    "precio": 8168.26,
-    "moneda": "DOLAR_USA",
-    "stock": 45,
+    "precio": 56783.11,
+    "moneda": "PESO_ARG",
+    "stock": 9,
     "fotos": [
       "https://picsum.photos/seed/6/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-12-28T05:46:11.612Z",
-    "updatedAt": "2024-12-17T17:11:29.553Z",
+    "ventasTotales": 46,
+    "createdAt": "2024-09-24T16:37:16.078Z",
+    "updatedAt": "2023-07-01T14:16:19.262Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d0f",
-    "vendedor": "68e1d2ad1e349c4f60f53cda",
-    "titulo": "Lámpara LED 8",
+    "_id": "68e33be4b82c028126ef80c0",
+    "vendedor": "68e33be4b82c028126ef8063",
+    "titulo": "Bicicleta Mountain Bike 8",
     "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
     "categorias": [
-      "Consolas",
+      "Hogar",
       "Libros",
-      "Ropa"
+      "Deportes"
     ],
-    "precio": 31911.53,
+    "precio": 42600.87,
     "moneda": "PESO_ARG",
     "stock": 31,
     "fotos": [
       "https://picsum.photos/seed/7/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-10-16T14:53:18.861Z",
-    "updatedAt": "2023-03-28T16:13:17.066Z",
+    "ventasTotales": 46,
+    "createdAt": "2024-11-24T12:41:44.348Z",
+    "updatedAt": "2025-09-27T02:54:10.376Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d10",
-    "vendedor": "68e1d2ad1e349c4f60f53cb5",
-    "titulo": "Cafetera Express Philips 9",
-    "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
+    "_id": "68e33be4b82c028126ef80c1",
+    "vendedor": "68e33be4b82c028126ef807a",
+    "titulo": "Consola PlayStation 5 Slim 9",
+    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
     "categorias": [
-      "Ropa",
-      "Deportes",
-      "Libros"
+      "Electrónica",
+      "Libros",
+      "Consolas"
     ],
-    "precio": 30446.49,
+    "precio": 52301.35,
     "moneda": "DOLAR_USA",
-    "stock": 24,
+    "stock": 45,
     "fotos": [
       "https://picsum.photos/seed/8/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-09-24T03:21:02.412Z",
-    "updatedAt": "2025-01-14T12:09:24.517Z",
+    "ventasTotales": 5,
+    "createdAt": "2023-08-17T17:49:31.271Z",
+    "updatedAt": "2024-01-08T12:41:13.123Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d11",
-    "vendedor": "68e1d2ad1e349c4f60f53cbc",
-    "titulo": "Smart TV Samsung 50\" 10",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "_id": "68e33be4b82c028126ef80c2",
+    "vendedor": "68e33be4b82c028126ef8077",
+    "titulo": "Consola PlayStation 5 Slim 10",
+    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
     "categorias": [
-      "Ropa",
       "Electrónica",
-      "Juguetes"
+      "Libros"
     ],
-    "precio": 90136.21,
+    "precio": 96144.41,
     "moneda": "EURO",
-    "stock": 14,
+    "stock": 11,
     "fotos": [
       "https://picsum.photos/seed/9/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-10-08T06:07:57.194Z",
-    "updatedAt": "2023-08-21T04:29:25.929Z",
+    "ventasTotales": 31,
+    "createdAt": "2025-04-22T12:58:36.860Z",
+    "updatedAt": "2024-04-06T14:27:35.252Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d12",
-    "vendedor": "68e1d2ad1e349c4f60f53cb7",
-    "titulo": "Lámpara LED 11",
-    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
+    "_id": "68e33be4b82c028126ef80c3",
+    "vendedor": "68e33be4b82c028126ef80a2",
+    "titulo": "Cafetera Express Philips 11",
+    "descripcion": "Edición ilustrada, tapa dura.",
     "categorias": [
-      "Hogar",
-      "Libros"
+      "Libros",
+      "Juguetes"
     ],
-    "precio": 72042.53,
-    "moneda": "EURO",
-    "stock": 26,
+    "precio": 40900.65,
+    "moneda": "PESO_ARG",
+    "stock": 31,
     "fotos": [
       "https://picsum.photos/seed/10/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-01-16T19:17:30.375Z",
-    "updatedAt": "2023-01-17T11:17:59.659Z",
+    "ventasTotales": 53,
+    "createdAt": "2024-07-14T09:04:13.455Z",
+    "updatedAt": "2023-05-25T17:17:40.962Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d13",
-    "vendedor": "68e1d2ad1e349c4f60f53cae",
-    "titulo": "Consola PlayStation 5 Slim 12",
-    "descripcion": "Amortiguación Air, diseño moderno.",
+    "_id": "68e33be4b82c028126ef80c4",
+    "vendedor": "68e33be4b82c028126ef807a",
+    "titulo": "Cafetera Express Philips 12",
+    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
     "categorias": [
-      "Libros",
-      "Electrónica",
-      "Deportes"
+      "Hogar",
+      "Deportes",
+      "Consolas"
     ],
-    "precio": 31906.97,
-    "moneda": "EURO",
-    "stock": 14,
+    "precio": 53968.08,
+    "moneda": "DOLAR_USA",
+    "stock": 9,
     "fotos": [
       "https://picsum.photos/seed/11/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-03-15T11:57:13.504Z",
-    "updatedAt": "2025-07-04T23:27:10.822Z",
+    "ventasTotales": 44,
+    "createdAt": "2023-05-07T20:40:46.926Z",
+    "updatedAt": "2024-03-18T11:09:04.013Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d14",
-    "vendedor": "68e1d2ad1e349c4f60f53ce2",
-    "titulo": "Consola PlayStation 5 Slim 13",
-    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
+    "_id": "68e33be4b82c028126ef80c5",
+    "vendedor": "68e33be4b82c028126ef8072",
+    "titulo": "Smart TV Samsung 50\" 13",
+    "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
     "categorias": [
       "Juguetes",
-      "Ropa",
+      "Libros",
       "Hogar"
     ],
-    "precio": 60836.63,
-    "moneda": "DOLAR_USA",
-    "stock": 49,
+    "precio": 72828.74,
+    "moneda": "EURO",
+    "stock": 6,
     "fotos": [
       "https://picsum.photos/seed/12/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-11-01T03:31:03.663Z",
-    "updatedAt": "2023-11-19T22:50:27.803Z",
+    "ventasTotales": 70,
+    "createdAt": "2024-08-30T12:36:19.125Z",
+    "updatedAt": "2023-01-04T20:07:08.021Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d15",
-    "vendedor": "68e1d2ad1e349c4f60f53cd9",
-    "titulo": "Auriculares Bluetooth JBL 14",
+    "_id": "68e33be4b82c028126ef80c6",
+    "vendedor": "68e33be4b82c028126ef8070",
+    "titulo": "Bicicleta Mountain Bike 14",
     "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
     "categorias": [
-      "Libros",
-      "Juguetes",
-      "Consolas"
+      "Consolas",
+      "Juguetes"
     ],
-    "precio": 35760.51,
-    "moneda": "PESO_ARG",
-    "stock": 4,
+    "precio": 72125.1,
+    "moneda": "DOLAR_USA",
+    "stock": 13,
     "fotos": [
       "https://picsum.photos/seed/13/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-11-11T01:01:52.160Z",
-    "updatedAt": "2024-12-31T21:47:02.154Z",
+    "ventasTotales": 61,
+    "createdAt": "2025-03-07T05:09:10.605Z",
+    "updatedAt": "2024-11-23T21:26:47.119Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d16",
-    "vendedor": "68e1d2ad1e349c4f60f53cfc",
-    "titulo": "Bicicleta Mountain Bike 15",
+    "_id": "68e33be4b82c028126ef80c7",
+    "vendedor": "68e33be4b82c028126ef809c",
+    "titulo": "Libro El Principito 15",
     "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
     "categorias": [
-      "Consolas",
-      "Electrónica"
+      "Ropa",
+      "Juguetes"
     ],
-    "precio": 1200.11,
-    "moneda": "EURO",
-    "stock": 1,
+    "precio": 19191.09,
+    "moneda": "DOLAR_USA",
+    "stock": 34,
     "fotos": [
       "https://picsum.photos/seed/14/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-01-12T17:23:09.561Z",
-    "updatedAt": "2025-04-04T20:05:45.232Z",
+    "ventasTotales": 30,
+    "createdAt": "2024-07-16T17:18:01.078Z",
+    "updatedAt": "2025-03-20T17:23:49.738Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d17",
-    "vendedor": "68e1d2ad1e349c4f60f53cd0",
-    "titulo": "Auriculares Bluetooth JBL 16",
-    "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
+    "_id": "68e33be4b82c028126ef80c8",
+    "vendedor": "68e33be4b82c028126ef805e",
+    "titulo": "Lámpara LED 16",
+    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
     "categorias": [
-      "Deportes",
-      "Ropa"
+      "Ropa",
+      "Libros",
+      "Hogar"
     ],
-    "precio": 79340.6,
-    "moneda": "EURO",
-    "stock": 2,
+    "precio": 38003.73,
+    "moneda": "DOLAR_USA",
+    "stock": 40,
     "fotos": [
       "https://picsum.photos/seed/15/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-09-18T05:15:58.509Z",
-    "updatedAt": "2024-09-05T20:32:52.967Z",
+    "ventasTotales": 61,
+    "createdAt": "2025-03-22T21:12:33.676Z",
+    "updatedAt": "2023-11-13T21:01:39.737Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d18",
-    "vendedor": "68e1d2ad1e349c4f60f53caa",
-    "titulo": "Zapatillas Nike Air 17",
-    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
+    "_id": "68e33be4b82c028126ef80c9",
+    "vendedor": "68e33be4b82c028126ef80ad",
+    "titulo": "Libro El Principito 17",
+    "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
     "categorias": [
-      "Hogar",
-      "Consolas"
+      "Deportes",
+      "Consolas",
+      "Electrónica"
     ],
-    "precio": 75204.01,
-    "moneda": "EURO",
-    "stock": 15,
+    "precio": 10933.41,
+    "moneda": "DOLAR_USA",
+    "stock": 41,
     "fotos": [
       "https://picsum.photos/seed/16/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-10-05T16:23:42.338Z",
-    "updatedAt": "2025-07-29T16:36:36.795Z",
+    "ventasTotales": 20,
+    "createdAt": "2023-08-17T12:48:49.881Z",
+    "updatedAt": "2023-04-02T03:43:14.568Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d19",
-    "vendedor": "68e1d2ad1e349c4f60f53cd9",
-    "titulo": "Notebook Lenovo IdeaPad 18",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "_id": "68e33be4b82c028126ef80ca",
+    "vendedor": "68e33be4b82c028126ef808f",
+    "titulo": "Smart TV Samsung 50\" 18",
+    "descripcion": "Edición ilustrada, tapa dura.",
     "categorias": [
       "Electrónica",
-      "Juguetes",
-      "Consolas"
+      "Hogar",
+      "Ropa"
     ],
-    "precio": 9056.56,
+    "precio": 29082.65,
     "moneda": "EURO",
-    "stock": 27,
+    "stock": 38,
     "fotos": [
       "https://picsum.photos/seed/17/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-04-21T10:24:03.071Z",
-    "updatedAt": "2023-03-15T02:14:11.236Z",
+    "ventasTotales": 2,
+    "createdAt": "2023-08-04T23:36:34.606Z",
+    "updatedAt": "2025-09-17T15:15:53.129Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d1a",
-    "vendedor": "68e1d2ad1e349c4f60f53ce2",
-    "titulo": "Libro El Principito 19",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "_id": "68e33be4b82c028126ef80cb",
+    "vendedor": "68e33be4b82c028126ef80b0",
+    "titulo": "Cafetera Express Philips 19",
+    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
     "categorias": [
       "Juguetes",
-      "Hogar"
+      "Deportes"
     ],
-    "precio": 77590.54,
+    "precio": 52704.98,
     "moneda": "EURO",
-    "stock": 19,
+    "stock": 30,
     "fotos": [
       "https://picsum.photos/seed/18/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-09-07T01:38:13.925Z",
-    "updatedAt": "2024-06-01T00:07:01.250Z",
+    "ventasTotales": 16,
+    "createdAt": "2024-01-08T00:54:36.194Z",
+    "updatedAt": "2023-07-30T07:13:35.651Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d1b",
-    "vendedor": "68e1d2ad1e349c4f60f53cc5",
-    "titulo": "Smart TV Samsung 50\" 20",
-    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
+    "_id": "68e33be4b82c028126ef80cc",
+    "vendedor": "68e33be4b82c028126ef80a6",
+    "titulo": "Auriculares Bluetooth JBL 20",
+    "descripcion": "Luz blanca regulable, bajo consumo.",
     "categorias": [
-      "Libros",
-      "Consolas",
-      "Ropa"
+      "Deportes",
+      "Juguetes",
+      "Consolas"
     ],
-    "precio": 41358.81,
-    "moneda": "EURO",
-    "stock": 47,
+    "precio": 60040.93,
+    "moneda": "PESO_ARG",
+    "stock": 9,
     "fotos": [
       "https://picsum.photos/seed/19/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-07-20T04:53:03.246Z",
-    "updatedAt": "2023-09-10T20:19:54.262Z",
+    "ventasTotales": 25,
+    "createdAt": "2025-02-28T00:32:35.002Z",
+    "updatedAt": "2025-08-20T21:42:08.777Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d1c",
-    "vendedor": "68e1d2ad1e349c4f60f53cb5",
-    "titulo": "Consola PlayStation 5 Slim 21",
-    "descripcion": "Luz blanca regulable, bajo consumo.",
+    "_id": "68e33be4b82c028126ef80cd",
+    "vendedor": "68e33be4b82c028126ef80ae",
+    "titulo": "Smart TV Samsung 50\" 21",
+    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
     "categorias": [
-      "Electrónica",
-      "Deportes"
+      "Consolas",
+      "Juguetes"
     ],
-    "precio": 54737.24,
-    "moneda": "PESO_ARG",
-    "stock": 44,
+    "precio": 92968.82,
+    "moneda": "DOLAR_USA",
+    "stock": 49,
     "fotos": [
       "https://picsum.photos/seed/20/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-06-12T10:43:32.671Z",
-    "updatedAt": "2025-09-04T18:27:37.181Z",
+    "ventasTotales": 100,
+    "createdAt": "2023-07-07T23:40:40.114Z",
+    "updatedAt": "2025-05-02T15:53:14.638Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d1d",
-    "vendedor": "68e1d2ad1e349c4f60f53cd9",
+    "_id": "68e33be4b82c028126ef80ce",
+    "vendedor": "68e33be4b82c028126ef8072",
     "titulo": "Notebook Lenovo IdeaPad 22",
-    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
+    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
     "categorias": [
-      "Hogar",
       "Libros",
-      "Juguetes"
+      "Ropa",
+      "Consolas"
     ],
-    "precio": 51016.17,
-    "moneda": "PESO_ARG",
-    "stock": 43,
+    "precio": 72822.7,
+    "moneda": "EURO",
+    "stock": 28,
     "fotos": [
       "https://picsum.photos/seed/21/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-10-13T05:43:55.213Z",
-    "updatedAt": "2025-05-13T05:10:15.423Z",
+    "ventasTotales": 66,
+    "createdAt": "2023-01-03T01:06:13.384Z",
+    "updatedAt": "2025-07-10T10:18:56.705Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d1e",
-    "vendedor": "68e1d2ad1e349c4f60f53d00",
-    "titulo": "Libro El Principito 23",
-    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
+    "_id": "68e33be4b82c028126ef80cf",
+    "vendedor": "68e33be4b82c028126ef80a6",
+    "titulo": "Consola PlayStation 5 Slim 23",
+    "descripcion": "Amortiguación Air, diseño moderno.",
     "categorias": [
-      "Deportes",
-      "Ropa",
-      "Juguetes"
+      "Hogar",
+      "Juguetes",
+      "Libros"
     ],
-    "precio": 94514.92,
-    "moneda": "PESO_ARG",
-    "stock": 32,
+    "precio": 39847.38,
+    "moneda": "EURO",
+    "stock": 7,
     "fotos": [
       "https://picsum.photos/seed/22/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-05-19T18:01:20.184Z",
-    "updatedAt": "2023-03-24T00:56:01.506Z",
+    "ventasTotales": 29,
+    "createdAt": "2025-07-08T07:46:13.398Z",
+    "updatedAt": "2025-03-30T14:06:35.160Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d1f",
-    "vendedor": "68e1d2ad1e349c4f60f53cb1",
-    "titulo": "Auriculares Bluetooth JBL 24",
-    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
+    "_id": "68e33be4b82c028126ef80d0",
+    "vendedor": "68e33be4b82c028126ef80ae",
+    "titulo": "Lámpara LED 24",
+    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
     "categorias": [
-      "Electrónica",
+      "Libros",
       "Consolas",
-      "Hogar"
+      "Electrónica"
     ],
-    "precio": 2969.38,
-    "moneda": "EURO",
-    "stock": 38,
+    "precio": 18768,
+    "moneda": "DOLAR_USA",
+    "stock": 20,
     "fotos": [
       "https://picsum.photos/seed/23/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-04-01T22:42:12.744Z",
-    "updatedAt": "2024-03-28T08:31:53.381Z",
+    "ventasTotales": 63,
+    "createdAt": "2023-10-19T08:51:18.647Z",
+    "updatedAt": "2023-11-21T18:22:53.838Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d20",
-    "vendedor": "68e1d2ad1e349c4f60f53cbe",
-    "titulo": "Zapatillas Nike Air 25",
-    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
+    "_id": "68e33be4b82c028126ef80d1",
+    "vendedor": "68e33be4b82c028126ef806a",
+    "titulo": "Lámpara LED 25",
+    "descripcion": "Luz blanca regulable, bajo consumo.",
     "categorias": [
       "Consolas",
-      "Deportes"
+      "Juguetes",
+      "Ropa"
     ],
-    "precio": 58432.89,
-    "moneda": "DOLAR_USA",
-    "stock": 24,
+    "precio": 47807.86,
+    "moneda": "PESO_ARG",
+    "stock": 23,
     "fotos": [
       "https://picsum.photos/seed/24/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-07-19T12:56:31.947Z",
-    "updatedAt": "2025-09-07T03:58:46.882Z",
+    "ventasTotales": 12,
+    "createdAt": "2025-05-19T13:55:06.853Z",
+    "updatedAt": "2023-12-02T18:00:58.755Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d21",
-    "vendedor": "68e1d2ad1e349c4f60f53cb2",
-    "titulo": "Smart TV Samsung 50\" 26",
-    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
+    "_id": "68e33be4b82c028126ef80d2",
+    "vendedor": "68e33be4b82c028126ef805d",
+    "titulo": "Cafetera Express Philips 26",
+    "descripcion": "Amortiguación Air, diseño moderno.",
     "categorias": [
-      "Ropa",
-      "Juguetes",
-      "Libros"
+      "Consolas",
+      "Libros",
+      "Juguetes"
     ],
-    "precio": 42856.6,
+    "precio": 25117.85,
     "moneda": "EURO",
-    "stock": 10,
+    "stock": 17,
     "fotos": [
       "https://picsum.photos/seed/25/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-04-10T23:19:27.450Z",
-    "updatedAt": "2024-03-13T02:12:55.628Z",
+    "ventasTotales": 36,
+    "createdAt": "2024-05-14T18:17:48.455Z",
+    "updatedAt": "2024-01-02T17:23:03.610Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d22",
-    "vendedor": "68e1d2ad1e349c4f60f53cd3",
-    "titulo": "Smart TV Samsung 50\" 27",
-    "descripcion": "Amortiguación Air, diseño moderno.",
+    "_id": "68e33be4b82c028126ef80d3",
+    "vendedor": "68e33be4b82c028126ef8059",
+    "titulo": "Libro El Principito 27",
+    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
     "categorias": [
-      "Ropa",
-      "Consolas"
+      "Electrónica",
+      "Juguetes",
+      "Deportes"
     ],
-    "precio": 63154.1,
-    "moneda": "EURO",
-    "stock": 14,
+    "precio": 34763.12,
+    "moneda": "DOLAR_USA",
+    "stock": 31,
     "fotos": [
       "https://picsum.photos/seed/26/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-01-23T06:42:11.159Z",
-    "updatedAt": "2024-01-30T00:48:00.743Z",
+    "ventasTotales": 50,
+    "createdAt": "2023-05-07T01:07:52.669Z",
+    "updatedAt": "2023-02-09T19:29:19.865Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d23",
-    "vendedor": "68e1d2ad1e349c4f60f53cd0",
-    "titulo": "Lámpara LED 28",
-    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
+    "_id": "68e33be4b82c028126ef80d4",
+    "vendedor": "68e33be4b82c028126ef805a",
+    "titulo": "Zapatillas Nike Air 28",
+    "descripcion": "Amortiguación Air, diseño moderno.",
     "categorias": [
-      "Consolas",
-      "Hogar",
-      "Libros"
+      "Juguetes",
+      "Ropa"
     ],
-    "precio": 11630.63,
-    "moneda": "DOLAR_USA",
-    "stock": 7,
+    "precio": 935.89,
+    "moneda": "EURO",
+    "stock": 6,
     "fotos": [
       "https://picsum.photos/seed/27/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-05-11T17:38:41.868Z",
-    "updatedAt": "2025-09-24T06:24:20.034Z",
+    "ventasTotales": 68,
+    "createdAt": "2024-12-30T04:15:21.890Z",
+    "updatedAt": "2024-06-23T22:26:08.896Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d24",
-    "vendedor": "68e1d2ad1e349c4f60f53cbe",
+    "_id": "68e33be4b82c028126ef80d5",
+    "vendedor": "68e33be4b82c028126ef8093",
     "titulo": "Lámpara LED 29",
-    "descripcion": "Luz blanca regulable, bajo consumo.",
+    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
     "categorias": [
-      "Consolas",
-      "Hogar",
-      "Ropa"
+      "Juguetes",
+      "Electrónica",
+      "Libros"
     ],
-    "precio": 29681.1,
-    "moneda": "DOLAR_USA",
-    "stock": 7,
+    "precio": 55237.39,
+    "moneda": "EURO",
+    "stock": 10,
     "fotos": [
       "https://picsum.photos/seed/28/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-09-22T17:59:25.254Z",
-    "updatedAt": "2025-02-01T05:50:04.384Z",
+    "ventasTotales": 32,
+    "createdAt": "2025-09-12T17:30:32.173Z",
+    "updatedAt": "2023-04-05T18:44:18.236Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d25",
-    "vendedor": "68e1d2ad1e349c4f60f53cbe",
-    "titulo": "Smart TV Samsung 50\" 30",
-    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
+    "_id": "68e33be4b82c028126ef80d6",
+    "vendedor": "68e33be4b82c028126ef80ae",
+    "titulo": "Cafetera Express Philips 30",
+    "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
     "categorias": [
-      "Juguetes",
-      "Electrónica",
-      "Consolas"
+      "Libros",
+      "Ropa",
+      "Juguetes"
     ],
-    "precio": 89239.09,
+    "precio": 20971.01,
     "moneda": "EURO",
-    "stock": 10,
+    "stock": 32,
     "fotos": [
       "https://picsum.photos/seed/29/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-06-27T06:40:37.229Z",
-    "updatedAt": "2024-12-02T07:00:12.385Z",
+    "ventasTotales": 96,
+    "createdAt": "2023-09-05T13:28:49.104Z",
+    "updatedAt": "2024-06-24T03:04:15.949Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d26",
-    "vendedor": "68e1d2ad1e349c4f60f53cd0",
-    "titulo": "Consola PlayStation 5 Slim 31",
-    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
+    "_id": "68e33be4b82c028126ef80d7",
+    "vendedor": "68e33be4b82c028126ef80ad",
+    "titulo": "Notebook Lenovo IdeaPad 31",
+    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
     "categorias": [
-      "Hogar",
-      "Libros",
-      "Ropa"
+      "Electrónica",
+      "Ropa",
+      "Juguetes"
     ],
-    "precio": 99999.18,
-    "moneda": "DOLAR_USA",
-    "stock": 39,
+    "precio": 7886.09,
+    "moneda": "EURO",
+    "stock": 38,
     "fotos": [
       "https://picsum.photos/seed/30/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-07-05T04:09:54.048Z",
-    "updatedAt": "2023-09-12T06:37:22.290Z",
+    "ventasTotales": 18,
+    "createdAt": "2025-03-02T12:14:33.311Z",
+    "updatedAt": "2023-03-17T21:40:58.284Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d27",
-    "vendedor": "68e1d2ad1e349c4f60f53cd7",
-    "titulo": "Lámpara LED 32",
-    "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
+    "_id": "68e33be4b82c028126ef80d8",
+    "vendedor": "68e33be4b82c028126ef808f",
+    "titulo": "Bicicleta Mountain Bike 32",
+    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
     "categorias": [
-      "Deportes",
       "Ropa",
-      "Juguetes"
+      "Electrónica"
     ],
-    "precio": 14776.96,
+    "precio": 89368.16,
     "moneda": "EURO",
-    "stock": 35,
+    "stock": 30,
     "fotos": [
       "https://picsum.photos/seed/31/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-02-20T10:57:27.140Z",
-    "updatedAt": "2025-01-23T19:01:59.105Z",
+    "ventasTotales": 45,
+    "createdAt": "2024-02-14T22:14:35.303Z",
+    "updatedAt": "2024-12-03T11:50:15.342Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d28",
-    "vendedor": "68e1d2ad1e349c4f60f53ca7",
-    "titulo": "Notebook Lenovo IdeaPad 33",
-    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
+    "_id": "68e33be4b82c028126ef80d9",
+    "vendedor": "68e33be4b82c028126ef805d",
+    "titulo": "Lámpara LED 33",
+    "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
     "categorias": [
-      "Ropa",
-      "Consolas"
+      "Electrónica",
+      "Deportes",
+      "Hogar"
     ],
-    "precio": 26506.15,
-    "moneda": "PESO_ARG",
-    "stock": 6,
+    "precio": 84325.09,
+    "moneda": "DOLAR_USA",
+    "stock": 5,
     "fotos": [
       "https://picsum.photos/seed/32/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-09-04T01:04:05.815Z",
-    "updatedAt": "2023-04-05T22:02:54.030Z",
+    "ventasTotales": 28,
+    "createdAt": "2024-09-11T06:31:48.741Z",
+    "updatedAt": "2025-01-23T15:50:58.647Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d29",
-    "vendedor": "68e1d2ad1e349c4f60f53cf6",
-    "titulo": "Silla Gamer 34",
-    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
+    "_id": "68e33be4b82c028126ef80da",
+    "vendedor": "68e33be4b82c028126ef8077",
+    "titulo": "Libro El Principito 34",
+    "descripcion": "Amortiguación Air, diseño moderno.",
     "categorias": [
-      "Hogar",
+      "Deportes",
+      "Ropa",
       "Electrónica"
     ],
-    "precio": 2844.42,
+    "precio": 47448.27,
     "moneda": "PESO_ARG",
-    "stock": 18,
+    "stock": 35,
     "fotos": [
       "https://picsum.photos/seed/33/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-10-31T09:29:05.981Z",
-    "updatedAt": "2025-04-09T19:38:09.738Z",
+    "ventasTotales": 47,
+    "createdAt": "2023-03-01T05:00:29.806Z",
+    "updatedAt": "2023-01-12T15:06:25.421Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d2a",
-    "vendedor": "68e1d2ad1e349c4f60f53ce2",
-    "titulo": "Notebook Lenovo IdeaPad 35",
-    "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
+    "_id": "68e33be4b82c028126ef80db",
+    "vendedor": "68e33be4b82c028126ef8065",
+    "titulo": "Smart TV Samsung 50\" 35",
+    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
     "categorias": [
       "Hogar",
-      "Juguetes"
+      "Electrónica",
+      "Ropa"
     ],
-    "precio": 78418.8,
-    "moneda": "DOLAR_USA",
-    "stock": 0,
+    "precio": 64510.1,
+    "moneda": "PESO_ARG",
+    "stock": 5,
     "fotos": [
       "https://picsum.photos/seed/34/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-06-14T20:50:30.927Z",
-    "updatedAt": "2024-11-23T20:43:23.863Z",
+    "ventasTotales": 5,
+    "createdAt": "2024-02-23T23:10:25.684Z",
+    "updatedAt": "2023-03-18T14:06:27.680Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d2b",
-    "vendedor": "68e1d2ad1e349c4f60f53ce6",
-    "titulo": "Silla Gamer 36",
-    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
+    "_id": "68e33be4b82c028126ef80dc",
+    "vendedor": "68e33be4b82c028126ef8093",
+    "titulo": "Smart TV Samsung 50\" 36",
+    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
     "categorias": [
       "Juguetes",
       "Electrónica",
-      "Ropa"
+      "Libros"
     ],
-    "precio": 25281.09,
-    "moneda": "EURO",
-    "stock": 22,
+    "precio": 98173.84,
+    "moneda": "PESO_ARG",
+    "stock": 21,
     "fotos": [
       "https://picsum.photos/seed/35/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-12-06T18:33:53.813Z",
-    "updatedAt": "2024-06-12T18:31:55.286Z",
+    "ventasTotales": 66,
+    "createdAt": "2023-10-13T07:38:52.992Z",
+    "updatedAt": "2024-05-29T07:41:59.619Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d2c",
-    "vendedor": "68e1d2ad1e349c4f60f53cda",
-    "titulo": "Auriculares Bluetooth JBL 37",
-    "descripcion": "Luz blanca regulable, bajo consumo.",
+    "_id": "68e33be4b82c028126ef80dd",
+    "vendedor": "68e33be4b82c028126ef80ab",
+    "titulo": "Cafetera Express Philips 37",
+    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
     "categorias": [
-      "Electrónica",
-      "Juguetes"
+      "Juguetes",
+      "Ropa"
     ],
-    "precio": 82468.27,
+    "precio": 18619.65,
     "moneda": "PESO_ARG",
-    "stock": 36,
+    "stock": 39,
     "fotos": [
       "https://picsum.photos/seed/36/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-02-07T00:01:06.030Z",
-    "updatedAt": "2025-04-29T08:31:24.134Z",
+    "ventasTotales": 76,
+    "createdAt": "2025-04-17T13:57:05.724Z",
+    "updatedAt": "2023-03-24T22:35:05.743Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d2d",
-    "vendedor": "68e1d2ad1e349c4f60f53cae",
-    "titulo": "Lámpara LED 38",
-    "descripcion": "Edición ilustrada, tapa dura.",
+    "_id": "68e33be4b82c028126ef80de",
+    "vendedor": "68e33be4b82c028126ef8098",
+    "titulo": "Auriculares Bluetooth JBL 38",
+    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
     "categorias": [
-      "Hogar",
-      "Ropa",
-      "Consolas"
+      "Electrónica",
+      "Ropa"
     ],
-    "precio": 94774.41,
-    "moneda": "DOLAR_USA",
-    "stock": 4,
+    "precio": 55123.12,
+    "moneda": "PESO_ARG",
+    "stock": 47,
     "fotos": [
       "https://picsum.photos/seed/37/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-02-22T17:47:26.615Z",
-    "updatedAt": "2025-09-24T02:35:38.131Z",
+    "ventasTotales": 94,
+    "createdAt": "2024-02-22T14:04:42.675Z",
+    "updatedAt": "2023-03-09T13:54:17.345Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d2e",
-    "vendedor": "68e1d2ad1e349c4f60f53cd0",
-    "titulo": "Cafetera Express Philips 39",
-    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
+    "_id": "68e33be4b82c028126ef80df",
+    "vendedor": "68e33be4b82c028126ef8098",
+    "titulo": "Bicicleta Mountain Bike 39",
+    "descripcion": "Luz blanca regulable, bajo consumo.",
     "categorias": [
-      "Libros",
       "Consolas",
-      "Ropa"
+      "Libros"
     ],
-    "precio": 23262.36,
-    "moneda": "PESO_ARG",
-    "stock": 7,
+    "precio": 72551.41,
+    "moneda": "DOLAR_USA",
+    "stock": 35,
     "fotos": [
       "https://picsum.photos/seed/38/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-06-03T00:55:58.877Z",
-    "updatedAt": "2023-05-01T22:59:08.405Z",
+    "ventasTotales": 76,
+    "createdAt": "2024-04-07T10:27:36.988Z",
+    "updatedAt": "2023-09-11T00:26:19.868Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d2f",
-    "vendedor": "68e1d2ad1e349c4f60f53ca7",
+    "_id": "68e33be4b82c028126ef80e0",
+    "vendedor": "68e33be4b82c028126ef8077",
     "titulo": "Smart TV Samsung 50\" 40",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "descripcion": "Edición ilustrada, tapa dura.",
     "categorias": [
-      "Juguetes",
-      "Deportes",
-      "Electrónica"
+      "Consolas",
+      "Libros",
+      "Juguetes"
     ],
-    "precio": 32558.04,
+    "precio": 86289.72,
     "moneda": "EURO",
-    "stock": 28,
+    "stock": 49,
     "fotos": [
       "https://picsum.photos/seed/39/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-09-22T09:09:07.596Z",
-    "updatedAt": "2023-04-16T11:39:09.018Z",
+    "ventasTotales": 100,
+    "createdAt": "2024-12-09T13:10:16.995Z",
+    "updatedAt": "2024-02-02T08:47:22.879Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d30",
-    "vendedor": "68e1d2ad1e349c4f60f53cb7",
-    "titulo": "Libro El Principito 41",
+    "_id": "68e33be4b82c028126ef80e1",
+    "vendedor": "68e33be4b82c028126ef8061",
+    "titulo": "Zapatillas Nike Air 41",
     "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
     "categorias": [
-      "Electrónica",
-      "Libros"
+      "Deportes",
+      "Consolas",
+      "Electrónica"
     ],
-    "precio": 98563.92,
-    "moneda": "PESO_ARG",
-    "stock": 44,
+    "precio": 72253.56,
+    "moneda": "EURO",
+    "stock": 49,
     "fotos": [
       "https://picsum.photos/seed/40/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-08-13T06:55:51.464Z",
-    "updatedAt": "2025-02-20T04:43:32.130Z",
+    "ventasTotales": 6,
+    "createdAt": "2024-04-22T07:58:06.847Z",
+    "updatedAt": "2023-07-17T10:25:17.597Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d31",
-    "vendedor": "68e1d2ad1e349c4f60f53ce6",
-    "titulo": "Lámpara LED 42",
-    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
+    "_id": "68e33be4b82c028126ef80e2",
+    "vendedor": "68e33be4b82c028126ef8087",
+    "titulo": "Libro El Principito 42",
+    "descripcion": "Luz blanca regulable, bajo consumo.",
     "categorias": [
-      "Ropa",
-      "Electrónica"
+      "Electrónica",
+      "Libros",
+      "Consolas"
     ],
-    "precio": 1805.1,
-    "moneda": "PESO_ARG",
-    "stock": 6,
+    "precio": 52318.54,
+    "moneda": "EURO",
+    "stock": 44,
     "fotos": [
       "https://picsum.photos/seed/41/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-09-28T20:09:34.079Z",
-    "updatedAt": "2023-03-22T04:35:03.962Z",
+    "ventasTotales": 19,
+    "createdAt": "2024-01-19T04:25:15.237Z",
+    "updatedAt": "2024-05-05T19:57:27.489Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d32",
-    "vendedor": "68e1d2ad1e349c4f60f53ce2",
-    "titulo": "Smart TV Samsung 50\" 43",
+    "_id": "68e33be4b82c028126ef80e3",
+    "vendedor": "68e33be4b82c028126ef806c",
+    "titulo": "Lámpara LED 43",
     "descripcion": "Edición ilustrada, tapa dura.",
     "categorias": [
-      "Juguetes",
+      "Deportes",
+      "Consolas",
       "Electrónica"
     ],
-    "precio": 3475.81,
+    "precio": 64591.02,
     "moneda": "EURO",
-    "stock": 26,
+    "stock": 1,
     "fotos": [
       "https://picsum.photos/seed/42/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-03-30T01:56:08.149Z",
-    "updatedAt": "2023-06-05T09:46:21.113Z",
+    "ventasTotales": 42,
+    "createdAt": "2024-05-25T19:40:44.843Z",
+    "updatedAt": "2024-02-25T04:33:23.214Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d33",
-    "vendedor": "68e1d2ad1e349c4f60f53cb2",
+    "_id": "68e33be4b82c028126ef80e4",
+    "vendedor": "68e33be4b82c028126ef8072",
     "titulo": "Cafetera Express Philips 44",
-    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
+    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
     "categorias": [
       "Consolas",
-      "Juguetes",
-      "Hogar"
+      "Libros"
     ],
-    "precio": 59065.03,
-    "moneda": "EURO",
-    "stock": 28,
+    "precio": 59363.45,
+    "moneda": "DOLAR_USA",
+    "stock": 9,
     "fotos": [
       "https://picsum.photos/seed/43/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-07-12T00:49:56.154Z",
-    "updatedAt": "2024-07-17T10:08:50.137Z",
+    "ventasTotales": 8,
+    "createdAt": "2025-09-05T11:49:58.187Z",
+    "updatedAt": "2024-03-09T21:14:36.748Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d34",
-    "vendedor": "68e1d2ad1e349c4f60f53cd0",
-    "titulo": "Notebook Lenovo IdeaPad 45",
-    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
+    "_id": "68e33be4b82c028126ef80e5",
+    "vendedor": "68e33be4b82c028126ef80ae",
+    "titulo": "Libro El Principito 45",
+    "descripcion": "Luz blanca regulable, bajo consumo.",
     "categorias": [
-      "Consolas",
-      "Juguetes"
+      "Juguetes",
+      "Libros",
+      "Consolas"
     ],
-    "precio": 23700.27,
-    "moneda": "PESO_ARG",
-    "stock": 43,
+    "precio": 59976.52,
+    "moneda": "DOLAR_USA",
+    "stock": 26,
     "fotos": [
       "https://picsum.photos/seed/44/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-08-11T11:56:58.015Z",
-    "updatedAt": "2023-05-31T14:21:47.926Z",
+    "ventasTotales": 84,
+    "createdAt": "2025-08-28T05:41:10.586Z",
+    "updatedAt": "2023-03-15T17:07:20.505Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d35",
-    "vendedor": "68e1d2ad1e349c4f60f53cd0",
-    "titulo": "Auriculares Bluetooth JBL 46",
-    "descripcion": "Edición ilustrada, tapa dura.",
+    "_id": "68e33be4b82c028126ef80e6",
+    "vendedor": "68e33be4b82c028126ef806c",
+    "titulo": "Zapatillas Nike Air 46",
+    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
     "categorias": [
-      "Deportes",
+      "Hogar",
       "Libros"
     ],
-    "precio": 32564.19,
+    "precio": 31276.56,
     "moneda": "EURO",
-    "stock": 28,
+    "stock": 35,
     "fotos": [
       "https://picsum.photos/seed/45/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-09-23T19:29:55.584Z",
-    "updatedAt": "2023-04-04T23:22:29.869Z",
+    "ventasTotales": 63,
+    "createdAt": "2023-06-12T20:46:44.112Z",
+    "updatedAt": "2024-12-16T02:13:16.882Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d36",
-    "vendedor": "68e1d2ad1e349c4f60f53cda",
-    "titulo": "Notebook Lenovo IdeaPad 47",
+    "_id": "68e33be4b82c028126ef80e7",
+    "vendedor": "68e33be4b82c028126ef805a",
+    "titulo": "Auriculares Bluetooth JBL 47",
     "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
     "categorias": [
-      "Deportes",
-      "Libros"
+      "Hogar",
+      "Consolas"
     ],
-    "precio": 95515.96,
-    "moneda": "DOLAR_USA",
-    "stock": 25,
+    "precio": 29634.85,
+    "moneda": "PESO_ARG",
+    "stock": 22,
     "fotos": [
       "https://picsum.photos/seed/46/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-05-31T23:56:36.997Z",
-    "updatedAt": "2023-03-21T08:46:24.337Z",
+    "ventasTotales": 88,
+    "createdAt": "2024-12-13T07:13:43.263Z",
+    "updatedAt": "2024-03-27T13:26:50.697Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d37",
-    "vendedor": "68e1d2ad1e349c4f60f53cbe",
-    "titulo": "Auriculares Bluetooth JBL 48",
+    "_id": "68e33be4b82c028126ef80e8",
+    "vendedor": "68e33be4b82c028126ef805e",
+    "titulo": "Notebook Lenovo IdeaPad 48",
     "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
     "categorias": [
       "Electrónica",
-      "Deportes",
-      "Juguetes"
+      "Consolas",
+      "Ropa"
     ],
-    "precio": 89057.07,
-    "moneda": "PESO_ARG",
-    "stock": 29,
+    "precio": 43201.31,
+    "moneda": "DOLAR_USA",
+    "stock": 14,
     "fotos": [
       "https://picsum.photos/seed/47/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-10-03T03:50:17.161Z",
-    "updatedAt": "2024-10-31T22:19:55.362Z",
+    "ventasTotales": 18,
+    "createdAt": "2023-04-09T17:16:36.963Z",
+    "updatedAt": "2025-01-17T10:50:08.473Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d38",
-    "vendedor": "68e1d2ad1e349c4f60f53ce6",
-    "titulo": "Auriculares Bluetooth JBL 49",
-    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
+    "_id": "68e33be4b82c028126ef80e9",
+    "vendedor": "68e33be4b82c028126ef807f",
+    "titulo": "Zapatillas Nike Air 49",
+    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
     "categorias": [
-      "Deportes",
-      "Libros",
-      "Consolas"
+      "Consolas",
+      "Hogar"
     ],
-    "precio": 3863.34,
-    "moneda": "EURO",
-    "stock": 48,
+    "precio": 90353.86,
+    "moneda": "DOLAR_USA",
+    "stock": 20,
     "fotos": [
       "https://picsum.photos/seed/48/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-01-07T12:09:45.488Z",
-    "updatedAt": "2025-07-25T13:23:14.740Z",
+    "ventasTotales": 18,
+    "createdAt": "2024-07-28T13:44:09.195Z",
+    "updatedAt": "2023-03-17T01:27:44.866Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d39",
-    "vendedor": "68e1d2ad1e349c4f60f53cb9",
-    "titulo": "Libro El Principito 50",
-    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
+    "_id": "68e33be4b82c028126ef80ea",
+    "vendedor": "68e33be4b82c028126ef8075",
+    "titulo": "Silla Gamer 50",
+    "descripcion": "Luz blanca regulable, bajo consumo.",
     "categorias": [
-      "Hogar",
-      "Consolas",
-      "Ropa"
+      "Juguetes",
+      "Deportes",
+      "Libros"
     ],
-    "precio": 99430.97,
-    "moneda": "EURO",
-    "stock": 35,
+    "precio": 72664.5,
+    "moneda": "DOLAR_USA",
+    "stock": 31,
     "fotos": [
       "https://picsum.photos/seed/49/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-01-24T04:38:40.583Z",
-    "updatedAt": "2024-12-06T10:18:36.902Z",
+    "ventasTotales": 52,
+    "createdAt": "2025-01-03T14:39:20.687Z",
+    "updatedAt": "2023-05-07T12:02:07.006Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d3a",
-    "vendedor": "68e1d2ad1e349c4f60f53cf6",
-    "titulo": "Silla Gamer 51",
+    "_id": "68e33be4b82c028126ef80eb",
+    "vendedor": "68e33be4b82c028126ef8061",
+    "titulo": "Consola PlayStation 5 Slim 51",
     "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
     "categorias": [
-      "Juguetes",
+      "Electrónica",
       "Ropa"
     ],
-    "precio": 17819.33,
+    "precio": 34546.3,
     "moneda": "PESO_ARG",
-    "stock": 42,
+    "stock": 23,
     "fotos": [
       "https://picsum.photos/seed/50/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-07-27T05:31:22.033Z",
-    "updatedAt": "2024-04-10T09:32:58.546Z",
+    "ventasTotales": 78,
+    "createdAt": "2023-01-16T01:34:57.500Z",
+    "updatedAt": "2024-05-10T19:43:25.669Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d3b",
-    "vendedor": "68e1d2ad1e349c4f60f53d04",
-    "titulo": "Silla Gamer 52",
-    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
+    "_id": "68e33be4b82c028126ef80ec",
+    "vendedor": "68e33be4b82c028126ef8070",
+    "titulo": "Lámpara LED 52",
+    "descripcion": "Amortiguación Air, diseño moderno.",
     "categorias": [
-      "Electrónica",
       "Hogar",
-      "Ropa"
+      "Ropa",
+      "Consolas"
     ],
-    "precio": 88443.99,
-    "moneda": "EURO",
-    "stock": 41,
+    "precio": 78002.96,
+    "moneda": "PESO_ARG",
+    "stock": 3,
     "fotos": [
       "https://picsum.photos/seed/51/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-12-23T21:01:14.706Z",
-    "updatedAt": "2024-06-26T08:52:47.167Z",
+    "ventasTotales": 55,
+    "createdAt": "2023-04-09T21:50:27.960Z",
+    "updatedAt": "2024-08-25T10:04:09.292Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d3c",
-    "vendedor": "68e1d2ad1e349c4f60f53cb7",
-    "titulo": "Bicicleta Mountain Bike 53",
-    "descripcion": "Luz blanca regulable, bajo consumo.",
+    "_id": "68e33be4b82c028126ef80ed",
+    "vendedor": "68e33be4b82c028126ef8068",
+    "titulo": "Auriculares Bluetooth JBL 53",
+    "descripcion": "Edición ilustrada, tapa dura.",
     "categorias": [
-      "Electrónica",
       "Consolas",
-      "Libros"
+      "Electrónica"
     ],
-    "precio": 4260.44,
+    "precio": 19734.77,
     "moneda": "PESO_ARG",
-    "stock": 5,
+    "stock": 1,
     "fotos": [
       "https://picsum.photos/seed/52/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-08-25T00:31:26.352Z",
-    "updatedAt": "2023-04-11T11:02:12.139Z",
+    "ventasTotales": 67,
+    "createdAt": "2024-03-30T00:45:36.679Z",
+    "updatedAt": "2025-06-22T11:48:00.364Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d3d",
-    "vendedor": "68e1d2ad1e349c4f60f53cbe",
-    "titulo": "Smart TV Samsung 50\" 54",
-    "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
+    "_id": "68e33be4b82c028126ef80ee",
+    "vendedor": "68e33be4b82c028126ef808f",
+    "titulo": "Lámpara LED 54",
+    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
     "categorias": [
-      "Libros",
-      "Ropa"
+      "Ropa",
+      "Juguetes"
     ],
-    "precio": 25523.02,
+    "precio": 5744.71,
     "moneda": "DOLAR_USA",
-    "stock": 21,
+    "stock": 43,
     "fotos": [
       "https://picsum.photos/seed/53/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-02-26T02:03:35.259Z",
-    "updatedAt": "2023-12-06T21:49:16.120Z",
+    "ventasTotales": 64,
+    "createdAt": "2024-06-10T00:51:33.781Z",
+    "updatedAt": "2025-06-06T09:01:09.058Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d3e",
-    "vendedor": "68e1d2ad1e349c4f60f53cae",
-    "titulo": "Bicicleta Mountain Bike 55",
-    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
+    "_id": "68e33be4b82c028126ef80ef",
+    "vendedor": "68e33be4b82c028126ef8059",
+    "titulo": "Notebook Lenovo IdeaPad 55",
+    "descripcion": "Amortiguación Air, diseño moderno.",
     "categorias": [
-      "Juguetes",
       "Deportes",
-      "Consolas"
+      "Hogar"
     ],
-    "precio": 34597.3,
+    "precio": 61892.66,
     "moneda": "EURO",
-    "stock": 0,
+    "stock": 14,
     "fotos": [
       "https://picsum.photos/seed/54/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-05-31T15:57:44.953Z",
-    "updatedAt": "2024-01-02T19:13:29.965Z",
+    "ventasTotales": 15,
+    "createdAt": "2024-07-14T06:36:31.874Z",
+    "updatedAt": "2024-08-06T08:06:10.698Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d3f",
-    "vendedor": "68e1d2ad1e349c4f60f53cd0",
-    "titulo": "Smart TV Samsung 50\" 56",
-    "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
+    "_id": "68e33be4b82c028126ef80f0",
+    "vendedor": "68e33be4b82c028126ef80a2",
+    "titulo": "Cafetera Express Philips 56",
+    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
     "categorias": [
-      "Deportes",
-      "Hogar",
-      "Juguetes"
+      "Ropa",
+      "Electrónica"
     ],
-    "precio": 63411.82,
-    "moneda": "PESO_ARG",
-    "stock": 23,
+    "precio": 64803.41,
+    "moneda": "DOLAR_USA",
+    "stock": 11,
     "fotos": [
       "https://picsum.photos/seed/55/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-04-12T09:45:17.195Z",
-    "updatedAt": "2024-02-29T12:23:56.235Z",
+    "ventasTotales": 0,
+    "createdAt": "2025-03-20T09:10:19.874Z",
+    "updatedAt": "2025-05-15T08:22:16.387Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d40",
-    "vendedor": "68e1d2ad1e349c4f60f53cb5",
-    "titulo": "Auriculares Bluetooth JBL 57",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "_id": "68e33be4b82c028126ef80f1",
+    "vendedor": "68e33be4b82c028126ef8061",
+    "titulo": "Libro El Principito 57",
+    "descripcion": "Edición ilustrada, tapa dura.",
     "categorias": [
-      "Juguetes",
-      "Hogar",
+      "Deportes",
       "Ropa"
     ],
-    "precio": 44219.27,
+    "precio": 2909.43,
     "moneda": "EURO",
-    "stock": 16,
+    "stock": 45,
     "fotos": [
       "https://picsum.photos/seed/56/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-04-20T01:05:20.626Z",
-    "updatedAt": "2023-10-15T08:17:03.943Z",
+    "ventasTotales": 79,
+    "createdAt": "2024-08-03T07:34:49.945Z",
+    "updatedAt": "2023-06-22T21:52:13.616Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d41",
-    "vendedor": "68e1d2ad1e349c4f60f53cb7",
-    "titulo": "Lámpara LED 58",
-    "descripcion": "Amortiguación Air, diseño moderno.",
-    "categorias": [
-      "Juguetes",
-      "Hogar"
-    ],
-    "precio": 53023.74,
-    "moneda": "PESO_ARG",
-    "stock": 8,
-    "fotos": [
-      "https://picsum.photos/seed/57/400/300"
-    ],
-    "activo": true,
-    "createdAt": "2024-10-17T06:22:20.901Z",
-    "updatedAt": "2024-08-29T20:33:59.091Z",
-    "__v": 0
-  },
-  {
-    "_id": "68e1d2ad1e349c4f60f53d42",
-    "vendedor": "68e1d2ad1e349c4f60f53caa",
-    "titulo": "Auriculares Bluetooth JBL 59",
-    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
-    "categorias": [
-      "Hogar",
-      "Juguetes"
-    ],
-    "precio": 76546.87,
-    "moneda": "PESO_ARG",
-    "stock": 37,
-    "fotos": [
-      "https://picsum.photos/seed/58/400/300"
-    ],
-    "activo": true,
-    "createdAt": "2024-06-16T23:01:55.118Z",
-    "updatedAt": "2023-02-09T22:03:43.437Z",
-    "__v": 0
-  },
-  {
-    "_id": "68e1d2ad1e349c4f60f53d43",
-    "vendedor": "68e1d2ad1e349c4f60f53ceb",
-    "titulo": "Smart TV Samsung 50\" 60",
-    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
-    "categorias": [
-      "Juguetes",
-      "Ropa",
-      "Electrónica"
-    ],
-    "precio": 87377.75,
-    "moneda": "EURO",
-    "stock": 1,
-    "fotos": [
-      "https://picsum.photos/seed/59/400/300"
-    ],
-    "activo": true,
-    "createdAt": "2023-04-20T02:32:59.864Z",
-    "updatedAt": "2025-02-11T19:59:19.918Z",
-    "__v": 0
-  },
-  {
-    "_id": "68e1d2ad1e349c4f60f53d44",
-    "vendedor": "68e1d2ad1e349c4f60f53cdd",
-    "titulo": "Smart TV Samsung 50\" 61",
-    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
-    "categorias": [
-      "Juguetes",
-      "Hogar",
-      "Deportes"
-    ],
-    "precio": 6743.07,
-    "moneda": "DOLAR_USA",
-    "stock": 8,
-    "fotos": [
-      "https://picsum.photos/seed/60/400/300"
-    ],
-    "activo": true,
-    "createdAt": "2025-02-26T00:58:17.597Z",
-    "updatedAt": "2024-05-20T10:16:42.094Z",
-    "__v": 0
-  },
-  {
-    "_id": "68e1d2ad1e349c4f60f53d45",
-    "vendedor": "68e1d2ad1e349c4f60f53cb7",
-    "titulo": "Notebook Lenovo IdeaPad 62",
-    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
-    "categorias": [
-      "Ropa",
-      "Deportes"
-    ],
-    "precio": 78579.75,
-    "moneda": "PESO_ARG",
-    "stock": 18,
-    "fotos": [
-      "https://picsum.photos/seed/61/400/300"
-    ],
-    "activo": true,
-    "createdAt": "2024-11-26T03:33:47.002Z",
-    "updatedAt": "2024-12-13T13:25:40.784Z",
-    "__v": 0
-  },
-  {
-    "_id": "68e1d2ad1e349c4f60f53d46",
-    "vendedor": "68e1d2ad1e349c4f60f53cdd",
-    "titulo": "Bicicleta Mountain Bike 63",
-    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
+    "_id": "68e33be4b82c028126ef80f2",
+    "vendedor": "68e33be4b82c028126ef809a",
+    "titulo": "Silla Gamer 58",
+    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
     "categorias": [
       "Juguetes",
       "Consolas"
     ],
-    "precio": 50341.93,
+    "precio": 63132.07,
+    "moneda": "PESO_ARG",
+    "stock": 11,
+    "fotos": [
+      "https://picsum.photos/seed/57/400/300"
+    ],
+    "activo": true,
+    "ventasTotales": 86,
+    "createdAt": "2023-01-09T05:37:35.247Z",
+    "updatedAt": "2025-03-27T04:24:27.256Z",
+    "__v": 0
+  },
+  {
+    "_id": "68e33be4b82c028126ef80f3",
+    "vendedor": "68e33be4b82c028126ef8077",
+    "titulo": "Notebook Lenovo IdeaPad 59",
+    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
+    "categorias": [
+      "Libros",
+      "Deportes",
+      "Electrónica"
+    ],
+    "precio": 68302.66,
+    "moneda": "EURO",
+    "stock": 6,
+    "fotos": [
+      "https://picsum.photos/seed/58/400/300"
+    ],
+    "activo": true,
+    "ventasTotales": 98,
+    "createdAt": "2023-10-03T20:53:47.147Z",
+    "updatedAt": "2024-07-24T08:36:25.095Z",
+    "__v": 0
+  },
+  {
+    "_id": "68e33be4b82c028126ef80f4",
+    "vendedor": "68e33be4b82c028126ef8068",
+    "titulo": "Zapatillas Nike Air 60",
+    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
+    "categorias": [
+      "Consolas",
+      "Electrónica",
+      "Libros"
+    ],
+    "precio": 31037.03,
+    "moneda": "EURO",
+    "stock": 24,
+    "fotos": [
+      "https://picsum.photos/seed/59/400/300"
+    ],
+    "activo": true,
+    "ventasTotales": 0,
+    "createdAt": "2025-04-24T10:17:09.986Z",
+    "updatedAt": "2023-02-12T14:50:14.572Z",
+    "__v": 0
+  },
+  {
+    "_id": "68e33be4b82c028126ef80f5",
+    "vendedor": "68e33be4b82c028126ef80ab",
+    "titulo": "Auriculares Bluetooth JBL 61",
+    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
+    "categorias": [
+      "Ropa",
+      "Juguetes"
+    ],
+    "precio": 84557.41,
+    "moneda": "PESO_ARG",
+    "stock": 7,
+    "fotos": [
+      "https://picsum.photos/seed/60/400/300"
+    ],
+    "activo": true,
+    "ventasTotales": 51,
+    "createdAt": "2024-08-24T16:39:01.734Z",
+    "updatedAt": "2023-07-29T06:40:55.872Z",
+    "__v": 0
+  },
+  {
+    "_id": "68e33be4b82c028126ef80f6",
+    "vendedor": "68e33be4b82c028126ef8070",
+    "titulo": "Cafetera Express Philips 62",
+    "descripcion": "Amortiguación Air, diseño moderno.",
+    "categorias": [
+      "Juguetes",
+      "Ropa",
+      "Consolas"
+    ],
+    "precio": 92775.75,
     "moneda": "DOLAR_USA",
-    "stock": 27,
+    "stock": 44,
+    "fotos": [
+      "https://picsum.photos/seed/61/400/300"
+    ],
+    "activo": true,
+    "ventasTotales": 87,
+    "createdAt": "2024-02-03T20:07:32.216Z",
+    "updatedAt": "2024-08-23T14:59:09.355Z",
+    "__v": 0
+  },
+  {
+    "_id": "68e33be4b82c028126ef80f7",
+    "vendedor": "68e33be4b82c028126ef806a",
+    "titulo": "Zapatillas Nike Air 63",
+    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
+    "categorias": [
+      "Libros",
+      "Electrónica"
+    ],
+    "precio": 75224.88,
+    "moneda": "DOLAR_USA",
+    "stock": 31,
     "fotos": [
       "https://picsum.photos/seed/62/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-12-23T17:17:13.858Z",
-    "updatedAt": "2023-04-24T02:24:06.776Z",
+    "ventasTotales": 86,
+    "createdAt": "2024-02-07T05:14:34.287Z",
+    "updatedAt": "2025-10-05T10:05:42.714Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d47",
-    "vendedor": "68e1d2ad1e349c4f60f53caa",
-    "titulo": "Zapatillas Nike Air 64",
-    "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
+    "_id": "68e33be4b82c028126ef80f8",
+    "vendedor": "68e33be4b82c028126ef80b0",
+    "titulo": "Bicicleta Mountain Bike 64",
+    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
     "categorias": [
-      "Electrónica",
-      "Hogar",
-      "Libros"
+      "Deportes",
+      "Consolas",
+      "Juguetes"
     ],
-    "precio": 25197.69,
+    "precio": 9952.77,
     "moneda": "EURO",
     "stock": 24,
     "fotos": [
       "https://picsum.photos/seed/63/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-05-05T07:50:16.042Z",
-    "updatedAt": "2023-01-02T04:52:00.067Z",
+    "ventasTotales": 25,
+    "createdAt": "2023-08-24T22:16:11.965Z",
+    "updatedAt": "2024-07-31T19:16:17.426Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d48",
-    "vendedor": "68e1d2ad1e349c4f60f53d00",
-    "titulo": "Notebook Lenovo IdeaPad 65",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "_id": "68e33be4b82c028126ef80f9",
+    "vendedor": "68e33be4b82c028126ef8087",
+    "titulo": "Smart TV Samsung 50\" 65",
+    "descripcion": "Edición ilustrada, tapa dura.",
     "categorias": [
       "Deportes",
-      "Juguetes"
+      "Hogar",
+      "Ropa"
     ],
-    "precio": 79300.44,
-    "moneda": "DOLAR_USA",
-    "stock": 16,
+    "precio": 56152.06,
+    "moneda": "PESO_ARG",
+    "stock": 10,
     "fotos": [
       "https://picsum.photos/seed/64/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-12-30T07:38:34.260Z",
-    "updatedAt": "2023-01-17T17:11:24.612Z",
+    "ventasTotales": 5,
+    "createdAt": "2024-04-08T18:25:59.205Z",
+    "updatedAt": "2023-03-05T19:37:03.126Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d49",
-    "vendedor": "68e1d2ad1e349c4f60f53cd0",
-    "titulo": "Smart TV Samsung 50\" 66",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "_id": "68e33be4b82c028126ef80fa",
+    "vendedor": "68e33be4b82c028126ef8077",
+    "titulo": "Cafetera Express Philips 66",
+    "descripcion": "Luz blanca regulable, bajo consumo.",
     "categorias": [
-      "Juguetes",
-      "Libros"
+      "Hogar",
+      "Libros",
+      "Consolas"
     ],
-    "precio": 32113.62,
+    "precio": 14700.74,
     "moneda": "DOLAR_USA",
-    "stock": 45,
+    "stock": 40,
     "fotos": [
       "https://picsum.photos/seed/65/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-09-13T17:19:01.591Z",
-    "updatedAt": "2024-02-25T10:59:16.643Z",
+    "ventasTotales": 45,
+    "createdAt": "2024-11-11T18:37:25.270Z",
+    "updatedAt": "2023-05-07T16:43:34.125Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d4a",
-    "vendedor": "68e1d2ad1e349c4f60f53cb5",
-    "titulo": "Libro El Principito 67",
-    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
+    "_id": "68e33be4b82c028126ef80fb",
+    "vendedor": "68e33be4b82c028126ef8068",
+    "titulo": "Bicicleta Mountain Bike 67",
+    "descripcion": "Luz blanca regulable, bajo consumo.",
     "categorias": [
-      "Hogar",
-      "Consolas"
+      "Electrónica",
+      "Deportes",
+      "Hogar"
     ],
-    "precio": 78438.47,
-    "moneda": "DOLAR_USA",
-    "stock": 44,
+    "precio": 73814.59,
+    "moneda": "EURO",
+    "stock": 16,
     "fotos": [
       "https://picsum.photos/seed/66/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-02-21T09:18:46.117Z",
-    "updatedAt": "2025-09-06T08:32:59.937Z",
+    "ventasTotales": 50,
+    "createdAt": "2025-03-10T23:32:14.253Z",
+    "updatedAt": "2023-05-28T22:33:46.610Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d4b",
-    "vendedor": "68e1d2ad1e349c4f60f53cd7",
-    "titulo": "Bicicleta Mountain Bike 68",
-    "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
+    "_id": "68e33be4b82c028126ef80fc",
+    "vendedor": "68e33be4b82c028126ef8075",
+    "titulo": "Notebook Lenovo IdeaPad 68",
+    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
     "categorias": [
-      "Ropa",
-      "Libros",
-      "Consolas"
+      "Juguetes",
+      "Libros"
     ],
-    "precio": 7936.86,
+    "precio": 71340.37,
     "moneda": "DOLAR_USA",
-    "stock": 24,
+    "stock": 49,
     "fotos": [
       "https://picsum.photos/seed/67/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-09-05T15:08:31.809Z",
-    "updatedAt": "2023-09-20T15:31:43.454Z",
+    "ventasTotales": 77,
+    "createdAt": "2025-05-01T12:15:03.676Z",
+    "updatedAt": "2025-01-24T05:34:48.761Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d4c",
-    "vendedor": "68e1d2ad1e349c4f60f53cb7",
-    "titulo": "Libro El Principito 69",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "_id": "68e33be4b82c028126ef80fd",
+    "vendedor": "68e33be4b82c028126ef8070",
+    "titulo": "Smart TV Samsung 50\" 69",
+    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
     "categorias": [
-      "Ropa",
+      "Consolas",
       "Hogar",
-      "Electrónica"
+      "Deportes"
     ],
-    "precio": 37836,
-    "moneda": "PESO_ARG",
-    "stock": 1,
+    "precio": 36657.67,
+    "moneda": "EURO",
+    "stock": 35,
     "fotos": [
       "https://picsum.photos/seed/68/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-07-01T13:29:48.446Z",
-    "updatedAt": "2024-02-17T19:08:03.288Z",
+    "ventasTotales": 46,
+    "createdAt": "2025-10-05T18:58:30.343Z",
+    "updatedAt": "2025-09-01T00:27:58.627Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d4d",
-    "vendedor": "68e1d2ad1e349c4f60f53cc5",
-    "titulo": "Notebook Lenovo IdeaPad 70",
-    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
+    "_id": "68e33be4b82c028126ef80fe",
+    "vendedor": "68e33be4b82c028126ef8087",
+    "titulo": "Consola PlayStation 5 Slim 70",
+    "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
     "categorias": [
       "Electrónica",
-      "Ropa",
-      "Libros"
+      "Deportes",
+      "Juguetes"
     ],
-    "precio": 56350.11,
-    "moneda": "EURO",
-    "stock": 5,
+    "precio": 61088.77,
+    "moneda": "DOLAR_USA",
+    "stock": 44,
     "fotos": [
       "https://picsum.photos/seed/69/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-06-11T14:01:06.792Z",
-    "updatedAt": "2024-08-01T12:26:00.786Z",
+    "ventasTotales": 35,
+    "createdAt": "2024-08-14T10:27:19.311Z",
+    "updatedAt": "2025-09-13T15:08:20.663Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d4e",
-    "vendedor": "68e1d2ad1e349c4f60f53cd3",
-    "titulo": "Zapatillas Nike Air 71",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "_id": "68e33be4b82c028126ef80ff",
+    "vendedor": "68e33be4b82c028126ef809a",
+    "titulo": "Silla Gamer 71",
+    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
     "categorias": [
-      "Electrónica",
-      "Hogar",
-      "Libros"
+      "Libros",
+      "Hogar"
     ],
-    "precio": 67806.09,
+    "precio": 67856.42,
     "moneda": "DOLAR_USA",
-    "stock": 14,
+    "stock": 33,
     "fotos": [
       "https://picsum.photos/seed/70/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-03-19T09:00:00.937Z",
-    "updatedAt": "2023-02-18T09:43:50.959Z",
+    "ventasTotales": 77,
+    "createdAt": "2024-06-08T05:23:19.399Z",
+    "updatedAt": "2023-06-27T12:54:39.022Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d4f",
-    "vendedor": "68e1d2ad1e349c4f60f53cbc",
-    "titulo": "Zapatillas Nike Air 72",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "_id": "68e33be4b82c028126ef8100",
+    "vendedor": "68e33be4b82c028126ef8068",
+    "titulo": "Lámpara LED 72",
+    "descripcion": "Amortiguación Air, diseño moderno.",
     "categorias": [
-      "Deportes",
-      "Electrónica"
+      "Hogar",
+      "Libros",
+      "Juguetes"
     ],
-    "precio": 60943.51,
+    "precio": 7819.38,
     "moneda": "EURO",
-    "stock": 36,
+    "stock": 12,
     "fotos": [
       "https://picsum.photos/seed/71/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-01-31T23:33:57.064Z",
-    "updatedAt": "2025-09-28T06:25:38.250Z",
+    "ventasTotales": 22,
+    "createdAt": "2025-01-05T16:26:03.253Z",
+    "updatedAt": "2025-03-16T15:30:57.213Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d50",
-    "vendedor": "68e1d2ad1e349c4f60f53ca8",
+    "_id": "68e33be4b82c028126ef8101",
+    "vendedor": "68e33be4b82c028126ef806a",
     "titulo": "Consola PlayStation 5 Slim 73",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
     "categorias": [
-      "Deportes",
-      "Hogar"
+      "Hogar",
+      "Electrónica"
     ],
-    "precio": 38238.85,
-    "moneda": "PESO_ARG",
-    "stock": 43,
+    "precio": 57575.36,
+    "moneda": "EURO",
+    "stock": 28,
     "fotos": [
       "https://picsum.photos/seed/72/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-08-27T03:41:46.289Z",
-    "updatedAt": "2024-12-03T11:29:53.393Z",
+    "ventasTotales": 76,
+    "createdAt": "2024-10-23T01:01:16.463Z",
+    "updatedAt": "2023-07-17T04:51:20.322Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d51",
-    "vendedor": "68e1d2ad1e349c4f60f53ca7",
-    "titulo": "Silla Gamer 74",
+    "_id": "68e33be4b82c028126ef8102",
+    "vendedor": "68e33be4b82c028126ef80ad",
+    "titulo": "Consola PlayStation 5 Slim 74",
     "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
     "categorias": [
-      "Electrónica",
+      "Consolas",
       "Juguetes",
-      "Libros"
+      "Electrónica"
     ],
-    "precio": 52402.35,
+    "precio": 69815.38,
     "moneda": "PESO_ARG",
-    "stock": 48,
+    "stock": 18,
     "fotos": [
       "https://picsum.photos/seed/73/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-10-11T21:11:52.837Z",
-    "updatedAt": "2025-07-08T04:24:25.843Z",
+    "ventasTotales": 71,
+    "createdAt": "2023-08-30T23:29:35.933Z",
+    "updatedAt": "2024-04-22T12:29:15.362Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d52",
-    "vendedor": "68e1d2ad1e349c4f60f53cd9",
-    "titulo": "Consola PlayStation 5 Slim 75",
-    "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
+    "_id": "68e33be4b82c028126ef8103",
+    "vendedor": "68e33be4b82c028126ef807a",
+    "titulo": "Notebook Lenovo IdeaPad 75",
+    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
     "categorias": [
-      "Hogar",
-      "Ropa"
+      "Ropa",
+      "Consolas"
     ],
-    "precio": 26558.43,
-    "moneda": "EURO",
-    "stock": 17,
+    "precio": 98070.38,
+    "moneda": "PESO_ARG",
+    "stock": 32,
     "fotos": [
       "https://picsum.photos/seed/74/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-05-10T15:11:32.950Z",
-    "updatedAt": "2023-03-23T19:38:55.973Z",
+    "ventasTotales": 19,
+    "createdAt": "2023-07-09T12:13:57.629Z",
+    "updatedAt": "2025-09-17T18:48:06.104Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d53",
-    "vendedor": "68e1d2ad1e349c4f60f53cda",
-    "titulo": "Consola PlayStation 5 Slim 76",
-    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
+    "_id": "68e33be4b82c028126ef8104",
+    "vendedor": "68e33be4b82c028126ef809c",
+    "titulo": "Smart TV Samsung 50\" 76",
+    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
     "categorias": [
-      "Libros",
       "Ropa",
-      "Consolas"
+      "Juguetes"
     ],
-    "precio": 46964.31,
-    "moneda": "PESO_ARG",
-    "stock": 34,
+    "precio": 9362.24,
+    "moneda": "DOLAR_USA",
+    "stock": 50,
     "fotos": [
       "https://picsum.photos/seed/75/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-05-03T09:44:24.406Z",
-    "updatedAt": "2024-06-27T00:41:20.163Z",
+    "ventasTotales": 85,
+    "createdAt": "2024-01-01T03:23:56.178Z",
+    "updatedAt": "2025-03-11T02:10:48.076Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d54",
-    "vendedor": "68e1d2ad1e349c4f60f53cbe",
-    "titulo": "Bicicleta Mountain Bike 77",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "_id": "68e33be4b82c028126ef8105",
+    "vendedor": "68e33be4b82c028126ef8075",
+    "titulo": "Smart TV Samsung 50\" 77",
+    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
     "categorias": [
-      "Juguetes",
-      "Deportes",
-      "Consolas"
+      "Ropa",
+      "Juguetes"
     ],
-    "precio": 39441.25,
-    "moneda": "EURO",
-    "stock": 35,
+    "precio": 78615.39,
+    "moneda": "DOLAR_USA",
+    "stock": 34,
     "fotos": [
       "https://picsum.photos/seed/76/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-08-28T01:18:43.021Z",
-    "updatedAt": "2024-06-05T03:37:19.565Z",
+    "ventasTotales": 53,
+    "createdAt": "2024-08-07T07:27:49.401Z",
+    "updatedAt": "2024-11-17T21:02:09.233Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d55",
-    "vendedor": "68e1d2ad1e349c4f60f53cbe",
-    "titulo": "Lámpara LED 78",
-    "descripcion": "Edición ilustrada, tapa dura.",
+    "_id": "68e33be4b82c028126ef8106",
+    "vendedor": "68e33be4b82c028126ef80a2",
+    "titulo": "Libro El Principito 78",
+    "descripcion": "Amortiguación Air, diseño moderno.",
     "categorias": [
-      "Juguetes",
-      "Libros"
+      "Hogar",
+      "Consolas"
     ],
-    "precio": 96384.01,
-    "moneda": "DOLAR_USA",
-    "stock": 19,
+    "precio": 74349.23,
+    "moneda": "PESO_ARG",
+    "stock": 14,
     "fotos": [
       "https://picsum.photos/seed/77/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-05-17T00:00:07.586Z",
-    "updatedAt": "2023-06-27T03:44:28.764Z",
+    "ventasTotales": 13,
+    "createdAt": "2025-08-07T06:51:16.345Z",
+    "updatedAt": "2023-02-25T15:30:19.192Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d56",
-    "vendedor": "68e1d2ad1e349c4f60f53cae",
-    "titulo": "Notebook Lenovo IdeaPad 79",
-    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
+    "_id": "68e33be4b82c028126ef8107",
+    "vendedor": "68e33be4b82c028126ef8076",
+    "titulo": "Lámpara LED 79",
+    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
     "categorias": [
-      "Deportes",
-      "Juguetes",
+      "Electrónica",
+      "Hogar",
       "Ropa"
     ],
-    "precio": 60369.52,
+    "precio": 18000.15,
     "moneda": "EURO",
     "stock": 24,
     "fotos": [
       "https://picsum.photos/seed/78/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-05-10T05:20:06.319Z",
-    "updatedAt": "2025-03-03T11:18:33.035Z",
+    "ventasTotales": 28,
+    "createdAt": "2024-03-18T05:50:01.981Z",
+    "updatedAt": "2025-03-16T23:42:06.810Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d57",
-    "vendedor": "68e1d2ad1e349c4f60f53cb7",
-    "titulo": "Zapatillas Nike Air 80",
-    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
+    "_id": "68e33be4b82c028126ef8108",
+    "vendedor": "68e33be4b82c028126ef8077",
+    "titulo": "Consola PlayStation 5 Slim 80",
+    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
     "categorias": [
-      "Electrónica",
-      "Consolas"
+      "Juguetes",
+      "Electrónica"
     ],
-    "precio": 89979.92,
-    "moneda": "EURO",
-    "stock": 1,
+    "precio": 38237.86,
+    "moneda": "DOLAR_USA",
+    "stock": 13,
     "fotos": [
       "https://picsum.photos/seed/79/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-06-25T07:09:01.388Z",
-    "updatedAt": "2024-03-27T10:18:40.677Z",
+    "ventasTotales": 14,
+    "createdAt": "2024-08-18T16:09:01.323Z",
+    "updatedAt": "2025-09-23T03:20:14.838Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d58",
-    "vendedor": "68e1d2ad1e349c4f60f53cfc",
-    "titulo": "Notebook Lenovo IdeaPad 81",
-    "descripcion": "Edición ilustrada, tapa dura.",
+    "_id": "68e33be4b82c028126ef8109",
+    "vendedor": "68e33be4b82c028126ef8087",
+    "titulo": "Cafetera Express Philips 81",
+    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
     "categorias": [
-      "Consolas",
-      "Libros"
+      "Libros",
+      "Deportes",
+      "Juguetes"
     ],
-    "precio": 25972.84,
+    "precio": 790.6,
     "moneda": "PESO_ARG",
-    "stock": 49,
+    "stock": 4,
     "fotos": [
       "https://picsum.photos/seed/80/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-08-03T12:59:08.449Z",
-    "updatedAt": "2023-03-01T00:44:19.520Z",
+    "ventasTotales": 51,
+    "createdAt": "2024-07-23T12:16:38.002Z",
+    "updatedAt": "2023-08-14T17:59:53.520Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d59",
-    "vendedor": "68e1d2ad1e349c4f60f53cb1",
-    "titulo": "Cafetera Express Philips 82",
+    "_id": "68e33be4b82c028126ef810a",
+    "vendedor": "68e33be4b82c028126ef80ad",
+    "titulo": "Notebook Lenovo IdeaPad 82",
     "descripcion": "Edición ilustrada, tapa dura.",
     "categorias": [
-      "Deportes",
-      "Ropa",
-      "Juguetes"
+      "Libros",
+      "Consolas",
+      "Ropa"
     ],
-    "precio": 62577.49,
-    "moneda": "EURO",
-    "stock": 41,
+    "precio": 61431.84,
+    "moneda": "PESO_ARG",
+    "stock": 29,
     "fotos": [
       "https://picsum.photos/seed/81/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-05-15T06:25:14.232Z",
-    "updatedAt": "2025-02-28T08:47:16.185Z",
+    "ventasTotales": 93,
+    "createdAt": "2023-10-10T15:59:15.946Z",
+    "updatedAt": "2023-06-01T08:23:17.790Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d5a",
-    "vendedor": "68e1d2ad1e349c4f60f53cda",
-    "titulo": "Bicicleta Mountain Bike 83",
-    "descripcion": "Luz blanca regulable, bajo consumo.",
+    "_id": "68e33be4b82c028126ef810b",
+    "vendedor": "68e33be4b82c028126ef8055",
+    "titulo": "Silla Gamer 83",
+    "descripcion": "Amortiguación Air, diseño moderno.",
     "categorias": [
-      "Consolas",
-      "Hogar"
+      "Deportes",
+      "Juguetes"
     ],
-    "precio": 9120.88,
+    "precio": 60539.8,
     "moneda": "PESO_ARG",
-    "stock": 40,
+    "stock": 14,
     "fotos": [
       "https://picsum.photos/seed/82/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-04-08T02:38:11.882Z",
-    "updatedAt": "2023-02-24T21:11:55.120Z",
+    "ventasTotales": 73,
+    "createdAt": "2024-10-17T05:14:35.282Z",
+    "updatedAt": "2023-07-10T17:12:35.084Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d5b",
-    "vendedor": "68e1d2ad1e349c4f60f53cb7",
-    "titulo": "Consola PlayStation 5 Slim 84",
-    "descripcion": "Edición ilustrada, tapa dura.",
+    "_id": "68e33be4b82c028126ef810c",
+    "vendedor": "68e33be4b82c028126ef806c",
+    "titulo": "Silla Gamer 84",
+    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
     "categorias": [
-      "Libros",
+      "Juguetes",
       "Consolas",
       "Deportes"
     ],
-    "precio": 75803.57,
-    "moneda": "DOLAR_USA",
-    "stock": 38,
+    "precio": 58075.52,
+    "moneda": "EURO",
+    "stock": 40,
     "fotos": [
       "https://picsum.photos/seed/83/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-01-06T10:15:51.676Z",
-    "updatedAt": "2025-08-15T18:44:02.408Z",
+    "ventasTotales": 2,
+    "createdAt": "2024-08-24T06:00:03.915Z",
+    "updatedAt": "2024-01-12T20:19:25.008Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d5c",
-    "vendedor": "68e1d2ad1e349c4f60f53cb5",
+    "_id": "68e33be4b82c028126ef810d",
+    "vendedor": "68e33be4b82c028126ef807a",
     "titulo": "Smart TV Samsung 50\" 85",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
     "categorias": [
-      "Juguetes",
-      "Hogar",
+      "Libros",
       "Ropa"
     ],
-    "precio": 36873.3,
-    "moneda": "EURO",
-    "stock": 20,
+    "precio": 86779.83,
+    "moneda": "DOLAR_USA",
+    "stock": 3,
     "fotos": [
       "https://picsum.photos/seed/84/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-07-16T18:09:44.199Z",
-    "updatedAt": "2024-01-14T23:07:39.582Z",
+    "ventasTotales": 54,
+    "createdAt": "2024-11-29T12:00:24.080Z",
+    "updatedAt": "2023-08-24T06:30:27.697Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d5d",
-    "vendedor": "68e1d2ad1e349c4f60f53cd3",
-    "titulo": "Cafetera Express Philips 86",
-    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
+    "_id": "68e33be4b82c028126ef810e",
+    "vendedor": "68e33be4b82c028126ef80ab",
+    "titulo": "Libro El Principito 86",
+    "descripcion": "Edición ilustrada, tapa dura.",
     "categorias": [
-      "Electrónica",
       "Consolas",
+      "Hogar",
       "Ropa"
     ],
-    "precio": 57415.44,
-    "moneda": "EURO",
-    "stock": 46,
+    "precio": 71341.32,
+    "moneda": "PESO_ARG",
+    "stock": 30,
     "fotos": [
       "https://picsum.photos/seed/85/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-06-13T03:35:32.623Z",
-    "updatedAt": "2025-03-12T15:00:34.840Z",
+    "ventasTotales": 18,
+    "createdAt": "2024-12-18T12:17:55.773Z",
+    "updatedAt": "2024-04-14T23:43:24.602Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d5e",
-    "vendedor": "68e1d2ad1e349c4f60f53cb5",
+    "_id": "68e33be4b82c028126ef810f",
+    "vendedor": "68e33be4b82c028126ef8076",
     "titulo": "Cafetera Express Philips 87",
     "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
     "categorias": [
-      "Hogar",
-      "Consolas",
-      "Deportes"
+      "Juguetes",
+      "Ropa",
+      "Consolas"
     ],
-    "precio": 60935.83,
-    "moneda": "EURO",
-    "stock": 25,
+    "precio": 28513.35,
+    "moneda": "DOLAR_USA",
+    "stock": 47,
     "fotos": [
       "https://picsum.photos/seed/86/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-07-16T09:10:06.016Z",
-    "updatedAt": "2023-12-17T15:55:52.955Z",
+    "ventasTotales": 33,
+    "createdAt": "2025-01-14T19:15:13.786Z",
+    "updatedAt": "2024-05-06T13:22:31.037Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d5f",
-    "vendedor": "68e1d2ad1e349c4f60f53cae",
-    "titulo": "Lámpara LED 88",
-    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
+    "_id": "68e33be4b82c028126ef8110",
+    "vendedor": "68e33be4b82c028126ef806c",
+    "titulo": "Silla Gamer 88",
+    "descripcion": "Cuadro de aluminio, 21 velocidades, frenos a disco.",
     "categorias": [
       "Consolas",
-      "Hogar"
+      "Libros"
     ],
-    "precio": 41485.36,
-    "moneda": "EURO",
-    "stock": 12,
+    "precio": 52007.9,
+    "moneda": "PESO_ARG",
+    "stock": 6,
     "fotos": [
       "https://picsum.photos/seed/87/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-02-26T19:01:33.619Z",
-    "updatedAt": "2023-05-04T04:59:06.487Z",
+    "ventasTotales": 21,
+    "createdAt": "2025-01-07T18:08:55.798Z",
+    "updatedAt": "2025-02-08T01:27:17.684Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d60",
-    "vendedor": "68e1d2ad1e349c4f60f53cfc",
-    "titulo": "Lámpara LED 89",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "_id": "68e33be4b82c028126ef8111",
+    "vendedor": "68e33be4b82c028126ef8068",
+    "titulo": "Zapatillas Nike Air 89",
+    "descripcion": "Amortiguación Air, diseño moderno.",
     "categorias": [
+      "Juguetes",
       "Consolas",
-      "Electrónica",
-      "Libros"
+      "Deportes"
     ],
-    "precio": 42318.79,
-    "moneda": "DOLAR_USA",
-    "stock": 22,
+    "precio": 80031.7,
+    "moneda": "PESO_ARG",
+    "stock": 15,
     "fotos": [
       "https://picsum.photos/seed/88/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-05-22T09:50:48.511Z",
-    "updatedAt": "2024-11-01T16:34:48.179Z",
+    "ventasTotales": 75,
+    "createdAt": "2023-06-15T01:41:38.728Z",
+    "updatedAt": "2023-08-21T13:54:15.997Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d61",
-    "vendedor": "68e1d2ad1e349c4f60f53cae",
-    "titulo": "Zapatillas Nike Air 90",
-    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
+    "_id": "68e33be4b82c028126ef8112",
+    "vendedor": "68e33be4b82c028126ef8068",
+    "titulo": "Consola PlayStation 5 Slim 90",
+    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
     "categorias": [
-      "Consolas",
-      "Ropa"
+      "Ropa",
+      "Libros",
+      "Consolas"
     ],
-    "precio": 89533.34,
-    "moneda": "DOLAR_USA",
-    "stock": 23,
+    "precio": 80829.65,
+    "moneda": "PESO_ARG",
+    "stock": 34,
     "fotos": [
       "https://picsum.photos/seed/89/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-06-16T15:00:18.176Z",
-    "updatedAt": "2023-05-23T23:12:02.744Z",
+    "ventasTotales": 83,
+    "createdAt": "2024-11-01T13:59:33.840Z",
+    "updatedAt": "2025-04-04T13:26:00.245Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d62",
-    "vendedor": "68e1d2ad1e349c4f60f53cbc",
-    "titulo": "Zapatillas Nike Air 91",
-    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
+    "_id": "68e33be4b82c028126ef8113",
+    "vendedor": "68e33be4b82c028126ef8075",
+    "titulo": "Notebook Lenovo IdeaPad 91",
+    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
     "categorias": [
-      "Consolas",
-      "Hogar",
-      "Electrónica"
+      "Juguetes",
+      "Deportes",
+      "Ropa"
     ],
-    "precio": 77653.43,
-    "moneda": "EURO",
-    "stock": 33,
+    "precio": 58991.57,
+    "moneda": "DOLAR_USA",
+    "stock": 35,
     "fotos": [
       "https://picsum.photos/seed/90/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-04-12T03:39:59.783Z",
-    "updatedAt": "2023-11-01T02:06:24.574Z",
+    "ventasTotales": 25,
+    "createdAt": "2024-02-12T15:14:44.322Z",
+    "updatedAt": "2024-02-05T08:54:45.234Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d63",
-    "vendedor": "68e1d2ad1e349c4f60f53cd3",
-    "titulo": "Bicicleta Mountain Bike 92",
-    "descripcion": "Amortiguación Air, diseño moderno.",
+    "_id": "68e33be4b82c028126ef8114",
+    "vendedor": "68e33be4b82c028126ef8059",
+    "titulo": "Lámpara LED 92",
+    "descripcion": "Edición ilustrada, tapa dura.",
     "categorias": [
-      "Deportes",
-      "Ropa"
+      "Libros",
+      "Juguetes"
     ],
-    "precio": 64996.1,
-    "moneda": "EURO",
-    "stock": 1,
+    "precio": 37826.44,
+    "moneda": "DOLAR_USA",
+    "stock": 42,
     "fotos": [
       "https://picsum.photos/seed/91/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-11-23T07:19:31.241Z",
-    "updatedAt": "2023-10-18T18:29:32.230Z",
+    "ventasTotales": 43,
+    "createdAt": "2025-03-30T15:22:17.151Z",
+    "updatedAt": "2024-01-04T20:38:41.855Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d64",
-    "vendedor": "68e1d2ad1e349c4f60f53cd3",
-    "titulo": "Notebook Lenovo IdeaPad 93",
-    "descripcion": "Resolución 4K UHD, Smart TV, HDR10+, 3 HDMI.",
+    "_id": "68e33be4b82c028126ef8115",
+    "vendedor": "68e33be4b82c028126ef8098",
+    "titulo": "Lámpara LED 93",
+    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
     "categorias": [
       "Electrónica",
-      "Consolas",
-      "Libros"
+      "Juguetes",
+      "Ropa"
     ],
-    "precio": 76217.35,
-    "moneda": "PESO_ARG",
-    "stock": 39,
+    "precio": 97634.25,
+    "moneda": "DOLAR_USA",
+    "stock": 15,
     "fotos": [
       "https://picsum.photos/seed/92/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-12-31T21:55:22.623Z",
-    "updatedAt": "2023-04-17T11:46:37.925Z",
+    "ventasTotales": 38,
+    "createdAt": "2023-04-19T00:57:22.844Z",
+    "updatedAt": "2025-03-12T17:57:02.262Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d65",
-    "vendedor": "68e1d2ad1e349c4f60f53cbe",
-    "titulo": "Lámpara LED 94",
-    "descripcion": "Procesador Intel i5, 8GB RAM, 512GB SSD, pantalla FHD.",
+    "_id": "68e33be4b82c028126ef8116",
+    "vendedor": "68e33be4b82c028126ef8070",
+    "titulo": "Cafetera Express Philips 94",
+    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
     "categorias": [
       "Electrónica",
-      "Juguetes",
-      "Libros"
+      "Ropa"
     ],
-    "precio": 17195.43,
+    "precio": 13597.41,
     "moneda": "EURO",
-    "stock": 49,
+    "stock": 2,
     "fotos": [
       "https://picsum.photos/seed/93/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-07-22T10:54:05.901Z",
-    "updatedAt": "2024-03-16T01:06:29.043Z",
+    "ventasTotales": 41,
+    "createdAt": "2023-06-07T13:20:28.017Z",
+    "updatedAt": "2025-08-01T11:35:42.209Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d66",
-    "vendedor": "68e1d2ad1e349c4f60f53cae",
-    "titulo": "Cafetera Express Philips 95",
-    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
+    "_id": "68e33be4b82c028126ef8117",
+    "vendedor": "68e33be4b82c028126ef8063",
+    "titulo": "Silla Gamer 95",
+    "descripcion": "Luz blanca regulable, bajo consumo.",
     "categorias": [
+      "Juguetes",
       "Consolas",
-      "Hogar",
-      "Juguetes"
+      "Electrónica"
     ],
-    "precio": 74219.58,
-    "moneda": "PESO_ARG",
-    "stock": 9,
+    "precio": 3672.95,
+    "moneda": "EURO",
+    "stock": 25,
     "fotos": [
       "https://picsum.photos/seed/94/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-12-04T05:28:29.285Z",
-    "updatedAt": "2023-11-24T17:43:32.897Z",
+    "ventasTotales": 66,
+    "createdAt": "2024-03-08T14:49:36.524Z",
+    "updatedAt": "2023-11-09T23:38:20.555Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d67",
-    "vendedor": "68e1d2ad1e349c4f60f53cbf",
-    "titulo": "Libro El Principito 96",
-    "descripcion": "Luz blanca regulable, bajo consumo.",
+    "_id": "68e33be4b82c028126ef8118",
+    "vendedor": "68e33be4b82c028126ef80b0",
+    "titulo": "Smart TV Samsung 50\" 96",
+    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
     "categorias": [
       "Ropa",
-      "Deportes",
       "Libros"
     ],
-    "precio": 25319.69,
-    "moneda": "DOLAR_USA",
-    "stock": 9,
+    "precio": 87055.94,
+    "moneda": "PESO_ARG",
+    "stock": 15,
     "fotos": [
       "https://picsum.photos/seed/95/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-03-01T17:12:13.283Z",
-    "updatedAt": "2025-03-30T07:08:42.058Z",
+    "ventasTotales": 72,
+    "createdAt": "2023-12-30T17:29:04.168Z",
+    "updatedAt": "2024-10-31T05:09:52.723Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d68",
-    "vendedor": "68e1d2ad1e349c4f60f53cd3",
-    "titulo": "Auriculares Bluetooth JBL 97",
-    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
+    "_id": "68e33be4b82c028126ef8119",
+    "vendedor": "68e33be4b82c028126ef805a",
+    "titulo": "Zapatillas Nike Air 97",
+    "descripcion": "Edición ilustrada, tapa dura.",
     "categorias": [
-      "Electrónica",
-      "Libros",
-      "Ropa"
+      "Deportes",
+      "Electrónica"
     ],
-    "precio": 23200.66,
-    "moneda": "EURO",
-    "stock": 13,
+    "precio": 51985.5,
+    "moneda": "DOLAR_USA",
+    "stock": 47,
     "fotos": [
       "https://picsum.photos/seed/96/400/300"
     ],
     "activo": true,
-    "createdAt": "2025-06-24T08:28:11.858Z",
-    "updatedAt": "2025-07-08T11:35:57.321Z",
+    "ventasTotales": 60,
+    "createdAt": "2023-02-18T01:57:48.718Z",
+    "updatedAt": "2024-04-04T00:16:45.822Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d69",
-    "vendedor": "68e1d2ad1e349c4f60f53cb5",
-    "titulo": "Silla Gamer 98",
-    "descripcion": "Edición ilustrada, tapa dura.",
+    "_id": "68e33be4b82c028126ef811a",
+    "vendedor": "68e33be4b82c028126ef809a",
+    "titulo": "Smart TV Samsung 50\" 98",
+    "descripcion": "Nueva versión más compacta, 1TB SSD, soporte para juegos 4K y mando DualSense.",
     "categorias": [
       "Ropa",
       "Libros",
-      "Hogar"
+      "Juguetes"
     ],
-    "precio": 21095.84,
+    "precio": 71256.91,
     "moneda": "EURO",
-    "stock": 29,
+    "stock": 20,
     "fotos": [
       "https://picsum.photos/seed/97/400/300"
     ],
     "activo": true,
-    "createdAt": "2024-05-27T03:54:38.165Z",
-    "updatedAt": "2023-05-23T03:19:46.009Z",
+    "ventasTotales": 54,
+    "createdAt": "2024-06-10T17:57:03.203Z",
+    "updatedAt": "2025-08-23T09:02:46.565Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d6a",
-    "vendedor": "68e1d2ad1e349c4f60f53caa",
-    "titulo": "Auriculares Bluetooth JBL 99",
-    "descripcion": "Sonido potente, batería de larga duración, micrófono integrado.",
+    "_id": "68e33be4b82c028126ef811b",
+    "vendedor": "68e33be4b82c028126ef80a2",
+    "titulo": "Libro El Principito 99",
+    "descripcion": "Café espresso y cappuccino, 15 bares de presión, fácil limpieza.",
     "categorias": [
-      "Ropa"
+      "Electrónica",
+      "Hogar",
+      "Libros"
     ],
-    "precio": 91425.05,
+    "precio": 33641.29,
     "moneda": "PESO_ARG",
-    "stock": 49,
+    "stock": 4,
     "fotos": [
       "https://picsum.photos/seed/98/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-09-08T22:20:43.837Z",
-    "updatedAt": "2023-12-28T05:07:06.946Z",
+    "ventasTotales": 19,
+    "createdAt": "2023-10-02T08:49:06.759Z",
+    "updatedAt": "2023-12-26T04:41:50.294Z",
     "__v": 0
   },
   {
-    "_id": "68e1d2ad1e349c4f60f53d6b",
-    "vendedor": "68e1d2ad1e349c4f60f53cda",
-    "titulo": "Consola PlayStation 5 Slim 100",
-    "descripcion": "Ergonómica, reclinable, apoyabrazos 3D.",
+    "_id": "68e33be4b82c028126ef811c",
+    "vendedor": "68e33be4b82c028126ef805e",
+    "titulo": "Silla Gamer 100",
+    "descripcion": "Amortiguación Air, diseño moderno.",
     "categorias": [
-      "Libros",
-      "Deportes",
-      "Ropa"
+      "Hogar",
+      "Libros"
     ],
-    "precio": 2588.08,
-    "moneda": "DOLAR_USA",
-    "stock": 2,
+    "precio": 86467.62,
+    "moneda": "EURO",
+    "stock": 42,
     "fotos": [
       "https://picsum.photos/seed/99/400/300"
     ],
     "activo": true,
-    "createdAt": "2023-07-08T16:39:35.786Z",
-    "updatedAt": "2023-04-27T12:17:40.918Z",
+    "ventasTotales": 76,
+    "createdAt": "2024-02-03T02:35:58.422Z",
+    "updatedAt": "2023-12-21T05:33:41.535Z",
     "__v": 0
   }
 ]

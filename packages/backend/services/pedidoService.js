@@ -112,6 +112,18 @@ export default class PedidoService {
       pedido
     );
 
+    const items = pedidoPersistido.items;
+
+    for (const item of items) {
+      const producto = await this.productoService.findById(item.producto._id);
+      producto.aumentarStock(item.cantidad);
+      producto.restarVentas(item.cantidad);
+
+      // Convertir a objeto plano antes de actualizar
+      const productoPlano = Object.assign({}, producto);
+      await this.productoService.update(producto.id, productoPlano);
+    }
+
     this.notificacionService.crearSegunPedido(pedidoPersistido);
 
     return pedidoToDTO(pedidoPersistido);

@@ -57,6 +57,11 @@ export default class Producto {
     this.ventasTotales += cantidad;
   }
 
+  restarVentas(cantidad) {
+    validarNumeroPositivo(cantidad, "Cantidad");
+    this.ventasTotales -= cantidad;
+  }
+
   aumentarStock(cantidad) {
     validarNumeroPositivo(cantidad, "Cantidad");
     this.stock += cantidad;

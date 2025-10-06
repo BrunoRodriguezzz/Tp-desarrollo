@@ -1,5 +1,5 @@
 // Script para generar y poblar datos de ejemplo en MongoDB
-// Ejecutar: node scripts/generarDatosEjemplo.js [MONGO_URI]
+// Ejecutar: node scripts/generarDatosEjemplo.js "mongodb+srv://admin:bHaUgtKVu2xKgMOY@tiendasol.4d3wawj.mongodb.net/tienda_sol?retryWrites=true&w=majority&appName=tiendaSol"
 
 import fs from "fs";
 import path from "path";
@@ -36,6 +36,8 @@ function randomEmail(nombre) {
 
 const nombres = [
   "Federico García",
+  "Nicolás Barlasina",
+  "Juan Chapero",
   "Lucía Pérez",
   "Martín López",
   "Sofía Torres",
@@ -157,6 +159,7 @@ function generarProductos(usuarios) {
       stock,
       fotos,
       activo: true,
+      ventasTotales: randomInt(0, 100),
       createdAt: randomDate(new Date(2023, 0, 1), new Date()),
       updatedAt: randomDate(new Date(2023, 0, 1), new Date()),
       __v: 0,
@@ -175,7 +178,6 @@ function generarPedidos(usuarios, productos) {
     const items = [];
     let total = 0;
     let moneda = "PESO_ARG";
-    let vendedor = null;
     for (let j = 0; j < itemsCount; j++) {
       const prod = randomChoice(productos);
       const cantidad = randomInt(1, Math.max(1, prod.stock));
@@ -187,7 +189,6 @@ function generarPedidos(usuarios, productos) {
       });
       total += prod.precio * cantidad;
       moneda = prod.moneda;
-      vendedor = prod.vendedor;
     }
     pedidos.push({
       _id: new ObjectId(),
@@ -210,7 +211,6 @@ function generarPedidos(usuarios, productos) {
           fecha: randomDate(new Date(2023, 0, 1), new Date()),
         },
       ],
-      vendedor,
     });
   }
   return pedidos;
