@@ -32,7 +32,6 @@ const app = express();
 dotenv.config({ path: "./packages/backend/.env" });
 
 const port = process.env.SERVER_PORT || 3000;
-//const port = 3000;
 const server = new Server(app, port);
 
 // Capas de Repositorio
