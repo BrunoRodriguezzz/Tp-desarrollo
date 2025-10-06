@@ -53,6 +53,7 @@ export default class PedidoService {
 
     // instancio y valido los items del pedido
     const itemsValidados = [];
+
     for (const item of items) {
       const producto = await this.productoService.findById(item.productoId);
       validarProducto(producto, item.productoId);
@@ -80,7 +81,10 @@ export default class PedidoService {
     for (const item of itemsValidados) {
       item.producto.reducirStock(item.cantidad);
       item.producto.sumarVentas(item.cantidad);
-      await this.productoService.update(item.producto.id, item.producto);
+
+      // Convertir a objeto plano antes de actualizar
+      const productoPlano = Object.assign({}, item.producto);
+      await this.productoService.update(item.producto.id, productoPlano);
     }
 
     //this.notificacionService.crearSegunPedido(pedidoPersistido);
