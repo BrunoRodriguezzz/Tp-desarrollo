@@ -83,7 +83,7 @@ export default class PedidoService {
       await this.productoService.update(item.producto.id, item.producto);
     }
 
-    this.notificacionService.crearSegunPedido(pedidoPersistido);
+    //this.notificacionService.crearSegunPedido(pedidoPersistido);
 
     return pedidoToDTO(pedidoPersistido);
   }
