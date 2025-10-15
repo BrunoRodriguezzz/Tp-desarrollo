@@ -1,3 +1,9 @@
+:root {
+  --gray-1: #ccc;
+  --gray-2: #585757;
+  --gray-3: #eeecec;
+}
+
 body {
   margin: 0;
   font-family:

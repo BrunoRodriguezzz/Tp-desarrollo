@@ -1,0 +1,39 @@
+import React from "react";
+import "./Header.css";
+import { PiSunDim } from "react-icons/pi";
+import { FaSearch } from "react-icons/fa";
+import { LuShoppingCart } from "react-icons/lu";
+
+export default function Header() {
+  return (
+    <section className="header">
+      <div className="brand-logo">
+        <PiSunDim size={40} />
+        <p>Tienda Sol</p>
+      </div>
+
+      <div className="search-bar">
+        <input
+          id="product-input"
+          type="text"
+          placeholder="Buscar productos..."
+        />
+
+        <button className="button-transparent">
+          <FaSearch />
+          Buscar
+        </button>
+      </div>
+
+      <div className="header-buttons">
+        <button className="button-transparent">Productos</button>
+        <button className="button-transparent">Categorías</button>
+        <button className="button-gray">
+          <LuShoppingCart />
+          Carrito
+        </button>
+        <button className="button-white">Iniciar Sesión</button>
+      </div>
+    </section>
+  );
+}

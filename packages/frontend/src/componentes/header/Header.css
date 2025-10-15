@@ -1,0 +1,89 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 0.5px solid var(--gray-1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  gap: 0.5rem;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-logo p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.brand-logo:hover {
+  cursor: pointer;
+  color: var(--gray-2);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-bar input {
+  padding: 0.7rem 1rem;
+  width: 23rem;
+  border: 1px solid black;
+  border-radius: 6px;
+  margin: 1rem;
+  font-weight: lighter;
+}
+
+.button-transparent {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: medium;
+}
+
+.button-transparent:hover {
+  color: var(--gray-2);
+}
+
+.button-white {
+  cursor: pointer;
+  background: white;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.button-white:hover {
+  background: var(--gray-3);
+}
+
+.button-gray {
+  cursor: pointer;
+  background: var(--gray-3);
+  border: 1px solid var(--gray-1);
+  font-weight: 400;
+  font-size: large;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.button-gray:hover {
+  border: 1px solid black;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
