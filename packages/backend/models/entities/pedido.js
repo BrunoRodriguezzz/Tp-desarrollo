@@ -1,3 +1,7 @@
+import {
+  validar,
+  validarCambioEstado,
+} from "../../validadores/validadoresPedido.js";
 import EstadoPedido from "../enums/estadoPedido.js";
 import Moneda from "../enums/moneda.js";
 import CambioEstadoPedido from "./cambioEstadoPedido.js";
@@ -16,12 +20,19 @@ class Pedido {
   vendedor;
 
   constructor(comprador, moneda, direccion) {
+    validar(comprador, moneda, direccion);
     this.comprador = comprador;
     this.moneda = moneda;
     this.direccion = direccion;
     this.items = [];
-    this.estado = EstadoPedido.PENDIENTE;
+    //TODO - No me convence del todo, que hacemos con esto?
+    this.actualizarEstado(
+      EstadoPedido.PENDIENTE,
+      comprador,
+      "Se realizo el pedido"
+    );
     this.fechaCreacion = new Date();
+    this.total = 0;
   }
 
   agregarItem(item) {
@@ -30,7 +41,7 @@ class Pedido {
     if (!this.vendedor) {
       this.vendedor = item.producto.vendedor;
     }
-    
+
     this.calcularTotal();
   }
 
@@ -44,6 +55,7 @@ class Pedido {
   }
 
   actualizarEstado(nuevoEstado, quien, motivo) {
+    validarCambioEstado(this, nuevoEstado);
     this.estado = nuevoEstado;
     this.historialEstados.push(
       new CambioEstadoPedido(nuevoEstado, this, quien, motivo)

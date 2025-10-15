@@ -1,13 +1,16 @@
-import { ValidationError } from "../excepcion/validationError.js";
-import { StockError } from "../excepcion/stockError.js";
-import { isNumber, validarString, validarNumeroPositivo } from "../../validadores/validadorTiposNativos.js";
+import { ValidationError } from "../../errors/tiendaSolError.js";
 import { isMoneda } from "../../validadores/validadorDeEnums.js";
 import { validar } from "../../validadores/validadoresProducto.js";
 import { validarCategoria } from "../../validadores/validadorDeClases.js";
+import {
+  validarNumeroPositivo,
+  isArrayOf,
+  validarString,
+} from "../../validadores/validadorTiposNativos.js";
 import Moneda from "../enums/moneda.js";
 import Categoria from "./categoria.js";
 
-class Producto {
+export default class Producto {
   id;
   vendedor;
   titulo;
@@ -18,6 +21,7 @@ class Producto {
   stock;
   fotos;
   activo;
+  ventasTotales;
 
   constructor(vendedor, titulo) {
     validar(vendedor, titulo);
@@ -26,10 +30,11 @@ class Producto {
     this.descripcion = "";
     this.categorias = [];
     this.precio = 0;
-    this.moneda = Moneda.ARS;
+    this.moneda = Moneda.PESO_ARG;
     this.stock = 0;
     this.fotos = [];
     this.activo = true;
+    this.ventasTotales = 0;
   }
 
   estaDisponible(cantidad) {
@@ -37,20 +42,30 @@ class Producto {
     return this.stock >= cantidad;
   }
 
+  // --- Manejo de listas ---
+
   reducirStock(cantidad) {
     validarNumeroPositivo(cantidad, "Cantidad");
     if (this.stock - cantidad < 0) {
-      throw new StockError("No hay suficiente stock para reducir"); 
+      throw new ValidationError("No hay suficiente stock para reducir");
     }
     this.stock -= cantidad;
+  }
+
+  sumarVentas(cantidad) {
+    validarNumeroPositivo(cantidad, "Cantidad");
+    this.ventasTotales += cantidad;
+  }
+
+  restarVentas(cantidad) {
+    validarNumeroPositivo(cantidad, "Cantidad");
+    this.ventasTotales -= cantidad;
   }
 
   aumentarStock(cantidad) {
     validarNumeroPositivo(cantidad, "Cantidad");
     this.stock += cantidad;
   }
-
-  // Agregar Categoria - fotos
 
   agregarCategoria(categoria) {
     validarCategoria(categoria);
@@ -62,7 +77,8 @@ class Producto {
     this.fotos.push(url);
   }
 
-  // Seters
+  // --- Setters ---
+
   setDescripcion(descripcion) {
     validarString(descripcion, "Descripción");
     this.descripcion = descripcion;
@@ -95,8 +111,10 @@ class Producto {
   }
 
   setFotos(fotos) {
-    if(!isArrayOf(fotos, String)) {
-      throw new ValidationError("Las fotos deben ser un arreglo de cadenas (URLs)");
+    if (!isArrayOf(fotos, String)) {
+      throw new ValidationError(
+        "Las fotos deben ser un arreglo de cadenas (URLs)"
+      );
     }
     this.fotos = fotos;
   }
@@ -113,5 +131,3 @@ class Producto {
     this.id = id;
   }
 }
-
-export default Producto;

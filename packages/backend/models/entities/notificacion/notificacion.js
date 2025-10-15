@@ -3,13 +3,12 @@ export default class Notificacion {
   usuarioDestino;
   mensaje;
   fechaAlta;
-  leida;
+  leida = false;
 
   constructor(usuarioDestino, mensaje, fechaAlta) {
     this.usuarioDestino = usuarioDestino;
     this.mensaje = mensaje;
     this.fechaAlta = fechaAlta;
-    this.leida = false;
   }
 
   marcarComoLeida() {

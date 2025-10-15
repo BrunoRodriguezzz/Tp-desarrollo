@@ -1,0 +1,702 @@
+[
+  {
+    "_id": "68e33be4b82c028126ef8181",
+    "usuarioDestino": "68e33be4b82c028126ef8093",
+    "mensaje": "Tu pedido fue entregado",
+    "fechaAlta": "2023-09-05T14:57:45.349Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef8182",
+    "usuarioDestino": "68e33be4b82c028126ef8071",
+    "mensaje": "Tu producto fue publicado",
+    "fechaAlta": "2023-01-13T21:16:24.533Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef8183",
+    "usuarioDestino": "68e33be4b82c028126ef80b1",
+    "mensaje": "Producto agregado a favoritos",
+    "fechaAlta": "2025-02-09T19:02:18.373Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef8184",
+    "usuarioDestino": "68e33be4b82c028126ef80b1",
+    "mensaje": "Tu pedido fue entregado",
+    "fechaAlta": "2024-02-25T14:11:57.163Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef8185",
+    "usuarioDestino": "68e33be4b82c028126ef8072",
+    "mensaje": "Tu pedido ha sido confirmado y está en preparación",
+    "fechaAlta": "2024-04-17T04:54:53.476Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef8186",
+    "usuarioDestino": "68e33be4b82c028126ef8082",
+    "mensaje": "El producto fue enviado",
+    "fechaAlta": "2025-08-30T02:10:01.603Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef8187",
+    "usuarioDestino": "68e33be4b82c028126ef80a1",
+    "mensaje": "Tienes una nueva oferta",
+    "fechaAlta": "2025-09-29T10:29:06.834Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef8188",
+    "usuarioDestino": "68e33be4b82c028126ef8094",
+    "mensaje": "El vendedor canceló el pedido",
+    "fechaAlta": "2023-05-10T06:12:26.727Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef8189",
+    "usuarioDestino": "68e33be4b82c028126ef80ab",
+    "mensaje": "El vendedor canceló el pedido",
+    "fechaAlta": "2024-02-01T13:15:02.199Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef818a",
+    "usuarioDestino": "68e33be4b82c028126ef8089",
+    "mensaje": "Actualización en el estado de tu pedido",
+    "fechaAlta": "2023-01-20T11:39:55.981Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef818b",
+    "usuarioDestino": "68e33be4b82c028126ef8083",
+    "mensaje": "Tu producto fue publicado",
+    "fechaAlta": "2023-01-30T04:05:27.589Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef818c",
+    "usuarioDestino": "68e33be4b82c028126ef80ad",
+    "mensaje": "Tu pedido ha sido confirmado y está en preparación",
+    "fechaAlta": "2023-03-26T14:34:25.454Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef818d",
+    "usuarioDestino": "68e33be4b82c028126ef80b4",
+    "mensaje": "Producto agregado a favoritos",
+    "fechaAlta": "2024-12-29T00:10:59.523Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef818e",
+    "usuarioDestino": "68e33be4b82c028126ef8066",
+    "mensaje": "Actualización en el estado de tu pedido",
+    "fechaAlta": "2023-11-04T17:05:46.162Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef818f",
+    "usuarioDestino": "68e33be4b82c028126ef8082",
+    "mensaje": "El pago fue acreditado",
+    "fechaAlta": "2023-08-29T04:14:19.390Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef8190",
+    "usuarioDestino": "68e33be4b82c028126ef8080",
+    "mensaje": "El pago fue acreditado",
+    "fechaAlta": "2023-09-19T07:10:34.731Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef8191",
+    "usuarioDestino": "68e33be4b82c028126ef809b",
+    "mensaje": "El producto fue enviado",
+    "fechaAlta": "2023-08-15T05:10:08.737Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef8192",
+    "usuarioDestino": "68e33be4b82c028126ef8073",
+    "mensaje": "Actualización en el estado de tu pedido",
+    "fechaAlta": "2024-06-25T04:17:05.488Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef8193",
+    "usuarioDestino": "68e33be4b82c028126ef80a4",
+    "mensaje": "Tienes una nueva oferta",
+    "fechaAlta": "2023-04-17T02:02:04.754Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef8194",
+    "usuarioDestino": "68e33be4b82c028126ef8083",
+    "mensaje": "El pago fue acreditado",
+    "fechaAlta": "2024-02-25T21:38:09.151Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef8195",
+    "usuarioDestino": "68e33be4b82c028126ef805d",
+    "mensaje": "El pago fue acreditado",
+    "fechaAlta": "2024-12-02T11:00:25.617Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef8196",
+    "usuarioDestino": "68e33be4b82c028126ef8064",
+    "mensaje": "Tienes una nueva oferta",
+    "fechaAlta": "2023-12-25T02:47:45.669Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef8197",
+    "usuarioDestino": "68e33be4b82c028126ef80b1",
+    "mensaje": "El vendedor canceló el pedido",
+    "fechaAlta": "2025-04-21T01:45:21.658Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef8198",
+    "usuarioDestino": "68e33be4b82c028126ef808d",
+    "mensaje": "Producto agregado a favoritos",
+    "fechaAlta": "2025-05-24T21:11:21.854Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef8199",
+    "usuarioDestino": "68e33be4b82c028126ef8077",
+    "mensaje": "El pago fue acreditado",
+    "fechaAlta": "2023-02-22T18:24:36.793Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef819a",
+    "usuarioDestino": "68e33be4b82c028126ef80a6",
+    "mensaje": "Tu pedido ha sido confirmado y está en preparación",
+    "fechaAlta": "2023-11-15T23:35:43.737Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef819b",
+    "usuarioDestino": "68e33be4b82c028126ef80a4",
+    "mensaje": "Tienes una nueva oferta",
+    "fechaAlta": "2024-06-25T11:02:45.588Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef819c",
+    "usuarioDestino": "68e33be4b82c028126ef80b0",
+    "mensaje": "Recibiste una calificación",
+    "fechaAlta": "2023-09-01T21:08:42.833Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef819d",
+    "usuarioDestino": "68e33be4b82c028126ef8065",
+    "mensaje": "Tienes una nueva oferta",
+    "fechaAlta": "2023-01-23T00:58:35.063Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef819e",
+    "usuarioDestino": "68e33be4b82c028126ef806d",
+    "mensaje": "Producto agregado a favoritos",
+    "fechaAlta": "2025-10-01T00:33:26.096Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef819f",
+    "usuarioDestino": "68e33be4b82c028126ef8085",
+    "mensaje": "Tu pedido fue entregado",
+    "fechaAlta": "2023-09-12T22:49:30.637Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81a0",
+    "usuarioDestino": "68e33be4b82c028126ef809c",
+    "mensaje": "Producto agregado a favoritos",
+    "fechaAlta": "2025-03-28T07:46:28.706Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81a1",
+    "usuarioDestino": "68e33be4b82c028126ef8076",
+    "mensaje": "Tu pedido ha sido confirmado y está en preparación",
+    "fechaAlta": "2023-04-11T06:44:11.424Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81a2",
+    "usuarioDestino": "68e33be4b82c028126ef80ac",
+    "mensaje": "Tienes una nueva oferta",
+    "fechaAlta": "2025-03-02T11:09:15.949Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81a3",
+    "usuarioDestino": "68e33be4b82c028126ef8096",
+    "mensaje": "Producto agregado a favoritos",
+    "fechaAlta": "2025-04-27T03:59:10.535Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81a4",
+    "usuarioDestino": "68e33be4b82c028126ef80a7",
+    "mensaje": "Tu pedido ha sido confirmado y está en preparación",
+    "fechaAlta": "2023-06-27T11:01:17.037Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81a5",
+    "usuarioDestino": "68e33be4b82c028126ef808c",
+    "mensaje": "Tienes una nueva oferta",
+    "fechaAlta": "2023-09-10T05:13:03.402Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81a6",
+    "usuarioDestino": "68e33be4b82c028126ef809d",
+    "mensaje": "El pago fue acreditado",
+    "fechaAlta": "2024-11-30T01:30:27.472Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81a7",
+    "usuarioDestino": "68e33be4b82c028126ef806b",
+    "mensaje": "Tu producto fue publicado",
+    "fechaAlta": "2024-10-07T06:06:53.272Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81a8",
+    "usuarioDestino": "68e33be4b82c028126ef80a6",
+    "mensaje": "Tu pedido ha sido confirmado y está en preparación",
+    "fechaAlta": "2023-01-19T03:27:28.326Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81a9",
+    "usuarioDestino": "68e33be4b82c028126ef8082",
+    "mensaje": "Tu pedido ha sido confirmado y está en preparación",
+    "fechaAlta": "2023-08-09T11:54:31.827Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81aa",
+    "usuarioDestino": "68e33be4b82c028126ef805f",
+    "mensaje": "Tu producto fue publicado",
+    "fechaAlta": "2025-07-30T16:22:29.413Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81ab",
+    "usuarioDestino": "68e33be4b82c028126ef8071",
+    "mensaje": "Tu producto fue publicado",
+    "fechaAlta": "2023-12-08T12:18:13.392Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81ac",
+    "usuarioDestino": "68e33be4b82c028126ef8099",
+    "mensaje": "Recibiste una calificación",
+    "fechaAlta": "2024-12-27T20:23:37.564Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81ad",
+    "usuarioDestino": "68e33be4b82c028126ef805f",
+    "mensaje": "Tu pedido fue entregado",
+    "fechaAlta": "2023-06-15T01:01:50.417Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81ae",
+    "usuarioDestino": "68e33be4b82c028126ef80a1",
+    "mensaje": "El pago fue acreditado",
+    "fechaAlta": "2024-09-03T10:01:34.337Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81af",
+    "usuarioDestino": "68e33be4b82c028126ef805b",
+    "mensaje": "Tienes una nueva oferta",
+    "fechaAlta": "2025-04-29T16:57:11.500Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81b0",
+    "usuarioDestino": "68e33be4b82c028126ef8060",
+    "mensaje": "Producto agregado a favoritos",
+    "fechaAlta": "2025-04-25T12:04:35.035Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81b1",
+    "usuarioDestino": "68e33be4b82c028126ef805d",
+    "mensaje": "El pago fue acreditado",
+    "fechaAlta": "2023-07-13T03:41:07.600Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81b2",
+    "usuarioDestino": "68e33be4b82c028126ef8059",
+    "mensaje": "Tu pedido fue entregado",
+    "fechaAlta": "2024-05-03T17:29:53.549Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81b3",
+    "usuarioDestino": "68e33be4b82c028126ef807b",
+    "mensaje": "El vendedor canceló el pedido",
+    "fechaAlta": "2025-08-24T23:12:04.946Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81b4",
+    "usuarioDestino": "68e33be4b82c028126ef80b6",
+    "mensaje": "Tu producto fue publicado",
+    "fechaAlta": "2024-04-20T04:13:55.399Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81b5",
+    "usuarioDestino": "68e33be4b82c028126ef8083",
+    "mensaje": "Actualización en el estado de tu pedido",
+    "fechaAlta": "2024-12-27T20:40:30.011Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81b6",
+    "usuarioDestino": "68e33be4b82c028126ef809e",
+    "mensaje": "Tu producto fue publicado",
+    "fechaAlta": "2024-03-27T10:23:07.175Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81b7",
+    "usuarioDestino": "68e33be4b82c028126ef8057",
+    "mensaje": "Tu producto fue publicado",
+    "fechaAlta": "2024-04-23T04:45:36.721Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81b8",
+    "usuarioDestino": "68e33be4b82c028126ef8093",
+    "mensaje": "Actualización en el estado de tu pedido",
+    "fechaAlta": "2023-10-22T15:31:44.626Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81b9",
+    "usuarioDestino": "68e33be4b82c028126ef80a1",
+    "mensaje": "Tienes una nueva oferta",
+    "fechaAlta": "2025-07-09T19:15:08.192Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81ba",
+    "usuarioDestino": "68e33be4b82c028126ef80a7",
+    "mensaje": "Tienes una nueva oferta",
+    "fechaAlta": "2024-01-29T22:10:40.703Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81bb",
+    "usuarioDestino": "68e33be4b82c028126ef8058",
+    "mensaje": "Recibiste una calificación",
+    "fechaAlta": "2023-02-21T02:44:20.182Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81bc",
+    "usuarioDestino": "68e33be4b82c028126ef80a2",
+    "mensaje": "Tu producto fue publicado",
+    "fechaAlta": "2024-07-21T03:34:50.289Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81bd",
+    "usuarioDestino": "68e33be4b82c028126ef8059",
+    "mensaje": "El vendedor canceló el pedido",
+    "fechaAlta": "2023-03-25T04:59:29.962Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81be",
+    "usuarioDestino": "68e33be4b82c028126ef808d",
+    "mensaje": "Producto agregado a favoritos",
+    "fechaAlta": "2023-10-23T08:36:51.117Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81bf",
+    "usuarioDestino": "68e33be4b82c028126ef806d",
+    "mensaje": "Producto agregado a favoritos",
+    "fechaAlta": "2025-09-25T19:21:24.083Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81c0",
+    "usuarioDestino": "68e33be4b82c028126ef8056",
+    "mensaje": "El producto fue enviado",
+    "fechaAlta": "2024-06-25T23:16:01.558Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81c1",
+    "usuarioDestino": "68e33be4b82c028126ef807c",
+    "mensaje": "Actualización en el estado de tu pedido",
+    "fechaAlta": "2024-09-21T18:22:42.263Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81c2",
+    "usuarioDestino": "68e33be4b82c028126ef808a",
+    "mensaje": "Tu producto fue publicado",
+    "fechaAlta": "2024-04-29T08:58:25.287Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81c3",
+    "usuarioDestino": "68e33be4b82c028126ef807b",
+    "mensaje": "Recibiste una calificación",
+    "fechaAlta": "2023-11-17T13:40:54.897Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81c4",
+    "usuarioDestino": "68e33be4b82c028126ef80a0",
+    "mensaje": "Tu pedido ha sido confirmado y está en preparación",
+    "fechaAlta": "2024-05-09T08:13:46.937Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81c5",
+    "usuarioDestino": "68e33be4b82c028126ef8090",
+    "mensaje": "Recibiste una calificación",
+    "fechaAlta": "2023-04-30T05:11:31.790Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81c6",
+    "usuarioDestino": "68e33be4b82c028126ef80af",
+    "mensaje": "Tu producto fue publicado",
+    "fechaAlta": "2024-01-28T00:29:51.143Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81c7",
+    "usuarioDestino": "68e33be4b82c028126ef80b1",
+    "mensaje": "Tu producto fue publicado",
+    "fechaAlta": "2023-04-15T12:43:35.243Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81c8",
+    "usuarioDestino": "68e33be4b82c028126ef80b1",
+    "mensaje": "Recibiste una calificación",
+    "fechaAlta": "2024-11-22T00:34:21.846Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81c9",
+    "usuarioDestino": "68e33be4b82c028126ef807d",
+    "mensaje": "El pago fue acreditado",
+    "fechaAlta": "2025-08-11T09:05:16.628Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81ca",
+    "usuarioDestino": "68e33be4b82c028126ef806a",
+    "mensaje": "El pago fue acreditado",
+    "fechaAlta": "2024-10-09T07:55:42.475Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81cb",
+    "usuarioDestino": "68e33be4b82c028126ef8067",
+    "mensaje": "El pago fue acreditado",
+    "fechaAlta": "2024-12-09T11:49:08.959Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81cc",
+    "usuarioDestino": "68e33be4b82c028126ef8070",
+    "mensaje": "Actualización en el estado de tu pedido",
+    "fechaAlta": "2023-12-15T05:06:08.660Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81cd",
+    "usuarioDestino": "68e33be4b82c028126ef805a",
+    "mensaje": "El producto fue enviado",
+    "fechaAlta": "2024-06-13T03:21:25.111Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81ce",
+    "usuarioDestino": "68e33be4b82c028126ef8069",
+    "mensaje": "Producto agregado a favoritos",
+    "fechaAlta": "2024-08-29T20:31:42.846Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81cf",
+    "usuarioDestino": "68e33be4b82c028126ef80a5",
+    "mensaje": "Tu pedido fue entregado",
+    "fechaAlta": "2023-04-30T03:48:07.594Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81d0",
+    "usuarioDestino": "68e33be4b82c028126ef8077",
+    "mensaje": "Actualización en el estado de tu pedido",
+    "fechaAlta": "2024-05-14T14:20:12.962Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81d1",
+    "usuarioDestino": "68e33be4b82c028126ef807f",
+    "mensaje": "Tienes una nueva oferta",
+    "fechaAlta": "2024-07-30T22:02:25.937Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81d2",
+    "usuarioDestino": "68e33be4b82c028126ef806c",
+    "mensaje": "Tu pedido fue entregado",
+    "fechaAlta": "2024-02-17T23:24:03.397Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81d3",
+    "usuarioDestino": "68e33be4b82c028126ef80a6",
+    "mensaje": "El vendedor canceló el pedido",
+    "fechaAlta": "2023-01-16T13:17:39.333Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81d4",
+    "usuarioDestino": "68e33be4b82c028126ef8061",
+    "mensaje": "Producto agregado a favoritos",
+    "fechaAlta": "2024-03-30T12:12:13.881Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81d5",
+    "usuarioDestino": "68e33be4b82c028126ef805b",
+    "mensaje": "Producto agregado a favoritos",
+    "fechaAlta": "2024-07-22T14:21:37.175Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81d6",
+    "usuarioDestino": "68e33be4b82c028126ef8078",
+    "mensaje": "El producto fue enviado",
+    "fechaAlta": "2023-09-27T10:39:08.069Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81d7",
+    "usuarioDestino": "68e33be4b82c028126ef8098",
+    "mensaje": "El pago fue acreditado",
+    "fechaAlta": "2025-07-13T03:55:14.837Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81d8",
+    "usuarioDestino": "68e33be4b82c028126ef8086",
+    "mensaje": "Tu pedido ha sido confirmado y está en preparación",
+    "fechaAlta": "2024-01-12T20:37:20.191Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81d9",
+    "usuarioDestino": "68e33be4b82c028126ef8098",
+    "mensaje": "Tu pedido fue entregado",
+    "fechaAlta": "2025-01-12T00:08:25.081Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81da",
+    "usuarioDestino": "68e33be4b82c028126ef8072",
+    "mensaje": "Tu pedido fue entregado",
+    "fechaAlta": "2024-11-04T11:38:16.353Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81db",
+    "usuarioDestino": "68e33be4b82c028126ef8089",
+    "mensaje": "Producto agregado a favoritos",
+    "fechaAlta": "2023-07-19T08:37:52.488Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81dc",
+    "usuarioDestino": "68e33be4b82c028126ef805a",
+    "mensaje": "Producto agregado a favoritos",
+    "fechaAlta": "2023-05-11T09:21:18.121Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81dd",
+    "usuarioDestino": "68e33be4b82c028126ef8056",
+    "mensaje": "El producto fue enviado",
+    "fechaAlta": "2024-03-21T13:40:23.871Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81de",
+    "usuarioDestino": "68e33be4b82c028126ef80ab",
+    "mensaje": "El vendedor canceló el pedido",
+    "fechaAlta": "2025-06-12T05:32:10.764Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81df",
+    "usuarioDestino": "68e33be4b82c028126ef806f",
+    "mensaje": "Actualización en el estado de tu pedido",
+    "fechaAlta": "2025-04-03T10:33:11.463Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81e0",
+    "usuarioDestino": "68e33be4b82c028126ef8065",
+    "mensaje": "Actualización en el estado de tu pedido",
+    "fechaAlta": "2025-05-23T10:37:41.853Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81e1",
+    "usuarioDestino": "68e33be4b82c028126ef80ae",
+    "mensaje": "El pago fue acreditado",
+    "fechaAlta": "2023-04-14T00:22:08.107Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81e2",
+    "usuarioDestino": "68e33be4b82c028126ef80a5",
+    "mensaje": "Recibiste una calificación",
+    "fechaAlta": "2024-02-16T21:30:40.710Z",
+    "leida": true
+  },
+  {
+    "_id": "68e33be4b82c028126ef81e3",
+    "usuarioDestino": "68e33be4b82c028126ef80b4",
+    "mensaje": "Actualización en el estado de tu pedido",
+    "fechaAlta": "2024-09-17T23:51:44.078Z",
+    "leida": false
+  },
+  {
+    "_id": "68e33be4b82c028126ef81e4",
+    "usuarioDestino": "68e33be4b82c028126ef8075",
+    "mensaje": "Actualización en el estado de tu pedido",
+    "fechaAlta": "2025-08-03T23:48:50.744Z",
+    "leida": true
+  }
+]

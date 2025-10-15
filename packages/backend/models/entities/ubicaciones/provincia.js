@@ -1,3 +1,5 @@
+import { isString } from "../../../validadores/validadorTiposNativos.js";
+
 class Provincia {
   nombre;
   pais;

@@ -1,0 +1,802 @@
+[
+  {
+    "_id": "68e33be4b82c028126ef8055",
+    "nombre": "Valentina Díaz",
+    "email": "valentina.díaz71@example.com",
+    "telefono": "+54 11 2509-7445",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-07-24T16:41:37.399Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8056",
+    "nombre": "Catalina Ponce",
+    "email": "catalina.ponce19@example.com",
+    "telefono": "+54 11 3153-4029",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-08-02T15:50:30.390Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8057",
+    "nombre": "Mía Herrera",
+    "email": "mía.herrera17@example.com",
+    "telefono": "+54 11 4167-5943",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-12-17T00:48:00.932Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8058",
+    "nombre": "Malena Cabrera",
+    "email": "malena.cabrera28@example.com",
+    "telefono": "+54 11 3621-5491",
+    "tipo": "ADMIN",
+    "fechaAlta": "2025-05-13T22:49:27.749Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8059",
+    "nombre": "Emma Ríos",
+    "email": "emma.ríos67@example.com",
+    "telefono": "+54 11 6935-5109",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2024-03-03T12:26:30.100Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef805a",
+    "nombre": "Tomás Giménez",
+    "email": "tomás.giménez5@example.com",
+    "telefono": "+54 11 3981-9968",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2025-03-19T07:41:03.490Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef805b",
+    "nombre": "Federico García",
+    "email": "federico.garcía99@example.com",
+    "telefono": "+54 11 6241-5216",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-02-11T23:43:53.843Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef805c",
+    "nombre": "Agustín Fernández",
+    "email": "agustín.fernández31@example.com",
+    "telefono": "+54 11 7892-2644",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2025-04-07T23:17:42.136Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef805d",
+    "nombre": "Emma Ríos",
+    "email": "emma.ríos3@example.com",
+    "telefono": "+54 11 9882-8098",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2025-07-12T21:30:45.886Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef805e",
+    "nombre": "Lucía Pérez",
+    "email": "lucía.pérez40@example.com",
+    "telefono": "+54 11 8227-2821",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2024-05-20T06:30:13.528Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef805f",
+    "nombre": "Agustín Fernández",
+    "email": "agustín.fernández22@example.com",
+    "telefono": "+54 11 8190-5351",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-09-20T03:00:44.334Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8060",
+    "nombre": "Tomás Giménez",
+    "email": "tomás.giménez52@example.com",
+    "telefono": "+54 11 3995-2872",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-12-08T06:22:17.164Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8061",
+    "nombre": "Juan Chapero",
+    "email": "juan.chapero49@example.com",
+    "telefono": "+54 11 7119-6139",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2024-11-30T04:34:10.646Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8062",
+    "nombre": "Emma Ríos",
+    "email": "emma.ríos24@example.com",
+    "telefono": "+54 11 4237-7660",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-06-29T19:14:23.993Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8063",
+    "nombre": "Benjamín Molina",
+    "email": "benjamín.molina41@example.com",
+    "telefono": "+54 11 5263-2812",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-01-04T02:25:40.419Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8064",
+    "nombre": "Agustín Fernández",
+    "email": "agustín.fernández16@example.com",
+    "telefono": "+54 11 6316-1679",
+    "tipo": "ADMIN",
+    "fechaAlta": "2025-04-04T09:29:19.596Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8065",
+    "nombre": "Valentina Díaz",
+    "email": "valentina.díaz91@example.com",
+    "telefono": "+54 11 2406-3689",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-12-12T14:27:39.010Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8066",
+    "nombre": "Martín López",
+    "email": "martín.lópez31@example.com",
+    "telefono": "+54 11 7487-5743",
+    "tipo": "ADMIN",
+    "fechaAlta": "2025-03-21T06:41:57.712Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8067",
+    "nombre": "Malena Cabrera",
+    "email": "malena.cabrera48@example.com",
+    "telefono": "+54 11 5068-8242",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-10-11T22:02:34.960Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8068",
+    "nombre": "Lautaro Aguirre",
+    "email": "lautaro.aguirre51@example.com",
+    "telefono": "+54 11 6133-3455",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-01-27T00:00:28.010Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8069",
+    "nombre": "Catalina Ponce 20",
+    "email": "catalina.ponce.2037@example.com",
+    "telefono": "+54 11 9017-7278",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-11-18T02:02:00.157Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef806a",
+    "nombre": "Federico García 21",
+    "email": "federico.garcía.2164@example.com",
+    "telefono": "+54 11 6302-6814",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2024-11-07T16:41:16.864Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef806b",
+    "nombre": "Malena Cabrera 22",
+    "email": "malena.cabrera.2282@example.com",
+    "telefono": "+54 11 4559-4072",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2023-01-21T13:48:17.939Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef806c",
+    "nombre": "Juan Chapero 23",
+    "email": "juan.chapero.232@example.com",
+    "telefono": "+54 11 4779-3739",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-12-14T07:47:54.592Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef806d",
+    "nombre": "Lautaro Aguirre 24",
+    "email": "lautaro.aguirre.2449@example.com",
+    "telefono": "+54 11 7963-2038",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-08-27T10:35:44.698Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef806e",
+    "nombre": "Juan Cruz 25",
+    "email": "juan.cruz.2521@example.com",
+    "telefono": "+54 11 9908-2056",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-05-19T23:26:13.310Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef806f",
+    "nombre": "Santiago Vera 26",
+    "email": "santiago.vera.2634@example.com",
+    "telefono": "+54 11 6399-3236",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2023-01-26T04:57:56.893Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8070",
+    "nombre": "Camila Romero 27",
+    "email": "camila.romero.2778@example.com",
+    "telefono": "+54 11 2620-2975",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2024-08-19T10:51:44.791Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8071",
+    "nombre": "Agustín Fernández 28",
+    "email": "agustín.fernández.2823@example.com",
+    "telefono": "+54 11 7346-3712",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2025-03-20T03:21:51.893Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8072",
+    "nombre": "Benjamín Molina 29",
+    "email": "benjamín.molina.2984@example.com",
+    "telefono": "+54 11 4869-6658",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2025-05-05T19:26:33.990Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8073",
+    "nombre": "Franco Navarro 30",
+    "email": "franco.navarro.3030@example.com",
+    "telefono": "+54 11 2561-7780",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2023-01-29T19:17:52.579Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8074",
+    "nombre": "Mateo Sosa 31",
+    "email": "mateo.sosa.313@example.com",
+    "telefono": "+54 11 3564-6182",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2025-05-20T07:24:39.247Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8075",
+    "nombre": "Nicolás Barlasina 32",
+    "email": "nicolás.barlasina.3223@example.com",
+    "telefono": "+54 11 2806-8076",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2025-07-01T06:18:16.613Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8076",
+    "nombre": "Renata Medina 33",
+    "email": "renata.medina.3390@example.com",
+    "telefono": "+54 11 6531-6039",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-01-12T04:10:45.395Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8077",
+    "nombre": "Benjamín Molina 34",
+    "email": "benjamín.molina.3479@example.com",
+    "telefono": "+54 11 7172-8319",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2024-08-25T03:44:16.868Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8078",
+    "nombre": "Benjamín Molina 35",
+    "email": "benjamín.molina.3525@example.com",
+    "telefono": "+54 11 9125-5757",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2023-10-23T00:17:58.495Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8079",
+    "nombre": "Julieta Castro 36",
+    "email": "julieta.castro.3610@example.com",
+    "telefono": "+54 11 7326-1268",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-06-11T08:11:17.382Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef807a",
+    "nombre": "Mía Herrera 37",
+    "email": "mía.herrera.3798@example.com",
+    "telefono": "+54 11 3815-6798",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2025-05-01T19:29:22.200Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef807b",
+    "nombre": "Franco Navarro 38",
+    "email": "franco.navarro.3867@example.com",
+    "telefono": "+54 11 7908-9369",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2023-05-17T22:29:11.136Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef807c",
+    "nombre": "Agustín Fernández 39",
+    "email": "agustín.fernández.3937@example.com",
+    "telefono": "+54 11 9887-2205",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-01-01T05:03:11.333Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef807d",
+    "nombre": "Federico García 40",
+    "email": "federico.garcía.4027@example.com",
+    "telefono": "+54 11 8552-5777",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2023-09-12T11:57:12.398Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef807e",
+    "nombre": "Emma Ríos 41",
+    "email": "emma.ríos.4173@example.com",
+    "telefono": "+54 11 8343-7691",
+    "tipo": "ADMIN",
+    "fechaAlta": "2024-11-04T14:04:09.327Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef807f",
+    "nombre": "Benjamín Molina 42",
+    "email": "benjamín.molina.4232@example.com",
+    "telefono": "+54 11 8307-6962",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-07-27T09:57:43.839Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8080",
+    "nombre": "Martín López 43",
+    "email": "martín.lópez.4331@example.com",
+    "telefono": "+54 11 7432-5778",
+    "tipo": "ADMIN",
+    "fechaAlta": "2024-09-14T20:12:54.193Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8081",
+    "nombre": "Lautaro Aguirre 44",
+    "email": "lautaro.aguirre.4467@example.com",
+    "telefono": "+54 11 6468-9168",
+    "tipo": "ADMIN",
+    "fechaAlta": "2024-06-02T05:00:59.196Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8082",
+    "nombre": "Emma Ríos 45",
+    "email": "emma.ríos.4523@example.com",
+    "telefono": "+54 11 8527-8961",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2025-05-04T21:21:37.798Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8083",
+    "nombre": "Catalina Ponce 46",
+    "email": "catalina.ponce.4668@example.com",
+    "telefono": "+54 11 8174-2379",
+    "tipo": "ADMIN",
+    "fechaAlta": "2024-06-18T22:55:49.534Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8084",
+    "nombre": "Mateo Sosa 47",
+    "email": "mateo.sosa.471@example.com",
+    "telefono": "+54 11 5596-7711",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-08-25T09:26:00.176Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8085",
+    "nombre": "Agustín Fernández 48",
+    "email": "agustín.fernández.4892@example.com",
+    "telefono": "+54 11 7389-2187",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-04-11T08:11:06.615Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8086",
+    "nombre": "Benjamín Molina 49",
+    "email": "benjamín.molina.4964@example.com",
+    "telefono": "+54 11 3953-9382",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2025-03-06T00:20:52.280Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8087",
+    "nombre": "Renata Medina 50",
+    "email": "renata.medina.5055@example.com",
+    "telefono": "+54 11 7915-3865",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-02-26T10:10:39.431Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8088",
+    "nombre": "Federico García 51",
+    "email": "federico.garcía.5158@example.com",
+    "telefono": "+54 11 4777-1886",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-12-22T06:46:32.700Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8089",
+    "nombre": "Lautaro Aguirre 52",
+    "email": "lautaro.aguirre.5287@example.com",
+    "telefono": "+54 11 7218-4401",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-09-13T14:40:21.591Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef808a",
+    "nombre": "Agustín Fernández 53",
+    "email": "agustín.fernández.5333@example.com",
+    "telefono": "+54 11 7759-8513",
+    "tipo": "ADMIN",
+    "fechaAlta": "2025-01-03T02:11:47.529Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef808b",
+    "nombre": "Martín López 54",
+    "email": "martín.lópez.5419@example.com",
+    "telefono": "+54 11 5328-4955",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-04-27T23:56:11.651Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef808c",
+    "nombre": "Camila Romero 55",
+    "email": "camila.romero.5535@example.com",
+    "telefono": "+54 11 2601-7270",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-04-30T18:00:21.429Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef808d",
+    "nombre": "Camila Romero 56",
+    "email": "camila.romero.5667@example.com",
+    "telefono": "+54 11 9170-2810",
+    "tipo": "ADMIN",
+    "fechaAlta": "2025-09-11T03:01:01.542Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef808e",
+    "nombre": "Benjamín Molina 57",
+    "email": "benjamín.molina.5716@example.com",
+    "telefono": "+54 11 6013-5552",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-01-16T00:37:40.868Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef808f",
+    "nombre": "Valentina Díaz 58",
+    "email": "valentina.díaz.5848@example.com",
+    "telefono": "+54 11 4648-4029",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2024-07-15T06:05:53.451Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8090",
+    "nombre": "Juan Chapero 59",
+    "email": "juan.chapero.5935@example.com",
+    "telefono": "+54 11 8702-1659",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-07-21T17:21:16.465Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8091",
+    "nombre": "Franco Navarro 60",
+    "email": "franco.navarro.6087@example.com",
+    "telefono": "+54 11 6467-4922",
+    "tipo": "ADMIN",
+    "fechaAlta": "2025-01-18T08:43:03.413Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8092",
+    "nombre": "Juan Cruz 61",
+    "email": "juan.cruz.6123@example.com",
+    "telefono": "+54 11 4185-6651",
+    "tipo": "ADMIN",
+    "fechaAlta": "2025-09-12T11:21:30.451Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8093",
+    "nombre": "Lautaro Aguirre 62",
+    "email": "lautaro.aguirre.6276@example.com",
+    "telefono": "+54 11 3653-2180",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2025-01-20T08:13:50.011Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8094",
+    "nombre": "Santiago Vera 63",
+    "email": "santiago.vera.6362@example.com",
+    "telefono": "+54 11 5696-8065",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-09-26T23:14:44.169Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8095",
+    "nombre": "Franco Navarro 64",
+    "email": "franco.navarro.6423@example.com",
+    "telefono": "+54 11 6339-1276",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-09-26T11:28:43.321Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8096",
+    "nombre": "Franco Navarro 65",
+    "email": "franco.navarro.6595@example.com",
+    "telefono": "+54 11 6577-2878",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-11-10T21:27:01.381Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8097",
+    "nombre": "Mía Herrera 66",
+    "email": "mía.herrera.6658@example.com",
+    "telefono": "+54 11 3905-8751",
+    "tipo": "ADMIN",
+    "fechaAlta": "2024-03-27T09:11:46.627Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8098",
+    "nombre": "Malena Cabrera 67",
+    "email": "malena.cabrera.6795@example.com",
+    "telefono": "+54 11 2175-4195",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-02-17T18:23:16.695Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef8099",
+    "nombre": "Martín López 68",
+    "email": "martín.lópez.687@example.com",
+    "telefono": "+54 11 4069-1381",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-06-22T00:59:28.130Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef809a",
+    "nombre": "Juan Chapero 69",
+    "email": "juan.chapero.692@example.com",
+    "telefono": "+54 11 8322-3321",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2025-03-01T13:14:12.731Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef809b",
+    "nombre": "Benjamín Molina 70",
+    "email": "benjamín.molina.7013@example.com",
+    "telefono": "+54 11 2767-7867",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2023-03-27T19:29:17.197Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef809c",
+    "nombre": "Tomás Giménez 71",
+    "email": "tomás.giménez.7130@example.com",
+    "telefono": "+54 11 8367-9713",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-09-27T04:50:01.087Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef809d",
+    "nombre": "Julieta Castro 72",
+    "email": "julieta.castro.7244@example.com",
+    "telefono": "+54 11 5851-1733",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2025-01-26T14:12:23.798Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef809e",
+    "nombre": "Santiago Vera 73",
+    "email": "santiago.vera.7354@example.com",
+    "telefono": "+54 11 4642-3301",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2023-06-29T11:20:54.226Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef809f",
+    "nombre": "Santiago Vera 74",
+    "email": "santiago.vera.7456@example.com",
+    "telefono": "+54 11 2562-1004",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-05-23T19:02:19.151Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80a0",
+    "nombre": "Catalina Ponce 75",
+    "email": "catalina.ponce.7559@example.com",
+    "telefono": "+54 11 8197-3245",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-09-17T06:55:38.090Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80a1",
+    "nombre": "Camila Romero 76",
+    "email": "camila.romero.7643@example.com",
+    "telefono": "+54 11 3354-1046",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-12-12T16:27:24.553Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80a2",
+    "nombre": "Martín López 77",
+    "email": "martín.lópez.7762@example.com",
+    "telefono": "+54 11 3537-1629",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-08-02T15:55:42.431Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80a3",
+    "nombre": "Juan Cruz 78",
+    "email": "juan.cruz.7877@example.com",
+    "telefono": "+54 11 8778-7149",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2023-11-12T03:36:06.265Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80a4",
+    "nombre": "Juan Chapero 79",
+    "email": "juan.chapero.7934@example.com",
+    "telefono": "+54 11 2556-5532",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2025-08-09T15:19:26.082Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80a5",
+    "nombre": "Martín López 80",
+    "email": "martín.lópez.8050@example.com",
+    "telefono": "+54 11 2038-5975",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-10-24T03:59:37.843Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80a6",
+    "nombre": "Camila Romero 81",
+    "email": "camila.romero.8141@example.com",
+    "telefono": "+54 11 8201-7790",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-10-21T05:52:49.286Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80a7",
+    "nombre": "Emma Ríos 82",
+    "email": "emma.ríos.8244@example.com",
+    "telefono": "+54 11 9634-3590",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2023-08-25T23:55:58.106Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80a8",
+    "nombre": "Nicolás Barlasina 83",
+    "email": "nicolás.barlasina.834@example.com",
+    "telefono": "+54 11 8109-1413",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-09-14T09:48:45.232Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80a9",
+    "nombre": "Malena Cabrera 84",
+    "email": "malena.cabrera.8443@example.com",
+    "telefono": "+54 11 6764-4139",
+    "tipo": "ADMIN",
+    "fechaAlta": "2024-10-10T05:26:07.683Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80aa",
+    "nombre": "Lucía Pérez 85",
+    "email": "lucía.pérez.8594@example.com",
+    "telefono": "+54 11 6849-9615",
+    "tipo": "ADMIN",
+    "fechaAlta": "2025-02-03T03:15:22.027Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80ab",
+    "nombre": "Juan Chapero 86",
+    "email": "juan.chapero.8682@example.com",
+    "telefono": "+54 11 4096-2019",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-11-23T10:37:33.931Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80ac",
+    "nombre": "Julieta Castro 87",
+    "email": "julieta.castro.8737@example.com",
+    "telefono": "+54 11 9456-7983",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-04-27T05:17:45.277Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80ad",
+    "nombre": "Martín López 88",
+    "email": "martín.lópez.8851@example.com",
+    "telefono": "+54 11 4486-5654",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-11-11T11:29:17.110Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80ae",
+    "nombre": "Sofía Torres 89",
+    "email": "sofía.torres.8972@example.com",
+    "telefono": "+54 11 5198-1180",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2024-12-29T01:18:43.017Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80af",
+    "nombre": "Lucía Pérez 90",
+    "email": "lucía.pérez.9082@example.com",
+    "telefono": "+54 11 5983-6443",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-04-28T17:28:29.975Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80b0",
+    "nombre": "Camila Romero 91",
+    "email": "camila.romero.911@example.com",
+    "telefono": "+54 11 8642-2778",
+    "tipo": "VENDEDOR",
+    "fechaAlta": "2023-05-25T20:56:02.271Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80b1",
+    "nombre": "Julieta Castro 92",
+    "email": "julieta.castro.9293@example.com",
+    "telefono": "+54 11 9307-1099",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-02-14T02:21:09.785Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80b2",
+    "nombre": "Agustín Fernández 93",
+    "email": "agustín.fernández.9395@example.com",
+    "telefono": "+54 11 9076-5215",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2024-09-12T18:24:42.252Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80b3",
+    "nombre": "Benjamín Molina 94",
+    "email": "benjamín.molina.9427@example.com",
+    "telefono": "+54 11 7227-9774",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-03-23T20:56:19.810Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80b4",
+    "nombre": "Lautaro Aguirre 95",
+    "email": "lautaro.aguirre.9547@example.com",
+    "telefono": "+54 11 9902-6602",
+    "tipo": "COMPRADOR",
+    "fechaAlta": "2025-06-03T15:11:59.718Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80b5",
+    "nombre": "Martín López 96",
+    "email": "martín.lópez.9643@example.com",
+    "telefono": "+54 11 6892-2371",
+    "tipo": "ADMIN",
+    "fechaAlta": "2024-02-02T02:44:58.218Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80b6",
+    "nombre": "Mateo Sosa 97",
+    "email": "mateo.sosa.9777@example.com",
+    "telefono": "+54 11 6532-1108",
+    "tipo": "ADMIN",
+    "fechaAlta": "2025-01-10T04:33:47.088Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80b7",
+    "nombre": "Sofía Torres 98",
+    "email": "sofía.torres.987@example.com",
+    "telefono": "+54 11 9080-1794",
+    "tipo": "ADMIN",
+    "fechaAlta": "2025-07-26T15:44:00.507Z"
+  },
+  {
+    "_id": "68e33be4b82c028126ef80b8",
+    "nombre": "Camila Romero 99",
+    "email": "camila.romero.9936@example.com",
+    "telefono": "+54 11 6379-9917",
+    "tipo": "ADMIN",
+    "fechaAlta": "2023-09-19T04:47:12.885Z"
+  }
+]
