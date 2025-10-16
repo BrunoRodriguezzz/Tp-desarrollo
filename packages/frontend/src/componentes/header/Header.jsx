@@ -6,7 +6,7 @@ import { LuShoppingCart } from "react-icons/lu";
 
 export default function Header() {
   return (
-    <section className="header">
+    <header>
       <div className="brand-logo">
         <PiSunDim size={40} />
         <p>Tienda Sol</p>
@@ -34,6 +34,6 @@ export default function Header() {
         </button>
         <button className="button-white">Iniciar Sesión</button>
       </div>
-    </section>
+    </header>
   );
 }
