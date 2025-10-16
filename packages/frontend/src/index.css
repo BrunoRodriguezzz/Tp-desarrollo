@@ -17,3 +17,101 @@ code {
   font-family:
     source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+.button-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray-3);
+  border: none;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+}
+
+.button-social:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  transform: translateY(-2.5px);
+}
+
+.button-transparent {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: medium;
+}
+
+.button-transparent:hover {
+  color: var(--gray-2);
+}
+
+.button-white-border {
+  cursor: pointer;
+  background: white;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.button-white-border:hover {
+  background: var(--gray-3);
+}
+
+.button-gray {
+  cursor: pointer;
+  background: var(--gray-3);
+  border: 1px solid var(--gray-1);
+  font-weight: 400;
+  font-size: large;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.button-gray:hover {
+  border: 1px solid black;
+}
+
+.button-white {
+  cursor: pointer;
+  background: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.button-white:hover {
+  background: var(--gray-1);
+}
+
+.button-transparent-border {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: medium;
+  transition: all 0.2s;
+}
+
+.button-transparent-border:hover {
+  background-color: rgba(100%, 100%, 100%, 0.1);
+}

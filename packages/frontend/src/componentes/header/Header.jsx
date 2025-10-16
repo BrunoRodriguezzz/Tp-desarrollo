@@ -32,7 +32,7 @@ export default function Header() {
           <LuShoppingCart />
           Carrito
         </button>
-        <button className="button-white">Iniciar Sesión</button>
+        <button className="button-white-border">Iniciar Sesión</button>
       </div>
     </header>
   );

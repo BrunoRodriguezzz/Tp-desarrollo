@@ -40,26 +40,6 @@ footer {
   gap: 1rem;
 }
 
-.button-social {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--gray-3);
-  border: none;
-  height: 2.5rem;
-  width: 2.5rem;
-  border-radius: 8px;
-  font-size: 1.5rem;
-  transition: all 0.3s;
-}
-
-.button-social:hover {
-  cursor: pointer;
-  background-color: black;
-  color: white;
-  transform: translateY(-2.5px);
-}
-
 .footer-list {
   display: flex;
   flex-direction: column;

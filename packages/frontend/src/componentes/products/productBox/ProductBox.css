@@ -1,0 +1,8 @@
+.product-box {
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin: 16px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #fff;
+}
