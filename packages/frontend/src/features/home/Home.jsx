@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import ProductBox from "../../componentes/products/productBox/ProductBox";
+import ProductList from "../../componentes/products/productList/ProductList";
 
 export default function Home() {
   return (
@@ -21,16 +21,21 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="list-title">
+        <h1>Productos Destacados</h1>
+        <p>Ver todos →</p>
+      </div>
+
       <section className="products-list">
-        <ProductBox
-          name="Producto 1"
-          price="100"
-          image="https://via.placeholder.com/150"
-        />
+        <ProductList />
       </section>
 
-      <section className="pagination">
-        <h1>paginacion</h1>
+      <section className="category-list">
+        <h2>Explora por Categoría</h2>
+      </section>
+
+      <section className="why-tienda-sol">
+        <h2>¿Por qué elegir Tienda Sol?</h2>
       </section>
     </>
   );

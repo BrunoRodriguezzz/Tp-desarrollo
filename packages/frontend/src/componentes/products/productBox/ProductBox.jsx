@@ -1,13 +1,27 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./ProductBox.css";
 
-export default function ProductBox(producto) {
+export default function ProductBox({ producto }) {
   return (
     <div className="product-box">
-      <img src={producto.image} alt={producto.name} className="product-image" />
-      <h2 className="product-name">{producto.name}</h2>
-      <p className="product-price">${producto.price}</p>
+      <img
+        src={producto.fotos[0]}
+        alt={producto.titulo}
+        className="product-image"
+      />
+      <h2 className="product-name">{producto.titulo}</h2>
+      <p className="product-price">${producto.precio}</p>
       <button className="add-to-cart-button">Agregar al Carrito</button>
     </div>
   );
 }
+
+// Ni idea, sin esto no funcionaba
+ProductBox.propTypes = {
+  producto: PropTypes.shape({
+    fotos: PropTypes.array.isRequired,
+    titulo: PropTypes.string.isRequired,
+    precio: PropTypes.number.isRequired,
+  }).isRequired,
+};

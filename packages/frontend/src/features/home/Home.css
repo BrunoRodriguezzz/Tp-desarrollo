@@ -27,3 +27,21 @@
   margin-top: 1.5rem;
   gap: 1rem;
 }
+
+.list-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  margin: 2rem auto 0 auto;
+  padding: 0 1rem;
+}
+
+.list-title p {
+  transition: all 0.1s;
+}
+
+.list-title p:hover {
+  cursor: pointer;
+  font-weight: bold;
+}

@@ -115,3 +115,33 @@ code {
 .button-transparent-border:hover {
   background-color: rgba(100%, 100%, 100%, 0.1);
 }
+
+.button-transparent-border-black {
+  background: transparent;
+  color: black;
+  border: 1px solid var(--gray-1);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: medium;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.button-transparent-border-black:hover {
+  color: white;
+  background: black;
+}
+
+.button-transparent-border-black:disabled {
+  opacity: 0.5;
+}
+
+.button-transparent-border-black:disabled:hover {
+  cursor: not-allowed;
+  background: transparent;
+  color: black;
+}
