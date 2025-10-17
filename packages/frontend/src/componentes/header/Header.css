@@ -2,7 +2,7 @@ header {
   position: fixed;
   box-sizing: border-box;
   width: 100%;
-  z-index: 100;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -55,7 +55,15 @@ header {
   gap: 1rem;
 }
 
-.menu-button {
+.open-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.close-menu-button {
   display: none;
   background: none;
   border: none;
@@ -68,7 +76,8 @@ header {
     display: none;
   }
 
-  .menu-button {
+  .open-menu-button,
+  .close-menu-button {
     display: block;
   }
 }
