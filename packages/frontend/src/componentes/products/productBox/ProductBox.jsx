@@ -14,10 +14,10 @@ export default function ProductBox({ producto }) {
         <div className="product-text">
           <p className="product-category">{producto.categorias[0]}</p>
           <h2 className="product-name">{producto.titulo}</h2>
-          <p className="product-price">${producto.precio}</p>
         </div>
 
         <div className="button-wrapper">
+          <p className="product-price">${producto.precio}</p>
           <button className="add-to-cart-button">Agregar al Carrito</button>
         </div>
       </div>
