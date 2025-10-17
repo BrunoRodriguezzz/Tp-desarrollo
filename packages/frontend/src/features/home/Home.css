@@ -1,6 +1,6 @@
 .home-banner {
   background: linear-gradient(135deg, #232526 30%, #414345 70%);
-  height: 20rem;
+  min-height: 20rem;
   color: white;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,8 @@
 
 .banner-buttons {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   margin-top: 1.5rem;
   gap: 1rem;
 }
