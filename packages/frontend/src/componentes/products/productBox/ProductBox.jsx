@@ -10,9 +10,17 @@ export default function ProductBox({ producto }) {
         alt={producto.titulo}
         className="product-image"
       />
-      <h2 className="product-name">{producto.titulo}</h2>
-      <p className="product-price">${producto.precio}</p>
-      <button className="add-to-cart-button">Agregar al Carrito</button>
+      <div className="product-content">
+        <div className="product-text">
+          <p className="product-category">{producto.categorias[0]}</p>
+          <h2 className="product-name">{producto.titulo}</h2>
+          <p className="product-price">${producto.precio}</p>
+        </div>
+
+        <div className="button-wrapper">
+          <button className="add-to-cart-button">Agregar al Carrito</button>
+        </div>
+      </div>
     </div>
   );
 }

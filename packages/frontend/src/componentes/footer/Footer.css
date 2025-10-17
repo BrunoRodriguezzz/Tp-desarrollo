@@ -4,17 +4,18 @@ footer {
 
 .footer-main {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 2rem;
-  margin: 0 20rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem 1rem;
+  margin: 0 auto;
   border-bottom: 1px solid var(--gray-1);
 }
 
 .footer-options {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
-  gap: 4em;
+  gap: 20px;
 }
 
 .tienda-sol-contact {
