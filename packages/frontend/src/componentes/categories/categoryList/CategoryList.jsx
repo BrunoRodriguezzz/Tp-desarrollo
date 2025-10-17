@@ -1,23 +1,23 @@
 import React, { useState } from "react";
-import "./ProductList.css";
-import ProductBox from "../productBox/ProductBox";
-import productsMock from "../../../mockData/Products.js";
+import "./CategoryList.css";
+import CategoryBox from "../categoryBox/CategoryBox";
+import categoriesMock from "../../../mockData/Categories";
 import Pagination from "../../pagination/Pagination.jsx";
 import PropTypes from "prop-types";
 
-export default function ProductList({ limit = 12, pagination = true }) {
+export default function CategoryList({ limit = 6, pagination = true }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(productsMock.length / limit);
+  const totalPages = Math.ceil(categoriesMock.length / limit);
 
   const startIdx = (currentPage - 1) * limit;
   const endIdx = startIdx + limit;
-  const productsToShow = productsMock.slice(startIdx, endIdx);
+  const categoriesToShow = categoriesMock.slice(startIdx, endIdx);
 
   return (
     <div>
-      <div className="product-list">
-        {productsToShow.map((product) => (
-          <ProductBox key={product._id} producto={product} />
+      <div className="category-list">
+        {categoriesToShow.map((category, index) => (
+          <CategoryBox key={index} category={category} />
         ))}
       </div>
 
@@ -32,7 +32,7 @@ export default function ProductList({ limit = 12, pagination = true }) {
   );
 }
 
-ProductList.propTypes = {
+CategoryList.propTypes = {
   limit: PropTypes.number.isRequired,
   pagination: PropTypes.bool,
 };

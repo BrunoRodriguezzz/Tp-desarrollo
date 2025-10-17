@@ -3,6 +3,7 @@ import "./Header.css";
 import { PiSunDim } from "react-icons/pi";
 import { FaSearch } from "react-icons/fa";
 import { LuShoppingCart } from "react-icons/lu";
+import { IoMenu } from "react-icons/io5";
 
 export default function Header() {
   return (
@@ -34,6 +35,10 @@ export default function Header() {
         </button>
         <button className="button-white-border">Iniciar Sesión</button>
       </div>
+
+      <button className="menu-button">
+        <IoMenu />
+      </button>
     </header>
   );
 }

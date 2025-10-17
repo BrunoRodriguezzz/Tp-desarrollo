@@ -1,14 +1,14 @@
-.product-list {
+.category-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   list-style: none;
   padding: 0 20px;
   margin: 0 auto;
   gap: 20px;
 }
 
-@media (max-width: 800px) {
-  .product-list {
+@media (max-width: 620px) {
+  .category-list {
     display: flex;
     flex-direction: column;
     align-items: center;

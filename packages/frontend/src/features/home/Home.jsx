@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import ProductList from "../../componentes/products/productList/ProductList";
+import CategoryList from "../../componentes/categories/categoryList/CategoryList";
 
 export default function Home() {
   return (
@@ -27,11 +28,16 @@ export default function Home() {
       </div>
 
       <section className="products-list">
-        <ProductList />
+        <ProductList limit={12} />
       </section>
 
-      <section className="category-list">
-        <h2>Explora por Categoría</h2>
+      <div className="list-title">
+        <h1>Categorias Destacadas</h1>
+        <p>Ver todas →</p>
+      </div>
+
+      <section className="categories-list">
+        <CategoryList limit={6} pagination={false} />
       </section>
 
       <section className="why-tienda-sol">

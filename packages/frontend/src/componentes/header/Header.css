@@ -1,5 +1,6 @@
 header {
   position: fixed;
+  box-sizing: border-box;
   width: 100%;
   z-index: 100;
   display: flex;
@@ -52,4 +53,33 @@ header {
   justify-content: space-around;
   align-items: center;
   gap: 1rem;
+}
+
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 1300px) {
+  .header-buttons {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+}
+
+@media (max-width: 900px) {
+  .search-bar {
+    display: none;
+  }
+
+  header {
+    justify-content: space-between;
+    padding: 10px 2rem 10px 1rem;
+  }
 }
