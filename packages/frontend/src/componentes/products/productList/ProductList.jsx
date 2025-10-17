@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./ProductList.css";
 import ProductBox from "../../products/productBox/ProductBox";
 import productsMock from "../../../mockData/Products.js";
+import Pagination from "../../pagination/Pagination.jsx";
 
 const PRODUCTS_PER_PAGE = 9;
 
@@ -21,25 +22,11 @@ export default function ProductList() {
         ))}
       </div>
 
-      <div className="pagination">
-        <button
-          className="button-transparent-border-black"
-          onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
-          disabled={currentPage === 1}
-        >
-          Anterior
-        </button>
-        <span>
-          Página {currentPage} de {totalPages}
-        </span>
-        <button
-          className="button-transparent-border-black"
-          onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
-          disabled={currentPage === totalPages}
-        >
-          Siguiente
-        </button>
-      </div>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={(p) => setCurrentPage(p)}
+      />
     </div>
   );
 }

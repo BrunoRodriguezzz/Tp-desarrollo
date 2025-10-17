@@ -45,3 +45,7 @@
   cursor: pointer;
   font-weight: bold;
 }
+
+.products-list {
+  padding: 0 10rem;
+}
