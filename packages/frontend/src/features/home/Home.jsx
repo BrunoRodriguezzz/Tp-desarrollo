@@ -27,7 +27,7 @@ export default function Home() {
       </div>
 
       <section className="products-list">
-        <ProductList />
+        <ProductList columns={4} />
       </section>
 
       <section className="category-list">
