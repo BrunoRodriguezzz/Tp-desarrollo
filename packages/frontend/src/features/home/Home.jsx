@@ -36,6 +36,51 @@ export default function Home() {
 
       <section className="why-tienda-sol">
         <h2>¿Por qué elegir Tienda Sol?</h2>
+
+        <div className="why-container">
+          <div className="why-box">
+            <span>🚚</span>
+
+            <h3>Envío Rápido</h3>
+
+            <p>
+              Recibe tus productos en tiempo récord con nuestro servicio de
+              envío express.
+            </p>
+          </div>
+
+          <div className="why-box">
+            <span>🔒</span>
+
+            <h3>Compra Segura</h3>
+
+            <p>
+              Protección del comprador y pagos seguros en todas tus
+              transacciones.
+            </p>
+          </div>
+
+          <div className="why-box">
+            <span>💎</span>
+
+            <h3>Calidad Garantizada</h3>
+
+            <p>
+              Productos verificados y vendedores confiables para tu
+              tranquilidad.
+            </p>
+          </div>
+
+          <div className="why-box">
+            <span>💬</span>
+
+            <h3>Soporte 24/7</h3>
+
+            <p>
+              Nuestro equipo está disponible para ayudarte en cualquier momento.
+            </p>
+          </div>
+        </div>
       </section>
     </>
   );
