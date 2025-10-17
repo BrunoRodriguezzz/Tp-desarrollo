@@ -68,6 +68,8 @@
 .product-box .button-wrapper {
   margin-top: auto;
   display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
