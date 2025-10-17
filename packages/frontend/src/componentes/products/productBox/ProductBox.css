@@ -1,10 +1,19 @@
 .product-box {
   border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
   padding: 16px;
   margin: 16px;
-  text-align: center;
   border-radius: 8px;
   background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.product-box:hover {
+  border-color: rgba(71, 133, 215, 0.7);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  background-color: rgba(229, 234, 240, 0.848)
 }
 
 .product-image {
@@ -12,4 +21,72 @@
   height: auto;
   object-fit: cover;
   border: 1px solid #eee;
+}
+
+.product-box .product-content {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px
+}
+
+.product-box .product-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.product-box .product-category {
+  color: var(--gray-2);
+  font-size: 0.9rem;
+}
+
+.product-box .product-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #333;
+}
+
+.product-box .product-price {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.product-box .product-text h2,
+.product-box .product-text p {
+  margin: 0;
+}
+
+.product-box .button-wrapper {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.add-to-cart-button {
+  background-color: rgba(12, 101, 216, 0.959);
+  color: white;
+  font-weight: 700;
+  font-size: medium;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.5s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: rgba(12, 100, 216, 0.553);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.2);
 }
