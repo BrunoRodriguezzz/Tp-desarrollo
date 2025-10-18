@@ -7,18 +7,21 @@ import HealthController from "./controllers/healthController.js";
 import ProductoController from "./controllers/productoController.js";
 import NotificacionController from "./controllers/notificacionController.js";
 import PedidoController from "./controllers/pedidoController.js";
+import CategoriaController from "./controllers/categoriaController.js";
 
 // Importamos los Repositorios
 import ProductoRepository from "./repositories/productoRepository.js";
 import NotificacionRepository from "./repositories/notificacionRepository.js";
 import PedidoRepository from "./repositories/pedidoRepository.js";
 import UsuarioRepository from "./repositories/usuarioRepository.js";
+import CategoriaRepository from "./repositories/categoriaRepository.js";
 
 // Importamos los servicios
 import ProductoService from "./services/productoService.js";
 import NotificacionService from "./services/notificacionService.js";
 import PedidoService from "./services/pedidoService.js";
 import UsuarioService from "./services/usuarioService.js";
+import CategoriaService from "./services/categoriaService.js";
 
 import { errorHandler } from "./middlewares/errorHandler.js";
 // Swagger docs
@@ -39,6 +42,7 @@ const productoRepository = new ProductoRepository();
 const notificacionRepository = new NotificacionRepository();
 const pedidoRepository = new PedidoRepository();
 const usuarioRepository = new UsuarioRepository();
+const categoriaRepository = new CategoriaRepository();
 
 // Capas de Servicio
 const usuarioService = new UsuarioService(usuarioRepository);
@@ -59,17 +63,23 @@ const pedidoService = new PedidoService(
   notificacionService
 );
 
+const categoriaService = new CategoriaService(
+  categoriaRepository
+);
+
 // Capas de Controlador
 const healthController = new HealthController();
 const productoController = new ProductoController(productoService);
 const notificacionController = new NotificacionController(notificacionService);
 const pedidoController = new PedidoController(pedidoService);
+const categoriaController = new CategoriaController(categoriaService);
 
 // Registro de controlladores en el servidor
 server.setController(HealthController, healthController);
 server.setController(ProductoController, productoController);
 server.setController(NotificacionController, notificacionController);
 server.setController(PedidoController, pedidoController);
+server.setController(CategoriaController, categoriaController);
 
 // Configuracion de rutas y lanzamiento
 routes.forEach((route) => server.addRoute(route));
