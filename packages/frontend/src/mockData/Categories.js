@@ -30,4 +30,5 @@ const categoriesMock = [
   { name: "Sostenibilidad", products: 5 },
 ];
 
+
 export default categoriesMock;
