@@ -3,6 +3,9 @@
   --gray-2: #585757;
   --gray-3: #eeecec;
 
+  --primary-color: white;
+  --secondary-color: rgb(250, 250, 250);
+
   --scrollbar-bg: rgba(0, 0, 0, 0.05);
   --scrollbar-thumb: rgba(0, 0, 0, 0.35);
   --scrollbar-thumb-hover: rgba(0, 0, 0, 0.6);
@@ -14,6 +17,7 @@ body {
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--secondary-color);
 }
 
 code {

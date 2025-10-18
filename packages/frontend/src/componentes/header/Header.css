@@ -11,7 +11,7 @@ header {
   border-bottom: 0.5px solid var(--gray-1);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   gap: 0.5rem;
-  background: white;
+  background: var(--primary-color);
   padding: 10px 0;
 }
 

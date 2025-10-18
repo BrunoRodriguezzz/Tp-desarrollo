@@ -6,6 +6,7 @@ import { FaSearch } from "react-icons/fa";
 import { LuShoppingCart } from "react-icons/lu";
 import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function Header() {
       <header>
         <div className="brand-logo">
           <PiSunDim size={40} />
-          <p>Tienda Sol</p>
+          <Link to="/">Tienda Sol</Link>
         </div>
 
         <div className="search-bar">
@@ -36,7 +37,8 @@ export default function Header() {
         </div>
 
         <div className="header-buttons">
-          <button className="button-transparent">Productos</button>
+          <Link to="/productos" className="button-transparent">Productos</Link>
+          {/* <button className="button-transparent">Productos</button> */}
           <button className="button-transparent">Categorías</button>
           <button className="button-gray">
             <LuShoppingCart />
