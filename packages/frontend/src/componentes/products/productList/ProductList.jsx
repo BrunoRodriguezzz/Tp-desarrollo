@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./ProductList.css";
 import ProductBox from "../productBox/ProductBox";
 import Pagination from "../../pagination/Pagination.jsx";
@@ -8,11 +8,6 @@ import productsMock from "../../../mockData/Products.js";
 export default function ProductList({ limit = 12, initialPage = 1, pagination = true, filtros = {} }) {
   const [currentPage, setCurrentPage] = useState(initialPage);
   const { totalPages, productosPagina } = buscarProductosMock(limit, currentPage, filtros);
-
-
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [filtros]);
 
   return (
     <div>
@@ -115,6 +110,9 @@ function buscarProductosMock(limit, currentPage, filtros = {}) {
           }
           return a._id.localeCompare(b._id);
         });
+        break;
+
+      default:
         break;
     }
     
