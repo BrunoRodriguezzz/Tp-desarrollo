@@ -4,6 +4,8 @@ import ProductList from "../../componentes/products/productList/ProductList";
 import CategoryList from "../../componentes/categories/categoryList/CategoryList";
 
 export default function Home() {
+  
+
   return (
     <>
       <section className="home-banner">

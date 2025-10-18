@@ -1,4 +1,4 @@
-const categoiesMock = [
+const categoriesMock = [
   { name: "Tecnología", products: 12 },
   { name: "Salud", products: 7 },
   { name: "Educación", products: 5 },
@@ -30,4 +30,4 @@ const categoiesMock = [
   { name: "Sostenibilidad", products: 5 },
 ];
 
-export default categoiesMock;
+export default categoriesMock;
