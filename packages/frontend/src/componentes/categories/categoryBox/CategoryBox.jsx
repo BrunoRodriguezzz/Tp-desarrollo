@@ -7,11 +7,10 @@ export default function CategoryBox({ category }) {
     <Link
       to={{
         pathname: "/productos",
-        search: `?categoria=${encodeURIComponent(category.id)}`,
+        search: `?categoria=${encodeURIComponent(category.name.toLowerCase())}`,
       }}
       className="category-box"
     >
-      <div>{category.image}</div>
       <span>{category.name}</span>
       <p>{category.products} productos</p>
     </Link>
