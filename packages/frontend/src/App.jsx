@@ -2,8 +2,8 @@ import React from "react";
 import Layout from "./features/layout/Layout";
 import Home from "./features/home/Home";
 import Productos from "./features/productos/Productos";
+import ProductoDetailPage from "./features/productoDetailPage/ProductoDetailPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 
 export default function App() {
   return (
@@ -13,6 +13,7 @@ export default function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="productos" element={<Productos />} />
+            <Route path="/productos/:id" element={<ProductoDetailPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

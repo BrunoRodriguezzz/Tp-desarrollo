@@ -1,10 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./ProductBox.css";
 
 export default function ProductBox({ producto }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/productos/${producto._id}`);
+  };
+
   return (
-    <div className="product-box">
+    <div
+      className="product-box"
+      onClick={handleClick}
+      style={{ cursor: "pointer" }}
+    >
       <img
         src={producto.fotos[0]}
         alt={producto.titulo}
