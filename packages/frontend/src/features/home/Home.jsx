@@ -2,10 +2,9 @@ import React from "react";
 import "./Home.css";
 import ProductList from "../../componentes/products/productList/ProductList";
 import CategoryList from "../../componentes/categories/categoryList/CategoryList";
+import { Link } from "react-router-dom";
 
 export default function Home() {
-  
-
   return (
     <>
       <section className="home-banner">
@@ -17,7 +16,9 @@ export default function Home() {
         </p>
 
         <div className="banner-buttons">
-          <button className="button-white">Ver Productos</button>
+          <Link to="/productos" className="button-white">
+            Ver Productos
+          </Link>
           <button className="button-transparent-border">
             Vender en Tienda Sol
           </button>

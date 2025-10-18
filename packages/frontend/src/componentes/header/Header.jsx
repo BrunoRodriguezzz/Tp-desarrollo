@@ -37,14 +37,22 @@ export default function Header() {
         </div>
 
         <div className="header-buttons">
-          <Link to="/productos" className="button-transparent">Productos</Link>
+          <Link to="/productos" className="button-transparent">
+            Productos
+          </Link>
           {/* <button className="button-transparent">Productos</button> */}
-          <button className="button-transparent">Categorías</button>
-          <button className="button-gray">
+          <Link to="/categorias" className="button-transparent">
+            Categorías
+          </Link>
+          {/*<button className="button-transparent">Categorías</button>*/}
+          <Link to="/carrito" className="button-gray">
             <LuShoppingCart />
             Carrito
-          </button>
-          <button className="button-white-border">Iniciar Sesión</button>
+          </Link>
+          <Link to="/login" className="button-white-border">
+            Iniciar Sesión
+          </Link>
+          {/*<button className="button-white-border">Iniciar Sesión</button>*/}
         </div>
 
         {!menuOpen && (
