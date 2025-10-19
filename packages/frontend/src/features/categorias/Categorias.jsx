@@ -9,7 +9,7 @@ export default function Categorias() {
       <div className="categoria-content">
         <h1>Todas las categorías</h1>
         <p>¡Explora productos por categoría!</p>
-        <CategoryList limit={10} pagination={true} />
+        <CategoryList limit={15} pagination={true} />
       </div>
     </div>
   )
