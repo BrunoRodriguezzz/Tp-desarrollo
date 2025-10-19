@@ -17,3 +17,12 @@
     padding: 0 5px;
   }
 }
+
+.noProducts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2em;
+  color: #555;
+}

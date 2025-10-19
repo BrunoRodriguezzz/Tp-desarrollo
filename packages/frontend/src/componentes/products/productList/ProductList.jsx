@@ -4,6 +4,7 @@ import ProductBox from "../productBox/ProductBox";
 import Pagination from "../../pagination/Pagination.jsx";
 import PropTypes from "prop-types";
 import productsMock from "../../../mockData/Products.js";
+import Box from "@mui/material/Box";
 
 export default function ProductList({ limit = 12, initialPage = 1, pagination = true, filtros = {} }) {
   const [currentPage, setCurrentPage] = useState(initialPage);
@@ -12,9 +13,19 @@ export default function ProductList({ limit = 12, initialPage = 1, pagination = 
   return (
     <div>
       <div className="product-list">
-        {productosPagina.map((product) => (
+        {productosPagina.length > 0 ? productosPagina.map((product) => (
           <ProductBox key={product._id} producto={product} />
-        ))}
+        )) : (
+          <div className="noProducts-container">
+            <Box 
+              component={"img"}
+              src="/images/noProducts.png"
+              alt="no products"
+              sx={{ maxWidth: "100%", height: "auto"}}
+            />
+            <span>No se encontraron productos que coincidan con los filtros aplicados.</span>
+          </div>
+        )}
       </div>
 
       {pagination && totalPages > 1 && (
