@@ -6,9 +6,10 @@ import { paginationBuildResponse } from "../utils/pagination.js";
 import { NotFoundError } from "../errors/tiendaSolError.js";
 
 export default class ProductoService {
-  constructor(ProductoRepository, usuarioRepository) {
+  constructor(ProductoRepository, UsuarioRepository, CategoriaService) {
     this.productoRepository = ProductoRepository;
-    this.usuarioRepository = usuarioRepository;
+    this.usuarioRepository = UsuarioRepository;
+    this.categoriaService = CategoriaService;
   }
 
   async create(nuevoProductoJSON) {
@@ -25,6 +26,10 @@ export default class ProductoService {
     const categorias = (nuevoProductoJSON.categorias || []).map(
       (nombre) => new Categoria(nombre)
     );
+
+    for (const c of categorias) {
+      await this.categoriaService.existe(c.nombre);
+    }
 
     nuevoProducto.setCategorias(categorias);
     nuevoProducto.setFotos(nuevoProductoJSON.fotos || []);
@@ -46,8 +51,10 @@ export default class ProductoService {
       activo: nuevoProducto.activo,
     };
 
-    const productoGuardado =
-      await this.productoRepository.save(productoParaGuardar);
+    const productoGuardado = await this.productoRepository.save(productoParaGuardar);
+    for (const c of categorias) {
+      await this.categoriaService.incrementarCantidad(c.nombre);
+    }
     return productoGuardado;
   }
 
@@ -71,15 +78,47 @@ export default class ProductoService {
   }
 
   async update(id, productoJSON) {
+    const productoActual = await this.productoRepository.findById(id);
+    if (!productoActual) {
+      throw new NotFoundError(`Producto con id ${id} no existe`);
+    }
+
+    if (productoJSON.categorias) {
+      for (const nombreCat of productoJSON.categorias) {
+        await this.categoriaService.existe(nombreCat);
+      }
+    }
+
+    if (productoActual.categorias) {
+      for (const c of productoActual.categorias) {
+        await this.categoriaService.decrementarCantidad(c);
+      }
+    }
+
     const productoActualizado = await this.productoRepository.update(
       id,
       productoJSON
     );
 
+    for (const c of productoActualizado.categorias) {
+      await this.categoriaService.incrementarCantidad(c);
+    }
+
     return productoActualizado;
   }
 
   async delete(id) {
+    const productoActual = await this.productoRepository.findById(id);
+    if (!productoActual) {
+      throw new NotFoundError(`Producto con id ${id} no existe`);
+    }
+
+    if (productoActual.categorias) {
+      for (const c of productoActual.categorias) {
+        await this.categoriaService.decrementarCantidad(c.nombre);
+      }
+    }
+
     const result = await this.productoRepository.delete(id);
     return result;
   }

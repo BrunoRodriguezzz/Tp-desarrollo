@@ -7,10 +7,10 @@ export default class CategoriaRepository {
 
     async findAll() {
         try {
-        return await this.model.find();
+            return await this.model.find();
         } catch (error) {
-        console.error("Error al obtener categorías:", error);
-        throw new Error("Error al obtener categorías");
+            console.error("Error al obtener categorías:", error);
+            throw new Error("Error al obtener categorías");
         }
     }
 
@@ -27,7 +27,7 @@ export default class CategoriaRepository {
         }
     }
 
-    async existsSimilar(nombre) {
+    async existeSimilar(nombre) {
         try {
             const regex = new RegExp(`^${nombre}$`, "i"); 
             const existente = await this.model.findOne({ nombre: regex });
@@ -37,4 +37,54 @@ export default class CategoriaRepository {
             throw new Error("Error al verificar categoría existente");
         }
     }
+
+    async findByNombre(nombre) {
+        try {
+            const categoria = await this.model.findOne({ nombre: nombre });
+            return categoria;
+        } catch (error) {
+            console.error("Error al buscar categoría por nombre:", error);
+            throw new Error("Error al buscar categoría por nombre");
+        }
+    }
+
+    async existe(nombre) {
+        try {
+            const existente = await this.model.findOne({ nombre });
+            return !! existente;
+        } catch (error) {
+            console.error("Error al verificar existencia de categoría:", error);
+            throw new Error("Error al verificar existencia de categoría");
+        }
+    }
+
+    async incrementarCantidad(nombre) {
+        try {
+            const categoriaActualizada = await this.model.findOneAndUpdate(
+                { nombre },
+                { $inc: { cantidad: 1 } }, 
+                { new: true } 
+            );
+            return categoriaActualizada;
+        } catch (error) {
+            console.error("Error al incrementar cantidad:", error);
+            throw new Error("Error al incrementar cantidad de la categoría");
+        }
+    }
+
+    async decrementarCantidad(nombre) {
+        try {
+            const categoria = await this.model.findOne({ nombre });
+            if (!categoria) return null;
+
+            const nuevaCantidad = Math.max(0, categoria.cantidad - 1);
+            categoria.cantidad = nuevaCantidad;
+            return await categoria.save();
+        } catch (error) {
+            console.error("Error al decrementar cantidad:", error);
+            throw new Error("Error al decrementar cantidad de la categoría");
+        }
+    }
+
+    
 }

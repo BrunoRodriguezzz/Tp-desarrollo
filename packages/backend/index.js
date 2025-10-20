@@ -45,10 +45,16 @@ const usuarioRepository = new UsuarioRepository();
 const categoriaRepository = new CategoriaRepository();
 
 // Capas de Servicio
+const categoriaService = new CategoriaService(
+  categoriaRepository
+);
+
 const usuarioService = new UsuarioService(usuarioRepository);
+
 const productoService = new ProductoService(
   productoRepository,
-  usuarioRepository
+  usuarioRepository,
+  categoriaService
 );
 
 const notificacionService = new NotificacionService(
@@ -63,9 +69,7 @@ const pedidoService = new PedidoService(
   notificacionService
 );
 
-const categoriaService = new CategoriaService(
-  categoriaRepository
-);
+
 
 // Capas de Controlador
 const healthController = new HealthController();
