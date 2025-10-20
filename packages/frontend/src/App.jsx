@@ -8,6 +8,7 @@ import Categorias from "./features/categorias/Categorias";
 import ScrollToTop from "./componentes/scrollToTop/ScrollToTop";
 import Login from "./componentes/auth/login/Login";
 import Register from "./componentes/auth/register/Register";
+import Carrito from "./features/carrito/carrito";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
             <Route path="categorias" element={<Categorias />} />
             <Route path="login" element={<Login/>} />
             <Route path="register" element={<Register/>} />
+            <Route path="carrito" element={<Carrito/>} />
           </Route>
         </Routes>
       </BrowserRouter>

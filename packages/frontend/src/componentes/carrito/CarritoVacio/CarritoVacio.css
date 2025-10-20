@@ -1,0 +1,46 @@
+.carrito-vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 55vh; 
+  text-align: center;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.carrito-icono {
+  font-size: 6rem; 
+  color: #000; 
+}
+
+.carrito-titulo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.carrito-subtitulo {
+  font-size: 1.2rem;
+  color: #555; /* gris más chico */
+  margin: 0;
+}
+
+.carrito-boton {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: transparent;
+  border: 2px solid #000;
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.carrito-boton:hover {
+  background-color: #000;
+  color: #fff;
+}
