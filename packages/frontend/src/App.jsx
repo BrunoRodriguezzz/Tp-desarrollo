@@ -6,6 +6,8 @@ import ProductoDetailPage from "./features/productoDetailPage/ProductoDetailPage
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Categorias from "./features/categorias/Categorias";
 import ScrollToTop from "./componentes/scrollToTop/ScrollToTop";
+import Login from "./componentes/auth/login/Login";
+import Register from "./componentes/auth/register/Register";
 
 export default function App() {
   return (
@@ -18,6 +20,8 @@ export default function App() {
             <Route path="productos" element={<Productos />} />
             <Route path="/productos/:id" element={<ProductoDetailPage />} />
             <Route path="categorias" element={<Categorias />} />
+            <Route path="login" element={<Login/>} />
+            <Route path="register" element={<Register/>} />
           </Route>
         </Routes>
       </BrowserRouter>
