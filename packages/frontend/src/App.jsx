@@ -10,25 +10,28 @@ import Login from "./componentes/auth/login/Login";
 import Register from "./componentes/auth/register/Register";
 import Carrito from "./features/carrito/carrito";
 import Notificaciones from "./features/notificaciones/Notificaciones";
+import { CartProvider } from "./componentes/carrito/cartContext/CartContext.jsx";
 
 export default function App() {
   return (
     <>
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="productos" element={<Productos />} />
-            <Route path="/productos/:id" element={<ProductoDetailPage />} />
-            <Route path="categorias" element={<Categorias />} />
-            <Route path="login" element={<Login/>} />
-            <Route path="register" element={<Register/>} />
-            <Route path="carrito" element={<Carrito/>} />
-            <Route path="notificaciones" element={<Notificaciones/>} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="productos" element={<Productos />} />
+              <Route path="/productos/:id" element={<ProductoDetailPage />} />
+              <Route path="categorias" element={<Categorias />} />
+              <Route path="login" element={<Login/>} />
+              <Route path="register" element={<Register/>} />
+              <Route path="carrito" element={<Carrito/>} />
+              <Route path="notificaciones" element={<Notificaciones/>} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </>
   );
 }
