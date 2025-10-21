@@ -4,7 +4,7 @@ import "./CardProducto.css";
 import { AiOutlineDelete } from "react-icons/ai";
 
 
-export default function CardProducto({nombre, categorias, precio, cantidad, moneda, foto, onDelete, modificarCantidad}) {
+export default function CardProducto({nombre, categorias, precio, cantidad, moneda, foto, sumarUno, restarUno, eliminarProducto}) {
     const convertirMoneda = (moneda) => {
         switch(moneda) {
             case "PESO_ARG":
@@ -18,11 +18,6 @@ export default function CardProducto({nombre, categorias, precio, cantidad, mone
         }
     }
 
-    const setCantidad = (nuevaCantidad) => {
-        modificarCantidad(nombre, nuevaCantidad);
-    }
-
-    console.log("foto", foto)
     return (
     <div className="producto">
         <div>
@@ -33,11 +28,12 @@ export default function CardProducto({nombre, categorias, precio, cantidad, mone
                 <span>${precio.toFixed(2) + " " + convertirMoneda(moneda)}</span>
             </div>
         </div>
-        <div>
-            <Counter cantidad={cantidad} setCantidad={setCantidad} onDelete={() => onDelete(nombre)} />
+        <div className='producto-derecha'>
+            <Counter cantidad={cantidad} sumarUno={sumarUno} restarUno={restarUno}/>
             <span>${(precio * cantidad).toFixed(2) + " " + convertirMoneda(moneda)}</span>
-            <AiOutlineDelete />
-
+            <AiOutlineDelete 
+                onClick={() => {eliminarProducto()}}
+            />
         </div>
     </div>
   )

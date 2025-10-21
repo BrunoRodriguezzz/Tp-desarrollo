@@ -2,8 +2,21 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './DetallePedido.css'
 
-export default function DetallePedido({ productos = [], moneda = '' }) {
+export default function DetallePedido({ cartItems}) {
     const [total, setTotal] = useState(0);
+
+    const convertirMoneda = (moneda) => {
+        switch(moneda) {
+            case "PESO_ARG":
+                return "ARS"
+            case "DOLAR":
+                return "USD"
+            case "EURO":
+                return "EUR"
+            default:
+                return moneda
+        }
+    }
     
     const sumarIVA = (monto) => {
         return monto * 1.21; 
@@ -11,18 +24,18 @@ export default function DetallePedido({ productos = [], moneda = '' }) {
 
     useEffect(() => {
         let sumaTotal = 0;
-        productos.forEach(producto => {
-            sumaTotal += producto.precio * producto.cantidad;
+        cartItems.forEach(item => {
+            sumaTotal += item.precio * item.quantity;
         });
         setTotal(sumaTotal);
-    }, [productos]);
+    }, [cartItems]);
 
     return (
     <div className="resumen-pedido">
         <h3>Resumen del pedido</h3>
         <div>
             <p>Subtotal</p>
-            <p>${total.toFixed(2) + " " + moneda}</p> 
+            <p>${total.toFixed(2) + " ARS"}</p> 
         </div>
         <div>
             <p>Envío</p>
@@ -34,7 +47,7 @@ export default function DetallePedido({ productos = [], moneda = '' }) {
         </div>
         <div style={{ borderTop: '1px solid #eee'}}>
             <p style={{ color: 'black', fontWeight: 'bold', fontSize: '1.2rem'  }}>Total</p>
-            <p style={{ color: 'black', fontWeight: 'bold', fontSize: '1.2rem'  }}>${sumarIVA(total).toFixed(2) + " " + moneda}</p>
+            <p style={{ color: 'black', fontWeight: 'bold', fontSize: '1.2rem'  }}>${sumarIVA(total).toFixed(2) + " ARS" }</p>
         </div>
 
         <div className="resumen-botones">
