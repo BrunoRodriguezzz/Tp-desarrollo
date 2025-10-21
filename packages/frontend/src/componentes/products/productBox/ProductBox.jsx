@@ -2,13 +2,20 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./ProductBox.css";
+import { useCart } from "../../carrito/cartContext/CartContext.jsx";
 
 export default function ProductBox({ producto }) {
   const navigate = useNavigate();
+  const { addToCart } = useCart();
 
   const handleClick = () => {
     navigate(`/productos/${producto._id}`);
   };
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    addToCart(producto);
+  }
 
   return (
     <div
@@ -29,18 +36,19 @@ export default function ProductBox({ producto }) {
 
         <div className="button-wrapper">
           <p className="product-price">${producto.precio}</p>
-          <button className="add-to-cart-button">Agregar al Carrito</button>
+          <button className="add-to-cart-button" onClick={handleAddToCart}>Agregar al Carrito</button>
         </div>
       </div>
     </div>
   );
 }
 
-// Ni idea, sin esto no funcionaba
 ProductBox.propTypes = {
   producto: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
     fotos: PropTypes.array.isRequired,
     titulo: PropTypes.string.isRequired,
     precio: PropTypes.number.isRequired,
+    categorias: PropTypes.array.isRequired,
   }).isRequired,
 };

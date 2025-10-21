@@ -7,9 +7,11 @@ import { LuShoppingCart } from "react-icons/lu";
 import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import { useCart } from "../carrito/cartContext/CartContext.jsx";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { totalItems } = useCart();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -40,19 +42,22 @@ export default function Header() {
           <Link to="/productos" className="button-transparent">
             Productos
           </Link>
-          {/* <button className="button-transparent">Productos</button> */}
+
           <Link to="/categorias" className="button-transparent">
             Categorías
           </Link>
-          {/*<button className="button-transparent">Categorías</button>*/}
+          
           <Link to="/carrito" className="button-gray">
             <LuShoppingCart />
-            Carrito
+            {totalItems > 0 ? 
+            (<span>{totalItems} ítem{totalItems > 1 ? "s" : ""}</span>)
+            :
+            (<span>Carrito</span>)}
           </Link>
+
           <Link to="/login" className="button-white-border">
             Iniciar Sesión
           </Link>
-          {/*<button className="button-white-border">Iniciar Sesión</button>*/}
         </div>
 
         {!menuOpen && (
