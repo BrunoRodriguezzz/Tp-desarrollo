@@ -1,8 +1,7 @@
 .producto {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   padding: 16px;
   box-sizing: border-box;
@@ -18,20 +17,22 @@
   flex-direction: row;
   align-items: center;
   gap: 1rem;
-  flex: 1;
+  flex: 0 0 60%; 
 }
 
 .producto img {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: 8px; 
+  border-radius: 8px;
+  flex-shrink: 0;
 }
 
 .producto h3 {
   margin: 0;
   font-size: 1.1rem;
   color: #222;
+  word-break: break-word;
 }
 
 .producto p {
@@ -62,10 +63,10 @@
 }
 
 .producto svg:hover {
-  color: #e63946; 
+  color: #e63946;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .producto {
     flex-direction: column;
     align-items: center;
@@ -73,8 +74,10 @@
     gap: 1rem;
   }
 
-  .producto > div:first-child {
-    flex-direction: column;
+  .producto > div:first-child,
+  .producto > div:last-child {
+    flex: 1 0 100%;
+    width: 100%;
     align-items: center;
   }
 
