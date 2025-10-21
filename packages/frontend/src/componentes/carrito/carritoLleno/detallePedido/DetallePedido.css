@@ -1,0 +1,85 @@
+.resumen-pedido {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; 
+    padding: 16px;
+    box-sizing: border-box;
+    background-color: #ffffff; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    gap: 1.5rem;
+}
+
+.resumen-pedido h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.resumen-pedido > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: none; 
+}
+
+.resumen-pedido p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+
+.resumen-pedido button {
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.resumen-pedido .btn-comprar {
+    background-color: rgba(12, 101, 216, 0.959);
+    color: #fff;
+    border: none;
+}
+
+.resumen-pedido .btn-comprar:hover {
+    background-color: rgba(12, 100, 216, 0.553);
+}
+
+.resumen-pedido .btn-continuar {
+    background-color: transparent;
+    color: #666;
+    border: none;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.resumen-pedido .btn-continuar:hover {
+    color: #333;
+}
+
+@media (max-width: 480px) {
+    .resumen-pedido {
+        padding: 12px;
+        max-width: 100%;
+    }
+
+    .resumen-pedido h3 {
+        font-size: 1.3rem;
+    }
+
+    .resumen-pedido p {
+        font-size: 0.9rem;
+    }
+
+    .resumen-pedido button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}

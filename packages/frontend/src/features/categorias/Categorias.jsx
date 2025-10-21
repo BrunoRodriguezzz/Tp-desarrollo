@@ -4,6 +4,7 @@ import './Categorias.css'
 
 
 export default function Categorias() {
+  
   return (
     <div className='categoria-page'>
       <div className="categoria-content">
