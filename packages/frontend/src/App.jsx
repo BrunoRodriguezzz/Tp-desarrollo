@@ -9,6 +9,7 @@ import ScrollToTop from "./componentes/scrollToTop/ScrollToTop";
 import Login from "./componentes/auth/login/Login";
 import Register from "./componentes/auth/register/Register";
 import Carrito from "./features/carrito/carrito";
+import Notificaciones from "./features/notificaciones/Notificaciones";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
             <Route path="login" element={<Login/>} />
             <Route path="register" element={<Register/>} />
             <Route path="carrito" element={<Carrito/>} />
+            <Route path="notificaciones" element={<Notificaciones/>} />
           </Route>
         </Routes>
       </BrowserRouter>
