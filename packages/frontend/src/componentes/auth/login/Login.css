@@ -27,9 +27,9 @@
 .login-container .login-card {
   background-color: #fff;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 15px;
   width: 100%;
-  max-width: 320px;
+  max-width: 480px;
   text-align: center;
 	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
@@ -48,6 +48,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 40px;
 }
 
 .login-container label {
@@ -92,9 +93,9 @@
   gap: 5px;
   color: rgba(12, 100, 216, 0.615);
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
-
 
 .divider {
   border: none;
