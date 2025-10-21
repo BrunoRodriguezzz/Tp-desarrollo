@@ -27,10 +27,9 @@ export default function Carrito() {
     }
     ];
 
-    return(
-        // <CarritoVacio/>
-        <CarritoLleno
-            productos={productosMock}
-        />
+    return (
+        productosMock.length === 0
+            ? <CarritoVacio />
+            : <CarritoLleno productos={productosMock} />
     )
 }
