@@ -20,18 +20,21 @@ export default function Header() {
       <header>
         <div className="brand-logo">
           <PiSunDim size={40} />
-          <Link to="/">Tienda Sol</Link>
+          <Link to="/" aria-label="Ir al inicio de Tienda Sol">
+            Tienda Sol
+          </Link>
         </div>
 
-        <div className="search-bar">
+        <div className="search-bar" role="search" aria-label="Buscar productos">
           <input
             id="product-input"
             type="text"
             placeholder="Buscar productos..."
+            aria-label="Campo de búsqueda de productos"
           />
 
-          <button className="button-transparent">
-            <FaSearch />
+          <button className="button-transparent" aria-label="Ejecutar búsqueda">
+            <FaSearch aria-hidden="true" />
             Buscar
           </button>
         </div>

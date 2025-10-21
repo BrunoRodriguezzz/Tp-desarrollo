@@ -133,7 +133,6 @@
   justify-content: center;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .producto-detail-container {
     flex-direction: column;
