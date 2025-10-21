@@ -46,3 +46,13 @@
   font-size: 15px;
   font-weight: 600;
 }
+
+.notification-container .notification-list {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}

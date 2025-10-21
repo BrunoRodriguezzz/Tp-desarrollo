@@ -1,12 +1,25 @@
-import "./Notificaciones.css"
-import { Switch, FormGroup, FormControlLabel } from '@mui/material';
-import { useState } from 'react';
+import "./Notificaciones.css";
+import { Switch, FormGroup, FormControlLabel, CircularProgress } from "@mui/material";
+import { useState, useEffect } from "react";
+import NotificationsMock from "../../mockData/Notifications";
+import NotificacionBox from "./notificacionesBox/NotificacionBox";
 
 export default function Notificaciones() {
+  const [notificaciones, setNotificaciones] = useState([]);
+  const [mostrarSinLeer, setMostrarSinLeer] = useState(false);
 
-  const handleSwitch = () => {
-
+  const handleSwitch = (e) => {
+    setMostrarSinLeer(e.target.checked)
   }
+
+  const notificacionesFiltradas = mostrarSinLeer
+    ? notificaciones.filter((n) => !n.leida)
+    : notificaciones;
+
+    useEffect(() => {
+      setNotificaciones(obtenerNotificaciones())
+    }, [])
+
   return (
   <>
   <div className="notification-container">
@@ -24,9 +37,23 @@ export default function Notificaciones() {
       </div>
     </div>
     <div className="notification-list">
-
+      {!notificacionesFiltradas.length ? 
+        <div className="spinner">
+            <CircularProgress color="success" />
+        </div> :
+        <div>
+          {notificacionesFiltradas.map((n) => (
+          <NotificacionBox notificacion={n} />
+        ))}
+        </div>
+      }
     </div>
   </div>
   </>
   )
+}
+
+function obtenerNotificaciones() {
+  //TODO - Hago la funcion porque despues vamos a hacer el fetch
+  return NotificationsMock;
 }
