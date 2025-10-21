@@ -8,7 +8,7 @@ import Categorias from "./features/categorias/Categorias";
 import ScrollToTop from "./componentes/scrollToTop/ScrollToTop";
 import Login from "./componentes/auth/login/Login";
 import Register from "./componentes/auth/register/Register";
-import Carrito from "./features/carrito/carrito";
+import Carrito from "./features/carrito/Carrito";
 import Notificaciones from "./features/notificaciones/Notificaciones";
 import { CartProvider } from "./componentes/carrito/cartContext/CartContext.jsx";
 
