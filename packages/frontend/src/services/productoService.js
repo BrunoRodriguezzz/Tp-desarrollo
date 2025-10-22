@@ -1,9 +1,11 @@
+import { set } from "mongoose";
 import productsMock from "../mockData/Products.js";
 import axios from "axios";
 
 const API_BASE_URL = process.env.URL_BACKEND || "http://localhost:8000";
 
-export function buscarProductosMock(limit, currentPage, filtros = {}) {
+export async function buscarProductosMock(limit, currentPage, filtros = {}) {
+  await new Promise(res => setTimeout(res, 1000));
   const { news, categoria, minPrice, maxPrice, orderBy } = filtros;
 
   let prodFiltrado = productsMock;
@@ -86,6 +88,7 @@ export function buscarProductosMock(limit, currentPage, filtros = {}) {
 }
 
 export async function buscarProductos(limit, currentPage, filtros = {}) {
+  await new Promise(res => setTimeout(res, 1000));
   try {
     const response = await axios.get(`${API_BASE_URL}/productos`, {
       params: {
@@ -94,7 +97,6 @@ export async function buscarProductos(limit, currentPage, filtros = {}) {
         page: currentPage,
       },
     });
-    console.log(response);
     return {
       totalPages: response.data.totalPages,
       productosPagina: response.data.data,
