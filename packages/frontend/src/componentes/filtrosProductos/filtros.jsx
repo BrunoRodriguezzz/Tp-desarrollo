@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { act, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "./filtros.css";
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
@@ -11,6 +11,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
+import categoriesMock from "../../mockData/Categories.js";
 
 // Iconos
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
@@ -23,18 +24,16 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 
 export default function Filtros({ 
-    categorias, 
-    soloNuevos, 
-    setSoloNuevos, 
-    categoriaSeleccionada, 
-    setCategoriaSeleccionada, 
-    setMinPrecio, 
-    setMaxPrecio, 
-    setOrdenamiento 
-}) {
+    filtros = {},
+    setFiltros
+  }) {
+
+  const categorias = categoriesMock.map(cat => cat.name);
+
   const handleClick = () => {
     setOpen((prev) => !prev);
   };
+
   const [open, setOpen] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(0);
 
@@ -60,9 +59,8 @@ export default function Filtros({
             <span>Lo nuevo!</span>
           </div>
           <Switch
-            checked={soloNuevos}
-            onChange={(_, checked) => setSoloNuevos(checked)}
-            inputProps={{ 'aria-label': 'Mostrar solo productos nuevos' }}
+            checked={filtros.news}
+            onChange={(_, checked) => setFiltros("news", checked)}
           />
         </div>
       </Paper>
@@ -78,15 +76,14 @@ export default function Filtros({
             renderInput={(params) => <TextField {...params} placeholder="Seleccionar" />}
             className="input-categoria"
              sx={{
-                // Elimina el borde del input
                 '& .MuiOutlinedInput-root': {
                     '& fieldset': { border: 'none' },
                     '&:hover fieldset': { border: 'none' },
                     '&.Mui-focused fieldset': { border: 'none' }
                 }
             }}
-            value={categoriaSeleccionada}
-            onChange={(_, newValue) => setCategoriaSeleccionada(newValue)}
+            value={filtros.categoria}
+            onChange={(_, newValue) => setFiltros("categoria", newValue)}
         />
       </Paper>
 
@@ -96,9 +93,9 @@ export default function Filtros({
             <span>Precio</span>
         </div>
         <div className="input-precio">
-            <TextField type="number" label="Min" variant="outlined" size="small" sx={{ marginRight: 1 }}  onChange={(e) => setMinPrecio(e.target.value === '' ? null : Number(e.target.value))} />
+            <TextField type="number" label="Min" variant="outlined" size="small" sx={{ marginRight: 1 }}  onChange={(e) => setFiltros("minPrice", e.target.value === '' ? null : Number(e.target.value))} />
             <p>-</p>
-            <TextField type="number" label="Max" variant="outlined" size="small" sx={{ marginLeft: 1 }} onChange={(e) => setMaxPrecio(e.target.value === '' ? null : Number(e.target.value))} />
+            <TextField type="number" label="Max" variant="outlined" size="small" sx={{ marginLeft: 1 }} onChange={(e) => setFiltros("maxPrice", e.target.value === '' ? null : Number(e.target.value))} />
         </div>
       </Paper>
 
@@ -110,22 +107,21 @@ export default function Filtros({
         <ListItemText primary="Ordenar según" />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
-
         <Collapse in={open} timeout="auto" unmountOnExit >
           <List disablePadding>
-            <ListItemButton onClick={() => setOrdenamiento("masVendidos")}>
+            <ListItemButton onClick={() => setFiltros("orderBy", "best_seller")}>
                 <ListItemIcon>
                     <StarIcon />
                 </ListItemIcon>
                 <ListItemText primary="Más vendidos" />
             </ListItemButton >
-            <ListItemButton onClick={() => setOrdenamiento("precioBajoAlto")}>
+            <ListItemButton onClick={() => setFiltros("orderBy", "price_asc")}>
                 <ListItemIcon>
                     <ArrowDownwardIcon />
                 </ListItemIcon>
                 <ListItemText primary="Precio más bajo" />
             </ListItemButton>
-            <ListItemButton onClick={() => setOrdenamiento("precioAltoAbajo")}>
+            <ListItemButton onClick={() => setFiltros("orderBy", "price_desc")}>
                 <ListItemIcon>
                     <ArrowUpwardIcon />
                 </ListItemIcon>
@@ -139,14 +135,7 @@ export default function Filtros({
 }
 
 Filtros.propTypes = {
-    categorias: PropTypes.array,
-    cantProductos: PropTypes.number,
-    prodMostrados: PropTypes.number,
-    soloNuevos: PropTypes.bool,
-    setSoloNuevos: PropTypes.func,
-    categoriaSeleccionada: PropTypes.string,
-    setCategoriaSeleccionada: PropTypes.func,
-    setMinPrecio: PropTypes.func,
-    setMaxPrecio: PropTypes.func,
-    setOrdenamiento: PropTypes.func
+  filtros: PropTypes.object,
+  setFiltros: PropTypes.func
 };
+
