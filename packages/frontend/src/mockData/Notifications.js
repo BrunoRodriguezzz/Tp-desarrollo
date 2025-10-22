@@ -1,4 +1,4 @@
-const NotificationsMock = [
+const notificationsMock = [
   {
     _id: "68e33be4b82c028126ef8181",
     usuarioDestino: "68e33be4b82c028126ef8093",
@@ -43,4 +43,4 @@ const NotificationsMock = [
   },
 ];
 
-export default NotificationsMock;
+export default notificationsMock;

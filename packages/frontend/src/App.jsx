@@ -6,11 +6,12 @@ import ProductoDetailPage from "./features/productoDetailPage/ProductoDetailPage
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Categorias from "./features/categorias/Categorias";
 import ScrollToTop from "./componentes/scrollToTop/ScrollToTop";
-import Login from "./componentes/auth/login/Login";
-import Register from "./componentes/auth/register/Register";
+import Login from "./features/auth/login/Login";
+import Register from "./features/auth/register/Register";
 import Carrito from "./features/carrito/Carrito";
 import Notificaciones from "./features/notificaciones/Notificaciones";
 import { CartProvider } from "./componentes/carrito/cartContext/CartContext.jsx";
+import MisVentas from "./features/ventas/MisVentas.jsx";
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
               <Route path="register" element={<Register/>} />
               <Route path="carrito" element={<Carrito/>} />
               <Route path="notificaciones" element={<Notificaciones/>} />
+              <Route path="mis-ventas" element={<MisVentas/>} />
             </Route>
           </Routes>
         </BrowserRouter>

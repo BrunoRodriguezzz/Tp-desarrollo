@@ -1,0 +1,58 @@
+.my-sales {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 30px;
+  margin: 0 140px;
+}
+
+.my-sales .sales-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.my-sales .sales-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-sales h1 {
+  margin-bottom: 0;
+}
+
+.my-sales h2 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.my-sales p {
+  color: #333;
+}
+
+.my-sales .sales-right {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: whitesmoke;
+}
+
+.my-sales .sales-list {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
