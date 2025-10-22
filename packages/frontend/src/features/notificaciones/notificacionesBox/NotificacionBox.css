@@ -1,12 +1,15 @@
 .notificacion-box {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 800px;
   justify-content: space-between;
   align-items: center;
   flex: 1 1 auto;
   width: 85%;
   margin: 15px auto;
   padding: 15px;
+  gap: 10px;
   border-radius: 10px;
   border: 1px solid #ccc;
   box-shadow: 0 2px 6px rgba(0,0,0,0.25);

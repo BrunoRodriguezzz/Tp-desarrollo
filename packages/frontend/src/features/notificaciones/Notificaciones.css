@@ -4,7 +4,8 @@
   align-items: stretch;
   justify-content: center;
   padding: 30px;
-  margin: 0 140px;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .notification-container .notification-header {
