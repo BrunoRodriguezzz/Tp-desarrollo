@@ -19,12 +19,7 @@
   margin-bottom: 0;
 }
 
-.pedido-main-header p, .pedido-empty {
+.pedido-main-header p {
   color: var(--gray-2);
 }
 
-.pedido-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}

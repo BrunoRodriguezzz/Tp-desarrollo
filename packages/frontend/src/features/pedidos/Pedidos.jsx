@@ -1,43 +1,43 @@
 import "./Pedidos.css";
-import PedidosBox from "../../componentes/pedidos/pedidosBox/PedidosBox";
-import { HistorialUsuarioResponseMock } from "../../mockData/Pedidos";
 import React, { useState, useEffect } from "react";
-import Pagination from "../../componentes/pagination/Pagination";
+import PedidosList from "../../componentes/pedidos/pedidosList/PedidosList";
+import { HistorialUsuarioResponseMock } from "../../mockData/Pedidos";
 
 export default function Pedidos() {
   const [pedidos, setPedidos] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const response = obtenerPedidos(currentPage);
-    setPedidos(response.data);
-    setTotalPages(response.totalPages);
+    setLoading(true);
+    const timeout = setTimeout(() => {
+      const response = obtenerPedidos(currentPage);
+      setPedidos(response.data);
+      setTotalPages(response.totalPages);
+      setLoading(false);
+    }, 600);
+    return () => clearTimeout(timeout);
   }, [currentPage]);
 
   return (
-    <>
-      <div className="pedido-container">
-        <div className="pedido-main-header">
-          <h1>Mis pedidos</h1>
-          <p>Revisá todos los pedidos que realizaste y gestionalos</p>
-        </div>
-        <div className="pedido-list">
-          {pedidos.length === 0 ? (
-            <p className="pedido-empty">No tenés pedidos aún.</p>
-          ) : (
-            pedidos.map((pedido) => (
-              <PedidosBox key={pedido._id} pedido={pedido} />
-            ))
-          )}
-        </div>
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={setCurrentPage}
-        />
+    <div className="pedido-container">
+      <div className="pedido-main-header">
+        <h1>Mis pedidos</h1>
+        <p>Revisá todos los pedidos que realizaste y gestionalos</p>
       </div>
-    </>
+
+      <PedidosList
+        pedidos={pedidos}
+        loading={loading}
+        currentPage={currentPage}
+        pagination={{
+          currentPage,
+          totalPages,
+          onPageChange: setCurrentPage,
+        }}
+      />
+    </div>
   );
 }
 

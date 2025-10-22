@@ -1,0 +1,9 @@
+.pedido-empty {
+  color: var(--gray-2);
+}
+
+.pedido-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
