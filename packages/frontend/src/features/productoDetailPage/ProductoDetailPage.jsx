@@ -40,7 +40,12 @@ export default function ProductoDetailPage() {
           {producto.categorias?.[0]?.toUpperCase()}
         </p>
         <h1 className="producto-titulo">{producto.titulo}</h1>
-        <p className="producto-precio">${producto.precio}</p>
+        <p className="producto-precio">
+          {producto.precio.toLocaleString("es-AR", {
+            style: "currency",
+            currency: "ARS",
+          })}
+        </p>
 
         <div className="producto-bloque">
           <h3>Descripción</h3>

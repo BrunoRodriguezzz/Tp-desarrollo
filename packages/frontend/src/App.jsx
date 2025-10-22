@@ -10,6 +10,7 @@ import Login from "./componentes/auth/login/Login";
 import Register from "./componentes/auth/register/Register";
 import Carrito from "./features/carrito/Carrito";
 import Notificaciones from "./features/notificaciones/Notificaciones";
+import Pedidos from "./features/pedidos/Pedidos";
 import { CartProvider } from "./componentes/carrito/cartContext/CartContext.jsx";
 
 export default function App() {
@@ -24,10 +25,11 @@ export default function App() {
               <Route path="productos" element={<Productos />} />
               <Route path="/productos/:id" element={<ProductoDetailPage />} />
               <Route path="categorias" element={<Categorias />} />
-              <Route path="login" element={<Login/>} />
-              <Route path="register" element={<Register/>} />
-              <Route path="carrito" element={<Carrito/>} />
-              <Route path="notificaciones" element={<Notificaciones/>} />
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Register />} />
+              <Route path="carrito" element={<Carrito />} />
+              <Route path="notificaciones" element={<Notificaciones />} />
+              <Route path="pedidos" element={<Pedidos />} />
             </Route>
           </Routes>
         </BrowserRouter>

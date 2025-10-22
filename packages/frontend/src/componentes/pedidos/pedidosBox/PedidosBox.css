@@ -1,0 +1,86 @@
+.pedido-card {
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.2s ease;
+  background-color: #fff !important;
+}
+
+.pedido-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08) !important;
+}
+
+.pedido-card-header {
+  background: #fafafa;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pedido-numero {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #111;
+}
+
+.pedido-fecha {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.total-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.total-valor {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.pedido-divider {
+  margin: 16px 0 !important;
+}
+
+.pedido-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.pedido-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btn-ver {
+  border: 1px solid #bdbdbd !important;
+  color: #333 !important;
+  background: #fff !important;
+  text-transform: none !important;
+}
+
+.btn-ver:hover {
+  background: #f5f5f5 !important;
+}
+
+.btn-cancelar {
+  background: #d32f2f !important;
+  color: #fff !important;
+  text-transform: none !important;
+}
+
+.btn-cancelar:hover {
+  background: #b71c1c !important;
+}

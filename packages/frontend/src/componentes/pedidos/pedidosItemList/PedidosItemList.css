@@ -1,0 +1,32 @@
+.pedido-item-list {
+  width: 100%;
+}
+
+.pedido-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.pedido-item-img {
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 10px !important;
+  object-fit: cover !important;
+}
+
+.pedido-item-titulo {
+  font-weight: 600;
+  margin: 0;
+}
+
+.pedido-item-detalle {
+  color: var(--gray-2);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.pedido-item-precio {
+  font-weight: 500;
+  min-width: 100px;
+  text-align: right;
+}

@@ -1,0 +1,67 @@
+.pedido-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px;
+}
+
+.pedido-title {
+  font-weight: 700 !important;
+  margin-bottom: 4px;
+  padding: 0 !important;
+}
+
+.pedido-date {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.pedido-content {
+  padding: 24px;
+}
+
+.pedido-section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.pedido-producto-nombre {
+  font-weight: 500;
+  margin: 0;
+}
+
+.pedido-icon {
+  color: #333;
+  margin-top: 4px;
+}
+
+.pedido-detalle {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 2px 0;
+}
+
+.pedido-historial-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.pedido-historial-avatar {
+  width: 32px !important;
+  height: 32px !important;
+  color: #333;
+}
+
+.pedido-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+  font-weight: 700;
+}
+
+.pedido-total {
+  font-size: 1.25rem;
+}

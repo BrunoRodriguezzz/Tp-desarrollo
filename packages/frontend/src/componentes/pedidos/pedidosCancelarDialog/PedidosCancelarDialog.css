@@ -1,0 +1,13 @@
+.title {
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #666;
+    margin: 0; 
+}
+
+.btns-container {
+    justify-content: end;
+    margin: 10px 0;
+}
