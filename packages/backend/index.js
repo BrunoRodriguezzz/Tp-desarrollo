@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import Server from "./server/server.js";
+import cors from "cors";
 
 // Importamos los controllers
 import HealthController from "./controllers/healthController.js";
@@ -84,6 +85,12 @@ server.setController(ProductoController, productoController);
 server.setController(NotificacionController, notificacionController);
 server.setController(PedidoController, pedidoController);
 server.setController(CategoriaController, categoriaController);
+
+app.use(cors({
+  origin: "http://localhost:3000",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 // Configuracion de rutas y lanzamiento
 routes.forEach((route) => server.addRoute(route));

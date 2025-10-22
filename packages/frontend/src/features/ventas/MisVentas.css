@@ -1,4 +1,4 @@
-.notification-container {
+.my-sales {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -8,7 +8,7 @@
   width: 90%;
 }
 
-.notification-container .notification-header {
+.my-sales .sales-header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -17,20 +17,25 @@
   margin-bottom: 25px;
 }
 
-.notification-container .notification-left {
+.my-sales .sales-left {
   display: flex;
   flex-direction: column;
 }
 
-.notification-container h1 {
+.my-sales h1 {
   margin-bottom: 0;
 }
 
-.notification-container p {
+.my-sales h2 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.my-sales p {
   color: #333;
 }
 
-.notification-container .notification-right {
+.my-sales .sales-right {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -43,12 +48,7 @@
   background-color: whitesmoke;
 }
 
-.notification-container h2 {
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.notification-container .notification-list {
+.my-sales .sales-list {
   display: flex;
   justify-content: center;
   align-items: stretch;

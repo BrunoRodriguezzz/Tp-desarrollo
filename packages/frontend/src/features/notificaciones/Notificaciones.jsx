@@ -1,7 +1,7 @@
 import "./Notificaciones.css";
 import { Switch, FormGroup, FormControlLabel, CircularProgress } from "@mui/material";
 import { useState, useEffect } from "react";
-import NotificationsMock from "../../mockData/Notifications";
+import notificationsMock from "../../mockData/Notifications";
 import NotificacionBox from "./notificacionesBox/NotificacionBox";
 
 export default function Notificaciones() {
@@ -55,5 +55,5 @@ export default function Notificaciones() {
 
 function obtenerNotificaciones() {
   //TODO - Hago la funcion porque despues vamos a hacer el fetch
-  return NotificationsMock;
+  return notificationsMock;
 }

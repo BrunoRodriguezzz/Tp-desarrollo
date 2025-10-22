@@ -1,4 +1,4 @@
-.notificacion-box {
+.pedido-box {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -16,46 +16,53 @@
   transition: box-shadow 0.2s ease;
 }
 
-.notificacion-box:hover {
-  box-shadow: 0 2px 6px rgba(0,0,0,0.45);
-}
-
-.notificacion-box.no-leida {
+.pedido-box.enviable {
   background-color: rgba(29, 186, 1, 0.163);
   border-left: 4px solid rgb(29, 186, 1);
 }
 
-.notificacion-box.leida {
+.pedido-box.no-enviable {
   background-color: #f9f9f9;
   border-left: 4px solid #ccc;
 }
 
-.notificacion-box .notificacion-contenido {
+.pedido-box:hover {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.45);
+}
+
+.pedido-box .pedido-contenido {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
 }
 
-.notificacion-box h1 {
+.pedido-box h1 {
   font-weight: 500;
   font-size: 16px;
   margin: 0;
   color: #333;
 }
 
-.notificacion-box p {
+.pedido-box h2 {
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0;
+  color: #333;
+}
+
+.pedido-box p {
   font-size: 12px;
   color: #777;
   margin: 0;
 }
 
-.notificacion-box .button-wrapper {
+.pedido-box .button-wrapper {
   display: flex;
   align-items: center;
 }
 
-.notificacion-box .leida-button {
+.pedido-box .enviado-button {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -69,6 +76,6 @@
   transition: background-color 0.2s ease;
 }
 
-.notificacion-box .leida-button:hover {
+.pedido-box .leida-button:hover {
   background-color: rgba(0, 120, 20, 0.91);
 }

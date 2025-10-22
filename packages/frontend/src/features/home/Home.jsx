@@ -1,10 +1,19 @@
-import React from "react";
+import {React, useState} from "react";
 import "./Home.css";
 import ProductList from "../../componentes/products/productList/ProductList";
 import CategoryList from "../../componentes/categories/categoryList/CategoryList";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  const [paginado, setPaginado] = useState({ page: 1, size: 12 });
+
+  const actualizarPaginado = (clave, valor) => {
+    setPaginado(prev => ({
+      ...prev,
+      [clave]: valor
+    }));
+  };
+
   return (
     <>
       <section className="home-banner">
@@ -31,7 +40,7 @@ export default function Home() {
       </div>
 
       <section className="products-list">
-        <ProductList limit={12} />
+        <ProductList limit={12} filtros={{}} paginado={paginado} setPaginado={actualizarPaginado} />
       </section>
 
       <div className="list-title">
