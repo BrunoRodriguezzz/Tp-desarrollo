@@ -85,9 +85,6 @@ export function buscarProductosMock(limit, currentPage, filtros = {}) {
   return { totalPages, productosPagina };
 }
 
-//    const filtros = {soloNuevos, categoriaSeleccionada, minPrecio, maxPrecio, ordenamiento}; --> Frontend
-//    const { maxPrice, minPrice, search, categoria, vendedor } = filtros; --> Backend
-
 export async function buscarProductos(limit, currentPage, filtros = {}) {
   try {
     const response = await axios.get(`${API_BASE_URL}/productos`, {
@@ -97,8 +94,9 @@ export async function buscarProductos(limit, currentPage, filtros = {}) {
         page: currentPage,
       },
     });
+    console.log(response);
     return {
-      totalPages: response.data.total,
+      totalPages: response.data.totalPages,
       productosPagina: response.data.data,
     };
   } catch (error) {

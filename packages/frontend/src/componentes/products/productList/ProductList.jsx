@@ -31,7 +31,7 @@ export default function ProductList({ filtros = {}, paginado = { page: 1, size: 
   return (
     <div>
       <div className="product-list">
-        {productosPagina.length > 0 ? productosPagina.map((product) => (
+        {(productosPagina != undefined && productosPagina.length > 0) ? productosPagina.map((product) => (
           <ProductBox key={product._id} producto={product} />
         )) : (
           <div className="noProducts-container">
