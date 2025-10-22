@@ -2,14 +2,18 @@ import "./Pedidos.css";
 import PedidosBox from "../../componentes/pedidos/pedidosBox/PedidosBox";
 import { HistorialUsuarioResponseMock } from "../../mockData/Pedidos";
 import React, { useState, useEffect } from "react";
+import Pagination from "../../componentes/pagination/Pagination";
 
 export default function Pedidos() {
   const [pedidos, setPedidos] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
-    const response = obtenerPedidos();
+    const response = obtenerPedidos(currentPage);
     setPedidos(response.data);
-  }, []);
+    setTotalPages(response.totalPages);
+  }, [currentPage]);
 
   return (
     <>
@@ -27,11 +31,27 @@ export default function Pedidos() {
             ))
           )}
         </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
       </div>
     </>
   );
 }
 
-function obtenerPedidos() {
-  return HistorialUsuarioResponseMock;
+function obtenerPedidos(pagina) {
+  const start = (pagina - 1) * HistorialUsuarioResponseMock.elementosPorPagina;
+  const end = start + HistorialUsuarioResponseMock.elementosPorPagina;
+  const pedidosPaginados = HistorialUsuarioResponseMock.data.slice(start, end);
+  const total = HistorialUsuarioResponseMock.total;
+
+  return {
+    data: pedidosPaginados,
+    total,
+    totalPages: Math.ceil(
+      total / HistorialUsuarioResponseMock.elementosPorPagina
+    ),
+  };
 }
