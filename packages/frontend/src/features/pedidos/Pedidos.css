@@ -4,13 +4,17 @@
   align-items: stretch;
   justify-content: center;
   padding: 30px;
-  margin: 0 140px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
 }
 
 .pedido-main-header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 10px;
 }
 
 .pedido-main-header h1 {

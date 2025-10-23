@@ -12,7 +12,6 @@ import PedidosItemList from "../../pedidos/pedidosItemList/PedidosItemList";
 import PedidosDetalleDialog from "../../pedidos/pedidosDetalleDialog/PedidosDetalleDialog";
 import { useState } from "react";
 
-//TODO - Tengo que ver como hacer lo de los items
 export default function VentasBox({pedido}) {
   const { _id, estado, fechaCreacion, items, total } = pedido;
   const enviable = !(estado.toLowerCase() === "entregado" || estado.toLowerCase() === "cancelado");

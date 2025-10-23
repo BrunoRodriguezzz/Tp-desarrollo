@@ -82,7 +82,7 @@ export default function PedidosBox({ pedido }) {
           />
         </Box>
 
-        <CardContent>
+        <CardContent className="pedido-contenido">
           <PedidoItemList items={items} />
 
           <Divider className="pedido-divider" />

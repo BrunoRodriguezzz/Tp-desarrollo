@@ -4,7 +4,10 @@
   align-items: stretch;
   justify-content: center;
   padding: 30px;
-  margin: 0 140px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
 }
 
 .mis-ventas .ventas-header {
@@ -13,6 +16,8 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 10px;
 }
 
 .mis-ventas .ventas-left {
@@ -53,4 +58,5 @@
   gap: 1.5rem;
   margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
 }

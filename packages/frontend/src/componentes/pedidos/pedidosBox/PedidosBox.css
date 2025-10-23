@@ -5,6 +5,8 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
   transition: all 0.2s ease;
   background-color: #fff !important;
+  width: 100%;
+  flex: 1 1 auto;
 }
 
 .pedido-card:hover {
@@ -16,8 +18,11 @@
   background: #fafafa;
   padding: 16px 24px;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 15px;
 }
 
 .pedido-numero {
@@ -47,20 +52,33 @@
   margin: 0;
 }
 
+.pedido-contenido {
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .pedido-divider {
   margin: 16px 0 !important;
 }
 
 .pedido-total {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
+  gap: 8px;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .pedido-actions {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 12px;
 }
 

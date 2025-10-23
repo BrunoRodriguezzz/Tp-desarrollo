@@ -8,6 +8,7 @@
   border-radius: 12px;
   border: 1px solid #e0e0e0;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-sizing: border-box;
   transition: all 0.2s ease;
   background-color: #fff;
 }
@@ -28,34 +29,48 @@
 .venta-box .venta-header {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: space-between;
   background: #fafafa;
   padding: 16px 24px;
+  gap: 15px;
 }
 
 .venta-box .venta-info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 0px;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .venta-box .venta-info h3 {
   font-weight: 600;
   font-size: 16px;
   margin: 0;
+  white-space: normal;
+  overflow-wrap: break-word;
   color: #111;
 }
 
 .venta-box .venta-info p {
   font-size: 0.9rem;
   color: #666;
+  white-space: normal;
+  overflow-wrap: break-word;
   margin: 0;
 }
 
 .venta-box .venta-contenido {
   padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .venta-box .venta-divider {
@@ -69,9 +84,13 @@
 
 .venta-box .venta-total {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
+  gap: 8px;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .venta-box .total-label {
@@ -91,6 +110,7 @@
 .venta-box .venta-actions {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
