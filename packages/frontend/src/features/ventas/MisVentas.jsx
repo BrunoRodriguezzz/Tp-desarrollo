@@ -34,13 +34,13 @@ export default function MisVentas() {
   }, [currentPage]);
 
   return (
-    <div className="my-sales">
-      <div className="sales-header">
-        <div className="sales-left">
+    <div className="mis-ventas">
+      <div className="ventas-header">
+        <div className="ventas-left">
           <h1>Mis Ventas</h1>
           <p>Revisá todas las ventas de tus productos y gestionalas</p>
         </div>
-        <div className="sales-right">
+        <div className="ventas-right">
           <h2>Pedidos Enviables</h2>
             <FormGroup>
               <FormControlLabel control={<Switch color="success" onChange={handleSwitch} sx={{ transform: "scale(1.2)" }}/>} 
@@ -48,7 +48,7 @@ export default function MisVentas() {
             </FormGroup>
         </div>
       </div>
-      <VentasList
+      <VentasList className="ventas-list"
         pedidos={pedidosFiltrados}
         loading={loading}
         currentPage={currentPage}

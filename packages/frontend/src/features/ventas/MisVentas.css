@@ -1,41 +1,39 @@
-.my-sales {
+.mis-ventas {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
   padding: 30px;
-  margin: 0 auto;
-  width: 90%;
+  margin: 0 140px;
 }
 
-.my-sales .sales-header {
+.mis-ventas .ventas-header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 25px;
 }
 
-.my-sales .sales-left {
+.mis-ventas .ventas-left {
   display: flex;
   flex-direction: column;
 }
 
-.my-sales h1 {
+.mis-ventas h1 {
   margin-bottom: 0;
 }
 
-.my-sales h2 {
+.mis-ventas h2 {
   font-size: 15px;
   font-weight: 600;
 }
 
-.my-sales p {
+.mis-ventas p {
   color: #333;
 }
 
-.my-sales .sales-right {
+.mis-ventas .ventas-right {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -46,4 +44,13 @@
   border-radius: 8px;
   padding: 12px;
   background-color: whitesmoke;
+}
+
+.mis-ventas .ventas-list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.5rem;
+  margin: 0 auto;
+  width: 100%;
 }

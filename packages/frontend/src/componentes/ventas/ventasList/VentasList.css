@@ -1,11 +1,12 @@
-.sales-empty {
+.ventas-empty {
   color: var(--gray-2);
 }
 
-.sales-list-container {
+.ventas-list-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
   width: 100%;
-  gap: 5px;
+  gap: 1.5rem;
 }

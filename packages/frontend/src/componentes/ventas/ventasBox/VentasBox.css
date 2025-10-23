@@ -1,81 +1,116 @@
-.pedido-box {
+.venta-box {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  max-width: 800px;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
   flex: 1 1 auto;
-  width: 85%;
-  margin: 15px auto;
-  padding: 15px;
-  gap: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-  transition: box-shadow 0.2s ease;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+  background-color: #fff;
 }
 
-.pedido-box.enviable {
-  background-color: rgba(29, 186, 1, 0.163);
+.venta-box.enviable {
   border-left: 4px solid rgb(29, 186, 1);
 }
 
-.pedido-box.no-enviable {
-  background-color: #f9f9f9;
+.venta-box.no-enviable {
   border-left: 4px solid #ccc;
 }
 
-.pedido-box:hover {
-  box-shadow: 0 2px 6px rgba(0,0,0,0.45);
+.venta-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
 }
 
-.pedido-box .pedido-contenido {
+.venta-box .venta-header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+  background: #fafafa;
+  padding: 16px 24px;
 }
 
-.pedido-box h1 {
-  font-weight: 500;
+.venta-box .venta-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0px;
+}
+
+.venta-box .venta-info h3 {
+  font-weight: 600;
   font-size: 16px;
   margin: 0;
-  color: #333;
+  color: #111;
 }
 
-.pedido-box h2 {
-  font-weight: 500;
-  font-size: 14px;
-  margin: 0;
-  color: #333;
-}
-
-.pedido-box p {
-  font-size: 12px;
-  color: #777;
+.venta-box .venta-info p {
+  font-size: 0.9rem;
+  color: #666;
   margin: 0;
 }
 
-.pedido-box .button-wrapper {
+.venta-box .venta-contenido {
+  padding: 16px 24px;
+}
+
+.venta-box .venta-divider {
+  margin: 16px 0;
+}
+
+.venta-box .button-wrapper {
   display: flex;
   align-items: center;
 }
 
-.pedido-box .enviado-button {
+.venta-box .venta-total {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 4px;
-  padding: 6px 12px;
-  background-color: rgba(0, 120, 20, 0.632);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 13px;
-  transition: background-color 0.2s ease;
+  margin-bottom: 16px;
 }
 
-.pedido-box .leida-button:hover {
-  background-color: rgba(0, 120, 20, 0.91);
+.venta-box .total-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.venta-box .total-valor {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.venta-box .venta-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.venta-box .btn-ver {
+  border: 1px solid #bdbdbd !important;
+  color: #333 !important;
+  background: #fff !important;
+  text-transform: none !important;
+}
+
+.venta-box .btn-ver:hover {
+  background: #f5f5f5 !important;
+}
+
+.venta-box .btn-enviar {
+  background-color: rgba(0, 120, 20, 0.632) !important;
+  color: #fff !important;
+  text-transform: none !important;
+}
+
+.venta-box .btn-enviar:hover {
+  background-color: rgba(0, 120, 20, 0.91) !important;
 }

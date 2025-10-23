@@ -10,14 +10,14 @@ export default function VentasList({
   pagination,
 }) {
   return (
-    <div className="sales-list-container">
+    <div className="ventas-list-container">
           <div className="ventas-list">
             {loading ? (
               Array.from({ length: 3 }).map((_, i) => (
                 <PedidosBoxSkeleton key={i} />
               ))
             ) : pedidos.length === 0 ? (
-              <p className="sales-empty">No tenés ventas aún.</p>
+              <p className="ventas-empty">No tenés ventas aún.</p>
             ) : (
               pedidos.map((pedido) => (
                 <VentasBox key={`${pedido._id}-${currentPage}`} pedido={pedido} />

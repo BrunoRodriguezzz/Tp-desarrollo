@@ -9,14 +9,22 @@ import {
   Home,
   Cancel,
 } from "@mui/icons-material";
+import PedidosItemList from "../../pedidos/pedidosItemList/PedidosItemList";
+import PedidosDetalleDialog from "../../pedidos/pedidosDetalleDialog/PedidosDetalleDialog";
+import { useState } from "react";
 
 //TODO - Tengo que ver como hacer lo de los items
 export default function VentasBox({pedido}) {
   const { _id, estado, fechaCreacion, items, total } = pedido;
   const enviable = !(estado.toLowerCase() === "entregado" || estado.toLowerCase() === "cancelado");
+  const [openDetalleDialog, setOpenDetalleDialog] = useState(false);
 
   const marcarEnviado = () => {
     alert('Se marco como enviado correctamente')
+  }
+  
+  const verDetalles = () => {
+    setOpenDetalleDialog(true);
   }
 
   const status = getStatusConfig(estado);
@@ -29,16 +37,14 @@ export default function VentasBox({pedido}) {
     hour: "2-digit",
     minute: "2-digit",
   });
+
   return (
-      <div className={`pedido-box ${enviable ? "enviable" : "no-enviable"}`}>
-        <div className="pedido-contenido">
-          <div>
-          <FaBox size={22}/>
-          </div>
-          <div className="pedido-texto">
-            <h1>{estado.toUpperCase()}</h1>
-            <h2>${total}</h2>
-            <p>{fechaFormateada}</p>
+    <>
+      <div className={`venta-box ${enviable ? "enviable" : "no-enviable"}`}>
+        <div className="venta-header">
+          <div className="venta-info">
+            <h3>Pedido #{_id}</h3>
+            <p>Realizado el: {fechaFormateada}</p>
           </div>
           <Chip
             icon={status.icon}
@@ -47,16 +53,45 @@ export default function VentasBox({pedido}) {
             variant="outlined"
           />
         </div>
-        {enviable && (
-          <div className="button-wrapper">
-            <button className="enviado-button" onClick={marcarEnviado}>
-            <FaCheck/>
-            Marcar como Enviado
-            </button>
+        <div className="venta-contenido">
+          <PedidosItemList items={items}/>
+          <Divider className="venta-divider"/>
+          <div className="venta-total">
+            <p className="total-label">Total de la venta</p>
+            <p className="total-valor">
+              {total.toLocaleString("es-AR", {
+                style: "currency",
+                currency: "ARS",
+              })}
+            </p>
+          </div>
+          <div className="venta-actions">
+            <Button
+              variant="outlined"
+              className="btn-ver"
+              onClick={verDetalles}
+            >
+              Ver Detalles
+            </Button>
+            {enviable && (
+              <Button
+                variant="contained"
+                className="btn-enviar"
+                onClick={marcarEnviado}
+              >
+                Marcar Enviado
+              </Button>
+            )}
+          </div>
+        </div>
       </div>
-        )}
-      </div>
-    );
+      <PedidosDetalleDialog
+        pedido={pedido}
+        open={openDetalleDialog}
+        onOpenChange={setOpenDetalleDialog}
+      />
+    </>  
+  );
 }
 
 function getStatusConfig(estado) {
