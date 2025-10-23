@@ -47,13 +47,3 @@
   padding: 12px;
   background-color: whitesmoke;
 }
-
-.my-sales .sales-list {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-}
