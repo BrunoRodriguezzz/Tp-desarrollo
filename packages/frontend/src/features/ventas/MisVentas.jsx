@@ -1,5 +1,5 @@
 import "./MisVentas.css"
-import { Switch, FormGroup, FormControlLabel, CircularProgress } from "@mui/material";
+import { Switch, FormGroup, FormControlLabel} from "@mui/material";
 import { useState, useEffect } from "react";
 import { HistorialUsuarioResponseMock } from "../../mockData/Pedidos.js"
 import VentasList from "../../componentes/ventas/ventasList/VentasList.jsx";

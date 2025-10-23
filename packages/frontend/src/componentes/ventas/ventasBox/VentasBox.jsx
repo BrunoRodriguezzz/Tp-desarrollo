@@ -1,6 +1,5 @@
 import "./VentasBox.css"
-import { FaCheck, FaBox } from "react-icons/fa";
-import { Card, CardContent, Chip, Box, Divider, Button } from "@mui/material";
+import {  Chip, Divider, Button } from "@mui/material";
 import {
   LocalShipping,
   AccessTime,
