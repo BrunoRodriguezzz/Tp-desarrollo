@@ -11,14 +11,16 @@ import {
 import PedidosItemList from "../../pedidos/pedidosItemList/PedidosItemList";
 import PedidosDetalleDialog from "../../pedidos/pedidosDetalleDialog/PedidosDetalleDialog";
 import { useState } from "react";
+import VentasEnviarDialog from "../ventasEnviarDialog/VentasEnviarDialog";
 
 export default function VentasBox({pedido}) {
   const { _id, estado, fechaCreacion, items, total } = pedido;
   const enviable = !(estado.toLowerCase() === "entregado" || estado.toLowerCase() === "cancelado");
   const [openDetalleDialog, setOpenDetalleDialog] = useState(false);
+  const [openEnviarDialog, setOpenEnviarDialog] = useState(false);
 
   const marcarEnviado = () => {
-    alert('Se marco como enviado correctamente')
+    setOpenEnviarDialog(true);
   }
   
   const verDetalles = () => {
@@ -87,6 +89,11 @@ export default function VentasBox({pedido}) {
         pedido={pedido}
         open={openDetalleDialog}
         onOpenChange={setOpenDetalleDialog}
+      />
+      <VentasEnviarDialog
+        pedido={pedido}
+        open={openEnviarDialog}
+        onOpenChange={setOpenEnviarDialog}
       />
     </>  
   );
