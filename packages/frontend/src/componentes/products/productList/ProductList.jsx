@@ -14,6 +14,13 @@ export default function ProductList({ filtros = {}, paginado = { page: 1, size: 
   const [cargando, setCargando] = useState(false);
 
   useEffect(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, [paginado]);
+
+  useEffect(() => {
     const fetch = async () => {
       try {
         setCargando(true);
