@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import productsMock from "../../mockData/Products.js";
 import "./ProductoDetailPage.css";
 import { useCart } from "../../componentes/carrito/cartContext/CartContext.jsx";
+import { buscarProductoPorId } from "../../services/productoService.js";
+import ProductBoxSkeleton from "../../componentes/products/productBoxSkeleton/ProductBoxSkeleton.jsx";
 
 export default function ProductoDetailPage() {
   const { id } = useParams();
-  const producto = productsMock.find((p) => p._id === id);
+  const [cargando, setCargando] = useState(false);
+  const [producto, setProducto] = useState(null);
 
   const [cantidad, setCantidad] = useState(1);
 
@@ -16,10 +19,33 @@ export default function ProductoDetailPage() {
 
   const { addToCart } = useCart();
 
+  useEffect(() => {
+    const findById = async () => {
+      try {
+        setCargando(true);
+        const producto = await buscarProductoPorId(id);
+        setProducto(producto);
+      }
+      catch (error) {
+        console.error("No se encontro el producto", error);
+      }
+      finally {
+        //setCargando(false);
+      }
+    }
+    findById();
+  }, [id]) 
+
   const handleAddToCart = (e) => {
     e.stopPropagation();
     addToCart(producto);
   };
+
+  if(cargando) {
+    return (
+      <ProductBoxSkeleton />
+    );
+  }
 
   if (!producto) {
     return (
