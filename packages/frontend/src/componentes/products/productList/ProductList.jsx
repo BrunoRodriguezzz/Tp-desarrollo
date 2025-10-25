@@ -37,7 +37,7 @@ export default function ProductList({ filtros = {}, paginado = { page: 1, size: 
     return (
       <div className="product-list">
         {Array.from({ length: 12 }, (_, i) => (
-          <ProductBoxSkelenton key={i} />
+          <ProductBoxSkeleton key={i} />
         ))}
       </div>
     );
