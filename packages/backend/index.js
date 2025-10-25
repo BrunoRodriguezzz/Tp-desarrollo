@@ -1,39 +1,39 @@
-import dotenv from "dotenv";
-import express from "express";
-import Server from "./server/server.js";
-import cors from "cors";
+import dotenv from 'dotenv';
+import express from 'express';
+import Server from './server/server.js';
+import cors from 'cors';
 
 // Importamos los controllers
-import HealthController from "./controllers/healthController.js";
-import ProductoController from "./controllers/productoController.js";
-import NotificacionController from "./controllers/notificacionController.js";
-import PedidoController from "./controllers/pedidoController.js";
-import CategoriaController from "./controllers/categoriaController.js";
+import HealthController from './controllers/healthController.js';
+import ProductoController from './controllers/productoController.js';
+import NotificacionController from './controllers/notificacionController.js';
+import PedidoController from './controllers/pedidoController.js';
+import CategoriaController from './controllers/categoriaController.js';
 
 // Importamos los Repositorios
-import ProductoRepository from "./repositories/productoRepository.js";
-import NotificacionRepository from "./repositories/notificacionRepository.js";
-import PedidoRepository from "./repositories/pedidoRepository.js";
-import UsuarioRepository from "./repositories/usuarioRepository.js";
-import CategoriaRepository from "./repositories/categoriaRepository.js";
+import ProductoRepository from './repositories/productoRepository.js';
+import NotificacionRepository from './repositories/notificacionRepository.js';
+import PedidoRepository from './repositories/pedidoRepository.js';
+import UsuarioRepository from './repositories/usuarioRepository.js';
+import CategoriaRepository from './repositories/categoriaRepository.js';
 
 // Importamos los servicios
-import ProductoService from "./services/productoService.js";
-import NotificacionService from "./services/notificacionService.js";
-import PedidoService from "./services/pedidoService.js";
-import UsuarioService from "./services/usuarioService.js";
-import CategoriaService from "./services/categoriaService.js";
+import ProductoService from './services/productoService.js';
+import NotificacionService from './services/notificacionService.js';
+import PedidoService from './services/pedidoService.js';
+import UsuarioService from './services/usuarioService.js';
+import CategoriaService from './services/categoriaService.js';
 
-import { errorHandler } from "./middlewares/errorHandler.js";
+import { errorHandler } from './middlewares/errorHandler.js';
 // Swagger docs
-import swaggerDocs from "./swagger.js";
+import swaggerDocs from './swagger.js';
 // Importamos las rutas
-import routes from "./routes/routes.js";
-import MongoDBClient from "./config/database.js";
+import routes from './routes/routes.js';
+import MongoDBClient from './config/database.js';
 
 // Inicializacion
 const app = express();
-dotenv.config({ path: "./packages/backend/.env" });
+dotenv.config({ path: './packages/backend/.env' });
 
 const port = process.env.SERVER_PORT || 3000;
 const server = new Server(app, port);
@@ -46,9 +46,7 @@ const usuarioRepository = new UsuarioRepository();
 const categoriaRepository = new CategoriaRepository();
 
 // Capas de Servicio
-const categoriaService = new CategoriaService(
-  categoriaRepository
-);
+const categoriaService = new CategoriaService(categoriaRepository);
 
 const usuarioService = new UsuarioService(usuarioRepository);
 
@@ -58,10 +56,7 @@ const productoService = new ProductoService(
   categoriaService
 );
 
-const notificacionService = new NotificacionService(
-  notificacionRepository,
-  pedidoRepository
-);
+const notificacionService = new NotificacionService(notificacionRepository, pedidoRepository);
 
 const pedidoService = new PedidoService(
   pedidoRepository,
@@ -69,8 +64,6 @@ const pedidoService = new PedidoService(
   productoService,
   notificacionService
 );
-
-
 
 // Capas de Controlador
 const healthController = new HealthController();
@@ -86,14 +79,17 @@ server.setController(NotificacionController, notificacionController);
 server.setController(PedidoController, pedidoController);
 server.setController(CategoriaController, categoriaController);
 
-app.use(cors({
-  origin: "http://localhost:3000",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
+app.use(
+  cors({
+    // BARLA PIDE UNA DISCULPA POR ESTO
+    origin: 'https://tiendasol.syspa.es',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  })
+);
 
 // Configuracion de rutas y lanzamiento
-routes.forEach((route) => server.addRoute(route));
+routes.forEach(route => server.addRoute(route));
 
 // Swagger docs
 (async () => {
