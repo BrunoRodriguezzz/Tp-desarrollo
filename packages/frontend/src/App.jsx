@@ -13,29 +13,49 @@ import Notificaciones from "./features/notificaciones/Notificaciones";
 import Pedidos from "./features/pedidos/Pedidos";
 import { CartProvider } from "./componentes/carrito/cartContext/CartContext.jsx";
 import MisVentas from "./features/ventas/MisVentas.jsx";
+import Checkout from "./features/checkout/Checkout.jsx";
+import ProtectedCheckout from "./componentes/protectedCheckout/ProtectedCheckout.jsx";
+import { AnimatePresence, motion } from "framer-motion";
+import PageWrapper from "./componentes/pageWrapper/PageWrapper.jsx";
+
+function AppContent() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<PageWrapper><Home /></PageWrapper>} />
+          <Route path="productos" element={<PageWrapper><Productos /></PageWrapper>} />
+          <Route path="/productos/:id" element={<PageWrapper><ProductoDetailPage /></PageWrapper>} />
+          <Route path="categorias" element={<PageWrapper><Categorias /></PageWrapper>} />
+          <Route path="login" element={<PageWrapper><Login /></PageWrapper>} />
+          <Route path="register" element={<PageWrapper><Register /></PageWrapper>} />
+          <Route path="carrito" element={<PageWrapper><Carrito /></PageWrapper>} />
+          <Route path="notificaciones" element={<PageWrapper><Notificaciones /></PageWrapper>} />
+          <Route path="pedidos" element={<PageWrapper><Pedidos /></PageWrapper>} />
+          <Route path="mis-ventas" element={<PageWrapper><MisVentas /></PageWrapper>} />
+          <Route
+            path="checkout"
+            element={
+              <ProtectedCheckout>
+                <PageWrapper><Checkout /></PageWrapper>
+              </ProtectedCheckout>
+            }
+          />
+        </Route>
+      </Routes>
+    </AnimatePresence>
+  );
+}
 
 export default function App() {
   return (
-    <>
-      <CartProvider>
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="productos" element={<Productos />} />
-              <Route path="/productos/:id" element={<ProductoDetailPage />} />
-              <Route path="categorias" element={<Categorias />} />
-              <Route path="login" element={<Login />} />
-              <Route path="register" element={<Register />} />
-              <Route path="carrito" element={<Carrito />} />
-              <Route path="notificaciones" element={<Notificaciones />} />
-              <Route path="pedidos" element={<Pedidos />} />
-              <Route path="mis-ventas" element={<MisVentas />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </CartProvider>
-    </>
+    <CartProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <AppContent />
+      </BrowserRouter>
+    </CartProvider>
   );
 }
