@@ -50,17 +50,18 @@ export default function DetallePedido({cartItems, isCheckout}) {
             <p style={{ color: 'black', fontWeight: 'bold', fontSize: '1.2rem'  }}>${sumarIVA(total).toFixed(2) + " ARS" }</p>
         </div>
 
-        <div className="resumen-botones">
+        <div className={`resumen-botones ${isCheckout ? "single-btn" : ""}`}>
             <Link to="/checkout" className="btn-comprar">
                 {isCheckout ?
                     "Comprar":
                     "Continuar compra"
                 }
             </Link>
+            {isCheckout ? null :
              <Link to="/productos" className="btn-continuar">
                 Continuar comprando
              </Link>
-            
+            }
         </div>
     </div>
   )

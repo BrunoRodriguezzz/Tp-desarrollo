@@ -1,0 +1,103 @@
+.direccion-formulario {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px; 
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: #ffffff; 
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  gap: 1.5rem;
+  margin: 0 auto; 
+}
+.direccion-formulario h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.direccion-formulario .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.direccion-formulario label {
+  font-size: 1rem;
+  color: #333;
+}
+
+.direccion-formulario input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.direccion-formulario input:focus {
+  border-color: rgba(12, 101, 216, 0.959);
+  box-shadow: 0 0 4px rgba(12, 101, 216, 0.3);
+}
+
+.direccion-formulario .form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.direccion-formulario button {
+  padding: 0.75rem 1.3rem;  
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  border: none;
+}
+
+.direccion-formulario .btn-comprar {
+  background-color: rgba(12, 101, 216, 0.959);
+  color: #fff;
+}
+
+.direccion-formulario .btn-comprar:hover {
+  background-color: rgba(8, 80, 180, 0.959);
+}
+
+.direccion-formulario .btn-continuar {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.direccion-formulario .btn-continuar:hover {
+  color: #333;
+  background-color: #e0e0e0;
+}
+
+@media (max-width: 480px) {
+  .direccion-formulario {
+    padding: 12px;
+    max-width: 100%;
+  }
+
+  .direccion-formulario h3 {
+    font-size: 1.3rem;
+  }
+
+  .direccion-formulario label,
+  .direccion-formulario input,
+  .direccion-formulario button {
+    font-size: 0.9rem;
+  }
+
+  .direccion-formulario input {
+    padding: 6px 10px;
+  }
+
+  .direccion-formulario button {
+    padding: 10px;
+  }
+}
