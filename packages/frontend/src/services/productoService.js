@@ -5,7 +5,7 @@ import axios from "axios";
 const API_BASE_URL = process.env.URL_BACKEND || "http://localhost:8000";
 
 export async function buscarProductosMock(limit, currentPage, filtros = {}) {
-  await new Promise(res => setTimeout(res, 1000));
+  await new Promise((res) => setTimeout(res, 1000));
   const { news, categoria, minPrice, maxPrice, orderBy } = filtros;
 
   let prodFiltrado = productsMock;
@@ -88,7 +88,7 @@ export async function buscarProductosMock(limit, currentPage, filtros = {}) {
 }
 
 export async function buscarProductos(limit, currentPage, filtros = {}) {
-  await new Promise(res => setTimeout(res, 1000));
+  await new Promise((res) => setTimeout(res, 1000));
   try {
     const response = await axios.get(`${API_BASE_URL}/productos`, {
       params: {
@@ -101,6 +101,16 @@ export async function buscarProductos(limit, currentPage, filtros = {}) {
       totalPages: response.data.totalPages,
       productosPagina: response.data.data,
     };
+  } catch (error) {
+    console.error("Error al buscar productos:", error);
+    throw error;
+  }
+}
+
+export async function buscarProductoPorId(id) {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/productos/${id}`);
+    return response.data;
   } catch (error) {
     console.error("Error al buscar productos:", error);
     throw error;

@@ -5,7 +5,7 @@ import Pagination from "../../pagination/Pagination.jsx";
 import PropTypes from "prop-types";
 import {buscarProductosMock, buscarProductos} from "../../../services/productoService.js";
 import Box from "@mui/material/Box";
-import ProductBoxSkelenton from "../productBoxSkeleton/ProductBoxSkeleton.jsx";
+import ProductBoxSkeleton from "../productBoxSkeleton/ProductBoxSkeleton.jsx";
 
 export default function ProductList({ filtros = {}, paginado = { page: 1, size: 10 }, setPaginado, pagination = true }) {
 
