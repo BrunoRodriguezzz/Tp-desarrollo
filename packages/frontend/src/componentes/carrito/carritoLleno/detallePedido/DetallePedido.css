@@ -42,27 +42,57 @@
     transition: all 0.2s;
 }
 
-.resumen-pedido .btn-comprar {
-    background-color: rgba(12, 101, 216, 0.959);
-    color: #fff;
-    border: none;
-}
 
-.resumen-pedido .btn-comprar:hover {
-    background-color: rgba(12, 100, 216, 0.553);
+.resumen-pedido .btn-comprar {
+  background-color: rgba(12, 101, 216, 0.959);
+  color: #fff;
+  border: none;
+  text-decoration: none;
+  padding: 0.75rem 1.3rem;  
+  border-radius: 8px;        
+  cursor: pointer;           
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .resumen-pedido .btn-continuar {
-    background-color: transparent;
-    color: #666;
-    border: none;
-    text-decoration: underline;
-    font-weight: normal;
+  background-color: #f2f2f2;
+  color: black;
+  border: none;
+  text-decoration: none;
+  padding: 0.75rem 1.3rem;  
+  border-radius: 6px;        
+  cursor: pointer;           
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.resumen-pedido .btn-comprar:hover {
+  background-color: rgba(8, 80, 180, 0.959);
 }
 
 .resumen-pedido .btn-continuar:hover {
     color: #333;
+    background-color: #e0e0e0;
 }
+
+.resumen-botones.single-btn {
+  display: flex;
+  justify-content: center; 
+  position: relative;      
+  width: 100%;             
+  margin-top: 1rem;       
+}
+
+.resumen-botones.single-btn .btn-comprar {
+  width: 45%;         
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
 
 @media (max-width: 480px) {
     .resumen-pedido {

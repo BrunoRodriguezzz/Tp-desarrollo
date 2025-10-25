@@ -18,6 +18,7 @@ export default function CarritoLleno() {
         />
         <DetallePedido
           cartItems={cartItems}
+          isCheckout={false}
         />
       </div>
     </div>

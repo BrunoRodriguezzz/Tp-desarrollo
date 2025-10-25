@@ -36,7 +36,9 @@ export default function Home() {
 
       <div className="list-title">
         <h1>Productos Destacados</h1>
-        <p>Ver todos →</p>
+        <Link to="/productos">
+          Ver todos →
+        </Link>
       </div>
 
       <section className="products-list">
@@ -45,7 +47,9 @@ export default function Home() {
 
       <div className="list-title">
         <h1>Categorias Destacadas</h1>
-        <p>Ver todas →</p>
+        <Link to="/categorias">
+          Ver todas →  
+        </Link>
       </div>
 
       <section className="categories-list">

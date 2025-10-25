@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import productsMock from "../../mockData/Products.js";
 import "./ProductoDetailPage.css";
+import { useCart } from "../../componentes/carrito/cartContext/CartContext.jsx";
 
 export default function ProductoDetailPage() {
   const { id } = useParams();
@@ -13,9 +14,11 @@ export default function ProductoDetailPage() {
 
   const decrementar = () => setCantidad((prev) => (prev > 1 ? prev - 1 : 1));
 
-  const agregarAlCarrito = () => {
-    console.log(`Agregado al carrito: ${producto.titulo} x${cantidad}`);
-    // ver que hacer cuando implementemos el carrito
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    addToCart(producto);
   };
 
   if (!producto) {
@@ -70,7 +73,7 @@ export default function ProductoDetailPage() {
               <button onClick={incrementar}>+</button>
             </div>
           </div>
-          <button className="button-transparent" onClick={agregarAlCarrito}>
+          <button className="button-transparent" onClick={handleAddToCart}>
             Agregar al Carrito
           </button>
         </div>

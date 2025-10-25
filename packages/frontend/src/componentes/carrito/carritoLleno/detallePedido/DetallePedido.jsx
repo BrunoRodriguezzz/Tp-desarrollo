@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './DetallePedido.css'
 
-export default function DetallePedido({ cartItems}) {
+export default function DetallePedido({cartItems, isCheckout}) {
     const [total, setTotal] = useState(0);
 
     const convertirMoneda = (moneda) => {
@@ -50,12 +50,18 @@ export default function DetallePedido({ cartItems}) {
             <p style={{ color: 'black', fontWeight: 'bold', fontSize: '1.2rem'  }}>${sumarIVA(total).toFixed(2) + " ARS" }</p>
         </div>
 
-        <div className="resumen-botones">
-            <button className="btn-comprar">Comprar</button>
-             <Link to="/productos">
-                <button className="btn-continuar">Continuar comprando</button>
+        <div className={`resumen-botones ${isCheckout ? "single-btn" : ""}`}>
+            <Link to="/checkout" className="btn-comprar">
+                {isCheckout ?
+                    "Comprar":
+                    "Continuar compra"
+                }
+            </Link>
+            {isCheckout ? null :
+             <Link to="/productos" className="btn-continuar">
+                Continuar comprando
              </Link>
-            
+            }
         </div>
     </div>
   )
