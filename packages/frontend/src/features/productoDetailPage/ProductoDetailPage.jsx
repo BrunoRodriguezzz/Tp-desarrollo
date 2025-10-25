@@ -61,9 +61,8 @@ export default function ProductoDetailPage() {
 
   return (
     <div className="producto-detail-container">
-      <div className="producto-imagen">
-        <img src={producto.fotos[0]} alt={producto.titulo} />
-      </div>
+      <img className="producto-imagen" src={producto.fotos[0]} alt={producto.titulo} />
+
       <div className="producto-info">
         <p className="producto-categoria">
           {producto.categorias?.[0]?.toUpperCase()}
