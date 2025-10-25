@@ -7,6 +7,10 @@
   border-bottom: 1px solid #e0e0e0;
 }
 
+.pedido-item:last-child {
+  border-bottom: none;
+}
+
 .pedido-item-img {
   width: 80px !important;
   height: 80px !important;
