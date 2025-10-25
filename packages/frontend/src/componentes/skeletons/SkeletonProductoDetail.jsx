@@ -4,9 +4,7 @@ import Skeleton from '@mui/material/Skeleton';
 export default function ProductDetailSkeleton () {
   return (
     <div className="producto-detail-container">
-      <div className="producto-imagen">
         <Skeleton variant='rectangular' width="85%" height={450} style={{borderRadius: 10}}/>
-      </div>
       <div className="producto-info">
         <Skeleton variant='text' width="20%" height={30}/>
         <Skeleton variant='text' width="70%" height={50}/>
