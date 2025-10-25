@@ -4,6 +4,7 @@ import { FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import usuariosMock from "../../../mockData/Users.js";
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -13,8 +14,17 @@ export default function Login() {
     const camposCompletos = email.trim() && password.trim();
 
     const handleLogin = () => {
-        alert('Inicio de sesion correcto');
-        navigate("/")
+			const usuario = usuariosMock.find(
+					(u) => (u.email === email && u.password === password)
+			)
+			
+			if(!usuario)
+			{
+					alert('Usuario o password incorrectas');
+					return;
+			}
+			alert('Inicio de sesion correcto');    
+			navigate("/");
      };
 
     return (

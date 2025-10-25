@@ -17,7 +17,7 @@ export default function ProductList({ filtros = {}, paginado = { page: 1, size: 
     const fetch = async () => {
       try {
         setCargando(true);
-        const { totalPages, productosPagina } = await buscarProductosMock(paginado.size, paginado.page, filtros);
+        const { totalPages, productosPagina } = await buscarProductos(paginado.size, paginado.page, filtros);
         setTotalPages(totalPages);
         setProductosPagina(productosPagina);
       } catch (error) {
