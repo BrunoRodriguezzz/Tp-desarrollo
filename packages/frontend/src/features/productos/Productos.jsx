@@ -19,6 +19,7 @@ export default function Productos() {
             
             const currentFiltros = {
                 news: params.news === 'true', // String --> Boolean
+                search: params.search || null,
                 categoria: params.categoria || null,
                 minPrice: params.minPrice ? Number(params.minPrice) : null,
                 maxPrice: params.maxPrice ? Number(params.maxPrice) : null,
@@ -27,7 +28,7 @@ export default function Productos() {
             
             const currentPaginado = {
                 page: params.page ? Number(params.page) : 1, 
-                size: params.size ? Number(params.size) : 10 
+                size: params.size ? Number(params.size) : 12
             };
 
             return { filtros: currentFiltros, paginado: currentPaginado };

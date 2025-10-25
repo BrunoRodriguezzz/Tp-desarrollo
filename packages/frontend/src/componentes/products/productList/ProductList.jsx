@@ -17,7 +17,7 @@ export default function ProductList({ filtros = {}, paginado = { page: 1, size: 
     const fetch = async () => {
       try {
         setCargando(true);
-        const { totalPages, productosPagina } = await buscarProductosMock(paginado.size, paginado.page, filtros);
+        const { totalPages, productosPagina } = await buscarProductos(paginado.size, paginado.page, filtros);
         setTotalPages(totalPages);
         setProductosPagina(productosPagina);
       } catch (error) {
@@ -36,7 +36,7 @@ export default function ProductList({ filtros = {}, paginado = { page: 1, size: 
   if (cargando) {
     return (
       <div className="product-list">
-        {Array.from({ length: 5 }, (_, i) => (
+        {Array.from({ length: 12 }, (_, i) => (
           <ProductBoxSkelenton key={i} />
         ))}
       </div>
