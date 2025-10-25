@@ -4,7 +4,7 @@ import productsMock from "../../mockData/Products.js";
 import "./ProductoDetailPage.css";
 import { useCart } from "../../componentes/carrito/cartContext/CartContext.jsx";
 import { buscarProductoPorId } from "../../services/productoService.js";
-import ProductBoxSkeleton from "../../componentes/products/productBoxSkeleton/ProductBoxSkeleton.jsx";
+import ProductDetailSkeleton from "../../componentes/skeletons/SkeletonProductoDetail.jsx";
 
 export default function ProductoDetailPage() {
   const { id } = useParams();
@@ -30,7 +30,7 @@ export default function ProductoDetailPage() {
         console.error("No se encontro el producto", error);
       }
       finally {
-        //setCargando(false);
+        setCargando(false);
       }
     }
     findById();
@@ -43,7 +43,7 @@ export default function ProductoDetailPage() {
 
   if(cargando) {
     return (
-      <ProductBoxSkeleton />
+      <ProductDetailSkeleton />
     );
   }
 
