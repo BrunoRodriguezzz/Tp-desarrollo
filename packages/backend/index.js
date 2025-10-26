@@ -35,7 +35,7 @@ import MongoDBClient from './config/database.js';
 const app = express();
 dotenv.config({ path: './packages/backend/.env' });
 
-const port = process.env.SERVER_PORT || 3000;
+const port = process.env.SERVER_PORT || 8000;
 const server = new Server(app, port);
 
 // Capas de Repositorio
