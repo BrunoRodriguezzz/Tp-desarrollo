@@ -41,7 +41,8 @@ export default function Header() {
               if (e.key === "Enter") {
                 e.preventDefault();
                 const trimmed = query.trim();
-                if (trimmed) navigate(`/productos?search=${encodeURIComponent(trimmed)}`);
+                if (trimmed)
+                  navigate(`/productos?search=${encodeURIComponent(trimmed)}`);
                 else navigate(`/productos`);
               }
             }}
@@ -53,7 +54,8 @@ export default function Header() {
             aria-label="Ejecutar búsqueda"
             onClick={() => {
               const trimmed = query.trim();
-              if (trimmed) navigate(`/productos?search=${encodeURIComponent(trimmed)}`);
+              if (trimmed)
+                navigate(`/productos?search=${encodeURIComponent(trimmed)}`);
               else navigate(`/productos`);
             }}
           >
@@ -62,7 +64,11 @@ export default function Header() {
           </button>
         </div>
 
-        <div className="header-buttons">
+        <div
+          className="header-buttons"
+          role="navigation"
+          aria-label="Menú principal"
+        >
           <Link to="/productos" className="button-transparent">
             Productos
           </Link>
@@ -70,13 +76,18 @@ export default function Header() {
           <Link to="/categorias" className="button-transparent">
             Categorías
           </Link>
-          
-          <Link to="/carrito" className="button-gray">
-            <LuShoppingCart />
-            {totalItems > 0 ? 
-            (<span>{totalItems} ítem{totalItems > 1 ? "s" : ""}</span>)
-            :
-            (<span>Carrito</span>)}
+
+          <Link
+            to="/carrito"
+            className="button-gray"
+            aria-label={`Ir al carrito, contiene ${totalItems} ${totalItems === 1 ? "producto" : "productos"}`}
+          >
+            <LuShoppingCart aria-hidden="true" />
+            <span aria-hidden="true">
+              {totalItems > 0
+                ? `${totalItems} ítem${totalItems > 1 ? "s" : ""}`
+                : "Carrito"}
+            </span>
           </Link>
 
           <Link to="/login" className="button-white-border">

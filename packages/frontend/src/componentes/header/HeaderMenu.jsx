@@ -10,7 +10,11 @@ export default function HeaderMenu({ onClose }) {
 
   return (
     <div className="header-menu">
-      <div className="menu-search-bar" role="search" aria-label="Buscar productos">
+      <div
+        className="menu-search-bar"
+        role="search"
+        aria-label="Buscar productos"
+      >
         <input
           id="product-input-menu"
           type="text"
@@ -36,22 +40,67 @@ export default function HeaderMenu({ onClose }) {
           aria-label="Ejecutar búsqueda"
           onClick={() => {
             const trimmed = query.trim();
-            if (trimmed) navigate(`/productos?search=${encodeURIComponent(trimmed)}`);
+            if (trimmed)
+              navigate(`/productos?search=${encodeURIComponent(trimmed)}`);
             else navigate(`/productos`);
             if (onClose) onClose();
           }}
         >
           <FaSearch aria-hidden="true" />
           Buscar
-        </button> 
+        </button>
       </div>
 
-      <ul className="header-menu-options">
-        <li className="header-menu-button"><Link to="/productos" className="link" onClick={onClose}>Productos</Link></li>
-        <li className="header-menu-button"><Link to="/categorias" className="link" onClick={onClose}>Categorías</Link></li>
-        <li className="header-menu-button"><Link to="/carrito" className="link" onClick={onClose}>Carrito</Link></li>
-        <li className="header-menu-button"><Link to="/login" className="link" onClick={onClose}>Iniciar Sesión</Link></li>
-        <li className="header-menu-button"><Link to="/register" className="link" onClick={onClose}>Registrarse</Link></li>
+      <ul
+        className="header-menu-options"
+        role="menu"
+        aria-label="Opciones del menú principal"
+      >
+        <li className="header-menu-button">
+          <Link
+            to="/productos"
+            className="link"
+            onClick={onClose}
+            role="menuitem"
+          >
+            Productos
+          </Link>
+        </li>
+        <li className="header-menu-button">
+          <Link
+            to="/categorias"
+            className="link"
+            onClick={onClose}
+            role="menuitem"
+          >
+            Categorías
+          </Link>
+        </li>
+        <li className="header-menu-button">
+          <Link
+            to="/carrito"
+            className="link"
+            onClick={onClose}
+            role="menuitem"
+          >
+            Carrito
+          </Link>
+        </li>
+        <li className="header-menu-button">
+          <Link to="/login" className="link" onClick={onClose} role="menuitem">
+            Iniciar Sesión
+          </Link>
+        </li>
+        <li className="header-menu-button">
+          <Link
+            to="/register"
+            className="link"
+            onClick={onClose}
+            role="menuitem"
+          >
+            Registrarse
+          </Link>
+        </li>
       </ul>
     </div>
   );
