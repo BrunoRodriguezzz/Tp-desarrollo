@@ -3,10 +3,13 @@ import PropTypes from "prop-types";
 import "./HeaderMenu.css";
 import { FaSearch } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import { LuShoppingCart } from "react-icons/lu";
+import { useCart } from "../carrito/cartContext/CartContext.jsx";
 
 export default function HeaderMenu({ onClose }) {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
+  const { totalItems } = useCart();
 
   return (
     <div className="header-menu">
@@ -77,31 +80,33 @@ export default function HeaderMenu({ onClose }) {
           </Link>
         </li>
         <li className="header-menu-button">
-          <Link
-            to="/carrito"
-            className="link"
-            onClick={onClose}
-            role="menuitem"
-          >
-            Carrito
-          </Link>
-        </li>
-        <li className="header-menu-button">
           <Link to="/login" className="link" onClick={onClose} role="menuitem">
             Iniciar Sesión
           </Link>
         </li>
-        <li className="header-menu-button">
-          <Link
-            to="/register"
-            className="link"
-            onClick={onClose}
-            role="menuitem"
-          >
-            Registrarse
-          </Link>
-        </li>
       </ul>
+
+      <Link
+        to="/carrito"
+        className="button-gray carrito-button"
+        aria-label={`Ir al carrito, contiene ${totalItems} ${totalItems === 1 ? "producto" : "productos"}`}
+      >
+        <LuShoppingCart aria-hidden="true" />
+        <span aria-hidden="true">
+          {totalItems > 0
+            ? `${totalItems} ítem${totalItems > 1 ? "s" : ""}`
+            : "Carrito"}
+        </span>
+      </Link>
+
+      <Link
+        to="/carrito"
+        className="button-gray small-carrito-button"
+        aria-label={`Ir al carrito, contiene ${totalItems} ${totalItems === 1 ? "producto" : "productos"}`}
+      >
+        <LuShoppingCart aria-hidden="true" />
+        <span aria-hidden="true">{totalItems}</span>
+      </Link>
     </div>
   );
 }
