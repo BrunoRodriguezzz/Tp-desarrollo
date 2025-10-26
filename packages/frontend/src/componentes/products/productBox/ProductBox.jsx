@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./ProductBox.css";
 import { useCart } from "../../carrito/cartContext/CartContext.jsx";
+import Skeleton from "@mui/material/Skeleton";
 
 export default function ProductBox({ producto }) {
+  const [imgLoaded, setImgLoaded] = useState(false);
   const navigate = useNavigate();
   const { addToCart } = useCart();
 
@@ -15,7 +17,7 @@ export default function ProductBox({ producto }) {
   const handleAddToCart = (e) => {
     e.stopPropagation();
     addToCart(producto);
-  }
+  };
 
   return (
     <div
@@ -23,11 +25,23 @@ export default function ProductBox({ producto }) {
       onClick={handleClick}
       style={{ cursor: "pointer" }}
     >
-      <img
-        src={producto.fotos[0]}
-        alt={producto.titulo}
-        className="product-image"
-      />
+      <div className="product-image-wrapper" style={{ position: "relative" }}>
+        {!imgLoaded && (
+          <Skeleton
+            variant="rectangular"
+            className="product-image"
+            sx={{ minHeight: "14rem" }}
+          />
+        )}
+        <img
+          src={producto.fotos[0]}
+          alt={producto.titulo}
+          className="product-image"
+          onLoad={() => setImgLoaded(true)}
+          onError={() => setImgLoaded(true)}
+          style={{ display: imgLoaded ? "block" : "none" }}
+        />
+      </div>
       <div className="product-content">
         <div className="product-text">
           <p className="product-category">{producto.categorias[0]}</p>
@@ -36,7 +50,9 @@ export default function ProductBox({ producto }) {
 
         <div className="button-wrapper">
           <p className="product-price">${producto.precio}</p>
-          <button className="add-to-cart-button" onClick={handleAddToCart}>Agregar al Carrito</button>
+          <button className="add-to-cart-button" onClick={handleAddToCart}>
+            Agregar al Carrito
+          </button>
         </div>
       </div>
     </div>
