@@ -1,8 +1,9 @@
-import { set } from "mongoose";
 import productsMock from "../mockData/Products.js";
 import axios from "axios";
 
-const API_BASE_URL = process.env.URL_BACKEND || "http://localhost:8000";
+// BARLA PIDE PERDON POR ESTO
+const API_BASE_URL =
+  process.env.REACT_APP_URL_BACKEND || "https://tiendasolapi.syspa.es";
 
 export async function buscarProductosMock(limit, currentPage, filtros = {}) {
   await new Promise((res) => setTimeout(res, 1000));
