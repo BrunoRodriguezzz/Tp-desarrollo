@@ -12,6 +12,7 @@ export default function ProductoDetailPage() {
   const [cargando, setCargando] = useState(false);
   const [producto, setProducto] = useState(null);
   const [openSuccess, setOpenSuccess] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   const [cantidad, setCantidad] = useState(1);
 
@@ -31,16 +32,14 @@ export default function ProductoDetailPage() {
         setCargando(true);
         const producto = await buscarProductoPorId(id);
         setProducto(producto);
-      }
-      catch (error) {
+      } catch (error) {
         console.error("No se encontro el producto", error);
-      }
-      finally {
+      } finally {
         setCargando(false);
       }
-    }
+    };
     findById();
-  }, [id]) 
+  }, [id]);
 
   const handleAddToCart = (e) => {
     e.stopPropagation();
@@ -48,10 +47,8 @@ export default function ProductoDetailPage() {
     setOpenSuccess(true);
   };
 
-  if(cargando) {
-    return (
-      <ProductDetailSkeleton />
-    );
+  if (cargando) {
+    return <ProductDetailSkeleton />;
   }
 
   if (!producto) {
@@ -68,7 +65,17 @@ export default function ProductoDetailPage() {
 
   return (
     <div className="producto-detail-container">
-      <img className="producto-imagen" src={producto.fotos[0]} alt={producto.titulo} />
+      <div className="producto-imagen-wrapper">
+        {!imgLoaded && <ProductDetailSkeleton />}
+        <img
+          className="producto-imagen"
+          src={producto.fotos[0]}
+          alt={producto.titulo}
+          onLoad={() => setImgLoaded(true)}
+          onError={() => setImgLoaded(true)}
+          style={{ display: imgLoaded ? "block" : "none" }}
+        />
+      </div>
 
       <div className="producto-info">
         <p className="producto-categoria">
