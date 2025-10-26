@@ -105,7 +105,7 @@ export default function Header() {
         )}
       </header>
 
-      {menuOpen && <HeaderMenu />}
+      {menuOpen && <HeaderMenu onClose={() => setMenuOpen(false)} />}
     </>
   );
 }
