@@ -1,16 +1,20 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 import "./Home.css";
 import ProductList from "../../componentes/products/productList/ProductList";
 import CategoryList from "../../componentes/categories/categoryList/CategoryList";
 import { Link } from "react-router-dom";
+import { MdOutlineLocalShipping } from "react-icons/md";
+import { CiLock } from "react-icons/ci";
+import { IoDiamondOutline } from "react-icons/io5";
+import { CiChat1 } from "react-icons/ci";
 
 export default function Home() {
   const [paginado, setPaginado] = useState({ page: 1, size: 12 });
 
   const actualizarPaginado = (clave, valor) => {
-    setPaginado(prev => ({
+    setPaginado((prev) => ({
       ...prev,
-      [clave]: valor
+      [clave]: valor,
     }));
   };
 
@@ -36,20 +40,21 @@ export default function Home() {
 
       <div className="list-title">
         <h1>Productos Destacados</h1>
-        <Link to="/productos">
-          Ver todos →
-        </Link>
+        <Link to="/productos">Ver todos →</Link>
       </div>
 
       <section className="products-list">
-        <ProductList limit={12} filtros={{}} paginado={paginado} setPaginado={actualizarPaginado} />
+        <ProductList
+          limit={12}
+          filtros={{}}
+          paginado={paginado}
+          setPaginado={actualizarPaginado}
+        />
       </section>
 
       <div className="list-title">
         <h1>Categorias Destacadas</h1>
-        <Link to="/categorias">
-          Ver todas →  
-        </Link>
+        <Link to="/categorias">Ver todas →</Link>
       </div>
 
       <section className="categories-list">
@@ -61,7 +66,9 @@ export default function Home() {
 
         <div className="why-container">
           <div className="why-box">
-            <span>🚚</span>
+            <span>
+              <MdOutlineLocalShipping />
+            </span>
 
             <h3>Envío Rápido</h3>
 
@@ -72,7 +79,9 @@ export default function Home() {
           </div>
 
           <div className="why-box">
-            <span>🔒</span>
+            <span>
+              <CiLock />
+            </span>
 
             <h3>Compra Segura</h3>
 
@@ -83,7 +92,9 @@ export default function Home() {
           </div>
 
           <div className="why-box">
-            <span>💎</span>
+            <span>
+              <IoDiamondOutline />
+            </span>
 
             <h3>Calidad Garantizada</h3>
 
@@ -94,7 +105,9 @@ export default function Home() {
           </div>
 
           <div className="why-box">
-            <span>💬</span>
+            <span>
+              <CiChat1 />
+            </span>
 
             <h3>Soporte 24/7</h3>
 

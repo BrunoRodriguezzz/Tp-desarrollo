@@ -78,8 +78,15 @@ footer {
   color: var(--gray-2);
 }
 
+.footer-copyright p {
+  display: flex;
+  align-items: center;
+}
+
 .footer-copyright p span {
-  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
   margin: 0.4rem;
 }
 
