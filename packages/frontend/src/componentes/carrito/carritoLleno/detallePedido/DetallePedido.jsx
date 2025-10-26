@@ -19,10 +19,6 @@ export default function DetallePedido({ cartItems, isCheckout }) {
     }
   };
 
-  const sumarIVA = (monto) => {
-    return monto * 1.21;
-  };
-
   useEffect(() => {
     let sumaTotal = 0;
     cartItems.forEach((item) => {
@@ -42,16 +38,12 @@ export default function DetallePedido({ cartItems, isCheckout }) {
         <p>Envío</p>
         <p>Gratis</p>
       </div>
-      <div>
-        <p>Impuestos</p>
-        <p>21%</p>
-      </div>
       <div style={{ borderTop: "1px solid #eee" }}>
         <p style={{ color: "black", fontWeight: "bold", fontSize: "1.2rem" }}>
           Total
         </p>
         <p style={{ color: "black", fontWeight: "bold", fontSize: "1.2rem" }}>
-          ${sumarIVA(total).toFixed(2) + " ARS"}
+          ${total.toFixed(2) + " ARS"}
         </p>
       </div>
 
