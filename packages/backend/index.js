@@ -35,7 +35,7 @@ import MongoDBClient from './config/database.js';
 const app = express();
 dotenv.config({ path: './packages/backend/.env' });
 
-const port = process.env.SERVER_PORT || 3000;
+const port = process.env.SERVER_PORT || 8000;
 const server = new Server(app, port);
 
 // Capas de Repositorio
@@ -82,7 +82,7 @@ server.setController(CategoriaController, categoriaController);
 app.use(
   cors({
     // BARLA PIDE UNA DISCULPA POR ESTO
-    origin: 'https://tiendasol.syspa.es',
+    origin: ['http://localhost:3000', 'https://tiendasol.syspa.es'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })

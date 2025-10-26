@@ -4,6 +4,8 @@ import { FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { SnackbarSuccess } from "../../../componentes/snackbars/SnackBarSuccess";
+import { SnackbarError } from "../../../componentes/snackbars/SnackBarError";
 
 export default function Register() {
 	const inicializarCampo = (requerido = true) => ({ valor: '', requerido });
@@ -18,6 +20,9 @@ export default function Register() {
   });
 
   const [campos, setCampos] = useState(inicializarCampos());
+	const [openSuccess, setOpenSuccess] = useState(false);
+	const [openError, setOpenError] = useState(false);
+	const [mensajeError, setMensajeError] = useState("");
 
   const camposCompletos = Object.values(campos)
     .filter(campo => campo.requerido)
@@ -30,12 +35,29 @@ export default function Register() {
     }));
   };
 
+	const handleSuccessClose = () => {
+		setOpenSuccess(false);
+	}
+
+	const handleErrorClose = () => {
+		setOpenError(false);
+	}
+
 	const handleRegister = () => {
-		if(!validarCampos(campos)) {
+
+		if(!camposCompletos) {
+			setMensajeError("Todos los campos deben completarse");
+			setOpenError(true);
 			return;
 		}
-		alert('Registro correcto');
-		navigate("/login");
+		
+		if(!validarCampos(campos, setMensajeError, setOpenError)) {
+			return null;
+		}
+
+		setOpenSuccess(true);
+
+		setTimeout(() => navigate("/login"), 2000);
 	};
 
 	return (
@@ -91,9 +113,7 @@ export default function Register() {
 										onChange={setValorDe('passwordConfirmation')}
 										required
 								></input>
-								<button type="button" className="btn-register" onClick={handleRegister}
-								disabled = {!camposCompletos} >
-										Registrarse</button>
+								<button type="button" className="btn-register" onClick={handleRegister}> Registrarse</button>
 						</form>
 
 						<hr className="divider" />
@@ -103,11 +123,21 @@ export default function Register() {
 								¿Ya tienes cuenta? Inicia Sesión
 						</Link>
 				</div>
+				<SnackbarSuccess
+					mensaje={"El Registro fue Exitoso"}
+					open={openSuccess}
+					onClose={handleSuccessClose}
+				/>
+				<SnackbarError
+					mensaje={mensajeError}
+					open={openError}
+					onClose={handleErrorClose}
+				/>
 		</div>
 	)
 }
 
-function validarCampos(campos) {
+function validarCampos(campos, setMensajeError, setOpenError) {
 	const email = campos.email.valor;
 	const telefono = campos.telefono.valor;
 	const password = campos.password.valor;
@@ -117,17 +147,20 @@ function validarCampos(campos) {
 	const telefonoRegex = /^\d{10}$/;
 
 	if(!emailRegex.test(email)) {
-		alert('El email no tiene un formato valido');
+		setMensajeError('El email no tiene un formato valido');
+		setOpenError(true);
 		return false;
 	}
 
 	if(!telefonoRegex.test(telefono)) {
-		alert('El telefono no tiene un formato valido');
+		setMensajeError('El telefono no tiene un formato valido');
+		setOpenError(true);
 		return false;
 	}
 
 	if(!(password === passwordConfirmation)) {
-		alert('Las contraseñas deben coincidir');
+		setMensajeError('Las contraseñas deben coincidir');
+		setOpenError(true);
 		return false;
 	}
 

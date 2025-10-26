@@ -1,0 +1,22 @@
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
+
+export function SnackbarSuccess({mensaje, open, onClose}) {
+  return (
+    <Snackbar
+      open={open}
+      autoHideDuration={3000}
+      onClose={onClose}
+      anchorOrigin={{vertical: "top", horizontal: "right"}}
+    >
+      <Alert
+        onClose={onClose}
+        severity="success"
+        variant="filled"
+        sx={{width: "100%", padding:"8px 16px", borderRadius: "5px"}}
+      >
+        {mensaje}
+      </Alert>
+    </Snackbar>
+  )
+}
