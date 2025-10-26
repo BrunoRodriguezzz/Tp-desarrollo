@@ -82,7 +82,8 @@ server.setController(CategoriaController, categoriaController);
 app.use(
   cors({
     // BARLA PIDE UNA DISCULPA POR ESTO
-    origin: 'https://tiendasol.syspa.es',
+    // origin: 'https://tiendasol.syspa.es',
+    origin: 'http://localhost:3000',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
