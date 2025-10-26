@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./ProductBox.css";
 import { useCart } from "../../carrito/cartContext/CartContext.jsx";
+import { SnackbarSuccess } from "../../snackbars/SnackBarSuccess.jsx"
 
 export default function ProductBox({ producto }) {
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const [openSuccess, setOpenSuccess] = useState(false);
 
   const handleClick = () => {
     navigate(`/productos/${producto._id}`);
@@ -15,6 +17,11 @@ export default function ProductBox({ producto }) {
   const handleAddToCart = (e) => {
     e.stopPropagation();
     addToCart(producto);
+    setOpenSuccess(true);
+  }
+
+  const handleClose = () => {
+    setOpenSuccess(false);
   }
 
   return (
@@ -39,6 +46,12 @@ export default function ProductBox({ producto }) {
           <button className="add-to-cart-button" onClick={handleAddToCart}>Agregar al Carrito</button>
         </div>
       </div>
+
+      <SnackbarSuccess
+        mensaje="Se agrego el producto al carrito"
+        open={openSuccess}
+        onClose={handleClose}
+      />
     </div>
   );
 }

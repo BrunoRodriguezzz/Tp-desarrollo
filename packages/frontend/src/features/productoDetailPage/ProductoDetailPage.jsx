@@ -5,17 +5,23 @@ import "./ProductoDetailPage.css";
 import { useCart } from "../../componentes/carrito/cartContext/CartContext.jsx";
 import { buscarProductoPorId } from "../../services/productoService.js";
 import ProductDetailSkeleton from "../../componentes/skeletons/SkeletonProductoDetail.jsx";
+import { SnackbarSuccess } from "../../componentes/snackbars/SnackBarSuccess.jsx"
 
 export default function ProductoDetailPage() {
   const { id } = useParams();
   const [cargando, setCargando] = useState(false);
   const [producto, setProducto] = useState(null);
+  const [openSuccess, setOpenSuccess] = useState(false);
 
   const [cantidad, setCantidad] = useState(1);
 
   const incrementar = () => setCantidad((prev) => prev + 1);
 
   const decrementar = () => setCantidad((prev) => (prev > 1 ? prev - 1 : 1));
+
+  const handleClose = () => {
+    setOpenSuccess(false);
+  }
 
   const { addToCart } = useCart();
 
@@ -39,6 +45,7 @@ export default function ProductoDetailPage() {
   const handleAddToCart = (e) => {
     e.stopPropagation();
     addToCart(producto);
+    setOpenSuccess(true);
   };
 
   if(cargando) {
@@ -103,6 +110,12 @@ export default function ProductoDetailPage() {
           </button>
         </div>
       </div>
+
+      <SnackbarSuccess
+        mensaje="Se agrego el producto al carrito"
+        open={openSuccess}
+        onClose={handleClose}
+      />
     </div>
   );
 }
