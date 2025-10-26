@@ -1,7 +1,6 @@
 .header-menu {
   background-color: white;
   position: fixed;
-  top: 5rem;
   z-index: 1;
   width: 100%;
   border-bottom: 1px solid var(--gray-1);
@@ -48,4 +47,9 @@
 
 .header-menu-button:hover {
   background-color: var(--gray-3);
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
 }
