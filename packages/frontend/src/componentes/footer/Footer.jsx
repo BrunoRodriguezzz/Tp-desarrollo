@@ -3,6 +3,9 @@ import "./Footer.css";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { CiCreditCard1 } from "react-icons/ci";
+import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
+import { CiMobile1 } from "react-icons/ci";
 
 export default function Footer() {
   return (
@@ -63,7 +66,11 @@ export default function Footer() {
         <p>© 2025 Tienda Sol. Todos los derechos reservados.</p>
         <p>
           Metodos de pago:
-          <span>💳 🏦 📱</span>
+          <span>
+            <CiCreditCard1 />
+            <HiOutlineBuildingOffice2 />
+            <CiMobile1 />
+          </span>
         </p>
       </div>
     </footer>

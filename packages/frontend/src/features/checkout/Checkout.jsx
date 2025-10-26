@@ -1,10 +1,9 @@
+import { React, useState } from "react";
+import "./Checkout.css";
+import { useCart } from "../../componentes/carrito/cartContext/CartContext";
+import FormularioContacto from "../../componentes/formularioContacto/FormularioContacto";
+import DetallePedido from "../../componentes/carrito/carritoLleno/detallePedido/DetallePedido";
 
-import DetallePedido from "../../componentes/carrito/carritoLleno/detallePedido/DetallePedido"
-import FormularioContacto from "../../componentes/formularioContacto/FormularioContacto"
-import { useCart } from '../../componentes/carrito/cartContext/CartContext';
-
-import "./Checkout.css"
-import { useState } from "react";
 export default function Checkout() {
   const { cartItems } = useCart();
   const [direccion, setDireccion] = useState({
@@ -20,9 +19,9 @@ export default function Checkout() {
       <h1>Finalizar compra</h1>
       <p>¡Ya casi es tuyo!</p>
       <div className="checkout-content">
-        <FormularioContacto direccion={direccion} setDireccion={setDireccion}/>
+        <FormularioContacto direccion={direccion} setDireccion={setDireccion} />
         <DetallePedido cartItems={cartItems} isCheckout={true} />
       </div>
     </div>
-  )
+  );
 }
