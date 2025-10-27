@@ -1,22 +1,30 @@
-import { useState } from "react";
-import "./FormularioProducto.css"
+import React, { useState } from "react";
+import {
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl,
+  OutlinedInput,
+  Chip,
+  Box,
+} from "@mui/material";
+import categoriesMock from "../../mockData/Categories";
+import "./FormularioProducto.css";
 
 export function FormularioProducto({ producto, handleOpenSuccess, closeForm }) {
-  const inicializarCampo = (requerido = true) => ({ valor: '', requerido });
-
   const inicializarCampos = () => ({
-    titulo: inicializarCampo(),
-    descripcion: inicializarCampo(),
-    categoria: inicializarCampo(),
-    precio: inicializarCampo(),
-    moneda: inicializarCampo(),
-    stock: inicializarCampo()
+    titulo: { valor: producto?.titulo || "", requerido: true },
+    descripcion: { valor: producto?.descripcion || "", requerido: true },
+    categoria: { valor: producto?.categorias || [], requerido: true },
+    precio: { valor: producto?.precio || "", requerido: true },
+    moneda: { valor: producto?.moneda || "", requerido: true },
+    stock: { valor: producto?.stock || "", requerido: true },
   });
 
   const setValorDe = (campo) => (event) => {
-    setCampos(prev => ({
+    setCampos((prev) => ({
       ...prev,
-      [campo]: { ...prev[campo], valor: event.target.value }
+      [campo]: { ...prev[campo], valor: event.target.value },
     }));
   };
 
@@ -25,7 +33,17 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm }) {
   const handleForm = () => {
     closeForm();
     handleOpenSuccess();
-  }
+  };
+
+  const handleDeleteCategoria = (categoria) => {
+    setCampos((prev) => ({
+      ...prev,
+      categoria: {
+        ...prev.categoria,
+        valor: prev.categoria.valor.filter((c) => c !== categoria),
+      },
+    }));
+  };
 
   return (
     <div className="form-producto">
@@ -34,48 +52,87 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm }) {
       <form>
         <label>Titulo</label>
         <input
-            type="text"
-            placeholder="Titulo"
-            onChange={setValorDe('titulo')}
-            value={campos.titulo.valor}
+          type="text"
+          placeholder="Titulo"
+          onChange={setValorDe("titulo")}
+          value={campos.titulo.valor}
         ></input>
         <label>Descripcion</label>
         <input
-            type="text"
-            placeholder="Descripcion"
-            onChange={setValorDe('descripcion')}
-            value={campos.descripcion.valor}
+          type="text"
+          placeholder="Descripcion"
+          onChange={setValorDe("descripcion")}
+          value={campos.descripcion.valor}
         ></input>
-        <label>Categoria</label>
-        <input
-            type="text"
-            placeholder="Categoria"
-            onChange={setValorDe('categoria')}
+        <FormControl fullWidth margin="normal" size="small">
+          <InputLabel>Categorías</InputLabel>
+          <Select
+            multiple
             value={campos.categoria.valor}
-        ></input>
+            onChange={setValorDe("categoria")}
+            input={<OutlinedInput label="Categorías" />}
+            renderValue={(selected) => (
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 0.5,
+                  alignItems: "center",
+                }}
+              >
+                {selected.map((value) => (
+                  <Chip
+                    key={value}
+                    label={value}
+                    onDelete={() => handleDeleteCategoria(value)}
+                    size="small"
+                  />
+                ))}
+              </Box>
+            )}
+            MenuProps={{
+              PaperProps: {
+                style: { maxHeight: 220 },
+              },
+            }}
+          >
+            {categoriesMock.map((cat) => (
+              <MenuItem key={cat.name} value={cat.name}>
+                {cat.name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
         <label>Precio</label>
         <input
-            type="text"
-            placeholder="Precio"
-            value={campos.precio.valor}
-            onChange={setValorDe('precio')}
+          type="text"
+          placeholder="Precio"
+          value={campos.precio.valor}
+          onChange={setValorDe("precio")}
         ></input>
         <label>Moneda</label>
-        <input
-            type="text"
-            placeholder="Moneda"
-            value={campos.moneda.valor}
-            onChange={setValorDe('moneda')}
-        ></input>
+        <select
+          value={campos.moneda.valor}
+          onChange={setValorDe("moneda")}
+          required={campos.moneda.requerido}
+        >
+          <option value="">Seleccioná una moneda</option>
+          <option value="PESO_ARG">Peso Argentino (ARS)</option>
+          <option value="DOLAR">Dólar (USD)</option>
+          <option value="EURO">Euro (EUR)</option>
+        </select>
         <label>Stock</label>
         <input
-            type="number"
-            placeholder="Stock"
-            value={campos.stock.valor}
-            onChange={setValorDe('stock')}
+          type="number"
+          placeholder="Stock"
+          value={campos.stock.valor}
+          onChange={setValorDe("stock")}
         ></input>
-        <button type="button" className="btn-submit" onClick={handleForm}> Subir</button>
-    </form>
+        <button type="button" className="btn-submit" onClick={handleForm}>
+          {" "}
+          Subir
+        </button>
+      </form>
     </div>
-  )
+  );
 }
