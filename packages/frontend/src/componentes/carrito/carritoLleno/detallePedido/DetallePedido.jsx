@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./DetallePedido.css";
 import PropTypes from "prop-types";
 import { SnackbarSuccess } from "../../../snackbars/SnackBarSuccess";
+import ConfirmDialog from "./ConfirmDialog";
 
 export default function DetallePedido({ cartItems, isCheckout }) {
   const [total, setTotal] = useState(0);
@@ -82,24 +83,15 @@ export default function DetallePedido({ cartItems, isCheckout }) {
           </Link>
         )}
       </div>
-      {/* Confirmation modal shown when user clicks Comprar in checkout */}
-      {openConfirm && (
-        <div className="confirm-overlay" role="dialog" aria-modal="true">
-          <div className="confirm-dialog">
-            <p className="confirm-message">
-              ¿Estás seguro que deseas realizar la compra?
-            </p>
-            <div className="confirm-actions">
-              <button className="btn-cancel" onClick={handleCancelConfirm}>
-                Cancelar
-              </button>
-              <button className="btn-confirm" onClick={handleConfirmPurchase}>
-                Confirmar
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+
+      <ConfirmDialog
+        open={openConfirm}
+        title="Confirmar compra"
+        contentText="¿Estás seguro que deseas realizar la compra?"
+        onCancel={handleCancelConfirm}
+        onConfirm={handleConfirmPurchase}
+      />
+
       <SnackbarSuccess
         mensaje="La compra se realizo correctamente"
         open={openSuccess}
