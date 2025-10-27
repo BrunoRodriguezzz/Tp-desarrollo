@@ -34,7 +34,7 @@ function AppContent() {
           <Route path="carrito" element={<PageWrapper><Carrito /></PageWrapper>} />
           <Route path="notificaciones" element={<PageWrapper><Notificaciones /></PageWrapper>} />
           <Route path="pedidos" element={<PageWrapper><Pedidos /></PageWrapper>} />
-          <Route path="mis-ventas" element={<PageWrapper><MisVentas /></PageWrapper>} />
+          <Route path="ventas" element={<PageWrapper><MisVentas /></PageWrapper>} />
           <Route
             path="checkout"
             element={

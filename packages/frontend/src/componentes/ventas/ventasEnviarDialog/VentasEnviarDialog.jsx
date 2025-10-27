@@ -8,9 +8,10 @@ import {
 } from "@mui/material";
 import "./VentasEnviarDialog.css";
 
-export default function VentasEnviarDialog({ pedido, open, onOpenChange }) {
+export default function VentasEnviarDialog({ pedido, open, onOpenChange, onEnviado }) {
   const enviarPedido = () => {
     console.log("Pedido enviado:", pedido._id);
+    onEnviado();
     onOpenChange(false);
   };
 
