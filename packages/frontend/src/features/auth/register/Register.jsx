@@ -98,13 +98,14 @@ export default function Register() {
 										value={campos.telefono.valor}
 										required
 								></input>
-								<label for="tiposUsuarios">Tipo Usuario</label>
+								<label htmlFor="tiposUsuarios">Tipo Usuario</label>
 								<select
 									id="tiposUsuarios"
 									value={campos.tipoUsuario.valor}
 									onChange={setValorDe('tipoUsuario')}
 									required
 								>
+									<option value="">Seleccione el tipo de usuario</option>
 									<option value={"COMPRADOR"}>Comprador</option>
 									<option value={"VENDEDOR"}>Vendedor</option>
 								</select>

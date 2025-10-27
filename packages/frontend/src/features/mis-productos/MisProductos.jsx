@@ -5,11 +5,13 @@ import MisProductosList from "../../componentes/products/misProductosList/MisPro
 import { Dialog, DialogContent } from "@mui/material";
 import { FormularioProducto } from "../../componentes/formularioProducto/FormularioProducto";
 import { SnackbarSuccess } from "../../componentes/snackbars/SnackBarSuccess";
+import { SnackbarError } from "../../componentes/snackbars/SnackBarError";
 
 export function MisProductos() {
   const [paginado, setPaginado] = useState({ page: 1, size: 12 });
   const [mostrarForm, setMostrarForm] = useState(false);
   const [openSuccess, setOpenSuccess] = useState(false);
+  const [openError, setOpenError] = useState(false);
   
   const showForm = () => {
     setMostrarForm(true);
@@ -25,6 +27,14 @@ export function MisProductos() {
 
   const handleCloseSuccess = () => {
     setOpenSuccess(false);
+  }
+
+  const handleOpenError = () => {
+    setOpenError(true);
+  }
+
+  const handleCloseError = () => {
+    setOpenError(false);
   }
   
   const actualizarPaginado = (clave, valor) => {
@@ -58,6 +68,8 @@ export function MisProductos() {
           <FormularioProducto
             handleOpenSuccess={handleOpenSuccess}
             closeForm={handleCloseForm}
+            handleOpenError={handleOpenError}
+            obligatorio={true}
           />
         </DialogContent>
       </Dialog>
@@ -65,6 +77,11 @@ export function MisProductos() {
         mensaje="El producto se creo correctamente"
         open={openSuccess}
         onClose={handleCloseSuccess}
+      />
+      <SnackbarError
+        mensaje="Todos los campos obligatorios(*) deben estar completos"
+        open={openError}
+        onClose={handleCloseError}
       />
     </div>
   )
