@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./FormularioProducto.css"
 
-export function FormularioProducto({ producto }) {
+export function FormularioProducto({ producto, handleOpenSuccess, closeForm }) {
   const inicializarCampo = (requerido = true) => ({ valor: '', requerido });
 
   const inicializarCampos = () => ({
@@ -21,6 +21,11 @@ export function FormularioProducto({ producto }) {
   };
 
   const [campos, setCampos] = useState(inicializarCampos());
+
+  const handleForm = () => {
+    closeForm();
+    handleOpenSuccess();
+  }
 
   return (
     <div className="form-producto">
@@ -69,7 +74,7 @@ export function FormularioProducto({ producto }) {
             value={campos.stock.valor}
             onChange={setValorDe('stock')}
         ></input>
-        <button type="button" className="btn-submit"> Subir</button>
+        <button type="button" className="btn-submit" onClick={handleForm}> Subir</button>
     </form>
     </div>
   )

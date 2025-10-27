@@ -3,22 +3,41 @@ import PropTypes from "prop-types";
 import "./MisProductosBox.css";
 import Skeleton from "@mui/material/Skeleton";
 import { Dialog, DialogContent } from "@mui/material";
-import { FormularioProducto } from "../../../formularioProducto/FormularioProducto";
-
+import { FormularioProducto } from "../../../formularioProducto/FormularioProducto.jsx";
+import { SnackbarSuccess } from "../../../snackbars/SnackBarSuccess.jsx"
+ 
 export default function MisProductosBox({ producto }) {
   const [imgLoaded, setImgLoaded] = useState(false);
   const [mostrarForm, setMostrarForm] = useState(false);
+  const [openSuccess, setOpenSuccess] = useState(false);
+  const [mensaje, setMensaje] = useState("");
 
   const showForm = () => {
     setMostrarForm(true);
   }
 
-  const handleClose = () => {
+  const handleCloseForm = () => {
     setMostrarForm(false);
   }
 
+  const handleOpenEdit = () => {
+    setOpenSuccess(false);
+    setMensaje("El producto se actualizo correctamente");
+    setTimeout(() => setOpenSuccess(true), 100);
+  }
+
+  const handleOpenDelete = () => {
+    setOpenSuccess(false);
+    setMensaje("El producto se elimino correctamente");
+    setTimeout(() => setOpenSuccess(true), 100);
+  }
+
+  const handleCloseSuccess = () => {
+    setOpenSuccess(false);
+  }
+
   return (
-    <div className="product-box">
+    <div className="mis-productos-box">
       <div className="product-image-wrapper" style={{ position: "relative" }}>
         {!imgLoaded && (
           <Skeleton
@@ -48,17 +67,26 @@ export default function MisProductosBox({ producto }) {
           <button className="edit-button" onClick={showForm}>
             Editar Producto
           </button>
-          <button className="delete-button">
+          <button className="delete-button" onClick={handleOpenDelete}>
             Eliminar Producto
           </button>
         </div>
       </div>
 
-      <Dialog open={mostrarForm} onClose={handleClose} maxWidth="sm" fullWidth>
+      <Dialog open={mostrarForm} onClose={handleCloseForm} maxWidth="sm" fullWidth>
         <DialogContent>
-          <FormularioProducto producto={producto} />
+          <FormularioProducto 
+          producto={producto}
+          handleOpenSuccess={handleOpenEdit}
+          closeForm={handleCloseForm}
+           />
         </DialogContent>
       </Dialog>
+      <SnackbarSuccess
+        mensaje={mensaje}
+        open={openSuccess}
+        onClose={handleCloseSuccess}
+      />
     </div>
   );
 }
