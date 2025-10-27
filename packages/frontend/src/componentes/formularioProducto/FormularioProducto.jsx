@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./FormularioProducto.css"
+import { SelectorCategorias } from "./selectorCategorias/SelectorCategorias";
 
 export function FormularioProducto({ producto, handleOpenSuccess, closeForm }) {
   const inicializarCampo = (requerido = true) => ({ valor: '', requerido });
@@ -7,7 +8,6 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm }) {
   const inicializarCampos = () => ({
     titulo: inicializarCampo(),
     descripcion: inicializarCampo(),
-    categoria: inicializarCampo(),
     precio: inicializarCampo(),
     moneda: inicializarCampo(),
     stock: inicializarCampo()
@@ -21,6 +21,7 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm }) {
   };
 
   const [campos, setCampos] = useState(inicializarCampos());
+  const [categorias, setCategorias] = useState([]);
 
   const handleForm = () => {
     closeForm();
@@ -46,13 +47,6 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm }) {
             onChange={setValorDe('descripcion')}
             value={campos.descripcion.valor}
         ></input>
-        <label>Categoria</label>
-        <input
-            type="text"
-            placeholder="Categoria"
-            onChange={setValorDe('categoria')}
-            value={campos.categoria.valor}
-        ></input>
         <label>Precio</label>
         <input
             type="text"
@@ -60,13 +54,16 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm }) {
             value={campos.precio.valor}
             onChange={setValorDe('precio')}
         ></input>
-        <label>Moneda</label>
-        <input
-            type="text"
-            placeholder="Moneda"
-            value={campos.moneda.valor}
-            onChange={setValorDe('moneda')}
-        ></input>
+        <label for="monedas">Moneda</label>
+        <select
+          id="monedas"
+          value={campos.moneda.valor}
+          onChange={setValorDe('moneda')}
+        >
+          <option value={"PESO_ARG"}>Peso Argentino</option>
+          <option value={"DOLAR_USD"}>Dolar Estadounidense</option>
+          <option value={"REAL"}>Reales</option>
+        </select>
         <label>Stock</label>
         <input
             type="number"
@@ -74,6 +71,11 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm }) {
             value={campos.stock.valor}
             onChange={setValorDe('stock')}
         ></input>
+        <label>Categorias</label>
+        <SelectorCategorias
+          categorias={categorias}
+          setCategorias={setCategorias}
+        />
         <button type="button" className="btn-submit" onClick={handleForm}> Subir</button>
     </form>
     </div>

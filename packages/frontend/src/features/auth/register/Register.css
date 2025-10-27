@@ -60,7 +60,8 @@
 	font-weight: 600;
 }
 
-.register-container input {
+.register-container input,
+.register-container select {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 8px;

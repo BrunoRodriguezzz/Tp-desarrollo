@@ -12,6 +12,11 @@
   max-width: 340px;
 }
 
+.mis-productos-box:hover {
+  border-color: rgba(71, 133, 215, 0.7);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  background-color: rgba(229, 234, 240, 0.848)
+}
 
 .mis-productos-box .product-image {
   width: 20%;

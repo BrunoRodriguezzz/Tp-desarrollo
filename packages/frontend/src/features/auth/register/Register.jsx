@@ -15,6 +15,7 @@ export default function Register() {
     nombre: inicializarCampo(),
     email: inicializarCampo(),
     telefono: inicializarCampo(),
+		tipoUsuario: inicializarCampo(),
     password: inicializarCampo(),
     passwordConfirmation: inicializarCampo()
   });
@@ -97,6 +98,16 @@ export default function Register() {
 										value={campos.telefono.valor}
 										required
 								></input>
+								<label for="tiposUsuarios">Tipo Usuario</label>
+								<select
+									id="tiposUsuarios"
+									value={campos.tipoUsuario.valor}
+									onChange={setValorDe('tipoUsuario')}
+									required
+								>
+									<option value={"COMPRADOR"}>Comprador</option>
+									<option value={"VENDEDOR"}>Vendedor</option>
+								</select>
 								<label>Contraseña</label>
 								<input
 										type="password"
