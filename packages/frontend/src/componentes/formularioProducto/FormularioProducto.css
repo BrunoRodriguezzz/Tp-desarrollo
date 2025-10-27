@@ -34,13 +34,15 @@
 	font-weight: 600;
 }
 
-.form-producto input {
+.form-producto input,
+.form-producto select {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 8px;
 	margin-bottom: 10px;
   width: 100%;
   box-sizing: border-box;
+  font-family: inherit;
 }
 
 .form-producto .btn-submit {

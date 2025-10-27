@@ -18,6 +18,7 @@ import ProtectedCheckout from "./componentes/protectedCheckout/ProtectedCheckout
 import { AnimatePresence, motion } from "framer-motion";
 import PageWrapper from "./componentes/pageWrapper/PageWrapper.jsx";
 import { MisProductos } from "./features/mis-productos/MisProductos.jsx";
+import NotFound from "./features/notFound/NotFound.jsx";
 
 function AppContent() {
   const location = useLocation();
@@ -45,6 +46,7 @@ function AppContent() {
               </ProtectedCheckout>
             }
           />
+          <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
         </Route>
       </Routes>
     </AnimatePresence>

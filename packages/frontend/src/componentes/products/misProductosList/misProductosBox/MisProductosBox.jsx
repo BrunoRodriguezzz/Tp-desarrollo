@@ -5,11 +5,13 @@ import Skeleton from "@mui/material/Skeleton";
 import { Dialog, DialogContent } from "@mui/material";
 import { FormularioProducto } from "../../../formularioProducto/FormularioProducto.jsx";
 import { SnackbarSuccess } from "../../../snackbars/SnackBarSuccess.jsx"
+import { SnackbarError } from "../../../snackbars/SnackBarError.jsx";
  
 export default function MisProductosBox({ producto }) {
   const [imgLoaded, setImgLoaded] = useState(false);
   const [mostrarForm, setMostrarForm] = useState(false);
   const [openSuccess, setOpenSuccess] = useState(false);
+  const [openError, setOpenError] = useState(false);
   const [mensaje, setMensaje] = useState("");
 
   const showForm = () => {
@@ -34,6 +36,14 @@ export default function MisProductosBox({ producto }) {
 
   const handleCloseSuccess = () => {
     setOpenSuccess(false);
+  }
+
+  const handleOpenError = () => {
+    setOpenError(true);
+  }
+
+  const handleCloseError = () => {
+    setOpenError(false);
   }
 
   return (
@@ -79,6 +89,7 @@ export default function MisProductosBox({ producto }) {
           producto={producto}
           handleOpenSuccess={handleOpenEdit}
           closeForm={handleCloseForm}
+          handleOpenError={handleOpenError}
            />
         </DialogContent>
       </Dialog>
@@ -86,6 +97,11 @@ export default function MisProductosBox({ producto }) {
         mensaje={mensaje}
         open={openSuccess}
         onClose={handleCloseSuccess}
+      />
+      <SnackbarError
+        mensaje="Todos los campos obligatorios(*) deben estar completos"
+        open={openError}
+        onClose={handleCloseError}
       />
     </div>
   );

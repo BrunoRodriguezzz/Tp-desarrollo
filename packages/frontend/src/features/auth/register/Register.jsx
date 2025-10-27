@@ -1,3 +1,4 @@
+import React from "react";
 import "./Register.css";
 import { PiSunDim } from "react-icons/pi";
 import { FaUserPlus } from "react-icons/fa";
@@ -6,6 +7,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SnackbarSuccess } from "../../../componentes/snackbars/SnackBarSuccess";
 import { SnackbarError } from "../../../componentes/snackbars/SnackBarError";
+import Seo from "../../../componentes/seo/Seo";
 
 export default function Register() {
 	const inicializarCampo = (requerido = true) => ({ valor: '', requerido });
@@ -15,6 +17,7 @@ export default function Register() {
     nombre: inicializarCampo(),
     email: inicializarCampo(),
     telefono: inicializarCampo(),
+		tipoUsuario: inicializarCampo(),
     password: inicializarCampo(),
     passwordConfirmation: inicializarCampo()
   });
@@ -62,6 +65,10 @@ export default function Register() {
 
 	return (
 		<div className="register-container">
+				<Seo
+					title="Crear cuenta | Tienda Sol"
+					description="Registrate para empezar a comprar y vender en Tienda Sol."
+				/>
 				<div className="register-header">
 								<div className="brand-logo">
 								<PiSunDim size={50} />
@@ -97,6 +104,17 @@ export default function Register() {
 										value={campos.telefono.valor}
 										required
 								></input>
+								<label htmlFor="tiposUsuarios">Tipo Usuario</label>
+								<select
+									id="tiposUsuarios"
+									value={campos.tipoUsuario.valor}
+									onChange={setValorDe('tipoUsuario')}
+									required
+								>
+									<option value="">Seleccione el tipo de usuario</option>
+									<option value={"COMPRADOR"}>Comprador</option>
+									<option value={"VENDEDOR"}>Vendedor</option>
+								</select>
 								<label>Contraseña</label>
 								<input
 										type="password"

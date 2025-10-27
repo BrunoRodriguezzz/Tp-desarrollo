@@ -9,6 +9,7 @@ import usuariosMock from "../../../mockData/Users.js";
 import { useSession } from "../session/SessionContext";
 import { SnackbarSuccess } from "../../../componentes/snackbars/SnackBarSuccess.jsx";
 import { SnackbarError } from "../../../componentes/snackbars/SnackBarError.jsx";
+import Seo from "../../../componentes/seo/Seo";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -60,6 +61,10 @@ export default function Login() {
 
   return (
     <div className="login-container">
+      <Seo
+        title="Iniciar sesión | Tienda Sol"
+        description="Accedé a tu cuenta para comprar y vender en Tienda Sol."
+      />
       <div className="login-header">
         <div className="brand-logo">
           <PiSunDim size={50} />

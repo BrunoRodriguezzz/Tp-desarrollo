@@ -1,8 +1,10 @@
+import React from "react";
 import "./Notificaciones.css";
 import { Switch, FormGroup, FormControlLabel, CircularProgress } from "@mui/material";
 import { useState, useEffect } from "react";
 import notificationsMock from "../../mockData/Notifications";
 import NotificacionBox from "./notificacionesBox/NotificacionBox";
+import Seo from "../../componentes/seo/Seo";
 
 export default function Notificaciones() {
   const [notificaciones, setNotificaciones] = useState([]);
@@ -23,6 +25,10 @@ export default function Notificaciones() {
   return (
   <>
   <div className="notification-container">
+    <Seo
+      title="Notificaciones | Tienda Sol"
+      description="Revisá todas tus notificaciones y mantenete al día."
+    />
     <div className="notification-header">
       <div className="notification-left">
         <h1>Notificaciones</h1>
@@ -43,7 +49,7 @@ export default function Notificaciones() {
         </div> :
         <div>
           {notificacionesFiltradas.map((n) => (
-          <NotificacionBox notificacion={n} />
+          <NotificacionBox key={n._id} notificacion={n} />
         ))}
         </div>
       }

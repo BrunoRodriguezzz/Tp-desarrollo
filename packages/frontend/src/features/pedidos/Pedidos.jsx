@@ -2,6 +2,7 @@ import "./Pedidos.css";
 import React, { useState, useEffect } from "react";
 import PedidosList from "../../componentes/pedidos/pedidosList/PedidosList";
 import { HistorialUsuarioResponseMock } from "../../mockData/Pedidos";
+import Seo from "../../componentes/seo/Seo";
 
 export default function Pedidos() {
   const [pedidos, setPedidos] = useState([]);
@@ -22,6 +23,10 @@ export default function Pedidos() {
 
   return (
     <div className="pedido-container">
+      <Seo
+        title="Mis pedidos | Tienda Sol"
+        description="Revisá y gestioná el estado de todos tus pedidos."
+      />
       <div className="pedido-main-header">
         <h1>Mis pedidos</h1>
         <p>Revisá todos los pedidos que realizaste y gestionalos</p>

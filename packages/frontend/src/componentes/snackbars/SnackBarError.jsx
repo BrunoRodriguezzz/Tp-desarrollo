@@ -7,7 +7,7 @@ export function SnackbarError({mensaje, open, onClose}) {
       open={open}
       autoHideDuration={3000}
       onClose={onClose}
-      anchorOrigin={{vertical: "top", horizontal: "right"}}
+      anchorOrigin={{vertical: "down", horizontal: "right"}}
     >
       <Alert
         onClose={onClose}

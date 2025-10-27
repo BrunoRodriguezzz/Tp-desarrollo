@@ -25,12 +25,12 @@ export default function CardProducto({nombre, categorias, precio, cantidad, mone
             <div>
                 <h3>{nombre}</h3>
                 <p>{categorias.join(", ")}</p>
-                <span>${precio.toFixed(2) + " " + convertirMoneda(moneda)}</span>
+                <span>${precio.toFixed(2) + " "}</span>
             </div>
         </div>
         <div className='producto-derecha'>
             <Counter cantidad={cantidad} sumarUno={sumarUno} restarUno={restarUno}/>
-            <span>${(precio * cantidad).toFixed(2) + " " + convertirMoneda(moneda)}</span>
+            <span>${(precio * cantidad).toFixed(2) + " "}</span>
             <AiOutlineDelete 
                 onClick={() => {eliminarProducto()}}
             />

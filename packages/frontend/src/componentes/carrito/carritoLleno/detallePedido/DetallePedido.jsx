@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./DetallePedido.css";
 import PropTypes from "prop-types";
-import { SnackbarSuccess } from "../../../snackbars/SnackBarSuccess"
+import { SnackbarSuccess } from "../../../snackbars/SnackBarSuccess";
+import ConfirmDialog from "./ConfirmDialog";
 
 export default function DetallePedido({ cartItems, isCheckout }) {
   const [total, setTotal] = useState(0);
   const [openSuccess, setOpenSuccess] = useState(false);
+  const [openConfirm, setOpenConfirm] = useState(false);
   const navigate = useNavigate();
 
   const convertirMoneda = (moneda) => {
@@ -31,24 +33,32 @@ export default function DetallePedido({ cartItems, isCheckout }) {
   }, [cartItems]);
 
   const handleComprar = () => {
-    if(isCheckout) {
-      setOpenSuccess(true);
+    if (isCheckout) {
+      setOpenConfirm(true);
+    } else {
+      navigate("/checkout");
     }
-    else {
-      navigate("/checkout")
-    }
-  }
+  };
+
+  const handleConfirmPurchase = () => {
+    setOpenConfirm(false);
+    setOpenSuccess(true);
+  };
+
+  const handleCancelConfirm = () => {
+    setOpenConfirm(false);
+  };
 
   const handleClose = () => {
     setOpenSuccess(false);
-  }
+  };
 
   return (
     <div className="resumen-pedido">
       <h3>Resumen del pedido</h3>
       <div>
         <p>Subtotal</p>
-        <p>${total.toFixed(2) + " ARS"}</p>
+        <p>${total.toFixed(2)}</p>
       </div>
       <div>
         <p>Envío</p>
@@ -59,7 +69,7 @@ export default function DetallePedido({ cartItems, isCheckout }) {
           Total
         </p>
         <p style={{ color: "black", fontWeight: "bold", fontSize: "1.2rem" }}>
-          ${total.toFixed(2) + " ARS"}
+          ${total.toFixed(2)}
         </p>
       </div>
 
@@ -73,6 +83,15 @@ export default function DetallePedido({ cartItems, isCheckout }) {
           </Link>
         )}
       </div>
+
+      <ConfirmDialog
+        open={openConfirm}
+        title="Confirmar compra"
+        contentText="¿Estás seguro que deseas realizar la compra?"
+        onCancel={handleCancelConfirm}
+        onConfirm={handleConfirmPurchase}
+      />
+
       <SnackbarSuccess
         mensaje="La compra se realizo correctamente"
         open={openSuccess}

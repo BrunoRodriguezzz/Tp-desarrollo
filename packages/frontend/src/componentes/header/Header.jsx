@@ -31,11 +31,21 @@ export default function Header() {
   return (
     <>
       <header>
-        <div className="brand-logo">
-          <PiSunDim size={40} />
-          <Link to="/" aria-label="Ir al inicio de Tienda Sol">
-            Tienda Sol
-          </Link>
+        <div
+          className="brand-logo"
+          role="link"
+          tabIndex={0}
+          aria-label="Ir al inicio de Tienda Sol"
+          onClick={() => navigate("/")}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              navigate("/");
+            }
+          }}
+        >
+          <PiSunDim size={40} aria-hidden="true" />
+          <span>Tienda Sol</span>
         </div>
 
         <div className="search-bar" role="search" aria-label="Buscar productos">
@@ -78,18 +88,16 @@ export default function Header() {
           role="navigation"
           aria-label="Menú principal"
         >
-          <Link to="/productos" className="button-transparent">
-            Productos
-          </Link>
-
-          <Link to="/categorias" className="button-transparent">
-            Categorías
-          </Link>
-
           {userType === "VENDEDOR" && (
-            <Link to="/ventas" className="button-transparent">
-              Mis Ventas
-            </Link>
+            <>
+              <Link to="/ventas" className="button-transparent">
+                Mis Ventas
+              </Link>
+
+              <Link to="/mis-productos" className="button-transparent">
+                Mis Productos
+              </Link>
+            </>
           )}
 
           {userType === "COMPRADOR" && (

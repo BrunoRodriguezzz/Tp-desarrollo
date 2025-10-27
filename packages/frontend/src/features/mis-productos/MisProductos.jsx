@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { React, useState } from "react";
 import ProductList from "../../componentes/products/productList/ProductList";
 import "./MisProductos.css"
 import MisProductosList from "../../componentes/products/misProductosList/MisProductosList";
 import { Dialog, DialogContent } from "@mui/material";
 import { FormularioProducto } from "../../componentes/formularioProducto/FormularioProducto";
 import { SnackbarSuccess } from "../../componentes/snackbars/SnackBarSuccess";
+import { SnackbarError } from "../../componentes/snackbars/SnackBarError";
+import Seo from "../../componentes/seo/Seo";
 
 export function MisProductos() {
   const [paginado, setPaginado] = useState({ page: 1, size: 12 });
   const [mostrarForm, setMostrarForm] = useState(false);
   const [openSuccess, setOpenSuccess] = useState(false);
+  const [openError, setOpenError] = useState(false);
   
   const showForm = () => {
     setMostrarForm(true);
@@ -26,6 +29,14 @@ export function MisProductos() {
   const handleCloseSuccess = () => {
     setOpenSuccess(false);
   }
+
+  const handleOpenError = () => {
+    setOpenError(true);
+  }
+
+  const handleCloseError = () => {
+    setOpenError(false);
+  }
   
   const actualizarPaginado = (clave, valor) => {
     setPaginado((prev) => ({
@@ -36,6 +47,10 @@ export function MisProductos() {
 
   return (
     <div className="mis-productos-container">
+      <Seo
+        title="Mis productos | Tienda Sol"
+        description="Administrá tus productos y creá nuevos fácilmente."
+      />
       <div className="mis-productos-header">
         <div className="mis-productos-left">
           <h1>Mis productos</h1>
@@ -58,6 +73,7 @@ export function MisProductos() {
           <FormularioProducto
             handleOpenSuccess={handleOpenSuccess}
             closeForm={handleCloseForm}
+            handleOpenError={handleOpenError}
           />
         </DialogContent>
       </Dialog>
@@ -65,6 +81,11 @@ export function MisProductos() {
         mensaje="El producto se creo correctamente"
         open={openSuccess}
         onClose={handleCloseSuccess}
+      />
+      <SnackbarError
+        mensaje="Todos los campos obligatorios(*) deben estar completos"
+        open={openError}
+        onClose={handleCloseError}
       />
     </div>
   )
