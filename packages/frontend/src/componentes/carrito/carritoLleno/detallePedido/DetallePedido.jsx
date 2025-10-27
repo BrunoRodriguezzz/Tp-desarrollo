@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./DetallePedido.css";
 import PropTypes from "prop-types";
+import { SnackbarSuccess } from "../../../snackbars/SnackBarSuccess"
 
 export default function DetallePedido({ cartItems, isCheckout }) {
   const [total, setTotal] = useState(0);
+  const [openSuccess, setOpenSuccess] = useState(false);
+  const navigate = useNavigate();
 
   const convertirMoneda = (moneda) => {
     switch (moneda) {
@@ -27,6 +30,19 @@ export default function DetallePedido({ cartItems, isCheckout }) {
     setTotal(sumaTotal);
   }, [cartItems]);
 
+  const handleComprar = () => {
+    if(isCheckout) {
+      setOpenSuccess(true);
+    }
+    else {
+      navigate("/checkout")
+    }
+  }
+
+  const handleClose = () => {
+    setOpenSuccess(false);
+  }
+
   return (
     <div className="resumen-pedido">
       <h3>Resumen del pedido</h3>
@@ -48,15 +64,20 @@ export default function DetallePedido({ cartItems, isCheckout }) {
       </div>
 
       <div className={`resumen-botones ${isCheckout ? "single-btn" : ""}`}>
-        <Link to="/checkout" className="btn-comprar">
+        <button onClick={handleComprar} className="btn-comprar">
           {isCheckout ? "Comprar" : "Finalizar compra"}
-        </Link>
+        </button>
         {isCheckout ? null : (
           <Link to="/productos" className="btn-continuar">
             Continuar comprando
           </Link>
         )}
       </div>
+      <SnackbarSuccess
+        mensaje="La compra se realizo correctamente"
+        open={openSuccess}
+        onClose={handleClose}
+      />
     </div>
   );
 }
