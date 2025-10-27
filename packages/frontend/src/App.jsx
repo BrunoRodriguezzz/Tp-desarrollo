@@ -17,6 +17,7 @@ import Checkout from "./features/checkout/Checkout.jsx";
 import ProtectedCheckout from "./componentes/protectedCheckout/ProtectedCheckout.jsx";
 import { AnimatePresence, motion } from "framer-motion";
 import PageWrapper from "./componentes/pageWrapper/PageWrapper.jsx";
+import { MisProductos } from "./features/mis-productos/MisProductos.jsx";
 
 function AppContent() {
   const location = useLocation();
@@ -35,6 +36,7 @@ function AppContent() {
           <Route path="notificaciones" element={<PageWrapper><Notificaciones /></PageWrapper>} />
           <Route path="pedidos" element={<PageWrapper><Pedidos /></PageWrapper>} />
           <Route path="ventas" element={<PageWrapper><MisVentas /></PageWrapper>} />
+          <Route path="mis-productos" element={<PageWrapper><MisProductos /></PageWrapper>} />
           <Route
             path="checkout"
             element={

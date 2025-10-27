@@ -1,0 +1,112 @@
+.mis-productos-box {
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  margin: 16px;
+  justify-content: space-between;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+  max-width: 340px;
+}
+
+
+.mis-productos-box .product-image {
+  width: 20%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid #eee;
+}
+
+.mis-productos-box .product-content {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px
+}
+
+.mis-productos-box .product-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.mis-productos-box .product-category-stock {
+  color: var(--gray-2);
+  font-size: 0.9rem;
+}
+
+.mis-productos-box .product-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #333;
+}
+
+.mis-productos-box .product-price {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.mis-productos-box .product-text h2,
+.mis-productos-box .product-text p {
+  margin: 0;
+}
+
+.mis-productos-box .button-wrapper {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: center;
+  width: 100%;
+}
+
+.edit-button {
+  background-color: rgba(0, 120, 20, 0.632);
+  color: white;
+  flex: 1 1 auto;
+  font-weight: 700;
+  font-size: medium;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.5s ease;
+}
+
+.edit-button:hover {
+  background-color: rgba(0, 120, 20, 0.91);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+}
+
+.delete-button {
+  background-color: #d32f2f;
+  color: white;
+  flex: 1 1 auto;
+  font-weight: 700;
+  font-size: medium;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.5s ease;
+}
+
+.delete-button:hover {
+  background-color: #b71c1c;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+}
