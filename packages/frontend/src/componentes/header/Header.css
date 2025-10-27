@@ -22,7 +22,8 @@ header {
   gap: 0.5rem;
 }
 
-.brand-logo p, .brand-logo a {
+.brand-logo p,
+.brand-logo a {
   font-size: 1.4rem;
   font-weight: bold;
   text-decoration: none;
@@ -73,6 +74,16 @@ header {
   border: none;
   font-size: 2.5rem;
   cursor: pointer;
+}
+
+.user-button {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.notifications-button {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 @media (max-width: 1300px) {

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import usuariosMock from "../../../mockData/Users.js";
+import { useSession } from "../session/SessionContext";
 import { SnackbarSuccess } from "../../../componentes/snackbars/SnackBarSuccess.jsx";
 import { SnackbarError } from "../../../componentes/snackbars/SnackBarError.jsx";
 
@@ -17,6 +18,8 @@ export default function Login() {
   const [openSuccess, setOpenSuccess] = useState(false);
   const [openError, setOpenError] = useState(false);
   const [mensajeError, setMensajeError] = useState("");
+
+  const { setUserType } = useSession();
 
   const camposCompletos = email.trim() && password.trim();
 
@@ -43,6 +46,12 @@ export default function Login() {
       setMensajeError("Usuario o contraseña incorrectas");
       setOpenError(true);
       return;
+    }
+
+    try {
+      setUserType(usuario.tipo);
+    } catch (e) {
+      // Sinceramente no se que haria aca
     }
 
     setOpenSuccess(true);

@@ -8,12 +8,21 @@ import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../carrito/cartContext/CartContext.jsx";
+import { useSession } from "../../features/auth/session/SessionContext";
+import { FaRegUser } from "react-icons/fa";
+import { FaRegBell } from "react-icons/fa";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { totalItems } = useCart();
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
+  const { userType, clearSession } = useSession();
+
+  const handleLogout = () => {
+    clearSession();
+    navigate("/");
+  };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -77,6 +86,18 @@ export default function Header() {
             Categorías
           </Link>
 
+          {userType === "VENDEDOR" && (
+            <Link to="/ventas" className="button-transparent">
+              Mis Ventas
+            </Link>
+          )}
+
+          {userType === "COMPRADOR" && (
+            <Link to="/pedidos" className="button-transparent">
+              Mis Pedidos
+            </Link>
+          )}
+
           <Link
             to="/carrito"
             className="button-gray"
@@ -90,9 +111,28 @@ export default function Header() {
             </span>
           </Link>
 
-          <Link to="/login" className="button-white-border">
-            Iniciar Sesión
-          </Link>
+          {!userType ? (
+            <Link to="/login" className="button-white-border">
+              Iniciar Sesión
+            </Link>
+          ) : (
+            <>
+              <Link
+                to="/notificaciones"
+                className="button-transparent notifications-button"
+              >
+                <FaRegBell />
+              </Link>
+
+              <button
+                type="button"
+                className="button-transparent user-button"
+                onClick={handleLogout}
+              >
+                <FaRegUser />
+              </button>
+            </>
+          )}
         </div>
 
         {!menuOpen && (
