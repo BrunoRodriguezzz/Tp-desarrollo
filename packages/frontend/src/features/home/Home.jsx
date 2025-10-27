@@ -37,9 +37,9 @@ export default function Home() {
           <Link to="/productos" className="button-white">
             Ver Productos
           </Link>
-          <button className="button-transparent-border">
-            Vender en Tienda Sol
-          </button>
+          <Link to="/categorias" className="button-transparent-border">
+            Ver Categorias
+          </Link>
         </div>
       </section>
 

@@ -79,14 +79,6 @@ export default function Header() {
           role="navigation"
           aria-label="Menú principal"
         >
-          <Link to="/productos" className="button-transparent">
-            Productos
-          </Link>
-
-          <Link to="/categorias" className="button-transparent">
-            Categorías
-          </Link>
-
           <Link
             to="/carrito"
             className="button-gray"
