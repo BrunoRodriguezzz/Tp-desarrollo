@@ -1,7 +1,7 @@
-import { Select, MenuItem, InputLabel, FormControl, Chip, Box } from "@mui/material";
+import { Select, MenuItem, InputLabel, FormControl, Chip, Box, OutlinedInput } from "@mui/material";
 import categoriesMock from "../../../mockData/Categories";
 
-export function SelectorCategorias({ categorias, setCategorias }) {
+export function SelectorCategorias({categorias, setCategorias}) {
   const categoriasDisponibles = categoriesMock;
 
   const handleChange = (event) => {
@@ -10,28 +10,42 @@ export function SelectorCategorias({ categorias, setCategorias }) {
   };
 
   return (
-    <FormControl sx={{width:"50%"}}>
-      <InputLabel id="categorias"></InputLabel>
-      <Select
-        labelId="categorias"
-        multiple
-        variant="outlined"
-        value={categorias}
-        onChange={handleChange}
-        renderValue={(selected) => (
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, width:"80%" }}>
-            {selected.map((val) => (
-              <Chip key={val} label={val} />
+    <FormControl fullWidth margin="normal" size="small">
+          <InputLabel>Categorías</InputLabel>
+          <Select
+            multiple
+            value={categorias}
+            onChange={handleChange}
+            input={<OutlinedInput label="Categorías" />}
+            renderValue={(selected) => (
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 0.5,
+                  alignItems: "center",
+                }}
+              >
+                {selected.map((value) => (
+                  <Chip
+                    key={value}
+                    label={value}
+                  />
+                ))}
+              </Box>
+            )}
+            MenuProps={{
+              PaperProps: {
+                style: { maxHeight: 220 },
+              },
+            }}
+          >
+            {categoriasDisponibles.map((cat) => (
+              <MenuItem key={cat.name} value={cat.name}>
+                {cat.name}
+              </MenuItem>
             ))}
-          </Box>
-        )}
-      >
-        {categoriasDisponibles.map((categoria) => (
-          <MenuItem key={categoria.name} value={categoria.name}>
-            {categoria.name}
-          </MenuItem>
-        ))}
-      </Select>
-    </FormControl>
+          </Select>
+        </FormControl>
   )
 }

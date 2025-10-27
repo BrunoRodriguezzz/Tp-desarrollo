@@ -1,25 +1,32 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./FormularioProducto.css"
 import { SelectorCategorias } from "./selectorCategorias/SelectorCategorias";
+import "./FormularioProducto.css";
 
 export function FormularioProducto({ producto, handleOpenSuccess, closeForm, handleOpenError, obligatorio = false }) {
-  const inicializarCampo = (requerido = true) => ({ valor: '', requerido });
 
   const inicializarCampos = () => ({
-    titulo: inicializarCampo(),
-    descripcion: inicializarCampo(),
-    precio: inicializarCampo(),
-    moneda: inicializarCampo(),
-    stock: inicializarCampo()
+    titulo: { valor: producto?.titulo || "", requerido: true },
+    descripcion: { valor: producto?.descripcion || "", requerido: true },
+    categorias: { valor: producto?.categorias || [], requerido: false },
+    precio: { valor: producto?.precio || "", requerido: true },
+    moneda: { valor: producto?.moneda || "", requerido: true },
+    stock: { valor: producto?.stock || "", requerido: true },
   });
 
   const [campos, setCampos] = useState(inicializarCampos());
-  const [categorias, setCategorias] = useState([]);
 
   const setValorDe = (campo) => (event) => {
-    setCampos(prev => ({
+    setCampos((prev) => ({
       ...prev,
-      [campo]: { ...prev[campo], valor: event.target.value }
+      [campo]: { ...prev[campo], valor: event.target.value },
+    }));
+  };
+
+  const setCategorias = (nuevasCategorias) => {
+    setCampos((prev) => ({
+      ...prev,
+      categorias: { ...prev.categorias, valor: nuevasCategorias },
     }));
   };
 
@@ -35,7 +42,7 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm, han
     }
     closeForm();
     handleOpenSuccess();
-  }
+  };
 
   return (
     <div className="form-producto">
@@ -50,12 +57,12 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm, han
             value={campos.titulo.valor}
             required
         ></input>
-        <label>Descripcion</label>
+        <label>Descripcion *</label>
         <input
-            type="text"
-            placeholder="Descripcion"
-            onChange={setValorDe('descripcion')}
-            value={campos.descripcion.valor}
+          type="text"
+          placeholder="Descripcion"
+          onChange={setValorDe("descripcion")}
+          value={campos.descripcion.valor}
         ></input>
         <label>Precio *</label>
         <input
@@ -87,11 +94,11 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm, han
         ></input>
         <label>Categorias</label>
         <SelectorCategorias
-          categorias={categorias}
+          categorias={campos.categorias.valor}
           setCategorias={setCategorias}
         />
         <button type="button" className="btn-submit" onClick={handleForm}> Subir</button>
     </form>
     </div>
-  )
+  );
 }
