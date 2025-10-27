@@ -3,7 +3,7 @@ import "./FormularioProducto.css"
 import { SelectorCategorias } from "./selectorCategorias/SelectorCategorias";
 import "./FormularioProducto.css";
 
-export function FormularioProducto({ producto, handleOpenSuccess, closeForm, handleOpenError, obligatorio = false }) {
+export function FormularioProducto({ producto, handleOpenSuccess, closeForm, handleOpenError }) {
 
   const inicializarCampos = () => ({
     titulo: { valor: producto?.titulo || "", requerido: true },
@@ -32,10 +32,10 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm, han
 
   const camposCompletos = Object.values(campos)
     .filter(campo => campo.requerido)
-    .every(campo => campo.valor.trim() !== '');
+    .every(campo => String(campo.valor).trim() !== '');
 
   const handleForm = () => {
-    if(obligatorio && !camposCompletos)
+    if(!camposCompletos)
     {
       handleOpenError();
       return;

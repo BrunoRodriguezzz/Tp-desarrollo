@@ -74,7 +74,6 @@ export function MisProductos() {
             handleOpenSuccess={handleOpenSuccess}
             closeForm={handleCloseForm}
             handleOpenError={handleOpenError}
-            obligatorio={true}
           />
         </DialogContent>
       </Dialog>
