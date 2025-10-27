@@ -3,11 +3,16 @@ import { useCart } from "../../componentes/carrito/cartContext/CartContext";
 import CarritoLleno from "../../componentes/carrito/carritoLleno/CarritoLleno";
 import CarritoVacio from "../../componentes/carrito/CarritoVacio/CarritoVacio";
 import { motion, AnimatePresence } from "framer-motion";
+import Seo from "../../componentes/seo/Seo";
 
 export default function Carrito() {
   const { totalItems } = useCart();
   return (
     <AnimatePresence mode="wait">
+      <Seo
+        title="Tu carrito | Tienda Sol"
+        description="Revisá y gestioná los productos de tu carrito antes de finalizar la compra."
+      />
       {totalItems === 0 ? (
         <motion.div
           key="vacio"

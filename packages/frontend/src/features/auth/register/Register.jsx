@@ -1,3 +1,4 @@
+import React from "react";
 import "./Register.css";
 import { PiSunDim } from "react-icons/pi";
 import { FaUserPlus } from "react-icons/fa";
@@ -6,6 +7,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SnackbarSuccess } from "../../../componentes/snackbars/SnackBarSuccess";
 import { SnackbarError } from "../../../componentes/snackbars/SnackBarError";
+import Seo from "../../../componentes/seo/Seo";
 
 export default function Register() {
 	const inicializarCampo = (requerido = true) => ({ valor: '', requerido });
@@ -63,6 +65,10 @@ export default function Register() {
 
 	return (
 		<div className="register-container">
+				<Seo
+					title="Crear cuenta | Tienda Sol"
+					description="Registrate para empezar a comprar y vender en Tienda Sol."
+				/>
 				<div className="register-header">
 								<div className="brand-logo">
 								<PiSunDim size={50} />

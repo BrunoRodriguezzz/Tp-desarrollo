@@ -7,6 +7,7 @@ import { MdOutlineLocalShipping } from "react-icons/md";
 import { CiLock } from "react-icons/ci";
 import { IoDiamondOutline } from "react-icons/io5";
 import { CiChat1 } from "react-icons/ci";
+import Seo from "../../componentes/seo/Seo";
 
 export default function Home() {
   const [paginado, setPaginado] = useState({ page: 1, size: 12 });
@@ -20,6 +21,10 @@ export default function Home() {
 
   return (
     <>
+      <Seo
+        title="Tienda Sol | Marketplace de calidad al mejor precio"
+        description="Descubre productos de calidad, categorías populares y ofertas. Compra y vende con seguridad y envíos rápidos."
+      />
       <section className="home-banner">
         <h1>Bienvenido A Tienda Sol</h1>
 

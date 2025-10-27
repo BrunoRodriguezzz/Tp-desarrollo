@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { React, useState } from "react";
 import ProductList from "../../componentes/products/productList/ProductList";
 import "./MisProductos.css"
 import MisProductosList from "../../componentes/products/misProductosList/MisProductosList";
@@ -6,6 +6,7 @@ import { Dialog, DialogContent } from "@mui/material";
 import { FormularioProducto } from "../../componentes/formularioProducto/FormularioProducto";
 import { SnackbarSuccess } from "../../componentes/snackbars/SnackBarSuccess";
 import { SnackbarError } from "../../componentes/snackbars/SnackBarError";
+import Seo from "../../componentes/seo/Seo";
 
 export function MisProductos() {
   const [paginado, setPaginado] = useState({ page: 1, size: 12 });
@@ -46,6 +47,10 @@ export function MisProductos() {
 
   return (
     <div className="mis-productos-container">
+      <Seo
+        title="Mis productos | Tienda Sol"
+        description="Administrá tus productos y creá nuevos fácilmente."
+      />
       <div className="mis-productos-header">
         <div className="mis-productos-left">
           <h1>Mis productos</h1>

@@ -6,6 +6,7 @@ import { useCart } from "../../componentes/carrito/cartContext/CartContext.jsx";
 import { buscarProductoPorId } from "../../services/productoService.js";
 import ProductDetailSkeleton from "../../componentes/skeletons/SkeletonProductoDetail.jsx";
 import { SnackbarSuccess } from "../../componentes/snackbars/SnackBarSuccess.jsx"
+import Seo from "../../componentes/seo/Seo";
 
 export default function ProductoDetailPage() {
   const { id } = useParams();
@@ -63,8 +64,18 @@ export default function ProductoDetailPage() {
     );
   }
 
+  const seoDescription = producto.descripcion
+    ? producto.descripcion.length > 160
+      ? producto.descripcion.slice(0, 157) + "..."
+      : producto.descripcion
+    : undefined;
+
   return (
     <div className="producto-detail-container">
+      <Seo
+        title={`${producto.titulo} | Tienda Sol`}
+        description={seoDescription}
+      />
       <div className="producto-imagen-wrapper">
         {!imgLoaded && <ProductDetailSkeleton />}
         <img
