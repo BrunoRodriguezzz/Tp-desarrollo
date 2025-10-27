@@ -1,12 +1,19 @@
+import { useState } from "react";
 import "./NotificacionBox.css"
 import { FaCheck, FaInfoCircle } from "react-icons/fa";
+import { SnackbarSuccess } from "../../../componentes/snackbars/SnackBarSuccess";
 
 export default function NotificacionBox({ notificacion }) {
   const { mensaje, fechaAlta, leida } = notificacion;
+  const [openSuccess, setOpenSuccess] = useState(false);
 
   const marcarLeida = () => {
-    alert('Se marco como leida correctamente')
+    setOpenSuccess(true);
   }
+
+  const handleClose = () => {
+		setOpenSuccess(false);
+	}
 
   const fecha = new Date(fechaAlta);
   const fechaFormateada = fecha.toLocaleDateString("es", {
@@ -34,8 +41,13 @@ export default function NotificacionBox({ notificacion }) {
           <FaCheck/>
           Marcar como Leida
           </button>
-    </div>
+        </div>
       )}
+      <SnackbarSuccess
+        mensaje={"Notificacion marcada como Leida"}
+        open={openSuccess}
+        onClose={handleClose}
+      />
     </div>
   );
 }
