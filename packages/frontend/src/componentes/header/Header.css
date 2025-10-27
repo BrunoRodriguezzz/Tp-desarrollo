@@ -22,7 +22,7 @@ header {
   gap: 0.5rem;
 }
 
-.brand-logo p, .brand-logo a {
+.brand-logo p, .brand-logo span {
   font-size: 1.4rem;
   font-weight: bold;
   text-decoration: none;

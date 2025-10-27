@@ -22,11 +22,21 @@ export default function Header() {
   return (
     <>
       <header>
-        <div className="brand-logo">
-          <PiSunDim size={40} />
-          <Link to="/" aria-label="Ir al inicio de Tienda Sol">
-            Tienda Sol
-          </Link>
+        <div
+          className="brand-logo"
+          role="link"
+          tabIndex={0}
+          aria-label="Ir al inicio de Tienda Sol"
+          onClick={() => navigate("/")}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              navigate("/");
+            }
+          }}
+        >
+          <PiSunDim size={40} aria-hidden="true" />
+          <span>Tienda Sol</span>
         </div>
 
         <div className="search-bar" role="search" aria-label="Buscar productos">
