@@ -1,8 +1,10 @@
+import React from "react";
 import "./MisVentas.css"
 import { Switch, FormGroup, FormControlLabel} from "@mui/material";
 import { useState, useEffect } from "react";
 import { HistorialUsuarioResponseMock } from "../../mockData/Pedidos.js"
 import VentasList from "../../componentes/ventas/ventasList/VentasList.jsx";
+import Seo from "../../componentes/seo/Seo";
 
 
 //TODO - Hacerme mi propio mock
@@ -35,6 +37,10 @@ export default function MisVentas() {
 
   return (
     <div className="mis-ventas">
+      <Seo
+        title="Mis ventas | Tienda Sol"
+        description="Consultá y gestioná las ventas de tus productos."
+      />
       <div className="ventas-header">
         <div className="ventas-left">
           <h1>Mis Ventas</h1>

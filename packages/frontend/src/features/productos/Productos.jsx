@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import Filtros from "../../componentes/filtrosProductos/filtros";
 import ProductList from "../../componentes/products/productList/ProductList.jsx";
 import { useSearchParams } from "react-router-dom";
+import Seo from "../../componentes/seo/Seo";
 
 export default function Productos() {
     
@@ -59,6 +60,10 @@ export default function Productos() {
 
     return (
         <Container maxWidth="xl" className="contenidoPrincipal">
+            <Seo
+                title="Productos | Tienda Sol"
+                description="Explora productos por categoría, precio y más. Filtra y ordena para encontrar lo que necesitas al mejor precio."
+            />
             <Grid container spacing={2} columns={20} className="contenedor-filtro-productos">
                 <Grid  size={{ xs: 20, sm: 6, md: 4 }} sx={{ marginTop: 2 }} className="filtros-grid">
                     <Filtros
