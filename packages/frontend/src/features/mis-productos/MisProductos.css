@@ -1,0 +1,60 @@
+.mis-productos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 30px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
+}
+
+.mis-productos-container .mis-productos-header{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.mis-productos-container .mis-productos-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.mis-productos-container h1 {
+  margin-bottom: 0;
+}
+
+.mis-productos-container p {
+  color: #333;
+}
+
+.mis-productos-container .mis-productos-right {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mis-productos-container .create-button {
+  background-color: rgba(12, 101, 216, 0.959);
+  color: white;
+  font-weight: 700;
+  font-size: medium;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.5s ease;
+}
+
+.mis-productos-container .create-button:hover {
+  background-color: rgba(12, 100, 216, 0.553);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+}
