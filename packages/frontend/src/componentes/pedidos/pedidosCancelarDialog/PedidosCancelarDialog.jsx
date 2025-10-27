@@ -9,10 +9,11 @@ import {
 } from "@mui/material";
 import "./PedidosCancelarDialog.css";
 
-export default function PedidosCancelarDialog({ pedido, open, onOpenChange }) {
+export default function PedidosCancelarDialog({ pedido, open, onOpenChange, onCancelado }) {
   const cancelarPedido = () => {
     //falta implementar
     console.log("Pedido cancelado:", pedido._id);
+    onCancelado();
     onOpenChange(false);
   };
 

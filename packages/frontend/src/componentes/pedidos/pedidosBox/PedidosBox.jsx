@@ -14,15 +14,25 @@ import { es } from "date-fns/locale";
 import PedidosDetalleDialog from "../pedidosDetalleDialog/PedidosDetalleDialog";
 import PedidosCancelarDialog from "../pedidosCancelarDialog/PedidosCancelarDialog";
 import PedidoItemList from "../pedidosItemList/PedidosItemList";
+import { SnackbarSuccess } from "../../snackbars/SnackBarSuccess";
 
 export default function PedidosBox({ pedido }) {
   const [openDetalleDialog, setOpenDetalleDialog] = useState(false);
   const [openCancelarDialog, setOpenCancelarDialog] = useState(false);
+  const [openSuccess, setOpenSuccess] = useState(false);
 
   const { _id, estado, fechaCreacion, items, total } = pedido;
 
   const mostrarBotonCancelar =
     estado !== "ENVIADO" && estado !== "ENTREGADO" && estado !== "CANCELADO";
+
+  const handleSuccess = () => {
+    setOpenSuccess(true);
+  }
+
+  const handleClose = () => {
+    setOpenSuccess(false);
+  }
 
   const fechaFormateada = format(
     new Date(fechaCreacion),
@@ -126,6 +136,12 @@ export default function PedidosBox({ pedido }) {
         pedido={pedido}
         open={openCancelarDialog}
         onOpenChange={setOpenCancelarDialog}
+        onCancelado={handleSuccess}
+      />
+      <SnackbarSuccess
+        mensaje="Se cancelo el pedido"
+        open={openSuccess}
+        onClose={handleClose}
       />
     </>
   );

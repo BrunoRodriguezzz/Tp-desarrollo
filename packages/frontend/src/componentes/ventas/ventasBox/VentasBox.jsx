@@ -12,12 +12,14 @@ import PedidosItemList from "../../pedidos/pedidosItemList/PedidosItemList";
 import PedidosDetalleDialog from "../../pedidos/pedidosDetalleDialog/PedidosDetalleDialog";
 import { useState } from "react";
 import VentasEnviarDialog from "../ventasEnviarDialog/VentasEnviarDialog";
+import { SnackbarSuccess } from "../../snackbars/SnackBarSuccess";
 
 export default function VentasBox({pedido}) {
   const { _id, estado, fechaCreacion, items, total } = pedido;
   const enviable = !(estado.toLowerCase() === "entregado" || estado.toLowerCase() === "cancelado");
   const [openDetalleDialog, setOpenDetalleDialog] = useState(false);
   const [openEnviarDialog, setOpenEnviarDialog] = useState(false);
+  const [openSuccess, setOpenSuccess] = useState(false);
 
   const marcarEnviado = () => {
     setOpenEnviarDialog(true);
@@ -25,6 +27,14 @@ export default function VentasBox({pedido}) {
   
   const verDetalles = () => {
     setOpenDetalleDialog(true);
+  }
+
+  const handleSuccess = () => {
+    setOpenSuccess(true);
+  }
+
+  const handleClose = () => {
+    setOpenSuccess(false);
   }
 
   const status = getStatusConfig(estado);
@@ -94,6 +104,12 @@ export default function VentasBox({pedido}) {
         pedido={pedido}
         open={openEnviarDialog}
         onOpenChange={setOpenEnviarDialog}
+        onEnviado={handleSuccess}
+      />
+      <SnackbarSuccess
+        mensaje="Se marco el pedido como enviado"
+        open={openSuccess}
+        onClose={handleClose}
       />
     </>  
   );
