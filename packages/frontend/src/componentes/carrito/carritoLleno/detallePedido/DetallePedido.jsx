@@ -58,7 +58,7 @@ export default function DetallePedido({ cartItems, isCheckout }) {
       <h3>Resumen del pedido</h3>
       <div>
         <p>Subtotal</p>
-        <p>${total.toFixed(2) + " ARS"}</p>
+        <p>${total.toFixed(2)}</p>
       </div>
       <div>
         <p>Envío</p>
@@ -69,7 +69,7 @@ export default function DetallePedido({ cartItems, isCheckout }) {
           Total
         </p>
         <p style={{ color: "black", fontWeight: "bold", fontSize: "1.2rem" }}>
-          ${total.toFixed(2) + " ARS"}
+          ${total.toFixed(2)}
         </p>
       </div>
 
