@@ -3,7 +3,8 @@ import axios from "axios";
 
 // BARLA PIDE PERDON POR ESTO
 const API_BASE_URL =
-  process.env.REACT_APP_URL_BACKEND || "http://localhost:8000";
+  process.env.REACT_APP_URL_BACKEND || "https://tiendasolapi.syspa.es";
+// process.env.REACT_APP_URL_BACKEND || "http://localhost:8000";
 
 export async function buscarProductosMock(limit, currentPage, filtros = {}) {
   await new Promise((res) => setTimeout(res, 1000));
