@@ -47,3 +47,11 @@ export class BadRequestError extends TiendaSolError {
     this.name = "BadRequestError";
   }
 }
+
+export class WrongCredentialsError extends TiendaSolError {
+  constructor(message = "Credenciales incorrectas") {
+    // Es el mensaje por defecto
+    super(message, 401);
+    this.name = "WrongCredentialsError";
+  }
+}

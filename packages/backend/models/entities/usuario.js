@@ -12,6 +12,7 @@ class Usuario {
   telefono;
   tipo;
   fechaAlta;
+  passwordHash;
 
   constructor(nombre, tipo) {
     esNoNuloNiUndefined(this.constructor.name, nombre, tipo);
@@ -29,6 +30,11 @@ class Usuario {
   setTelefono(telefono) {
     validarTelefono(telefono);
     this.telefono = telefono;
+  }
+
+  setPasswordHash(passwordHash) {
+    esNoNuloNiUndefined(this.constructor.name, passwordHash);
+    this.passwordHash = passwordHash;
   }
 }
 

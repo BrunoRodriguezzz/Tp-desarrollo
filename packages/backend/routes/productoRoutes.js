@@ -1,8 +1,9 @@
-import express from "express";
-import ProductoController from "../controllers/productoController.js";
-import loggerMiddleware from "../middlewares/loggerMiddleware.js";
+import express from 'express';
+import ProductoController from '../controllers/productoController.js';
+import loggerMiddleware from '../middlewares/loggerMiddleware.js';
+import { authMiddleware } from '../middlewares/authMiddleware.js';
 
-const pathProductos = "/productos";
+const pathProductos = '/productos';
 
 export default function healtCheckRoute(getController) {
   const router = express.Router();
@@ -10,7 +11,7 @@ export default function healtCheckRoute(getController) {
   router.use(loggerMiddleware);
 
   // POST /productos
-  router.post(pathProductos, async (req, res, next) => {
+  router.post(pathProductos, authMiddleware, async (req, res, next) => {
     try {
       await getController(ProductoController).create(req, res);
     } catch (err) {
@@ -28,7 +29,7 @@ export default function healtCheckRoute(getController) {
   });
 
   // GET /productos/:id
-  router.get(pathProductos + "/:id", async (req, res, next) => {
+  router.get(pathProductos + '/:id', async (req, res, next) => {
     try {
       await getController(ProductoController).findById(req, res);
     } catch (err) {
@@ -37,7 +38,7 @@ export default function healtCheckRoute(getController) {
   });
 
   // PATCH /productos/:id
-  router.patch(pathProductos + "/:id", async (req, res, next) => {
+  router.patch(pathProductos + '/:id', authMiddleware, async (req, res, next) => {
     try {
       await getController(ProductoController).update(req, res);
     } catch (err) {
@@ -46,7 +47,7 @@ export default function healtCheckRoute(getController) {
   });
 
   // DELETE /productos/:id
-  router.delete(pathProductos + "/:id", async (req, res, next) => {
+  router.delete(pathProductos + '/:id', authMiddleware, async (req, res, next) => {
     try {
       await getController(ProductoController).delete(req, res);
     } catch (err) {

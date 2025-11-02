@@ -9,6 +9,7 @@ import ProductoController from './controllers/productoController.js';
 import NotificacionController from './controllers/notificacionController.js';
 import PedidoController from './controllers/pedidoController.js';
 import CategoriaController from './controllers/categoriaController.js';
+import UsuarioController from './controllers/usuarioController.js';
 
 // Importamos los Repositorios
 import ProductoRepository from './repositories/productoRepository.js';
@@ -30,6 +31,7 @@ import swaggerDocs from './swagger.js';
 // Importamos las rutas
 import routes from './routes/routes.js';
 import MongoDBClient from './config/database.js';
+import AuthService from './services/authService.js';
 
 // Inicializacion
 const app = express();
@@ -47,7 +49,7 @@ const categoriaRepository = new CategoriaRepository();
 
 // Capas de Servicio
 const categoriaService = new CategoriaService(categoriaRepository);
-
+const authService = new AuthService(usuarioRepository);
 const usuarioService = new UsuarioService(usuarioRepository);
 
 const productoService = new ProductoService(
@@ -71,6 +73,7 @@ const productoController = new ProductoController(productoService);
 const notificacionController = new NotificacionController(notificacionService);
 const pedidoController = new PedidoController(pedidoService);
 const categoriaController = new CategoriaController(categoriaService);
+const usuarioController = new UsuarioController(usuarioService, authService);
 
 // Registro de controlladores en el servidor
 server.setController(HealthController, healthController);
@@ -78,6 +81,7 @@ server.setController(ProductoController, productoController);
 server.setController(NotificacionController, notificacionController);
 server.setController(PedidoController, pedidoController);
 server.setController(CategoriaController, categoriaController);
+server.setController(UsuarioController, usuarioController);
 
 app.use(
   cors({

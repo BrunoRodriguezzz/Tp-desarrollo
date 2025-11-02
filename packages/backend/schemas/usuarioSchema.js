@@ -36,6 +36,11 @@ const UsuarioSchema = new mongoose.Schema(
       default: Date.now,
       required: true,
     },
+
+    passwordHash: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,
