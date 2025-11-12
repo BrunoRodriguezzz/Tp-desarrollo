@@ -68,6 +68,11 @@ export default function SessionProvider({ children }) {
     return { id, email, nombre, tipo };
   }
 
+  function getIdFromToken() {
+    const user = getUserFromToken();
+    return user ? user.id : null;
+  }
+
   function notLogged() {
     return !isTokenValid(accessToken);
   }
@@ -86,6 +91,7 @@ export default function SessionProvider({ children }) {
         isComprador,
         notLogged,
         getUserFromToken,
+        getIdFromToken,
       }}
     >
       {children}
