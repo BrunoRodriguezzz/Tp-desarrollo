@@ -12,11 +12,13 @@ const axios = require("axios");
 const SITE_URL =
   process.env.SITE_URL ||
   process.env.REACT_APP_SITE_URL ||
-  "http://localhost:3000";
+  // "http://localhost:3000";
+  "https://tiendasol.syspa.es";
 const API_URL =
   process.env.REACT_APP_URL_BACKEND ||
   process.env.URL_BACKEND ||
-  "http://localhost:8000";
+  // "http://localhost:8000";
+  "https://tiendasolapi.syspa.es";
 
 const staticPaths = [
   "/",

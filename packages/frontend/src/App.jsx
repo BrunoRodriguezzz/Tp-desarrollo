@@ -19,6 +19,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import PageWrapper from "./componentes/pageWrapper/PageWrapper.jsx";
 import { MisProductos } from "./features/mis-productos/MisProductos.jsx";
 import NotFound from "./features/notFound/NotFound.jsx";
+import SessionProvider from "./features/auth/session/sessionContext.jsx";
 
 function AppContent() {
   const location = useLocation();
@@ -55,11 +56,13 @@ function AppContent() {
 
 export default function App() {
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <AppContent />
-      </BrowserRouter>
-    </CartProvider>
+    <SessionProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <AppContent />
+        </BrowserRouter>
+      </CartProvider>
+    </SessionProvider>
   );
 }

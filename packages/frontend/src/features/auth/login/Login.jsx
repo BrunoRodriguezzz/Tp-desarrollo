@@ -6,14 +6,17 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import usuariosMock from "../../../mockData/Users.js";
+import { login } from "../../../services/sessionService.js";
 import { SnackbarSuccess } from "../../../componentes/snackbars/SnackBarSuccess.jsx";
 import { SnackbarError } from "../../../componentes/snackbars/SnackBarError.jsx";
 import Seo from "../../../componentes/seo/Seo";
+import { useSession } from "../session/sessionContext.jsx";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { loginContext, accessToken, refreshToken } = useSession();
 
   const [openSuccess, setOpenSuccess] = useState(false);
   const [openError, setOpenError] = useState(false);
@@ -29,22 +32,33 @@ export default function Login() {
     setOpenError(false);
   };
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!camposCompletos) {
       setMensajeError("Todos los campos son requeridos");
       setOpenError(true);
       return;
     }
 
-    const usuario = usuariosMock.find(
-      (u) => u.email === email && u.password === password
-    );
+    const result = await login(email, password);
 
-    if (!usuario) {
+    if (!result || !result.token) {
       setMensajeError("Usuario o contraseña incorrectas");
       setOpenError(true);
       return;
     }
+
+    console.log("ANTES");
+    console.log("Access Token:", accessToken);
+    console.log("Refresh Token:", refreshToken);
+
+    loginContext({
+      token: result.token,
+      refreshToken: result.refreshToken,
+    });
+
+    console.log("DESPUES");
+    console.log("Access Token:", accessToken);
+    console.log("Refresh Token:", refreshToken);
 
     setOpenSuccess(true);
     setTimeout(() => navigate("/"), 2000);

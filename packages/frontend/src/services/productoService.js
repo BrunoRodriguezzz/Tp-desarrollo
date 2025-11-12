@@ -89,7 +89,6 @@ export async function buscarProductosMock(limit, currentPage, filtros = {}) {
 }
 
 export async function buscarProductos(limit, currentPage, filtros = {}) {
-  await new Promise((res) => setTimeout(res, 1000));
   try {
     const response = await axios.get(`${API_BASE_URL}/productos`, {
       params: {
