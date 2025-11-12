@@ -14,10 +14,16 @@ export default class UsuarioController {
   async login(req, res) {
     const body = req.body || {};
     const { email, password } = body;
+
     if (!email || !password) {
       throw new BadRequestError("Se requieren 'email' y 'password' en el body JSON");
     }
+
+    console.log('email:', email);
+    console.log('password:', password);
+
     const user = await this.usuarioService.authenticate(email, password);
+
     validarUsuarioLogin(user);
 
     const token = this.authService.generateToken(user);
@@ -36,17 +42,30 @@ export default class UsuarioController {
 
   async signup(req, res) {
     const body = req.body || {};
+
     if (!body || Object.keys(body).length === 0) {
       throw new BadRequestError('Se requiere un body con Content-Type: application/json');
     }
-    const { nombre, email, telefono, tipo, password, passwordConfirm } = body;
-    if (!nombre || !email || !password || !passwordConfirm || !tipo) {
+
+    const { nombre, email, telefono, tipoUsuario, password, passwordConfirm } = body;
+
+    if (!nombre || !email || !password || !passwordConfirm || !tipoUsuario) {
+      console.log(req.body);
       throw new BadRequestError(
-        'Campos obligatorios: nombre, email, tipo, password, passwordConfirm'
+        'Campos obligatorios: nombre, email, tipoUsuario, password, passwordConfirm'
       );
     }
+
     validarPasswords(password, passwordConfirm);
-    const newUser = await this.usuarioService.signup(nombre, email, telefono, tipo, password);
+
+    const newUser = await this.usuarioService.signup(
+      nombre,
+      email,
+      telefono,
+      tipoUsuario,
+      password
+    );
+
     const token = this.authService.generateToken(newUser);
     const refreshToken = this.authService.generateRefreshToken(newUser);
 
