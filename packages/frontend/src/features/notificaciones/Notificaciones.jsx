@@ -7,7 +7,6 @@ import {
   CircularProgress,
 } from "@mui/material";
 import { useState, useEffect } from "react";
-import notificationsMock from "../../mockData/Notifications";
 import NotificacionBox from "./notificacionesBox/NotificacionBox";
 import Seo from "../../componentes/seo/Seo";
 import { obtenerNotificaciones } from "../../services/notificacionService";

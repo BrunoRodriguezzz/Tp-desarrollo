@@ -1,38 +1,50 @@
 import React from "react";
-import "./MisVentas.css"
-import { Switch, FormGroup, FormControlLabel} from "@mui/material";
+import "./MisVentas.css";
+import { Switch, FormGroup, FormControlLabel } from "@mui/material";
 import { useState, useEffect } from "react";
-import { HistorialUsuarioResponseMock } from "../../mockData/Pedidos.js"
+import { HistorialUsuarioResponseMock } from "../../mockData/Pedidos.js";
 import VentasList from "../../componentes/ventas/ventasList/VentasList.jsx";
 import Seo from "../../componentes/seo/Seo";
+import { useSession } from "../../features/auth/session/sessionContext";
+import { getPedidos } from "../../services/pedidoService";
 
-
-//TODO - Hacerme mi propio mock
 export default function MisVentas() {
-
   const [pedidos, setPedidos] = useState([]);
   const [mostrarEnviables, setMostrarEnviables] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
-  
+  const { getIdFromToken } = useSession();
+
+  const userId = getIdFromToken();
+
   const handleSwitch = (e) => {
-    setMostrarEnviables(e.target.checked)
-  }
-  
-  const pedidosFiltrados = mostrarEnviables ? pedidos.filter((p) =>
-      !(p.estado.toLowerCase() === "entregado" || p.estado.toLowerCase() === "cancelado"))
-  : pedidos;
-  
+    setMostrarEnviables(e.target.checked);
+  };
+
+  const pedidosFiltrados = mostrarEnviables
+    ? pedidos.filter(
+        (p) =>
+          !(
+            p.estado.toLowerCase() === "entregado" ||
+            p.estado.toLowerCase() === "cancelado"
+          )
+      )
+    : pedidos;
+
   useEffect(() => {
     setLoading(true);
-    const timeout = setTimeout(() => {
-      const response = obtenerPedidos(currentPage);
-      setPedidos(response.data);
-      setTotalPages(response.totalPages);
-      setLoading(false);
-    }, 600);
-    return () => clearTimeout(timeout);
+    const fetch = async () => {
+      try {
+        const response = await getPedidos(userId, currentPage, 10);
+        setPedidos(response.data);
+        setTotalPages(response.totalPages);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error obteniendo pedidos:", error);
+      }
+    };
+    fetch();
   }, [currentPage]);
 
   return (
@@ -48,13 +60,22 @@ export default function MisVentas() {
         </div>
         <div className="ventas-right">
           <h2>Pedidos Enviables</h2>
-            <FormGroup>
-              <FormControlLabel control={<Switch color="success" onChange={handleSwitch} sx={{ transform: "scale(1.2)" }}/>} 
-              aria-label="Mostrar pedidos enviables"/>
-            </FormGroup>
+          <FormGroup>
+            <FormControlLabel
+              control={
+                <Switch
+                  color="success"
+                  onChange={handleSwitch}
+                  sx={{ transform: "scale(1.2)" }}
+                />
+              }
+              aria-label="Mostrar pedidos enviables"
+            />
+          </FormGroup>
         </div>
       </div>
-      <VentasList className="ventas-list"
+      <VentasList
+        className="ventas-list"
         pedidos={pedidosFiltrados}
         loading={loading}
         currentPage={currentPage}
@@ -65,7 +86,7 @@ export default function MisVentas() {
         }}
       />
     </div>
-  )
+  );
 }
 
 function obtenerPedidos(pagina) {
