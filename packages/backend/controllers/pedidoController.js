@@ -1,6 +1,6 @@
-import { z } from "zod";
-import Moneda from "../models/enums/moneda.js";
-import { paginationGetValues } from "../utils/pagination.js";
+import { z } from 'zod';
+import Moneda from '../models/enums/moneda.js';
+import { paginationGetValues } from '../utils/pagination.js';
 
 export default class PedidoController {
   pedidoService;
@@ -61,15 +61,12 @@ export default class PedidoController {
     const id = result.data.usuarioId;
 
     try {
-      const pedidos = await paginationGetValues(
-        req,
-        async (page, limit, _filtros) => {
-          return this.pedidoService.historialUsuario(id, page, limit);
-        }
-      );
+      const pedidos = await paginationGetValues(req, async (page, limit, _filtros) => {
+        return this.pedidoService.historialUsuario(id, page, limit);
+      });
 
-      if (!pedidos || pedidos.data.length === 0) {
-        res.status(204).send("No se encontraron pedidos para ese usuario");
+      if (!pedidos) {
+        res.status(204).send('No se encontraron pedidos para ese usuario');
       }
 
       res.status(200).json(pedidos);
@@ -99,10 +96,7 @@ export default class PedidoController {
     };
 
     try {
-      const pedidoEnviado = await this.pedidoService.marcarPedidoEnviado(
-        id,
-        body
-      );
+      const pedidoEnviado = await this.pedidoService.marcarPedidoEnviado(id, body);
       res.status(200).json(pedidoEnviado);
     } catch (error) {
       return res.status(error.statusCode).json({ error: error.message });
@@ -114,9 +108,7 @@ export default class PedidoController {
     try {
       const pedidos = await this.pedidoService.findByProduct(productoId);
       if (pedidos.length === 0) {
-        return res
-          .status(204)
-          .send("No se encontraron pedidos para ese producto");
+        return res.status(204).send('No se encontraron pedidos para ese producto');
       }
       return res.status(200).json(pedidos);
     } catch (error) {
@@ -130,7 +122,7 @@ const objectIdRegex = /^[a-f\d]{24}$/i;
 
 const enviadoSchema = z.object({
   vendedorId: z.string().regex(objectIdRegex, {
-    message: "Debe ser un ObjectId válido de MongoDB",
+    message: 'Debe ser un ObjectId válido de MongoDB',
   }),
   pedidoId: z.string(),
   motivo: z.string().min(1),
@@ -138,13 +130,13 @@ const enviadoSchema = z.object({
 
 const userHistorySchema = z.object({
   usuarioId: z.string().regex(objectIdRegex, {
-    message: "Debe ser un ObjectId válido de MongoDB",
+    message: 'Debe ser un ObjectId válido de MongoDB',
   }),
 });
 
 export const pedidoSchema = z.object({
   compradorId: z.string().regex(objectIdRegex, {
-    message: "Debe ser un ObjectId válido de MongoDB",
+    message: 'Debe ser un ObjectId válido de MongoDB',
   }),
   moneda: z.nativeEnum(Moneda),
   direccion: z.object({
@@ -172,7 +164,7 @@ export const pedidoSchema = z.object({
   items: z.array(
     z.object({
       productoId: z.string().regex(objectIdRegex, {
-        message: "Debe ser un ObjectId válido de MongoDB",
+        message: 'Debe ser un ObjectId válido de MongoDB',
       }),
       cantidad: z.number().min(1),
     })
@@ -181,10 +173,10 @@ export const pedidoSchema = z.object({
 
 export const cancelSchema = z.object({
   compradorId: z.string().regex(objectIdRegex, {
-    message: "Debe ser un ObjectId válido de MongoDB",
+    message: 'Debe ser un ObjectId válido de MongoDB',
   }),
   pedidoId: z.string().regex(objectIdRegex, {
-    message: "Debe ser un ObjectId válido de MongoDB",
+    message: 'Debe ser un ObjectId válido de MongoDB',
   }),
   motivo: z.string().min(1),
 });
