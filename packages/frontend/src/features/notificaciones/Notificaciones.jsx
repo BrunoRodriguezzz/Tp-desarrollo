@@ -15,6 +15,7 @@ import { useSession } from "../../features/auth/session/sessionContext";
 
 export default function Notificaciones() {
   const [notificaciones, setNotificaciones] = useState([]);
+  const [notificacionesCargadas, setNotificacionesCargadas] = useState(false);
   const [mostrarSinLeer, setMostrarSinLeer] = useState(false);
   const { getIdFromToken } = useSession();
 
@@ -32,6 +33,7 @@ export default function Notificaciones() {
           mostrarSinLeer ? false : undefined
         );
         setNotificaciones(data.notificaciones);
+        setNotificacionesCargadas(true);
       } catch (error) {
         console.error("Error categorias obteniendo categorias:", error);
       }
@@ -68,15 +70,23 @@ export default function Notificaciones() {
           </div>
         </div>
         <div className="notification-list">
-          {!notificaciones.length ? (
+          {!notificacionesCargadas ? (
             <div className="spinner">
               <CircularProgress color="success" />
             </div>
           ) : (
             <div>
-              {notificaciones.map((n) => (
-                <NotificacionBox key={n._id} notificacion={n} />
-              ))}
+              {!notificaciones.length ? (
+                <p className="no-notifications-message">
+                  No hay notificaciones para mostrar.
+                </p>
+              ) : (
+                <div>
+                  {notificaciones.map((n) => (
+                    <NotificacionBox key={n._id} notificacion={n} />
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>
