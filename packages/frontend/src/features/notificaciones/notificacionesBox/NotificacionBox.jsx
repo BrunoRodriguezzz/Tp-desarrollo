@@ -2,13 +2,19 @@ import { useState } from "react";
 import "./NotificacionBox.css"
 import { FaCheck, FaInfoCircle } from "react-icons/fa";
 import { SnackbarSuccess } from "../../../componentes/snackbars/SnackBarSuccess";
+import { marcarNotificacionLeida } from "../../../services/notificacionService";
 
 export default function NotificacionBox({ notificacion }) {
-  const { mensaje, fechaAlta, leida } = notificacion;
+  const { _id, mensaje, fechaAlta, leida } = notificacion;
   const [openSuccess, setOpenSuccess] = useState(false);
 
-  const marcarLeida = () => {
-    setOpenSuccess(true);
+  const marcarLeida = async () => {
+    try {
+      await marcarNotificacionLeida(_id);
+      setOpenSuccess(true);
+    } catch (error) {
+      console.error("Error marcando notificación como leída:", error);
+    }
   }
 
   const handleClose = () => {

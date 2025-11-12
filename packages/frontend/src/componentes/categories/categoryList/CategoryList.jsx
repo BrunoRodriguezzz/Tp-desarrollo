@@ -5,24 +5,34 @@ import categoriesMock from "../../../mockData/Categories";
 import Pagination from "../../pagination/Pagination.jsx";
 import PropTypes from "prop-types";
 import SkeletonCategories from "../../skeletons/SkeletonCategories.jsx";
+import { obtenerCategorias } from "../../../services/categoriaService.js";
 
 export default function CategoryList({ limit = 6, pagination = true }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000); 
-    
-    return () => clearTimeout(timer);
-  }, []);
+  const [categorias, setCategorias] = useState([]);
 
-  const totalPages = Math.ceil(categoriesMock.length / limit);
+  useEffect(() => {
+      const fetch = async () => {
+        try {
+          setLoading(true);
+          const data = await obtenerCategorias();
+          setCategorias(data.categorias)
+        } catch (error) {
+          console.error("Error categorias obteniendo categorias:", error);
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetch();
+    }, []);
+
+  const totalPages = Math.ceil(categorias.length / limit);
 
   const startIdx = (currentPage - 1) * limit;
   const endIdx = startIdx + limit;
 
-  const categoriesToShow = categoriesMock.slice(startIdx, endIdx);
+  const categoriesToShow = categorias.slice(startIdx, endIdx);
 
   return (
     <div>

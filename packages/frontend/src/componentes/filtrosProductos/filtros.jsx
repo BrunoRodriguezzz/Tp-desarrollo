@@ -12,6 +12,7 @@ import Collapse from "@mui/material/Collapse";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import categoriesMock from "../../mockData/Categories.js";
+import { obtenerCategorias } from "../../services/categoriaService.js";
 
 // Iconos
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
@@ -28,14 +29,25 @@ export default function Filtros({
     setFiltros
   }) {
 
-  const categorias = categoriesMock.map(cat => cat.name);
-
   const handleClick = () => {
     setOpen((prev) => !prev);
   };
 
   const [open, setOpen] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(0);
+  const [categorias, setCategorias] = useState([]);
+
+  useEffect(() => {
+      const fetch = async () => {
+        try {
+          const data = await obtenerCategorias();
+          setCategorias(data.categorias.map(categoria => categoria.nombre))
+        } catch (error) {
+          console.error("Error categorias obteniendo categorias:", error);
+        }
+      };
+      fetch();
+    }, []);
 
   useEffect(() => {
     const header = document.querySelector('header');

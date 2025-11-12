@@ -5,22 +5,29 @@ import { useState, useEffect } from "react";
 import notificationsMock from "../../mockData/Notifications";
 import NotificacionBox from "./notificacionesBox/NotificacionBox";
 import Seo from "../../componentes/seo/Seo";
+import { obtenerNotificaciones } from "../../services/notificacionService";
 
 export default function Notificaciones() {
   const [notificaciones, setNotificaciones] = useState([]);
   const [mostrarSinLeer, setMostrarSinLeer] = useState(false);
+  //TODO - Hardcodeado, despues con context se pasa el token
+  const userId = "68e33be4b82c028126ef8056";
 
   const handleSwitch = (e) => {
     setMostrarSinLeer(e.target.checked)
   }
 
-  const notificacionesFiltradas = mostrarSinLeer
-    ? notificaciones.filter((n) => !n.leida)
-    : notificaciones;
-
     useEffect(() => {
-      setNotificaciones(obtenerNotificaciones())
-    }, [])
+      const fetch = async () => {
+        try {
+          const data = await obtenerNotificaciones(userId, mostrarSinLeer ? false : undefined);
+          setNotificaciones(data.notificaciones)
+        } catch (error) {
+          console.error("Error categorias obteniendo categorias:", error);
+        }
+      };
+      fetch();
+    }, [userId, mostrarSinLeer]);
 
   return (
   <>
@@ -43,12 +50,12 @@ export default function Notificaciones() {
       </div>
     </div>
     <div className="notification-list">
-      {!notificacionesFiltradas.length ? 
+      {!notificaciones.length ? 
         <div className="spinner">
             <CircularProgress color="success" />
         </div> :
         <div>
-          {notificacionesFiltradas.map((n) => (
+          {notificaciones.map((n) => (
           <NotificacionBox key={n._id} notificacion={n} />
         ))}
         </div>
@@ -57,9 +64,4 @@ export default function Notificaciones() {
   </div>
   </>
   )
-}
-
-function obtenerNotificaciones() {
-  //TODO - Hago la funcion porque despues vamos a hacer el fetch
-  return notificationsMock;
 }
