@@ -53,7 +53,7 @@ export default class PedidoController {
 
   async getHistoryUser(req, res) {
     const data = {
-      usuarioId: req.params.id,
+      usuarioId: req.user.id,
     };
 
     const result = userHistorySchema.safeParse(data);
@@ -63,11 +63,9 @@ export default class PedidoController {
       return;
     }
 
-    const id = result.data.usuarioId;
-
     try {
       const pedidos = await paginationGetValues(req, async (page, limit, _filtros) => {
-        return this.pedidoService.historialUsuario(id, page, limit);
+        return this.pedidoService.historialUsuario(data.usuarioId, page, limit);
       });
 
       if (!pedidos) {
