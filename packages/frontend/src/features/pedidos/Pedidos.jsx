@@ -3,22 +3,30 @@ import React, { useState, useEffect } from "react";
 import PedidosList from "../../componentes/pedidos/pedidosList/PedidosList";
 import { HistorialUsuarioResponseMock } from "../../mockData/Pedidos";
 import Seo from "../../componentes/seo/Seo";
+import { useSession } from "../auth/session/sessionContext";
+import { getPedidos } from "../../services/pedidoService";
 
 export default function Pedidos() {
   const [pedidos, setPedidos] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
+  const { getIdFromToken } = useSession();
+  const userId = getIdFromToken();
 
   useEffect(() => {
     setLoading(true);
-    const timeout = setTimeout(() => {
-      const response = obtenerPedidos(currentPage);
-      setPedidos(response.data);
-      setTotalPages(response.totalPages);
-      setLoading(false);
-    }, 600);
-    return () => clearTimeout(timeout);
+    const fetch = async () => {
+      try {
+        const response = await getPedidos(userId, currentPage, 10);
+        setPedidos(response.data);
+        setTotalPages(response.totalPages);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error obteniendo pedidos:", error);
+      }
+    };
+    fetch();
   }, [currentPage]);
 
   return (
@@ -44,19 +52,4 @@ export default function Pedidos() {
       />
     </div>
   );
-}
-
-function obtenerPedidos(pagina) {
-  const start = (pagina - 1) * HistorialUsuarioResponseMock.elementosPorPagina;
-  const end = start + HistorialUsuarioResponseMock.elementosPorPagina;
-  const pedidosPaginados = HistorialUsuarioResponseMock.data.slice(start, end);
-  const total = HistorialUsuarioResponseMock.total;
-
-  return {
-    data: pedidosPaginados,
-    total,
-    totalPages: Math.ceil(
-      total / HistorialUsuarioResponseMock.elementosPorPagina
-    ),
-  };
 }

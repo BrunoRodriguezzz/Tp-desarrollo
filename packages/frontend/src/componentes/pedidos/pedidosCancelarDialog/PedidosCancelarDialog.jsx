@@ -8,11 +8,19 @@ import {
   Divider,
 } from "@mui/material";
 import "./PedidosCancelarDialog.css";
+import { cancelacionPedido } from "../../../services/pedidoService.js";
+import { useSession } from "../../../features/auth/session/sessionContext.jsx";
 
 export default function PedidosCancelarDialog({ pedido, open, onOpenChange, onCancelado }) {
-  const cancelarPedido = () => {
-    //falta implementar
-    console.log("Pedido cancelado:", pedido._id);
+  const { accessToken } = useSession();
+
+  const cancelarPedido = async () => {
+    try {
+      await cancelacionPedido(accessToken, pedido.id, "El comprador cancelo el pedido")
+    } catch(error) {
+      console.error("Error cancelando el pedido:", error);
+    }
+    console.log("Pedido cancelado:", pedido.id);
     onCancelado();
     onOpenChange(false);
   };
@@ -28,7 +36,7 @@ export default function PedidosCancelarDialog({ pedido, open, onOpenChange, onCa
 
       <DialogContent dividers sx={{ pb: 2 }}>
         <p className="subtitle">
-          Estás a punto de cancelar el pedido <b>#{pedido._id}</b>.
+          Estás a punto de cancelar el pedido <b>#{pedido.id}</b>.
         </p>
       </DialogContent>
 

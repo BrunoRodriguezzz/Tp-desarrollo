@@ -21,7 +21,7 @@ export default function PedidosBox({ pedido }) {
   const [openCancelarDialog, setOpenCancelarDialog] = useState(false);
   const [openSuccess, setOpenSuccess] = useState(false);
 
-  const { _id, estado, fechaCreacion, items, total } = pedido;
+  const { id, estado, fechaCreacion, items, total } = pedido;
 
   const mostrarBotonCancelar =
     estado !== "ENVIADO" && estado !== "ENTREGADO" && estado !== "CANCELADO";
@@ -80,7 +80,7 @@ export default function PedidosBox({ pedido }) {
       <Card className="pedido-card" elevation={0}>
         <Box className="pedido-card-header">
           <Box>
-            <h3 className="pedido-numero">Pedido #{_id}</h3>
+            <h3 className="pedido-numero">Pedido #{id}</h3>
             <p className="pedido-fecha">Realizado el {fechaFormateada}</p>
           </Box>
 

@@ -118,6 +118,8 @@ export function validarEstadoParaEnviar(pedido) {
 
 export function validarDireccion(direccion) {
   const { coordenada } = direccion;
+  if (!coordenada) return;
+  
   if (
     !isNumber(coordenada.latitud) ||
     !isNumber(coordenada.longitud) ||

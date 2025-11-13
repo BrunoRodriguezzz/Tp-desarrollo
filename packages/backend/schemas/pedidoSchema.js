@@ -1,13 +1,13 @@
-import { mongoose } from "mongoose";
-import Pedido from "../models/entities/pedido.js";
-import Moneda from "../models/enums/moneda.js";
-import EstadoPedido from "../models/enums/estadoPedido.js";
+import { mongoose } from 'mongoose';
+import Pedido from '../models/entities/pedido.js';
+import Moneda from '../models/enums/moneda.js';
+import EstadoPedido from '../models/enums/estadoPedido.js';
 
 const PedidoSchema = new mongoose.Schema(
   {
     comprador: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Usuario",
+      ref: 'Usuario',
       required: true,
     },
 
@@ -15,18 +15,18 @@ const PedidoSchema = new mongoose.Schema(
       {
         producto: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: "Producto",
+          ref: 'Producto',
           required: true,
         },
         cantidad: {
           type: Number,
           required: true,
-          min: [1, "La cantidad de productos debe ser mayor a cero."],
+          min: [1, 'La cantidad de productos debe ser mayor a cero.'],
         },
         precioUnitario: {
           type: Number,
           required: true,
-          min: [1, "El precio unitario debe ser mayor a cero."],
+          min: [1, 'El precio unitario debe ser mayor a cero.'],
         },
       },
     ],
@@ -89,11 +89,11 @@ const PedidoSchema = new mongoose.Schema(
       coordenada: {
         latitud: {
           type: Number,
-          required: true,
+          required: false,
         },
         longitud: {
           type: Number,
-          required: true,
+          required: false,
         },
       },
     },
@@ -125,7 +125,7 @@ const PedidoSchema = new mongoose.Schema(
         },
         usuario: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: "Usuario",
+          ref: 'Usuario',
           required: true,
         },
         motivo: {
@@ -138,16 +138,16 @@ const PedidoSchema = new mongoose.Schema(
 
     vendedor: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Usuario",
+      ref: 'Usuario',
       required: true,
     },
   },
   {
     timestamps: true,
-    collection: "pedidos",
+    collection: 'pedidos',
   }
 );
 
 PedidoSchema.loadClass(Pedido);
 
-export const PedidoModel = mongoose.model("Pedido", PedidoSchema);
+export const PedidoModel = mongoose.model('Pedido', PedidoSchema);

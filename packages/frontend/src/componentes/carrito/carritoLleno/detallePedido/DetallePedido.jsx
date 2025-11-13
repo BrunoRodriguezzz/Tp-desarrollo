@@ -4,8 +4,11 @@ import "./DetallePedido.css";
 import PropTypes from "prop-types";
 import { SnackbarSuccess } from "../../../snackbars/SnackBarSuccess";
 import ConfirmDialog from "./ConfirmDialog";
+import { crearPedido } from "../../../../services/pedidoService";
+import { useSession } from "../../../../features/auth/session/sessionContext";
 
-export default function DetallePedido({ cartItems, isCheckout }) {
+export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
+  const { accessToken } = useSession();
   const [total, setTotal] = useState(0);
   const [openSuccess, setOpenSuccess] = useState(false);
   const [openConfirm, setOpenConfirm] = useState(false);
@@ -32,16 +35,35 @@ export default function DetallePedido({ cartItems, isCheckout }) {
     setTotal(sumaTotal);
   }, [cartItems]);
 
+  const camposCompletos = Object.values(campos)
+    .filter((campo) => campo.requerido)
+    .every((campo) => campo.valor.trim() !== "");
+
   const handleComprar = () => {
     if (isCheckout) {
+      if (!camposCompletos) {
+        //TODO - Pasarlo a Snackbar
+        alert("Hay campos obligatorios (*) incompletos");
+        return;
+      }
+
       setOpenConfirm(true);
     } else {
       navigate("/checkout");
     }
   };
 
-  const handleConfirmPurchase = () => {
+  const handleConfirmPurchase = async () => {
     setOpenConfirm(false);
+
+    try {
+      console.log("Entro al try")
+      await crearPedido(accessToken, cartItems, campos)
+    } catch(error) {
+      //TODO - Pasarlo a Snackbar
+      alert("Hubo un error");
+    }
+
     setOpenSuccess(true);
   };
 

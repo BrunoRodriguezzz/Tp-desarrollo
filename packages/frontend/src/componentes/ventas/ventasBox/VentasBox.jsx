@@ -17,7 +17,7 @@ import { SnackbarSuccess } from "../../snackbars/SnackBarSuccess";
 import propTypes from "prop-types";
 
 export default function VentasBox({ pedido }) {
-  const { _id, estado, fechaCreacion, items, total } = pedido;
+  const { id, estado, fechaCreacion, items, total } = pedido;
   const enviable = !(
     estado.toLowerCase() === "entregado" || estado.toLowerCase() === "cancelado"
   );
@@ -57,7 +57,7 @@ export default function VentasBox({ pedido }) {
       <div className={`venta-box ${enviable ? "enviable" : "no-enviable"}`}>
         <div className="venta-header">
           <div className="venta-info">
-            <h3>Pedido #{_id}</h3>
+            <h3>Pedido #{id}</h3>
             <p>Realizado el: {fechaFormateada}</p>
           </div>
           <Chip
