@@ -7,6 +7,7 @@ import ConfirmDialog from "./ConfirmDialog";
 import { crearPedido } from "../../../../services/pedidoService";
 import { useSession } from "../../../../features/auth/session/sessionContext";
 import CircularProgress from "@mui/material/CircularProgress";
+import { useCart } from "../../cartContext/CartContext";
 
 export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
   const { accessToken } = useSession();

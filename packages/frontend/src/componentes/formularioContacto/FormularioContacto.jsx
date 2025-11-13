@@ -1,44 +1,8 @@
 import React from "react";
 import "./FormularioContacto.css";
-import { useState } from "react";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 
 export default function FormularioContacto({ campos, setValorDe }) {
-  const handleBlur = (e) => {
-    const { name, value } = e.target;
-
-    setTouched((prev) => ({ ...prev, [name]: true }));
-
-    // marco error si toca y sale del input
-    if (value.trim() === "") {
-      setErroresDireccion((prev) => ({
-        ...prev,
-        [name]: "Este campo es obligatorio",
-      }));
-    }
-  };
-
-  const renderInput = (label, name, type = "text", placeholder) => (
-    <div className="form-group">
-      <label htmlFor={name}>{label}</label>
-
-      <input
-        type={type}
-        id={name}
-        name={name}
-        placeholder={placeholder}
-        value={direccion[name]}
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-
-      {/* muestro errores si toca y no escribe o si toca comprar */}
-      {(touched[name] || errores[name]) && errores[name] && (
-        <p className="error-message">{errores[name]}</p>
-      )}
-    </div>
-  );
-
   return (
     <div className="direccion-formulario">
       <h3>Dirección de Entrega</h3>
@@ -135,6 +99,6 @@ export default function FormularioContacto({ campos, setValorDe }) {
 }
 
 FormularioContacto.propTypes = {
-  campos: propTypes.object.isRequired,
-  setValorDe: propTypes.func.isRequired,
+  campos: PropTypes.object.isRequired,
+  setValorDe: PropTypes.func.isRequired,
 };

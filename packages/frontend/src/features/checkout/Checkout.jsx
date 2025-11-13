@@ -24,8 +24,15 @@ export default function Checkout() {
   const validarDireccion = () => {
     const nuevosErrores = {};
 
-    Object.keys(direccion).forEach((campo) => {
-      if (!direccion[campo].trim()) {
+    // Validar contra el estado `campos` donde cada campo tiene la forma { valor, requerido }
+    Object.keys(campos).forEach((campo) => {
+      const valor =
+        campos[campo] && campos[campo].valor ? campos[campo].valor : "";
+      const requerido =
+        campos[campo] && typeof campos[campo].requerido !== "undefined"
+          ? campos[campo].requerido
+          : true;
+      if (requerido && !valor.trim()) {
         nuevosErrores[campo] = "Este campo es obligatorio";
       }
     });
