@@ -26,6 +26,13 @@ import {
   LocationOn,
 } from "@mui/icons-material";
 import PedidosItemList from "../pedidosItemList/PedidosItemList";
+import propTypes from "prop-types";
+
+PedidosDetalleDialog.propTypes = {
+  pedido: propTypes.object.isRequired,
+  open: propTypes.bool.isRequired,
+  onOpenChange: propTypes.func.isRequired,
+};
 
 export default function PedidosDetalleDialog({ pedido, open, onOpenChange }) {
   const statusConfig = {
@@ -126,9 +133,8 @@ export default function PedidosDetalleDialog({ pedido, open, onOpenChange }) {
                       ` ${pedido.direccion.domicilio.departamento}`}
                   </p>
                   <p className="pedido-detalle">
-                    {pedido.direccion.ciudad.nombre},{" "}
-                    {pedido.direccion.ciudad.provincia.nombre},{" "}
-                    {pedido.direccion.ciudad.provincia.pais.nombre}
+                    {pedido.direccion.ciudad}, {pedido.direccion.provincia},{" "}
+                    {pedido.direccion.pais}
                   </p>
                   <p className="pedido-detalle">
                     CP: {pedido.direccion.domicilio.codigoPostal}
