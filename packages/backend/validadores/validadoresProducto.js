@@ -58,7 +58,7 @@ const productoSchema = z.object({
   precio: z.number().min(0).optional(),
   moneda: z.string().min(3).max(10).optional(),
   stock: z.number().min(0).optional(),
-  fotos: z.array(z.string()).optional(),
+  files: z.array(z.string()).optional(),
   activo: z.boolean().optional(),
 });
 

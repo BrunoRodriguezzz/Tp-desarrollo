@@ -1,4 +1,6 @@
 import { paginationGetValues } from '../utils/pagination.js';
+import fs from "node:fs";
+import path from "node:path";
 import { validarParsearID } from '../validadores/validadorTiposNativos.js';
 import {
   validarParsearProducto,
@@ -14,9 +16,25 @@ export default class ProductoController {
   }
 
   async create(req, res) {
-    const resultBody = validarParsearProducto(req);
-    const producto = await this.productoService.create(resultBody);
-    res.status(201).json(producto);
+    try {
+      const resultBody = validarParsearProducto(req);
+      const producto = await this.productoService.create(resultBody);
+      res.status(201).json(producto);
+    } catch (err) {
+      // En caso de error, eliminamos archivos subidos para no dejar basura
+      if (uploadedFiles.length) {
+        const uploadRoot = path.resolve(process.cwd(), "public", "fotosProductos");
+        for (const file of uploadedFiles) {
+          const filePath = path.join(uploadRoot, file);
+          try {
+            if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+          } catch (e) {
+            // log opcional
+          }
+        }
+      }
+      throw err;
+    }
   }
 
   async findAll(req, res) {
