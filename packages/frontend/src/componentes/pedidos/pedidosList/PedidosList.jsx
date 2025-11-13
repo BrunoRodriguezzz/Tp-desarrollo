@@ -29,7 +29,7 @@ export default function PedidosList({
           <p className="pedido-empty">No tenés pedidos aún.</p>
         ) : (
           pedidos.map((pedido) => (
-            <PedidosBox key={`${pedido._id}-${currentPage}`} pedido={pedido} />
+            <PedidosBox key={`${pedido.id}-${currentPage}`} pedido={pedido} />
           ))
         )}
       </div>
