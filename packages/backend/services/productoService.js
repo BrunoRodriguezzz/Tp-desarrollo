@@ -23,12 +23,14 @@ export default class ProductoService {
 
     const categorias = (nuevoProductoJSON.categorias || []).map(nombre => new Categoria(nombre));
 
+    const fotos = nuevoProductoJSON.files || nuevoProductoJSON.fotos || [];
+
     for (const c of categorias) {
       await this.categoriaService.existe(c.nombre);
     }
 
     nuevoProducto.setCategorias(categorias);
-    nuevoProducto.setFotos(nuevoProductoJSON.fotos || []);
+    nuevoProducto.setFotos(fotos);
     nuevoProducto.setDescripcion(nuevoProductoJSON.descripcion || '');
     nuevoProducto.setPrecio(nuevoProductoJSON.precio || 0);
     nuevoProducto.setMoneda(tipoMoneda || Moneda.PESO_ARG);

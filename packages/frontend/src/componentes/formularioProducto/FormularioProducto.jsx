@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import "./FormularioProducto.css"
 import { SelectorCategorias } from "./selectorCategorias/SelectorCategorias";
 import "./FormularioProducto.css";
+import CargaFiles from "./cargaFiles/CargaFiles";
 
 export function FormularioProducto({ producto, handleOpenSuccess, closeForm, handleOpenError, onSubmit }) {
 
@@ -15,6 +17,7 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm, han
   });
 
   const [campos, setCampos] = useState(inicializarCampos());
+  const [fotos, setFotos] = useState([]);
 
   const setValorDe = (campo) => (event) => {
     setCampos((prev) => ({
@@ -35,8 +38,12 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm, han
     .every(campo => String(campo.valor).trim() !== '');
 
   const handleForm = async () => {
-    if(!camposCompletos)
-    {
+    if (!camposCompletos) {
+      const camposFaltantes = Object.entries(campos)
+        .filter(([_, campo]) => campo.requerido && String(campo.valor).trim() === '')
+        .map(([nombre, _]) => nombre)
+        .join(', ');
+      console.log(`Faltan campos obligatorios: ${camposFaltantes}`);
       handleOpenError();
       return;
     }
@@ -50,7 +57,19 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm, han
       stock: Number(campos.stock.valor),
     };
 
-    await onSubmit(datos);
+    if (fotos && fotos.length > 0) {
+      const formData = new FormData();
+      formData.append("titulo", String(datos.titulo));
+      formData.append("descripcion", String(datos.descripcion));
+      formData.append("categorias", JSON.stringify(datos.categorias || []));
+      formData.append("precio", Number(datos.precio));
+      formData.append("moneda", String(datos.moneda));
+      formData.append("stock", Number(datos.stock));
+      fotos.forEach((file) => formData.append("fotos", file));
+      await onSubmit(formData, true);
+    } else {
+      await onSubmit(datos, false);
+    }
   };
 
   return (
@@ -106,8 +125,32 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm, han
           categorias={campos.categorias.valor}
           setCategorias={setCategorias}
         />
+        <label>Imágenes del producto</label>
+        <CargaFiles onFilesChange={setFotos} maxCount={8} />
         <button type="button" className="btn-submit" onClick={handleForm}> Subir</button>
     </form>
     </div>
   );
 }
+
+FormularioProducto.propTypes = {
+  producto: PropTypes.shape({
+    titulo: PropTypes.string,
+    descripcion: PropTypes.string,
+    categorias: PropTypes.array,
+    precio: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    moneda: PropTypes.string,
+    stock: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  }),
+  handleOpenSuccess: PropTypes.func,
+  closeForm: PropTypes.func,
+  handleOpenError: PropTypes.func,
+  onSubmit: PropTypes.func.isRequired,
+};
+
+FormularioProducto.defaultProps = {
+  producto: null,
+  handleOpenSuccess: () => {},
+  closeForm: () => {},
+  handleOpenError: () => {},
+};
