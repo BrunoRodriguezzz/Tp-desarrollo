@@ -14,9 +14,7 @@ export default function MisVentas() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
-  const { getIdFromToken } = useSession();
-
-  const userId = getIdFromToken();
+  const { accessToken } = useSession();
 
   const handleSwitch = (e) => {
     setMostrarEnviables(e.target.checked);
@@ -36,7 +34,7 @@ export default function MisVentas() {
     setLoading(true);
     const fetch = async () => {
       try {
-        const response = await getPedidos(userId, currentPage, 10);
+        const response = await getPedidos(accessToken, currentPage, 10);
         setPedidos(response.data);
         setTotalPages(response.totalPages);
         setLoading(false);

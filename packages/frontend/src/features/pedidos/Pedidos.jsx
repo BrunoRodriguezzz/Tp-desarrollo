@@ -11,14 +11,13 @@ export default function Pedidos() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
-  const { getIdFromToken } = useSession();
-  const userId = getIdFromToken();
+  const { accessToken } = useSession();
 
   useEffect(() => {
     setLoading(true);
     const fetch = async () => {
       try {
-        const response = await getPedidos(userId, currentPage, 10);
+        const response = await getPedidos(accessToken, currentPage, 10);
         setPedidos(response.data);
         setTotalPages(response.totalPages);
         setLoading(false);
