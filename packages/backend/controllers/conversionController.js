@@ -11,7 +11,7 @@ export default class ConversionController {
 
     for (const item of cart) {
       const precioARS = await this.conversionService.convertirAARS(item.precio, item.moneda);
-      total += precioARS * item.quantity;
+      total += precioARS * item.cantidad;
     }
 
     return res.status(200).json({ total });

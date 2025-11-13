@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ValidationError } from '../errors/tiendaSolError';
+import { ValidationError } from '../errors/tiendaSolError.js';
 
 export default class ConversionService {
   constructor() {
@@ -11,12 +11,12 @@ export default class ConversionService {
   async fetchCambios() {
     const url = 'https://open.er-api.com/v6/latest/ARS';
     const response = await axios.get(url);
-    this.rates = response.data.rates;
-    this.lastUpdated = Date.now();
+    this.cambios = response.data.rates;
+    this.ultimaActualizacion = Date.now();
   }
 
   async actualizarCambios() {
-    if (!this.rates || Date.now() - this.lastUpdated > this.UPDATE_INTERVAL) {
+    if (!this.cambios || Date.now() - this.ultimaActualizacion > this.INTERVALO_ACTUALIZACION) {
       await this.fetchCambios();
     }
   }
@@ -26,9 +26,9 @@ export default class ConversionService {
 
     if (moneda === 'ARS') return monto;
 
-    const rate = this.rates[moneda];
-    if (!rate) throw new ValidationError('Moneda no soportada: ' + moneda);
+    const cambio = this.cambios[moneda];
+    if (!cambio) throw new ValidationError('Moneda no soportada: ' + moneda);
 
-    return monto / rate;
+    return monto / cambio;
   }
 }
