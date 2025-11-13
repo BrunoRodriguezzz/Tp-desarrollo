@@ -1,74 +1,75 @@
 import "./FormularioContacto.css";
 import { useState } from "react";
 
-export default function FormularioContacto({direccion, setDireccion}) {
+export default function FormularioContacto({
+  direccion,
+  setDireccion,
+  errores,
+  setErroresDireccion,
+}) {
+  const [touched, setTouched] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setDireccion((prev) => ({
       ...prev,
       [name]: value,
     }));
+
+    // limpio el error si arranca a escribir
+    if (value.trim() !== "") {
+      setErroresDireccion((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
   };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+
+    setTouched((prev) => ({ ...prev, [name]: true }));
+
+    // marco error si toca y sale del input
+    if (value.trim() === "") {
+      setErroresDireccion((prev) => ({
+        ...prev,
+        [name]: "Este campo es obligatorio",
+      }));
+    }
+  };
+
+  const renderInput = (label, name, type = "text", placeholder) => (
+    <div className="form-group">
+      <label htmlFor={name}>{label}</label>
+
+      <input
+        type={type}
+        id={name}
+        name={name}
+        placeholder={placeholder}
+        value={direccion[name]}
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
+
+      {/* muestro errores si toca y no escribe o si toca comprar */}
+      {(touched[name] || errores[name]) && errores[name] && (
+        <p className="error-message">{errores[name]}</p>
+      )}
+    </div>
+  );
 
   return (
     <div className="direccion-formulario">
       <h3>Dirección de Entrega</h3>
-      <div className="form-group">
-        <label htmlFor="calle">Calle</label>
-        <input
-          type="text"
-          id="calle"
-          name="calle"
-          placeholder="Ingrese su calle"
-          value={direccion.calle}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="numero">Número</label>
-        <input
-          type="number"
-          id="numero"
-          name="numero"
-          placeholder="Ingrese su número"
-          value={direccion.numero}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="ciudad">Ciudad</label>
-        <input
-          type="text"
-          id="ciudad"
-          name="ciudad"
-          placeholder="Ingrese su ciudad"
-          value={direccion.ciudad}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="provincia">Provincia</label>
-        <input
-          type="text"
-          id="provincia"
-          name="provincia"
-          placeholder="Ingrese su provincia"
-          value={direccion.provincia}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="pais">País</label>
-        <input
-          type="text"
-          id="pais"
-          name="pais"
-          placeholder="Ingrese su país"
-          value={direccion.pais}
-          onChange={handleChange}
-        />
-      </div>
+
+      {renderInput("Calle", "calle", "text", "Ingrese su calle")}
+      {renderInput("Número", "numero", "number", "Ingrese su número")}
+      {renderInput("Ciudad", "ciudad", "text", "Ingrese su ciudad")}
+      {renderInput("Provincia", "provincia", "text", "Ingrese su provincia")}
+      {renderInput("País", "pais", "text", "Ingrese su país")}
     </div>
   );
 }

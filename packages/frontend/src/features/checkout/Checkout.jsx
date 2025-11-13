@@ -14,6 +14,19 @@ export default function Checkout() {
     provincia: "",
     pais: "",
   });
+  const [erroresDireccion, setErroresDireccion] = useState({});
+
+  const validarDireccion = () => {
+    const nuevosErrores = {};
+
+    Object.keys(direccion).forEach((campo) => {
+      if (!direccion[campo].trim()) {
+        nuevosErrores[campo] = "Este campo es obligatorio";
+      }
+    });
+
+    return nuevosErrores;
+  };
 
   return (
     <div className="checkout-container">
@@ -24,8 +37,18 @@ export default function Checkout() {
       <h1>Finalizar compra</h1>
       <p>¡Ya casi es tuyo!</p>
       <div className="checkout-content">
-        <FormularioContacto direccion={direccion} setDireccion={setDireccion} />
-        <DetallePedido cartItems={cartItems} isCheckout={true} />
+        <FormularioContacto
+          direccion={direccion}
+          setDireccion={setDireccion}
+          errores={erroresDireccion}
+          setErroresDireccion={setErroresDireccion}
+        />
+        <DetallePedido
+          cartItems={cartItems}
+          isCheckout={true}
+          validarDireccion={validarDireccion}
+          setErroresDireccion={setErroresDireccion}
+        />
       </div>
     </div>
   );
