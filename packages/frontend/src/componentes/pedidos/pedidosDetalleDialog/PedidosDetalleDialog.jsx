@@ -133,8 +133,8 @@ export default function PedidosDetalleDialog({ pedido, open, onOpenChange }) {
                       ` ${pedido.direccion.domicilio.departamento}`}
                   </p>
                   <p className="pedido-detalle">
-                    {pedido.direccion.ciudad.nombre}, {pedido.direccion.ciudad.provincia.nombre},{" "}
-                    {pedido.direccion.ciudad.provincia.pais.nombre}
+                    {pedido.direccion.ciudad}, {pedido.direccion.provincia},{" "}
+                    {pedido.direccion.pais}
                   </p>
                   <p className="pedido-detalle">
                     CP: {pedido.direccion.domicilio.codigoPostal}
