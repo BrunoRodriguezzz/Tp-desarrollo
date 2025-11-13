@@ -83,7 +83,7 @@ export async function cancelacionPedido(token, idPedido, motivo) {
   }
 }
 
-export async function enviarPedido(token, idPedido, motivo) {
+export async function envioPedido(token, idPedido, motivo) {
   try {
     const response = await axios.post(
       `${API_BASE_URL}/pedidos/${idPedido}/envio`,

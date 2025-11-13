@@ -81,7 +81,7 @@ export default function PedidosDetalleDialog({ pedido, open, onOpenChange }) {
       <Box className="pedido-header">
         <Box>
           <DialogTitle className="pedido-title">
-            Pedido #{pedido._id}
+            Pedido #{pedido.id}
           </DialogTitle>
           <p className="pedido-date">
             {new Date(pedido.fechaCreacion).toLocaleDateString("es-AR", {
@@ -133,8 +133,8 @@ export default function PedidosDetalleDialog({ pedido, open, onOpenChange }) {
                       ` ${pedido.direccion.domicilio.departamento}`}
                   </p>
                   <p className="pedido-detalle">
-                    {pedido.direccion.ciudad}, {pedido.direccion.provincia},{" "}
-                    {pedido.direccion.pais}
+                    {pedido.direccion.ciudad.nombre}, {pedido.direccion.ciudad.provincia.nombre},{" "}
+                    {pedido.direccion.ciudad.provincia.pais.nombre}
                   </p>
                   <p className="pedido-detalle">
                     CP: {pedido.direccion.domicilio.codigoPostal}

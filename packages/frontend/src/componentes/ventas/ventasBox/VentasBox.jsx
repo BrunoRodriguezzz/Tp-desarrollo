@@ -19,7 +19,7 @@ import propTypes from "prop-types";
 export default function VentasBox({ pedido }) {
   const { id, estado, fechaCreacion, items, total } = pedido;
   const enviable = !(
-    estado.toLowerCase() === "entregado" || estado.toLowerCase() === "cancelado"
+    estado.toLowerCase() === "entregado" || estado.toLowerCase() === "cancelado" || estado.toLowerCase() === "enviado"
   );
   const [openDetalleDialog, setOpenDetalleDialog] = useState(false);
   const [openEnviarDialog, setOpenEnviarDialog] = useState(false);
