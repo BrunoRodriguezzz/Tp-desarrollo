@@ -10,6 +10,7 @@ import NotificacionController from './controllers/notificacionController.js';
 import PedidoController from './controllers/pedidoController.js';
 import CategoriaController from './controllers/categoriaController.js';
 import UsuarioController from './controllers/usuarioController.js';
+import ConversionController from './controllers/conversionController.js';
 
 // Importamos los Repositorios
 import ProductoRepository from './repositories/productoRepository.js';
@@ -24,6 +25,7 @@ import NotificacionService from './services/notificacionService.js';
 import PedidoService from './services/pedidoService.js';
 import UsuarioService from './services/usuarioService.js';
 import CategoriaService from './services/categoriaService.js';
+import ConversionService from './services/conversionService.js';
 
 import { errorHandler } from './middlewares/errorHandler.js';
 // Swagger docs
@@ -51,6 +53,7 @@ const categoriaRepository = new CategoriaRepository();
 const categoriaService = new CategoriaService(categoriaRepository);
 const authService = new AuthService(usuarioRepository);
 const usuarioService = new UsuarioService(usuarioRepository);
+const conversionService = new ConversionService();
 
 const productoService = new ProductoService(
   productoRepository,
@@ -74,6 +77,7 @@ const notificacionController = new NotificacionController(notificacionService);
 const pedidoController = new PedidoController(pedidoService);
 const categoriaController = new CategoriaController(categoriaService);
 const usuarioController = new UsuarioController(usuarioService, authService);
+const conversionController = new ConversionController(conversionService);
 
 // Registro de controlladores en el servidor
 server.setController(HealthController, healthController);
@@ -82,6 +86,7 @@ server.setController(NotificacionController, notificacionController);
 server.setController(PedidoController, pedidoController);
 server.setController(CategoriaController, categoriaController);
 server.setController(UsuarioController, usuarioController);
+server.setController(ConversionController, conversionController);
 
 app.use(
   cors({
