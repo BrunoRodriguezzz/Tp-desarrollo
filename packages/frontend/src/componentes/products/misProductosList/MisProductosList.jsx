@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import "../productList/ProductList.css";
 import Pagination from "../../pagination/Pagination.jsx";
 import PropTypes from "prop-types";
-import {buscarProductos} from "../../../services/productoService.js";
+import {buscarMisProductos} from "../../../services/productoService.js";
 import Box from "@mui/material/Box";
 import ProductBoxSkeleton from "../productBoxSkeleton/ProductBoxSkeleton.jsx";
 import MisProductosBox from "./misProductosBox/MisProductosBox.jsx";
+import { useSession } from "../../../features/auth/session/sessionContext.jsx";
 
 export default function MisProductosList({ filtros = {}, paginado = { page: 1, size: 10 }, setPaginado, pagination = true }) {
-
+  const { accessToken } = useSession();
   const [productosPagina, setProductosPagina] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
   const [cargando, setCargando] = useState(false);
@@ -24,11 +25,11 @@ export default function MisProductosList({ filtros = {}, paginado = { page: 1, s
     const fetch = async () => {
       try {
         setCargando(true);
-        const { totalPages, productosPagina } = await buscarProductos(paginado.size, paginado.page, null);
+        const { totalPages, productosPagina } = await buscarMisProductos(paginado.size, paginado.page, accessToken);
         setTotalPages(totalPages);
         setProductosPagina(productosPagina);
       } catch (error) {
-        console.error("Error fetching products:", error);
+        console.error("Error buscando productos:", error);
       } finally {
         setCargando(false);
       }

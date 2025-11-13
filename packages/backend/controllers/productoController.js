@@ -51,6 +51,23 @@ export default class ProductoController {
     res.status(200).json(producto);
   }
 
+  async findByUser(req, res) {
+    console.log('User id: ' + req.user.id);
+    const productosPaginados = await paginationGetValues(req, (page, limit, _filtros) =>
+      this.productoService.findByUser(page, limit, req.user.id)
+    );
+
+    if (
+      !productosPaginados ||
+      productosPaginados.total === 0 ||
+      (Array.isArray(productosPaginados.data) && productosPaginados.data.length === 0)
+    ) {
+      return res.status(204).send();
+    }
+
+    res.status(200).json(productosPaginados);
+  }
+
   async update(req, res) {
     const id = req.params.id;
 

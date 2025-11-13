@@ -128,6 +128,28 @@ export async function crearProducto(producto, token) {
     });
     return response.data;
   } catch (error) {
+    console.error("Error al crear el producto:", error);
+    throw error;
+  }
+}
+
+export async function buscarMisProductos(limit, currentPage, token) {
+  try {
+    console.log("Token a utilizar:", token);
+    const response = await axios.get(`${API_BASE_URL}/productos/usuarios`, {
+      params: {
+        limit,
+        page: currentPage,
+      },
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return {
+      totalPages: response.data.totalPages,
+      productosPagina: response.data.data,
+    };
+  } catch (error) {
     console.error("Error al buscar productos:", error);
     throw error;
   }
@@ -146,7 +168,7 @@ export async function actualizarProducto(id, producto, token) {
     );
     return response.data;
   } catch (error) {
-    console.error("Error al buscar productos:", error);
+    console.error("Error al actualizar el producto:", error);
     throw error;
   }
 }
@@ -160,7 +182,7 @@ export async function eliminarProducto(id, token) {
     });
     return response.data;
   } catch (error) {
-    console.error("Error al buscar productos:", error);
+    console.error("Error al eliminar el producto:", error);
     throw error;
   }
 }

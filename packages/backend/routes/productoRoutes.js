@@ -28,6 +28,15 @@ export default function healtCheckRoute(getController) {
     }
   });
 
+  // GET /productos/usuarios
+  router.get(pathProductos + '/usuarios', authMiddleware, async (req, res, next) => {
+    try {
+      await getController(ProductoController).findByUser(req, res, next);
+    } catch (err) {
+      next(err);
+    }
+  });
+
   // GET /productos/:id
   router.get(pathProductos + '/:id', async (req, res, next) => {
     try {

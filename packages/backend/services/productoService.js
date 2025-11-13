@@ -73,6 +73,22 @@ export default class ProductoService {
     return await this.productoRepository.findById(id);
   }
 
+  async findByUser(page = 1, limit = 10, vendedorId) {
+    const filtros = { vendedor: vendedorId };
+    const paginado = await paginationBuildResponse(
+      page,
+      limit,
+      filtros,
+      (page, elementosPorPagina, filtros) =>
+        this.productoRepository.findByPage(page, elementosPorPagina, filtros)
+    );
+
+    paginado.total = await this.productoRepository.count(filtros);
+    paginado.calculateTotalPages();
+
+    return paginado;
+  }
+
   async update(id, productoJSON) {
     const productoActual = await this.productoRepository.findById(id);
     if (!productoActual) {
