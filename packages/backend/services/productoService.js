@@ -23,7 +23,7 @@ export default class ProductoService {
 
     const categorias = (nuevoProductoJSON.categorias || []).map(nombre => new Categoria(nombre));
 
-    const fotos = nuevoProductoJSON.files || [];
+    const fotos = nuevoProductoJSON.files || nuevoProductoJSON.fotos || [];
 
     for (const c of categorias) {
       await this.categoriaService.existe(c.nombre);

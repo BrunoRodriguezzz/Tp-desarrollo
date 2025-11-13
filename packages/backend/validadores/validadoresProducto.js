@@ -22,6 +22,7 @@ export function validarParsearProducto(req) {
   const resultBody = productoSchema.safeParse(req.body);
 
   if (resultBody.error) {
+    console.log(resultBody.error);
     throw new ValidationError('Datos del producto inválidos');
   }
 
@@ -54,12 +55,28 @@ const productoSchema = z.object({
   ]),*/
   titulo: z.string().min(3).max(50),
   descripcion: z.string().max(500).optional(),
-  categorias: z.array(z.string()).optional(),
-  precio: z.number().min(0).optional(),
+  categorias: z
+    .preprocess(value => {
+      // Allow categorias to be provided as a JSON string in multipart/form-data
+      if (typeof value === 'string') {
+        try {
+          const parsed = JSON.parse(value);
+          return parsed;
+        } catch {
+          // If it isn't valid JSON, let zod handle the error downstream
+          return value;
+        }
+      }
+      return value;
+    }, z.array(z.string()))
+    .optional(),
+  precio: z.coerce.number().min(0).optional(),
   moneda: z.string().min(3).max(10).optional(),
-  stock: z.number().min(0).optional(),
-  files: z.array(z.string()).optional(),
+  stock: z.coerce.number().min(0).optional(),
+  //files: z.array(z.string()).optional(),
   activo: z.boolean().optional(),
+  // nombres de archivos subidos por multer (se completa en el controller)
+  files: z.array(z.string()).optional(),
 });
 
 const productoUpdateSchema = productoSchema.partial();

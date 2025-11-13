@@ -1,7 +1,7 @@
 import multer from 'multer';
 import fs from 'node:fs';
 import path from 'node:path';
-import { ValidationError } from '../errors/tiendaSolError';
+import { ValidationError } from '../errors/tiendaSolError.js';
 
 const uploadRoot = path.resolve(process.cwd(), 'public', 'fotosProductos');
 
