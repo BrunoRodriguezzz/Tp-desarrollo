@@ -20,7 +20,7 @@ export default function VentasList({
               <p className="ventas-empty">No tenés ventas aún.</p>
             ) : (
               pedidos.map((pedido) => (
-                <VentasBox key={`${pedido._id}-${currentPage}`} pedido={pedido} />
+                <VentasBox key={`${pedido.id}-${currentPage}`} pedido={pedido} />
               ))
             )}
           </div>

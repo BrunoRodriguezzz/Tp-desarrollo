@@ -23,7 +23,7 @@ export default function PedidosItemList({ items }) {
               <Stack direction="row" spacing={2} alignItems="center">
                 <CardMedia
                   component="img"
-                  image={item.producto.fotos}
+                  image={item.producto.fotos[0]}
                   alt={item.producto.titulo}
                   className="pedido-item-img"
                 />

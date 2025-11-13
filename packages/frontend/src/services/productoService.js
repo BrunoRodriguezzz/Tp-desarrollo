@@ -116,3 +116,72 @@ export async function buscarProductoPorId(id) {
     throw error;
   }
 }
+
+export async function crearProducto(producto, token) {
+  try {
+    console.log("Token:", token);
+    const response = await axios.post(`${API_BASE_URL}/productos`, producto, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error al crear el producto:", error);
+    throw error;
+  }
+}
+
+export async function buscarMisProductos(limit, currentPage, token) {
+  try {
+    console.log("Token a utilizar:", token);
+    const response = await axios.get(`${API_BASE_URL}/productos/usuarios`, {
+      params: {
+        limit,
+        page: currentPage,
+      },
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return {
+      totalPages: response.data.totalPages,
+      productosPagina: response.data.data,
+    };
+  } catch (error) {
+    console.error("Error al buscar productos:", error);
+    throw error;
+  }
+}
+
+export async function actualizarProducto(id, producto, token) {
+  try {
+    const response = await axios.patch(
+      `${API_BASE_URL}/productos/${id}`,
+      producto,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error al actualizar el producto:", error);
+    throw error;
+  }
+}
+
+export async function eliminarProducto(id, token) {
+  try {
+    const response = await axios.delete(`${API_BASE_URL}/productos/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error al eliminar el producto:", error);
+    throw error;
+  }
+}

@@ -4,15 +4,11 @@ import "./DetallePedido.css";
 import PropTypes from "prop-types";
 import { SnackbarSuccess } from "../../../snackbars/SnackBarSuccess";
 import ConfirmDialog from "./ConfirmDialog";
-import CircularProgress from "@mui/material/CircularProgress";
-import { useCart } from "../../../carrito/cartContext/CartContext";
+import { crearPedido } from "../../../../services/pedidoService";
+import { useSession } from "../../../../features/auth/session/sessionContext";
 
-export default function DetallePedido({
-  cartItems,
-  isCheckout,
-  validarDireccion,
-  setErroresDireccion,
-}) {
+export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
+  const { accessToken } = useSession();
   const [total, setTotal] = useState(0);
   const [openSuccess, setOpenSuccess] = useState(false);
   const [openConfirm, setOpenConfirm] = useState(false);
@@ -41,21 +37,35 @@ export default function DetallePedido({
     setTotal(sumaTotal);
   }, [cartItems]);
 
+  const camposCompletos = Object.values(campos)
+    .filter((campo) => campo.requerido)
+    .every((campo) => campo.valor.trim() !== "");
+
   const handleComprar = () => {
     if (isCheckout) {
+<<<<<<< HEAD
       const errores = validarDireccion();
       if (Object.keys(errores).length > 0) {
         setErroresDireccion(errores);
         return;
       }
+=======
+      if (!camposCompletos) {
+        //TODO - Pasarlo a Snackbar
+        alert("Hay campos obligatorios (*) incompletos");
+        return;
+      }
+
+>>>>>>> origin/E4
       setOpenConfirm(true);
     } else {
       navigate("/checkout");
     }
   };
 
-  const handleConfirmPurchase = () => {
+  const handleConfirmPurchase = async () => {
     setOpenConfirm(false);
+<<<<<<< HEAD
     setLoading(true);
 
     setTimeout(() => {
@@ -67,6 +77,18 @@ export default function DetallePedido({
         clearCart();
       }, 1500);
     }, 2000);
+=======
+
+    try {
+      console.log("Entro al try")
+      await crearPedido(accessToken, cartItems, campos)
+    } catch(error) {
+      //TODO - Pasarlo a Snackbar
+      alert("Hubo un error");
+    }
+
+    setOpenSuccess(true);
+>>>>>>> origin/E4
   };
 
   const handleCancelConfirm = () => {

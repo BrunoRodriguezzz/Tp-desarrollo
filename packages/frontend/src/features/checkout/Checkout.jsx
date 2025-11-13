@@ -7,12 +7,17 @@ import Seo from "../../componentes/seo/Seo";
 
 export default function Checkout() {
   const { cartItems } = useCart();
-  const [direccion, setDireccion] = useState({
-    calle: "",
-    numero: "",
-    ciudad: "",
-    provincia: "",
-    pais: "",
+  const inicializarCampo = (requerido = true) => ({ valor: "", requerido });
+
+  const inicializarCampos = () => ({
+    calle: inicializarCampo(),
+    altura: inicializarCampo(),
+    ciudad: inicializarCampo(),
+    provincia: inicializarCampo(),
+    pais: inicializarCampo(),
+    piso: inicializarCampo(false),
+    departamento: inicializarCampo(false),
+    codigoPostal: inicializarCampo(false),
   });
   const [erroresDireccion, setErroresDireccion] = useState({});
 
@@ -28,6 +33,15 @@ export default function Checkout() {
     return nuevosErrores;
   };
 
+  const [campos, setCampos] = useState(inicializarCampos());
+
+  const setValorDe = (campo) => (event) => {
+    setCampos((prev) => ({
+      ...prev,
+      [campo]: { ...prev[campo], valor: event.target.value },
+    }));
+  };
+
   return (
     <div className="checkout-container">
       <Seo
@@ -37,17 +51,11 @@ export default function Checkout() {
       <h1>Finalizar compra</h1>
       <p>¡Ya casi es tuyo!</p>
       <div className="checkout-content">
-        <FormularioContacto
-          direccion={direccion}
-          setDireccion={setDireccion}
-          errores={erroresDireccion}
-          setErroresDireccion={setErroresDireccion}
-        />
+        <FormularioContacto campos={campos} setValorDe={setValorDe} />
         <DetallePedido
           cartItems={cartItems}
           isCheckout={true}
-          validarDireccion={validarDireccion}
-          setErroresDireccion={setErroresDireccion}
+          campos={campos}
         />
       </div>
     </div>

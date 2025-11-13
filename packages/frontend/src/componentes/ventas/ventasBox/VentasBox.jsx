@@ -1,5 +1,6 @@
-import "./VentasBox.css"
-import {  Chip, Divider, Button } from "@mui/material";
+import React from "react";
+import "./VentasBox.css";
+import { Chip, Divider, Button } from "@mui/material";
 import {
   LocalShipping,
   AccessTime,
@@ -13,29 +14,32 @@ import PedidosDetalleDialog from "../../pedidos/pedidosDetalleDialog/PedidosDeta
 import { useState } from "react";
 import VentasEnviarDialog from "../ventasEnviarDialog/VentasEnviarDialog";
 import { SnackbarSuccess } from "../../snackbars/SnackBarSuccess";
+import propTypes from "prop-types";
 
-export default function VentasBox({pedido}) {
-  const { _id, estado, fechaCreacion, items, total } = pedido;
-  const enviable = !(estado.toLowerCase() === "entregado" || estado.toLowerCase() === "cancelado");
+export default function VentasBox({ pedido }) {
+  const { id, estado, fechaCreacion, items, total } = pedido;
+  const enviable = !(
+    estado.toLowerCase() === "entregado" || estado.toLowerCase() === "cancelado"
+  );
   const [openDetalleDialog, setOpenDetalleDialog] = useState(false);
   const [openEnviarDialog, setOpenEnviarDialog] = useState(false);
   const [openSuccess, setOpenSuccess] = useState(false);
 
   const marcarEnviado = () => {
     setOpenEnviarDialog(true);
-  }
-  
+  };
+
   const verDetalles = () => {
     setOpenDetalleDialog(true);
-  }
+  };
 
   const handleSuccess = () => {
     setOpenSuccess(true);
-  }
+  };
 
   const handleClose = () => {
     setOpenSuccess(false);
-  }
+  };
 
   const status = getStatusConfig(estado);
 
@@ -53,7 +57,7 @@ export default function VentasBox({pedido}) {
       <div className={`venta-box ${enviable ? "enviable" : "no-enviable"}`}>
         <div className="venta-header">
           <div className="venta-info">
-            <h3>Pedido #{_id}</h3>
+            <h3>Pedido #{id}</h3>
             <p>Realizado el: {fechaFormateada}</p>
           </div>
           <Chip
@@ -64,8 +68,8 @@ export default function VentasBox({pedido}) {
           />
         </div>
         <div className="venta-contenido">
-          <PedidosItemList items={items}/>
-          <Divider className="venta-divider"/>
+          <PedidosItemList items={items} />
+          <Divider className="venta-divider" />
           <div className="venta-total">
             <p className="total-label">Total de la venta</p>
             <p className="total-valor">
@@ -111,43 +115,60 @@ export default function VentasBox({pedido}) {
         open={openSuccess}
         onClose={handleClose}
       />
-    </>  
+    </>
   );
 }
 
 function getStatusConfig(estado) {
   const statusConfig = {
-      PENDIENTE: {
-        label: "Pendiente",
-        icon: <AccessTime fontSize="small" />,
-        color: "warning",
-      },
-      CONFIRMADO: {
-        label: "Confirmado",
-        icon: <CheckCircle fontSize="small" />,
-        color: "info",
-      },
-      EN_PREPARACION: {
-        label: "En preparación",
-        icon: <Inventory2 fontSize="small" />,
-        color: "secondary",
-      },
-      ENVIADO: {
-        label: "Enviado",
-        icon: <LocalShipping fontSize="small" />,
-        color: "primary",
-      },
-      ENTREGADO: {
-        label: "Entregado",
-        icon: <Home fontSize="small" />,
-        color: "success",
-      },
-      CANCELADO: {
-        label: "Cancelado",
-        icon: <Cancel fontSize="small" />,
-        color: "error",
-      },
-    };
-  
-    return statusConfig[estado];
+    PENDIENTE: {
+      label: "Pendiente",
+      icon: <AccessTime fontSize="small" />,
+      color: "warning",
+    },
+    CONFIRMADO: {
+      label: "Confirmado",
+      icon: <CheckCircle fontSize="small" />,
+      color: "info",
+    },
+    EN_PREPARACION: {
+      label: "En preparación",
+      icon: <Inventory2 fontSize="small" />,
+      color: "secondary",
+    },
+    ENVIADO: {
+      label: "Enviado",
+      icon: <LocalShipping fontSize="small" />,
+      color: "primary",
+    },
+    ENTREGADO: {
+      label: "Entregado",
+      icon: <Home fontSize="small" />,
+      color: "success",
+    },
+    CANCELADO: {
+      label: "Cancelado",
+      icon: <Cancel fontSize="small" />,
+      color: "error",
+    },
+  };
+
+  return statusConfig[estado];
 }
+
+VentasBox.propTypes = {
+  pedido: propTypes.shape({
+    _id: propTypes.string.isRequired,
+    estado: propTypes.string.isRequired,
+    fechaCreacion: propTypes.string.isRequired,
+    items: propTypes.arrayOf(
+      propTypes.shape({
+        producto: propTypes.string.isRequired,
+        cantidad: propTypes.number.isRequired,
+        precioUnitario: propTypes.number.isRequired,
+        subTotal: propTypes.number.isRequired,
+      })
+    ).isRequired,
+    total: propTypes.number.isRequired,
+  }).isRequired,
+};

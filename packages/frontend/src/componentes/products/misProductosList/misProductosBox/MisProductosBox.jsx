@@ -6,8 +6,11 @@ import { Dialog, DialogContent } from "@mui/material";
 import { FormularioProducto } from "../../../formularioProducto/FormularioProducto.jsx";
 import { SnackbarSuccess } from "../../../snackbars/SnackBarSuccess.jsx"
 import { SnackbarError } from "../../../snackbars/SnackBarError.jsx";
+import { actualizarProducto, eliminarProducto } from "../../../../services/productoService.js";
+import { useSession } from "../../../../features/auth/session/sessionContext.jsx";
  
 export default function MisProductosBox({ producto }) {
+  const { accessToken } = useSession();
   const [imgLoaded, setImgLoaded] = useState(false);
   const [mostrarForm, setMostrarForm] = useState(false);
   const [openSuccess, setOpenSuccess] = useState(false);
@@ -46,6 +49,27 @@ export default function MisProductosBox({ producto }) {
     setOpenError(false);
   }
 
+  //TODO - No los puedo probar porque no me anda el register
+  const handleEditar = async (datos) => {
+    try {
+      await actualizarProducto(producto._id, datos, accessToken);
+      handleOpenEdit();
+      setMostrarForm(false);
+    } catch (error) {
+      handleOpenError();
+    }
+  };
+
+  const handleEliminar = async () => {
+    try {
+      await eliminarProducto(producto._id, accessToken);
+      handleOpenDelete();
+      setMostrarForm(false);
+    } catch (error) {
+      handleOpenError();
+    }
+  };
+
   return (
     <div className="mis-productos-box">
       <div className="product-image-wrapper" style={{ position: "relative" }}>
@@ -77,7 +101,7 @@ export default function MisProductosBox({ producto }) {
           <button className="edit-button" onClick={showForm}>
             Editar Producto
           </button>
-          <button className="delete-button" onClick={handleOpenDelete}>
+          <button className="delete-button" onClick={handleEliminar}>
             Eliminar Producto
           </button>
         </div>
@@ -90,6 +114,7 @@ export default function MisProductosBox({ producto }) {
           handleOpenSuccess={handleOpenEdit}
           closeForm={handleCloseForm}
           handleOpenError={handleOpenError}
+          onSubmit={handleEditar}
            />
         </DialogContent>
       </Dialog>
