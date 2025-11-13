@@ -47,18 +47,10 @@ export default function Login() {
       return;
     }
 
-    console.log("ANTES");
-    console.log("Access Token:", accessToken);
-    console.log("Refresh Token:", refreshToken);
-
     loginContext({
       token: result.token,
       refreshToken: result.refreshToken,
     });
-
-    console.log("DESPUES");
-    console.log("Access Token:", accessToken);
-    console.log("Refresh Token:", refreshToken);
 
     setOpenSuccess(true);
     setTimeout(() => navigate("/"), 2000);
