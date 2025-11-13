@@ -26,12 +26,9 @@ export function validarParsearProducto(req) {
   }
 
   if (!req.user || !req.user.id) {
-    throw new ValidationError('Error de auenticacion');
+    throw new ValidationError('Error de autenticacion');
   }
-  console.log('Antes result: ' + req.user.id);
-
   const result = { ...resultBody.data, vendedor: req.user.id };
-  console.log('Después result:', JSON.stringify(result, null, 2));
 
   return result;
 }

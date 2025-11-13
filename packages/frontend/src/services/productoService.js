@@ -117,7 +117,6 @@ export async function buscarProductoPorId(id) {
   }
 }
 
-//TODO - Estoy haciendolos
 export async function crearProducto(producto, token) {
   try {
     console.log("Token:", token);

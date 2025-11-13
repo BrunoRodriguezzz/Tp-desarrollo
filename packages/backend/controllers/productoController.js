@@ -52,7 +52,6 @@ export default class ProductoController {
   }
 
   async findByUser(req, res) {
-    console.log('User id: ' + req.user.id);
     const productosPaginados = await paginationGetValues(req, (page, limit, _filtros) =>
       this.productoService.findByUser(page, limit, req.user.id)
     );
@@ -76,7 +75,7 @@ export default class ProductoController {
     }
 
     const resultBody = validarParsearUpdateProducto(req);
-    const productoActualizado = await this.productoService.update(id, resultBody);
+    const productoActualizado = await this.productoService.update(id, resultBody, req.user.id);
 
     if (!productoActualizado) {
       throw new NotFoundError('Producto no encontrado');
@@ -92,7 +91,7 @@ export default class ProductoController {
       throw new ValidationError('ID de producto inválido');
     }
 
-    const deleted = await this.productoService.delete(id);
+    const deleted = await this.productoService.delete(id, req.user.id);
 
     if (!deleted) {
       throw new NotFoundError('Producto no encontrado');

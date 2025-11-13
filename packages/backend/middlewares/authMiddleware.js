@@ -6,17 +6,13 @@ import { getBearerTokenFromHeader, verifyAccessToken } from '../utils/jwt.js';
 
 export const authMiddleware = (req, res, next) => {
   try {
-    console.log('Llego a auth middleware');
     const token = getBearerTokenFromHeader(req);
     if (!token) {
-      console.log('No me llego el token');
       return res.status(401).json({ message: 'Se requiere un token Bearer.' });
     }
 
-    console.log('Llego a verify: ' + token);
     const payload = verifyAccessToken(token);
 
-    console.log('Req user');
     req.user = {
       id: payload.sub || payload.id,
       nombre: payload.nombre,

@@ -3,7 +3,7 @@ import Producto from '../models/entities/producto.js';
 import Categoria from '../models/entities/categoria.js';
 import Moneda from '../models/enums/moneda.js';
 import { paginationBuildResponse } from '../utils/pagination.js';
-import { NotFoundError } from '../errors/tiendaSolError.js';
+import { ForbiddenError, NotFoundError } from '../errors/tiendaSolError.js';
 
 export default class ProductoService {
   constructor(ProductoRepository, UsuarioRepository, CategoriaService) {
@@ -89,10 +89,14 @@ export default class ProductoService {
     return paginado;
   }
 
-  async update(id, productoJSON) {
+  async update(id, productoJSON, vendedorId) {
     const productoActual = await this.productoRepository.findById(id);
     if (!productoActual) {
       throw new NotFoundError(`Producto con id ${id} no existe`);
+    }
+
+    if (productoActual.vendedor.toString() != vendedorId) {
+      throw new ForbiddenError('El vendedor que quiere actualizar no es el propietario');
     }
 
     if (productoJSON.categorias) {
@@ -116,10 +120,14 @@ export default class ProductoService {
     return productoActualizado;
   }
 
-  async delete(id) {
+  async delete(id, vendedorId) {
     const productoActual = await this.productoRepository.findById(id);
     if (!productoActual) {
       throw new NotFoundError(`Producto con id ${id} no existe`);
+    }
+
+    if (productoActual.vendedor.toString() != vendedorId) {
+      throw new ForbiddenError('El vendedor que quiere eliminar no es el propietario');
     }
 
     if (productoActual.categorias) {
