@@ -28,7 +28,7 @@ export function validarComprador(comprador, compradorId) {
   if (!comprador) {
     throw new NotFoundError(`Comprador ${compradorId} no encontrado`);
   }
-  if (comprador.tipo !== TipoUsuario.COMPRADOR) {
+  if (comprador.tipo === TipoUsuario.COMPRADOR) {
     return true;
     // throw new ConflictError(
     //   `El usuario ${comprador.id} no es un comprador válido, es ${comprador.tipo}`

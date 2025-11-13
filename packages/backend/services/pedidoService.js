@@ -135,7 +135,6 @@ export default class PedidoService {
 
       paginado.total = await this.pedidoRepository.countByCompradorId(usuarioId);
     } else {
-      console.log('es vendedor');
       paginado = await paginationBuildResponse(
         page,
         limit,

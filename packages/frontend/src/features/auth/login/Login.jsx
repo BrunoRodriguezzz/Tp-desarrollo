@@ -64,6 +64,11 @@ export default function Login() {
     setTimeout(() => navigate("/"), 2000);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await handleLogin();
+  };
+
   return (
     <div className="login-container">
       <Seo
@@ -80,7 +85,7 @@ export default function Login() {
       <div className="login-card">
         <h2>Bienvenido de vuelta</h2>
         <p>Ingresa tus credenciales</p>
-        <form>
+        <form onSubmit={handleSubmit}>
           <label>Email</label>
           <input
             type="email"
@@ -97,8 +102,7 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             required
           ></input>
-          <button type="button" className="btn-login" onClick={handleLogin}>
-            {" "}
+          <button type="submit" className="btn-login">
             Iniciar Sesión
           </button>
         </form>

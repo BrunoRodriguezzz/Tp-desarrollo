@@ -82,6 +82,11 @@ export default function Register() {
     setTimeout(() => navigate("/"), 2000);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await handleRegister();
+  };
+
   return (
     <div className="register-container">
       <Seo
@@ -98,7 +103,7 @@ export default function Register() {
       <div className="register-card">
         <h2>Crear Cuenta</h2>
         <p>Ingresa tus datos</p>
-        <form>
+        <form onSubmit={handleSubmit}>
           <label>Nombre</label>
           <input
             type="text"
@@ -150,12 +155,7 @@ export default function Register() {
             onChange={setValorDe("passwordConfirmation")}
             required
           ></input>
-          <button
-            type="button"
-            className="btn-register"
-            onClick={handleRegister}
-          >
-            {" "}
+          <button type="submit" className="btn-register">
             Registrarse
           </button>
         </form>
