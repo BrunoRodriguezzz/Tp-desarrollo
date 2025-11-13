@@ -65,7 +65,7 @@ function armarPedido(items, campos) {
 }
 
 //TODO - Falta probar bien, despues lo sigo
-export async function cancelarPedido(token, idPedido, motivo) {
+export async function cancelacionPedido(token, idPedido, motivo) {
   try {
     const response = await axios.post(
       `${API_BASE_URL}/pedidos/${idPedido}/cancelacion`,
