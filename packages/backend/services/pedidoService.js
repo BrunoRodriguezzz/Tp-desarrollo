@@ -33,8 +33,8 @@ export default class PedidoService {
     this.notificacionService = NotificacionService;
   }
 
-  async create(nuevoPedido) {
-    const { compradorId, moneda, direccion, items } = nuevoPedido;
+  async create(nuevoPedido, compradorId) {
+    const { moneda, direccion, items } = nuevoPedido;
     validarCreacionPedido(compradorId, moneda, direccion, items);
 
     const comprador = await this.usuarioService.findById(compradorId);
@@ -70,8 +70,9 @@ export default class PedidoService {
 
       // Convertir a objeto plano antes de actualizar
       const productoPlano = Object.assign({}, item.producto);
-      await this.productoService.update(item.producto.id, productoPlano);
+      await this.productoService.update(item.producto.id, productoPlano, item.producto.vendedor);
     }
+
 
     await this.notificacionService.crearSegunPedido(pedidoPersistido);
 
@@ -202,7 +203,10 @@ export default class PedidoService {
     if (domicilioData.departamento) domicilio.setDepartamento(domicilioData.departamento);
     if (domicilioData.codigoPostal) domicilio.setCodigoPostal(domicilioData.codigoPostal);
 
-    const coordenada = new Coordenada(coordenadaData.latitud, coordenadaData.longitud);
+     let coordenada = null;
+     if (coordenadaData && coordenadaData.latitud != null && coordenadaData.longitud != null) {
+       coordenada = new Coordenada(coordenadaData.latitud, coordenadaData.longitud);
+     }
     return new DireccionEntrega(domicilio, ciudad, coordenada);
   }
 

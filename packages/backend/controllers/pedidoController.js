@@ -10,16 +10,20 @@ export default class PedidoController {
   }
 
   async create(req, res) {
+    console.log('Llego a create');
     const body = req.body;
+    console.log('Obtengo body');
     const resultBody = pedidoSchema.safeParse(body);
 
+    console.log('Llego a hacer parse');
     if (resultBody.error) {
       res.status(400).json(resultBody.error.issues);
       return;
     }
 
     try {
-      const nuevoPedido = await this.pedidoService.create(resultBody.data);
+      console.log('Llego al try');
+      const nuevoPedido = await this.pedidoService.create(resultBody.data, req.user.id);
       return res.status(201).json(nuevoPedido);
     } catch (error) {
       return res.status(error.statusCode).json({ error: error.message });
@@ -131,9 +135,10 @@ const userHistorySchema = z.object({
 });
 
 export const pedidoSchema = z.object({
+  /*
   compradorId: z.string().regex(objectIdRegex, {
     message: 'Debe ser un ObjectId válido de MongoDB',
-  }),
+  }),*/
   moneda: z.nativeEnum(Moneda),
   direccion: z.object({
     ciudad: z.object({
@@ -152,10 +157,12 @@ export const pedidoSchema = z.object({
       departamento: z.string().optional(),
       codigoPostal: z.string().optional(),
     }),
-    coordenada: z.object({
-      latitud: z.number(),
-      longitud: z.number(),
-    }),
+    coordenada: z
+      .object({
+        latitud: z.number(),
+        longitud: z.number(),
+      })
+      .optional(),
   }),
   items: z.array(
     z.object({

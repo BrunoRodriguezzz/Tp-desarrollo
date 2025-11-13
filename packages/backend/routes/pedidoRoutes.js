@@ -8,7 +8,9 @@ export default function pedidoRoutes(getController) {
   const router = express.Router();
 
   // POST /pedidos - Crear un nuevo pedido
-  router.post(pathPedidos, (req, res) => getController(PedidoController).create(req, res));
+  router.post(pathPedidos, authMiddleware, (req, res) =>
+    getController(PedidoController).create(req, res)
+  );
 
   // POST /pedidos/:id/cancelacion - Cancelar un pedido por ID
   router.post(pathPedidos + '/:id/cancelacion', authMiddleware, (req, res) =>
