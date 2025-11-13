@@ -116,3 +116,51 @@ export async function buscarProductoPorId(id) {
     throw error;
   }
 }
+
+//TODO - Estoy haciendolos
+export async function crearProducto(producto, token) {
+  try {
+    console.log("Token:", token);
+    const response = await axios.post(`${API_BASE_URL}/productos`, producto, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error al buscar productos:", error);
+    throw error;
+  }
+}
+
+export async function actualizarProducto(id, producto, token) {
+  try {
+    const response = await axios.patch(
+      `${API_BASE_URL}/productos/${id}`,
+      producto,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error al buscar productos:", error);
+    throw error;
+  }
+}
+
+export async function eliminarProducto(id, token) {
+  try {
+    const response = await axios.delete(`${API_BASE_URL}/productos/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error al buscar productos:", error);
+    throw error;
+  }
+}

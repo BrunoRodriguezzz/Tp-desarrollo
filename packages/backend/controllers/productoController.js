@@ -1,10 +1,10 @@
-import { paginationGetValues } from "../utils/pagination.js";
-import { validarParsearID } from "../validadores/validadorTiposNativos.js";
+import { paginationGetValues } from '../utils/pagination.js';
+import { validarParsearID } from '../validadores/validadorTiposNativos.js';
 import {
   validarParsearProducto,
   validarParsearUpdateProducto,
-} from "../validadores/validadoresProducto.js";
-import { NotFoundError, ValidationError } from "../errors/tiendaSolError.js";
+} from '../validadores/validadoresProducto.js';
+import { NotFoundError, ValidationError } from '../errors/tiendaSolError.js';
 
 export default class ProductoController {
   productoService;
@@ -20,17 +20,14 @@ export default class ProductoController {
   }
 
   async findAll(req, res) {
-    const productosPaginados = await paginationGetValues(
-      req,
-      (page, limit, filtros) =>
-        this.productoService.findAll(page, limit, filtros)
+    const productosPaginados = await paginationGetValues(req, (page, limit, filtros) =>
+      this.productoService.findAll(page, limit, filtros)
     );
 
     if (
       !productosPaginados ||
       productosPaginados.total === 0 ||
-      (Array.isArray(productosPaginados.data) &&
-        productosPaginados.data.length === 0)
+      (Array.isArray(productosPaginados.data) && productosPaginados.data.length === 0)
     ) {
       return res.status(204).send();
     }
@@ -42,13 +39,13 @@ export default class ProductoController {
     const id = req.params.id;
 
     if (!validarParsearID(id)) {
-      throw new ValidationError("ID de producto inválido");
+      throw new ValidationError('ID de producto inválido');
     }
 
     const producto = await this.productoService.findById(id);
 
     if (!producto) {
-      throw new NotFoundError("Producto no encontrado");
+      throw new NotFoundError('Producto no encontrado');
     }
 
     res.status(200).json(producto);
@@ -58,17 +55,14 @@ export default class ProductoController {
     const id = req.params.id;
 
     if (!validarParsearID(id)) {
-      throw new ValidationError("ID de producto inválido");
+      throw new ValidationError('ID de producto inválido');
     }
 
     const resultBody = validarParsearUpdateProducto(req);
-    const productoActualizado = await this.productoService.update(
-      id,
-      resultBody
-    );
+    const productoActualizado = await this.productoService.update(id, resultBody);
 
     if (!productoActualizado) {
-      throw new NotFoundError("Producto no encontrado");
+      throw new NotFoundError('Producto no encontrado');
     }
 
     res.status(200).json(productoActualizado);
@@ -78,13 +72,13 @@ export default class ProductoController {
     const id = req.params.id;
 
     if (!validarParsearID(id)) {
-      throw new ValidationError("ID de producto inválido");
+      throw new ValidationError('ID de producto inválido');
     }
 
     const deleted = await this.productoService.delete(id);
 
     if (!deleted) {
-      throw new NotFoundError("Producto no encontrado");
+      throw new NotFoundError('Producto no encontrado');
     }
 
     res.status(204).send();

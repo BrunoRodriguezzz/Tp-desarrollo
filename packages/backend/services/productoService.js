@@ -1,9 +1,9 @@
-import { parsearMoneda } from "../validadores/validadorDeEnums.js";
-import Producto from "../models/entities/producto.js";
-import Categoria from "../models/entities/categoria.js";
-import Moneda from "../models/enums/moneda.js";
-import { paginationBuildResponse } from "../utils/pagination.js";
-import { NotFoundError } from "../errors/tiendaSolError.js";
+import { parsearMoneda } from '../validadores/validadorDeEnums.js';
+import Producto from '../models/entities/producto.js';
+import Categoria from '../models/entities/categoria.js';
+import Moneda from '../models/enums/moneda.js';
+import { paginationBuildResponse } from '../utils/pagination.js';
+import { NotFoundError } from '../errors/tiendaSolError.js';
 
 export default class ProductoService {
   constructor(ProductoRepository, UsuarioRepository, CategoriaService) {
@@ -13,19 +13,15 @@ export default class ProductoService {
   }
 
   async create(nuevoProductoJSON) {
-    const usuario = await this.usuarioRepository.findById(
-      nuevoProductoJSON.vendedor
-    );
+    const usuario = await this.usuarioRepository.findById(nuevoProductoJSON.vendedor);
 
-    if (!usuario) throw new NotFoundError("Usuario no encontrado");
+    if (!usuario) throw new NotFoundError('Usuario no encontrado');
 
     const nuevoProducto = new Producto(usuario, nuevoProductoJSON.titulo);
 
     const tipoMoneda = parsearMoneda(nuevoProductoJSON.moneda);
 
-    const categorias = (nuevoProductoJSON.categorias || []).map(
-      (nombre) => new Categoria(nombre)
-    );
+    const categorias = (nuevoProductoJSON.categorias || []).map(nombre => new Categoria(nombre));
 
     for (const c of categorias) {
       await this.categoriaService.existe(c.nombre);
@@ -33,7 +29,7 @@ export default class ProductoService {
 
     nuevoProducto.setCategorias(categorias);
     nuevoProducto.setFotos(nuevoProductoJSON.fotos || []);
-    nuevoProducto.setDescripcion(nuevoProductoJSON.descripcion || "");
+    nuevoProducto.setDescripcion(nuevoProductoJSON.descripcion || '');
     nuevoProducto.setPrecio(nuevoProductoJSON.precio || 0);
     nuevoProducto.setMoneda(tipoMoneda || Moneda.PESO_ARG);
     nuevoProducto.aumentarStock(nuevoProductoJSON.stock || 0);
@@ -43,7 +39,7 @@ export default class ProductoService {
       vendedor: usuario.id,
       titulo: nuevoProducto.titulo,
       descripcion: nuevoProducto.descripcion,
-      categorias: nuevoProducto.categorias.map((categoria) => categoria.nombre),
+      categorias: nuevoProducto.categorias.map(categoria => categoria.nombre),
       precio: nuevoProducto.precio,
       moneda: nuevoProducto.moneda,
       stock: nuevoProducto.stock,
@@ -95,10 +91,7 @@ export default class ProductoService {
       }
     }
 
-    const productoActualizado = await this.productoRepository.update(
-      id,
-      productoJSON
-    );
+    const productoActualizado = await this.productoRepository.update(id, productoJSON);
 
     for (const c of productoActualizado.categorias) {
       await this.categoriaService.incrementarCantidad(c);

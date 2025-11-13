@@ -3,7 +3,7 @@ import "./FormularioProducto.css"
 import { SelectorCategorias } from "./selectorCategorias/SelectorCategorias";
 import "./FormularioProducto.css";
 
-export function FormularioProducto({ producto, handleOpenSuccess, closeForm, handleOpenError }) {
+export function FormularioProducto({ producto, handleOpenSuccess, closeForm, handleOpenError, onSubmit }) {
 
   const inicializarCampos = () => ({
     titulo: { valor: producto?.titulo || "", requerido: true },
@@ -34,14 +34,23 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm, han
     .filter(campo => campo.requerido)
     .every(campo => String(campo.valor).trim() !== '');
 
-  const handleForm = () => {
+  const handleForm = async () => {
     if(!camposCompletos)
     {
       handleOpenError();
       return;
     }
-    closeForm();
-    handleOpenSuccess();
+
+    const datos = {
+      titulo: campos.titulo.valor,
+      descripcion: campos.descripcion.valor,
+      categorias: campos.categorias.valor,
+      precio: Number(campos.precio.valor),
+      moneda: campos.moneda.valor,
+      stock: Number(campos.stock.valor),
+    };
+
+    await onSubmit(datos);
   };
 
   return (

@@ -7,8 +7,11 @@ import { FormularioProducto } from "../../componentes/formularioProducto/Formula
 import { SnackbarSuccess } from "../../componentes/snackbars/SnackBarSuccess";
 import { SnackbarError } from "../../componentes/snackbars/SnackBarError";
 import Seo from "../../componentes/seo/Seo";
+import { crearProducto } from "../../services/productoService";
+import { useSession } from "../../features/auth/session/sessionContext";
 
 export function MisProductos() {
+  const { accessToken } = useSession();
   const [paginado, setPaginado] = useState({ page: 1, size: 12 });
   const [mostrarForm, setMostrarForm] = useState(false);
   const [openSuccess, setOpenSuccess] = useState(false);
@@ -37,6 +40,16 @@ export function MisProductos() {
   const handleCloseError = () => {
     setOpenError(false);
   }
+
+  const handleSubmit = async (datos) => {
+    try {
+      await crearProducto(datos, accessToken);
+      handleOpenSuccess();
+      setMostrarForm(false);
+    } catch (error) {
+      handleOpenError();
+    }
+  };
   
   const actualizarPaginado = (clave, valor) => {
     setPaginado((prev) => ({
@@ -74,6 +87,7 @@ export function MisProductos() {
             handleOpenSuccess={handleOpenSuccess}
             closeForm={handleCloseForm}
             handleOpenError={handleOpenError}
+            onSubmit={handleSubmit}
           />
         </DialogContent>
       </Dialog>
