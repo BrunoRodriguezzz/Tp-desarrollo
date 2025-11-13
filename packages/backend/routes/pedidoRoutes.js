@@ -1,5 +1,6 @@
 import express from 'express';
 import PedidoController from '../controllers/pedidoController.js';
+import { authMiddleware } from '../middlewares/authMiddleware.js';
 
 const pathPedidos = '/pedidos';
 
@@ -10,7 +11,7 @@ export default function pedidoRoutes(getController) {
   router.post(pathPedidos, (req, res) => getController(PedidoController).create(req, res));
 
   // POST /pedidos/:id/cancelacion - Cancelar un pedido por ID
-  router.post(pathPedidos + '/:id/cancelacion', (req, res) =>
+  router.post(pathPedidos + '/:id/cancelacion', authMiddleware, (req, res) =>
     getController(PedidoController).cancel(req, res)
   );
 
@@ -20,7 +21,7 @@ export default function pedidoRoutes(getController) {
   );
 
   // POST /pedidos/:id/envio - Marcar un pedido como enviado por ID
-  router.post(pathPedidos + '/:id/envio', (req, res) =>
+  router.post(pathPedidos + '/:id/envio', authMiddleware, (req, res) =>
     getController(PedidoController).marcarEnvio(req, res)
   );
 

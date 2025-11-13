@@ -30,6 +30,7 @@ export default class PedidoController {
     const data = {
       ...req.body,
       pedidoId: req.params.id,
+      compradorId: req.user.id,
     };
 
     const result = cancelSchema.safeParse(data);
@@ -80,6 +81,7 @@ export default class PedidoController {
     const data = {
       ...req.body,
       pedidoId: req.params.id,
+      vendedorId: req.user.id,
     };
 
     const result = enviadoSchema.safeParse(data);
@@ -89,14 +91,8 @@ export default class PedidoController {
       return;
     }
 
-    const id = result.data.pedidoId;
-    const body = {
-      vendedorId: result.data.vendedorId,
-      motivo: result.data.motivo,
-    };
-
     try {
-      const pedidoEnviado = await this.pedidoService.marcarPedidoEnviado(id, body);
+      const pedidoEnviado = await this.pedidoService.marcarPedidoEnviado(result.data);
       res.status(200).json(pedidoEnviado);
     } catch (error) {
       return res.status(error.statusCode).json({ error: error.message });

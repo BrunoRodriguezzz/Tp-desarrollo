@@ -17,3 +17,41 @@ export async function getPedidos(idUsuario, page = 1, limit = 10) {
     throw error;
   }
 }
+
+
+//TODO - Falta probar bien, despues lo sigo
+export async function cancelarPedido(token, idPedido, motivo) {
+  try {
+    const response = await axios.post(
+      `${API_BASE_URL}/pedidos/${idPedido}/cancelacion`,
+      { motivo },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error al cancelar el pedido:", error);
+    throw error;
+  }
+}
+
+export async function enviarPedido(token, idPedido, motivo) {
+  try {
+    const response = await axios.post(
+      `${API_BASE_URL}/pedidos/${idPedido}/envio`,
+      { motivo },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error al enviar el pedido:", error);
+    throw error;
+  }
+}

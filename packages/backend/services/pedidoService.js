@@ -163,17 +163,20 @@ export default class PedidoService {
     };
   }
 
-  async marcarPedidoEnviado(pedidoId, marcarEnvioJSON) {
+  async marcarPedidoEnviado(pedidoEnviado) {
+    const { vendedorId, pedidoId, motivo } = pedidoEnviado;
+
     const pedido = await this.pedidoRepository.findById(pedidoId);
+
     validarPedido(pedido, pedidoId);
     validarEstadoParaEnviar(pedido);
-    validarString(marcarEnvioJSON.motivo);
+    validarString(motivo);
 
-    const vendedor = await this.usuarioService.findById(marcarEnvioJSON.vendedorId);
-    validarVendedor(vendedor, marcarEnvioJSON.vendedorId);
-    validarVendedorAutorizado(pedido, marcarEnvioJSON.vendedorId);
+    const vendedor = await this.usuarioService.findById(vendedorId);
+    validarVendedor(vendedor, vendedorId);
+    validarVendedorAutorizado(pedido, vendedorId);
 
-    pedido.actualizarEstado(EstadoPedido.ENVIADO, vendedor, marcarEnvioJSON.motivo);
+    pedido.actualizarEstado(EstadoPedido.ENVIADO, vendedor, motivo);
 
     const pedidoActualizado = await this.pedidoRepository.update(pedidoId, pedido);
 
