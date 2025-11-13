@@ -1,8 +1,9 @@
+import React from "react";
 import "./FormularioContacto.css";
 import { useState } from "react";
+import propTypes from "prop-types";
 
-export default function FormularioContacto({campos, setValorDe }) {
-
+export default function FormularioContacto({ campos, setValorDe }) {
   const handleBlur = (e) => {
     const { name, value } = e.target;
 
@@ -41,14 +42,6 @@ export default function FormularioContacto({campos, setValorDe }) {
   return (
     <div className="direccion-formulario">
       <h3>Dirección de Entrega</h3>
-<<<<<<< HEAD
-
-      {renderInput("Calle", "calle", "text", "Ingrese su calle")}
-      {renderInput("Número", "numero", "number", "Ingrese su número")}
-      {renderInput("Ciudad", "ciudad", "text", "Ingrese su ciudad")}
-      {renderInput("Provincia", "provincia", "text", "Ingrese su provincia")}
-      {renderInput("País", "pais", "text", "Ingrese su país")}
-=======
       <div className="form-group">
         <label htmlFor="calle">Calle *</label>
         <input
@@ -137,7 +130,11 @@ export default function FormularioContacto({campos, setValorDe }) {
           onChange={setValorDe("pais")}
         />
       </div>
->>>>>>> origin/E4
     </div>
   );
 }
+
+FormularioContacto.propTypes = {
+  campos: propTypes.object.isRequired,
+  setValorDe: propTypes.func.isRequired,
+};

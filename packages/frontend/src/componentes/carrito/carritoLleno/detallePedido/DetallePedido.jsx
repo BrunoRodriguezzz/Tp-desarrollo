@@ -6,6 +6,7 @@ import { SnackbarSuccess } from "../../../snackbars/SnackBarSuccess";
 import ConfirmDialog from "./ConfirmDialog";
 import { crearPedido } from "../../../../services/pedidoService";
 import { useSession } from "../../../../features/auth/session/sessionContext";
+import CircularProgress from "@mui/material/CircularProgress";
 
 export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
   const { accessToken } = useSession();
@@ -43,20 +44,12 @@ export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
 
   const handleComprar = () => {
     if (isCheckout) {
-<<<<<<< HEAD
-      const errores = validarDireccion();
-      if (Object.keys(errores).length > 0) {
-        setErroresDireccion(errores);
-        return;
-      }
-=======
       if (!camposCompletos) {
         //TODO - Pasarlo a Snackbar
         alert("Hay campos obligatorios (*) incompletos");
         return;
       }
 
->>>>>>> origin/E4
       setOpenConfirm(true);
     } else {
       navigate("/checkout");
@@ -65,30 +58,16 @@ export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
 
   const handleConfirmPurchase = async () => {
     setOpenConfirm(false);
-<<<<<<< HEAD
-    setLoading(true);
-
-    setTimeout(() => {
-      setLoading(false);
-      setOpenSuccess(true);
-
-      setTimeout(() => {
-        navigate("/");
-        clearCart();
-      }, 1500);
-    }, 2000);
-=======
 
     try {
-      console.log("Entro al try")
-      await crearPedido(accessToken, cartItems, campos)
-    } catch(error) {
+      console.log("Entro al try");
+      await crearPedido(accessToken, cartItems, campos);
+    } catch (error) {
       //TODO - Pasarlo a Snackbar
       alert("Hubo un error");
     }
 
     setOpenSuccess(true);
->>>>>>> origin/E4
   };
 
   const handleCancelConfirm = () => {
@@ -161,4 +140,5 @@ DetallePedido.propTypes = {
   isFormValid: PropTypes.bool,
   validarDireccion: PropTypes.func,
   setErroresDireccion: PropTypes.func,
+  campos: PropTypes.object,
 };
