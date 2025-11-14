@@ -19,6 +19,26 @@ export default function Checkout() {
     departamento: inicializarCampo(false),
     codigoPostal: inicializarCampo(false),
   });
+  const [erroresDireccion, setErroresDireccion] = useState({});
+
+  const validarDireccion = () => {
+    const nuevosErrores = {};
+
+    // Validar contra el estado `campos` donde cada campo tiene la forma { valor, requerido }
+    Object.keys(campos).forEach((campo) => {
+      const valor =
+        campos[campo] && campos[campo].valor ? campos[campo].valor : "";
+      const requerido =
+        campos[campo] && typeof campos[campo].requerido !== "undefined"
+          ? campos[campo].requerido
+          : true;
+      if (requerido && !valor.trim()) {
+        nuevosErrores[campo] = "Este campo es obligatorio";
+      }
+    });
+
+    return nuevosErrores;
+  };
 
   const [campos, setCampos] = useState(inicializarCampos());
 
@@ -39,7 +59,11 @@ export default function Checkout() {
       <p>¡Ya casi es tuyo!</p>
       <div className="checkout-content">
         <FormularioContacto campos={campos} setValorDe={setValorDe} />
-        <DetallePedido cartItems={cartItems} isCheckout={true} campos={campos} />
+        <DetallePedido
+          cartItems={cartItems}
+          isCheckout={true}
+          campos={campos}
+        />
       </div>
     </div>
   );

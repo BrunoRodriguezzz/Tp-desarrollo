@@ -77,6 +77,13 @@
   background-color: #e0e0e0;
 }
 
+.direccion-formulario .error-message {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+
 @media (max-width: 480px) {
   .direccion-formulario {
     padding: 12px;
@@ -101,3 +108,4 @@
     padding: 10px;
   }
 }
+

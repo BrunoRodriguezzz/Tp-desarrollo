@@ -1,8 +1,8 @@
+import React from "react";
 import "./FormularioContacto.css";
-import { useState } from "react";
+import PropTypes from "prop-types";
 
-export default function FormularioContacto({campos, setValorDe }) {
-
+export default function FormularioContacto({ campos, setValorDe }) {
   return (
     <div className="direccion-formulario">
       <h3>Dirección de Entrega</h3>
@@ -97,3 +97,8 @@ export default function FormularioContacto({campos, setValorDe }) {
     </div>
   );
 }
+
+FormularioContacto.propTypes = {
+  campos: PropTypes.object.isRequired,
+  setValorDe: PropTypes.func.isRequired,
+};
