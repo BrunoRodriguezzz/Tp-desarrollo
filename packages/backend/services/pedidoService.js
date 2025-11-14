@@ -73,7 +73,6 @@ export default class PedidoService {
       await this.productoService.update(item.producto.id, productoPlano, item.producto.vendedor.id);
     }
 
-
     await this.notificacionService.crearSegunPedido(pedidoPersistido);
 
     return pedidoToDTO(pedidoPersistido);
@@ -136,6 +135,7 @@ export default class PedidoService {
 
       paginado.total = await this.pedidoRepository.countByCompradorId(usuarioId);
     } else {
+      console.log('Rompe aca, no?');
       paginado = await paginationBuildResponse(
         page,
         limit,
@@ -150,7 +150,6 @@ export default class PedidoService {
           return pedidos.map(p => pedidoToDTO(p));
         }
       );
-
       paginado.total = await this.pedidoRepository.countByVendedorId(usuarioId);
     }
 
@@ -203,10 +202,10 @@ export default class PedidoService {
     if (domicilioData.departamento) domicilio.setDepartamento(domicilioData.departamento);
     if (domicilioData.codigoPostal) domicilio.setCodigoPostal(domicilioData.codigoPostal);
 
-     let coordenada = null;
-     if (coordenadaData && coordenadaData.latitud != null && coordenadaData.longitud != null) {
-       coordenada = new Coordenada(coordenadaData.latitud, coordenadaData.longitud);
-     }
+    let coordenada = null;
+    if (coordenadaData && coordenadaData.latitud != null && coordenadaData.longitud != null) {
+      coordenada = new Coordenada(coordenadaData.latitud, coordenadaData.longitud);
+    }
     return new DireccionEntrega(domicilio, ciudad, coordenada);
   }
 
