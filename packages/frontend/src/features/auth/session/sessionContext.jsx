@@ -25,12 +25,13 @@ export default function SessionProvider({ children }) {
   function loginContext(tokens) {
     setAccessToken(tokens.token);
     setRefreshToken(tokens.refreshToken);
+
     try {
       if (tokens.token) localStorage.setItem("accessToken", tokens.token);
       if (tokens.refreshToken)
         localStorage.setItem("refreshToken", tokens.refreshToken);
     } catch (err) {
-      // localStorage puede fallar en algunos entornos; ignorar
+      // TODO
     }
   }
 

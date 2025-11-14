@@ -19,7 +19,7 @@ export default function ProductList({ filtros = {}, paginado = { page: 1, size: 
         behavior: "smooth",
       });
     }, [paginado]);
-
+  
   useEffect(() => {
     const fetch = async () => {
       try {

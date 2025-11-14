@@ -92,7 +92,6 @@ export default class ProductoService {
   }
 
   async update(id, productoJSON, vendedorId) {
-    console.log("Llego a update")
     const productoActual = await this.productoRepository.findById(id);
     if (!productoActual) {
       throw new NotFoundError(`Producto con id ${id} no existe`);

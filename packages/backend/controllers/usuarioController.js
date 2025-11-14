@@ -19,9 +19,6 @@ export default class UsuarioController {
       throw new BadRequestError("Se requieren 'email' y 'password' en el body JSON");
     }
 
-    console.log('email:', email);
-    console.log('password:', password);
-
     const user = await this.usuarioService.authenticate(email, password);
 
     validarUsuarioLogin(user);
@@ -50,7 +47,6 @@ export default class UsuarioController {
     const { nombre, email, telefono, tipoUsuario, password, passwordConfirm } = body;
 
     if (!nombre || !email || !password || !passwordConfirm || !tipoUsuario) {
-      console.log(req.body);
       throw new BadRequestError(
         'Campos obligatorios: nombre, email, tipoUsuario, password, passwordConfirm'
       );

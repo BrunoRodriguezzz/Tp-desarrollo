@@ -16,13 +16,17 @@ export default class UsuarioService {
   }
 
   async authenticate(email, password) {
+    const emailRegex = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+
+    if (!email || !emailRegex.test(email)) {
+      throw new ValidationError('El mail no tiene el formato adecuado');
+    }
+
     const usuario = await this.usuarioRepository.findByEmail(email);
 
     if (!usuario) {
       return null;
     }
-
-    console.log('usuario.passwordHash:', usuario.passwordHash);
 
     if (await bcrypt.compare(password, usuario.passwordHash)) {
       return usuario;

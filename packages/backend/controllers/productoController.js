@@ -73,7 +73,7 @@ export default class ProductoController {
       throw new NotFoundError('Producto no encontrado');
     }
 
-    res.status(200).json(this.withFotoUrls(req, producto));
+    res.status(200).json(withFotoUrls(req, producto));
   }
 
   async findByUser(req, res) {
@@ -95,7 +95,6 @@ export default class ProductoController {
   }
 
   async update(req, res) {
-    console.log('Llego a update');
     const id = req.params.id;
 
     if (!validarParsearID(id)) {

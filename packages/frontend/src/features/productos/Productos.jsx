@@ -8,7 +8,6 @@ import { useSearchParams } from "react-router-dom";
 import Seo from "../../componentes/seo/Seo";
 
 export default function Productos() {
-    
     // En la URL van a estar TODOS los estados
     const [searchParams, setSearchParams] = useSearchParams();
 
