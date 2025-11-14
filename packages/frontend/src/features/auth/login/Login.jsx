@@ -80,6 +80,7 @@ export default function Login() {
         <form onSubmit={handleSubmit}>
           <label>Email</label>
           <input
+            name="email"
             type="email"
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
@@ -88,6 +89,7 @@ export default function Login() {
           ></input>
           <label>Contraseña</label>
           <input
+            name="password"
             type="password"
             placeholder="Contraseña"
             value={password}
