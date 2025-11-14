@@ -1,31 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./DetallePedido.css";
 import PropTypes from "prop-types";
 import { SnackbarSuccess } from "../../../snackbars/SnackBarSuccess";
+import { SnackbarError } from "../../../snackbars/SnackBarError";
 import ConfirmDialog from "./ConfirmDialog";
 import { crearPedido } from "../../../../services/pedidoService";
 import { useSession } from "../../../../features/auth/session/sessionContext";
+import { useCart } from "../../cartContext/CartContext";
 
 export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
   const { accessToken } = useSession();
+  const { clearCart } = useCart();
   const [total, setTotal] = useState(0);
   const [openSuccess, setOpenSuccess] = useState(false);
+  const [openError, setOpenError] = useState(false);
+  const [errorMensaje, setErrorMensaje] = useState("");
   const [openConfirm, setOpenConfirm] = useState(false);
   const navigate = useNavigate();
-
-  const convertirMoneda = (moneda) => {
-    switch (moneda) {
-      case "PESO_ARG":
-        return "ARS";
-      case "DOLAR":
-        return "USD";
-      case "EURO":
-        return "EUR";
-      default:
-        return moneda;
-    }
-  };
+  const redirectTimer = useRef(null);
 
   useEffect(() => {
     let sumaTotal = 0;
@@ -42,8 +35,8 @@ export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
   const handleComprar = () => {
     if (isCheckout) {
       if (!camposCompletos) {
-        //TODO - Pasarlo a Snackbar
-        alert("Hay campos obligatorios (*) incompletos");
+        setErrorMensaje("Hay campos obligatorios (*) incompletos");
+        setOpenError(true);
         return;
       }
 
@@ -60,12 +53,24 @@ export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
       console.log("Entro al try");
       await crearPedido(accessToken, cartItems, campos);
     } catch (error) {
-      //TODO - Pasarlo a Snackbar
-      alert("Hubo un error");
+      setErrorMensaje("Hubo un error");
+      setOpenError(true);
+      return;
     }
 
     setOpenSuccess(true);
+
+    redirectTimer.current = setTimeout(() => {
+      clearCart();
+      navigate("/");
+    }, 2000);
   };
+
+  useEffect(() => {
+    return () => {
+      if (redirectTimer.current) clearTimeout(redirectTimer.current);
+    };
+  }, []);
 
   const handleCancelConfirm = () => {
     setOpenConfirm(false);
@@ -75,12 +80,16 @@ export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
     setOpenSuccess(false);
   };
 
+  const handleCloseError = () => {
+    setOpenError(false);
+  };
+
   return (
     <div className="resumen-pedido">
       <h3>Resumen del pedido</h3>
       <div>
         <p>Subtotal</p>
-        <p>${total.toFixed(2)}</p>
+        <p>AR$ {total.toFixed(2)}</p>
       </div>
       <div>
         <p>Envío</p>
@@ -91,7 +100,7 @@ export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
           Total
         </p>
         <p style={{ color: "black", fontWeight: "bold", fontSize: "1.2rem" }}>
-          ${total.toFixed(2)}
+          AR$ {total.toFixed(2)}
         </p>
       </div>
 
@@ -118,6 +127,11 @@ export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
         mensaje="La compra se realizo correctamente"
         open={openSuccess}
         onClose={handleClose}
+      />
+      <SnackbarError
+        mensaje={errorMensaje}
+        open={openError}
+        onClose={handleCloseError}
       />
     </div>
   );
