@@ -7,6 +7,8 @@ import { SnackbarSuccess } from "../../snackbars/SnackBarSuccess.jsx";
 import Skeleton from "@mui/material/Skeleton";
 
 export default function ProductBox({ producto }) {
+  console.log("Producto en ProductBox:", producto);
+
   const [imgLoaded, setImgLoaded] = useState(false);
   const navigate = useNavigate();
   const { addToCart } = useCart();
@@ -70,6 +72,7 @@ export default function ProductBox({ producto }) {
         <div className="product-text">
           <p className="product-category">{producto.categorias[0]}</p>
           <h2 className="product-name">{producto.titulo}</h2>
+          <p className="product-category">{producto.vendedor.nombre}</p>
         </div>
 
         <div className="button-wrapper">
@@ -99,6 +102,9 @@ ProductBox.propTypes = {
     titulo: PropTypes.string.isRequired,
     precio: PropTypes.number.isRequired,
     categorias: PropTypes.array.isRequired,
+    vendedor: PropTypes.shape({
+      nombre: PropTypes.string.isRequired,
+    }).isRequired,
     moneda: PropTypes.oneOf(["PESO_ARG", "DOLAR_USA", "REAL", "EURO"])
       .isRequired,
   }).isRequired,
