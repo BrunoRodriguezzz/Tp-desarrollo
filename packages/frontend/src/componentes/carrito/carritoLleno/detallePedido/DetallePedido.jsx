@@ -57,9 +57,9 @@ export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
     setOpenConfirm(false);
 
     try {
-      console.log("Entro al try")
-      await crearPedido(accessToken, cartItems, campos)
-    } catch(error) {
+      console.log("Entro al try");
+      await crearPedido(accessToken, cartItems, campos);
+    } catch (error) {
       //TODO - Pasarlo a Snackbar
       alert("Hubo un error");
     }
@@ -126,4 +126,5 @@ export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
 DetallePedido.propTypes = {
   cartItems: PropTypes.array.isRequired,
   isCheckout: PropTypes.bool,
+  campos: PropTypes.object,
 };

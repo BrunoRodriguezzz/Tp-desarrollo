@@ -1,6 +1,8 @@
 import React from "react";
 import CardProducto from "../cardProducto/CardProducto";
 import "./ListaProductos.css";
+import PropTypes from "prop-types";
+import List from "@mui/material/List";
 
 export default function ListaProductos({
   cartItems,
@@ -8,20 +10,20 @@ export default function ListaProductos({
   removeFromCart,
   decreaseQuantity,
 }) {
-  const convertirMoneda = (moneda) => {
-    switch (moneda) {
-      case "PESO_ARG":
-        return "ARS";
-      case "DOLAR_USA":
-        return "USD";
-      case "EURO":
-        return "EUR";
-      case "REAL":
-        return "BRL";
-      default:
-        return moneda;
-    }
-  };
+  // const convertirMoneda = (moneda) => {
+  //   switch (moneda) {
+  //     case "PESO_ARG":
+  //       return "ARS";
+  //     case "DOLAR_USA":
+  //       return "USD";
+  //     case "EURO":
+  //       return "EUR";
+  //     case "REAL":
+  //       return "BRL";
+  //     default:
+  //       return moneda;
+  //   }
+  // };
 
   return (
     <div className="lista-productos-container">
@@ -32,7 +34,8 @@ export default function ListaProductos({
           categorias={item.categorias}
           precio={item.precio}
           cantidad={item.quantity}
-          moneda={convertirMoneda(item.moneda)}
+          moneda={item.moneda}
+          // moneda={convertirMoneda(item.moneda)}
           foto={item.fotos[0]}
           sumarUno={() => addToCart(item)}
           eliminarProducto={() => removeFromCart(item._id)}
@@ -42,3 +45,10 @@ export default function ListaProductos({
     </div>
   );
 }
+
+ListaProductos.propTypes = {
+  cartItems: PropTypes.array.isRequired,
+  addToCart: PropTypes.func.isRequired,
+  removeFromCart: PropTypes.func.isRequired,
+  decreaseQuantity: PropTypes.func.isRequired,
+};

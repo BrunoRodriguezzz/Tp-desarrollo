@@ -5,15 +5,17 @@ import { FaCheck, FaInfoCircle } from "react-icons/fa";
 import { SnackbarSuccess } from "../../../componentes/snackbars/SnackBarSuccess";
 import { marcarNotificacionLeida } from "../../../services/notificacionService";
 import PropTypes from "prop-types";
+import { useSession } from "../../auth/session/sessionContext";
 
 export default function NotificacionBox({ notificacion }) {
   const { _id, mensaje, fechaAlta, leida } = notificacion;
+  const { accessToken } = useSession();
   const [openSuccess, setOpenSuccess] = useState(false);
   const [isLeida, setIsLeida] = useState(leida);
 
   const marcarLeida = async () => {
     try {
-      await marcarNotificacionLeida(_id);
+      await marcarNotificacionLeida(accessToken, _id);
       setIsLeida(true);
       setOpenSuccess(true);
     } catch (error) {

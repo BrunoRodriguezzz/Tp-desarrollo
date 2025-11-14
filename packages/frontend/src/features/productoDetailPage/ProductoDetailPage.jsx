@@ -5,7 +5,7 @@ import "./ProductoDetailPage.css";
 import { useCart } from "../../componentes/carrito/cartContext/CartContext.jsx";
 import { buscarProductoPorId } from "../../services/productoService.js";
 import ProductDetailSkeleton from "../../componentes/skeletons/SkeletonProductoDetail.jsx";
-import { SnackbarSuccess } from "../../componentes/snackbars/SnackBarSuccess.jsx"
+import { SnackbarSuccess } from "../../componentes/snackbars/SnackBarSuccess.jsx";
 import Seo from "../../componentes/seo/Seo";
 
 export default function ProductoDetailPage() {
@@ -23,7 +23,7 @@ export default function ProductoDetailPage() {
 
   const handleClose = () => {
     setOpenSuccess(false);
-  }
+  };
 
   const { addToCart } = useCart();
 
@@ -89,10 +89,8 @@ export default function ProductoDetailPage() {
       </div>
 
       <div className="producto-info">
-        <p className="producto-categoria">
-          {producto.categorias?.[0]?.toUpperCase()}
-        </p>
         <h1 className="producto-titulo">{producto.titulo}</h1>
+        <p className="producto-categoria">{producto.vendedor.nombre}</p>
         <p className="producto-precio">
           {producto.precio.toLocaleString("es-AR", {
             style: "currency",
