@@ -66,8 +66,10 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm, han
       formData.append("moneda", String(datos.moneda));
       formData.append("stock", Number(datos.stock));
       fotos.forEach((file) => formData.append("fotos", file));
+      console.log("Con fotos")
       await onSubmit(formData, true);
     } else {
+      console.log("Sin fotos")
       await onSubmit(datos, false);
     }
   };

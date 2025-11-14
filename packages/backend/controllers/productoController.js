@@ -108,6 +108,7 @@ export default class ProductoController {
   }
 
   async update(req, res) {
+    console.log('Llego a update');
     const id = req.params.id;
 
     if (!validarParsearID(id)) {
