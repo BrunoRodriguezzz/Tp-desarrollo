@@ -33,8 +33,13 @@ export async function crearPedido(token, items, campos) {
     });
     return response.data;
   } catch (error) {
-    console.error("Error al crear el pedido:", error);
-    throw error;
+    const mensaje =
+      error?.response?.data?.error ||
+      "Ocurrió un error inesperado";
+
+    console.error("Error al crear el pedido:", mensaje);
+
+    throw new Error(mensaje);
   }
 }
 

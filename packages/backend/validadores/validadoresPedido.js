@@ -76,7 +76,7 @@ export function validarItemProducto(producto, item) {
     throw new NotFoundError(`Producto ${item.productoId} no encontrado`);
   }
   if (!item.validarStock()) {
-    throw new ConflictError(`Stock insuficiente para ${producto.nombre}`);
+    throw new ConflictError(`Stock insuficiente para ${producto.titulo}`);
   }
 }
 

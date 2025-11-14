@@ -76,7 +76,7 @@ export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
       console.log("Entro al try");
       await crearPedido(accessToken, cartItems, campos);
     } catch (error) {
-      setErrorMensaje("Hubo un error");
+      setErrorMensaje(error.message);
       setOpenError(true);
       return;
     }
@@ -150,6 +150,11 @@ export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
         <SnackbarSuccess
           mensaje="La compra se realizo correctamente"
           open={openSuccess}
+          onClose={handleClose}
+        />
+        <SnackbarError
+          mensaje={errorMensaje}
+          open={openError}
           onClose={handleClose}
         />
       </div>
