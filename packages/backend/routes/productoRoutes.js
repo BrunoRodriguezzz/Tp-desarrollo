@@ -2,6 +2,7 @@ import express from 'express';
 import ProductoController from '../controllers/productoController.js';
 import loggerMiddleware from '../middlewares/loggerMiddleware.js';
 import { authMiddleware } from '../middlewares/authMiddleware.js';
+import { upload } from '../middlewares/multerMiddleware.js';
 
 const pathProductos = '/productos';
 
@@ -11,7 +12,7 @@ export default function healtCheckRoute(getController) {
   router.use(loggerMiddleware);
 
   // POST /productos
-  router.post(pathProductos, authMiddleware, async (req, res, next) => {
+  router.post(pathProductos, authMiddleware, upload.array('fotos'), async (req, res, next) => {
     try {
       await getController(ProductoController).create(req, res);
     } catch (err) {

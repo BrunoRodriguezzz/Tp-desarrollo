@@ -7,10 +7,19 @@ import {
   Button,
 } from "@mui/material";
 import "./VentasEnviarDialog.css";
+import { envioPedido } from "../../../services/pedidoService";
+import { useSession } from "../../../features/auth/session/sessionContext";
 
 export default function VentasEnviarDialog({ pedido, open, onOpenChange, onEnviado }) {
-  const enviarPedido = () => {
-    console.log("Pedido enviado:", pedido._id);
+  const { accessToken } = useSession();
+
+  const enviarPedido = async () => {
+    try {
+      await envioPedido(accessToken, pedido.id, "El vendedor marco el pedido como enviado")
+    } catch(error) {
+      console.error("Error marcado el pedido como enviado:", error);
+    }
+    console.log("Pedido enviado:", pedido.id);
     onEnviado();
     onOpenChange(false);
   };
@@ -27,7 +36,7 @@ export default function VentasEnviarDialog({ pedido, open, onOpenChange, onEnvia
 
       <DialogContent dividers sx={{ pb: 2 }}>
         <p className="subtitle">
-          Estás a punto de marcar como enviado al pedido <b>#{pedido._id}</b>.
+          Estás a punto de marcar como enviado al pedido <b>#{pedido.id}</b>.
         </p>
       </DialogContent>
 

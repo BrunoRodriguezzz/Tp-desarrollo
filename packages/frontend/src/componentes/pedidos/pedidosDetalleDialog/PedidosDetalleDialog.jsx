@@ -81,7 +81,7 @@ export default function PedidosDetalleDialog({ pedido, open, onOpenChange }) {
       <Box className="pedido-header">
         <Box>
           <DialogTitle className="pedido-title">
-            Pedido #{pedido._id}
+            Pedido #{pedido.id}
           </DialogTitle>
           <p className="pedido-date">
             {new Date(pedido.fechaCreacion).toLocaleDateString("es-AR", {

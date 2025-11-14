@@ -1,25 +1,57 @@
-import React, { createContext, useContext, useState, useMemo } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { jwtDecode } from "jwt-decode";
 
 const SessionContext = createContext(null);
 
 export default function SessionProvider({ children }) {
-  const [accessToken, setAccessToken] = useState(null);
-  const [refreshToken, setRefreshToken] = useState(null);
+  // Inicializar desde localStorage para persistir sesión tras recarga
+  const [accessToken, setAccessToken] = useState(() => {
+    try {
+      return localStorage.getItem("accessToken");
+    } catch (err) {
+      return null;
+    }
+  });
+
+  const [refreshToken, setRefreshToken] = useState(() => {
+    try {
+      return localStorage.getItem("refreshToken");
+    } catch (err) {
+      return null;
+    }
+  });
 
   function loginContext(tokens) {
     setAccessToken(tokens.token);
     setRefreshToken(tokens.refreshToken);
+    try {
+      if (tokens.token) localStorage.setItem("accessToken", tokens.token);
+      if (tokens.refreshToken)
+        localStorage.setItem("refreshToken", tokens.refreshToken);
+    } catch (err) {
+      // localStorage puede fallar en algunos entornos; ignorar
+    }
   }
 
   function logoutContext() {
     setAccessToken(null);
     setRefreshToken(null);
+    try {
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("refreshToken");
+    } catch (err) {
+      // ignorar
+    }
   }
 
   function refreshAccessTokenContext(token) {
     setAccessToken(token);
+    try {
+      if (token) localStorage.setItem("accessToken", token);
+    } catch (err) {
+      // ignorar
+    }
   }
 
   function isTokenValid(token) {
@@ -72,6 +104,17 @@ export default function SessionProvider({ children }) {
     const user = getUserFromToken();
     return user ? user.id : null;
   }
+
+  // Si los tokens en localStorage cambian (p. ej. por otra pestaña), sincronizamos
+  useEffect(() => {
+    function handleStorage(e) {
+      if (e.key === "accessToken") setAccessToken(e.newValue);
+      if (e.key === "refreshToken") setRefreshToken(e.newValue);
+    }
+
+    window.addEventListener("storage", handleStorage);
+    return () => window.removeEventListener("storage", handleStorage);
+  }, []);
 
   function notLogged() {
     return !isTokenValid(accessToken);

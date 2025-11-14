@@ -16,9 +16,7 @@ export default function Notificaciones() {
   const [notificaciones, setNotificaciones] = useState([]);
   const [notificacionesCargadas, setNotificacionesCargadas] = useState(false);
   const [mostrarSinLeer, setMostrarSinLeer] = useState(false);
-  const { getIdFromToken } = useSession();
-
-  const userId = getIdFromToken();
+  const { accessToken } = useSession();
 
   const handleSwitch = (e) => {
     setMostrarSinLeer(e.target.checked);
@@ -28,7 +26,7 @@ export default function Notificaciones() {
     const fetch = async () => {
       try {
         const data = await obtenerNotificaciones(
-          userId,
+          accessToken,
           mostrarSinLeer ? false : undefined
         );
         setNotificaciones(data.notificaciones);
@@ -38,7 +36,7 @@ export default function Notificaciones() {
       }
     };
     fetch();
-  }, [userId, mostrarSinLeer]);
+  }, [mostrarSinLeer]);
 
   return (
     <>

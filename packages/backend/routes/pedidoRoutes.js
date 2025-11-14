@@ -17,8 +17,8 @@ export default function pedidoRoutes(getController) {
     getController(PedidoController).cancel(req, res)
   );
 
-  // GET /pedidos/usuarios/:id - Obtener el historial de pedidos de un usuario por ID
-  router.get(pathPedidos + '/usuarios/:id', (req, res) =>
+  // GET /pedidos/usuarios - Obtener el historial de pedidos de un usuario
+  router.get(pathPedidos + '/usuarios', authMiddleware, (req, res) =>
     getController(PedidoController).getHistoryUser(req, res)
   );
 

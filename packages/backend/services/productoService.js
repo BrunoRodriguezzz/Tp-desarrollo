@@ -23,12 +23,14 @@ export default class ProductoService {
 
     const categorias = (nuevoProductoJSON.categorias || []).map(nombre => new Categoria(nombre));
 
+    const fotos = nuevoProductoJSON.files || nuevoProductoJSON.fotos || [];
+
     for (const c of categorias) {
       await this.categoriaService.existe(c.nombre);
     }
 
     nuevoProducto.setCategorias(categorias);
-    nuevoProducto.setFotos(nuevoProductoJSON.fotos || []);
+    nuevoProducto.setFotos(fotos);
     nuevoProducto.setDescripcion(nuevoProductoJSON.descripcion || '');
     nuevoProducto.setPrecio(nuevoProductoJSON.precio || 0);
     nuevoProducto.setMoneda(tipoMoneda || Moneda.PESO_ARG);
@@ -90,12 +92,13 @@ export default class ProductoService {
   }
 
   async update(id, productoJSON, vendedorId) {
+    console.log("Llego a update")
     const productoActual = await this.productoRepository.findById(id);
     if (!productoActual) {
       throw new NotFoundError(`Producto con id ${id} no existe`);
     }
 
-    if (productoActual.vendedor.toString() != vendedorId) {
+    if (productoActual.vendedor.id.toString() != vendedorId) {
       throw new ForbiddenError('El vendedor que quiere actualizar no es el propietario');
     }
 
@@ -126,7 +129,7 @@ export default class ProductoService {
       throw new NotFoundError(`Producto con id ${id} no existe`);
     }
 
-    if (productoActual.vendedor.toString() != vendedorId) {
+    if (productoActual.vendedor.id.toString() != vendedorId) {
       throw new ForbiddenError('El vendedor que quiere eliminar no es el propietario');
     }
 

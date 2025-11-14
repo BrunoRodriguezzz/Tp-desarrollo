@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import express from 'express';
+import path from 'node:path';
 import Server from './server/server.js';
 import cors from 'cors';
 
@@ -91,7 +92,7 @@ server.setController(ConversionController, conversionController);
 app.use(
   cors({
     // BARLA PIDE UNA DISCULPA POR ESTO
-    // origin: 'https://tiendasol.syspa.es',
+    //origin: 'https://tiendasol.syspa.es',
     origin: 'http://localhost:3000',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization'],
@@ -100,6 +101,10 @@ app.use(
 
 // Configuracion de rutas y lanzamiento
 routes.forEach(route => server.addRoute(route));
+
+// Servir archivos estáticos de imágenes subidas
+const fotosDir = path.resolve(process.cwd(), 'public', 'fotosProductos');
+app.use('/fotosProductos', express.static(fotosDir));
 
 // Swagger docs
 (async () => {

@@ -3,14 +3,33 @@ import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./ProductBox.css";
 import { useCart } from "../../carrito/cartContext/CartContext.jsx";
-import { SnackbarSuccess } from "../../snackbars/SnackBarSuccess.jsx"
+import { SnackbarSuccess } from "../../snackbars/SnackBarSuccess.jsx";
 import Skeleton from "@mui/material/Skeleton";
 
 export default function ProductBox({ producto }) {
+  console.log("Producto en ProductBox:", producto);
+
   const [imgLoaded, setImgLoaded] = useState(false);
   const navigate = useNavigate();
   const { addToCart } = useCart();
   const [openSuccess, setOpenSuccess] = useState(false);
+
+  const currencySymbols = {
+    PESO_ARG: "AR$",
+    DOLAR_USA: "US$",
+    REAL: "R$",
+    EURO: "€",
+  };
+
+  const currencySymbol = currencySymbols[producto?.moneda] ?? "$";
+
+  const formattedPrice =
+    typeof producto.precio === "number"
+      ? producto.precio.toLocaleString(undefined, {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 2,
+        })
+      : producto.precio;
 
   const handleClick = () => {
     navigate(`/productos/${producto._id}`);
@@ -20,11 +39,11 @@ export default function ProductBox({ producto }) {
     e.stopPropagation();
     addToCart(producto);
     setOpenSuccess(true);
-  }
+  };
 
   const handleClose = () => {
     setOpenSuccess(false);
-  }
+  };
 
   return (
     <div
@@ -53,10 +72,14 @@ export default function ProductBox({ producto }) {
         <div className="product-text">
           <p className="product-category">{producto.categorias[0]}</p>
           <h2 className="product-name">{producto.titulo}</h2>
+          <p className="product-category">{producto.vendedor.nombre}</p>
         </div>
 
         <div className="button-wrapper">
-          <p className="product-price">${producto.precio}</p>
+          <p className="product-price">
+            {currencySymbol}
+            {formattedPrice}
+          </p>
           <button className="add-to-cart-button" onClick={handleAddToCart}>
             Agregar al Carrito
           </button>
@@ -79,5 +102,10 @@ ProductBox.propTypes = {
     titulo: PropTypes.string.isRequired,
     precio: PropTypes.number.isRequired,
     categorias: PropTypes.array.isRequired,
+    vendedor: PropTypes.shape({
+      nombre: PropTypes.string.isRequired,
+    }).isRequired,
+    moneda: PropTypes.oneOf(["PESO_ARG", "DOLAR_USA", "REAL", "EURO"])
+      .isRequired,
   }).isRequired,
 };
