@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod';
 
 export default class NotificacionController {
   notificacionService;
@@ -10,34 +10,31 @@ export default class NotificacionController {
   async findAll(req, res) {
     try {
       const querySchema = z.object({
-        userId: idTransform,
         leida: booleanTransform,
       });
+
+      const userId = req.user.id;
       const parsed = querySchema.safeParse(req.query);
       if (!parsed.success) {
         return res.status(400).json({ errors: parsed.error.issues });
       }
 
-      const { userId, leida } = parsed.data;
+      const { leida } = parsed.data;
 
       let notificaciones;
 
-      if (!userId && leida === undefined) {
-        notificaciones = await this.notificacionService.findAll();
-      } else if (leida !== undefined) {
-        if (leida) {
-          notificaciones = await this.notificacionService.findAllLeidas(userId);
-        } else {
-          notificaciones = await this.notificacionService.findAllNoLeidas(userId);
-        }
-      } else {
+      if (leida === undefined) {
         notificaciones = await this.notificacionService.findAllUser(userId);
+      } else if (leida === true) {
+        notificaciones = await this.notificacionService.findAllLeidas(userId);
+      } else {
+        notificaciones = await this.notificacionService.findAllNoLeidas(userId);
       }
 
       return res.status(200).json({ notificaciones: notificaciones });
     } catch (error) {
       console.error(error);
-      return res.status(500).json({ error: "Error al obtener notificaciones" });
+      return res.status(500).json({ error: 'Error al obtener notificaciones' });
     }
   }
 
@@ -46,9 +43,7 @@ export default class NotificacionController {
       const parsed = idTransform.safeParse(req.params.id);
 
       if (!parsed.success) {
-        return res
-          .status(400)
-          .json({ error: "El id debe ser un número válido" });
+        return res.status(400).json({ error: 'El id debe ser un número válido' });
       }
 
       const id = parsed.data;
@@ -56,34 +51,32 @@ export default class NotificacionController {
       const notificacion = await this.notificacionService.marcarComoLeida(id);
 
       if (!notificacion) {
-        return res.status(404).json({ error: "Notificación no encontrada" });
+        return res.status(404).json({ error: 'Notificación no encontrada' });
       }
 
       return res.status(200).json({
-        message: "Notificación marcada como leída",
+        message: 'Notificación marcada como leída',
         notificacion: notificacion,
       });
     } catch (error) {
       console.error(error);
-      return res
-        .status(500)
-        .json({ error: "Error al marcar la notificación como leída" });
+      return res.status(500).json({ error: 'Error al marcar la notificación como leída' });
     }
   }
 }
 
 const idTransform = z
   .string()
-  .regex(/^[0-9a-fA-F]{24}$/, "ID debe ser un ObjectId válido")
+  .regex(/^[0-9a-fA-F]{24}$/, 'ID debe ser un ObjectId válido')
   .optional();
 
 const booleanTransform = z
   .string()
   .transform((val, ctx) => {
-    if (val.toLowerCase() === "true") return true;
-    if (val.toLowerCase() === "false") return false;
+    if (val.toLowerCase() === 'true') return true;
+    if (val.toLowerCase() === 'false') return false;
     ctx.addIssue({
-      code: "custom",
+      code: 'custom',
       message: "leida must be 'true' or 'false'",
     });
     return z.NEVER;
