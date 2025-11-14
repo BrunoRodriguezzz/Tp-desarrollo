@@ -134,7 +134,6 @@ export async function crearProducto(producto, token) {
 
 export async function buscarMisProductos(limit, currentPage, token) {
   try {
-    console.log("Token a utilizar:", token);
     const response = await axios.get(`${API_BASE_URL}/productos/usuarios`, {
       params: {
         limit,
@@ -144,9 +143,27 @@ export async function buscarMisProductos(limit, currentPage, token) {
         Authorization: `Bearer ${token}`,
       },
     });
+
+    const normalizeUrl = (foto) => {
+      if (!foto) return foto;
+      if (/^https?:\/\//i.test(foto)) return foto;
+      const base = API_BASE_URL.replace(/\/$/, "");
+      const path = String(foto).replace(/^\/+/, "");
+      return `${base}/${path}`;
+    };
+
+    const productosConFotos = Array.isArray(response.data.data)
+      ? response.data.data.map((prod) => {
+          const fotos = Array.isArray(prod.fotos)
+            ? prod.fotos.map(normalizeUrl)
+            : prod.fotos;
+          return { ...prod, fotos };
+        })
+      : response.data.data;
+
     return {
       totalPages: response.data.totalPages,
-      productosPagina: response.data.data,
+      productosPagina: productosConFotos,
     };
   } catch (error) {
     console.error("Error al buscar productos:", error);
