@@ -53,7 +53,6 @@ const categoriaRepository = new CategoriaRepository();
 const categoriaService = new CategoriaService(categoriaRepository);
 const authService = new AuthService(usuarioRepository);
 const usuarioService = new UsuarioService(usuarioRepository);
-const conversionService = new ConversionService();
 
 const productoService = new ProductoService(
   productoRepository,
@@ -69,6 +68,7 @@ const pedidoService = new PedidoService(
   productoService,
   notificacionService
 );
+const conversionService = new ConversionService(productoService);
 
 // Capas de Controlador
 const healthController = new HealthController();

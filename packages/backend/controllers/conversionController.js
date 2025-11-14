@@ -7,12 +7,7 @@ export default class ConversionController {
 
   async calcularTotal(req, res) {
     const cart = req.body.cart;
-    let total = 0;
-
-    for (const item of cart) {
-      const precioARS = await this.conversionService.convertirAARS(item.precio, item.moneda);
-      total += precioARS * item.cantidad;
-    }
+    const total = await this.conversionService.convertirCarritoAARS(cart);
 
     return res.status(200).json({ total });
   }

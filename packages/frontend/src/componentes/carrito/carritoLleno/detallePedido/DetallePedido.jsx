@@ -7,7 +7,7 @@ import ConfirmDialog from "./ConfirmDialog";
 import { crearPedido } from "../../../../services/pedidoService";
 import { useSession } from "../../../../features/auth/session/sessionContext";
 import CircularProgress from "@mui/material/CircularProgress";
-import { useCart } from "../../cartContext/CartContext";
+import { obtenerTotal } from "../../../../services/conversionService";
 
 export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
   const { accessToken } = useSession();
@@ -16,27 +16,33 @@ export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
   const [openConfirm, setOpenConfirm] = useState(false);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const { clearCart } = useCart();
-
-  const convertirMoneda = (moneda) => {
-    switch (moneda) {
-      case "PESO_ARG":
-        return "ARS";
-      case "DOLAR":
-        return "USD";
-      case "EURO":
-        return "EUR";
-      default:
-        return moneda;
-    }
-  };
 
   useEffect(() => {
-    let sumaTotal = 0;
-    cartItems.forEach((item) => {
-      sumaTotal += item.precio * item.quantity;
-    });
-    setTotal(sumaTotal);
+    const calcularTotal = async () => {
+      if (cartItems.length === 0) {
+        setTotal(0);
+        return;
+      }
+
+      try {
+        setLoading(true);
+        console.log("cart", cartItems);
+        const cartToSend = cartItems.map((item) => ({
+          id: item._id,
+          cantidad: item.quantity,
+        }));
+
+        const data = await obtenerTotal(cartToSend);
+
+        setTotal(data.total);
+      } catch (err) {
+        console.error("Error obteniendo total:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    calcularTotal();
   }, [cartItems]);
 
   const camposCompletos = Object.values(campos)
