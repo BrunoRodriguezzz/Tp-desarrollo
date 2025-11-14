@@ -17,7 +17,7 @@ export default class ProductoController {
 
   withFotoUrls(req, producto) {
     if (!producto) return producto;
-    const base = `${req.protocol}://${req.get('host')}/fotosProductos/`;
+    const base = 'fotosProductos/';
     const fotos = Array.isArray(producto.fotos)
       ? producto.fotos.map(f => (typeof f === 'string' && !f.startsWith('http') ? base + f : f))
       : [];
@@ -102,8 +102,9 @@ export default class ProductoController {
     ) {
       return res.status(204).send();
     }
-    console.log(productosPaginados);
+
     productosPaginados.data = (productosPaginados.data || []).map(p => this.withFotoUrls(req, p));
+
     res.status(200).json(productosPaginados);
   }
 
