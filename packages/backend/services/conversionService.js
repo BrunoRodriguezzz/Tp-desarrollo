@@ -5,7 +5,7 @@ const mapaMonedas = {
   PESO_ARG: 'ARS',
   DOLAR_USA: 'USD',
   EURO: 'EUR',
-  REAL_BRL: 'BRL',
+  REAL: 'BRL',
 };
 
 export default class ConversionService {
@@ -37,6 +37,7 @@ export default class ConversionService {
       console.log('item', item);
       const precioARS = await this.convertirAARS(item.precio, item.moneda);
       total += precioARS * c.cantidad;
+      console.log('subt', total);
     }
     return total;
   }
