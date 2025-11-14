@@ -9,7 +9,7 @@ export function SnackbarSuccess({ mensaje, open, onClose }) {
       open={open}
       autoHideDuration={3000}
       onClose={onClose}
-      anchorOrigin={{ vertical: "down", horizontal: "right" }}
+      anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
     >
       <Alert
         onClose={onClose}
