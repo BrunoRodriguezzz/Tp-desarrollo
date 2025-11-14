@@ -1,4 +1,5 @@
 import { paginationGetValues } from '../utils/pagination.js';
+import withFotoUrls from '../utils/urlFotos.js';
 import fs from 'node:fs';
 import path from 'node:path';
 import { validarParsearID } from '../validadores/validadorTiposNativos.js';
@@ -15,20 +16,6 @@ export default class ProductoController {
     this.productoService = productoService;
   }
 
-  withFotoUrls(req, producto) {
-    if (!producto) return producto;
-    const base = 'fotosProductos/';
-    const fotos = Array.isArray(producto.fotos)
-      ? producto.fotos.map(f => (typeof f === 'string' && !f.startsWith('http') ? base + f : f))
-      : [];
-    try {
-      const plain = typeof producto.toObject === 'function' ? producto.toObject() : { ...producto };
-      return { ...plain, fotos };
-    } catch {
-      return { ...producto, fotos };
-    }
-  }
-
   async create(req, res) {
     try {
       // Mapear archivos subidos a req.body.files (solo nombres de archivo)
@@ -37,7 +24,7 @@ export default class ProductoController {
       }
       const resultBody = validarParsearProducto(req);
       const producto = await this.productoService.create(resultBody);
-      res.status(201).json(this.withFotoUrls(req, producto));
+      res.status(201).json(withFotoUrls(req, producto));
     } catch (err) {
       // En caso de error, eliminamos archivos subidos para no dejar basura
       const uploadedFiles = req.files ? req.files.map(file => file.filename) : [];
@@ -48,7 +35,7 @@ export default class ProductoController {
           try {
             if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
           } catch (e) {
-            // log opcional
+            console.error(`Error al eliminar el archivo ${filePath}:`, e);
           }
         }
       }
@@ -69,8 +56,7 @@ export default class ProductoController {
       return res.status(204).send();
     }
 
-    // Agregar URLs completas a fotos en la respuesta paginada
-    productosPaginados.data = (productosPaginados.data || []).map(p => this.withFotoUrls(req, p));
+    productosPaginados.data = (productosPaginados.data || []).map(p => withFotoUrls(req, p));
     res.status(200).json(productosPaginados);
   }
 
@@ -103,7 +89,7 @@ export default class ProductoController {
       return res.status(204).send();
     }
 
-    productosPaginados.data = (productosPaginados.data || []).map(p => this.withFotoUrls(req, p));
+    productosPaginados.data = (productosPaginados.data || []).map(p => withFotoUrls(req, p));
 
     res.status(200).json(productosPaginados);
   }

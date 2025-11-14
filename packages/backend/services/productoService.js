@@ -98,7 +98,7 @@ export default class ProductoService {
       throw new NotFoundError(`Producto con id ${id} no existe`);
     }
 
-    if (productoActual.vendedor.id.toString() != vendedorId) {
+    if (productoActual.vendedor.id != vendedorId) {
       throw new ForbiddenError('El vendedor que quiere actualizar no es el propietario');
     }
 
