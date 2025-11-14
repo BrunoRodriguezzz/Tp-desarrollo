@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import Moneda from '../models/enums/moneda.js';
 import { paginationGetValues } from '../utils/pagination.js';
+import withFotoUrls from '../utils/urlFotos.js';
 
 export default class PedidoController {
   pedidoService;
@@ -72,6 +73,14 @@ export default class PedidoController {
         res.status(204).send('No se encontraron pedidos para ese usuario');
       }
 
+      pedidos.data = (pedidos.data || []).map(pedido => {
+        const itemsConFotos = (pedido.items || []).map(item => ({
+          ...item,
+          producto: withFotoUrls(req, item.producto),
+        }));
+        return { ...pedido, items: itemsConFotos };
+      });
+      
       res.status(200).json(pedidos);
     } catch (error) {
       const status = error.statusCode || 500;
