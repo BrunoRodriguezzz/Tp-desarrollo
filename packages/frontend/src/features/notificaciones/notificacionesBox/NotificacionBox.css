@@ -35,6 +35,12 @@
   flex-direction: row;
   align-items: center;
   gap: 10px;
+  width: 75%;
+}
+
+.notificacion-box .notificacion-texto {
+  flex: 1;
+  min-width: 0;
 }
 
 .notificacion-box h1 {
@@ -42,6 +48,10 @@
   font-size: 16px;
   margin: 0;
   color: #333;
+  margin-bottom: 5px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .notificacion-box p {

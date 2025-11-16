@@ -1,6 +1,6 @@
-import FactoryNotificacion from "../models/entities/notificacion/factoryNotificacion.js";
-import { NotFoundError, ValidationError } from "../errors/tiendaSolError.js";
-import { isPedido } from "../validadores/validadorDeClases.js";
+import FactoryNotificacion from '../models/entities/notificacion/factoryNotificacion.js';
+import { NotFoundError, ValidationError } from '../errors/tiendaSolError.js';
+import { isPedido } from '../validadores/validadorDeClases.js';
 
 export default class NotificacionService {
   constructor(notificacionRepository, pedidoRepository) {
@@ -41,20 +41,20 @@ export default class NotificacionService {
 
   async crearSegunPedido(pedido) {
     if (!pedido) {
-      throw new NotFoundError(
-        `No se ingresó ningún pedido para crear la notificación`
-      );
+      throw new NotFoundError(`No se ingresó ningún pedido para crear la notificación`);
     }
     isPedido(pedido);
 
-    const notificacion = this.factory.crearSegunPedido(pedido);
+    const notificaciones = this.factory.crearSegunPedido(pedido);
 
-    if (!notificacion) {
+    if (!notificaciones.length) {
       throw new ValidationError(
         `No se pudo generar la notificación para el pedido con id ${pedido?._id}`
       );
     }
 
-    return await this.notificacionRepository.save(notificacion);
+    for (const n of notificaciones) {
+      await this.notificacionRepository.save(n);
+    }
   }
 }
