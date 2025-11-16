@@ -80,7 +80,7 @@ export default class PedidoController {
         }));
         return { ...pedido, items: itemsConFotos };
       });
-      
+
       res.status(200).json(pedidos);
     } catch (error) {
       const status = error.statusCode || 500;

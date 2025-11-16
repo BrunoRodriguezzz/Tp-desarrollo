@@ -15,18 +15,22 @@ import PedidosDetalleDialog from "../pedidosDetalleDialog/PedidosDetalleDialog";
 import PedidosCancelarDialog from "../pedidosCancelarDialog/PedidosCancelarDialog";
 import PedidoItemList from "../pedidosItemList/PedidosItemList";
 import { SnackbarSuccess } from "../../snackbars/SnackBarSuccess";
+import propTypes from "prop-types";
+import { set } from "mongoose";
 
 export default function PedidosBox({ pedido }) {
+  const { id, estado, fechaCreacion, items, total } = pedido;
+  
   const [openDetalleDialog, setOpenDetalleDialog] = useState(false);
   const [openCancelarDialog, setOpenCancelarDialog] = useState(false);
   const [openSuccess, setOpenSuccess] = useState(false);
-
-  const { id, estado, fechaCreacion, items, total } = pedido;
+  const [actualState, setActualState] = useState(estado);
 
   const mostrarBotonCancelar =
-    estado !== "ENVIADO" && estado !== "ENTREGADO" && estado !== "CANCELADO";
+    actualState !== "ENVIADO" && actualState !== "ENTREGADO" && actualState !== "CANCELADO";
 
   const handleSuccess = () => {
+    setActualState("CANCELADO");
     setOpenSuccess(true);
   }
 
@@ -73,7 +77,7 @@ export default function PedidosBox({ pedido }) {
     },
   };
 
-  const status = statusConfig[estado];
+  const status = statusConfig[actualState];
 
   return (
     <>
@@ -146,3 +150,20 @@ export default function PedidosBox({ pedido }) {
     </>
   );
 }
+
+PedidosBox.propTypes = {
+  pedido: propTypes.shape({
+    id: propTypes.string.isRequired,
+    estado: propTypes.string.isRequired,
+    fechaCreacion: propTypes.string.isRequired,
+    items: propTypes.arrayOf(
+      propTypes.shape({
+        id: propTypes.string.isRequired,
+        nombre: propTypes.string.isRequired,
+        cantidad: propTypes.number.isRequired,
+        precio: propTypes.number.isRequired,
+      })
+    ).isRequired,
+    total: propTypes.number.isRequired,
+  }).isRequired,
+};

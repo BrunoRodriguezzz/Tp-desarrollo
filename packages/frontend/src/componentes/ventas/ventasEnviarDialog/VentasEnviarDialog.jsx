@@ -9,6 +9,7 @@ import {
 import "./VentasEnviarDialog.css";
 import { envioPedido } from "../../../services/pedidoService";
 import { useSession } from "../../../features/auth/session/sessionContext";
+import propTypes from "prop-types";
 
 export default function VentasEnviarDialog({ pedido, open, onOpenChange, onEnviado }) {
   const { accessToken } = useSession();
@@ -59,3 +60,12 @@ export default function VentasEnviarDialog({ pedido, open, onOpenChange, onEnvia
     </Dialog>
   );
 }
+
+VentasEnviarDialog.propTypes = {
+  pedido: propTypes.shape({
+    id: propTypes.string.isRequired,
+  }).isRequired,
+  open: propTypes.bool.isRequired,
+  onOpenChange: propTypes.func.isRequired,
+  onEnviado: propTypes.func.isRequired,
+};

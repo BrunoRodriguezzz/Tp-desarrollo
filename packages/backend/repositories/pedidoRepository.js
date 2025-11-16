@@ -19,6 +19,7 @@ class PedidoRepository {
       .find({ comprador: usuarioId })
       .skip(skip)
       .limit(elementosPorPagina)
+      .sort('-createdAt')
       .populate('comprador')
       .populate('items.producto')
       .populate('historialEstados.usuario');
@@ -29,6 +30,7 @@ class PedidoRepository {
       .find({ vendedor: usuarioId })
       .skip(skip)
       .limit(elementosPorPagina)
+      .sort('-createdAt')
       .populate('vendedor')
       .populate('items.producto')
       .populate('historialEstados.usuario');

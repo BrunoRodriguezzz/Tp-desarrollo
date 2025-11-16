@@ -1,4 +1,4 @@
-import NotificacionModel from "../schemas/notificacionSchema.js";
+import NotificacionModel from '../schemas/notificacionSchema.js';
 
 export default class NotificacionRepository {
   constructor() {
@@ -17,7 +17,7 @@ export default class NotificacionRepository {
   }
 
   async findAllByUserId(userId) {
-    return await this.model.find({ usuarioDestino: userId });
+    return await this.model.find({ usuarioDestino: userId }).sort('-fechaAlta');
   }
 
   async findAllLeidas(userId) {
@@ -36,11 +36,7 @@ export default class NotificacionRepository {
 
   async marcarComoLeida(notificacion) {
     const notificacionId = notificacion.id;
-    await this.model.findByIdAndUpdate(
-      notificacionId,
-      { leida: true },
-      { new: true }
-    );
+    await this.model.findByIdAndUpdate(notificacionId, { leida: true }, { new: true });
   }
 
   async save(notificacion) {
