@@ -24,6 +24,8 @@ export default function VentasBox({ pedido }) {
   const [openDetalleDialog, setOpenDetalleDialog] = useState(false);
   const [openEnviarDialog, setOpenEnviarDialog] = useState(false);
   const [openSuccess, setOpenSuccess] = useState(false);
+  const [isEnviable, setIsEnviable] = useState(enviable);
+  const [actualState, setActualState] = useState(estado);
 
   const marcarEnviado = () => {
     setOpenEnviarDialog(true);
@@ -34,6 +36,8 @@ export default function VentasBox({ pedido }) {
   };
 
   const handleSuccess = () => {
+    setIsEnviable(false);
+    setActualState("ENVIADO");
     setOpenSuccess(true);
   };
 
@@ -41,7 +45,7 @@ export default function VentasBox({ pedido }) {
     setOpenSuccess(false);
   };
 
-  const status = getStatusConfig(estado);
+  const status = getStatusConfig(actualState);
 
   const fecha = new Date(fechaCreacion);
   const fechaFormateada = fecha.toLocaleDateString("es", {
@@ -54,7 +58,7 @@ export default function VentasBox({ pedido }) {
 
   return (
     <>
-      <div className={`venta-box ${enviable ? "enviable" : "no-enviable"}`}>
+      <div className={`venta-box ${isEnviable ? "enviable" : "no-enviable"}`}>
         <div className="venta-header">
           <div className="venta-info">
             <h3>Pedido #{id}</h3>
@@ -87,7 +91,7 @@ export default function VentasBox({ pedido }) {
             >
               Ver Detalles
             </Button>
-            {enviable && (
+            {isEnviable && (
               <Button
                 variant="contained"
                 className="btn-enviar"
@@ -158,7 +162,7 @@ function getStatusConfig(estado) {
 
 VentasBox.propTypes = {
   pedido: propTypes.shape({
-    _id: propTypes.string.isRequired,
+    id: propTypes.string.isRequired,
     estado: propTypes.string.isRequired,
     fechaCreacion: propTypes.string.isRequired,
     items: propTypes.arrayOf(
