@@ -69,20 +69,35 @@ export default function DetallePedido({ cartItems, isCheckout, campos = {} }) {
     }
   };
 
-  const handleConfirmPurchase = async () => {
-    setOpenConfirm(false);
 
-    try {
-      console.log("Entro al try");
-      await crearPedido(accessToken, cartItems, campos);
-    } catch (error) {
-      setErrorMensaje(error.message);
-      setOpenError(true);
-      return;
+const handleConfirmPurchase = async () => {
+  setOpenConfirm(false);
+  setLoading(true);
+
+  const subCarts = cartItems.reduce((acc, item) => {
+  const vendedorId = item.vendedor._id;
+
+  if (!acc[vendedorId]) {
+    acc[vendedorId] = [];
+  }
+  acc[vendedorId].push(item);
+
+  return acc;
+  }, {});
+
+  try {
+    for (const vendedorId in subCarts) {
+      const itemsDelVendedor = subCarts[vendedorId];
+
+      await crearPedido(accessToken, itemsDelVendedor, campos);
     }
-
+  } catch (error) {
+    setErrorMensaje(error.message);
+    setOpenError(true);
+    return;
+  }
+    setLoading(false);
     setOpenSuccess(true);
-
     redirectTimer.current = setTimeout(() => {
       clearCart();
       navigate("/");
