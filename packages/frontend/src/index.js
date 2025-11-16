@@ -1,14 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { ConfigProvider, theme } from "antd";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { ColorizeOutlined } from "@mui/icons-material";
+
+// Theme config for Ant Design. 
+const antdTheme = {
+  token: {
+    colorBgContainer: "#000000ff",
+  },
+  components: {
+    Carousel: {
+      arrowSize: 40,
+      arrowOffset: 4,
+      dotHeight: 3,
+      dotOffset: -10
+    },
+  },
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <ConfigProvider theme={antdTheme}>
+      <App />
+    </ConfigProvider>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

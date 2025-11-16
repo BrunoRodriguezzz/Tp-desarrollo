@@ -5,6 +5,7 @@ import { useCart } from "../../componentes/carrito/cartContext/CartContext.jsx";
 import { buscarProductoPorId } from "../../services/productoService.js";
 import ProductDetailSkeleton from "../../componentes/skeletons/SkeletonProductoDetail.jsx";
 import { SnackbarSuccess } from "../../componentes/snackbars/SnackBarSuccess.jsx";
+import { Carousel } from 'antd';
 import Seo from "../../componentes/seo/Seo";
 
 export default function ProductoDetailPage() {
@@ -94,14 +95,19 @@ export default function ProductoDetailPage() {
       />
       <div className="producto-imagen-wrapper">
         {!imgLoaded && <ProductDetailSkeleton />}
-        <img
-          className="producto-imagen"
-          src={producto.fotos[0]}
-          alt={producto.titulo}
-          onLoad={() => setImgLoaded(true)}
-          onError={() => setImgLoaded(true)}
-          style={{ display: imgLoaded ? "block" : "none" }}
-        />
+        <Carousel arrows arrowSize={30}>
+          {(producto.fotos || []).map((foto, index) => (
+            <div key={index}>
+              <img
+                className="producto-imagen"
+                src={foto}
+                alt={`${producto.titulo} - Imagen ${index + 1}`}
+                onLoad={() => setImgLoaded(true)}
+                onError={() => setImgLoaded(true)}
+              />
+            </div>
+          ))}
+        </Carousel>
       </div>
 
       <div className="producto-info">
