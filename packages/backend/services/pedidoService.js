@@ -104,7 +104,7 @@ export default class PedidoService {
 
       // Convertir a objeto plano antes de actualizar
       const productoPlano = Object.assign({}, producto);
-      await this.productoService.update(producto.id, productoPlano);
+      await this.productoService.update(producto._id, productoPlano, producto.vendedor._id);
     }
 
     await this.notificacionService.crearSegunPedido(pedidoPersistido);
