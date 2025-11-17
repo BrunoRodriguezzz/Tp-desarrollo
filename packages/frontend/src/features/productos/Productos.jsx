@@ -23,7 +23,7 @@ export default function Productos() {
       const params = Object.fromEntries(searchParams.entries());
 
       const currentFiltros = {
-        news: params.news === "true", // String --> Boolean
+        newest: params.newest === "true", // String --> Boolean
         search: params.search || null,
         categoria: params.categoria || null,
         minPrice: parseNumber(params.minPrice),

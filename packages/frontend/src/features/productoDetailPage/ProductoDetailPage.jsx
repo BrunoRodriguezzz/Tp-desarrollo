@@ -25,7 +25,7 @@ export default function ProductoDetailPage() {
     setOpenSuccess(false);
   };
 
-  const { addToCart } = useCart();
+  const { addToCartQuantity } = useCart();
 
   const currencySymbols = {
     PESO_ARG: "AR$",
@@ -61,7 +61,7 @@ export default function ProductoDetailPage() {
 
   const handleAddToCart = (e) => {
     e.stopPropagation();
-    addToCart(producto);
+    addToCartQuantity(producto, cantidad);
     setOpenSuccess(true);
   };
 

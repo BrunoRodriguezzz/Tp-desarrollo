@@ -29,12 +29,10 @@ export default class ProductoRepository {
       query = query.sort({ precio: 1 });
     } else if (filtros.orderBy === 'price_desc') {
       query = query.sort({ precio: -1 });
-    } else if (filtros.orderBy === 'newest') {
-      query = query.sort({ createdAt: -1 });
-    } else if (filtros.orderBy === 'oldest') {
-      query = query.sort({ createdAt: 1 });
     } else if (filtros.orderBy === 'best_seller') {
       query = query.sort({ ventasTotales: -1 });
+    } else if (filtros.newest) {
+      query = query.sort({ createdAt: -1, _id: -1 });
     }
 
     const productos = await query.skip(skip).limit(limit).populate('vendedor').exec();

@@ -71,8 +71,8 @@ export default function Filtros({
             <span>Lo nuevo!</span>
           </div>
           <Switch
-            checked={filtros.news}
-            onChange={(_, checked) => setFiltros("news", checked)}
+            checked={filtros.newest}
+            onChange={(_, checked) => setFiltros("newest", checked)}
           />
         </div>
       </Paper>

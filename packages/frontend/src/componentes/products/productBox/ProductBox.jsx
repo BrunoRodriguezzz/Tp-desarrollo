@@ -7,8 +7,6 @@ import { SnackbarSuccess } from "../../snackbars/SnackBarSuccess.jsx";
 import Skeleton from "@mui/material/Skeleton";
 
 export default function ProductBox({ producto }) {
-  console.log("Producto en ProductBox:", producto);
-
   const [imgLoaded, setImgLoaded] = useState(false);
   const navigate = useNavigate();
   const { addToCart } = useCart();

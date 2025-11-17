@@ -33,6 +33,23 @@ export const CartProvider = ({ children }) => {
     });
   };
 
+  const addToCartQuantity = (product, quantity) => {
+    setCartItems((prev) => {
+      const existing = prev.find((item) => item._id === product._id);
+      if (existing) {
+        // Si ya está en el carrito, aumenta cantidad
+        return prev.map((item) =>
+          item._id === product._id
+            ? { ...item, quantity: item.quantity + quantity }
+            : item
+        );
+      } else {
+        // Si no está, lo agrego con la cantidad especificada
+        return [...prev, { ...product, quantity }];
+      }
+    });
+  };
+
   const decreaseQuantity = (productId) => {
     setCartItems((prev) =>
       prev
@@ -55,7 +72,7 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, clearCart, totalItems, decreaseQuantity }}
+      value={{ cartItems, addToCart, addToCartQuantity, removeFromCart, clearCart, totalItems, decreaseQuantity }}
     >
       {children}
     </CartContext.Provider>
