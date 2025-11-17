@@ -14,6 +14,7 @@ export function MisProductos() {
   const { accessToken } = useSession();
   const [paginado, setPaginado] = useState({ page: 1, size: 12 });
   const [mostrarForm, setMostrarForm] = useState(false);
+  const [reload, setReload] = useState(0);
   const [openSuccess, setOpenSuccess] = useState(false);
   const [openError, setOpenError] = useState(false);
   
@@ -46,6 +47,7 @@ export function MisProductos() {
       await crearProducto(datos, accessToken);
       handleOpenSuccess();
       setMostrarForm(false);
+      setReload((k) => k + 1);
     } catch (error) {
       handleOpenError();
     }
@@ -79,6 +81,8 @@ export function MisProductos() {
           filtros={{}}
           paginado={paginado}
           setPaginado={actualizarPaginado}
+          reload={reload}
+          onRefresh={() => setReload((k) => k + 1)}
         />
       </div>
       <Dialog open={mostrarForm} onClose={handleCloseForm} maxWidth="sm" fullWidth>

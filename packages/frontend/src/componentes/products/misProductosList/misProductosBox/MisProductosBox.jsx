@@ -9,7 +9,7 @@ import { SnackbarError } from "../../../snackbars/SnackBarError.jsx";
 import { actualizarProducto, eliminarProducto } from "../../../../services/productoService.js";
 import { useSession } from "../../../../features/auth/session/sessionContext.jsx";
  
-export default function MisProductosBox({ producto }) {
+export default function MisProductosBox({ producto, onRefresh = () => {} }) {
   const { accessToken } = useSession();
   const [imgLoaded, setImgLoaded] = useState(false);
   const [mostrarForm, setMostrarForm] = useState(false);
@@ -55,6 +55,8 @@ export default function MisProductosBox({ producto }) {
       await actualizarProducto(producto._id, datos, accessToken);
       handleOpenEdit();
       setMostrarForm(false);
+      // notify parent to refresh the list
+      try { onRefresh(); } catch {}
     } catch (error) {
       handleOpenError();
     }
@@ -65,6 +67,8 @@ export default function MisProductosBox({ producto }) {
       await eliminarProducto(producto._id, accessToken);
       handleOpenDelete();
       setMostrarForm(false);
+      // notify parent to refresh the list
+      try { onRefresh(); } catch {}
     } catch (error) {
       handleOpenError();
     }
@@ -139,5 +143,11 @@ MisProductosBox.propTypes = {
     titulo: PropTypes.string.isRequired,
     precio: PropTypes.number.isRequired,
     categorias: PropTypes.array.isRequired,
+    stock: PropTypes.number.isRequired,
   }).isRequired,
+  onRefresh: PropTypes.func,
+};
+
+MisProductosBox.defaultProps = {
+  onRefresh: () => {},
 };
