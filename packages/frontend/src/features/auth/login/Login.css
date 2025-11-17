@@ -102,3 +102,13 @@
   border-top: 1px solid #ccc;
   margin: 20px 0;
 }
+
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}

@@ -10,6 +10,7 @@ import { SnackbarSuccess } from "../../../componentes/snackbars/SnackBarSuccess"
 import { SnackbarError } from "../../../componentes/snackbars/SnackBarError";
 import Seo from "../../../componentes/seo/Seo";
 import { useSession } from "../session/sessionContext.jsx";
+import CircularProgress from "@mui/material/CircularProgress";
 
 export default function Register() {
   const inicializarCampo = (requerido = true) => ({ valor: "", requerido });
@@ -29,6 +30,7 @@ export default function Register() {
   const [openError, setOpenError] = useState(false);
   const [mensajeError, setMensajeError] = useState("");
   const { loginContext, accessToken, refreshToken } = useSession();
+  const [loading, setLoading] = useState(false);
 
   const camposCompletos = Object.values(campos)
     .filter((campo) => campo.requerido)
@@ -60,6 +62,7 @@ export default function Register() {
       return null;
     }
 
+    setLoading(true);
     const result = await signup(
       campos.nombre.valor,
       campos.email.valor,
@@ -72,11 +75,13 @@ export default function Register() {
     if (!result || !result.token) {
       setMensajeError("Ha ocurrido un error durante el registro");
       setOpenError(true);
+      setLoading(false);
       return;
     }
 
     loginContext({ token: result.token, refreshToken: result.refreshToken });
 
+    setLoading(false)
     setOpenSuccess(true);
 
     setTimeout(() => navigate("/"), 2000);
@@ -177,6 +182,11 @@ export default function Register() {
         open={openError}
         onClose={handleErrorClose}
       />
+      {loading && (
+        <div className="loading-overlay">
+          <CircularProgress size={60} thickness={4} />
+        </div>
+      )}
     </div>
   );
 }
