@@ -19,7 +19,8 @@ export default function Header() {
   const { totalItems } = useCart();
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
-  const { accessToken, notLogged, isVendedor, isComprador, logoutContext } = useSession();
+  const { accessToken, notLogged, isVendedor, isComprador, logoutContext } =
+    useSession();
 
   const [unreadCount, setUnreadCount] = useState(0);
 
@@ -34,7 +35,10 @@ export default function Header() {
 
       try {
         const data = await obtenerNotificaciones(accessToken, false);
-        if (mounted) setUnreadCount(Array.isArray(data.notificaciones) ? data.notificaciones.length : 0);
+        if (mounted)
+          setUnreadCount(
+            Array.isArray(data.notificaciones) ? data.notificaciones.length : 0
+          );
       } catch (err) {
         // No interrumpimos la UI si falla la consulta
         if (mounted) setUnreadCount(0);
@@ -136,18 +140,20 @@ export default function Header() {
             </Link>
           )}
 
-          <Link
-            to="/carrito"
-            className="button-gray"
-            aria-label={`Ir al carrito, contiene ${totalItems} ${totalItems === 1 ? "producto" : "productos"}`}
-          >
-            <LuShoppingCart aria-hidden="true" />
-            <span aria-hidden="true">
-              {totalItems > 0
-                ? `${totalItems} ítem${totalItems > 1 ? "s" : ""}`
-                : "Carrito"}
-            </span>
-          </Link>
+          {!isVendedor() && (
+            <Link
+              to="/carrito"
+              className="button-gray"
+              aria-label={`Ir al carrito, contiene ${totalItems} ${totalItems === 1 ? "producto" : "productos"}`}
+            >
+              <LuShoppingCart aria-hidden="true" />
+              <span aria-hidden="true">
+                {totalItems > 0
+                  ? `${totalItems} ítem${totalItems > 1 ? "s" : ""}`
+                  : "Carrito"}
+              </span>
+            </Link>
+          )}
 
           {notLogged() ? (
             <Link to="/login" className="button-white-border">
