@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Dialog,
   DialogTitle,
   DialogContent,
   DialogActions,
   Button,
+  CircularProgress,
 } from "@mui/material";
 import "./VentasEnviarDialog.css";
 import { envioPedido } from "../../../services/pedidoService";
@@ -13,14 +14,19 @@ import propTypes from "prop-types";
 
 export default function VentasEnviarDialog({ pedido, open, onOpenChange, onEnviado }) {
   const { accessToken } = useSession();
+  const [loading, setLoading] = useState(false)
 
   const enviarPedido = async () => {
     try {
+      setLoading(true);
       await envioPedido(accessToken, pedido.id, "El vendedor marco el pedido como enviado")
+      console.log("Pedido enviado:", pedido.id);
     } catch(error) {
       console.error("Error marcado el pedido como enviado:", error);
+    } finally {
+      setLoading(false);
     }
-    console.log("Pedido enviado:", pedido.id);
+    
     onEnviado();
     onOpenChange(false);
   };
@@ -57,6 +63,11 @@ export default function VentasEnviarDialog({ pedido, open, onOpenChange, onEnvia
           Marcar Pedido Como Enviado
         </Button>
       </DialogActions>
+      {loading && (
+        <div className="loading-overlay">
+          <CircularProgress size={60} thickness={4} />
+        </div>
+      )}
     </Dialog>
   );
 }

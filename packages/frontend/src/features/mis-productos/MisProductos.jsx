@@ -17,6 +17,7 @@ export function MisProductos() {
   const [reload, setReload] = useState(0);
   const [openSuccess, setOpenSuccess] = useState(false);
   const [openError, setOpenError] = useState(false);
+  const [mensaje, setMensaje] = useState("");
   
   const showForm = () => {
     setMostrarForm(true);
@@ -34,7 +35,8 @@ export function MisProductos() {
     setOpenSuccess(false);
   }
 
-  const handleOpenError = () => {
+  const handleOpenError = (mensaje) => {
+    setMensaje(mensaje);
     setOpenError(true);
   }
 
@@ -49,7 +51,7 @@ export function MisProductos() {
       setMostrarForm(false);
       setReload((k) => k + 1);
     } catch (error) {
-      handleOpenError();
+      handleOpenError("Se produjo un error en el servidor");
     }
   };
   
@@ -101,7 +103,7 @@ export function MisProductos() {
         onClose={handleCloseSuccess}
       />
       <SnackbarError
-        mensaje="Todos los campos obligatorios(*) deben estar completos"
+        mensaje={mensaje}
         open={openError}
         onClose={handleCloseError}
       />

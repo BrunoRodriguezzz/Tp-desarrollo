@@ -44,7 +44,7 @@ export function FormularioProducto({ producto, handleOpenSuccess, closeForm, han
         .map(([nombre, _]) => nombre)
         .join(', ');
       console.log(`Faltan campos obligatorios: ${camposFaltantes}`);
-      handleOpenError();
+      handleOpenError("Todos los campos obligatorios(*) deben estar completos");
       return;
     }
 

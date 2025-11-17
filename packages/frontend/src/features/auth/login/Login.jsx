@@ -11,6 +11,7 @@ import { SnackbarSuccess } from "../../../componentes/snackbars/SnackBarSuccess.
 import { SnackbarError } from "../../../componentes/snackbars/SnackBarError.jsx";
 import Seo from "../../../componentes/seo/Seo";
 import { useSession } from "../session/sessionContext.jsx";
+import CircularProgress from "@mui/material/CircularProgress";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -21,6 +22,7 @@ export default function Login() {
   const [openSuccess, setOpenSuccess] = useState(false);
   const [openError, setOpenError] = useState(false);
   const [mensajeError, setMensajeError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const camposCompletos = email.trim() && password.trim();
 
@@ -39,10 +41,12 @@ export default function Login() {
       return;
     }
 
+    setLoading(true);
     const result = await login(email, password);
 
     if (!result || !result.token) {
       setMensajeError("Usuario o contraseña incorrectas");
+      setLoading(false);
       setOpenError(true);
       return;
     }
@@ -51,8 +55,9 @@ export default function Login() {
       token: result.token,
       refreshToken: result.refreshToken,
     });
-
+    
     setOpenSuccess(true);
+    setLoading(false);
     setTimeout(() => navigate("/"), 2000);
   };
 
@@ -119,6 +124,12 @@ export default function Login() {
         open={openError}
         onClose={handleErrorClose}
       />
+
+       {loading && (
+        <div className="loading-overlay">
+          <CircularProgress size={60} thickness={4} />
+        </div>
+      )}
     </div>
   );
 }

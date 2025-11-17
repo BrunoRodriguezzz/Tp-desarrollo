@@ -32,3 +32,13 @@
 .enviar-dialog .btn-enviar:hover {
   background-color: rgba(0, 120, 20, 0.91) !important;
 }
+
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
