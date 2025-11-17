@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const API_BASE_URL =
-  process.env.REACT_APP_URL_BACKEND || "http://localhost:8000";
+  // process.env.REACT_APP_URL_BACKEND || "http://localhost:8000";
+  process.env.REACT_APP_URL_BACKEND || "https://tiendasolapi.syspa.es";
 
 export async function getPedidos(token, page = 1, limit = 10) {
   try {
@@ -34,8 +35,7 @@ export async function crearPedido(token, items, campos) {
     return response.data;
   } catch (error) {
     const mensaje =
-      error?.response?.data?.error ||
-      "Ocurrió un error inesperado";
+      error?.response?.data?.error || "Ocurrió un error inesperado";
 
     console.error("Error al crear el pedido:", mensaje);
 

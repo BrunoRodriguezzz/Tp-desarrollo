@@ -16,7 +16,6 @@ import PedidosCancelarDialog from "../pedidosCancelarDialog/PedidosCancelarDialo
 import PedidoItemList from "../pedidosItemList/PedidosItemList";
 import { SnackbarSuccess } from "../../snackbars/SnackBarSuccess";
 import propTypes from "prop-types";
-import { set } from "mongoose";
 
 export default function PedidosBox({ pedido }) {
   const { id, estado, fechaCreacion, items, total } = pedido;

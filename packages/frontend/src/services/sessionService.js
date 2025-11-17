@@ -2,7 +2,8 @@ import axios from "axios";
 
 // BARLA PIDE PERDON POR ESTO
 const API_BASE_URL =
-  process.env.REACT_APP_URL_BACKEND || "http://localhost:8000";
+  // process.env.REACT_APP_URL_BACKEND || "http://localhost:8000";
+  process.env.REACT_APP_URL_BACKEND || "https://tiendasolapi.syspa.es";
 
 export async function login(email, password) {
   try {

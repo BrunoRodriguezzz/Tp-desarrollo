@@ -92,8 +92,8 @@ server.setController(ConversionController, conversionController);
 app.use(
   cors({
     // BARLA PIDE UNA DISCULPA POR ESTO
-    //origin: 'https://tiendasol.syspa.es',
-    origin: 'http://localhost:3000',
+    origin: 'https://tiendasol.syspa.es',
+    // origin: 'http://localhost:3000',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
