@@ -5,8 +5,9 @@ import { useCart } from "../../componentes/carrito/cartContext/CartContext.jsx";
 import { buscarProductoPorId } from "../../services/productoService.js";
 import ProductDetailSkeleton from "../../componentes/skeletons/SkeletonProductoDetail.jsx";
 import { SnackbarSuccess } from "../../componentes/snackbars/SnackBarSuccess.jsx";
-import { Carousel } from 'antd';
+import { Carousel } from "antd";
 import Seo from "../../componentes/seo/Seo";
+import { useSession } from "../auth/session/sessionContext.jsx";
 
 export default function ProductoDetailPage() {
   const { id } = useParams();
@@ -24,6 +25,8 @@ export default function ProductoDetailPage() {
   const handleClose = () => {
     setOpenSuccess(false);
   };
+
+  const { isVendedor } = useSession();
 
   const { addToCart } = useCart();
 
@@ -137,19 +140,21 @@ export default function ProductoDetailPage() {
           </div>
         </div>
 
-        <div className="producto-carrito">
-          <div className="producto-cantidad">
-            <h3>Cantidad:</h3>
-            <div className="cantidad-control">
-              <button onClick={decrementar}>-</button>
-              <span>{cantidad}</span>
-              <button onClick={incrementar}>+</button>
+        {!isVendedor() && (
+          <div className="producto-carrito">
+            <div className="producto-cantidad">
+              <h3>Cantidad:</h3>
+              <div className="cantidad-control">
+                <button onClick={decrementar}>-</button>
+                <span>{cantidad}</span>
+                <button onClick={incrementar}>+</button>
+              </div>
             </div>
+            <button className="button-gray" onClick={handleAddToCart}>
+              Agregar al Carrito
+            </button>
           </div>
-          <button className="button-gray" onClick={handleAddToCart}>
-            Agregar al Carrito
-          </button>
-        </div>
+        )}
       </div>
 
       <SnackbarSuccess
