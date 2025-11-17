@@ -1,14 +1,17 @@
-import { validarNumeroPositivoMayorCero } from "../validadores/validadorTiposNativos.js";
+import { validarNumeroPositivoMayorCero } from '../validadores/validadorTiposNativos.js';
 
 export async function paginationGetValues(req, func) {
   let { page = 1, limit = 10 } = req.query;
   page = Number(page);
   limit = Number(limit);
+  
+  const filtros = { ...req.query };
+  if (Object.prototype.hasOwnProperty.call(filtros, 'newest')) {
+    filtros.newest = filtros.newest === 'true' || filtros.newest === true;
+  }
 
-  const filtros = req.query;
-
-  validarNumeroPositivoMayorCero(page, "page");
-  validarNumeroPositivoMayorCero(limit, "limit");
+  validarNumeroPositivoMayorCero(page, 'page');
+  validarNumeroPositivoMayorCero(limit, 'limit');
 
   return func(page, limit, filtros);
 }

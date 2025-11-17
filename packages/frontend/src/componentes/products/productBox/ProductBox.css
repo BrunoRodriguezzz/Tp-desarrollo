@@ -11,6 +11,14 @@
     box-shadow 0.35s ease,
     border-color 0.35s ease;
   max-width: 340px;
+  min-width: 340px;
+}
+
+@media (max-width: 400px) {
+  .product-box {
+    max-width: 100%;
+    min-width: auto;
+  }
 }
 
 .product-box:hover {

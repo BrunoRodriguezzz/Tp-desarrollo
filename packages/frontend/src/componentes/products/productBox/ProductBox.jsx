@@ -5,14 +5,14 @@ import "./ProductBox.css";
 import { useCart } from "../../carrito/cartContext/CartContext.jsx";
 import { SnackbarSuccess } from "../../snackbars/SnackBarSuccess.jsx";
 import Skeleton from "@mui/material/Skeleton";
+import { useSession } from "../../../features/auth/session/sessionContext.jsx";
 
 export default function ProductBox({ producto }) {
-  console.log("Producto en ProductBox:", producto);
-
   const [imgLoaded, setImgLoaded] = useState(false);
   const navigate = useNavigate();
   const { addToCart } = useCart();
   const [openSuccess, setOpenSuccess] = useState(false);
+  const { isVendedor } = useSession();
 
   const currencySymbols = {
     PESO_ARG: "AR$",
@@ -80,9 +80,11 @@ export default function ProductBox({ producto }) {
             {currencySymbol}
             {formattedPrice}
           </p>
-          <button className="add-to-cart-button" onClick={handleAddToCart}>
-            Agregar al Carrito
-          </button>
+          {!isVendedor() && (
+            <button className="add-to-cart-button" onClick={handleAddToCart}>
+              Agregar al Carrito
+            </button>
+          )}
         </div>
       </div>
 

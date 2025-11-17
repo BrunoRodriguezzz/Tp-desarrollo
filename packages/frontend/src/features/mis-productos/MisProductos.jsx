@@ -1,5 +1,4 @@
 import { React, useState } from "react";
-import ProductList from "../../componentes/products/productList/ProductList";
 import "./MisProductos.css"
 import MisProductosList from "../../componentes/products/misProductosList/MisProductosList";
 import { Dialog, DialogContent } from "@mui/material";
@@ -14,8 +13,10 @@ export function MisProductos() {
   const { accessToken } = useSession();
   const [paginado, setPaginado] = useState({ page: 1, size: 12 });
   const [mostrarForm, setMostrarForm] = useState(false);
+  const [reload, setReload] = useState(0);
   const [openSuccess, setOpenSuccess] = useState(false);
   const [openError, setOpenError] = useState(false);
+  const [mensaje, setMensaje] = useState("");
   
   const showForm = () => {
     setMostrarForm(true);
@@ -33,7 +34,8 @@ export function MisProductos() {
     setOpenSuccess(false);
   }
 
-  const handleOpenError = () => {
+  const handleOpenError = (mensaje) => {
+    setMensaje(mensaje);
     setOpenError(true);
   }
 
@@ -46,8 +48,9 @@ export function MisProductos() {
       await crearProducto(datos, accessToken);
       handleOpenSuccess();
       setMostrarForm(false);
+      setReload((k) => k + 1);
     } catch (error) {
-      handleOpenError();
+      handleOpenError("Se produjo un error en el servidor");
     }
   };
   
@@ -79,6 +82,8 @@ export function MisProductos() {
           filtros={{}}
           paginado={paginado}
           setPaginado={actualizarPaginado}
+          reload={reload}
+          onRefresh={() => setReload((k) => k + 1)}
         />
       </div>
       <Dialog open={mostrarForm} onClose={handleCloseForm} maxWidth="sm" fullWidth>
@@ -97,7 +102,7 @@ export function MisProductos() {
         onClose={handleCloseSuccess}
       />
       <SnackbarError
-        mensaje="Todos los campos obligatorios(*) deben estar completos"
+        mensaje={mensaje}
         open={openError}
         onClose={handleCloseError}
       />

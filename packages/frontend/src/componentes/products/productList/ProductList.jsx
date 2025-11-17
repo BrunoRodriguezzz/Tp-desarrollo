@@ -3,7 +3,7 @@ import "./ProductList.css";
 import ProductBox from "../productBox/ProductBox";
 import Pagination from "../../pagination/Pagination.jsx";
 import PropTypes from "prop-types";
-import {buscarProductosMock, buscarProductos} from "../../../services/productoService.js";
+import {buscarProductos} from "../../../services/productoService.js";
 import Box from "@mui/material/Box";
 import ProductBoxSkeleton from "../productBoxSkeleton/ProductBoxSkeleton.jsx";
 
@@ -52,7 +52,7 @@ export default function ProductList({ filtros = {}, paginado = { page: 1, size: 
     return (
       <div>
         <div className="product-list">
-          {(productosPagina != undefined && productosPagina.length > 0) ? productosPagina.map((product) => (
+          {(productosPagina !== undefined && productosPagina.length > 0) ? productosPagina.map((product) => (
             <ProductBox key={product._id} producto={product} />
           )) : (
             <div className="noProducts-container">

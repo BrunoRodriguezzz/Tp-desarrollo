@@ -8,7 +8,7 @@ import ProductBoxSkeleton from "../productBoxSkeleton/ProductBoxSkeleton.jsx";
 import MisProductosBox from "./misProductosBox/MisProductosBox.jsx";
 import { useSession } from "../../../features/auth/session/sessionContext.jsx";
 
-export default function MisProductosList({ filtros = {}, paginado = { page: 1, size: 10 }, setPaginado, pagination = true }) {
+export default function MisProductosList({ filtros = {}, paginado = { page: 1, size: 10 }, setPaginado, pagination = true, reload = 0, onRefresh = () => {} }) {
   const { accessToken } = useSession();
   const [productosPagina, setProductosPagina] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
@@ -35,7 +35,7 @@ export default function MisProductosList({ filtros = {}, paginado = { page: 1, s
       }
     };
     fetch();
-  }, [paginado]);
+  }, [paginado, reload, accessToken]);
 
   const handlePageChange = (newPage) => {
     setPaginado("page", newPage);
@@ -53,8 +53,8 @@ export default function MisProductosList({ filtros = {}, paginado = { page: 1, s
     return (
       <div>
         <div className="product-list">
-          {(productosPagina != undefined && productosPagina.length > 0) ? productosPagina.map((product) => (
-            <MisProductosBox key={product._id} producto={product} />
+          {(productosPagina !== undefined && productosPagina.length > 0) ? productosPagina.map((product) => (
+            <MisProductosBox key={product._id} producto={product} onRefresh={onRefresh} />
           )) : (
             <div className="noProducts-container">
               <Box 
@@ -87,5 +87,12 @@ MisProductosList.propTypes = {
     size: PropTypes.number
   }),
   setPaginado: PropTypes.func,
-  pagination: PropTypes.bool
+  pagination: PropTypes.bool,
+  reload: PropTypes.number,
+  onRefresh: PropTypes.func,
+};
+
+MisProductosList.defaultProps = {
+  reload: 0,
+  onRefresh: () => {},
 };

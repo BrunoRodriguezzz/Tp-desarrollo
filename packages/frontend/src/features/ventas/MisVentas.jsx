@@ -2,7 +2,6 @@ import React from "react";
 import "./MisVentas.css";
 import { Switch, FormGroup, FormControlLabel } from "@mui/material";
 import { useState, useEffect } from "react";
-import { HistorialUsuarioResponseMock } from "../../mockData/Pedidos.js";
 import VentasList from "../../componentes/ventas/ventasList/VentasList.jsx";
 import Seo from "../../componentes/seo/Seo";
 import { useSession } from "../../features/auth/session/sessionContext";
@@ -43,7 +42,7 @@ export default function MisVentas() {
       }
     };
     fetch();
-  }, [currentPage]);
+  }, [currentPage, accessToken]);
 
   return (
     <div className="mis-ventas">
@@ -87,17 +86,4 @@ export default function MisVentas() {
   );
 }
 
-function obtenerPedidos(pagina) {
-  const start = (pagina - 1) * HistorialUsuarioResponseMock.elementosPorPagina;
-  const end = start + HistorialUsuarioResponseMock.elementosPorPagina;
-  const pedidosPaginados = HistorialUsuarioResponseMock.data.slice(start, end);
-  const total = HistorialUsuarioResponseMock.total;
 
-  return {
-    data: pedidosPaginados,
-    total,
-    totalPages: Math.ceil(
-      total / HistorialUsuarioResponseMock.elementosPorPagina
-    ),
-  };
-}

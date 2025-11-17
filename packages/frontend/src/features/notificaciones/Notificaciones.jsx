@@ -36,7 +36,7 @@ export default function Notificaciones() {
       }
     };
     fetch();
-  }, [mostrarSinLeer]);
+  }, [mostrarSinLeer, accessToken]);
 
   return (
     <>

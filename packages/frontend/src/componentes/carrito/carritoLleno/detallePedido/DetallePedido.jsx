@@ -95,8 +95,10 @@ const handleConfirmPurchase = async () => {
     setErrorMensaje(error.message);
     setOpenError(true);
     return;
-  }
+  } finally {
     setLoading(false);
+  }
+    
     setOpenSuccess(true);
     redirectTimer.current = setTimeout(() => {
       clearCart();
@@ -170,7 +172,7 @@ const handleConfirmPurchase = async () => {
         <SnackbarError
           mensaje={errorMensaje}
           open={openError}
-          onClose={handleClose}
+          onClose={handleCloseError}
         />
       </div>
 
