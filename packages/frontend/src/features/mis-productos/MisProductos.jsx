@@ -1,5 +1,4 @@
 import { React, useState } from "react";
-import ProductList from "../../componentes/products/productList/ProductList";
 import "./MisProductos.css"
 import MisProductosList from "../../componentes/products/misProductosList/MisProductosList";
 import { Dialog, DialogContent } from "@mui/material";

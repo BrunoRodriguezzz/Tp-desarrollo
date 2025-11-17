@@ -1,4 +1,4 @@
-import React, { act, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "./filtros.css";
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
@@ -11,7 +11,6 @@ import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import categoriesMock from "../../mockData/Categories.js";
 import { obtenerCategorias } from "../../services/categoriaService.js";
 
 // Iconos

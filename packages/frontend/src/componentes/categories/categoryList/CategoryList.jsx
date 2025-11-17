@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./CategoryList.css";
 import CategoryBox from "../categoryBox/CategoryBox";
-import categoriesMock from "../../../mockData/Categories";
 import Pagination from "../../pagination/Pagination.jsx";
 import PropTypes from "prop-types";
 import SkeletonCategories from "../../skeletons/SkeletonCategories.jsx";

@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ConfigProvider, theme } from "antd";
+import { ConfigProvider } from "antd";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { ColorizeOutlined } from "@mui/icons-material";
+// removed unused ColorizeOutlined import
 
 // Theme config for Ant Design. 
 const antdTheme = {

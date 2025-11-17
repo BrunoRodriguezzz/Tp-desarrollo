@@ -15,7 +15,7 @@ import { CartProvider } from "./componentes/carrito/cartContext/CartContext.jsx"
 import MisVentas from "./features/ventas/MisVentas.jsx";
 import Checkout from "./features/checkout/Checkout.jsx";
 import { ProtectedRoute } from "./componentes/protectedRoute/ProtectedRoute.jsx";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import PageWrapper from "./componentes/pageWrapper/PageWrapper.jsx";
 import { MisProductos } from "./features/mis-productos/MisProductos.jsx";
 import NotFound from "./features/notFound/NotFound.jsx";

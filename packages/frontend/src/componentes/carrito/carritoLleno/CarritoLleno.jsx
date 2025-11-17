@@ -4,7 +4,6 @@ import ListaProductos from './listaProductos/ListaProductos'
 import { useCart } from '../cartContext/CartContext';
 import "./CarritoLleno.css"
 import { SnackbarSuccess } from "../../snackbars/SnackBarSuccess.jsx"
-import { SnackbarError } from "../../snackbars/SnackBarError.jsx";
 
 export default function CarritoLleno() {
   const { addToCart, removeFromCart, cartItems, decreaseQuantity } = useCart();

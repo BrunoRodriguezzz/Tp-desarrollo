@@ -5,7 +5,6 @@ import { FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import usuariosMock from "../../../mockData/Users.js";
 import { login } from "../../../services/sessionService.js";
 import { SnackbarSuccess } from "../../../componentes/snackbars/SnackBarSuccess.jsx";
 import { SnackbarError } from "../../../componentes/snackbars/SnackBarError.jsx";

@@ -29,7 +29,7 @@ export default function Register() {
   const [openSuccess, setOpenSuccess] = useState(false);
   const [openError, setOpenError] = useState(false);
   const [mensajeError, setMensajeError] = useState("");
-  const { loginContext, accessToken, refreshToken } = useSession();
+  const { loginContext } = useSession();
   const [loading, setLoading] = useState(false);
 
   const camposCompletos = Object.values(campos)

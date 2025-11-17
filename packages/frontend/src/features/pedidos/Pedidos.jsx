@@ -1,7 +1,7 @@
 import "./Pedidos.css";
 import React, { useState, useEffect } from "react";
 import PedidosList from "../../componentes/pedidos/pedidosList/PedidosList";
-import { HistorialUsuarioResponseMock } from "../../mockData/Pedidos";
+
 import Seo from "../../componentes/seo/Seo";
 import { useSession } from "../auth/session/sessionContext";
 import { getPedidos } from "../../services/pedidoService";
@@ -26,7 +26,7 @@ export default function Pedidos() {
       }
     };
     fetch();
-  }, [currentPage]);
+  }, [currentPage, accessToken]);
 
   return (
     <div className="pedido-container">

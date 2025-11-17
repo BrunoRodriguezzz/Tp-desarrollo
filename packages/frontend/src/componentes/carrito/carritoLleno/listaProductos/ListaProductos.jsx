@@ -2,7 +2,6 @@ import React from "react";
 import CardProducto from "../cardProducto/CardProducto";
 import "./ListaProductos.css";
 import PropTypes from "prop-types";
-import List from "@mui/material/List";
 
 export default function ListaProductos({
   cartItems,

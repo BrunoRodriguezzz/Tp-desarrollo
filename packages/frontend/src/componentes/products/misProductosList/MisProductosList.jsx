@@ -35,7 +35,7 @@ export default function MisProductosList({ filtros = {}, paginado = { page: 1, s
       }
     };
     fetch();
-  }, [paginado, reload]);
+  }, [paginado, reload, accessToken]);
 
   const handlePageChange = (newPage) => {
     setPaginado("page", newPage);
@@ -53,7 +53,7 @@ export default function MisProductosList({ filtros = {}, paginado = { page: 1, s
     return (
       <div>
         <div className="product-list">
-          {(productosPagina != undefined && productosPagina.length > 0) ? productosPagina.map((product) => (
+          {(productosPagina !== undefined && productosPagina.length > 0) ? productosPagina.map((product) => (
             <MisProductosBox key={product._id} producto={product} onRefresh={onRefresh} />
           )) : (
             <div className="noProducts-container">
