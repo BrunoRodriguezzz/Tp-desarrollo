@@ -1,4 +1,4 @@
-import { UsuarioModel } from "../schemas/usuarioSchema.js";
+import { UsuarioModel } from '../schemas/usuarioSchema.js';
 
 class UsuarioRepository {
   constructor() {
@@ -11,6 +11,15 @@ class UsuarioRepository {
 
   async findById(id) {
     return await this.model.findById(id);
+  }
+
+  async findByEmail(email) {
+    return await this.model.findOne({ email: email });
+  }
+
+  async create(usuario) {
+    const nuevoUsuario = new this.model(usuario);
+    return await nuevoUsuario.save();
   }
 }
 

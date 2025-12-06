@@ -1,0 +1,84 @@
+.notificacion-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 800px;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 1 auto;
+  width: 85%;
+  margin: 15px auto;
+  padding: 15px;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: box-shadow 0.2s ease;
+}
+
+.notificacion-box:hover {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.45);
+}
+
+.notificacion-box.no-leida {
+  background-color: rgba(29, 186, 1, 0.163);
+  border-left: 4px solid rgb(29, 186, 1);
+}
+
+.notificacion-box.leida {
+  background-color: #f9f9f9;
+  border-left: 4px solid #ccc;
+}
+
+.notificacion-box .notificacion-contenido {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: 75%;
+}
+
+.notificacion-box .notificacion-texto {
+  flex: 1;
+  min-width: 0;
+}
+
+.notificacion-box h1 {
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+  margin-bottom: 5px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.notificacion-box p {
+  font-size: 12px;
+  color: #777;
+  margin: 0;
+}
+
+.notificacion-box .button-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.notificacion-box .leida-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background-color: rgba(0, 120, 20, 0.632);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.2s ease;
+}
+
+.notificacion-box .leida-button:hover {
+  background-color: rgba(0, 120, 20, 0.91);
+}

@@ -1,5 +1,5 @@
-import ProductoModel from "../schemas/productoSchema.js";
-import { NotFoundError } from "../errors/tiendaSolError.js";
+import ProductoModel from '../schemas/productoSchema.js';
+import { NotFoundError } from '../errors/tiendaSolError.js';
 
 export default class ProductoRepository {
   constructor() {
@@ -12,7 +12,7 @@ export default class ProductoRepository {
     try {
       aux = await nuevoProducto.save();
     } catch (error) {
-      console.error("Error al guardar el producto:", error);
+      console.error('Error al guardar el producto:', error);
     }
     return aux;
   }
@@ -25,24 +25,25 @@ export default class ProductoRepository {
     const skip = (page - 1) * limit;
     let query = this.model.find(this.applyFilters(filtros));
 
-    if (filtros.orderBy === "price_asc") {
+    if (filtros.orderBy === 'price_asc') {
       query = query.sort({ precio: 1 });
-    } else if (filtros.orderBy === "price_desc") {
+    } else if (filtros.orderBy === 'price_desc') {
       query = query.sort({ precio: -1 });
-    } else if (filtros.orderBy === "newest") {
-      query = query.sort({ createdAt: -1 });
-    } else if (filtros.orderBy === "oldest") {
-      query = query.sort({ createdAt: 1 });
-    } else if (filtros.orderBy === "best_seller") {
+    } else if (filtros.orderBy === 'best_seller') {
       query = query.sort({ ventasTotales: -1 });
+    } else if (filtros.newest) {
+      query = query.sort({ createdAt: -1, _id: -1 });
     }
 
-    const productos = await query.skip(skip).limit(limit).exec();
+    const productos = await query.skip(skip).limit(limit).populate('vendedor').exec();
     return productos;
   }
 
   async findById(id) {
-    const producto = await this.model.findOne({ _id: id, activo: true }).exec();
+    const producto = await this.model
+      .findOne({ _id: id, activo: true })
+      .populate('vendedor')
+      .exec();
 
     return producto;
   }
@@ -55,7 +56,7 @@ export default class ProductoRepository {
       .exec();
 
     if (!producto) {
-      throw new NotFoundError("Producto no encontrado");
+      throw new NotFoundError('Producto no encontrado');
     }
 
     return producto;
@@ -79,9 +80,9 @@ export default class ProductoRepository {
 
     if (search) {
       query.$or = [
-        { titulo: { $regex: search, $options: "i" } },
-        { descripcion: { $regex: search, $options: "i" } },
-        { categorias: { $elemMatch: { $regex: search, $options: "i" } } },
+        { titulo: { $regex: search, $options: 'i' } },
+        { descripcion: { $regex: search, $options: 'i' } },
+        { categorias: { $elemMatch: { $regex: search, $options: 'i' } } },
       ];
     }
 

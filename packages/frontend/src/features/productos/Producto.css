@@ -1,0 +1,20 @@
+.contenidoPrincipal {
+    margin-bottom: 2rem;
+}
+
+.contenedor-filtro-productos {
+    display: flex;
+    justify-content: center;
+}
+
+.filtros-grid {
+    top: 6.6rem;
+    position: sticky;
+}
+
+@media (max-width: 600px) {
+    .filtros-grid {
+        position: static;
+        z-index: 0;
+    }
+}

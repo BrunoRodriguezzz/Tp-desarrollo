@@ -1,0 +1,60 @@
+.lo-nuevo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icono-texto {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tituloFiltro {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.tituloFiltro h3 {
+    margin-top: 0rem;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.filtro {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: 1px solid var(--gray-1);
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.no-gap-left {
+    padding-left: 0 !important;
+}
+
+.input-categoria {
+    border: none;
+}
+
+.input-precio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.data-prod {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--gray-2);
+}
+
+@media (max-width: 600px) {
+    .filtros-container {
+        position: static;
+        z-index: -1;
+    }
+}

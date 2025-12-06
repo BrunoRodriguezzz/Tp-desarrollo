@@ -1,0 +1,62 @@
+.mis-ventas {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 30px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
+}
+
+.mis-ventas .ventas-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.mis-ventas .ventas-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.mis-ventas h1 {
+  margin-bottom: 0;
+}
+
+.mis-ventas h2 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.mis-ventas p {
+  color: #333;
+}
+
+.mis-ventas .ventas-right {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: whitesmoke;
+}
+
+.mis-ventas .ventas-list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.5rem;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}

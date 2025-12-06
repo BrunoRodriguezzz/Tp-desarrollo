@@ -3,6 +3,7 @@
     "lang": "es",
     "mensajes": {
       "PENDIENTE": "Nuevo pedido {id} realizado por {nombreComprador}.\nItems:\n{items}\nTotal: $ {total}\nDirección de entrega: {calle} {altura}, {piso} {departamento}. CP {codigoPostal}. {ciudad}, {provincia}, {pais}.",
+      "PENDIENTE_COMPRADOR": "¡Tu pedido fue generado con éxito! Recibirás una notificación cuando el vendedor confirme el envío.",
       "ENVIADO": "Tu pedido {id} fue enviado.",
       "CANCELADO": "El pedido {id} fue cancelado por {nombreComprador}."
     }
@@ -11,6 +12,7 @@
     "lang": "en",
     "mensajes": {
       "PENDIENTE": "New order {id} placed by {nombreComprador}.\nItems:\n{items}\nTotal: $ {total}\nDelivery address: {calle} {altura}, {piso} {departamento}. Zip {codigoPostal}. {ciudad}, {provincia}, {pais}.",
+      "PENDIENTE_COMPRADOR": "Your order has been successfully created! You will receive a notification when the seller confirms the shipment.",
       "ENVIADO": "Your order {id} has been shipped.",
       "CANCELADO": "The order {id} was canceled by {nombreComprador}."
     }

@@ -1,0 +1,27 @@
+.categoria-page {
+  display: flex;
+  justify-content: center; /* centra horizontal */
+  align-items: flex-start; /* alinea vertical desde arriba; si querés completamente centrado: center */
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh; /* ocupa toda la altura de la ventana */
+  box-sizing: border-box;
+}
+
+.categoria-content {
+  text-align: center; /* centra el contenido interno */
+  max-width: 1200px; /* opcional: limita el ancho */
+  width: 100%;
+}
+
+.categoria-page h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.categoria-page p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}

@@ -1,0 +1,127 @@
+import { React, useState } from "react";
+import "./Home.css";
+import ProductList from "../../componentes/products/productList/ProductList";
+import CategoryList from "../../componentes/categories/categoryList/CategoryList";
+import { Link } from "react-router-dom";
+import { MdOutlineLocalShipping } from "react-icons/md";
+import { CiLock } from "react-icons/ci";
+import { IoDiamondOutline } from "react-icons/io5";
+import { CiChat1 } from "react-icons/ci";
+import Seo from "../../componentes/seo/Seo";
+
+export default function Home() {
+  const [paginado, setPaginado] = useState({ page: 1, size: 12 });
+
+  const actualizarPaginado = (clave, valor) => {
+    setPaginado((prev) => ({
+      ...prev,
+      [clave]: valor,
+    }));
+  };
+
+  return (
+    <>
+      <Seo
+        title="Tienda Sol | Marketplace de calidad al mejor precio"
+        description="Descubre productos de calidad, categorías populares y ofertas. Compra y vende con seguridad y envíos rápidos."
+      />
+      <section className="home-banner">
+        <h1>Bienvenido A Tienda Sol</h1>
+
+        <p>
+          Descubre productos de calidad al mejor precio. Tu marketplace de
+          confianza para comprar y vender.
+        </p>
+
+        <div className="banner-buttons">
+          <Link to="/productos" className="button-white">
+            Ver Productos
+          </Link>
+          <Link to="/categorias" className="button-transparent-border">
+            Ver Categorias
+          </Link>
+        </div>
+      </section>
+
+      <div className="list-title">
+        <h1>Productos Destacados</h1>
+        <Link to="/productos">Ver todos →</Link>
+      </div>
+
+      <section className="products-list">
+        <ProductList
+          limit={12}
+          filtros={{}}
+          paginado={paginado}
+          setPaginado={actualizarPaginado}
+        />
+      </section>
+
+      <div className="list-title">
+        <h1>Categorias Destacadas</h1>
+        <Link to="/categorias">Ver todas →</Link>
+      </div>
+
+      <section className="categories-list">
+        <CategoryList limit={6} pagination={false} />
+      </section>
+
+      <section className="why-tienda-sol">
+        <h2>¿Por qué elegir Tienda Sol?</h2>
+
+        <div className="why-container">
+          <div className="why-box">
+            <span>
+              <MdOutlineLocalShipping />
+            </span>
+
+            <h3>Envío Rápido</h3>
+
+            <p>
+              Recibe tus productos en tiempo récord con nuestro servicio de
+              envío express.
+            </p>
+          </div>
+
+          <div className="why-box">
+            <span>
+              <CiLock />
+            </span>
+
+            <h3>Compra Segura</h3>
+
+            <p>
+              Protección del comprador y pagos seguros en todas tus
+              transacciones.
+            </p>
+          </div>
+
+          <div className="why-box">
+            <span>
+              <IoDiamondOutline />
+            </span>
+
+            <h3>Calidad Garantizada</h3>
+
+            <p>
+              Productos verificados y vendedores confiables para tu
+              tranquilidad.
+            </p>
+          </div>
+
+          <div className="why-box">
+            <span>
+              <CiChat1 />
+            </span>
+
+            <h3>Soporte 24/7</h3>
+
+            <p>
+              Nuestro equipo está disponible para ayudarte en cualquier momento.
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

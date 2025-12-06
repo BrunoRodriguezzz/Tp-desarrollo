@@ -1,0 +1,12 @@
+.ventas-empty {
+  color: var(--gray-2);
+}
+
+.ventas-list-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1.5rem;
+}
