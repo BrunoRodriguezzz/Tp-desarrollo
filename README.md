@@ -119,4 +119,4 @@ npm run start:dev
 4. **Testing:** El proyecto incluye una estrategia dual con tests unitarios/integración en el backend y tests End-to-End (E2E) en el frontend.
 
 ---
-*Desarrollado por Bruno Rodriguez para la cátedra de Desarrollo de Software - UTN FRBA.*
+*Desarrollado por en grupo para la cátedra de Desarrollo de Software - UTN FRBA.*
