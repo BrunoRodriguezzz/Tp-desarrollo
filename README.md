@@ -1,90 +1,122 @@
-Este repositorio es la base para el Trabajo Práctico de la materia **Desarrollo de Software (DDS)** de la carrera **Ingeniería en Sistemas de Información** de la **UTN FRBA**. Se trata de un **monorepo** que integra una aplicación frontend con Create React App y un backend con Express, facilitando el desarrollo y la gestión de ambos proyectos en un único entorno.
+# 🛒 Tienda Sol - Marketplace Multi-Vendedor
 
-## 📦 Estructura del Proyecto
+Este repositorio contiene el desarrollo de **Tienda Sol**, una plataforma de e-commerce full-stack con arquitectura multi-vendedor. El proyecto forma parte del Trabajo Práctico de la materia **Desarrollo de Software (DDS)** de la carrera **Ingeniería en Sistemas de Información** en la **UTN FRBA**.
 
-El monorepo está organizado de la siguiente manera:
+Se trata de un **monorepo** que integra una aplicación frontend (React) y un backend (Express), gestionados mediante `npm workspaces`.
 
+## 🌟 Propósito del Proyecto
+
+Tienda Sol permite a los usuarios interactuar en un ecosistema de mercado dinámico donde pueden alternar entre dos roles principales:
+- **Comprador:** Descubrimiento de catálogo, gestión de carrito y procesamiento de órdenes.
+- **Vendedor:** Herramientas de gestión de productos y seguimiento de ventas.
+
+## 🛠️ Stack Tecnológico
+
+### Frontend
+- **Framework:** React 19 (SPA)
+- **Enrutamiento:** React Router 7
+- **Estilos & UI:** Tailwind CSS, Ant Design y Material UI (MUI)
+- **Gestión de Estado:** Hooks nativos y Context API
+
+### Backend
+- **Entorno:** Node.js con Express.js
+- **Persistencia:** MongoDB usando Mongoose (ODM)
+- **Validación:** Zod para esquemas de datos
+- **Documentación:** Swagger / OpenAPI
+
+### Infraestructura & DevOps
+- **Gestión:** npm workspaces (Monorepo)
+- **Contenerización:** Docker & Docker Compose
+- **Orquestación Local:** Concurrently para ejecución simultánea de paquetes
+
+---
+
+## 🏗️ Arquitectura del Sistema
+
+### Estructura de Paquetes
+```mermaid
+graph TD
+    Root[Monorepo Root] --> PkgF[packages/frontend]
+    Root --> PkgB[packages/backend]
+    
+    subgraph Frontend
+        PkgF --> UI[React Components]
+        PkgF --> Routes[React Router 7]
+    end
+    
+    subgraph Backend
+        PkgB --> Ctrl[Controllers]
+        PkgB --> Svc[Services]
+        PkgB --> Repo[Repositories]
+        PkgB --> DB[(MongoDB)]
+    end
+    
+    PkgF -- REST API --> PkgB
 ```
-.
-├── packages/
-│   ├── backend/        # Servidor Express.js
-│   └── frontend/       # Aplicación React (Create React App)
-├── package.json        # Configuración del monorepo (root)
-├── README.md           # Este archivo
-└── .env.example        # Ejemplo de configuración de variables de entorno
+
+### Flujo de Interacción (Ejemplo: Compra de Producto)
+El backend sigue un patrón de **arquitectura en capas** (Controller-Service-Repository) para garantizar la separación de responsabilidades.
+
+```mermaid
+sequenceDiagram
+    participant U as Usuario (Frontend)
+    participant C as Controller
+    participant S as Service
+    participant V as Zod Validator
+    participant R as Repository
+    participant DB as MongoDB
+
+    U->>C: POST /api/orders
+    C->>V: Validar Schema (Zod)
+    V-->>C: OK
+    C->>S: createOrder(data)
+    S->>S: Aplicar Lógica de Negocio
+    S->>R: save(order)
+    R->>DB: Insert Document
+    DB-->>R: Ack
+    R-->>S: Order Object
+    S-->>C: Order Success
+    C-->>U: 201 Created (JSON)
 ```
 
-## ⚙️ Paquetes
+---
 
-Este monorepo utiliza **`npm workspaces`** para gestionar los diferentes paquetes.
+## 📦 Organización del Monorepo
 
-### Backend (`packages/backend`)
-
-El backend está construido con Express.js y utiliza las siguientes dependencias:
-
-- **`express`**: El framework web para Node.js, utilizado para construir la API.
-- **`cors`**: Middleware para Express que habilita Cross-Origin Resource Sharing (CORS), necesario para permitir que el frontend acceda al backend desde un origen diferente.
-- **`dotenv`**: Carga variables de entorno desde un archivo `.env` en `process.env`. Es crucial para configurar el puerto del servidor y los orígenes permitidos.
-
-La idea es dar lo mínimo para levantar el servidor, y que durante el desarrollo del TP se vayan agregando las dependencias necesarias.
-
-### Frontend (`packages/frontend`)
-
-El frontend es una aplicación de React generada con Create React App.
+- `packages/backend/`: Contiene la lógica de negocio, acceso a datos y API REST. Implementa una cadena de inicialización por inyección de dependencias en `index.js`.
+- `packages/frontend/`: Aplicación de página única (SPA) con diseño responsivo y componentes modernos.
+- `.env.example`: Plantilla para configurar variables de entorno (Puertos, URLs de DB, etc.).
 
 ## 🚀 Inicio Rápido
 
-Seguí estos pasos para poner en marcha el proyecto:
-
-### 1\. Instalación de Dependencias
-
-Desde la raíz del monorepo, ejecutá:
-
+### 1. Instalación de Dependencias
+Desde la raíz del proyecto:
 ```bash
 npm install
 ```
 
-Esto instalará todas las dependencias para la raíz y para los paquetes `frontend` y `backend`.
-
-### 2\. Configuración de Variables de Entorno
-
-Crea un archivo `.env` en el directorio `packages/backend`. Puedes usar el archivo `.env.example` como plantilla.
-
-```
-# packages/backend/.env
-ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
+### 2. Configuración
+Crea un archivo `.env` en `packages/backend/` basándote en el archivo de ejemplo:
+```env
+ALLOWED_ORIGINS=http://localhost:3000
 SERVER_PORT=3001
+MONGO_URI=mongodb://localhost:27017/tiendasol
 ```
 
-- **`ALLOWED_ORIGINS`**: Define los orígenes permitidos para las solicitudes CORS. Asegurate de incluir la URL donde se ejecuta tu frontend (por defecto, `http://localhost:3000` para Create React App). Cuando se haga el despliegue en nube acá se deberá incluir la URL donde se desplegó el frontend.
-- **`SERVER_PORT`**: El puerto en el que se ejecutará el servidor backend (ej. `8000`).
-
-### 3\. Ejecución de la Aplicación
-
-Podés iniciar el frontend y el backend por separado o ambos a la vez:
-
-#### Ejecutar el Backend
-
-```bash
-npm run start:backend
-```
-
-Para el desarrollo con reinicio automático:
-
-```bash
-npm run dev:backend
-```
-
-#### Ejecutar el Frontend
-
-```bash
-npm run start:frontend
-```
-
-#### Ejecutar Ambos (Desarrollo)
-
-Para iniciar el backend en modo `dev` y el frontend simultáneamente, usá:
-
+### 3. Ejecución
+Para levantar ambos entornos (frontend y backend) en modo desarrollo:
 ```bash
 npm run start:dev
 ```
+
+---
+
+## 📝 Detalles de Implementación Destacados
+
+1. **Inyección de Dependencias:** El backend utiliza una clase `Server` centralizada que orquesta el registro de rutas y servicios, facilitando la escalabilidad y el testing.
+2. **Validación Robusta:** Se emplea **Zod** no solo para validar tipos en TypeScript, sino como primera línea de defensa en los controllers para asegurar la integridad de los datos entrantes.
+3. **Multi-Vendor Logic:** El sistema está diseñado para que la transición entre comprador y vendedor sea fluida, compartiendo una base de autenticación unificada pero segregando las capacidades operativas.
+4. **Testing:** El proyecto incluye una estrategia dual con tests unitarios/integración en el backend y tests End-to-End (E2E) en el frontend.
+
+---
+*Desarrollado por Bruno Rodriguez para la cátedra de Desarrollo de Software - UTN FRBA.*
