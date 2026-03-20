@@ -1,5 +1,7 @@
 # 🛒 Tienda Sol - Marketplace Multi-Vendedor
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/BrunoRodriguezzz/Tp-desarrollo)
+
 Este repositorio contiene el desarrollo de **Tienda Sol**, una plataforma de e-commerce full-stack con arquitectura multi-vendedor. El proyecto forma parte del Trabajo Práctico de la materia **Desarrollo de Software (DDS)** de la carrera **Ingeniería en Sistemas de Información** en la **UTN FRBA**.
 
 Se trata de un **monorepo** que integra una aplicación frontend (React) y un backend (Express), gestionados mediante `npm workspaces`.
@@ -119,4 +121,4 @@ npm run start:dev
 4. **Testing:** El proyecto incluye una estrategia dual con tests unitarios/integración en el backend y tests End-to-End (E2E) en el frontend.
 
 ---
-*Desarrollado por en grupo para la cátedra de Desarrollo de Software - UTN FRBA.*
+*Desarrollado en grupo para la cátedra de Desarrollo de Software - UTN FRBA.*
